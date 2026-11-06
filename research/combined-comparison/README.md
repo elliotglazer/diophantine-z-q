@@ -7,6 +7,13 @@ exponent-19 height theorem. The exact finite artifacts pass the upstream
 independent algebraic checker. Their arithmetic interpretation is explained
 in [ARITHMETIC.md](ARITHMETIC.md), subject to the inherited theorem inputs.
 
+## Version 6 follow-up
+
+The current follow-up is the [933-variable Version 6 proposal](../v6-comparison/README.md),
+which adopts the upstream Version 6 circuits and adds a shorter quotient-weight
+chain. The 1,267- and 1,180-variable packages below remain preserved historical
+experiments with their original input pins.
+
 ## Further refinement
 
 The new candidate reaches **1,180 variables**, **1,137 quadratic residuals**, and

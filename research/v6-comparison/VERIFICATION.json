@@ -1,0 +1,72 @@
+{
+  "status": "passed",
+  "coordinates": 933,
+  "residuals": 890,
+  "monomials": 51907,
+  "degree": 4,
+  "primitiveContent": 1,
+  "maximumCoefficientBits": 3247,
+  "sourceIdentities": {
+    "logarithmCircuits": [
+      {
+        "point": "U0",
+        "degree": 9,
+        "status": "exact_polynomial_identity"
+      },
+      {
+        "point": "U1",
+        "degree": 2,
+        "status": "exact_polynomial_identity"
+      },
+      {
+        "point": "U2",
+        "degree": 9,
+        "status": "exact_polynomial_identity"
+      },
+      {
+        "point": "U3",
+        "degree": 9,
+        "status": "exact_polynomial_identity"
+      },
+      {
+        "point": "U4",
+        "degree": 9,
+        "status": "exact_polynomial_identity"
+      },
+      {
+        "point": "V0",
+        "degree": 9,
+        "status": "exact_polynomial_identity"
+      },
+      {
+        "point": "V1",
+        "degree": 2,
+        "status": "exact_polynomial_identity"
+      },
+      {
+        "point": "V2",
+        "degree": 9,
+        "status": "exact_polynomial_identity"
+      },
+      {
+        "point": "V3",
+        "degree": 9,
+        "status": "exact_polynomial_identity"
+      },
+      {
+        "point": "V4",
+        "degree": 9,
+        "status": "exact_polynomial_identity"
+      }
+    ],
+    "weightExponentIdentities": [
+      22,
+      78
+    ],
+    "scope": "Exact symbolic emitted logarithm identities and exponent identities; denominator nonvanishing is proved in README.md"
+  },
+  "chainProjectionCheck": "passed",
+  "independentChecker": "passed_exact_algebra_checks",
+  "command": "python3 -B research/v6-comparison/check_artifacts.py",
+  "node": "v24.22.1"
+}

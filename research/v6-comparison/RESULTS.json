@@ -1,0 +1,80 @@
+{
+  "upstreamCommit": "f87226569fa7ceeae0c783c3e4d1241ac727733a",
+  "variants": {
+    "ordinary": {
+      "coordinates": 979,
+      "compiledCoordinatesBeforeFreeOmission": 979,
+      "residuals": 936,
+      "activeCoordinates": 979,
+      "ordinaryCoordinateMonomials": 55459,
+      "parameterCoefficientTerms": 55459,
+      "degree": 4,
+      "maxSPower": 0,
+      "integerCoefficients": true,
+      "sIndependentCoefficientGcd": 1,
+      "maximumCoefficientBits": 3247,
+      "ordinaryExportSha256": "0e165782812cf56a26386bbe31926ba80ae787dda7389de1f2daf22ffe243122",
+      "builderSha256": "b99b000a57a904328d167a3b3fe9e319e84dc880f03071af9b4face29bc9a570"
+    },
+    "target_two": {
+      "coordinates": 955,
+      "compiledCoordinatesBeforeFreeOmission": 955,
+      "residuals": 912,
+      "activeCoordinates": 955,
+      "ordinaryCoordinateMonomials": 54379,
+      "parameterCoefficientTerms": 54379,
+      "degree": 4,
+      "maxSPower": 0,
+      "integerCoefficients": true,
+      "sIndependentCoefficientGcd": 1,
+      "maximumCoefficientBits": 3247,
+      "ordinaryExportSha256": "8904d1220fd9e3d3a6c613a9870275f1ddf03bc4f3f72d1a0a3a2b57d491d14f",
+      "builderSha256": "8cfe0506280fa65c8fe3a1a1f8487a4fe1dff8c1e222be97b303910e8dcf8eae"
+    },
+    "quotient": {
+      "coordinates": 946,
+      "compiledCoordinatesBeforeFreeOmission": 946,
+      "residuals": 903,
+      "activeCoordinates": 946,
+      "ordinaryCoordinateMonomials": 54461,
+      "parameterCoefficientTerms": 54461,
+      "degree": 4,
+      "maxSPower": 0,
+      "integerCoefficients": true,
+      "sIndependentCoefficientGcd": 1,
+      "maximumCoefficientBits": 3247,
+      "ordinaryExportSha256": "d2786165a5dea114d8747200f3b585e08bfcb45abe1a07c016a7724e05fe5655",
+      "builderSha256": "e3ec6e3ea3f555e13a45a6e62528327dbcadc47aba84bbd297577e86858c5d00"
+    },
+    "low_precision": {
+      "coordinates": 951,
+      "compiledCoordinatesBeforeFreeOmission": 951,
+      "residuals": 908,
+      "activeCoordinates": 951,
+      "ordinaryCoordinateMonomials": 54382,
+      "parameterCoefficientTerms": 54382,
+      "degree": 4,
+      "maxSPower": 0,
+      "integerCoefficients": true,
+      "sIndependentCoefficientGcd": 1,
+      "maximumCoefficientBits": 3247,
+      "ordinaryExportSha256": "1fd79dd8b211b3a777e265ab633fb9b7a3e781fd214d5b21ed38dc7d9c839e4b",
+      "builderSha256": "a12eebcbfd2d2c90cfaf1d2b0a83affb3c45222710ef2ab5b70706174baed274"
+    },
+    "precision40_quotients": {
+      "coordinates": 933,
+      "compiledCoordinatesBeforeFreeOmission": 933,
+      "residuals": 890,
+      "activeCoordinates": 933,
+      "ordinaryCoordinateMonomials": 51907,
+      "parameterCoefficientTerms": 51907,
+      "degree": 4,
+      "maxSPower": 0,
+      "integerCoefficients": true,
+      "sIndependentCoefficientGcd": 1,
+      "maximumCoefficientBits": 3247,
+      "ordinaryExportSha256": "5dade132700c872ea5fbfb60913e1dd82b2f6d39cb86a0db37d3b1de71303c7a",
+      "builderSha256": "06cd4af3c29501bbf1dc46e5c578f53ca16054a01daf81ca10277a63ccdb9346"
+    }
+  }
+}

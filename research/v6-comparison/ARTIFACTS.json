@@ -1,0 +1,42 @@
+{
+  "selectedVariant": "precision40_quotients",
+  "scope": "Arithmetic proposal; exact algebraic replay passed",
+  "files": {
+    "parameter-source-ir.json": {
+      "sha256": "a1d270c9d9276e9a626dc944263cdde511f20a9851a6ed87ef1326999e32e8d8",
+      "gzipSha256": "f7e6a2733045d1d0e9a5db177cdfdbc9eff17c4140fc4fd272aa32923c6a780c",
+      "bytes": 2853361,
+      "gzipBytes": 101050
+    },
+    "source-ir.json": {
+      "sha256": "ea5189506bddfedcd7b61848fccd571dff3b4af244a049b540b7ddf1ed7e44b2",
+      "gzipSha256": "f486646f380ab46cbf434abb1b7affa5ca369c6fe31120d3be162f4e8f1d4d6a",
+      "bytes": 2394422,
+      "gzipBytes": 88331
+    },
+    "compiled-ir.json": {
+      "sha256": "d375f38080068d0b7725b5807dd6377c072d58e8db89756875bf16b2003f16cf",
+      "gzipSha256": "b6d160fcd6dba69b527b73d079474d631c8f27769570ec2f98a1dac6b11a69c4",
+      "bytes": 2368923,
+      "gzipBytes": 90401
+    },
+    "reduction-certificate.json": {
+      "sha256": "fa6939adb6217035baa9f5d065a3878d1871fc473e59c457d7319bf6bc5a3bb9",
+      "gzipSha256": "e705cb4e054b40ca82b61cb6e0db4c515e435127e26d237a437d28e1c74c4e1f",
+      "bytes": 86776,
+      "gzipBytes": 3899
+    },
+    "coordinate-map.json": {
+      "sha256": "fdc78d7140d7bc879db0595fe190af9fc53521bc9e51ead6deb8d1807929211d",
+      "gzipSha256": "88bb0f4ff7cba32e2a930de32ec5e5f60b2b1b3e0c7adedcadcd57703eab60c4",
+      "bytes": 92714,
+      "gzipBytes": 8615
+    },
+    "ordinary-polynomial.json": {
+      "sha256": "5dade132700c872ea5fbfb60913e1dd82b2f6d39cb86a0db37d3b1de71303c7a",
+      "gzipSha256": "f035f94312503498eec42278030c8e232a58a224990c64f089fa30d8088cb1c8",
+      "bytes": 6427702,
+      "gzipBytes": 308900
+    }
+  }
+}
