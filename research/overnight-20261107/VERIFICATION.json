@@ -1,0 +1,111 @@
+{
+  "upstreamCommit": "5856286a57fba19574a40704571ee70e79738281",
+  "results": {
+    "upstreamCommit": "f87226569fa7ceeae0c783c3e4d1241ac727733a",
+    "variants": {
+      "precision40_quotients": {
+        "coordinates": 909,
+        "compiledCoordinatesBeforeFreeOmission": 909,
+        "residuals": 866,
+        "activeCoordinates": 909,
+        "ordinaryCoordinateMonomials": 51279,
+        "parameterCoefficientTerms": 51279,
+        "degree": 4,
+        "maxSPower": 0,
+        "integerCoefficients": true,
+        "sIndependentCoefficientGcd": 1,
+        "maximumCoefficientBits": 3247,
+        "ordinaryExportSha256": "326a23b5af8064915013411f24af39e4507c41431c6b783d5a6cae488695b93b",
+        "builderSha256": "4d1ee9f1eb6ed8210561bf78affe13968333dc376733131527f93434d21ce683"
+      }
+    }
+  },
+  "algebraicChecker": {
+    "checkedAtUTC": "2026-11-07T03:59:10.990Z",
+    "status": "passed_exact_algebra_checks",
+    "scope": "Exact gate identities recognized below, certified row operations/eliminations, SOS expansion, fixed-S integrality/support/height. No proof of inherited arithmetic or source completeness is asserted.",
+    "inputSha256": "2bd10cdfc4272b772196cc357d01cf8eb7c076c5a56e0d0038f7655614dcc1d8",
+    "quarticTableCompared": true
+  },
+  "logarithms": {
+    "logarithmCircuits": [
+      {
+        "point": "U0",
+        "degree": 9,
+        "status": "exact_polynomial_identity"
+      },
+      {
+        "point": "U1",
+        "degree": 2,
+        "status": "exact_polynomial_identity"
+      },
+      {
+        "point": "U2",
+        "degree": 9,
+        "status": "exact_polynomial_identity"
+      },
+      {
+        "point": "U3",
+        "degree": 9,
+        "status": "exact_polynomial_identity"
+      },
+      {
+        "point": "U4",
+        "degree": 9,
+        "status": "exact_polynomial_identity"
+      },
+      {
+        "point": "V0",
+        "degree": 9,
+        "status": "exact_polynomial_identity"
+      },
+      {
+        "point": "V1",
+        "degree": 2,
+        "status": "exact_polynomial_identity"
+      },
+      {
+        "point": "V2",
+        "degree": 9,
+        "status": "exact_polynomial_identity"
+      },
+      {
+        "point": "V3",
+        "degree": 9,
+        "status": "exact_polynomial_identity"
+      },
+      {
+        "point": "V4",
+        "degree": 9,
+        "status": "exact_polynomial_identity"
+      }
+    ],
+    "weightExponentIdentities": [
+      22,
+      78
+    ],
+    "scope": "Exact symbolic emitted logarithm identities and exponent identities; denominator nonvanishing is proved in README.md"
+  },
+  "numericalChecks": {
+    "status": "passed_exact_rational_checks",
+    "scope": "numerical specialization and restricted power-chain identities; no arithmetic theorem certification",
+    "highMargin": "1/10",
+    "lowMargin": "5/12",
+    "powerChain": [
+      1,
+      2,
+      4,
+      8,
+      16,
+      24,
+      40,
+      80
+    ]
+  },
+  "sha256": {
+    "source-ir.json": "2bd10cdfc4272b772196cc357d01cf8eb7c076c5a56e0d0038f7655614dcc1d8",
+    "compiled/compiled-ir.json": "f5ee3169acf825cc3658de7338aacba03e124e5529710456cd66ce7f0e752d85",
+    "compiled/reduction-certificate.json": "046217f483ff7935f152e7f36bbbbae58abc3e5bfd71828844b4d7e16ea4e481",
+    "compiled/ordinary-polynomial.json": "326a23b5af8064915013411f24af39e4507c41431c6b783d5a6cae488695b93b"
+  }
+}
