@@ -1,0 +1,25 @@
+{
+  "baseline_sha256": "06f98ff070139c3b6c60589c65867ceb4366b023f7960551abd52f85fa67e30c",
+  "owned_lines_inclusive": [
+    16533,
+    17940
+  ],
+  "changes_to_mathematical_claims_or_hypotheses": [],
+  "edits": [
+    {
+      "kind": "stale-comment cleanup",
+      "old": "% Working proof fragment, not integrated into a release.\n",
+      "new": ""
+    },
+    {
+      "kind": "stale-comment cleanup",
+      "old": "% Scope: these are mean-zero minor-arc estimates.  Progression main terms,\n% fixed-field Hecke Siegel--Walfisz, factorization and the final cube/counting\n% argument remain separately proved inputs; no integration is asserted here.\n",
+      "new": ""
+    },
+    {
+      "kind": "explanatory addition; no changed mathematical hypothesis",
+      "old": "% Replacement analytic bridge. It assumes the separately proved Gaussian\n% centered-nilsequence theorem, not any theorem of Frei--Tinkova.\n% Restrict prop:v5-artin-patterns to the fixed Gaussian ray fields used below.\n",
+      "new": "\\begin{corollary}[Fixed-modulus centered nilsequence estimate]\n\\label{cor:ga-fixed-centered-nilsequence}\nFix the Gaussian ray field and a conjugation-invariant union $C$ of ray\nclasses as above. Let $W$ be a fixed multiple of the conductor of\n$K^{\\mathrm{ab}}/\\Q$, and let $b$ be a unit residue modulo $W$.\nFor every $A,C_{\\mathrm{init}}>0$ and fixed dimension and degree bounds,\nuniformly over the nilmanifolds and polynomial sequences in\nProposition~\\ref{prop:gf-factorization} with an\n$(\\log(2N))^{C_{\\mathrm{init}}}$-rational adapted basis,\n\\[\n \\left|\\sum_{n\\leq N}h_{C,b,W}(n)F(g(n)\\Gamma)\\right|\n \\ll_{H,W,A,C_{\\mathrm{init}},m,d}\n N(\\log(2N))^{-A}\\|F\\|_{\\mathrm{Lip}}.\n\\]\nThe constants are uniform in $b$ and in the polynomial orbit. No\nuniformity as $W$ varies is asserted.\n\\end{corollary}\n\\begin{proof}\nWe check the three hypotheses of\nProposition~\\ref{prop:gf-factorization}. The pointwise inequality\n$|h_{C,b,W}|\\leq\\lambda_{b,W}$ gives its first hypothesis with $K_w=1$.\nCorollary~\\ref{cor:gaussian-centered-progressions} gives its second\nhypothesis for every $A_0,C_0$, in fact for every interval progression.\n\nFor the third hypothesis, take $H_0=H$ in\nCorollary~\\ref{cor:ga-centered-primes}. Its character expansion is\n\\eqref{eq:gaussian-ray-fourier}, with the factor $1/2$ and the\nprime-power error supplied by \\eqref{eq:gaussian-ray-prime-factor}\nand the bound following that equation. Its two assumed minor-arc\nestimates are Proposition~\\ref{gi-minor-arc} and\nCorollary~\\ref{gi-ordinary-primes}. Apply that corollary to the fixed\nlinear combination defining $h_{C,b,W}$ in\n\\eqref{eq:gaussian-centered-weight}. It gives \\eqref{eq:gf-ma} with\n$c=c_W$, $C_1=1$ and $K_1=7$ in the regime\n$\\delta\\geq N^{-\\sigma_1}$, $Q\\leq\\delta^{-a}$.\nThe affine-interpolation result initially restricts $\\delta$ to a\nfixed sufficiently small interval. For larger $\\delta$, the bound\n$|h_{C,b,W}|\\ll_W\\log(2N)$ gives \\eqref{eq:gf-ma} directly after\nenlarging its fixed constant. For a dimension-zero quotient the\nmean-zero test function vanishes. For all other dimensions and degrees\nwithin the fixed bounds, take the minimum of the finitely many positive\nexponents $c_W,a,\\sigma_1$ and the maximum of the fixed constants.\nThus the restricted regime \\eqref{eq:gf-ma-regime} holds with fixed\npositive $\\kappa,\\sigma$, uniformly throughout the required class.\n\nProposition~\\ref{prop:gf-factorization} now proves the displayed\nestimate. There are only finitely many unit residues modulo the fixed\n$W$, so their constants can be bounded by a single constant. In\nparticular, division by $N$ and the relabeling $W=V$, $N=L$ give the\nfixed-complexity estimate \\eqref{eq:gaussian-centered-nil-input}.\n\\end{proof}\n\n\n% The analytic bridge below uses the fixed-modulus centered nilsequence\n% estimate just proved for the Gaussian ray fields under consideration.\n"
+    }
+  ]
+}

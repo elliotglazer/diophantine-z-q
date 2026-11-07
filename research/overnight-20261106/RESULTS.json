@@ -1,0 +1,21 @@
+{
+  "upstreamCommit": "f87226569fa7ceeae0c783c3e4d1241ac727733a",
+  "variants": {
+    "precision40_quotients": {
+      "coordinates": 909,
+      "compiledCoordinatesBeforeFreeOmission": 909,
+      "residuals": 866,
+      "activeCoordinates": 909,
+      "ordinaryCoordinateMonomials": 51279,
+      "parameterCoefficientTerms": 51279,
+      "degree": 4,
+      "maxSPower": 0,
+      "integerCoefficients": true,
+      "sIndependentCoefficientGcd": 1,
+      "maximumCoefficientBits": 3247,
+      "ordinaryExportSha256": "326a23b5af8064915013411f24af39e4507c41431c6b783d5a6cae488695b93b",
+      "builderSha256": "4d1ee9f1eb6ed8210561bf78affe13968333dc376733131527f93434d21ce683"
+    }
+  },
+  "experiment": "direct targets (shift one), not the frozen generator variant"
+}

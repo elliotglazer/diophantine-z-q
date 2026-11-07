@@ -1,0 +1,18 @@
+{
+  "authored_register_sha256": "36646fd26f5adcaed33315605e4b1c333c1e60f5c917aeeda63976614823a0f5",
+  "candidate_path": "manuscripts/quartic_v7.tex",
+  "candidate_sha256": "5399d2fb3c3beea388ccdb5719934772f222b49d02482a05ac3abc515321419a",
+  "checks": {
+    "adversarial_tests": 25,
+    "citation_count": 226,
+    "inventory_status": "PASS_DOCUMENT_BINDING",
+    "reference_count": 519,
+    "status": "passed",
+    "unresolved_references": []
+  },
+  "date": "2026-11-06",
+  "mathematical_review": "docs/quartic-962/evidence/gaussian-four-audit-20261106/integration-receipt.json",
+  "reviewer": "root release integrator",
+  "scope": "Current structural bindings and exact title-only change. Independent mathematical reviews are the four Gaussian reports and their integration review, not this release receipt. The requested filename change preserves every manuscript and PDF byte; only current document locators in the authored register change.",
+  "status": "accepted_scoped_inventory_and_evidence_binding"
+}

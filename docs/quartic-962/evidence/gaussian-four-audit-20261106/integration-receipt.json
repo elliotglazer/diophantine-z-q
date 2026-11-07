@@ -1,0 +1,67 @@
+{
+  "baseline_sha256": "06f98ff070139c3b6c60589c65867ceb4366b023f7960551abd52f85fa67e30c",
+  "candidate": {
+    "bytes": 912132,
+    "path": "quartic_962.tex",
+    "sha256": "8ca476687a7ab761f3de4d0c964608a3e7d249a97a6c7647d9057ec5a4638c29"
+  },
+  "component_reports": [
+    {
+      "bytes": 13335,
+      "path": "docs/quartic-962/evidence/gaussian-four-audit-20261106/tail/REPORT.md",
+      "sha256": "e49ddf27a9dfc122bbf6d9e0fee2c61efadb732a5e140445bd5dd28b1fba1306"
+    },
+    {
+      "bytes": 13204,
+      "path": "docs/quartic-962/evidence/gaussian-four-audit-20261106/weights/AUDIT.md",
+      "sha256": "3c2848b4fea1d3e60a37e1cea4d4d065aec8946da1cc33b12c77551909e58c46"
+    },
+    {
+      "bytes": 10759,
+      "path": "docs/quartic-962/evidence/gaussian-four-audit-20261106/transference/AUDIT.md",
+      "sha256": "92c974e691c61b144a2906444bc3ec3e03eba21dbd467db101ff3a00ea9d086f"
+    },
+    {
+      "bytes": 9530,
+      "path": "docs/quartic-962/evidence/gaussian-four-audit-20261106/patterns/audit.txt",
+      "sha256": "a904efb457ad3d8e99fdb150d9b0a33bf765fc29cfe8be2ab04173df8135528b"
+    }
+  ],
+  "date": "2026-11-06",
+  "fragments": {
+    "gaussian-analytic": {
+      "bytes": 86779,
+      "path": "docs/quartic-962/evidence/gaussian-four-audit-20261106/reviewed-gaussian-analytic.tex",
+      "sha256": "feb719ad7ed89ebe89d6ae1e0a891202b52bbfbe4dde3c056bd57b2d934a9193"
+    },
+    "sun-completed": {
+      "bytes": 123226,
+      "path": "docs/quartic-962/evidence/gaussian-four-audit-20261106/reviewed-sun-completed.tex",
+      "sha256": "8f6bb0e86c04fbb2ed5c8f8ab75ad49b2c9ee701a00c28e36bce8e4055a171ce"
+    }
+  },
+  "interface_reviews": [
+    {
+      "bytes": 3937,
+      "path": "docs/quartic-962/evidence/gaussian-four-audit-20261106/patterns/tail-interface-review.txt",
+      "sha256": "ebaa4ba87a0b960e0263420650d7ab733eb2aaca65d46bfdb2035a7262f414b0"
+    },
+    {
+      "bytes": 3909,
+      "path": "docs/quartic-962/evidence/gaussian-four-audit-20261106/transference/INTEGRATION_REVIEW.md",
+      "sha256": "432b49b5bdd8e877112ac49e9483a30dc321a7cafd89e0b787427b79ebd4b801"
+    },
+    {
+      "bytes": 4015,
+      "path": "docs/quartic-962/evidence/gaussian-four-audit-20261106/transference/integration-review.json",
+      "sha256": "a0dc9f4997e9c3aa5bc359592ca80283d52af7b194439990a696f632ca460ab3"
+    }
+  ],
+  "limits": [
+    "Independent AI model reviews, not external human validation or formal proof.",
+    "RC, height theorem and Section 15 applications are outside this review scope.",
+    "BHB and BL accepted manuscripts checked; final typeset editions not compared. DK checked in arXiv v4, not final typesetting.",
+    "No new external theorem is assumed; no finite polynomial data changed."
+  ],
+  "status": "accepted_four_component_revision_and_assembly"
+}

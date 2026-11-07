@@ -38,7 +38,7 @@ class InventoryBindingTests(unittest.TestCase):
         self.temp = tempfile.TemporaryDirectory(prefix='v6-inventory-test-')
         self.addCleanup(self.temp.cleanup)
         self.repo = Path(self.temp.name)
-        self.path = 'quartic_962.tex'
+        self.path = 'manuscripts/quartic_v7.tex'
         self.write(I.OLD_TEX, OLD_BODY + BIB)
         self.write(I.V5_TEX, OLD_BODY + ARITH + '\n\n' + BIB)
         self.raw = (OLD_BODY + ARITH + '\n\n' + NEW_BODY + '\n\n' + BIB).encode()

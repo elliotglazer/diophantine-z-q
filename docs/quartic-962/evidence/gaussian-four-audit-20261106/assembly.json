@@ -1,0 +1,89 @@
+{
+  "baseline_sha256": "06f98ff070139c3b6c60589c65867ceb4366b023f7960551abd52f85fa67e30c",
+  "candidate": {
+    "path": "quartic_962.tex",
+    "sha256": "8ca476687a7ab761f3de4d0c964608a3e7d249a97a6c7647d9057ec5a4638c29",
+    "bytes": 912132
+  },
+  "edits": [
+    {
+      "owner": "tail",
+      "baseline_lines": [
+        16389,
+        16531
+      ],
+      "start_character": 777184,
+      "end_character": 783723,
+      "replacement_sha256": "eb2a791da0bf1d8ea21bef976c186a99a21bd356d3e2eb7c42f303bcb322f340"
+    },
+    {
+      "owner": "weights",
+      "baseline_lines": [
+        16533,
+        17940
+      ],
+      "start_character": 783724,
+      "end_character": 847779,
+      "replacement_sha256": "1a7e1c5482b9e8ac749355f7689b54505aecda42f5fc5366bdde4c24b2403235"
+    },
+    {
+      "owner": "transference",
+      "baseline_lines": [
+        17941,
+        18279
+      ],
+      "start_character": 847779,
+      "end_character": 866029,
+      "replacement_sha256": "9ab9822f36f14d7bd88ab6db19c151352fd792d676981b6d988c44d5c2415084"
+    },
+    {
+      "owner": "patterns",
+      "baseline_lines": [
+        18387,
+        18392
+      ],
+      "start_character": 870545,
+      "end_character": 870963,
+      "replacement_sha256": "ae8c279525e00aa2d6933f58cd8b65d3668c00a2a4bbf7401e610238dc1072af"
+    },
+    {
+      "owner": "patterns",
+      "baseline_lines": [
+        18517,
+        18526
+      ],
+      "start_character": 876701,
+      "end_character": 877181,
+      "replacement_sha256": "25e5b9bdcf562439ade80638d15fdf0309f842017b9b10e66dbd5878b29f2eb9"
+    },
+    {
+      "owner": "root:explicit-final-cutoff",
+      "baseline_lines": [
+        null,
+        null
+      ],
+      "start_character": 879047,
+      "end_character": 879137,
+      "replacement_sha256": "d5f477f2b8761bced51eeca3890ff36bc19f9427786c85d1d46b2fb6c8426146"
+    },
+    {
+      "owner": "patterns",
+      "baseline_lines": [
+        18686,
+        18686
+      ],
+      "start_character": 884283,
+      "end_character": 884328,
+      "replacement_sha256": "165c7a6180064c61a4862f932c64d5bf79ff586474a6aa087ef673b006881c17"
+    }
+  ],
+  "checks": [
+    "exact baseline hash",
+    "nonoverlapping edits",
+    "all prior labels retained",
+    "only one new corollary label",
+    "no duplicate labels",
+    "all bytes outside explicit edit ranges unchanged"
+  ],
+  "scope": "Gaussian appendix and Tao-Ziegler bibliography only; no change to polynomial constructions or final theorem statement"
+}

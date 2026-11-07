@@ -20,7 +20,7 @@ def relative(name):
     return name
 
 def validate_release(release):
-    if release.get('version') == 6:
+    if release.get('version') in (6, 7):
         return validate_release_v6(release)
     if release.get('version') == 5:
         return validate_release_v5(release)
@@ -100,7 +100,7 @@ def compare_reproduced_certificate(frozen,regenerated,expected_regenerated_sha):
 
 def validate_current(read, names, release, receipt_path):
     """read takes a repository-relative name; names is the full Git inventory."""
-    if release.get('version') == 6:
+    if release.get('version') in (6, 7):
         return validate_current_v6(read, names, release, receipt_path)
     if release.get('version') == 5:
         return validate_current_v5(read, names, release, receipt_path)
@@ -176,12 +176,12 @@ def generated_start(plan,included):
     release=validate_release(plan['release']);baseline=plan['baseline']
     baseline_path='baseline/'+baseline['filename']
     current_note = ('The selected construction is the 962-coordinate quartic. Its complete source, certificates, optimization history, lower-bound proof, analytic replacement proof and independent reviews are included. Earlier constructions remain available at their historical paths.'
-                    if release['version'] == 6 else
+                    if release['version'] in (6, 7) else
                     'The selected construction is the independently reconstructed 1,272-coordinate quartic. Its complete source, certificates, reviews and manifest are included. The Version 4 manuscript and package and the original construction remain available at their historical paths.'
                     if release['version'] == 5 else
                     'The selected three-mode, target-two, tangent, shared-square and first-norm source defines Version 4. Optional scalar/J0 fusion and unadopted alternatives remain historical research.')
-    replay_path = ('README.md' if release['version'] in (5, 6) else 'reproducibility/README.md')
-    replay_note = ('For Version 6 run `python scripts/check_quartic962.py --out NEW_DIRECTORY` from the extracted `current/` directory. Keep the output outside the extracted snapshot. The wrapper requires Python 3.10+ and Node.js 18+.\n' if release['version']==6 else '')
+    replay_path = ('README.md' if release['version'] in (5, 6, 7) else 'reproducibility/README.md')
+    replay_note = (f'For Version {release["version"]} run `python scripts/check_quartic962.py --out NEW_DIRECTORY` from the extracted `current/` directory. Keep the output outside the extracted snapshot. The wrapper requires Python 3.10+ and Node.js 18+.\n' if release['version'] in (6, 7) else '')
     return f'''# Version {release['version']} public research handoff
 
 Release date: {release['date']}.
@@ -367,6 +367,10 @@ def validate_reproduction_v5(receipt, manifest_hash, polynomial_hash):
 
 
 def baseline_for_release(release):
+    if release.get('version') == 7:
+        return {'filename': 'z-in-q-version6-full-handoff.zip', 'bytes': 440334958,
+                'sha256': '93b53944ea93de08dc653beb70202797c1cbbdf19602ae583940bbf137dd43bc',
+                'url': 'https://github.com/elliotglazer/diophantine-z-q/releases/download/quartic-962-version-6/z-in-q-version6-full-handoff.zip'}
     if release.get('version') == 6:
         return {'filename': 'z-in-q-version5-full-handoff.zip', 'bytes': 382435413,
                 'sha256': '8bca6f77f4721140c3d9db0d518595472a463a58f04f3efcf14173a9cf0ff236',
@@ -391,10 +395,14 @@ V6_PACKAGE_REQUIRED = {'README.md', 'MANIFEST.json', 'reproduce.py', 'build_sour
 
 
 def validate_release_v6(release):
+    version=release.get('version')
+    if type(version) is not int or version not in (6,7):
+        raise ValueError('Expected Version 6 or Version 7 for the 962-variable package')
     if release.get('format') != 'quartic-handoff-release/v3' or release.get('state') != 'READY':
         raise ValueError('Version 6 is not a frozen READY release descriptor')
-    required = {'version': 6, 'release_tag': 'quartic-962-version-6', 'manuscript': 'quartic_962.tex',
-                'pdf': 'quartic_962.pdf', 'package': 'quartics/quartic-962',
+    document = 'manuscripts/quartic_v7' if version == 7 else 'quartic_962'
+    required = {'version': version, 'release_tag': f'quartic-962-version-{version}', 'manuscript': document+'.tex',
+                'pdf': document+'.pdf', 'package': 'quartics/quartic-962',
                 'inventory': 'docs/quartic-962/README.md', 'package_manifest': 'MANIFEST.json',
                 'polynomial': 'polynomial.json'}
     if any(release.get(k) != v for k, v in required.items()):
@@ -402,8 +410,8 @@ def validate_release_v6(release):
     date.fromisoformat(release['date'])
     if release.get('expected') != V6_METRICS:
         raise ValueError('Wrong Version 6 finite counts')
-    if release.get('assets') != {'full': 'z-in-q-version6-full-handoff.zip',
-                                  'current': 'z-in-q-version6-current-handoff.zip'}:
+    if release.get('assets') != {'full': f'z-in-q-version{version}-full-handoff.zip',
+                                  'current': f'z-in-q-version{version}-current-handoff.zip'}:
         raise ValueError('Wrong Version 6 asset names')
     if not isinstance(release.get('source_contract'), dict) or not release['source_contract']:
         raise ValueError('Missing final Version 6 source contract')
@@ -424,6 +432,12 @@ def validate_release_v6(release):
     if set(release.get('review_files', {})) != {'analytic-proof', 'lower-bound', 'optimization', 'inventory'}:
         raise ValueError('Incomplete Version 6 review inventory')
     for path in release['review_files'].values(): relative(path)
+    if version == 7:
+        if release.get('revision_manifest') != 'handoff/V7_AUDIT_MANIFEST.json':
+            raise ValueError('Missing Version 7 audit manifest')
+        if set(release.get('revision_audits',{})) != {'tail','weights','transference','patterns'}:
+            raise ValueError('Missing one of the four Version 7 audits')
+        for path in release['revision_audits'].values(): relative(path)
     for key in ('snapshot_pins', 'preserved_pins'):
         mapping=release.get(key)
         if not isinstance(mapping, dict) or not mapping:
@@ -478,7 +492,7 @@ def validate_current_v6(read, names, release, receipt_path):
             raw=read(path)
             if expected != {'bytes':len(raw),'sha256':hashlib.sha256(raw).hexdigest()}:
                 raise ValueError('Version 6 current or preserved file changed: '+path)
-    if not read(release['pdf']).startswith(b'%PDF') or b'Version 6' not in read(release['manuscript']):
+    if not read(release['pdf']).startswith(b'%PDF') or f'Version {release["version"]}'.encode() not in read(release['manuscript']):
         raise ValueError('Wrong Version 6 manuscript or PDF')
     manuscript_hash=pins[release['manuscript']]['sha256']
     inventory_hash=pins[release['inventory_input']]['sha256']
@@ -534,4 +548,17 @@ def validate_current_v6(read, names, release, receipt_path):
             path=relative(entry['repositoryPath'])
             if pins.get(path) != {k:entry[k] for k in ('bytes','sha256')}:
                 raise ValueError('Research entry is not pinned in the current snapshot: '+path)
+    if release['version'] == 7:
+        revision_name=release['revision_manifest']
+        if revision_name not in pins:
+            raise ValueError('Version 7 audit manifest is not pinned')
+        revision=json.loads(read(revision_name))
+        if revision.get('schema') != 'quartic-v7-audit-selection-v1':
+            raise ValueError('Wrong Version 7 audit selection schema')
+        selected=revision.get('files',{})
+        expected={n for n in names if n.startswith(('docs/quartic-962/evidence/gaussian-four-audit-20261106/','research/version7/'))}
+        if set(selected) != expected or not set(release['revision_audits'].values()) <= expected:
+            raise ValueError('Version 7 audit selection is incomplete')
+        if any(pins.get(path) != value for path,value in selected.items()):
+            raise ValueError('Version 7 audit files disagree with pinned bytes')
     return validate_reproduction_v6(json.loads(read(receipt_path)),hashlib.sha256(manifest_raw).hexdigest(),polynomial_hash)

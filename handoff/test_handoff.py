@@ -14,6 +14,7 @@ from verify_handoff import safe_name, verify
 from test_release import run_tests as release_tests
 from test_release_v5 import run_tests as release_v5_tests
 from test_release_v6 import run_tests as release_v6_tests
+from test_release_v7 import run_tests as release_v7_tests
 
 
 def reject(label,function,message):
@@ -82,6 +83,7 @@ def main():
     tests.extend(release_tests())
     tests.extend(release_v5_tests())
     tests.extend(release_v6_tests())
+    tests.extend(release_v7_tests())
     print(json.dumps(dict(status='PASS',small_negative_cases=len(tests),cases=tests,
                          runtime_dialogue_pattern_unchanged=True,self_sources_scan_passed=self_sources),indent=2))
 

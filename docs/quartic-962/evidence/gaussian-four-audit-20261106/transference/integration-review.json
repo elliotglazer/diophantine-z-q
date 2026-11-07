@@ -1,0 +1,101 @@
+{
+  "status": "accepted_assembly_and_interfaces",
+  "scope": "Assembly and handoff consistency only; not a second full proof audit.",
+  "baseline_sha256": "06f98ff070139c3b6c60589c65867ceb4366b023f7960551abd52f85fa67e30c",
+  "candidate": {
+    "path": "quartic_962.tex",
+    "sha256": "8ca476687a7ab761f3de4d0c964608a3e7d249a97a6c7647d9057ec5a4638c29",
+    "bytes": 912132
+  },
+  "reviewed_files": {
+    "integrate.py": "b92790a6bcaa3ccd64d0e0e54904e091c0068e0c270eaf169b4e8023bdf2d72a",
+    "changes.diff": "4453f98bdc56deabd86264f1c546bcacdd1e60257a25fb40b3d820421fa2f178",
+    "assembly.json": "14edaac80c69542d77fb8736edb451546394ed5d56017504b03f4602d63cfd29",
+    "patterns/edit-specs.json": "466c846867643801e361a16bf09fcf0cb52f5eec006760358f6e3cbef16fdc20"
+  },
+  "fragment_checks": [
+    {
+      "path": "tail/replacement-tail.tex",
+      "baseline_inclusive_lines": [
+        16389,
+        16531
+      ],
+      "sha256": "eb2a791da0bf1d8ea21bef976c186a99a21bd356d3e2eb7c42f303bcb322f340",
+      "normalized_text_sha256": "eb2a791da0bf1d8ea21bef976c186a99a21bd356d3e2eb7c42f303bcb322f340",
+      "occurrences_in_candidate": 1
+    },
+    {
+      "path": "weights/weights_fragment.tex",
+      "baseline_inclusive_lines": [
+        16533,
+        17940
+      ],
+      "sha256": "709e70de948f1aee29380586aefc415167bb852a1b13829f7d827979b9f0860a",
+      "normalized_text_sha256": "1a7e1c5482b9e8ac749355f7689b54505aecda42f5fc5366bdde4c24b2403235",
+      "occurrences_in_candidate": 1
+    },
+    {
+      "path": "transference/replacement.tex",
+      "baseline_inclusive_lines": [
+        17941,
+        18279
+      ],
+      "sha256": "9ab9822f36f14d7bd88ab6db19c151352fd792d676981b6d988c44d5c2415084",
+      "normalized_text_sha256": "9ab9822f36f14d7bd88ab6db19c151352fd792d676981b6d988c44d5c2415084",
+      "occurrences_in_candidate": 1
+    },
+    {
+      "path": "patterns/repair-dense-model.tex",
+      "baseline_inclusive_lines": [
+        18387,
+        18392
+      ],
+      "sha256": "ae8c279525e00aa2d6933f58cd8b65d3668c00a2a4bbf7401e610238dc1072af",
+      "normalized_text_sha256": "ae8c279525e00aa2d6933f58cd8b65d3668c00a2a4bbf7401e610238dc1072af",
+      "occurrences_in_candidate": 1
+    },
+    {
+      "path": "patterns/repair-ray-fixed-field.tex",
+      "baseline_inclusive_lines": [
+        18517,
+        18526
+      ],
+      "sha256": "25e5b9bdcf562439ade80638d15fdf0309f842017b9b10e66dbd5878b29f2eb9",
+      "normalized_text_sha256": "25e5b9bdcf562439ade80638d15fdf0309f842017b9b10e66dbd5878b29f2eb9",
+      "occurrences_in_candidate": 1
+    }
+  ],
+  "independent_reconstruction_matches_exact_candidate_bytes": true,
+  "diff_matches_independent_unified_diff": true,
+  "changes_outside_authorized_intervals": false,
+  "root_addition": "L >= max(L_1,L_*), before fixing K_L and before any asymptotic limit",
+  "all_prior_labels_preserved": true,
+  "only_new_label": "cor:ga-fixed-centered-nilsequence",
+  "duplicate_labels": [],
+  "new_unresolved_references": [],
+  "unchanged_target_declarations": [
+    {
+      "label": "thm:v5-simultaneous-primes",
+      "sha256": "dc9729517a08d6e4109c6f3123bcb9cdfb0da647490d77086cd8126adfabcac9"
+    },
+    {
+      "label": "prop:v5-artin-patterns",
+      "sha256": "8288d85103c77d611fcf1458eec29185ee2c4682610d4eec0065a2f4152043eb"
+    }
+  ],
+  "interfaces": {
+    "tail_to_final_cutoff": "accepted",
+    "weights_to_centered_nilsequence_input": "accepted",
+    "linear_to_local_cube": "unchanged and accepted",
+    "transference_to_dense_model": "accepted",
+    "ray_quotient_to_density": "same stated quotient and density inputs preserved",
+    "source_version_qualifications": "preserved"
+  },
+  "candidate_modified_by_review": false,
+  "findings": [],
+  "limitations": [
+    "No new full proof audit",
+    "No full-manuscript TeX compilation in this integration review",
+    "DK final typeset comparison remains unverified as stated in candidate"
+  ]
+}

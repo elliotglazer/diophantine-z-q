@@ -1,4 +1,4 @@
-# Version 6: the 962-variable quartic and theorem inventory
+# Version 7: the 962-variable quartic and theorem inventory
 
 The manuscript retains three polynomials: the original large construction, the fully expanded 4,973-variable Version 4 quartic, and the 962-variable quartic. The last has 961 witnesses in addition to its input, 919 quadratic residuals, degree four, and 55,409 nonzero monomials. Its primitive content is one and its largest coefficient magnitude is exactly `64*3^(2^28)`.
 
@@ -18,15 +18,17 @@ The package preserves historical metadata, including earlier pending-review stri
 
 ## Source-application inventory
 
-The inventory identifies exact theorem versions, application hypotheses, maps, conventions, translations, source qualifications, and independent review evidence. It preserves the older application ledgers and binds changed or new text to its own reviewed fragment. Frei–Tinková is methodological provenance in Version 6, not an assumed theorem. The Gaussian replacement uses Mitsui, Green–Tao and the listed ordinary-prime transference inputs.
+The inventory identifies exact theorem versions, application hypotheses, maps, conventions, translations, source qualifications, and independent review evidence. It preserves the older application ledgers and binds changed or new text to its own reviewed fragment. Frei–Tinková is methodological provenance in Version 7, not an assumed theorem. The Gaussian replacement uses Mitsui, Green–Tao and the listed ordinary-prime transference inputs.
 
 ```sh
-python -E -B docs/quartic-962/inventory.py validate --repo . --manuscript quartic_962.tex --expected-input-sha256 b7a42a50809c85ef14a9380a15576ef0170bad571ef713c329e31f594f8c12cf
+python -E -B docs/quartic-962/inventory.py validate --repo . --manuscript manuscripts/quartic_v7.tex --expected-input-sha256 36646fd26f5adcaed33315605e4b1c333c1e60f5c917aeeda63976614823a0f5
 python -E -B docs/quartic-962/test_inventory.py
 ```
 
 The degree-four obstruction is proved in the manuscript from the agentic notes. Its application of Kollár uses the explicitly identified author version of a published theorem; the journal metadata was verified, but the final typeset statement was not compared. The Dodos–Kanellopoulos and inherited source-version qualifications are retained as well.
 
-The register covers 125 external application families, eight inherited source ledgers, 150 result environments, 226 citations and 504 references. Start with [coverage.json](coverage.json), then [theorem-applications.json](theorem-applications.json), [internal-results.json](internal-results.json) and [dependency-graph.json](dependency-graph.json). The authored [new-applications.json](new-applications.json) supplies the source and convention records. Twenty-five adversarial tests check document binding. The [independent review](../quartic-962-validation/inventory-review.json) records its mathematical coverage and provenance checks. Historical records retain their original reviewer wording; they are not evidence of independent human peer review.
+The register covers 125 external application families, eight inherited source ledgers, 151 result environments, 226 citations and 519 references. Start with [coverage.json](coverage.json), then [theorem-applications.json](theorem-applications.json), [internal-results.json](internal-results.json) and [dependency-graph.json](dependency-graph.json). The authored [new-applications.json](new-applications.json) supplies the source and convention records. Twenty-five adversarial tests check document binding. The [independent review](../quartic-962-validation/inventory-review.json) records its mathematical coverage and provenance checks. Historical records retain their original reviewer wording; they are not evidence of independent human peer review.
 
 `PASS_DOCUMENT_BINDING` certifies the documented identity and coverage checks. It is not a machine proof of the mathematics or a claim of independent human peer review. See [building instructions](../building.md), [research history](../../research/version6/README.md), and the [handoff guide](../../handoff/README.md).
+
+The [6 November Gaussian audit](gaussian-audit-20261106.md) records four further independent component reviews, the integrated repairs, and their limits.

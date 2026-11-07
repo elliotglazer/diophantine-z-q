@@ -1,0 +1,12 @@
+{
+  "pages": 252,
+  "bytes": 1462053,
+  "sha256": "3f0a5d080849577b6a072edd280f8554f3a38d17403c2f051e1b26ea39a1b042",
+  "tex_errors": 0,
+  "unresolved_references": 0,
+  "status": "PASS",
+  "engine": "Tectonic 0.17.0",
+  "bundle_sha256": "6ffe055852f8faf66c0acbe1a7fb27f87b869a90bad1204f3bf4d9683f597c7c",
+  "source_sha256": "7c1c16ec4affe6f5ca39eff25434686d15ae5ebffdd4142db37fcf363d0c3feb",
+  "visual_review": "First page rendered and inspected; title and complete abstract fit without clipping or overlap."
+}

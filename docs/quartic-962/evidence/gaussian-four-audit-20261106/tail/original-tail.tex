@@ -1,0 +1,143 @@
+\subsection{The large-prime tail}\label{subsec:v5-large-sieve}
+
+We use two exact inputs from Browning--Heath-Brown~\cite{v5bhb}.
+Their Lemma~2.1 says that coprime polynomials in $\mathbb Z[X_1,\ldots,X_m]$
+of bounded degree and coefficient height at most $H$ have at most
+\begin{equation}\label{eq:v5-box-sieve}
+ O\left(\frac{V\log(VH)}{L\log L}
+           +\frac{V\log(VH)}{B_{\min}}\right)
+\end{equation}
+integer points in a box of side parameters $B_i\geq2$ at which a prime
+greater than $L\geq2$ divides every polynomial; $V=\prod B_i$.
+``Coprime'' here excludes a common constant prime factor as well as a
+common nonconstant factor. Their Lemma~4.1 covers the zeros modulo a
+squarefree $q$ of a rank-$m$ quadratic form by at most
+$(3m)^{\omega(q)}q^{m-2}$ lattices of determinant $q^{m-1}$.
+The number with largest Euclidean successive minimum exceeding $T$ is
+\begin{equation}\label{eq:v5-lattice-tail}
+ O_m((3m)^{\omega(q)}q^{2m-3}T^{-m}).
+\end{equation}
+In this statement every prime dividing $q$ must be odd and preserve the
+rank of the form. We include the word ``odd'' explicitly. Rank preservation
+alone is not the good-prime convention of the cited lemma.
+
+\begin{lemma}[Large common divisors on the quadric]\label{lem:v5-large-sieve}
+For fixed $\kappa\ne0$ and $\epsilon,\eta\in\{1,-1\}$, the number of
+integral vectors of size $O(B)$ satisfying $Q_\kappa=0$ and
+$\ell\mid G_\epsilon,H_\eta$ for some prime $\ell>L$ is
+\begin{equation}\label{eq:v5-large-sieve}
+ O_{\kappa,\alpha}\left(
+    \frac{B^{3+\alpha}}{L\log L}+B^{11/4+\alpha}\right)
+ \qquad(\alpha>0).
+\end{equation}
+\end{lemma}
+\begin{proof}
+Sign changes of $a,c$ reduce to $\epsilon=\eta=1$.
+Put $x_0=a+c$, $x_1=a-c$, $x=b-d$, $z=b+d$, and
+$R=\kappa w^2-xz$. Then $x_0x_1=R$.
+Parity restrictions can be discarded in an upper bound.
+
+First suppose that $\ell\mid x_0,x_1$. Then $\ell^2\mid R$.
+For each fixed integer $v=O(B^2)$, the equation $R=v$ has
+$O_{\kappa,\alpha}(B^{1+\alpha})$ triples: for each $w$, count the
+factorizations $xz=\kappa w^2-v$ by the divisor bound; the zero right-hand
+side occurs for at most two $w$ and contributes $O(B)$ each.
+If $R\ne0$, it has $O_\alpha(B^\alpha)$ factorizations $x_0x_1=R$.
+Summing over $R=h\ell^2\ne0$ gives
+$O(B^{3+2\alpha}/(L\log L))$.
+The case $R=0$, including $x_0x_1=0$, contributes $O(B^{2+\alpha})$.
+
+In the remaining cases choose $t=x_1$ or $t=x_0$ such that $\ell\nmid2t$.
+Take $t=x_1$ first. Multiplication by the invertible denominator $4t^2$
+turns the two norm congruences into divisibility of
+\[
+ P=\kappa w^2+2t,\qquad
+ K=(\kappa w^2-xz+t^2+2t)^2+t^2(x+z)^2.
+\]
+The identity
+\[
+ K-(t^2+x^2)(t^2+z^2)=P(P+2t^2-2xz)
+\]
+shows that it suffices to sieve the coprime pair
+$P,(t^2+x^2)(t^2+z^2)$. They have no common nonconstant factor over
+$\mathbb Q$, because the first depends nontrivially only on $w$, whereas
+the second is independent of $w$. Their contents have no common prime,
+since the second has coefficient $1$ on $x^2z^2$.
+For $t=x_0$ the pair is
+\[
+ P'=\kappa(t+2)w^2-2xz,\qquad K.
+\]
+If $t\ne-2$, $P'$ is an irreducible ternary quadratic form of rank three
+and $K$ has nonzero constant term $t^2(t+2)^2$; homogeneity rules out
+divisibility. If $t=-2$, neither $x$ nor $z$ divides $K$.
+The coefficient $-2$ of $xz$ excludes a common odd content prime.
+
+In either chart, $t\mid R$. Put
+\[
+ S_R=\{p:p\mid2\kappa\},\qquad
+ q=\prod_{\substack{p\mid t\ p\notin S_R}}p.
+\]
+The form $R$ has rank three at every prime in this product, and those primes
+are odd. For a fixed $q$, the number of eligible $t=O(B)$ is
+$O_{\kappa,\alpha}(B^\alpha)$ after an arbitrarily small adjustment of
+$\alpha$. One way to see this is to majorize the count of integers
+supported on $S_R\cup\{p:p\mid q\}$ by
+$B^\alpha\prod_{p\in S_R\ \text{or}\ p\mid q}(1-p^{-\alpha})^{-1}$,
+and absorb its $q^{o(1)}$ factor.
+
+Apply \eqref{eq:v5-lattice-tail} with $m=3$ to $q\mid R$.
+Each covering lattice contains $q\mathbb Z^3$, so all its successive minima
+are $O(q)=O(B)$. It therefore has $O(B^3/q^2)$ points in the box.
+The lattices with largest minimum greater than $T$ contribute, after the
+sums over $q$ and $t$,
+\[
+ O_{\kappa,\alpha}(B^{5+2\alpha}T^{-3}).
+\]
+For the other lattices choose a basis with lengths comparable to the
+successive minima. The resulting rectangular box has volume $O(B^3/q^2)$
+and minimum side parameter $\gg B/T$.
+The substitution into the polynomial pair is invertible over $\mathbb Q$.
+For $\ell\nmid2t$ its determinant, of absolute value $q^2$, is invertible
+modulo $\ell$ too. Thus no new common content prime outside $2t$ appears.
+Remove common content supported on $2t$, which cannot affect the primes
+being counted. Coefficient heights are powers of $B$ with fixed exponents.
+Formula \eqref{eq:v5-box-sieve} bounds this lattice's contribution by
+\[
+ O\left(\frac{B^3\log B}{q^2L\log L}
+                 +\frac{B^2T\log B}{q^2}\right).
+\]
+There are at most $9^{\omega(q)}q$ lattices. Summation gives
+$O(B^{3+3\alpha}/(L\log L)+B^{2+3\alpha}T)$.
+Choose $T=B^{3/4}$ and rename the small exponent to obtain
+\eqref{eq:v5-large-sieve}.
+\end{proof}
+
+\begin{proposition}[Weighted obstruction tail]\label{prop:v5-obstruction-tail}
+For fixed distinct $c_j$ there are $\tau_0,C>0$ such that, for every fixed
+$0<\tau\leq\tau_0$, the logarithmically weighted number of pairs
+\[
+ N/2\leq u\leq N,\qquad 1\leq w\leq\tau\sqrt N,
+ \qquad p_j=u+c_jw^2\text{ all prime},
+\]
+having any of the odd common divisors forbidden in
+Theorem~\ref{thm:v5-simultaneous-primes} greater than $L$, is at most
+\begin{equation}\label{eq:v5-obstruction-tail}
+ \frac{C\tau N^{3/2}}{L\log L}
+       +O_\tau(N^{3/2-1/800}).
+\end{equation}
+The weight is $\prod_j\log p_j$, and the bound allows every Gaussian
+generator, so it also holds for any prescribed choice of generators.
+\end{proposition}
+\begin{proof}
+Take $B=\sqrt N$ and combine the preceding bounds at $L_0=B^{1/100}$.
+The medium bound loses at most $(\log B)^k$ on inserting the weight.
+The large bound with sufficiently small $\alpha$ is
+$O(B^{3-1/200})$ after the logarithmic weight is inserted.
+At one position use the polynomial pair $a,b^2+1$ in three variables
+in \eqref{eq:v5-box-sieve}.
+There are only finitely many pairs of positions and signs, and a split
+rational prime has eight Gaussian generators. These factors are absorbed
+in $C$. Every vector arising from prime norm is primitive, since a common
+integer divisor greater than one would have its square divide that prime.
+Weakening the power saving to $B^{3-1/400}$ gives the displayed estimate.
+\end{proof}

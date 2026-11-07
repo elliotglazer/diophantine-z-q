@@ -17,6 +17,16 @@ Every ordinary-coefficient variant in the table has maximum coefficient bit leng
 
 The new result saves 247 variables relative to our 1,180-variable construction. Most of that improvement comes from adopting Version 6's point chart, shared polynomial circuits, scaled pole witnesses and finite-correction chain. Those changes belong to the upstream authors; this package composes them with our arithmetic refinements and the new quotient-weight circuit below. No minimality claim is made.
 
+## Current upstream and next candidate
+
+Upstream Version 8 at `5856286a57fba19574a40704571ee70e79738281` is integrated.
+Its Version 7 Gaussian repairs apply to the completeness dependency; the finite
+circuit is unchanged. Historical source hashes are preserved at their relocated
+paths. The separate [909-variable direct-target candidate](../overnight-20261106/DIRECT_TARGETS.md)
+has passed algebraic replay but is not substituted for this frozen package.
+See the [intuitive proof architecture](../overnight-20261106/INTUITIVE_PROOF.md)
+and [continuation record](../overnight-20261106/CONTINUATION.md).
+
 ## What is inherited, and what changes
 
 `INPUTS.json` pins the actual builder, compiler, checker, manuscript and proof dependencies. Version 6's `quartics/quartic-962/PROOF.md` supplies projection-preserving witness maps from its optimized source to Version 5. These maps preserve the named points and detector quantities needed here.

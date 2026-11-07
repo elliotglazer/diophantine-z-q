@@ -1,0 +1,31 @@
+[
+  {
+    "citation_key": "Mitsui1956",
+    "path": "work\\frei-tinkova-removal-001\\published-input-audit\\mitsui1956.pdf",
+    "sha256": "b71fbd5ae9443991479a73a4e7bde68165b0c0e90b290cd0bd94fd9da416f963",
+    "printed_pages_checked": [
+      "2-3",
+      "11-12"
+    ]
+  },
+  {
+    "citation_key": "GTOrbits2012",
+    "path": "work\\quartic-version5-release\\sun-proof\\sources\\GT-orbits-published.pdf",
+    "sha256": "8c7ea5eced84dc5da97508f4eda39fa84c958d3e659a797ab402645c1c207c8f",
+    "printed_pages_checked": [
+      "476",
+      "480",
+      "490",
+      "501-502",
+      "Appendix A"
+    ]
+  },
+  {
+    "citation_key": "moebius",
+    "path": "work\\quartic-version5-release\\sun-proof\\sources\\GT-mobius-published.pdf",
+    "sha256": "5259dbc9ee73df46edd765ca27c8b3c0ec466f6b78abafa5f54237b11d44a314",
+    "printed_pages_checked": [
+      "545-547"
+    ]
+  }
+]

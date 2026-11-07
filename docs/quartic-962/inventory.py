@@ -43,6 +43,12 @@ def encoded(data):
 
 
 def read(repo, path):
+    # Historical acceptance records retain their original logical paths.
+    # File relocation does not change any accepted manuscript byte or hash.
+    if path in {'quartic_12504.tex', 'quartic_9625.tex', 'quartic_4973.tex', 'quartic_1272.tex'} and not (repo / path).exists():
+        path = 'manuscripts/archive/' + path
+    if path == 'manuscripts/quartic_v7.tex' and not (repo / path).exists():
+        path = 'manuscripts/archive/quartic_v7.tex'
     target = (repo / path).resolve()
     fail(target.is_relative_to(repo.resolve()), "Path escapes repository: " + path)
     return target.read_bytes()
@@ -641,7 +647,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("command", choices=["build", "validate"])
     parser.add_argument("--repo", type=Path, default=DEFAULT_REPO)
-    parser.add_argument("--manuscript", default="quartic_962.tex")
+    parser.add_argument("--manuscript", default="manuscripts/quartic_v7.tex")
     parser.add_argument("--allow-review-items", action="store_true")
     parser.add_argument("--expected-input-sha256")
     args = parser.parse_args()

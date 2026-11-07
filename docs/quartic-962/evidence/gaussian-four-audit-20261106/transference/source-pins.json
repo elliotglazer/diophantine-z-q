@@ -1,0 +1,63 @@
+[
+  {
+    "id": "GT2010",
+    "title": "Linear equations in primes",
+    "version": "Published Annals PDF, also read remotely during this audit",
+    "url": "https://annals.math.princeton.edu/wp-content/uploads/annals-v171-n3-p08-p.pdf",
+    "local": "work/astra-final-height-producers-001/primary/green-tao-linear.pdf",
+    "locators": [
+      "Lemma 4.4 and normal-form reduction, pp.1773-1775",
+      "Definitions 6.1-6.3 and Proposition 6.4, pp.1779-1781",
+      "Proposition 7.1, pp.1781-1782",
+      "Appendix D construction, pp.1839-1842"
+    ],
+    "qualification": "Only unconditional ordinary sieve and functional results are used.",
+    "sha256": "ec126f9c9e189cc0308b83fb4f9f93c29a47d11ad875391aff4ce4c42aef1001"
+  },
+  {
+    "id": "DK2022",
+    "title": "Uniformity norms, their weaker versions, and applications",
+    "version": "arXiv:1610.00487v4, 9 June 2022",
+    "url": "https://arxiv.org/pdf/1610.00487v4",
+    "doi": "https://doi.org/10.4064/aa210728-27-2",
+    "local": "work/quartic-version5-release/sun-proof/sources/DK-v4.pdf",
+    "locators": [
+      "Definition (5.4), p.12",
+      "Theorem 5.1 and (5.5)-(5.6), pp.12-13"
+    ],
+    "qualification": "Publication metadata is known. The final typeset statement has NOT been compared. Official DOI retrieval failed in this audit; the exact checked content is v4.",
+    "sha256": "1d71ecfcb7a1970ce3d7a10ac426f8c94e9d1d6a88886cb378ca19a099963508"
+  },
+  {
+    "id": "TZ2018",
+    "title": "Polynomial patterns in the primes",
+    "version": "Published Forum of Mathematics Pi 6 (2018), e1, 60 pages",
+    "url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/B46C46EEC613F34152B7904E83EA0E3F/S2050508617000038a.pdf/polynomial-patterns-in-the-primes.pdf",
+    "doi": "https://doi.org/10.1017/fmp.2017.3",
+    "local": "work/quartic-version5-release/sun-proof/sources/TZ-published.pdf",
+    "locators": [
+      "Theorem 9, p.21",
+      "Parameter hierarchy, pp.27-28",
+      "Theorem 11, p.28",
+      "Majorant (36)-(38), p.29",
+      "Corollary 3, pp.38-39",
+      "Proposition 6 and bounded-model scaling, pp.39-40",
+      "Theorem 13, p.41",
+      "Theorem 15, pp.57-58"
+    ],
+    "qualification": "Read cached publisher PDF text. Live publisher PDF request returned HTTP 429. Numbering is published, not arXiv v1.",
+    "sha256": "ba1645db9857dd621e8ea6a280927c1e4b7cef5f6df04a4f19e7ac7782220f43"
+  },
+  {
+    "id": "Bienvenu2017",
+    "title": "A higher-dimensional Siegel-Walfisz theorem",
+    "version": "Published Acta Arithmetica 179.1 (2017), 79-100",
+    "url": "https://doi.org/10.4064/aa8600-10-2016",
+    "local": "work/quartic-version5-release/sun-proof/sources/Bienvenu-published.pdf",
+    "locators": [
+      "Theorem 1.1, pp.79-80"
+    ],
+    "qualification": "Only fixed-coefficient theorem with bounded normalized constant terms is needed; Theorem 1.3 is not used.",
+    "sha256": "9634fad788ff65298c361d0d0b596eb89fc097bda1eaa2031ee9ea13cd4c6130"
+  }
+]

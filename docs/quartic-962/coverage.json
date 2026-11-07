@@ -9,13 +9,13 @@
   "external_proof_subaudits": [],
   "external_proofs_independently_closed": false,
   "inherited_source_ledgers": 8,
-  "inherited_v5_applications": 8,
+  "inherited_v5_applications": 5,
   "interfaces_missing_labels": [],
-  "internal_results": 150,
+  "internal_results": 151,
   "manuscript": {
-    "bytes": 903386,
-    "path": "quartic_962.tex",
-    "sha256": "06f98ff070139c3b6c60589c65867ceb4366b023f7960551abd52f85fa67e30c"
+    "bytes": 912132,
+    "path": "manuscripts/quartic_v7.tex",
+    "sha256": "5399d2fb3c3beea388ccdb5719934772f222b49d02482a05ac3abc515321419a"
   },
   "new_applications_missing_labels": [],
   "new_results_without_review_record": [],
@@ -66,7 +66,7 @@
     }
   ],
   "pending_review_records": [],
-  "references": 504,
+  "references": 519,
   "retired_v5_applications": [
     {
       "id": "V5-SUN-FT-LINEAR",
@@ -114,6 +114,27 @@
         "V6-GA-TZ-MAJORANT",
         "V6-GA-TZ-BOUNDARY-MOMENTS"
       ]
+    },
+    {
+      "id": "V5-SUN-BHB-BOX",
+      "reason": "Current application/proof rewritten and independently audited on 2026-11-06; no exact unchanged V5-span claim.",
+      "replacement_ids": [
+        "V6-AUDIT-BHB-BOX"
+      ]
+    },
+    {
+      "id": "V5-SUN-BHB-LATTICES",
+      "reason": "Current application/proof rewritten and independently audited on 2026-11-06; no exact unchanged V5-span claim.",
+      "replacement_ids": [
+        "V6-AUDIT-BHB-LATTICES"
+      ]
+    },
+    {
+      "id": "V5-SUN-KL-RAYS",
+      "reason": "Current application/proof rewritten and independently audited on 2026-11-06; no exact unchanged V5-span claim.",
+      "replacement_ids": [
+        "V6-AUDIT-KL-RAYS"
+      ]
     }
   ],
   "reviewed_fragments": [
@@ -122,7 +143,7 @@
         "end_character": 542939,
         "first_line": 10527,
         "last_line": 11557,
-        "path": "quartic_962.tex",
+        "path": "manuscripts/quartic_v7.tex",
         "start_character": 499671,
         "text_sha256": "805bdf4b0d6ad27bac182cac4f4084935b8d9c8718808dad86a71cc8d1f94a0a"
       },
@@ -144,7 +165,7 @@
         "end_character": 551592,
         "first_line": 11561,
         "last_line": 11734,
-        "path": "quartic_962.tex",
+        "path": "manuscripts/quartic_v7.tex",
         "start_character": 542973,
         "text_sha256": "bdf85b2479ec816babf20ac4f997316c14986f68b1f5c5b6f5d1f5c135c69ee5"
       },
@@ -163,58 +184,96 @@
     },
     {
       "current": {
-        "end_character": 866026,
-        "first_line": 16533,
-        "last_line": 18277,
-        "path": "quartic_962.tex",
-        "start_character": 783724,
-        "text_sha256": "580e663a1aff9a032be52365cabb3805c54d0c1e155ee17df8b6f803f1202ad8"
+        "end_character": 873360,
+        "first_line": 16601,
+        "last_line": 18424,
+        "path": "manuscripts/quartic_v7.tex",
+        "start_character": 786582,
+        "text_sha256": "2cc2646dee85eb718d8585d360c3b1b95fb0814d162c14a2a90f7cca4075147a"
       },
       "id": "gaussian-analytic",
       "mathematical_provenance": {
-        "accepted_status": "accepted_exact_extractions_of_end_to_end_reviewed_candidate",
-        "receipt_path": "docs/quartic-962/evidence/analytic-assembled-receipt.json",
-        "scope": "Accepts prior mathematically identical export. Current layout-only rebind is supplied by primary assembly provenance and its two pinned predecessor receipts.",
-        "sha256_pointer": "/fragments/gaussian_analytic/sha256"
+        "accepted_status": "accepted_four_component_revision_and_assembly",
+        "receipt_path": "docs/quartic-962/evidence/gaussian-four-audit-20261106/integration-receipt.json",
+        "scope": "Tail, Gaussian prime weights, transference, and polynomial-pattern application only. Earlier local/medium-sieve provenance remains; no claim of a full manuscript or formal proof audit."
       },
-      "path": "docs/quartic-962/evidence/reviewed-gaussian-analytic.tex",
+      "path": "docs/quartic-962/evidence/gaussian-four-audit-20261106/reviewed-gaussian-analytic.tex",
+      "previous_reviewed_fragment": {
+        "id": "gaussian-analytic",
+        "mathematical_provenance": {
+          "accepted_status": "accepted_exact_extractions_of_end_to_end_reviewed_candidate",
+          "receipt_path": "docs/quartic-962/evidence/analytic-assembled-receipt.json",
+          "scope": "Accepts prior mathematically identical export. Current layout-only rebind is supplied by primary assembly provenance and its two pinned predecessor receipts.",
+          "sha256_pointer": "/fragments/gaussian_analytic/sha256"
+        },
+        "path": "docs/quartic-962/evidence/reviewed-gaussian-analytic.tex",
+        "provenance": {
+          "accepted_status": "accepted_assembly_fidelity",
+          "kind": "reviewed",
+          "receipt_path": "docs/quartic-962/evidence/assembly-review-receipt.json",
+          "sha256_pointer": "/assembled_fragments/gaussian-analytic/sha256",
+          "status_pointer": "/status"
+        },
+        "review": "Exact current export accepted by assembly review. Mathematical acceptance is inherited only through the explicitly reviewed attribution/layout-only chain; original component qualifications remain.",
+        "sha256": "d5c64b97b0141f5f72a9d69b936e6b02a4d97f7b76444e25d978bbf2c1af9af4",
+        "status": "accepted_exact_reviewed_export"
+      },
       "provenance": {
-        "accepted_status": "accepted_assembly_fidelity",
+        "accepted_status": "accepted_four_component_revision_and_assembly",
         "kind": "reviewed",
-        "receipt_path": "docs/quartic-962/evidence/assembly-review-receipt.json",
-        "sha256_pointer": "/assembled_fragments/gaussian-analytic/sha256",
+        "receipt_path": "docs/quartic-962/evidence/gaussian-four-audit-20261106/integration-receipt.json",
+        "sha256_pointer": "/fragments/gaussian-analytic/sha256",
         "status_pointer": "/status"
       },
-      "review": "Exact current export accepted by assembly review. Mathematical acceptance is inherited only through the explicitly reviewed attribution/layout-only chain; original component qualifications remain.",
-      "sha256": "d5c64b97b0141f5f72a9d69b936e6b02a4d97f7b76444e25d978bbf2c1af9af4",
+      "review": "Four source-level component audits and independent exact assembly/interface review dated 2026-11-06. Scope and source-version qualifications are recorded in the linked reports.",
+      "sha256": "feb719ad7ed89ebe89d6ae1e0a891202b52bbfbe4dde3c056bd57b2d934a9193",
       "status": "accepted_exact_reviewed_export"
     },
     {
       "current": {
-        "end_character": 880917,
+        "end_character": 889663,
         "first_line": 16159,
-        "last_line": 18611,
-        "path": "quartic_962.tex",
+        "last_line": 18787,
+        "path": "manuscripts/quartic_v7.tex",
         "start_character": 766438,
-        "text_sha256": "747b174d28cdc2f79887d7135a5b9583f376eda728ccae58d390023d58936932"
+        "text_sha256": "926c9593bf9ab132fea0401edeb2d0776d0278b74fc1f4fac01a91ada0a3c8ec"
       },
       "id": "sun-completed",
       "mathematical_provenance": {
-        "accepted_status": "accepted_exact_extractions_of_end_to_end_reviewed_candidate",
-        "receipt_path": "docs/quartic-962/evidence/analytic-assembled-receipt.json",
-        "scope": "Accepts prior mathematically identical export. Current layout-only rebind is supplied by primary assembly provenance and its two pinned predecessor receipts.",
-        "sha256_pointer": "/fragments/sun_completed/sha256"
+        "accepted_status": "accepted_four_component_revision_and_assembly",
+        "receipt_path": "docs/quartic-962/evidence/gaussian-four-audit-20261106/integration-receipt.json",
+        "scope": "Tail, Gaussian prime weights, transference, and polynomial-pattern application only. Earlier local/medium-sieve provenance remains; no claim of a full manuscript or formal proof audit."
       },
-      "path": "docs/quartic-962/evidence/reviewed-sun-completed.tex",
+      "path": "docs/quartic-962/evidence/gaussian-four-audit-20261106/reviewed-sun-completed.tex",
+      "previous_reviewed_fragment": {
+        "id": "sun-completed",
+        "mathematical_provenance": {
+          "accepted_status": "accepted_exact_extractions_of_end_to_end_reviewed_candidate",
+          "receipt_path": "docs/quartic-962/evidence/analytic-assembled-receipt.json",
+          "scope": "Accepts prior mathematically identical export. Current layout-only rebind is supplied by primary assembly provenance and its two pinned predecessor receipts.",
+          "sha256_pointer": "/fragments/sun_completed/sha256"
+        },
+        "path": "docs/quartic-962/evidence/reviewed-sun-completed.tex",
+        "provenance": {
+          "accepted_status": "accepted_assembly_fidelity",
+          "kind": "reviewed",
+          "receipt_path": "docs/quartic-962/evidence/assembly-review-receipt.json",
+          "sha256_pointer": "/assembled_fragments/sun-completed/sha256",
+          "status_pointer": "/status"
+        },
+        "review": "Exact current export accepted by assembly review. Mathematical acceptance is inherited only through the explicitly reviewed attribution/layout-only chain; original component qualifications remain.",
+        "sha256": "e8c458ecf141252f9e0038697d17e2f146345f0d5f93bd75df49188e52ddfd33",
+        "status": "accepted_exact_reviewed_export"
+      },
       "provenance": {
-        "accepted_status": "accepted_assembly_fidelity",
+        "accepted_status": "accepted_four_component_revision_and_assembly",
         "kind": "reviewed",
-        "receipt_path": "docs/quartic-962/evidence/assembly-review-receipt.json",
-        "sha256_pointer": "/assembled_fragments/sun-completed/sha256",
+        "receipt_path": "docs/quartic-962/evidence/gaussian-four-audit-20261106/integration-receipt.json",
+        "sha256_pointer": "/fragments/sun-completed/sha256",
         "status_pointer": "/status"
       },
-      "review": "Exact current export accepted by assembly review. Mathematical acceptance is inherited only through the explicitly reviewed attribution/layout-only chain; original component qualifications remain.",
-      "sha256": "e8c458ecf141252f9e0038697d17e2f146345f0d5f93bd75df49188e52ddfd33",
+      "review": "Four source-level component audits and independent exact assembly/interface review dated 2026-11-06. Scope and source-version qualifications are recorded in the linked reports.",
+      "sha256": "8f6bb0e86c04fbb2ed5c8f8ab75ad49b2c9ee701a00c28e36bce8e4055a171ce",
       "status": "accepted_exact_reviewed_export"
     },
     {
@@ -222,7 +281,7 @@
         "end_character": 499669,
         "first_line": 10256,
         "last_line": 10525,
-        "path": "quartic_962.tex",
+        "path": "manuscripts/quartic_v7.tex",
         "start_character": 487894,
         "text_sha256": "b81c7f9709f2188d26cddd6bca13c2e05f5a934739925d0b1f9062b7e0a830ea"
       },

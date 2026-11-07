@@ -1,0 +1,9 @@
+{
+  "candidate_sha256": "5399d2fb3c3beea388ccdb5719934772f222b49d02482a05ac3abc515321419a",
+  "date": "2026-11-06",
+  "prior_independent_assembly": "docs/quartic-962/evidence/gaussian-four-audit-20261106/transference/integration-review.json",
+  "reviewer": "root release integrator",
+  "scope": "Exact Version 6 to Version 7 title replacement; all mathematical bytes preserve the independently reviewed four-component assembly.",
+  "status": "accepted_assembly_fidelity",
+  "title_change": "docs/quartic-962-validation/version7/title-change.json"
+}

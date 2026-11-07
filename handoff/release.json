@@ -1,8 +1,8 @@
 {
-  "assembly_receipt": "docs/quartic-962-validation/final-assembly-review/receipt.json",
+  "assembly_receipt": "docs/quartic-962-validation/version7/assembly-review.json",
   "assets": {
-    "current": "z-in-q-version6-current-handoff.zip",
-    "full": "z-in-q-version6-full-handoff.zip"
+    "current": "z-in-q-version7-current-handoff.zip",
+    "full": "z-in-q-version7-full-handoff.zip"
   },
   "contributor_credit": "Stefan Baranczuk, Jose Brox, Gabe Conant, Sohail Farhangi, James Freitag, Elliot Glazer, Jennifer Park, and Caroline Terry.",
   "date": "2026-11-06",
@@ -18,11 +18,11 @@
   "format": "quartic-handoff-release/v3",
   "inventory": "docs/quartic-962/README.md",
   "inventory_input": "docs/quartic-962/new-applications.json",
-  "inventory_input_sha256": "b7a42a50809c85ef14a9380a15576ef0170bad571ef713c329e31f594f8c12cf",
-  "manuscript": "quartic_962.tex",
+  "inventory_input_sha256": "36646fd26f5adcaed33315605e4b1c333c1e60f5c917aeeda63976614823a0f5",
+  "manuscript": "manuscripts/quartic_v7.tex",
   "package": "quartics/quartic-962",
   "package_manifest": "MANIFEST.json",
-  "pdf": "quartic_962.pdf",
+  "pdf": "manuscripts/quartic_v7.pdf",
   "polynomial": "polynomial.json",
   "polynomial_sha256": "6b798de7d00ac3c7d725ca0a69d39f1eac1ddb02fee2756cb6323770b952af32",
   "preserved_pins": {
@@ -1334,35 +1334,35 @@
       "bytes": 10038,
       "sha256": "adbb86598b6db09ebe7acd4474a2df0e405993c21a4dd2ca6c3c24c00daed1e5"
     },
-    "quartic_12504.pdf": {
+    "manuscripts/archive/quartic_12504.pdf": {
       "bytes": 1095681,
       "sha256": "e747dcb58c541e5106ac6289cab660d624a7c1209b0e488aecc51ee8f54014b0"
     },
-    "quartic_12504.tex": {
+    "manuscripts/archive/quartic_12504.tex": {
       "bytes": 676695,
       "sha256": "38d458ba4178083766c5ae56a894da595fe27170c1ef07f6b49750fc5edf7c37"
     },
-    "quartic_1272.pdf": {
+    "manuscripts/archive/quartic_1272.pdf": {
       "bytes": 1303596,
       "sha256": "0d2635ea6fbcac4b49519c6591fa0e84046ccc5c2114a4617994f36cf90a3b4e"
     },
-    "quartic_1272.tex": {
+    "manuscripts/archive/quartic_1272.tex": {
       "bytes": 807070,
       "sha256": "16033e0471df605093b28210a9f81718c2486b147016ec8afc75d166dff0b90f"
     },
-    "quartic_4973.pdf": {
+    "manuscripts/archive/quartic_4973.pdf": {
       "bytes": 1164841,
       "sha256": "299e5f3342ddf42a30336aab73efd81a03c258b1012eb863397a101a74325fe7"
     },
-    "quartic_4973.tex": {
+    "manuscripts/archive/quartic_4973.tex": {
       "bytes": 720126,
       "sha256": "d1700d3450e9646422516efc0d37ca657b89b7a10734496d7fc02a2c09b12c34"
     },
-    "quartic_9625.pdf": {
+    "manuscripts/archive/quartic_9625.pdf": {
       "bytes": 1127656,
       "sha256": "8bd816a8432e8f6f16ae1484916489d02834be657c01dd3925edf6a0fee5b3e5"
     },
-    "quartic_9625.tex": {
+    "manuscripts/archive/quartic_9625.tex": {
       "bytes": 697804,
       "sha256": "dc77c88b5cc0819201343dc85d0891d4dad81d97ac3267ec1df34eb38003b552"
     },
@@ -3927,14 +3927,21 @@
       "sha256": "57612ea0a05ec9695a34774c55d7aeb0583852f57078111040ce6652f15ec086"
     }
   },
-  "release_tag": "quartic-962-version-6",
+  "release_tag": "quartic-962-version-7",
   "research_manifest": "handoff/V6_RESEARCH_MANIFEST.json",
   "review_files": {
-    "analytic-proof": "docs/quartic-962/evidence/analytic-assembled-receipt.json",
-    "inventory": "docs/quartic-962-validation/inventory-review.json",
+    "analytic-proof": "docs/quartic-962/evidence/gaussian-four-audit-20261106/integration-receipt.json",
+    "inventory": "docs/quartic-962-validation/version7/inventory-review.json",
     "lower-bound": "docs/quartic-962/evidence/work--quartic-version6-preparation--lower-bound--independent-review--receipt.json",
     "optimization": "quartics/quartic-962/evidence/dag-sharing/COMBINED_REVIEW.md"
   },
+  "revision_audits": {
+    "patterns": "docs/quartic-962/evidence/gaussian-four-audit-20261106/patterns/audit.txt",
+    "tail": "docs/quartic-962/evidence/gaussian-four-audit-20261106/tail/REPORT.md",
+    "transference": "docs/quartic-962/evidence/gaussian-four-audit-20261106/transference/AUDIT.md",
+    "weights": "docs/quartic-962/evidence/gaussian-four-audit-20261106/weights/AUDIT.md"
+  },
+  "revision_manifest": "handoff/V7_AUDIT_MANIFEST.json",
   "snapshot_pins": {
     "docs/quartic-962-validation/README.md": {
       "bytes": 1034,
@@ -4048,6 +4055,22 @@
       "bytes": 4421,
       "sha256": "41d1de15550f997a0a7ff257b05c85c0fff24c106f9be037a8dbf92736624f7f"
     },
+    "docs/quartic-962-validation/version7/assembly-review.json": {
+      "bytes": 549,
+      "sha256": "8b04cb8c4b1b9ae050285eee8129d85cc99c0a07fba57b817be821abc4be230f"
+    },
+    "docs/quartic-962-validation/version7/filename-change.json": {
+      "bytes": 703,
+      "sha256": "953ec518dce567dadac29cec929dca858294f9afdc10aa36ee8e8830421995b1"
+    },
+    "docs/quartic-962-validation/version7/inventory-review.json": {
+      "bytes": 1009,
+      "sha256": "6dc590adadfd7d08d9ef6fb2a19bd37e6597eed997048ef1d7abba0597c37633"
+    },
+    "docs/quartic-962-validation/version7/title-change.json": {
+      "bytes": 626,
+      "sha256": "0e00b7fc2dfa470600b732df96fe5cfacdca79f19edf058c446a6ec39c13a94e"
+    },
     "docs/quartic-962-validation/visual-review.json": {
       "bytes": 1432,
       "sha256": "1ca686e26023f64ed5b31dae0c19a99bb36d0f8c4bd897093dbb39a3d2d1034a"
@@ -4057,24 +4080,24 @@
       "sha256": "596dc4d86b9bb8ab752069badb57eac303343472bed5a5190f63d04af1ae5963"
     },
     "docs/quartic-962/README.md": {
-      "bytes": 3953,
-      "sha256": "7b01f6c6f39e9874f3635800c1a4e679c5667748359d3834dbc3aead5c857aef"
+      "bytes": 4119,
+      "sha256": "8e11cd5cd8ef7cab7e85f4ee0696ff23d24b89d37f118bdcffa37dbae1b7c121"
     },
     "docs/quartic-962/bibliography.json": {
-      "bytes": 117270,
-      "sha256": "37a60e3a01a62eea6a504ab55d5fd0748d5d1c41297348f410d3d79b483a7cd6"
+      "bytes": 118238,
+      "sha256": "4464186fa5b0564c7b2a9005ce87cd57f78dc68d5fb74e6744239088657a6816"
     },
     "docs/quartic-962/citations.json": {
-      "bytes": 501228,
-      "sha256": "06535d3b60b6b57fc868fb774ee22752c5c981798c10367081ed4a702480790e"
+      "bytes": 506838,
+      "sha256": "9cd3e4aa78db089fd6ccff4c1c21973111d3f68536e7440f4fe44a9124cae0e1"
     },
     "docs/quartic-962/coverage.json": {
-      "bytes": 13965,
-      "sha256": "410c1e0a7bcd2b6f6213ccd41a0d5c43b8e059001ff6ffa8443ea28f7f5df3f3"
+      "bytes": 17378,
+      "sha256": "5880686aa57468b71a6fc765c00e2c926affee0a42b6e2479273878e3d3b7884"
     },
     "docs/quartic-962/dependency-graph.json": {
-      "bytes": 281917,
-      "sha256": "e40ff644696aa7bcee26215a6dd337275f9eccdee53b0ba255c830292fab9e41"
+      "bytes": 291049,
+      "sha256": "df01255cc4751e20db15cd48ac9dfef325afab0fd1bf225dc39d4a9df8b950cf"
     },
     "docs/quartic-962/evidence/analytic-assembled-receipt.json": {
       "bytes": 1788,
@@ -4083,6 +4106,154 @@
     "docs/quartic-962/evidence/assembly-review-receipt.json": {
       "bytes": 4911,
       "sha256": "1a99aaa2e367439327d7aa80f5d02b1070333fdf026589ab9458563220b37239"
+    },
+    "docs/quartic-962/evidence/gaussian-four-audit-20261106/assembly.json": {
+      "bytes": 2566,
+      "sha256": "14edaac80c69542d77fb8736edb451546394ed5d56017504b03f4602d63cfd29"
+    },
+    "docs/quartic-962/evidence/gaussian-four-audit-20261106/baseline.tex": {
+      "bytes": 903386,
+      "sha256": "06f98ff070139c3b6c60589c65867ceb4366b023f7960551abd52f85fa67e30c"
+    },
+    "docs/quartic-962/evidence/gaussian-four-audit-20261106/changes.diff": {
+      "bytes": 28198,
+      "sha256": "4453f98bdc56deabd86264f1c546bcacdd1e60257a25fb40b3d820421fa2f178"
+    },
+    "docs/quartic-962/evidence/gaussian-four-audit-20261106/integrate.py": {
+      "bytes": 3678,
+      "sha256": "b92790a6bcaa3ccd64d0e0e54904e091c0068e0c270eaf169b4e8023bdf2d72a"
+    },
+    "docs/quartic-962/evidence/gaussian-four-audit-20261106/integration-receipt.json": {
+      "bytes": 2791,
+      "sha256": "aa62e3fa088ba4c554621759536c72c4b0fd0812ad99532eeb77a8ab22c2175e"
+    },
+    "docs/quartic-962/evidence/gaussian-four-audit-20261106/patterns/audit.txt": {
+      "bytes": 9530,
+      "sha256": "a904efb457ad3d8e99fdb150d9b0a33bf765fc29cfe8be2ab04173df8135528b"
+    },
+    "docs/quartic-962/evidence/gaussian-four-audit-20261106/patterns/edit-specs.json": {
+      "bytes": 996,
+      "sha256": "466c846867643801e361a16bf09fcf0cb52f5eec006760358f6e3cbef16fdc20"
+    },
+    "docs/quartic-962/evidence/gaussian-four-audit-20261106/patterns/repair-dense-model.tex": {
+      "bytes": 1363,
+      "sha256": "ae8c279525e00aa2d6933f58cd8b65d3668c00a2a4bbf7401e610238dc1072af"
+    },
+    "docs/quartic-962/evidence/gaussian-four-audit-20261106/patterns/repair-ray-fixed-field.tex": {
+      "bytes": 930,
+      "sha256": "25e5b9bdcf562439ade80638d15fdf0309f842017b9b10e66dbd5878b29f2eb9"
+    },
+    "docs/quartic-962/evidence/gaussian-four-audit-20261106/patterns/tail-interface-review.txt": {
+      "bytes": 3937,
+      "sha256": "ebaa4ba87a0b960e0263420650d7ab733eb2aaca65d46bfdb2035a7262f414b0"
+    },
+    "docs/quartic-962/evidence/gaussian-four-audit-20261106/previous-new-applications.json": {
+      "bytes": 339038,
+      "sha256": "b7a42a50809c85ef14a9380a15576ef0170bad571ef713c329e31f594f8c12cf"
+    },
+    "docs/quartic-962/evidence/gaussian-four-audit-20261106/reviewed-gaussian-analytic.tex": {
+      "bytes": 86779,
+      "sha256": "feb719ad7ed89ebe89d6ae1e0a891202b52bbfbe4dde3c056bd57b2d934a9193"
+    },
+    "docs/quartic-962/evidence/gaussian-four-audit-20261106/reviewed-sun-completed.tex": {
+      "bytes": 123226,
+      "sha256": "8f6bb0e86c04fbb2ed5c8f8ab75ad49b2c9ee701a00c28e36bce8e4055a171ce"
+    },
+    "docs/quartic-962/evidence/gaussian-four-audit-20261106/tail/REPORT.md": {
+      "bytes": 13335,
+      "sha256": "e49ddf27a9dfc122bbf6d9e0fee2c61efadb732a5e140445bd5dd28b1fba1306"
+    },
+    "docs/quartic-962/evidence/gaussian-four-audit-20261106/tail/build_fragment.py": {
+      "bytes": 9953,
+      "sha256": "8389709c8d06db74c991d03a5e2610920746c0bccf34d850e50587f4cc2bbdee"
+    },
+    "docs/quartic-962/evidence/gaussian-four-audit-20261106/tail/check_tail.py": {
+      "bytes": 2631,
+      "sha256": "284ba94be144c7db4e02647bdbc7878ba76ae1e3f95aea7bb0cb911c9965e462"
+    },
+    "docs/quartic-962/evidence/gaussian-four-audit-20261106/tail/checks.json": {
+      "bytes": 344,
+      "sha256": "9d550c6f1d05032a6852912c5872a1776962fd15ec1fc0ef5f57f478b8c4e23f"
+    },
+    "docs/quartic-962/evidence/gaussian-four-audit-20261106/tail/handoff.json": {
+      "bytes": 834,
+      "sha256": "1b880dba756102e4035bd5685be50283d768c5ba893a2ed0e7f1fc105fe0d853"
+    },
+    "docs/quartic-962/evidence/gaussian-four-audit-20261106/tail/original-tail.tex": {
+      "bytes": 6539,
+      "sha256": "983c0f233c967ea169d99b487a2338814db720f55e4683bfb397abe46a42819a"
+    },
+    "docs/quartic-962/evidence/gaussian-four-audit-20261106/tail/replacement-tail.tex": {
+      "bytes": 9397,
+      "sha256": "eb2a791da0bf1d8ea21bef976c186a99a21bd356d3e2eb7c42f303bcb322f340"
+    },
+    "docs/quartic-962/evidence/gaussian-four-audit-20261106/transference/AUDIT.md": {
+      "bytes": 10759,
+      "sha256": "92c974e691c61b144a2906444bc3ec3e03eba21dbd467db101ff3a00ea9d086f"
+    },
+    "docs/quartic-962/evidence/gaussian-four-audit-20261106/transference/INTEGRATION_REVIEW.md": {
+      "bytes": 3909,
+      "sha256": "432b49b5bdd8e877112ac49e9483a30dc321a7cafd89e0b787427b79ebd4b801"
+    },
+    "docs/quartic-962/evidence/gaussian-four-audit-20261106/transference/check_integration.py": {
+      "bytes": 5241,
+      "sha256": "241a4eaa4a39c9763a09f56d6fbaaf9e6cccfb3a1ee73b9e5d72b2b416c0bb47"
+    },
+    "docs/quartic-962/evidence/gaussian-four-audit-20261106/transference/edits.json": {
+      "bytes": 7033,
+      "sha256": "02ee3a63d2060c8b6bc9c42ef4fccda746ae3e8c3804c335fd2f6a49b158ea27"
+    },
+    "docs/quartic-962/evidence/gaussian-four-audit-20261106/transference/integration-review.json": {
+      "bytes": 4015,
+      "sha256": "a0dc9f4997e9c3aa5bc359592ca80283d52af7b194439990a696f632ca460ab3"
+    },
+    "docs/quartic-962/evidence/gaussian-four-audit-20261106/transference/prepare.py": {
+      "bytes": 6781,
+      "sha256": "d5633585f09f24197f671c6a6beab908d6a8b59e6e101e933285751e4940fa71"
+    },
+    "docs/quartic-962/evidence/gaussian-four-audit-20261106/transference/replacement.tex": {
+      "bytes": 20384,
+      "sha256": "9ab9822f36f14d7bd88ab6db19c151352fd792d676981b6d988c44d5c2415084"
+    },
+    "docs/quartic-962/evidence/gaussian-four-audit-20261106/transference/source-pins.json": {
+      "bytes": 3034,
+      "sha256": "ec6d8e7f34c2119d8a5d9c81d157f7ad86acde139d4e173b4c82b82ceb80d887"
+    },
+    "docs/quartic-962/evidence/gaussian-four-audit-20261106/transference/validation.json": {
+      "bytes": 879,
+      "sha256": "4dc2af25b074087bddcdd1ac324a36a281881afbae65169e42a66b16a53e6fa8"
+    },
+    "docs/quartic-962/evidence/gaussian-four-audit-20261106/weights/AUDIT.md": {
+      "bytes": 13204,
+      "sha256": "3c2848b4fea1d3e60a37e1cea4d4d065aec8946da1cc33b12c77551909e58c46"
+    },
+    "docs/quartic-962/evidence/gaussian-four-audit-20261106/weights/centered_nilsequence_discharge.tex": {
+      "bytes": 2702,
+      "sha256": "5402633972aa1fc65b612ac5b52bd1af58f1223b5a4a62f58cff888fdf9ecbc0"
+    },
+    "docs/quartic-962/evidence/gaussian-four-audit-20261106/weights/check_discharge.tex": {
+      "bytes": 2914,
+      "sha256": "466335996b0f86c11fdeb4519b0c4506ea7f1783b60ee2de8e77a70073d2acc0"
+    },
+    "docs/quartic-962/evidence/gaussian-four-audit-20261106/weights/edits.json": {
+      "bytes": 4000,
+      "sha256": "4012ef571473ede9e3c5e76bf4440032871a268c5116202d027769e5366115d7"
+    },
+    "docs/quartic-962/evidence/gaussian-four-audit-20261106/weights/prepare.py": {
+      "bytes": 3110,
+      "sha256": "2af4aedab86d8a05d7acccd9982fffb1cad09969a5aefb0855e2f21d0e165a3c"
+    },
+    "docs/quartic-962/evidence/gaussian-four-audit-20261106/weights/source_pins.json": {
+      "bytes": 904,
+      "sha256": "69782c56222f6da2d1664e504b908565bda3cac4cf14c617325e019de3bce497"
+    },
+    "docs/quartic-962/evidence/gaussian-four-audit-20261106/weights/validation.json": {
+      "bytes": 313,
+      "sha256": "5f73f2cbad2ce160a1b759607be5555f1d625e2103e107a191272bc93d089f19"
+    },
+    "docs/quartic-962/evidence/gaussian-four-audit-20261106/weights/weights_fragment.tex": {
+      "bytes": 67853,
+      "sha256": "709e70de948f1aee29380586aefc415167bb852a1b13829f7d827979b9f0860a"
     },
     "docs/quartic-962/evidence/reviewed-degree-lower-bound.tex": {
       "bytes": 8620,
@@ -4208,105 +4379,101 @@
       "bytes": 6254,
       "sha256": "79ab3236facc4c8bdaf0a3c8f6daa353816c7402cf7e10ae36175c4f88904d7f"
     },
+    "docs/quartic-962/gaussian-audit-20261106.md": {
+      "bytes": 3385,
+      "sha256": "cb4a07e7dbaa30a58fb4a12fe0b3c5fb73fb9c41b49c00a13425338d74247a5a"
+    },
     "docs/quartic-962/inherited-bridge.json": {
-      "bytes": 500348,
-      "sha256": "ee54cfc9d75c86bdb9e41aa1e938ca971d9c455655e56c51b44f1ad94a004ebc"
+      "bytes": 500166,
+      "sha256": "d16152f37a45d716abc5086402b038313c1ebfeef09b910bea39e9b6f734a3b8"
     },
     "docs/quartic-962/internal-results.json": {
-      "bytes": 295329,
-      "sha256": "91f93184bf48bb147d70d985c56e06df32ecbde62b4a704922c1bd2abb927b7c"
+      "bytes": 313564,
+      "sha256": "98ebcdd2491da37ae9a1f96e8e0f271d64412b5eca7b488b448f1bc96c525d3f"
     },
     "docs/quartic-962/inventory.py": {
-      "bytes": 41263,
-      "sha256": "2af0969b5e9b4767f8e6b2f1b66a1cd81135c1a0c84e58fd84f772264c238a8b"
+      "bytes": 41597,
+      "sha256": "b050d965cb440fa6e947de462aaadde38f695a689d0c81aa6ac826d2263217db"
     },
     "docs/quartic-962/new-applications.json": {
-      "bytes": 339038,
-      "sha256": "b7a42a50809c85ef14a9380a15576ef0170bad571ef713c329e31f594f8c12cf"
+      "bytes": 371537,
+      "sha256": "36646fd26f5adcaed33315605e4b1c333c1e60f5c917aeeda63976614823a0f5"
     },
     "docs/quartic-962/test_inventory.py": {
-      "bytes": 16097,
-      "sha256": "d9bbd80089b6910abdcf74ce052dfe752559b70e682f5e3aa03c591d09ab5e83"
+      "bytes": 16108,
+      "sha256": "48d446abf3051f8a392facd94c69b197297c0408d110c43f6af70fcf13dbece2"
     },
     "docs/quartic-962/theorem-applications.json": {
-      "bytes": 1393943,
-      "sha256": "dc8457120dfcc836715d8ab6553f30a7d24c8a068ae659c7c0b71ffb92f6f26a"
+      "bytes": 1402610,
+      "sha256": "6e4751bebe41071072cf1467a7ff25259101c411052dc767d55f6a0530728b31"
     },
     "handoff/V6_RESEARCH_MANIFEST.json": {
       "bytes": 202529,
       "sha256": "077737d77dc59142532a3dd7a7d8eef95a4a2d34c339ea382c679080a429f952"
     },
-    "handoff/releases/version6/CHECK_CONTRACT.json": {
-      "bytes": 1766,
-      "sha256": "04932901edaaadad0f85148614fda73ffe6d7e11fc2d425a0b6b1b9fa95b517d"
+    "handoff/V7_AUDIT_MANIFEST.json": {
+      "bytes": 7781,
+      "sha256": "29148a0e39e7d728ddfee3cc77741ce7a36cd469b28d9545fe4dc5fb9a7d7dab"
     },
-    "handoff/releases/version6/PRESERVED_VERSION5.json": {
-      "bytes": 177556,
-      "sha256": "f2ef72645e3b86aaceab9630799d39886cc0a357d85449d6d82d699975452826"
+    "handoff/releases/version7/BUILD.json": {
+      "bytes": 550,
+      "sha256": "9e1f24ee1653b2551f2a0fc2c16f3bdb808e4febc4148715317a6e85829165d7"
     },
-    "handoff/releases/version6/REPRODUCTION.json": {
-      "bytes": 4985,
-      "sha256": "39608c8171ff60fd5e2050018085b6f77c67f9c7c0602fba83c289ca9a9f80fa"
+    "handoff/releases/version7/HANDOFF_TESTS.json": {
+      "bytes": 3793,
+      "sha256": "d7c1939b18bda67b4b57e76b03ef19eb95e1837c07b9fe8951e24e03c76b1893"
     },
-    "handoff/releases/version6/VERSION5_ARCHIVE_MANIFEST.json": {
-      "bytes": 387421,
-      "sha256": "981dbbb27b0c9da15e5fb1ece0b1c8167a6b750c999a420948cd8e4b1044892e"
+    "handoff/releases/version7/REPRODUCTION.json": {
+      "bytes": 4988,
+      "sha256": "ce41fed5968ebb188869179e0c2b9cbe1d5c976acae7878c17dc4c3b407ae324"
     },
-    "handoff/releases/version6/assembly-source/README.md": {
-      "bytes": 685,
-      "sha256": "93a9ac68f345c8b9b322f433bde6860f78490525bcbb3d674ffbfe946462e423"
+    "manuscripts/README.md": {
+      "bytes": 1176,
+      "sha256": "eefa08c273bb4c75d6a39250ac3d091ba0ffe073e5fdc4693415ac0c436ee755"
     },
-    "handoff/releases/version6/assembly-source/SOURCE_MAP.json": {
-      "bytes": 73181,
-      "sha256": "7e28061aec0593773de3d1c95c16b06e3aa03267933415a7877371cb8c3fc378"
+    "manuscripts/RELOCATION.json": {
+      "bytes": 2126,
+      "sha256": "9c1430fd4a11aa1bb101ffb29d8321ea23e466a5154de824e81f788885416468"
     },
-    "handoff/releases/version6/assembly-source/assemble_analytic_candidate.py": {
-      "bytes": 12580,
-      "sha256": "6fd860620e9a94a07b419a75012db6e64b869bcdbeda7864845b57eea9fb322c"
+    "manuscripts/archive/quartic_12504.pdf": {
+      "bytes": 1095681,
+      "sha256": "e747dcb58c541e5106ac6289cab660d624a7c1209b0e488aecc51ee8f54014b0"
     },
-    "handoff/releases/version6/assembly-source/assemble_preparation.py": {
-      "bytes": 5009,
-      "sha256": "a7c72c39d6c885b76ec15a76f8ceeed5acebf90d2a4a1eb15636ac523d57fa0f"
+    "manuscripts/archive/quartic_12504.tex": {
+      "bytes": 676695,
+      "sha256": "38d458ba4178083766c5ae56a894da595fe27170c1ef07f6b49750fc5edf7c37"
     },
-    "handoff/releases/version6/assembly-source/manuscript/ANALYTIC_CANDIDATE.json": {
-      "bytes": 4094,
-      "sha256": "5fad0d92a9028521bf4c8d0e20a3aabb92a60c3fb8f17af6a8090788da71eb0d"
+    "manuscripts/archive/quartic_1272.pdf": {
+      "bytes": 1303596,
+      "sha256": "0d2635ea6fbcac4b49519c6591fa0e84046ccc5c2114a4617994f36cf90a3b4e"
     },
-    "handoff/releases/version6/assembly-source/manuscript/PREPARATION.json": {
-      "bytes": 1871,
-      "sha256": "5bdb5b9c0d4d373185bd65105e0edb8258ee17541694884d85d3fc4fc76e8603"
+    "manuscripts/archive/quartic_1272.tex": {
+      "bytes": 807070,
+      "sha256": "16033e0471df605093b28210a9f81718c2486b147016ec8afc75d166dff0b90f"
     },
-    "handoff/releases/version6/assembly-source/manuscript/quartic_962-preparation.tex": {
-      "bytes": 822876,
-      "sha256": "c2d24a8be893e7fb137370434352a6d54f0e3ca50bcd640bf3f9ce8f51c546e8"
+    "manuscripts/archive/quartic_4973.pdf": {
+      "bytes": 1164841,
+      "sha256": "299e5f3342ddf42a30336aab73efd81a03c258b1012eb863397a101a74325fe7"
     },
-    "handoff/releases/version6/assembly-source/quartic-962/INTEGRATION.md": {
-      "bytes": 7831,
-      "sha256": "c3d48875f2aef02ffeee94423ba723d875c617ca56403933a268e886f79f67f8"
+    "manuscripts/archive/quartic_4973.tex": {
+      "bytes": 720126,
+      "sha256": "d1700d3450e9646422516efc0d37ca657b89b7a10734496d7fc02a2c09b12c34"
     },
-    "handoff/releases/version6/assembly-source/quartic-962/application_inventory.json": {
-      "bytes": 6254,
-      "sha256": "79ab3236facc4c8bdaf0a3c8f6daa353816c7402cf7e10ae36175c4f88904d7f"
+    "manuscripts/archive/quartic_9625.pdf": {
+      "bytes": 1127656,
+      "sha256": "8bd816a8432e8f6f16ae1484916489d02834be657c01dd3925edf6a0fee5b3e5"
     },
-    "handoff/releases/version6/assembly-source/quartic-962/construction.tex": {
-      "bytes": 15392,
-      "sha256": "529e821f776ae230d860e5efe01dfd55c05af9d2cdbb8c42bf907f9d42167769"
+    "manuscripts/archive/quartic_9625.tex": {
+      "bytes": 697804,
+      "sha256": "dc77c88b5cc0819201343dc85d0891d4dad81d97ac3267ec1df34eb38003b552"
     },
-    "handoff/releases/version6/research-staging-history/cd4442890b7ba00fb2b1ab95b5774f5480d50d9b7df9e0de81335f9bac4fad81/V6_RESEARCH_MANIFEST.json": {
-      "bytes": 202432,
-      "sha256": "cd4442890b7ba00fb2b1ab95b5774f5480d50d9b7df9e0de81335f9bac4fad81"
+    "manuscripts/quartic_v7.pdf": {
+      "bytes": 1462288,
+      "sha256": "6f1dd7cbd9a735c4237bd6a123855571e15b2057f0a539eb6bc07e8e1dba43cd"
     },
-    "handoff/releases/version6/research-staging-history/cd4442890b7ba00fb2b1ab95b5774f5480d50d9b7df9e0de81335f9bac4fad81/files/research/version6/analytic-proof/ASSESSMENT.md": {
-      "bytes": 9883,
-      "sha256": "537f554f0f5ac14de2d5949d47621a3005b194a05453d405c3f2c01f5925f20b"
-    },
-    "quartic_962.pdf": {
-      "bytes": 1448545,
-      "sha256": "80d9a1700f5be93bbaa8c01fa9fdf9c89aae413da6fefb8cef2810e6077e02e3"
-    },
-    "quartic_962.tex": {
-      "bytes": 903386,
-      "sha256": "06f98ff070139c3b6c60589c65867ceb4366b023f7960551abd52f85fa67e30c"
+    "manuscripts/quartic_v7.tex": {
+      "bytes": 912132,
+      "sha256": "5399d2fb3c3beea388ccdb5719934772f222b49d02482a05ac3abc515321419a"
     },
     "quartics/quartic-962/MANIFEST.json": {
       "bytes": 7254,
@@ -5456,6 +5623,14 @@
       "bytes": 2413,
       "sha256": "a97c9dc36f023b3787abbd8924e23774f6f3ba0969011d03526ff33ed1aee13f"
     },
+    "research/version7/README.md": {
+      "bytes": 1373,
+      "sha256": "7349174762eb13ab940272e6756441802e6647d758c4b94db25160f64ca25d66"
+    },
+    "scripts/check_historical_inventory.py": {
+      "bytes": 1864,
+      "sha256": "7b28459d12cb91677ffbefe8efd24a0d08f1471b850591302e63b8e3a4ef916a"
+    },
     "scripts/check_quartic962.py": {
       "bytes": 13086,
       "sha256": "c37e87fc0fe4c324435075c761fcb8840def11ad0214c11fb13195af058f001d"
@@ -5473,7 +5648,7 @@
       "Kollar exact statement checked in author version",
       "Inherited sieve-source qualifications retained"
     ],
-    "final_manuscript_sha256": "06f98ff070139c3b6c60589c65867ceb4366b023f7960551abd52f85fa67e30c",
+    "final_manuscript_sha256": "5399d2fb3c3beea388ccdb5719934772f222b49d02482a05ac3abc515321419a",
     "fixed_parameter": "S = 3^(2^27)",
     "fixed_parameter_is_coordinate": false,
     "frei_tinkova_theorem_assumed": false,
@@ -5487,6 +5662,6 @@
     "scripts/check_quartic962.py",
     "scripts/quartic962_checks.cjs"
   ],
-  "verification_receipt": "handoff/releases/version6/REPRODUCTION.json",
-  "version": 6
+  "verification_receipt": "handoff/releases/version7/REPRODUCTION.json",
+  "version": 7
 }

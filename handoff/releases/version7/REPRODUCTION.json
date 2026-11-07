@@ -1,0 +1,171 @@
+{
+  "schema": "quartic-962-reproduction-v1",
+  "status": "PASS",
+  "packageManifestSha256": "36fca72cb0eb126193ffa43d890ff09d5e29cbf1274561d2632ed1e227163787",
+  "frozenPolynomialSha256": "6b798de7d00ac3c7d725ca0a69d39f1eac1ddb02fee2756cb6323770b952af32",
+  "rebuiltPolynomialSha256": "6b798de7d00ac3c7d725ca0a69d39f1eac1ddb02fee2756cb6323770b952af32",
+  "byteIdentical": true,
+  "result": {
+    "variablesIncludingInput": 962,
+    "existentialWitnesses": 961,
+    "degree": 4,
+    "monomials": 55409,
+    "quadraticResiduals": 919,
+    "primitiveContent": "1",
+    "height": "64*3^(2^28)"
+  },
+  "checks": [
+    {
+      "name": "package_integrity",
+      "status": "PASS",
+      "seconds": 0.812,
+      "log": null
+    },
+    {
+      "name": "serialization_policy",
+      "status": "PASS",
+      "seconds": 0.063,
+      "log": null
+    },
+    {
+      "name": "baseline_source_bindings",
+      "status": "PASS",
+      "seconds": 0.062,
+      "log": null
+    },
+    {
+      "name": "accepted_equivalence_evidence",
+      "status": "PASS",
+      "seconds": 0.016,
+      "log": null
+    },
+    {
+      "name": "compiler_selftest",
+      "status": "PASS",
+      "seconds": 0.203,
+      "log": "logs/compiler_selftest.log"
+    },
+    {
+      "name": "build",
+      "status": "PASS",
+      "seconds": 0.578,
+      "log": "logs/build.log"
+    },
+    {
+      "name": "compile_translated",
+      "status": "PASS",
+      "seconds": 5.11,
+      "log": "logs/compile_translated.log"
+    },
+    {
+      "name": "independent_certificate_check",
+      "status": "PASS",
+      "seconds": 1.734,
+      "log": "logs/independent_certificate_check.log"
+    },
+    {
+      "name": "emitted_quotient_semantics",
+      "status": "PASS",
+      "seconds": 0.219,
+      "log": "logs/emitted_quotient_semantics.log"
+    },
+    {
+      "name": "point_chart_equivalence",
+      "status": "PASS",
+      "seconds": 0.203,
+      "log": "logs/point_chart_equivalence.log"
+    },
+    {
+      "name": "emitted_polynomial_circuits",
+      "status": "PASS",
+      "seconds": 3.234,
+      "log": "logs/emitted_polynomial_circuits.log"
+    },
+    {
+      "name": "anchor_equivalence",
+      "status": "PASS",
+      "seconds": 0.219,
+      "log": "logs/anchor_equivalence.log"
+    },
+    {
+      "name": "frozen_artifact_identity",
+      "status": "PASS",
+      "seconds": 0.078,
+      "log": null
+    },
+    {
+      "name": "fixed_integer_statistics",
+      "status": "PASS",
+      "seconds": 0.141,
+      "log": null
+    }
+  ],
+  "requiredChecks": [
+    "package_integrity",
+    "serialization_policy",
+    "baseline_source_bindings",
+    "accepted_equivalence_evidence",
+    "compiler_selftest",
+    "build",
+    "compile_translated",
+    "independent_certificate_check",
+    "emitted_quotient_semantics",
+    "point_chart_equivalence",
+    "emitted_polynomial_circuits",
+    "anchor_equivalence",
+    "frozen_artifact_identity",
+    "fixed_integer_statistics"
+  ],
+  "baselinePolynomialSha256": "02e4771ba6e6c2abc749e33e8440cc256939f48005d5102fba7d9853489c8586",
+  "baselineManifestSha256": "aa7f04c54e8b778a419a1be8d24e0b3a9a8540c50202d41815864a156d6985c6",
+  "reviewedEquivalenceProofs": [
+    {
+      "path": "PROOF.md",
+      "sha256": "afc64705ce7c0d72163a35a4350a20b9293b259e411e99c542427c73d05d8ff2"
+    },
+    {
+      "path": "evidence/dag-sharing/COMBINED_REVIEW.md",
+      "sha256": "630ac4d4f82c65970898b93f49c7dcff42163434c90f095dfaad77b4516bac3c"
+    },
+    {
+      "path": "evidence/detector-circuits/FROZEN_REVIEW.md",
+      "sha256": "356e4e4ee16d7a09ed8870d25979255baea7b18eeeb33f007544d30c28a004f0"
+    },
+    {
+      "path": "evidence/dag-sharing/POINT_EQUIVALENCE.md",
+      "sha256": "86af06bb711383acf129198b601e1e4d395aeb1a8bfb8dd380ac90acadaf40c7"
+    },
+    {
+      "path": "evidence/field-quotients/EQUIVALENCE.md",
+      "sha256": "b1029c15e2e728a273ba4d6b044ba067fb0fed6a0c48a25fcc0ad453038fd5d6"
+    },
+    {
+      "path": "evidence/field-quotients/final-b/PROOF.md",
+      "sha256": "639e5863280e526096995c2e2ffa02afe451316159b279e514692ef5f4b60fd4"
+    },
+    {
+      "path": "evidence/source-compression/PROOF.md",
+      "sha256": "96f116281ac3510c09e3f19fd6dfc2c48207fbef718648478c16ee8945974e47"
+    },
+    {
+      "path": "evidence/detector-circuits/BLOCK_EVAL_PROOF.md",
+      "sha256": "36a2e42be8e803cfdab668db168497731488332760e31ee2d65df8cc3dc25233"
+    }
+  ],
+  "validationTools": [
+    {
+      "path": "check_quartic962.py",
+      "sha256": "c37e87fc0fe4c324435075c761fcb8840def11ad0214c11fb13195af058f001d"
+    },
+    {
+      "path": "quartic962_checks.cjs",
+      "sha256": "693bb69d23e632041acc1710e262322287dea0c202d82f47bd62ffca3462ec77"
+    }
+  ],
+  "runtimes": {
+    "python": "3.12.14",
+    "node": "v24.22.1"
+  },
+  "elapsedSeconds": 12.765,
+  "scope": "Exact finite construction, emitted local identities and byte reproduction. Reviewed rational witness maps are pinned. External arithmetic inputs and the Version 6 manuscript arguments are not proved by this program."
+}

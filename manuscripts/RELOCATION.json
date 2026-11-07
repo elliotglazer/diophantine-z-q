@@ -1,0 +1,56 @@
+{
+  "files": {
+    "quartic_12504.pdf": {
+      "bytes": 1095681,
+      "path": "manuscripts/archive/quartic_12504.pdf",
+      "sha256": "e747dcb58c541e5106ac6289cab660d624a7c1209b0e488aecc51ee8f54014b0"
+    },
+    "quartic_12504.tex": {
+      "bytes": 676695,
+      "path": "manuscripts/archive/quartic_12504.tex",
+      "sha256": "38d458ba4178083766c5ae56a894da595fe27170c1ef07f6b49750fc5edf7c37"
+    },
+    "quartic_1272.pdf": {
+      "bytes": 1303596,
+      "path": "manuscripts/archive/quartic_1272.pdf",
+      "sha256": "0d2635ea6fbcac4b49519c6591fa0e84046ccc5c2114a4617994f36cf90a3b4e"
+    },
+    "quartic_1272.tex": {
+      "bytes": 807070,
+      "path": "manuscripts/archive/quartic_1272.tex",
+      "sha256": "16033e0471df605093b28210a9f81718c2486b147016ec8afc75d166dff0b90f"
+    },
+    "quartic_4973.pdf": {
+      "bytes": 1164841,
+      "path": "manuscripts/archive/quartic_4973.pdf",
+      "sha256": "299e5f3342ddf42a30336aab73efd81a03c258b1012eb863397a101a74325fe7"
+    },
+    "quartic_4973.tex": {
+      "bytes": 720126,
+      "path": "manuscripts/archive/quartic_4973.tex",
+      "sha256": "d1700d3450e9646422516efc0d37ca657b89b7a10734496d7fc02a2c09b12c34"
+    },
+    "quartic_9625.pdf": {
+      "bytes": 1127656,
+      "path": "manuscripts/archive/quartic_9625.pdf",
+      "sha256": "8bd816a8432e8f6f16ae1484916489d02834be657c01dd3925edf6a0fee5b3e5"
+    },
+    "quartic_9625.tex": {
+      "bytes": 697804,
+      "path": "manuscripts/archive/quartic_9625.tex",
+      "sha256": "dc77c88b5cc0819201343dc85d0891d4dad81d97ac3267ec1df34eb38003b552"
+    },
+    "quartic_v7.pdf": {
+      "bytes": 1462288,
+      "path": "manuscripts/archive/quartic_v7.pdf",
+      "sha256": "6f1dd7cbd9a735c4237bd6a123855571e15b2057f0a539eb6bc07e8e1dba43cd"
+    },
+    "quartic_v7.tex": {
+      "bytes": 912132,
+      "path": "manuscripts/archive/quartic_v7.tex",
+      "sha256": "5399d2fb3c3beea388ccdb5719934772f222b49d02482a05ac3abc515321419a"
+    }
+  },
+  "schema": "manuscript-file-relocation-v1",
+  "scope": "Physical paths only. Every manuscript and PDF byte is unchanged. Historical acceptance records retain their original logical paths."
+}

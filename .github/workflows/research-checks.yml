@@ -26,7 +26,7 @@ jobs:
         with:
           node-version: '24.22.1'
       - run: python scripts/check_quartic962.py --out build/quartic-962-reproduction
-      - run: python -E -B docs/quartic-962/inventory.py validate --repo . --manuscript quartic_962.tex --expected-input-sha256 b7a42a50809c85ef14a9380a15576ef0170bad571ef713c329e31f594f8c12cf
+      - run: python -E -B docs/quartic-962/inventory.py validate --repo . --manuscript manuscripts/quartic_v7.tex --expected-input-sha256 36646fd26f5adcaed33315605e4b1c333c1e60f5c917aeeda63976614823a0f5
       - run: python -E -B -m unittest discover -s docs/quartic-962 -p test_inventory.py -v
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         if: always()
@@ -46,8 +46,8 @@ jobs:
         with:
           node-version: '24.22.1'
       - run: python scripts/check_quartic1272.py --out build/quartic-1272-reproduction
-      - run: python -E -B docs/quartic-1272/inventory.py validate --repo . --manuscript quartic_1272.tex --expected-input-sha256 695769c38917efa35b6256132cd8b77807d6384ab6d27c38f250ff8947ae6c10
-      - run: python -E -B docs/quartic-1272/test_inventory.py
+      - run: python -E -B scripts/check_historical_inventory.py 5 validate --repo . --manuscript quartic_1272.tex --expected-input-sha256 695769c38917efa35b6256132cd8b77807d6384ab6d27c38f250ff8947ae6c10
+      - run: python -E -B scripts/check_historical_inventory.py 5 test
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         if: always()
         with:
@@ -88,6 +88,7 @@ jobs:
         with:
           path: .cache/tectonic
           key: tectonic-${{ runner.os }}-0.17.0-6ffe055852f8faf66
+      - run: python -E -B scripts/check_manuscript_revision.py
       - run: python scripts/build_paper.py
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         if: always()

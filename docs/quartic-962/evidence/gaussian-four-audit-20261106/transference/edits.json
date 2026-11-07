@@ -1,0 +1,67 @@
+{
+  "baseline_sha256": "06f98ff070139c3b6c60589c65867ceb4366b023f7960551abd52f85fa67e30c",
+  "replace_inclusive_lines": [
+    17941,
+    18279
+  ],
+  "requires_weights_fragment_label": "cor:ga-fixed-centered-nilsequence",
+  "changes_final_statement": false,
+  "edits": [
+    {
+      "id": "explicit-upstream-discharge",
+      "kind": "proof-explication",
+      "reason": "Names the exact discharged upstream interface supplied by the weights audit; integration requires its new corollary.",
+      "old": "Gaussian norm, progression and factorization arguments, specifically\nProposition~\\ref{prop:gf-factorization},\nCorollary~\\ref{cor:ga-centered-primes} and\nCorollary~\\ref{cor:gaussian-centered-progressions}:",
+      "new": "Gaussian norm, progression and factorization arguments, as assembled in\nCorollary~\\ref{cor:ga-fixed-centered-nilsequence}:"
+    },
+    {
+      "id": "source-version",
+      "kind": "proof-explication",
+      "reason": "Preserves the existing bibliography qualification at the actual theorem application.",
+      "old": "We also use Dodos--Kanellopoulos~\\cite{v5dk}, Theorem~5.1, in precisely the following\nform.",
+      "new": "We also use Dodos--Kanellopoulos~\\cite{v5dk}, Theorem~5.1, in the\nfollowing form, checked in arXiv:1610.00487v4, pp.~12--13. The final\ntypeset statement has not been compared."
+    },
+    {
+      "id": "inverse-scaling",
+      "kind": "proof-explication",
+      "reason": "Makes the exact domination hypothesis and its fixed scaling of inverse thresholds explicit.",
+      "old": "Consequently a fixed positive rescaling of\n$1_{[L^{3/5},L]}h_{C,V_z,b}$ is dominated by $\\nu$ on $[L]$.",
+      "new": "Consequently there is $\\alpha>0$, depending only on the fixed\ncomplexities and the fixed factor in the modulus, such that\n$\\alpha 1_{[L^{3/5},L]}h_{C,V_z,b}$ is dominated in absolute value by\n$\\nu$ on $[L]$. The same $\\alpha$ works for all cutoffs and unit residues.\nIn applying the inverse theorem to a lower bound $\\delta$ for the\nunscaled norm, use the lower bound $\\alpha\\delta/2$ for this truncated,\nscaled function, once the truncation error is at most $\\delta/2$."
+    },
+    {
+      "id": "gn-scaling",
+      "kind": "proof-explication",
+      "reason": "The published generalized von Neumann theorem assumes literal domination; fixed rescaling supplies it without a growing loss.",
+      "old": "these at most $t$ weights, truncate as above, and apply the normal-form\nextension of Green--Tao Lemma~4.4 and Proposition~7.1. The small factor\nhas the required norm by \\eqref{eq:gaussian-refined-gowers}.",
+      "new": "these at most $t$ weights and truncate as above. Multiply every\nfactor by a common fixed $\\alpha_0>0$ so that each has absolute value\nat most that majorant, and apply the normal-form extension of\nGreen--Tao Lemma~4.4 and Proposition~7.1. Here $\\alpha_0$ depends\nonly on the fixed system, the chosen complexities and the fixed\nconductor, not on $z$ or the residue vector. The small factor has\nthe required norm by \\eqref{eq:gaussian-refined-gowers}. Dividing\nthe resulting estimate by $\\alpha_0^t$ changes only a fixed constant."
+    },
+    {
+      "id": "singleton-local-factors",
+      "kind": "proof-explication",
+      "reason": "Closes the written local-factor argument for the singleton system admitted by the lemma.",
+      "old": "Away from finitely many primes dividing the nonzero minors of pairs\nof linear parts, two distinct output hyperplanes meet with probability\n$p^{-2}$, so $\\beta_p=1+O_t(p^{-2})$, uniformly in the constant terms.",
+      "new": "Exclude the finitely many primes dividing a chosen nonzero\ncoefficient of each linear part, and a chosen nonzero two-by-two\nminor for each pair of linear parts. At every remaining prime each\noutput hyperplane has probability $p^{-1}$, and any two meet with\nprobability $p^{-2}$. Hence $\\beta_p=1+O_t(p^{-2})$, uniformly in\nthe constant terms. This also covers $t=1$, when there are no pair\nminors and the good-prime factor is exactly one."
+    },
+    {
+      "id": "model-scaling",
+      "kind": "proof-explication",
+      "reason": "Matches the actual bounded range of the dense model with the bounded-by-one concatenation theorem.",
+      "old": "\\mu_C(b)$, has small global norms; the concatenation and model\napproximation give the required local norm bounds.",
+      "new": "\\mu_C(b)$, has small global norms. The model is bounded by a fixed\nconstant depending on the chosen sieve exponent. Divide its difference\nfrom $\\mu_C(b)$ by a fixed bound for that difference before applying\nTheorem~9, whose hypothesis is a bound by one. After restoring this\nfixed factor, concatenation and model approximation give the required\nlocal norm bounds. None of these scaling constants depends on $v$."
+    },
+    {
+      "id": "boundary-scaling",
+      "kind": "proof-explication",
+      "reason": "Makes the majorant-to-prime step explicit; no pointwise logarithmic loss enters localization.",
+      "old": "Thus a strip of width $\\epsilon N$ has total weight\n$[O(\\epsilon)+o_{v\\to\\infty}(1)+o_{v,\\epsilon}(1)]NT$.",
+      "new": "The normalized prime weights are bounded by fixed multiples of\ntheir sieve majorants, with constants depending on the fixed sieve\nexponent. Thus a strip of width $\\epsilon N$ has total weight\n$[O(\\epsilon)+o_{v\\to\\infty}(1)+o_{v,\\epsilon}(1)]NT$, with that\nfixed domination factor included in the implied constants."
+    },
+    {
+      "id": "signed-boundary-embedding",
+      "kind": "proof-explication",
+      "reason": "Gives a literal embedding for negative coefficients and separately controls actual and artificial cyclic boundary terms.",
+      "old": "Use a fixed enlarged ambient interval, depending only on the fixed\ncoefficients, and translate it if necessary, so that all actual integer\noutputs in these strips are represented without cyclic wrap-around.\nAll scales change by fixed constants only.",
+      "new": "This argument also covers negative coefficients $c_j$. For the true\ninteger count use an enlarged period $n_* = \\lceil B N/W\\rceil$, where\n$B>2+\\max_j|c_j|$ is fixed. We may assume $T\\leq\\sqrt N$.\nNonpositive outputs have prime weight zero, and every positive output\nis at most $(1+\\max_j|c_j|)N$. Discard also tuples for which some\npositive output is at most $W\\lceil n_*^\\rho\\rceil+W$. For each $w$\nthere are $O_k(W n_*^\\rho+W)$ such $u$, so their total weight is\n$O_k((W n_*^\\rho+W)T(\\log N)^k)=o_v(NT)$, uniformly in the\nallowed $T$ range. All remaining true outputs have their ordinary\nprime majorants on $[n_*]$ without wrap-around. Use the same\nlocalization calculation on the original period $n$ to bound the\nartificial wrapped terms of the cyclic count. The parameters $n_*$\nand $n$ differ by a fixed factor, so both applications satisfy the\nsame polynomial-forms hypotheses. In the following calculation $n$\ndenotes either chosen ambient period."
+    }
+  ]
+}

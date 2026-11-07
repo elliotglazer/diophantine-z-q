@@ -1,0 +1,14 @@
+{
+  "final_path": "manuscripts/quartic_v7.tex",
+  "new_basename": "quartic_v7",
+  "new_register_sha256": "36646fd26f5adcaed33315605e4b1c333c1e60f5c917aeeda63976614823a0f5",
+  "old_basename": "quartic_962",
+  "old_register_sha256": "19dd5a1a1f840f180934bac95435289ede8c63795133efe92273c1f05323e659",
+  "register_change": "Exact string-valued current manuscript path replacements only; historical source paths remain unchanged.",
+  "relocation_manifest": "manuscripts/RELOCATION.json",
+  "sha256": {
+    "pdf": "6f1dd7cbd9a735c4237bd6a123855571e15b2057f0a539eb6bc07e8e1dba43cd",
+    "tex": "5399d2fb3c3beea388ccdb5719934772f222b49d02482a05ac3abc515321419a"
+  },
+  "status": "MANUSCRIPT_BYTES_UNCHANGED"
+}

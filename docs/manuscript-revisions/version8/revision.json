@@ -1,0 +1,18 @@
+{
+  "version": 8,
+  "base_version": 7,
+  "date": "2026-11-06",
+  "baseline": {
+    "path": "manuscripts/archive/quartic_v7.tex",
+    "sha256": "5399d2fb3c3beea388ccdb5719934772f222b49d02482a05ac3abc515321419a"
+  },
+  "candidate": {
+    "path": "manuscripts/quartic_v8.tex",
+    "sha256": "7c1c16ec4affe6f5ca39eff25434686d15ae5ebffdd4142db37fcf363d0c3feb"
+  },
+  "abstract": {
+    "path": "docs/manuscript-revisions/version8/abstract.tex",
+    "sha256": "2a6473033b5285ce96bf532ebd83a16ea65fd7f0a0f1f83594c17951bbcf99af"
+  },
+  "scope": "User-supplied abstract and version number only. Proof text and mathematical audit baseline unchanged."
+}

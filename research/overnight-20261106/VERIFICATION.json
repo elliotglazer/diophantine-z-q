@@ -1,0 +1,148 @@
+{
+  "algebraicChecker": {
+    "schema": "brox-independent-check-v1",
+    "checkedAtUTC": "2026-11-07T02:05:30.456Z",
+    "status": "passed_exact_algebra_checks",
+    "scope": "Exact gate identities recognized below, certified row operations/eliminations, SOS expansion, fixed-S integrality/support/height. No proof of inherited arithmetic or source completeness is asserted.",
+    "inputSha256": "2bd10cdfc4272b772196cc357d01cf8eb7c076c5a56e0d0038f7655614dcc1d8",
+    "artifactHashes": {
+      "input": {
+        "file": "/workspace/scratch/ab4fa64a3661/unit-target-results/precision40_quotients/source-ir.json",
+        "sha256": "2bd10cdfc4272b772196cc357d01cf8eb7c076c5a56e0d0038f7655614dcc1d8"
+      },
+      "compiled": {
+        "file": "/workspace/scratch/ab4fa64a3661/unit-target-results/precision40_quotients/compiled/compiled-ir.json",
+        "sha256": "f5ee3169acf825cc3658de7338aacba03e124e5529710456cd66ce7f0e752d85"
+      },
+      "certificate": {
+        "file": "/workspace/scratch/ab4fa64a3661/unit-target-results/precision40_quotients/compiled/reduction-certificate.json",
+        "sha256": "046217f483ff7935f152e7f36bbbbae58abc3e5bfd71828844b4d7e16ea4e481"
+      },
+      "coordinateMap": {
+        "file": "/workspace/scratch/ab4fa64a3661/unit-target-results/precision40_quotients/compiled/coordinate-map.json",
+        "sha256": "964a34b2c9b7d04dfe44c6ca02d981691c5af4056c3019d77c14d86880fd2274"
+      },
+      "quartic": {
+        "file": "/workspace/scratch/ab4fa64a3661/unit-target-results/precision40_quotients/compiled/polynomial.json",
+        "sha256": "d9b0e21a1f5083786a48aace8b9bece3e289f540b83bd2fc7de0bdd5d59c5f61"
+      }
+    },
+    "coordinateCount": 909,
+    "residualCount": 866,
+    "gateIdentities": {
+      "checked": 818,
+      "unverified": [],
+      "extensionOrder": "Every declared dependency precedes its output coordinate",
+      "domainObligations": {
+        "entries": 129,
+        "note": "Full list in reproducibly generated independent-check.json"
+      },
+      "domainStatus": "Listed field/noninverse quotient domain claims remain source proof obligations; algebraic identities alone do not discharge them."
+    },
+    "transformation": {
+      "operations": 831,
+      "trace": {
+        "entries": 831,
+        "note": "Full list in reproducibly generated independent-check.json"
+      }
+    },
+    "quarticTableCompared": true,
+    "statistics": {
+      "degree": 4,
+      "formalTerms": 51279,
+      "monomials": 51279,
+      "activeCoordinateCount": 909,
+      "activeCoordinates": {
+        "entries": 909,
+        "note": "Full list in reproducibly generated independent-check.json"
+      },
+      "specializedSupportCertified": true,
+      "integerCoefficients": true,
+      "primitiveContent": "1",
+      "primitiveContentStatus": "exact via S-free coefficient bound and modular evaluations",
+      "maximumAbsoluteCoefficient": {
+        "monomial": [],
+        "coefficient": [
+          {
+            "sPower": 0,
+            "coefficient": "139421472706236791468735287967015707232606232113998186759762284283203248267399327423485002476018294548027207658124580006956269122224761375615358997681237349433785401584729106693395255281491169142017082115307947771801954704567433211464560639140944673635364155016693389201613594038984686916178623702578352190636251776039742101384851474311083735102877993131212196962695464654469816719202970619252343026646014132485548307935847260900441555694943498191955672798596377459777392636575523873495086339994375985976543710570091438233257228420529594557457359609723639787519567621434999954843382100489400924995961904023259324301047965917783124275162880514542735528152228927483841372844810255470399471841348890379437250393401562476664019972812975660227449988177768002661436897984534184331079950399306756818061310948084534985374661203278436590349231431071569402389429768922180485838968764968523571261288038064310442585283933256404572748606640151307376800250725427496845607662821555129200238699/1"
+          }
+        ],
+        "encoding": "Evaluate this rational polynomial at S=3^(2^27); exact maximum certified by leading-term dominance"
+      },
+      "heightBound": null,
+      "signProofMethod": "All nonzero formal coefficient polynomials and maximum comparisons passed S-dominance checks"
+    }
+  },
+  "logarithmIdentities": {
+    "logarithmCircuits": [
+      {
+        "point": "U0",
+        "degree": 9,
+        "status": "exact_polynomial_identity"
+      },
+      {
+        "point": "U1",
+        "degree": 2,
+        "status": "exact_polynomial_identity"
+      },
+      {
+        "point": "U2",
+        "degree": 9,
+        "status": "exact_polynomial_identity"
+      },
+      {
+        "point": "U3",
+        "degree": 9,
+        "status": "exact_polynomial_identity"
+      },
+      {
+        "point": "U4",
+        "degree": 9,
+        "status": "exact_polynomial_identity"
+      },
+      {
+        "point": "V0",
+        "degree": 9,
+        "status": "exact_polynomial_identity"
+      },
+      {
+        "point": "V1",
+        "degree": 2,
+        "status": "exact_polynomial_identity"
+      },
+      {
+        "point": "V2",
+        "degree": 9,
+        "status": "exact_polynomial_identity"
+      },
+      {
+        "point": "V3",
+        "degree": 9,
+        "status": "exact_polynomial_identity"
+      },
+      {
+        "point": "V4",
+        "degree": 9,
+        "status": "exact_polynomial_identity"
+      }
+    ],
+    "weightExponentIdentities": [
+      22,
+      78
+    ],
+    "scope": "Exact symbolic emitted logarithm identities and exponent identities; denominator nonvanishing is proved in README.md"
+  },
+  "constantChain": "passed",
+  "arithmeticBudgets": "passed",
+  "arithmeticReview": "AI self-review only; not independent mathematical review",
+  "outputHashes": {
+    "parameter-source-ir.json": "d80fbc65d070cbd5b80ae304f808d056efaad8173c0fc0d402246b8ac4929d12",
+    "source-ir.json": "2bd10cdfc4272b772196cc357d01cf8eb7c076c5a56e0d0038f7655614dcc1d8",
+    "compiled/compiled-ir.json": "f5ee3169acf825cc3658de7338aacba03e124e5529710456cd66ce7f0e752d85",
+    "compiled/reduction-certificate.json": "046217f483ff7935f152e7f36bbbbae58abc3e5bfd71828844b4d7e16ea4e481",
+    "compiled/coordinate-map.json": "964a34b2c9b7d04dfe44c6ca02d981691c5af4056c3019d77c14d86880fd2274",
+    "compiled/ordinary-polynomial.json": "326a23b5af8064915013411f24af39e4507c41431c6b783d5a6cae488695b93b"
+  },
+  "fullCheckerReportSha256": "9ee803ceee8c78227c29bd9f3950bf67837b0ac4b7f3418ceda6e08bd44a8cca"
+}

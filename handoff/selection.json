@@ -1,18 +1,18 @@
 {
   "files": [
     {
-      "bytes": 1972,
+      "bytes": 2319,
       "original_path": "handoff/payload/COVERAGE.md",
       "path": "COVERAGE.md",
-      "scope": "Version 6 orientation; research payload is in the complete public snapshot",
-      "sha256": "229ab71e1d6cc5d3ce6e243e7796577256cd582f71943da69fd222ae0c0092d6"
+      "scope": "Version 7 orientation; complete research and audit payload is in the recorded public snapshot",
+      "sha256": "cf5a8395881c0bf08e3e864bec2f3f55f5080d19f7ff54959526f155d46c99f8"
     },
     {
-      "bytes": 1887,
+      "bytes": 2225,
       "original_path": "handoff/payload/RESEARCH_NOTES.md",
       "path": "RESEARCH_NOTES.md",
-      "scope": "Version 6 orientation; research payload is in the complete public snapshot",
-      "sha256": "5f4b3768855090156bdceb3e01aa0d788aea063dd3383bafce7de5e173c04fb8"
+      "scope": "Version 7 orientation; complete research and audit payload is in the recorded public snapshot",
+      "sha256": "a9b5eec5267ed12bc525b8a6159302a875c416d2d750785eabe5abad214c34d9"
     }
   ],
   "format": "quartic-handoff-selection/v2"

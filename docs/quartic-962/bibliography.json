@@ -3,11 +3,11 @@
     "historical_source_records": [],
     "key": "Mitsui1956",
     "span": {
-      "end_character": 881126,
-      "first_line": 18614,
-      "last_line": 18619,
-      "path": "quartic_962.tex",
-      "start_character": 880947,
+      "end_character": 889872,
+      "first_line": 18790,
+      "last_line": 18795,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 889693,
       "text_sha256": "599f566e7227dd6b72891b55f178766ff7f47775642de4e45d137626cb5823d7"
     },
     "text": "\\bibitem{Mitsui1956}\nT.~Mitsui,\n\\emph{Generalized Prime Number Theorem},\nJapanese Journal of Mathematics \\textbf{26} (1956), 1--42.\n\\url{https://doi.org/10.4099/jjm1924.26.0_1}.\n\n"
@@ -16,11 +16,11 @@
     "historical_source_records": [],
     "key": "GTOrbits2012",
     "span": {
-      "end_character": 881346,
-      "first_line": 18620,
-      "last_line": 18623,
-      "path": "quartic_962.tex",
-      "start_character": 881126,
+      "end_character": 890092,
+      "first_line": 18796,
+      "last_line": 18799,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 889872,
       "text_sha256": "b6293b158886a027dd111a8efcc6ec08c0199dc803edd5986a6cee6747773682"
     },
     "text": "\\bibitem{GTOrbits2012}\nB. Green and T. Tao, \\emph{The quantitative behaviour of polynomial\norbits on nilmanifolds}, Annals of Mathematics \\textbf{175} (2012), 465--540.\n\\url{https://doi.org/10.4007/annals.2012.175.2.2}.\n"
@@ -29,11 +29,11 @@
     "historical_source_records": [],
     "key": "v6bienvenu",
     "span": {
-      "end_character": 881530,
-      "first_line": 18624,
-      "last_line": 18628,
-      "path": "quartic_962.tex",
-      "start_character": 881346,
+      "end_character": 890276,
+      "first_line": 18800,
+      "last_line": 18804,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 890092,
       "text_sha256": "65539daa1da4ec8d72e1f396b6df96836460d5af7967f42fbc781e8adf7b3d34"
     },
     "text": "\\bibitem{v6bienvenu}\nP.-Y. Bienvenu, \\emph{A higher-dimensional Siegel--Walfisz theorem},\nActa Arithmetica \\textbf{179} (2017), 79--100.\n\\url{https://doi.org/10.4064/aa8600-10-2016}.\n\n"
@@ -42,11 +42,11 @@
     "historical_source_records": [],
     "key": "Kollar2002Cubic",
     "span": {
-      "end_character": 881756,
-      "first_line": 18629,
-      "last_line": 18633,
-      "path": "quartic_962.tex",
-      "start_character": 881530,
+      "end_character": 890502,
+      "first_line": 18805,
+      "last_line": 18809,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 890276,
       "text_sha256": "ab16507820b57ab4b83d23043ee5eb185306740b58f1f4dd5a8c70283da4db19"
     },
     "text": "\\bibitem{Kollar2002Cubic} J. Koll\\'ar,\n\\emph{Unirationality of cubic hypersurfaces},\nJ. Inst. Math. Jussieu \\textbf{1} (2002), no.~3, 467--476.\n\\href{https://doi.org/10.1017/S1474748002000117}{doi:10.1017/S1474748002000117}.\n\n"
@@ -55,11 +55,11 @@
     "historical_source_records": [],
     "key": "Muller2002HIT",
     "span": {
-      "end_character": 881978,
-      "first_line": 18634,
-      "last_line": 18638,
-      "path": "quartic_962.tex",
-      "start_character": 881756,
+      "end_character": 890724,
+      "first_line": 18810,
+      "last_line": 18814,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 890502,
       "text_sha256": "966b3555182e8271a57a3e5ca11e2d4436b95f4510b06d12e6c725b40dbca683"
     },
     "text": "\\bibitem{Muller2002HIT} P. M\\\"uller,\n\\emph{Finiteness results for Hilbert's irreducibility theorem},\nAnn. Inst. Fourier \\textbf{52} (2002), no.~4, 983--1015.\n\\href{https://doi.org/10.5802/aif.1907}{doi:10.5802/aif.1907}.\n\n"
@@ -68,11 +68,11 @@
     "historical_source_records": [],
     "key": "agentic-improvements",
     "span": {
-      "end_character": 882538,
-      "first_line": 18639,
-      "last_line": 18645,
-      "path": "quartic_962.tex",
-      "start_character": 881978,
+      "end_character": 891284,
+      "first_line": 18815,
+      "last_line": 18821,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 890724,
       "text_sha256": "bc3ef552ac6f2f0c4bdd5b0f42a86e4efc995b89637f10b0330006263e415ba6"
     },
     "text": "\\bibitem{agentic-improvements} Agentic notes,\n\\emph{Conditional polynomial constructions, lower bounds, and number-field\nobstructions for rational Diophantine integrality}, working version 3,\n6 November 2026. Public source at Git revision\n\\nolinkurl{f4d1b5e6c23d4adeb3ae1f986ab0bf87884bdff6}.\n\\href{https://github.com/JoseBrox/diophantine-z-q_improvements/blob/f4d1b5e6c23d4adeb3ae1f986ab0bf87884bdff6/paper/diophantine_optimization_20261106_v3.tex}{Public source at the pinned revision}.\n% Insert these items inside the manuscript's existing thebibliography.\n"
@@ -81,11 +81,11 @@
     "historical_source_records": [],
     "key": "v5sun",
     "span": {
-      "end_character": 882744,
-      "first_line": 18646,
-      "last_line": 18650,
-      "path": "quartic_962.tex",
-      "start_character": 882538,
+      "end_character": 891490,
+      "first_line": 18822,
+      "last_line": 18826,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 891284,
       "text_sha256": "ac215fb3b627e2137b41fc88813039518af7b3d2b9d656a43e18860845f168e6"
     },
     "text": "\\bibitem{v5sun}\nZ.-W. Sun, \\emph{86 unknowns for Hilbert's tenth problem over the rationals},\narXiv:2610.20691v2, 2026. Theorem~4.1, Sections~4--6 and Appendix~A.\n\\url{https://arxiv.org/abs/2610.20691v2}.\n\n"
@@ -94,11 +94,11 @@
     "historical_source_records": [],
     "key": "v5bl",
     "span": {
-      "end_character": 883090,
-      "first_line": 18651,
-      "last_line": 18658,
-      "path": "quartic_962.tex",
-      "start_character": 882744,
+      "end_character": 891836,
+      "first_line": 18827,
+      "last_line": 18834,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 891490,
       "text_sha256": "433f7fd6f21be34e90a29659e816d8f6d9d557155329b45aad1a4400a9f6a540"
     },
     "text": "\\bibitem{v5bl}\nT. Browning and D. Loughran, \\emph{Sieving rational points on varieties},\nTrans. Amer. Math. Soc. \\textbf{371} (2019), 5757--5785.\n\\url{https://doi.org/10.1090/tran/7514}.\nTheorem~4.1 was checked in the institutional accepted manuscript and\narXiv:1705.01999v2; the publisher's final typeset text was not accessible\nin this audit.\n\n"
@@ -107,11 +107,11 @@
     "historical_source_records": [],
     "key": "v5bhb",
     "span": {
-      "end_character": 883465,
-      "first_line": 18659,
-      "last_line": 18666,
-      "path": "quartic_962.tex",
-      "start_character": 883090,
+      "end_character": 892211,
+      "first_line": 18835,
+      "last_line": 18842,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 891836,
       "text_sha256": "a2adee5b2f8172e7dce91797d495bee761deb219395abbc48c9a8901bc48f83d"
     },
     "text": "\\bibitem{v5bhb}\nT. D. Browning and D. R. Heath-Brown, \\emph{The geometric sieve for quadrics},\nForum Math. \\textbf{33} (2021), no.~1, 147--165.\n\\url{https://doi.org/10.1515/forum-2020-0074}.\nLemmas~2.1 and 4.1 were checked in the Oxford accepted manuscript dated\n14 September 2020 and arXiv:2003.09593v1; the publisher's final typeset\ntext was not accessible in this audit.\n\n"
@@ -120,11 +120,11 @@
     "historical_source_records": [],
     "key": "v5ft",
     "span": {
-      "end_character": 883877,
-      "first_line": 18667,
-      "last_line": 18675,
-      "path": "quartic_962.tex",
-      "start_character": 883465,
+      "end_character": 892623,
+      "first_line": 18843,
+      "last_line": 18851,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 892211,
       "text_sha256": "28b5fb900033c3d35f99fddfef11b0e1302ef8284ff5470160c14b783ed5e0d0"
     },
     "text": "\\bibitem{v5ft}\nC. Frei and M. Tinkov\\'a, with an appendix by C. Frei, J. K\\\"onig and\nM. Tinkov\\'a, \\emph{Linear constellations in primes with arithmetic restrictions},\narXiv:2408.17441v3, 5 November 2025.\n\\url{https://arxiv.org/abs/2408.17441v3}.\nTheorem~1.4. Listed as \\emph{Mathematika}, to appear, on\n\\url{https://www.math.tugraz.at/~frei/}, checked 6 November 2026.\nNo final published version was verified.\n\n"
@@ -133,11 +133,11 @@
     "historical_source_records": [],
     "key": "v5dk",
     "span": {
-      "end_character": 884203,
-      "first_line": 18676,
-      "last_line": 18683,
-      "path": "quartic_962.tex",
-      "start_character": 883877,
+      "end_character": 892949,
+      "first_line": 18852,
+      "last_line": 18859,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 892623,
       "text_sha256": "e49cbc15577498d0891267d1f728f9933fd108468c680feccbe56dbc0820cae2"
     },
     "text": "\\bibitem{v5dk}\nP. Dodos and V. Kanellopoulos,\n\\emph{Uniformity norms, their weaker versions, and applications},\nActa Arith. \\textbf{203} (2022), no.~3, 251--270.\n\\url{https://doi.org/10.4064/aa210728-27-2}.\nTheorem~5.1 was checked in arXiv:1610.00487v4, 9 June 2022,\npp.~12--13; the final typeset statement was not compared.\n\n"
@@ -146,24 +146,24 @@
     "historical_source_records": [],
     "key": "v5tz",
     "span": {
-      "end_character": 884417,
-      "first_line": 18684,
-      "last_line": 18689,
-      "path": "quartic_962.tex",
-      "start_character": 884203,
-      "text_sha256": "bb27fcdc0327cd1bbcacb64107a517f7e9a97ae85fed11895c04e28ff9f9f7d3"
+      "end_character": 893163,
+      "first_line": 18860,
+      "last_line": 18865,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 892949,
+      "text_sha256": "779521e2eed095b8635e4f2e4a6e96834a8fb04d24ebe09f22d1357d06585191"
     },
-    "text": "\\bibitem{v5tz}\nT. Tao and T. Ziegler, \\emph{Polynomial patterns in the primes},\nForum Math. Pi \\textbf{6} (2018), e1, 73 pp.\n\\url{https://doi.org/10.1017/fmp.2017.3}.\nPublished Theorems~9, 11, 13 and Corollary~3.\n\n"
+    "text": "\\bibitem{v5tz}\nT. Tao and T. Ziegler, \\emph{Polynomial patterns in the primes},\nForum Math. Pi \\textbf{6} (2018), e1, 60 pp.\n\\url{https://doi.org/10.1017/fmp.2017.3}.\nPublished Theorems~9, 11, 13 and Corollary~3.\n\n"
   },
   {
     "historical_source_records": [],
     "key": "v5kl",
     "span": {
-      "end_character": 884683,
-      "first_line": 18690,
-      "last_line": 18696,
-      "path": "quartic_962.tex",
-      "start_character": 884417,
+      "end_character": 893429,
+      "first_line": 18866,
+      "last_line": 18872,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 893163,
       "text_sha256": "2c187f60e26bdf19c387d5d1783efd34c5e7970d63a0112b1a0deb75981b84f7"
     },
     "text": "\\bibitem{v5kl}\nG. S. Kopp and J. C. Lagarias,\n\\emph{Ray class groups and ray class fields for orders of number fields},\nEssential Number Theory \\textbf{4} (2025), no.~1, 1--65.\n\\url{https://doi.org/10.2140/ent.2025.4.1}.\nTheorems~1.1, 1.3, 6.5, 7.2 and Remark~7.3.\n\n"
@@ -172,11 +172,11 @@
     "historical_source_records": [],
     "key": "v5williams",
     "span": {
-      "end_character": 884891,
-      "first_line": 18697,
-      "last_line": 18701,
-      "path": "quartic_962.tex",
-      "start_character": 884683,
+      "end_character": 893637,
+      "first_line": 18873,
+      "last_line": 18877,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 893429,
       "text_sha256": "b7e0efc3d8ca8b16266a2b4c6c312f36fb5fcf9141aa6128b58de0547b00eae3"
     },
     "text": "\\bibitem{v5williams}\nK. S. Williams, \\emph{Mertens' theorem for arithmetic progressions},\nJ. Number Theory \\textbf{6} (1974), 353--359, Theorem~1, p.~356.\n\\url{https://doi.org/10.1016/0022-314X(74)90032-8}.\n\n"
@@ -211,11 +211,11 @@
     ],
     "key": "scholze2013",
     "span": {
-      "end_character": 885109,
-      "first_line": 18702,
-      "last_line": 18706,
-      "path": "quartic_962.tex",
-      "start_character": 884891,
+      "end_character": 893855,
+      "first_line": 18878,
+      "last_line": 18882,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 893637,
       "text_sha256": "7a3bef29350f85bb8b2b1b27b4e09e1712d4eff45b55635b5234f393e18faa23"
     },
     "text": "\\bibitem{scholze2013} P. Scholze,\n\\emph{$p$-adic Hodge theory for rigid-analytic varieties},\nForum of Mathematics, Pi 1 (2013), e1, 1--77,\nCorollary 1.8 and Theorems 9.1, 9.3.\n\\url{https://doi.org/10.1017/fmp.2013.1}.\n"
@@ -250,11 +250,11 @@
     ],
     "key": "scholze-erratum",
     "span": {
-      "end_character": 885307,
-      "first_line": 18707,
-      "last_line": 18710,
-      "path": "quartic_962.tex",
-      "start_character": 885109,
+      "end_character": 894053,
+      "first_line": 18883,
+      "last_line": 18886,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 893855,
       "text_sha256": "2ef0c5c906e896956a30708f7ac47c09c9fcc477e22a7294bc2c6e3bb91c29f8"
     },
     "text": "\\bibitem{scholze-erratum} P. Scholze,\n\\emph{$p$-adic Hodge theory for rigid-analytic varieties---corrigendum},\nForum of Mathematics, Pi 4 (2016), e6, 1--4.\n\\url{https://doi.org/10.1017/fmp.2016.4}.\n"
@@ -289,11 +289,11 @@
     ],
     "key": "brinon-conrad",
     "span": {
-      "end_character": 885552,
-      "first_line": 18711,
-      "last_line": 18715,
-      "path": "quartic_962.tex",
-      "start_character": 885307,
+      "end_character": 894298,
+      "first_line": 18887,
+      "last_line": 18891,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 894053,
       "text_sha256": "3c0c75a6375fc19d9e7a34765d5d7be2c4f07f3f4c3afae837a43810c9e6061e"
     },
     "text": "\\bibitem{brinon-conrad} O. Brinon and B. Conrad,\n\\emph{CMI summer school notes on $p$-adic Hodge theory},\npreliminary version, June 24, 2009,\nTheorem 5.2.1 and Propositions 6.3.3, 6.3.8.\n\\url{https://math.stanford.edu/~conrad/papers/notes.pdf}.\n"
@@ -328,11 +328,11 @@
     ],
     "key": "milne-av",
     "span": {
-      "end_character": 885710,
-      "first_line": 18716,
-      "last_line": 18718,
-      "path": "quartic_962.tex",
-      "start_character": 885552,
+      "end_character": 894456,
+      "first_line": 18892,
+      "last_line": 18894,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 894298,
       "text_sha256": "a27db534d996fafd01645879cb151ebd9bcdbcad75279b79c690d3c0e5177ed4"
     },
     "text": "\\bibitem{milne-av} J. S. Milne, \\emph{Abelian varieties},\nversion 2.00 (2008), Part I, Theorem 12.1(a).\n\\url{https://www.jmilne.org/math/CourseNotes/AV.pdf}.\n"
@@ -358,11 +358,11 @@
     ],
     "key": "babagranath",
     "span": {
-      "end_character": 885939,
-      "first_line": 18719,
-      "last_line": 18722,
-      "path": "quartic_962.tex",
-      "start_character": 885710,
+      "end_character": 894685,
+      "first_line": 18895,
+      "last_line": 18898,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 894456,
       "text_sha256": "173254b15765d25c2ad1dd7102cb5a83a5a0cc7996d9907eed75d68df763cc6a"
     },
     "text": "\\bibitem{babagranath} S. Baba and H. Granath,\n\\emph{Genus 2 curves with quaternionic multiplication}, 2005 preprint,\nSections 2.1, 3 and Proposition 10.\n\\url{https://webdoc.sub.gwdg.de/ebook/serien/e/mpi_mathematik/2005/18.pdf}.\n"
@@ -388,11 +388,11 @@
     ],
     "key": "buzzard",
     "span": {
-      "end_character": 886152,
-      "first_line": 18723,
-      "last_line": 18725,
-      "path": "quartic_962.tex",
-      "start_character": 885939,
+      "end_character": 894898,
+      "first_line": 18899,
+      "last_line": 18901,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 894685,
       "text_sha256": "0ff6f544b38d0c4e5680fb02b3f2429cdb4f82d5f19b627622f5e7403222452b"
     },
     "text": "\\bibitem{buzzard} K. Buzzard, \\emph{Integral models of certain Shimura\ncurves}, 1996, corrected 2002, Theorem 2.1 and Corollary 2.3.\n\\url{https://www.ma.imperial.ac.uk/~buzzard/maths/research/papers/shimura.pdf}.\n"
@@ -418,11 +418,11 @@
     ],
     "key": "linyang",
     "span": {
-      "end_character": 886338,
-      "first_line": 18726,
-      "last_line": 18728,
-      "path": "quartic_962.tex",
-      "start_character": 886152,
+      "end_character": 895084,
+      "first_line": 18902,
+      "last_line": 18904,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 894898,
       "text_sha256": "9b7be6906adc2781abd79fe937ed60d9fd52422820558db1ab1c2352d4f06a79"
     },
     "text": "\\bibitem{linyang} Y.-H. Lin and Y. Yang, \\emph{Quaternionic loci in\nSiegel's modular threefold}, arXiv:1807.00466v1, 2018, equations (2), (14).\n\\url{https://arxiv.org/abs/1807.00466v1}.\n"
@@ -457,11 +457,11 @@
     ],
     "key": "berger2002",
     "span": {
-      "end_character": 886561,
-      "first_line": 18729,
-      "last_line": 18732,
-      "path": "quartic_962.tex",
-      "start_character": 886338,
+      "end_character": 895307,
+      "first_line": 18905,
+      "last_line": 18908,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 895084,
       "text_sha256": "4e95717d2847a46fc98935c50735952e0a8d19479039271b73e2f0c5be77982b"
     },
     "text": "\\bibitem{berger2002} L. Berger, \\emph{Repr\\'esentations $p$-adiques et\n\\'equations diff\\'erentielles}, Inventiones Mathematicae 148 (2002),\n219--284, $p$-adic monodromy theorem.\n\\url{https://doi.org/10.1007/s002220100202}.\n"
@@ -496,11 +496,11 @@
     ],
     "key": "pan2022",
     "span": {
-      "end_character": 886840,
-      "first_line": 18733,
-      "last_line": 18737,
-      "path": "quartic_962.tex",
-      "start_character": 886561,
+      "end_character": 895586,
+      "first_line": 18909,
+      "last_line": 18913,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 895307,
       "text_sha256": "1e5ac42b198c6acc1c31c3ac710b44df65f652166ee82efb6ed24987d0258d76"
     },
     "text": "\\bibitem{pan2022} L. Pan, \\emph{The Fontaine--Mazur conjecture in the\nresidually reducible case}, arXiv:1901.07166v2,\nTheorem 1.0.4, the version used here. Published in Journal of the\nAmerican Mathematical Society 35 (2022), 1031--1169.\n\\url{https://arxiv.org/abs/1901.07166v2}.\n"
@@ -526,11 +526,11 @@
     ],
     "key": "conrad-local-characters",
     "span": {
-      "end_character": 887066,
-      "first_line": 18738,
-      "last_line": 18741,
-      "path": "quartic_962.tex",
-      "start_character": 886840,
+      "end_character": 895812,
+      "first_line": 18914,
+      "last_line": 18917,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 895586,
       "text_sha256": "a958f61be68ae91e716da1552741f83bee7297ee47b560aba8949cf76db26225"
     },
     "text": "\\bibitem{conrad-local-characters} B. Conrad,\n\\emph{Lifting global representations with local properties},\nauthor preprint, December 11, 2011, Appendix B, pp.~32--33.\n\\url{https://math.stanford.edu/~conrad/papers/locchar.pdf}.\n"
@@ -573,11 +573,11 @@
     ],
     "key": "li-newforms",
     "span": {
-      "end_character": 887195,
-      "first_line": 18742,
-      "last_line": 18744,
-      "path": "quartic_962.tex",
-      "start_character": 887066,
+      "end_character": 895941,
+      "first_line": 18918,
+      "last_line": 18920,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 895812,
       "text_sha256": "badd8b167e4b3522450f481337d0311ae49be5f43bce79a28e91ceac22dad8df"
     },
     "text": "\\bibitem{li-newforms} W.-C. W. Li,\n\\emph{Newforms and functional equations}, Mathematische Annalen\n212 (1975), 285--315, p.~296.\n"
@@ -603,11 +603,11 @@
     ],
     "key": "shimura-factors",
     "span": {
-      "end_character": 887430,
-      "first_line": 18745,
-      "last_line": 18749,
-      "path": "quartic_962.tex",
-      "start_character": 887195,
+      "end_character": 896176,
+      "first_line": 18921,
+      "last_line": 18925,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 895941,
       "text_sha256": "9955cca7e30a1ac4318674a304879a476a7af6da583aa3945aa74fff065a39fa"
     },
     "text": "\\bibitem{shimura-factors} G. Shimura,\n\\emph{On the factors of the jacobian variety of a modular function field},\nJournal of the Mathematical Society of Japan 25 (1973), 523--544,\nTheorem 1.\n\\url{https://doi.org/10.2969/jmsj/02530523}.\n"
@@ -635,11 +635,11 @@
     ],
     "key": "javanpeykar",
     "span": {
-      "end_character": 887684,
-      "first_line": 18750,
-      "last_line": 18754,
-      "path": "quartic_962.tex",
-      "start_character": 887430,
+      "end_character": 896430,
+      "first_line": 18926,
+      "last_line": 18930,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 896176,
       "text_sha256": "4217e9fa463432f3ddf51a17ff900932d0adf53e830884ebf9851d5fdb9c231b"
     },
     "text": "\\bibitem{javanpeykar} A. Javanpeykar, with an appendix by P. Bruin,\n\\emph{Polynomial bounds for Arakelov invariants of Belyi curves},\nAlgebra \\& Number Theory 8 (2014), 89--140,\nTheorem 1.1.1 and Section 2.3.\n\\url{https://doi.org/10.2140/ant.2014.8.89}.\n"
@@ -665,11 +665,11 @@
     ],
     "key": "gr2014",
     "span": {
-      "end_character": 887893,
-      "first_line": 18755,
-      "last_line": 18758,
-      "path": "quartic_962.tex",
-      "start_character": 887684,
+      "end_character": 896639,
+      "first_line": 18931,
+      "last_line": 18934,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 896430,
       "text_sha256": "bb865d9b1452aac8cf82046972d825f695b81c018368ebe0e61660364d9d0d7b"
     },
     "text": "\\bibitem{gr2014} \\'E. Gaudron and G. R\\'emond,\n\\emph{Polarisations et isog\\'enies}, Duke Mathematical Journal\n163 (2014), 2057--2108, Theorem 1.4 and Section 9.\n\\url{https://doi.org/10.1215/00127094-2782528}.\n"
@@ -704,11 +704,11 @@
     ],
     "key": "fowler",
     "span": {
-      "end_character": 888165,
-      "first_line": 18759,
-      "last_line": 18763,
-      "path": "quartic_962.tex",
-      "start_character": 887893,
+      "end_character": 896911,
+      "first_line": 18935,
+      "last_line": 18939,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 896639,
       "text_sha256": "7d9ed7aca5bea022726e19f6d5464a0c79bef2234820b35865c629e33219394b"
     },
     "text": "\\bibitem{fowler} G. Fowler, \\emph{Some uniform effective results on\nAndr\\'e--Oort for sums of powers in $\\mathbb C^n$}, Mathematical\nProceedings of the Cambridge Philosophical Society 180 (2026),\n607--641, Proposition 2.7.\n\\url{https://doi.org/10.1017/S0305004125101825}.\n"
@@ -743,11 +743,11 @@
     ],
     "key": "cmheight",
     "span": {
-      "end_character": 888451,
-      "first_line": 18764,
-      "last_line": 18768,
-      "path": "quartic_962.tex",
-      "start_character": 888165,
+      "end_character": 897197,
+      "first_line": 18940,
+      "last_line": 18944,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 896911,
       "text_sha256": "858f86f028c543831894952338057e9a0af2c19aedbff6601a371c591e0ad8a9"
     },
     "text": "\\bibitem{cmheight} A. Barquero-Sanchez, L. Cadwallader, O. Cannon,\nT. Genao and R. Masri, \\emph{Faltings heights of CM elliptic curves\nand special Gamma values}, Research in Number Theory 3 (2017),\narticle 13, Section 6, equation (6.2).\n\\url{https://doi.org/10.1007/s40993-017-0077-7}.\n"
@@ -773,11 +773,11 @@
     ],
     "key": "silverbergzarhin",
     "span": {
-      "end_character": 888710,
-      "first_line": 18769,
-      "last_line": 18772,
-      "path": "quartic_962.tex",
-      "start_character": 888451,
+      "end_character": 897456,
+      "first_line": 18945,
+      "last_line": 18948,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 897197,
       "text_sha256": "c7c34c3b42806c0ee91576ad51b90971c8b2ef730e8d2d09cf7c7a7aee6a5648"
     },
     "text": "\\bibitem{silverbergzarhin} A. Silverberg and Yu. G. Zarhin,\n\\emph{Semistable reduction and torsion subgroups of abelian varieties},\nAnnales de l'Institut Fourier 45 (1995), 403--420, Theorem 3.5.\n\\url{https://www.numdam.org/article/AIF_1995__45_2_403_0.pdf}.\n"
@@ -801,11 +801,11 @@
     ],
     "key": "serrelocal",
     "span": {
-      "end_character": 888918,
-      "first_line": 18773,
-      "last_line": 18775,
-      "path": "quartic_962.tex",
-      "start_character": 888710,
+      "end_character": 897664,
+      "first_line": 18949,
+      "last_line": 18951,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 897456,
       "text_sha256": "fadfbaf14cb06043efe526502079d71ddff7074c6a751b0e06005e325a5c17d7"
     },
     "text": "\\bibitem{serrelocal} J.-P. Serre, \\emph{Local class field theory},\nin J. W. S. Cassels and A. Fr\\\"ohlich (eds.), \\emph{Algebraic Number Theory},\nAcademic Press, 1967, Chapter VI, 128--161, Sections 4.1--4.3.\n"
@@ -831,11 +831,11 @@
     ],
     "key": "faltings1983",
     "span": {
-      "end_character": 889102,
-      "first_line": 18776,
-      "last_line": 18778,
-      "path": "quartic_962.tex",
-      "start_character": 888918,
+      "end_character": 897848,
+      "first_line": 18952,
+      "last_line": 18954,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 897664,
       "text_sha256": "4c770c6f607b6673be06c99e5427663563e45c092a22b5fac59f9cfb5db6bb4a"
     },
     "text": "\\bibitem{faltings1983} G. Faltings, \\emph{Endlichkeitss\\\"atze f\\\"ur\nabelsche Variet\\\"aten \\\"uber Zahlk\\\"orpern}, Inventiones Mathematicae\n73 (1983), 349--366; erratum, 75 (1984), 381.\n"
@@ -861,11 +861,11 @@
     ],
     "key": "faltings1988",
     "span": {
-      "end_character": 889234,
-      "first_line": 18779,
-      "last_line": 18781,
-      "path": "quartic_962.tex",
-      "start_character": 889102,
+      "end_character": 897980,
+      "first_line": 18955,
+      "last_line": 18957,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 897848,
       "text_sha256": "a5d227ed25f09c590ded621f55ed134931390efefeccee0c9735db062c8a84b4"
     },
     "text": "\\bibitem{faltings1988} G. Faltings, \\emph{$p$-adic Hodge theory},\nJournal of the American Mathematical Society 1 (1988), 255--299.\n\n"
@@ -891,11 +891,11 @@
     ],
     "key": "lny",
     "span": {
-      "end_character": 889492,
-      "first_line": 18782,
-      "last_line": 18785,
-      "path": "quartic_962.tex",
-      "start_character": 889234,
+      "end_character": 898238,
+      "first_line": 18958,
+      "last_line": 18961,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 897980,
       "text_sha256": "48d53831ca6aebcaacb6c68e4930802675a6313d0cc861a61c0005ccdf5c0d4b"
     },
     "text": "\\bibitem{lny} K. Lauter, M. Naehrig and T. Yang, \\emph{Hilbert theta\nseries and invariants of genus 2 curves}, Journal of Number Theory,\n2015, Section 2.2, doi:10.1016/j.jnt.2015.02.020.\n\\url{https://people.math.wisc.edu/~tonghaiyang/2015-LNYFinal-JNT.pdf}.\n"
@@ -928,11 +928,11 @@
     ],
     "key": "pazuki",
     "span": {
-      "end_character": 889715,
-      "first_line": 18786,
-      "last_line": 18789,
-      "path": "quartic_962.tex",
-      "start_character": 889492,
+      "end_character": 898461,
+      "first_line": 18962,
+      "last_line": 18965,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 898238,
       "text_sha256": "86189acef4ea1e6b15f87f35aa54737b2f00cb21cc78d4df6e5b82e35ceb2510"
     },
     "text": "\\bibitem{pazuki} F. Pazuki, \\emph{Theta height and Faltings height},\nBulletin de la Soci\\'et\\'e Math\\'ematique de France, 2012,\nSections 2.2--2.3 and Corollary 1.3.\n\\url{https://www.numdam.org/item/10.24033/bsmf.2623.pdf}.\n"
@@ -958,11 +958,11 @@
     ],
     "key": "poonenstoll",
     "span": {
-      "end_character": 889923,
-      "first_line": 18790,
-      "last_line": 18792,
-      "path": "quartic_962.tex",
-      "start_character": 889715,
+      "end_character": 898669,
+      "first_line": 18966,
+      "last_line": 18968,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 898461,
       "text_sha256": "fdf7148556a5ded53375e7063734406c72381f9e15fef7f2fd4d301fbcfb74fa"
     },
     "text": "\\bibitem{poonenstoll} B. Poonen and M. Stoll, \\emph{The Cassels--Tate\npairing on polarized abelian varieties}, Annals of Mathematics 150\n(1999), 1109--1149. \\url{https://math.mit.edu/~poonen/papers/sha.pdf}.\n"
@@ -993,11 +993,11 @@
     ],
     "key": "greentao",
     "span": {
-      "end_character": 890100,
-      "first_line": 18793,
-      "last_line": 18795,
-      "path": "quartic_962.tex",
-      "start_character": 889923,
+      "end_character": 898846,
+      "first_line": 18969,
+      "last_line": 18971,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 898669,
       "text_sha256": "2f210af45b0d3d8b229fb6d158eb93a25bfd81b0e13607df6348773cd9de5add"
     },
     "text": "\\bibitem{greentao} B. Green and T. Tao, \\emph{Linear equations in primes},\nAnnals of Mathematics 171 (2010), 1753--1850.\n\\url{https://annals.math.princeton.edu/2010/171-3/p08}.\n"
@@ -1028,11 +1028,11 @@
     ],
     "key": "moebius",
     "span": {
-      "end_character": 890298,
-      "first_line": 18796,
-      "last_line": 18798,
-      "path": "quartic_962.tex",
-      "start_character": 890100,
+      "end_character": 899044,
+      "first_line": 18972,
+      "last_line": 18974,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 898846,
       "text_sha256": "b6df19c922631e33f3494c873471ab5a964af7bd8187006b59fcab7dc85e6cf2"
     },
     "text": "\\bibitem{moebius} B. Green and T. Tao, \\emph{The M\\\"obius function is\nstrongly orthogonal to nilsequences}, Annals of Mathematics 175 (2012).\n\\url{https://annals.math.princeton.edu/2012/175-2/p03}.\n"
@@ -1074,11 +1074,11 @@
     ],
     "key": "gtz",
     "span": {
-      "end_character": 890575,
-      "first_line": 18799,
-      "last_line": 18802,
-      "path": "quartic_962.tex",
-      "start_character": 890298,
+      "end_character": 899321,
+      "first_line": 18975,
+      "last_line": 18978,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 899044,
       "text_sha256": "317cb4a2312297d453b63048678318442df14b6d2edd1f64953d1bf5db83f6cd"
     },
     "text": "\\bibitem{gtz} B. Green, T. Tao and T. Ziegler, \\emph{An inverse theorem\nfor the Gowers $U^{s+1}[N]$-norm}, arXiv:1009.3998v5, 2026 corrected version.\n\\url{https://arxiv.org/abs/1009.3998v5}; author erratum:\n\\url{https://people.maths.ox.ac.uk/greenbj/papers/GI(s)-erratum.pdf}.\n"
@@ -1114,11 +1114,11 @@
     ],
     "key": "bmor",
     "span": {
-      "end_character": 890837,
-      "first_line": 18803,
-      "last_line": 18807,
-      "path": "quartic_962.tex",
-      "start_character": 890575,
+      "end_character": 899583,
+      "first_line": 18979,
+      "last_line": 18983,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 899321,
       "text_sha256": "acda5ca0843d0b71f22b24361de226bf96437a4d64067fa15292b05607e3801e"
     },
     "text": "\\bibitem{bmor} M. A. Bennett, G. Martin, K. O'Bryant and A. Rechnitzer,\n\\emph{Explicit bounds for primes in arithmetic progressions},\nIllinois Journal of Mathematics 62 (2018), 427--532,\narXiv:1802.00085v3, Theorem 1.2.\n\\url{https://arxiv.org/abs/1802.00085v3}.\n"
@@ -1144,11 +1144,11 @@
     ],
     "key": "milne",
     "span": {
-      "end_character": 890987,
-      "first_line": 18808,
-      "last_line": 18810,
-      "path": "quartic_962.tex",
-      "start_character": 890837,
+      "end_character": 899733,
+      "first_line": 18984,
+      "last_line": 18986,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 899583,
       "text_sha256": "e77c6b4d92dea34e7a5729c238ec514fc410222eee87ebca0cc7d69fa0eae15f"
     },
     "text": "\\bibitem{milne} J. S. Milne, \\emph{Arithmetic duality theorems},\nsecond edition, 2006, Chapter I.\n\\url{https://www.jmilne.org/math/Books/ADTnot.pdf}.\n"
@@ -1180,11 +1180,11 @@
     ],
     "key": "stackscohom",
     "span": {
-      "end_character": 891311,
-      "first_line": 18811,
-      "last_line": 18816,
-      "path": "quartic_962.tex",
-      "start_character": 890987,
+      "end_character": 900057,
+      "first_line": 18987,
+      "last_line": 18992,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 899733,
       "text_sha256": "fcefb23ff8f260d93319d8140fa1686325cb80d77bdbe1c8a776f2722d19d47c"
     },
     "text": "\\bibitem{stackscohom} The Stacks Project,\n\\emph{Stalks of higher direct images} and \\emph{The Leray spectral sequence},\nTheorem 59.53.1, Tag 03Q9, and Proposition 59.54.2, Section Tag 03QA,\nHTML snapshots of November 5, 2026.\n\\url{https://stacks.math.columbia.edu/tag/03Q9};\n\\url{https://stacks.math.columbia.edu/tag/03QA}.\n"
@@ -1210,11 +1210,11 @@
     ],
     "key": "nekovar",
     "span": {
-      "end_character": 891521,
-      "first_line": 18817,
-      "last_line": 18819,
-      "path": "quartic_962.tex",
-      "start_character": 891311,
+      "end_character": 900267,
+      "first_line": 18993,
+      "last_line": 18995,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 900057,
       "text_sha256": "0514c0a89bfbc9ce1f2959fb53ea64b8ee148ef1d6792a1bc2784a5935bd409f"
     },
     "text": "\\bibitem{nekovar} J. Nekov\\'a\\v r, \\emph{Selmer complexes},\nAst\\'erisque 310, 2006, Proposition 5.2.4, Theorems 6.3.4 and 7.8.8, and Sections 5.7 and 6.4.\n\\url{https://www.numdam.org/item/AST_2006__310__1_0/}.\n"
@@ -1255,11 +1255,11 @@
     ],
     "key": "afp",
     "span": {
-      "end_character": 891935,
-      "first_line": 18820,
-      "last_line": 18826,
-      "path": "quartic_962.tex",
-      "start_character": 891521,
+      "end_character": 900681,
+      "first_line": 18996,
+      "last_line": 19002,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 900267,
       "text_sha256": "7ac0f6ad2cc86dc6bc6f5e8849e5aa8d0872f44e1ffd525e93ac46b532fd8390"
     },
     "text": "\\bibitem{afp} Archive of Formal Proofs, \\emph{DPRM\\_Theorem},\n\\texttt{Alpha\\_Sequence}, \\texttt{Exponential\\_Relation}, and\n\\texttt{Exponentiation}, directory\n\\texttt{thys/DPRM\\_Theorem/Diophantine/}, AFP development git mirror\nrevision \\texttt{b4f3b892d0ae25cea27412ba4007cdb63e44b0eb}\n(May 10, 2026). The three source files match this revision byte for byte.\n\\url{https://isa-afp.org/entries/DPRM_Theorem.html}.\n"
@@ -1285,11 +1285,11 @@
     ],
     "key": "edixhoven",
     "span": {
-      "end_character": 892144,
-      "first_line": 18827,
-      "last_line": 18831,
-      "path": "quartic_962.tex",
-      "start_character": 891935,
+      "end_character": 900890,
+      "first_line": 19003,
+      "last_line": 19007,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 900681,
       "text_sha256": "d1389d92d617d05a8c58fe28eced3265b6461caa5bbf93527278956448b0f67d"
     },
     "text": "\\bibitem{edixhoven}\nB. Edixhoven, \\emph{N\\'eron models and tame ramification},\nCompositio Mathematica 81 (1992), 291--306,\nTheorem~5.3 and Remark~5.4.1.\n\\url{https://www.numdam.org/item/CM_1992__81_3_291_0/}.\n"
@@ -1315,11 +1315,11 @@
     ],
     "key": "sutherland",
     "span": {
-      "end_character": 892392,
-      "first_line": 18832,
-      "last_line": 18835,
-      "path": "quartic_962.tex",
-      "start_character": 892144,
+      "end_character": 901138,
+      "first_line": 19008,
+      "last_line": 19011,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 900890,
       "text_sha256": "40e22a09da78e789aaf06aa2e6f1232c495c2094fd346d27800737cc96646dad"
     },
     "text": "\\bibitem{sutherland} A. V. Sutherland,\n\\emph{Isogeny kernels and division polynomials}, MIT 18.783,\nFall 2025, Lecture 5, September 18, 2025, \\S\\S5.5--5.6.\n\\url{https://ocw.mit.edu/courses/18-783-elliptic-curves-fall-2025/mit18_783_f25_lec05.pdf}.\n"
@@ -1343,11 +1343,11 @@
     ],
     "key": "silverman",
     "span": {
-      "end_character": 892524,
-      "first_line": 18836,
-      "last_line": 18837,
-      "path": "quartic_962.tex",
-      "start_character": 892392,
+      "end_character": 901270,
+      "first_line": 19012,
+      "last_line": 19013,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 901138,
       "text_sha256": "1615ff55c2737519da52dead9d5b18be6aeba60f36af997ef24863c345b5c0f2"
     },
     "text": "\\bibitem{silverman} J. H. Silverman, \\emph{The arithmetic of elliptic\ncurves}, second edition, Springer, 2009, Chapters IV and VII.\n"
@@ -1373,11 +1373,11 @@
     ],
     "key": "dd",
     "span": {
-      "end_character": 892754,
-      "first_line": 18838,
-      "last_line": 18841,
-      "path": "quartic_962.tex",
-      "start_character": 892524,
+      "end_character": 901500,
+      "first_line": 19014,
+      "last_line": 19017,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 901270,
       "text_sha256": "a9539055fd08aa821d651c795810822f9fae7b2a28b2e49a3790829a616c6055"
     },
     "text": "\\bibitem{dd} T. Dokchitser and V. Dokchitser, \\emph{Root numbers and parity\nof ranks of elliptic curves}, Journal f\\\"ur die reine und angewandte\nMathematik 658 (2011), 39--64, Theorem 1.8.\n\\url{https://arxiv.org/abs/0906.1815v1}.\n"
@@ -1408,11 +1408,11 @@
     ],
     "key": "bcdt",
     "span": {
-      "end_character": 893111,
-      "first_line": 18842,
-      "last_line": 18846,
-      "path": "quartic_962.tex",
-      "start_character": 892754,
+      "end_character": 901857,
+      "first_line": 19018,
+      "last_line": 19022,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 901500,
       "text_sha256": "e81d82db08e5f6a16e320182910cf96e450d92a57a813d75d78dc341499b47bf"
     },
     "text": "\\bibitem{bcdt} C. Breuil, B. Conrad, F. Diamond and R. Taylor,\n\\emph{On the modularity of elliptic curves over $\\Q$: wild 3-adic exercises},\nauthor manuscript, Theorem A and Introduction, conditions (1)--(6).\n\\url{https://virtualmath1.stanford.edu/~conrad/papers/tswfinal.pdf}.\nPublished in Journal of the American Mathematical Society 14 (2001), 843--939.\n"
@@ -1438,11 +1438,11 @@
     ],
     "key": "milnemf",
     "span": {
-      "end_character": 893295,
-      "first_line": 18847,
-      "last_line": 18849,
-      "path": "quartic_962.tex",
-      "start_character": 893111,
+      "end_character": 902041,
+      "first_line": 19023,
+      "last_line": 19025,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 901857,
       "text_sha256": "b63bdaa4166637bf9135b1bc6b00cfca19040ad9bfbd188275c48236ad832504"
     },
     "text": "\\bibitem{milnemf} J. S. Milne, \\emph{Modular functions and modular forms},\nv1.31, March 22, 2017, Remark 11.18 and Theorem 11.19.\n\\url{https://www.jmilne.org/math/CourseNotes/MF.pdf}.\n"
@@ -1468,11 +1468,11 @@
     ],
     "key": "elkik",
     "span": {
-      "end_character": 893472,
-      "first_line": 18850,
-      "last_line": 18852,
-      "path": "quartic_962.tex",
-      "start_character": 893295,
+      "end_character": 902218,
+      "first_line": 19026,
+      "last_line": 19028,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 902041,
       "text_sha256": "fdc8a8b9cbd5700b61ab4c8e868067bd60be5616e939c65692e15e0b56a18fd8"
     },
     "text": "\\bibitem{elkik} R. Elkik, \\emph{Le th\\'eor\\`eme de Manin--Drinfeld},\nAst\\'erisque 183 (1990), 59--67, Theorem, p.~59.\n\\url{https://www.numdam.org/item/AST_1990__183__59_0.pdf}.\n"
@@ -1496,11 +1496,11 @@
     ],
     "key": "gz",
     "span": {
-      "end_character": 893608,
-      "first_line": 18853,
-      "last_line": 18854,
-      "path": "quartic_962.tex",
-      "start_character": 893472,
+      "end_character": 902354,
+      "first_line": 19029,
+      "last_line": 19030,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 902218,
       "text_sha256": "cfcd30db863930aafa01a6cedd3e245c567b177d8217cb479b3860faa992947b"
     },
     "text": "\\bibitem{gz} B. Gross and D. Zagier, \\emph{Heegner points and derivatives\nof $L$-series}, Inventiones Mathematicae 84 (1986), 225--320.\n"
@@ -1526,11 +1526,11 @@
     ],
     "key": "kolyvagin",
     "span": {
-      "end_character": 893873,
-      "first_line": 18855,
-      "last_line": 18859,
-      "path": "quartic_962.tex",
-      "start_character": 893608,
+      "end_character": 902619,
+      "first_line": 19031,
+      "last_line": 19035,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 902354,
       "text_sha256": "26f438a418f8e1b032a3dfa5f79cc0ff8e7e499a5166f97d8bbec25c9a75eb2b"
     },
     "text": "\\bibitem{kolyvagin} V. A. Kolyvagin,\n\\emph{On the Mordell--Weil group and the Shafarevich--Tate group\nof modular elliptic curves}, MPIM preprint MPI/90-69 (1990),\nTheorems 1--5, pp.~4--5.\n\\url{https://archive.mpim-bonn.mpg.de/id/eprint/325/1/preprint_1990_69.pdf}.\n"
@@ -1556,11 +1556,11 @@
     ],
     "key": "kato",
     "span": {
-      "end_character": 894071,
-      "first_line": 18860,
-      "last_line": 18862,
-      "path": "quartic_962.tex",
-      "start_character": 893873,
+      "end_character": 902817,
+      "first_line": 19036,
+      "last_line": 19038,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 902619,
       "text_sha256": "4ff65ccd2fa4706a35af3a11de07e4f6961b305688f59fd9eea9c1185abe3551"
     },
     "text": "\\bibitem{kato} K. Kato, \\emph{$p$-adic Hodge theory and values of zeta\nfunctions of modular forms}, Ast\\'erisque 295 (2004), 117--290.\n\\url{https://www.numdam.org/article/AST_2004__295__117_0.pdf}.\n"
@@ -1586,11 +1586,11 @@
     ],
     "key": "bfh",
     "span": {
-      "end_character": 894338,
-      "first_line": 18863,
-      "last_line": 18866,
-      "path": "quartic_962.tex",
-      "start_character": 894071,
+      "end_character": 903084,
+      "first_line": 19039,
+      "last_line": 19042,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 902817,
       "text_sha256": "46f519979ab7462de8df53048a233b9ae68e8e471e73601c316b78b7d8a30e3d"
     },
     "text": "\\bibitem{bfh} D. Bump, S. Friedberg and J. Hoffstein,\n\\emph{Nonvanishing theorems for $L$-functions of modular forms and their\nderivatives}, Inventiones Mathematicae 102 (1990), 543--618.\n\\url{https://wstein.org/papers/bib/bump-friedberg-hoffstein-nonvanishing.pdf}.\n"
@@ -1616,11 +1616,11 @@
     ],
     "key": "hl",
     "span": {
-      "end_character": 894599,
-      "first_line": 18867,
-      "last_line": 18869,
-      "path": "quartic_962.tex",
-      "start_character": 894338,
+      "end_character": 903345,
+      "first_line": 19043,
+      "last_line": 19045,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 903084,
       "text_sha256": "65399a057701dfe0e7c94b30de3ea77a788e1279f950b231132fe031ea62fa2a"
     },
     "text": "\\bibitem{hl} J. Hoffstein and W. Luo, \\emph{Nonvanishing of $L$-series and\nthe combinatorial sieve}, Mathematical Research Letters 4 (1997), 435--444.\n\\url{https://intlpress.com/site/pub/files/_fulltext/journals/mrl/1997/0004/0003/MRL-1997-0004-0003-a012.pdf}.\n"
@@ -1646,11 +1646,11 @@
     ],
     "key": "desjardins",
     "span": {
-      "end_character": 894818,
-      "first_line": 18870,
-      "last_line": 18872,
-      "path": "quartic_962.tex",
-      "start_character": 894599,
+      "end_character": 903564,
+      "first_line": 19046,
+      "last_line": 19048,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 903345,
       "text_sha256": "742a6d09f64e1f4bface60210a7e89c754cdba51c7e6f0a26e9d68a19d6bcc98"
     },
     "text": "\\bibitem{desjardins} J. Desjardins, \\emph{Root number of twists of an\nelliptic curve}, Journal de Th\\'eorie des Nombres de Bordeaux\n32 (2020), 73--101. \\url{https://jtnb.centre-mersenne.org/item/10.5802/jtnb.1112.pdf}.\n"
@@ -1676,11 +1676,11 @@
     ],
     "key": "cst",
     "span": {
-      "end_character": 894990,
-      "first_line": 18873,
-      "last_line": 18875,
-      "path": "quartic_962.tex",
-      "start_character": 894818,
+      "end_character": 903736,
+      "first_line": 19049,
+      "last_line": 19051,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 903564,
       "text_sha256": "ef74887f02f5892879f8c3b12b9143745b0419fa3b9d0c761e8436bcb794b691"
     },
     "text": "\\bibitem{cst} L. Cai, J. Shu and Y. Tian, \\emph{Explicit Gross--Zagier\nand Waldspurger formulae}, Algebra \\& Number Theory 8 (2014).\n\\url{https://arxiv.org/abs/1408.1733}.\n"
@@ -1706,11 +1706,11 @@
     ],
     "key": "ccl",
     "span": {
-      "end_character": 895252,
-      "first_line": 18876,
-      "last_line": 18878,
-      "path": "quartic_962.tex",
-      "start_character": 894990,
+      "end_character": 903998,
+      "first_line": 19052,
+      "last_line": 19054,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 903736,
       "text_sha256": "3f8501bd6bf0867cc574e00c2e9d822ac783116523a303fa3e3ce8aa36027359"
     },
     "text": "\\bibitem{ccl} L. Cai, Y. Chen and Y. Liu, \\emph{Heegner points on modular\ncurves}, Transactions of the American Mathematical Society 370 (2018),\n3721--3743. \\url{https://archive.ymsc.tsinghua.edu.cn/pacm_download/632/12220-Heegner_points_on_modular_curves.pdf}.\n"
@@ -1736,11 +1736,11 @@
     ],
     "key": "jetchevkane",
     "span": {
-      "end_character": 895459,
-      "first_line": 18879,
-      "last_line": 18882,
-      "path": "quartic_962.tex",
-      "start_character": 895252,
+      "end_character": 904205,
+      "first_line": 19055,
+      "last_line": 19058,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 903998,
       "text_sha256": "b3ee3e664a204d479cac67f0696c8a79caf8545c9740ed7735e01c1e2b0155a5"
     },
     "text": "\\bibitem{jetchevkane} D. Jetchev and B. Kane,\n\\emph{Equidistribution of Heegner Points and Ternary Quadratic Forms},\narXiv:0908.3905 (2009), Sections 1.1--1.2 and 2.5.\n\\url{https://arxiv.org/abs/0908.3905}.\n"
@@ -1771,11 +1771,11 @@
     ],
     "key": "cornutjetchev",
     "span": {
-      "end_character": 895657,
-      "first_line": 18883,
-      "last_line": 18885,
-      "path": "quartic_962.tex",
-      "start_character": 895459,
+      "end_character": 904403,
+      "first_line": 19059,
+      "last_line": 19061,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 904205,
       "text_sha256": "04452a783c7f54c55360d5c2798f3f7035c789a8ffed94c512739d921ad74d7c"
     },
     "text": "\\bibitem{cornutjetchev} C. Cornut and D. Jetchev,\n\\emph{Liftings of reduction maps for quaternion algebras}, 2010 preprint.\n\\url{https://webusers.imj-prg.fr/~christophe.cornut/papers/liftings.pdf}.\n"
@@ -1799,11 +1799,11 @@
     ],
     "key": "waldspurger",
     "span": {
-      "end_character": 895883,
-      "first_line": 18886,
-      "last_line": 18889,
-      "path": "quartic_962.tex",
-      "start_character": 895657,
+      "end_character": 904629,
+      "first_line": 19062,
+      "last_line": 19065,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 904403,
       "text_sha256": "bb60b7c55a17222e75e51f01b0613bd70b180dbd7e54fee4539d490ffa93622b"
     },
     "text": "\\bibitem{waldspurger} J.-L. Waldspurger, \\emph{Sur les coefficients de\nFourier des formes modulaires de poids demi-entier},\nJournal de Math\\'ematiques Pures et Appliqu\\'ees 60 (1981), 375--484,\nProposition 18 and Corollary 2.\n"
@@ -1829,11 +1829,11 @@
     ],
     "key": "ramsey",
     "span": {
-      "end_character": 896087,
-      "first_line": 18890,
-      "last_line": 18892,
-      "path": "quartic_962.tex",
-      "start_character": 895883,
+      "end_character": 904833,
+      "first_line": 19066,
+      "last_line": 19068,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 904629,
       "text_sha256": "c531d187cdd90f243a80b6396099f85e4705139cb288aac135af75777b54e9c2"
     },
     "text": "\\bibitem{ramsey} N. Ramsey, \\emph{Geometric and $p$-adic modular forms\nof half-integral weight}, Annales de l'Institut Fourier 56 (2006),\n599--624. \\url{https://www.numdam.org/item/10.5802/aif.2195.pdf}.\n"
@@ -1857,11 +1857,11 @@
     ],
     "key": "casselman",
     "span": {
-      "end_character": 896271,
-      "first_line": 18893,
-      "last_line": 18896,
-      "path": "quartic_962.tex",
-      "start_character": 896087,
+      "end_character": 905017,
+      "first_line": 19069,
+      "last_line": 19072,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 904833,
       "text_sha256": "9f4fd7b063b06bc76b197120dd84cda14468ae12aa5e4648de36c2493d6b5679"
     },
     "text": "\\bibitem{casselman}\nW. Casselman, \\emph{On some results of Atkin and Lehner},\nMathematische Annalen 201 (1973), 301--314,\nTheorem~1 and its proof, pp.~302--306, and Theorem~4, p.~313.\n"
@@ -1887,11 +1887,11 @@
     ],
     "key": "carayol",
     "span": {
-      "end_character": 896543,
-      "first_line": 18897,
-      "last_line": 18900,
-      "path": "quartic_962.tex",
-      "start_character": 896271,
+      "end_character": 905289,
+      "first_line": 19073,
+      "last_line": 19076,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 905017,
       "text_sha256": "2365d3f34ee1b19069a7ec42b25b4e3a2a21d3f588bc84f134e21afa9d9eec13"
     },
     "text": "\\bibitem{carayol} H. Carayol, \\emph{Sur les repr\\'esentations\n$\\ell$-adiques associ\\'ees aux formes modulaires de Hilbert},\nAnnales Scientifiques de l'\\'Ecole Normale Sup\\'erieure 19 (1986), 409--468,\nTheorem A. \\url{https://www.numdam.org/item/ASENS_1986_4_19_3_409_0/}.\n"
@@ -1917,11 +1917,11 @@
     ],
     "key": "waldspurgerICM",
     "span": {
-      "end_character": 896778,
-      "first_line": 18901,
-      "last_line": 18904,
-      "path": "quartic_962.tex",
-      "start_character": 896543,
+      "end_character": 905524,
+      "first_line": 19077,
+      "last_line": 19080,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 905289,
       "text_sha256": "ec0d94d28847a3fc33de442fcf451572fe3856638b8a81ce57447a76ec5279fc"
     },
     "text": "\\bibitem{waldspurgerICM} J.-L. Waldspurger,\n\\emph{Correspondances de Shimura}, Proceedings of the International\nCongress of Mathematicians, 1983, 525--531.\n\\url{https://www.imj-prg.fr/wp-content/uploads/2020/prix/waldspurger1983.pdf}.\n"
@@ -1947,11 +1947,11 @@
     ],
     "key": "weil",
     "span": {
-      "end_character": 896997,
-      "first_line": 18905,
-      "last_line": 18907,
-      "path": "quartic_962.tex",
-      "start_character": 896778,
+      "end_character": 905743,
+      "first_line": 19081,
+      "last_line": 19083,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 905524,
       "text_sha256": "bc0a86ac49f6e694b5ab849bdf406f9e7206b9090e2ae9fea252d43feb78b2a2"
     },
     "text": "\\bibitem{weil} A. Weil, \\emph{Sur certains groupes d'op\\'erateurs unitaires},\nActa Mathematica 111 (1964), 143--211, I.13, II.25, II.28, III, Theorem 6.\n\\url{https://webhomes.maths.ed.ac.uk/~v1ranick/papers/weil2.pdf}.\n"
@@ -1975,11 +1975,11 @@
     ],
     "key": "serre",
     "span": {
-      "end_character": 897156,
-      "first_line": 18908,
-      "last_line": 18910,
-      "path": "quartic_962.tex",
-      "start_character": 896997,
+      "end_character": 905902,
+      "first_line": 19084,
+      "last_line": 19086,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 905743,
       "text_sha256": "1d667c1ec98d1e334e897d722b2734345c296fa6a8cd9eff57f481962ab7305c"
     },
     "text": "\\bibitem{serre} J.-P. Serre, \\emph{Propri\\'et\\'es galoisiennes des points\nd'ordre fini des courbes elliptiques}, Inventiones Mathematicae 15\n(1972), 259--331.\n"
@@ -2005,11 +2005,11 @@
     ],
     "key": "mazur1995",
     "span": {
-      "end_character": 897377,
-      "first_line": 18911,
-      "last_line": 18914,
-      "path": "quartic_962.tex",
-      "start_character": 897156,
+      "end_character": 906123,
+      "first_line": 19087,
+      "last_line": 19090,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 905902,
       "text_sha256": "a52c90476525ef900016e525baefb8ba922b34fa0bf302cfb462d7a35d75de6b"
     },
     "text": "\\bibitem{mazur1995} B. Mazur,\n\\emph{Speculations about the topology of rational points: an up-date},\nAst\\'erisque 228 (1995), 165--181, Conjecture 3, p.~165.\n\\url{https://www.numdam.org/article/AST_1995__228__165_0.pdf}.\n"
@@ -2035,11 +2035,11 @@
     ],
     "key": "matiyasevich1971",
     "span": {
-      "end_character": 897646,
-      "first_line": 18915,
-      "last_line": 18919,
-      "path": "quartic_962.tex",
-      "start_character": 897377,
+      "end_character": 906392,
+      "first_line": 19091,
+      "last_line": 19095,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 906123,
       "text_sha256": "426f354b55c78959564810c2a76af05ea62f66b3029c046dc1bf91110f07071d"
     },
     "text": "\\bibitem{matiyasevich1971} Yu. V. Matiyasevich,\n\\emph{Diophantine representation of enumerable predicates},\nMathematics of the USSR-Izvestiya 5 (1971), 1--28,\nBasic Theorem, p.~3; integer-witness conversion, p.~2.\n\\url{https://doi.org/10.1070/IM1971v005n01ABEH001004}.\n"
@@ -2059,11 +2059,11 @@
     ],
     "key": "openaihtp",
     "span": {
-      "end_character": 897909,
-      "first_line": 18920,
-      "last_line": 18923,
-      "path": "quartic_962.tex",
-      "start_character": 897646,
+      "end_character": 906655,
+      "first_line": 19096,
+      "last_line": 19099,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 906392,
       "text_sha256": "61964ac6a5609292d81c40795435cf266801a376ad600a636c617f661e1ea7b0"
     },
     "text": "\\bibitem{openaihtp} OpenAI,\n\\emph{Hilbert's tenth problem over the rational numbers},\nOpenAI Math Release preprint, 6 October 2026.\n\\url{https://github.com/openai/math/blob/main/preprints/Hilberts-tenth-problem-over-the-rational-numbers-October-6-2026/main.pdf}.\n"
@@ -2087,11 +2087,11 @@
     ],
     "key": "howard2012",
     "span": {
-      "end_character": 898050,
-      "first_line": 18924,
-      "last_line": 18925,
-      "path": "quartic_962.tex",
-      "start_character": 897909,
+      "end_character": 906796,
+      "first_line": 19100,
+      "last_line": 19101,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 906655,
       "text_sha256": "ec968523e4340a7c5727382445e86a0339ad32bebaa79632e63dd2dd46d4fe35"
     },
     "text": "\\bibitem{howard2012} B. Howard, \\emph{The Heegner point Kolyvagin system},\nCompositio Mathematica 140 (2004), 1439--1472; arXiv:1202.6340v1.\n"
@@ -2115,11 +2115,11 @@
     ],
     "key": "lang1956",
     "span": {
-      "end_character": 898175,
-      "first_line": 18926,
-      "last_line": 18927,
-      "path": "quartic_962.tex",
-      "start_character": 898050,
+      "end_character": 906921,
+      "first_line": 19102,
+      "last_line": 19103,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 906796,
       "text_sha256": "74ddc3091ef0888c8d37572365ca65d39ff4de7781626bc60e0ed7c38bb49db8"
     },
     "text": "\\bibitem{lang1956} S. Lang, \\emph{Algebraic groups over finite fields},\nAmerican Journal of Mathematics 78 (1956), 555--563.\n"
@@ -2145,11 +2145,11 @@
     ],
     "key": "williams-mertens",
     "span": {
-      "end_character": 898397,
-      "first_line": 18928,
-      "last_line": 18932,
-      "path": "quartic_962.tex",
-      "start_character": 898175,
+      "end_character": 907143,
+      "first_line": 19104,
+      "last_line": 19108,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 906921,
       "text_sha256": "5272f5d13e8f73b147e208098f00157e02d65ed5cd195667c156ba6e0552f8bf"
     },
     "text": "\\bibitem{williams-mertens}\nK. S. Williams, \\emph{Mertens' theorem for arithmetic progressions},\nJ. Number Theory \\textbf{6} (1974), 353--359, Theorem 1.\n\\url{https://people.math.carleton.ca/~williams/papers/pdf/057.pdf}.\n\n"
@@ -2175,11 +2175,11 @@
     ],
     "key": "voight-quaternion",
     "span": {
-      "end_character": 898761,
-      "first_line": 18933,
-      "last_line": 18941,
-      "path": "quartic_962.tex",
-      "start_character": 898397,
+      "end_character": 907507,
+      "first_line": 19109,
+      "last_line": 19117,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 907143,
       "text_sha256": "7fcd4f758715f803bc4034bd68f0bb3e90a5a8707a9efc3271fee29c6e81f73c"
     },
     "text": "\\bibitem{voight-quaternion}\nJ. Voight, \\emph{Quaternion algebras}, corrected online edition\nv1.0.7u, August 5, 2026, Main Theorem 14.6.1 and Proposition 14.6.7,\npp. 223--224.\n\\url{https://jvoight.github.io/quat-book.pdf}.\n\n\n% Insert inside the existing thebibliography environment.\n% This is the only new bibliography key used by assembled-original-extension.tex.\n"
@@ -2188,11 +2188,11 @@
     "historical_source_records": [],
     "key": "koenigsmann-defining",
     "span": {
-      "end_character": 899060,
-      "first_line": 18942,
-      "last_line": 18947,
-      "path": "quartic_962.tex",
-      "start_character": 898761,
+      "end_character": 907806,
+      "first_line": 19118,
+      "last_line": 19123,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 907507,
       "text_sha256": "a812e3f32e482a4fb1df8d9e34ac6a4cc0f8da53badbfea06cd34acd3c08b903"
     },
     "text": "\\bibitem{koenigsmann-defining} J. Koenigsmann,\n\\emph{Defining $\\mathbb Z$ in $\\mathbb Q$},\nAnnals of Mathematics \\textbf{183} (2016), 73--93.\n\\href{https://doi.org/10.4007/annals.2016.183.1.2}{doi:10.4007/annals.2016.183.1.2}.\n\n% Proposed additions only. No existing bibliography entry is replaced.\n"
@@ -2201,11 +2201,11 @@
     "historical_source_records": [],
     "key": "GonzalezRotger2006",
     "span": {
-      "end_character": 899360,
-      "first_line": 18948,
-      "last_line": 18953,
-      "path": "quartic_962.tex",
-      "start_character": 899060,
+      "end_character": 908106,
+      "first_line": 19124,
+      "last_line": 19129,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 907806,
       "text_sha256": "d2ce9068dd314a07136d4c376c655b7dd221086beadab23aa738f5010ff0e4db"
     },
     "text": "\\bibitem{GonzalezRotger2006} J. Gonz\\'alez and V. Rotger,\n\\emph{Non-elliptic Shimura curves of genus one},\nJournal of the Mathematical Society of Japan \\textbf{58} (2006), 927--948,\nTheorem 4.2 and Table 2, pp.~938--939; Proposition 5.2, pp.~940--941.\n\\url{https://doi.org/10.2969/jmsj/1179759530}.\n\n"
@@ -2214,11 +2214,11 @@
     "historical_source_records": [],
     "key": "Yuan2024",
     "span": {
-      "end_character": 900065,
-      "first_line": 18954,
-      "last_line": 18967,
-      "path": "quartic_962.tex",
-      "start_character": 899360,
+      "end_character": 908811,
+      "first_line": 19130,
+      "last_line": 19143,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 908106,
       "text_sha256": "30a390ee4d1a286d7d740e61af2bfb8628d1a094231f029f92911c635471210e"
     },
     "text": "\\bibitem{Yuan2024} X. Yuan,\n\\emph{Explicit Kodaira--Spencer maps over Shimura curves},\nActa Mathematica Sinica, Chinese Series \\textbf{67} (2024), 227--249.\n\\url{https://doi.org/10.12386/A20220154}.\nWe use the English translation dated April 30, 2024, identified by\nthe author as a translation of the published Chinese article:\n\\url{https://faculty.bicmr.pku.edu.cn/~yxy/preprints/explicit_KS.pdf}.\nThe author identifies it at\n\\url{https://faculty.bicmr.pku.edu.cn/~yxy/publications.html}.\nThe relevant locators in that translation are Theorem 1.1, p.~3;\nmetric definitions, pp.~2--3; Sections 2.1--2.2 and Lemma 2.1,\npp.~4--10; and the analytic and metric calculations in Sections\n4.2--4.3, pp.~20--26.\n\n"
@@ -2227,11 +2227,11 @@
     "historical_source_records": [],
     "key": "Deligne1979",
     "span": {
-      "end_character": 900518,
-      "first_line": 18968,
-      "last_line": 18976,
-      "path": "quartic_962.tex",
-      "start_character": 900065,
+      "end_character": 909264,
+      "first_line": 19144,
+      "last_line": 19152,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 908811,
       "text_sha256": "317a27f5e00153528ff2e1c3412d5b066056460e84173ca1add4c31471d56cdb"
     },
     "text": "\\bibitem{Deligne1979} P. Deligne,\n\\emph{Vari\\'et\\'es de Shimura: interpr\\'etation modulaire, et techniques\nde construction de mod\\`eles canoniques},\nin \\emph{Automorphic Forms, Representations and $L$-Functions},\nProceedings of Symposia in Pure Mathematics \\textbf{33}, Part 2 (1979),\n247--289, Sections 2.2.5 and 2.3.1.\nEnglish translation by J. S. Milne, corrected September 6, 2020, p.~29:\n\\url{https://www.jmilne.org/math/Documents/DeligneSV.pdf}.\n\n"
@@ -2240,11 +2240,11 @@
     "historical_source_records": [],
     "key": "GaudronRemond2023",
     "span": {
-      "end_character": 900791,
-      "first_line": 18977,
-      "last_line": 18982,
-      "path": "quartic_962.tex",
-      "start_character": 900518,
+      "end_character": 909537,
+      "first_line": 19153,
+      "last_line": 19158,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 909264,
       "text_sha256": "2cfcb3fc9b927e9e13be8ed4f72e8330dd39e9885c2e88cf7c8dafb079d137af"
     },
     "text": "\\bibitem{GaudronRemond2023} \\'E. Gaudron and G. R\\'emond,\n\\emph{Nouveaux th\\'eor\\`emes d'isog\\'enie},\nM\\'emoires de la Soci\\'et\\'e Math\\'ematique de France \\textbf{176} (2023),\nvi+123 pp., Section 1.5 and Theorem 1.9(1), pp.~7--8.\n\\url{https://doi.org/10.24033/msmf.484}.\n\n"
@@ -2253,11 +2253,11 @@
     "historical_source_records": [],
     "key": "vonKaenel2021",
     "span": {
-      "end_character": 901066,
-      "first_line": 18983,
-      "last_line": 18988,
-      "path": "quartic_962.tex",
-      "start_character": 900791,
+      "end_character": 909812,
+      "first_line": 19159,
+      "last_line": 19164,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 909537,
       "text_sha256": "8d8ba8c47209da2a25710e931c7c2996182bd68e702212e88803420ea0698205"
     },
     "text": "\\bibitem{vonKaenel2021} R. von K\\\"anel,\n\\emph{The effective Shafarevich conjecture for abelian varieties of\n$\\mathrm{GL}_2$-type}, Forum of Mathematics, Sigma \\textbf{9} (2021), e39,\n1--29, equations (2.2) and (5.9), pp.~5 and 13.\n\\url{https://doi.org/10.1017/fms.2021.29}.\n\n"
@@ -2266,11 +2266,11 @@
     "historical_source_records": [],
     "key": "voight2021",
     "span": {
-      "end_character": 901343,
-      "first_line": 18989,
-      "last_line": 18994,
-      "path": "quartic_962.tex",
-      "start_character": 901066,
+      "end_character": 910089,
+      "first_line": 19165,
+      "last_line": 19170,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 909812,
       "text_sha256": "1e5aad2ea72506947d07772ab5f01e8b85d61a14d4ac24bd1c981f6d05d9ae54"
     },
     "text": "\\bibitem{voight2021} J. Voight, \\emph{Quaternion algebras},\nGraduate Texts in Mathematics \\textbf{288}, Springer, 2021,\nChapter 43, equations (43.1.2)--(43.1.3), p.~800, and\nMain Theorem 43.6.14, p.~819; proof pp.~822--823.\n\\url{https://doi.org/10.1007/978-3-030-56694-4_43}.\n\n"
@@ -2279,11 +2279,11 @@
     "historical_source_records": [],
     "key": "calegari-icm2022",
     "span": {
-      "end_character": 901685,
-      "first_line": 18995,
-      "last_line": 19001,
-      "path": "quartic_962.tex",
-      "start_character": 901343,
+      "end_character": 910431,
+      "first_line": 19171,
+      "last_line": 19177,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 910089,
       "text_sha256": "3618138e89508afa3c511e11e25d026fe14a233b48d94abeb9faa2567fc14ed3"
     },
     "text": "\\bibitem{calegari-icm2022} F. Calegari,\n\\emph{Reciprocity in the Langlands program since Fermat's Last Theorem},\nin \\emph{Proceedings of the International Congress of Mathematicians 2022},\nVol.~2, EMS Press, 2023, 610--651, Section 7, p.~624;\ndefinition of geometric representations, pp.~611--612.\n\\url{https://doi.org/10.4171/ICM2022/101}.\n\n"
@@ -2292,11 +2292,11 @@
     "historical_source_records": [],
     "key": "diamond-im",
     "span": {
-      "end_character": 901861,
-      "first_line": 19002,
-      "last_line": 19004,
-      "path": "quartic_962.tex",
-      "start_character": 901685,
+      "end_character": 910607,
+      "first_line": 19178,
+      "last_line": 19180,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 910431,
       "text_sha256": "357c32395ae83ef10adc4b79f34348f452a613e7bf9f18ef0920052f6413f15b"
     },
     "text": "\\bibitem{diamond-im} F. Diamond and J. Im,\n\\emph{Modular forms and modular curves}, in Seminar on Fermat's Last Theorem,\nCMS Conference Proceedings 17 (1995), 39--133, \\S12.5.\n"
@@ -2305,11 +2305,11 @@
     "historical_source_records": [],
     "key": "baker-et-al-finiteness",
     "span": {
-      "end_character": 902099,
-      "first_line": 19005,
-      "last_line": 19008,
-      "path": "quartic_962.tex",
-      "start_character": 901861,
+      "end_character": 910845,
+      "first_line": 19181,
+      "last_line": 19184,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 910607,
       "text_sha256": "3c7bd9c956932f67e0002f40185145372991b8cbb4c1e06983690ce01fb4ddb3"
     },
     "text": "\\bibitem{baker-et-al-finiteness} M. H. Baker, E. Gonz\\'alez-Jim\\'enez,\nJ. Gonz\\'alez and B. Poonen, \\emph{Finiteness results for modular curves\nof genus at least 2}, American Journal of Mathematics 127 (2005),\n1325--1387, \\S\\S3.1, 3.2.1.\n"
@@ -2318,11 +2318,11 @@
     "historical_source_records": [],
     "key": "mascot-moduli",
     "span": {
-      "end_character": 902394,
-      "first_line": 19009,
-      "last_line": 19013,
-      "path": "quartic_962.tex",
-      "start_character": 902099,
+      "end_character": 911140,
+      "first_line": 19185,
+      "last_line": 19189,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 910845,
       "text_sha256": "5296ed5adfafc37e252684b27e9a007b8fef7ec0ca9277d9d1a42eddfee4686f"
     },
     "text": "\\bibitem{mascot-moduli} N. Mascot, \\emph{Moduli-friendly Eisenstein series\nover the p-adics and the computation of modular Galois representations},\nResearch in Number Theory 8 (2022), article 48,\n\\href{https://doi.org/10.1007/s40993-022-00329-6}{doi:10.1007/s40993-022-00329-6},\n\\S2.1, (2.1.8).\n"
@@ -2331,11 +2331,11 @@
     "historical_source_records": [],
     "key": "pheidas2000",
     "span": {
-      "end_character": 902796,
-      "first_line": 19014,
-      "last_line": 19020,
-      "path": "quartic_962.tex",
-      "start_character": 902394,
+      "end_character": 911542,
+      "first_line": 19190,
+      "last_line": 19196,
+      "path": "manuscripts/quartic_v7.tex",
+      "start_character": 911140,
       "text_sha256": "640f89302f71021bdcc52ad5c1bfe605ca81f23ddabea5ccc1a47133c5b0e819"
     },
     "text": "\\bibitem{pheidas2000} T. Pheidas,\n\\emph{An effort to prove that the existential theory of $\\Q$ is undecidable},\nin \\emph{Hilbert's Tenth Problem: Relations with Arithmetic and Algebraic Geometry},\nJ. Denef, L. Lipshitz, T. Pheidas and J. Van Geel, eds.,\nContemporary Mathematics \\textbf{270}, American Mathematical Society,\nProvidence, RI, 2000, 237--252.\n\\url{https://doi.org/10.1090/conm/270/04376}.\n"

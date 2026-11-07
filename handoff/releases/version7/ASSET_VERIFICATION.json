@@ -1,0 +1,171 @@
+{
+  "status": "PASS",
+  "version": 7,
+  "checkedAt": "2026-11-06T20:10:47.685345+00:00",
+  "checks": [
+    "release published",
+    "exact tag commits",
+    "exact asset set",
+    "all uploaded sizes and server SHA-256 digests"
+  ],
+  "repositories": [
+    {
+      "repository": "elliotglazer/diophantine-z-q",
+      "commit": "00fee0fea917bda1140215624f2276db9a410ed4",
+      "release": "https://github.com/elliotglazer/diophantine-z-q/releases/tag/quartic-962-version-7",
+      "assets": [
+        {
+          "name": "BUILD_RECEIPT.json",
+          "bytes": 1982,
+          "sha256": "9f54e75e4abf247d10a5ea0198634101ef01d4ce163bb5e785e6b31a211902ef",
+          "url": "https://github.com/elliotglazer/diophantine-z-q/releases/download/quartic-962-version-7/BUILD_RECEIPT.json"
+        },
+        {
+          "name": "EXTRACTED_INVENTORY.json",
+          "bytes": 18761,
+          "sha256": "cd344b7f3604520093850df812862bb96c90b74b1fa3d358bbe5e9ace43eb373",
+          "url": "https://github.com/elliotglazer/diophantine-z-q/releases/download/quartic-962-version-7/EXTRACTED_INVENTORY.json"
+        },
+        {
+          "name": "EXTRACTED_REPLAY.json",
+          "bytes": 1472,
+          "sha256": "a9a90ef76ae359ae5a828eee66ce786486bafc77f0a364b5aca91a748c1a04bd",
+          "url": "https://github.com/elliotglazer/diophantine-z-q/releases/download/quartic-962-version-7/EXTRACTED_REPLAY.json"
+        },
+        {
+          "name": "handoff-plan-release.json",
+          "bytes": 982469,
+          "sha256": "3249ba34dc7dac1eca8e9371556003bfa07ce4fd11a8fa182dbae93573e78f24",
+          "url": "https://github.com/elliotglazer/diophantine-z-q/releases/download/quartic-962-version-7/handoff-plan-release.json"
+        },
+        {
+          "name": "handoff-tests-organized.json",
+          "bytes": 3793,
+          "sha256": "d7c1939b18bda67b4b57e76b03ef19eb95e1837c07b9fe8951e24e03c76b1893",
+          "url": "https://github.com/elliotglazer/diophantine-z-q/releases/download/quartic-962-version-7/handoff-tests-organized.json"
+        },
+        {
+          "name": "PACKAGING_RUNTIME.json",
+          "bytes": 1025,
+          "sha256": "f07c2bcf132e4ab4c22ae596ce975dec9a38cd4ae9d4e0d6bc323676f8baf65b",
+          "url": "https://github.com/elliotglazer/diophantine-z-q/releases/download/quartic-962-version-7/PACKAGING_RUNTIME.json"
+        },
+        {
+          "name": "quartic_v7.pdf",
+          "bytes": 1462288,
+          "sha256": "6f1dd7cbd9a735c4237bd6a123855571e15b2057f0a539eb6bc07e8e1dba43cd",
+          "url": "https://github.com/elliotglazer/diophantine-z-q/releases/download/quartic-962-version-7/quartic_v7.pdf"
+        },
+        {
+          "name": "quartic_v7.tex",
+          "bytes": 912132,
+          "sha256": "5399d2fb3c3beea388ccdb5719934772f222b49d02482a05ac3abc515321419a",
+          "url": "https://github.com/elliotglazer/diophantine-z-q/releases/download/quartic-962-version-7/quartic_v7.tex"
+        },
+        {
+          "name": "run_with_git_batch.py",
+          "bytes": 2890,
+          "sha256": "26c5d05b338a8f6615f4cbb5097f9c949be713327fdb5d17d9df91ffe7d6ada9",
+          "url": "https://github.com/elliotglazer/diophantine-z-q/releases/download/quartic-962-version-7/run_with_git_batch.py"
+        },
+        {
+          "name": "SHA256SUMS",
+          "bytes": 203,
+          "sha256": "b9e2f0cae81ef25d9e2c0345b3970b475d5774815d17e6bd4b26717b87f1f7a5",
+          "url": "https://github.com/elliotglazer/diophantine-z-q/releases/download/quartic-962-version-7/SHA256SUMS"
+        },
+        {
+          "name": "z-in-q-version7-current-handoff.zip",
+          "bytes": 62607372,
+          "sha256": "18387d52201abffa456049922198b87c02d2df888738877e175df3e6596c858d",
+          "url": "https://github.com/elliotglazer/diophantine-z-q/releases/download/quartic-962-version-7/z-in-q-version7-current-handoff.zip"
+        },
+        {
+          "name": "z-in-q-version7-full-handoff.zip",
+          "bytes": 502942588,
+          "sha256": "0f0374d7faff85a0bc62db1b61a44340ce3fa1171377b20a190fcea8eff5b2d8",
+          "url": "https://github.com/elliotglazer/diophantine-z-q/releases/download/quartic-962-version-7/z-in-q-version7-full-handoff.zip"
+        }
+      ]
+    },
+    {
+      "repository": "elliotglazer/private-diophantine",
+      "commit": "f815d11e6ddf1443cfc9c9517dc44191085b0e5b",
+      "release": "https://github.com/elliotglazer/private-diophantine/releases/tag/quartic-962-version-7",
+      "assets": [
+        {
+          "name": "BUILD_RECEIPT.json",
+          "bytes": 1982,
+          "sha256": "9f54e75e4abf247d10a5ea0198634101ef01d4ce163bb5e785e6b31a211902ef",
+          "url": "https://github.com/elliotglazer/private-diophantine/releases/download/quartic-962-version-7/BUILD_RECEIPT.json"
+        },
+        {
+          "name": "EXTRACTED_INVENTORY.json",
+          "bytes": 18761,
+          "sha256": "cd344b7f3604520093850df812862bb96c90b74b1fa3d358bbe5e9ace43eb373",
+          "url": "https://github.com/elliotglazer/private-diophantine/releases/download/quartic-962-version-7/EXTRACTED_INVENTORY.json"
+        },
+        {
+          "name": "EXTRACTED_REPLAY.json",
+          "bytes": 1472,
+          "sha256": "a9a90ef76ae359ae5a828eee66ce786486bafc77f0a364b5aca91a748c1a04bd",
+          "url": "https://github.com/elliotglazer/private-diophantine/releases/download/quartic-962-version-7/EXTRACTED_REPLAY.json"
+        },
+        {
+          "name": "handoff-plan-release.json",
+          "bytes": 982469,
+          "sha256": "3249ba34dc7dac1eca8e9371556003bfa07ce4fd11a8fa182dbae93573e78f24",
+          "url": "https://github.com/elliotglazer/private-diophantine/releases/download/quartic-962-version-7/handoff-plan-release.json"
+        },
+        {
+          "name": "handoff-tests-organized.json",
+          "bytes": 3793,
+          "sha256": "d7c1939b18bda67b4b57e76b03ef19eb95e1837c07b9fe8951e24e03c76b1893",
+          "url": "https://github.com/elliotglazer/private-diophantine/releases/download/quartic-962-version-7/handoff-tests-organized.json"
+        },
+        {
+          "name": "PACKAGING_RUNTIME.json",
+          "bytes": 1025,
+          "sha256": "f07c2bcf132e4ab4c22ae596ce975dec9a38cd4ae9d4e0d6bc323676f8baf65b",
+          "url": "https://github.com/elliotglazer/private-diophantine/releases/download/quartic-962-version-7/PACKAGING_RUNTIME.json"
+        },
+        {
+          "name": "quartic_v7.pdf",
+          "bytes": 1462288,
+          "sha256": "6f1dd7cbd9a735c4237bd6a123855571e15b2057f0a539eb6bc07e8e1dba43cd",
+          "url": "https://github.com/elliotglazer/private-diophantine/releases/download/quartic-962-version-7/quartic_v7.pdf"
+        },
+        {
+          "name": "quartic_v7.tex",
+          "bytes": 912132,
+          "sha256": "5399d2fb3c3beea388ccdb5719934772f222b49d02482a05ac3abc515321419a",
+          "url": "https://github.com/elliotglazer/private-diophantine/releases/download/quartic-962-version-7/quartic_v7.tex"
+        },
+        {
+          "name": "run_with_git_batch.py",
+          "bytes": 2890,
+          "sha256": "26c5d05b338a8f6615f4cbb5097f9c949be713327fdb5d17d9df91ffe7d6ada9",
+          "url": "https://github.com/elliotglazer/private-diophantine/releases/download/quartic-962-version-7/run_with_git_batch.py"
+        },
+        {
+          "name": "SHA256SUMS",
+          "bytes": 203,
+          "sha256": "b9e2f0cae81ef25d9e2c0345b3970b475d5774815d17e6bd4b26717b87f1f7a5",
+          "url": "https://github.com/elliotglazer/private-diophantine/releases/download/quartic-962-version-7/SHA256SUMS"
+        },
+        {
+          "name": "z-in-q-version7-current-handoff.zip",
+          "bytes": 62607372,
+          "sha256": "18387d52201abffa456049922198b87c02d2df888738877e175df3e6596c858d",
+          "url": "https://github.com/elliotglazer/private-diophantine/releases/download/quartic-962-version-7/z-in-q-version7-current-handoff.zip"
+        },
+        {
+          "name": "z-in-q-version7-full-handoff.zip",
+          "bytes": 502942588,
+          "sha256": "0f0374d7faff85a0bc62db1b61a44340ce3fa1171377b20a190fcea8eff5b2d8",
+          "url": "https://github.com/elliotglazer/private-diophantine/releases/download/quartic-962-version-7/z-in-q-version7-full-handoff.zip"
+        }
+      ]
+    }
+  ]
+}

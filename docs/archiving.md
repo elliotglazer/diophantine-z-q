@@ -1,6 +1,6 @@
 # Citation and archival release
 
-Use [CITATION.bib](../CITATION.bib) for *Z is Diophantine in Q*, Version 6, dated November 6, 2026, and for the historical manuscripts and research handoffs. The current manuscript is [quartic_962.pdf](../quartic_962.pdf), with [TeX source](../quartic_962.tex). Cite the version and commit or file hash when discussing an exact artifact.
+Use [CITATION.bib](../CITATION.bib) for *Z is Diophantine in Q*, Version 8, dated November 6, 2026, and for the historical manuscripts and research handoffs. The current manuscript is [manuscripts/quartic_v8.pdf](../manuscripts/quartic_v8.pdf), with [TeX source](../manuscripts/quartic_v8.tex). Cite the version and commit or file hash when discussing an exact artifact.
 
 The manuscript author field is blank, and the BibTeX entries intentionally omit author fields. Collaboration credit appears in the [README](../README.md). There is no `CITATION.cff`: the CFF 1.2 schema requires an author record, and the repository does not invent a person or organization to fill it.
 

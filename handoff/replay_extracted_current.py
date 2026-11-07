@@ -1,4 +1,4 @@
-"""Authenticate and extract a Version 5 or 6 current ZIP, then replay its quartic.
+"""Authenticate and extract a Version 5, 6 or 7 current ZIP, then replay its quartic.
 
 All replay products stay in a separate new directory outside the extracted
 snapshot. The historical baseline is not extracted or rebuilt.
@@ -23,7 +23,7 @@ def main():
     parser.add_argument('--extract', type=Path, required=True)
     parser.add_argument('--replay-output', type=Path, required=True)
     parser.add_argument('--report', type=Path, required=True)
-    parser.add_argument('--node', help='Node.js path for the Version 6 replay')
+    parser.add_argument('--node', help='Node.js path for the Version 6 or 7 replay')
     args = parser.parse_args()
     destination = args.extract.resolve()
     replay = args.replay_output.resolve()
@@ -40,17 +40,17 @@ def main():
         manifest = json.loads(archive.read('MANIFEST.json'))
         release=json.loads(archive.read('current/handoff/release.json'))
         version=release.get('version')
-        if manifest.get('baseline', {}).get('included') or version not in (5,6):
-            raise ValueError('Use a Version 5 or 6 current-only archive for this replay')
+        if manifest.get('baseline', {}).get('included') or type(version) is not int or version not in (5,6,7):
+            raise ValueError('Use a Version 5, 6 or 7 current-only archive for this replay')
     archive_report = extract_verified(args.archive, destination, args.expected_plan_sha256, args.expected_archive_sha256)
     if archive_report['baseline_included']:
         raise ValueError('Use the current-only archive for this replay')
     current = destination/'current'
     package = current/release['package']
-    entrypoint=current/'scripts/check_quartic962.py' if version==6 else package/'reproduce.py'
+    entrypoint=current/'scripts/check_quartic962.py' if version in (6,7) else package/'reproduce.py'
     command = [sys.executable, '-E', '-B', str(entrypoint), '--out', str(replay)]
     if args.node:
-        if version!=6:raise ValueError('--node is supported by the Version 6 wrapper only')
+        if version not in (6,7):raise ValueError('--node is supported by the Version 6 or 7 wrapper only')
         command.extend(['--node',args.node])
     args.report.parent.mkdir(parents=True, exist_ok=True)
     log = args.report.with_suffix('.log')
@@ -62,7 +62,7 @@ def main():
     receipt = json.loads(receipt_raw)
     manifest_hash = hashlib.sha256((package/'MANIFEST.json').read_bytes()).hexdigest()
     polynomial_hash = hashlib.sha256((package/release['polynomial']).read_bytes()).hexdigest()
-    validator=validate_reproduction_v6 if version==6 else validate_reproduction_v5
+    validator=validate_reproduction_v6 if version in (6,7) else validate_reproduction_v5
     validator(receipt, manifest_hash, polynomial_hash)
     report = {'schema': f'quartic-v{version}-handoff-extracted-replay-v1', 'status': 'PASS',
               'archive': archive_report, 'reproductionReceiptSha256': hashlib.sha256(receipt_raw).hexdigest(),

@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "method": "Unchanged packager scripts with one persistent Git blob process; every Git object ID and all ordinary SHA-256 plan and archive checks verified.",
+  "equivalentPlanSha256": "ed5b3bff96c3b83f35c197f0d6f4650960ec0cfb44f9246b2c32b1ac92151c2e",
+  "adapterSha256": "26c5d05b338a8f6615f4cbb5097f9c949be713327fdb5d17d9df91ffe7d6ada9",
+  "preparation": {
+    "status": "PASS",
+    "blobReads": 1908,
+    "gitProcesses": 1,
+    "everyGitObjectHashVerified": true,
+    "packagerSourceSha256": "603609bd24c9296c5ad13f11c7b4583ea579dd7810c6cbdef98289afe438cc0e",
+    "runtimeAdapterSha256": "26c5d05b338a8f6615f4cbb5097f9c949be713327fdb5d17d9df91ffe7d6ada9"
+  },
+  "build": {
+    "status": "PASS",
+    "blobReads": 1908,
+    "gitProcesses": 1,
+    "everyGitObjectHashVerified": true,
+    "packagerSourceSha256": "3b21ee52d0a6d71d78360b3020cd451035d4f1e7d11196c558287b8c3ea86e51",
+    "runtimeAdapterSha256": "26c5d05b338a8f6615f4cbb5097f9c949be713327fdb5d17d9df91ffe7d6ada9"
+  }
+}

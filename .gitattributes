@@ -20,3 +20,5 @@ docs/quartic-962/** -text
 docs/quartic-962-validation/** -text
 scripts/check_quartic962.py -text
 scripts/quartic962_checks.cjs -text
+scripts/check_historical_inventory.py -text
+manuscripts/** -text
