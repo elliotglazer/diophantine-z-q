@@ -1,0 +1,399 @@
+{
+  "status": "passed; experiment rejected for larger support",
+  "algebraicChecker": {
+    "checkedAtUTC": "2026-11-07T08:05:44.241Z",
+    "status": "passed_exact_algebra_checks",
+    "scope": "Exact gate identities recognized below, certified row operations/eliminations, SOS expansion, fixed-S integrality/support/height. No proof of inherited arithmetic or source completeness is asserted.",
+    "inputSha256": "5e4fa07b54bda33b9e3d7c922afdbf03e7bf3bdbee68e241102c8fce7109ba2a",
+    "quarticTableCompared": true
+  },
+  "normIdentities": {
+    "status": "passed",
+    "detectors": [
+      {
+        "detector": 0,
+        "status": "passed_actual_emitted_gate_formulas"
+      },
+      {
+        "detector": 1,
+        "status": "passed_actual_emitted_gate_formulas"
+      },
+      {
+        "detector": 2,
+        "status": "passed_actual_emitted_gate_formulas"
+      },
+      {
+        "detector": 3,
+        "status": "passed_actual_emitted_gate_formulas"
+      },
+      {
+        "detector": 4,
+        "status": "passed_actual_emitted_gate_formulas"
+      },
+      {
+        "detector": 5,
+        "status": "passed_actual_emitted_gate_formulas"
+      },
+      {
+        "detector": 6,
+        "status": "passed_actual_emitted_gate_formulas"
+      },
+      {
+        "detector": 7,
+        "status": "passed_actual_emitted_gate_formulas"
+      },
+      {
+        "detector": 8,
+        "status": "passed_actual_emitted_gate_formulas"
+      }
+    ],
+    "identity": "B=(w0^2-2*w1^2)^2/(4*w0^2*e*delta)",
+    "scope": "Actual gate formulas and exact Laurent identity; nonvanishing follows from the separate global argument"
+  },
+  "mutationCheck": "rejected altered norm numerator",
+  "logarithms": [
+    {
+      "point": "U0",
+      "degree": 9,
+      "status": "exact_polynomial_identity"
+    },
+    {
+      "point": "U1",
+      "degree": 2,
+      "status": "exact_polynomial_identity"
+    },
+    {
+      "point": "U2",
+      "degree": 9,
+      "status": "exact_polynomial_identity"
+    },
+    {
+      "point": "U3",
+      "degree": 9,
+      "status": "exact_polynomial_identity"
+    },
+    {
+      "point": "U4",
+      "degree": 9,
+      "status": "exact_polynomial_identity"
+    },
+    {
+      "point": "V0",
+      "degree": 9,
+      "status": "exact_polynomial_identity"
+    },
+    {
+      "point": "V1",
+      "degree": 2,
+      "status": "exact_polynomial_identity"
+    },
+    {
+      "point": "V2",
+      "degree": 9,
+      "status": "exact_polynomial_identity"
+    },
+    {
+      "point": "V3",
+      "degree": 9,
+      "status": "exact_polynomial_identity"
+    },
+    {
+      "point": "V4",
+      "degree": 9,
+      "status": "exact_polynomial_identity"
+    }
+  ],
+  "weights": {
+    "status": "passed_emitted_Laurent_identities",
+    "detectors": [
+      {
+        "detector": 0,
+        "q12": [
+          22,
+          1
+        ],
+        "q40": [
+          78,
+          1
+        ],
+        "denominators": [
+          {
+            "coordinate": 450,
+            "ePower": 8,
+            "coefficient": "1"
+          },
+          {
+            "coordinate": 448,
+            "ePower": 2,
+            "coefficient": "1"
+          },
+          {
+            "coordinate": 451,
+            "ePower": 4,
+            "coefficient": "1"
+          }
+        ]
+      },
+      {
+        "detector": 1,
+        "q12": [
+          22,
+          1
+        ],
+        "q40": [
+          78,
+          1
+        ],
+        "denominators": [
+          {
+            "coordinate": 497,
+            "ePower": 8,
+            "coefficient": "1"
+          },
+          {
+            "coordinate": 495,
+            "ePower": 2,
+            "coefficient": "1"
+          },
+          {
+            "coordinate": 498,
+            "ePower": 4,
+            "coefficient": "1"
+          }
+        ]
+      },
+      {
+        "detector": 2,
+        "q12": [
+          22,
+          1
+        ],
+        "q40": [
+          78,
+          1
+        ],
+        "denominators": [
+          {
+            "coordinate": 544,
+            "ePower": 8,
+            "coefficient": "1"
+          },
+          {
+            "coordinate": 542,
+            "ePower": 2,
+            "coefficient": "1"
+          },
+          {
+            "coordinate": 545,
+            "ePower": 4,
+            "coefficient": "1"
+          }
+        ]
+      },
+      {
+        "detector": 3,
+        "q12": [
+          22,
+          1
+        ],
+        "q40": [
+          78,
+          1
+        ],
+        "denominators": [
+          {
+            "coordinate": 591,
+            "ePower": 8,
+            "coefficient": "1"
+          },
+          {
+            "coordinate": 589,
+            "ePower": 2,
+            "coefficient": "1"
+          },
+          {
+            "coordinate": 592,
+            "ePower": 4,
+            "coefficient": "1"
+          }
+        ]
+      },
+      {
+        "detector": 4,
+        "q12": [
+          22,
+          1
+        ],
+        "q40": [
+          78,
+          1
+        ],
+        "denominators": [
+          {
+            "coordinate": 638,
+            "ePower": 8,
+            "coefficient": "1"
+          },
+          {
+            "coordinate": 636,
+            "ePower": 2,
+            "coefficient": "1"
+          },
+          {
+            "coordinate": 639,
+            "ePower": 4,
+            "coefficient": "1"
+          }
+        ]
+      },
+      {
+        "detector": 5,
+        "q12": [
+          22,
+          1
+        ],
+        "q40": [
+          78,
+          1
+        ],
+        "denominators": [
+          {
+            "coordinate": 685,
+            "ePower": 8,
+            "coefficient": "1"
+          },
+          {
+            "coordinate": 683,
+            "ePower": 2,
+            "coefficient": "1"
+          },
+          {
+            "coordinate": 686,
+            "ePower": 4,
+            "coefficient": "1"
+          }
+        ]
+      },
+      {
+        "detector": 6,
+        "q12": [
+          22,
+          1
+        ],
+        "q40": [
+          78,
+          1
+        ],
+        "denominators": [
+          {
+            "coordinate": 732,
+            "ePower": 8,
+            "coefficient": "1"
+          },
+          {
+            "coordinate": 730,
+            "ePower": 2,
+            "coefficient": "1"
+          },
+          {
+            "coordinate": 733,
+            "ePower": 4,
+            "coefficient": "1"
+          }
+        ]
+      },
+      {
+        "detector": 7,
+        "q12": [
+          22,
+          1
+        ],
+        "q40": [
+          78,
+          1
+        ],
+        "denominators": [
+          {
+            "coordinate": 779,
+            "ePower": 8,
+            "coefficient": "1"
+          },
+          {
+            "coordinate": 777,
+            "ePower": 2,
+            "coefficient": "1"
+          },
+          {
+            "coordinate": 780,
+            "ePower": 4,
+            "coefficient": "1"
+          }
+        ]
+      },
+      {
+        "detector": 8,
+        "q12": [
+          22,
+          1
+        ],
+        "q40": [
+          78,
+          1
+        ],
+        "denominators": [
+          {
+            "coordinate": 826,
+            "ePower": 8,
+            "coefficient": "1"
+          },
+          {
+            "coordinate": 824,
+            "ePower": 2,
+            "coefficient": "1"
+          },
+          {
+            "coordinate": 827,
+            "ePower": 4,
+            "coefficient": "1"
+          }
+        ]
+      }
+    ],
+    "scope": "Actual emitted gate values and denominators; e nonvanishing requires the source norm argument"
+  },
+  "constantChainCoordinates": 17,
+  "budgets": {
+    "anchorLog2LowerBound": "50331647/2",
+    "requiredLog2UpperBound": 20939720,
+    "powerChain": [
+      1,
+      2,
+      3,
+      6,
+      9,
+      11,
+      22,
+      33,
+      39,
+      78
+    ],
+    "status": "exact rational budgets passed; not a proof of inherited theorems"
+  },
+  "elementaryChecks": {
+    "status": "passed",
+    "lucasExamples": 388,
+    "purePowerRelaxationMaximum": 32,
+    "secondOutputMaximum": 54,
+    "scope": "Finite recurrence checks and exhaustive relaxed last-gate enumeration; universal arguments are in the notes"
+  },
+  "ordinaryExportMatchesCheckedTable": true,
+  "sha256": {
+    "build_source.cjs": "42a635373e246ccd05c6b0c17985637b35c811685aad4cae9c4ffe4499abd016",
+    "source-ir.json": "5e4fa07b54bda33b9e3d7c922afdbf03e7bf3bdbee68e241102c8fce7109ba2a",
+    "parameter-source-ir.json": "35ce7dac454f270e11cffcd4ca56ba1aa21f88fd5cb227b71cb052d80f89c82e",
+    "compiled/compiled-ir.json": "86637908a66060c26ae7dcfd66e81c1b54127c57d8a547674a2461a051fb6f1b",
+    "compiled/reduction-certificate.json": "59812d2ea5159a4083b574f2cd3cfc726c427bfa305c02f911abb45fd38e51c1",
+    "compiled/coordinate-map.json": "30601eef254d42689fad459b5be74ebe47d1ee51bdf9eafff2bfbf79062f604a",
+    "compiled/ordinary-polynomial.json": "8401dc02aa5f24951013011b9a1b9ce640d9093575d38ccb52e5e1a3e4ea3f7f"
+  }
+}

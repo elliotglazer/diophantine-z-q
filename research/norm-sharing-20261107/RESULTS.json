@@ -1,0 +1,20 @@
+{
+  "upstreamCommit": "f87226569fa7ceeae0c783c3e4d1241ac727733a",
+  "variants": {
+    "precision40_quotients": {
+      "coordinates": 900,
+      "compiledCoordinatesBeforeFreeOmission": 900,
+      "residuals": 857,
+      "activeCoordinates": 900,
+      "ordinaryCoordinateMonomials": 54357,
+      "parameterCoefficientTerms": 54357,
+      "degree": 4,
+      "maxSPower": 0,
+      "integerCoefficients": true,
+      "sIndependentCoefficientGcd": 1,
+      "maximumCoefficientBits": 3247,
+      "ordinaryExportSha256": "8401dc02aa5f24951013011b9a1b9ce640d9093575d38ccb52e5e1a3e4ea3f7f",
+      "builderSha256": "42a635373e246ccd05c6b0c17985637b35c811685aad4cae9c4ffe4499abd016"
+    }
+  }
+}

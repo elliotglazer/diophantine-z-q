@@ -1,0 +1,17 @@
+{
+  "sha256": {
+    "research/norm-sharing-20261107/explore.py": "b0661a9b1f5d6d44005d45b878e6aa72c8b147fad384e14502b6d89e820b535c",
+    "research/norm-sharing-20261107/verify_norm.py": "e94b0e6fceaf269f70dcbabb22fc4f5b6567b46fecd6a7849f6cee878964536d",
+    "research/norm-sharing-20261107/check_elementary.py": "c368c57c0156360d66841d98ac95c0d6ac64969c7b4e163e6c4114396254aade",
+    "research/mixed-weights-20261107/explore.py": "53a865d2a3d7078c6e94bb244aaef200b8721eafc62de28ce94ad44cddb07ad9",
+    "research/mixed-weights-20261107/verify_weights.py": "a3b9aa2bbaf00bb4efb47763f2b7a561adbc2183bfba8bbf58036acf2154ee87",
+    "research/overnight-20261106/unit_target.py": "ae2c1ff50e12ad7b792429071240718b713c68e68e2f6c6cf7b8bc85a1edd487",
+    "research/v6-comparison/explore.py": "2d3c0affcf6eeb53cf7d970cabdf7ae1a5f83d7d8368535eaacfd203102fa390",
+    "research/v6-comparison/verify_identities.py": "9d4ad750b062a1b068f8ea365a1366112c29c4d1bee6bffc890f5e480e497670",
+    "research/combined-comparison/explore.py": "8fda22f03e4dcb737fc224393da46484d1c32c1cc0af0dec68ef1939262c9a23",
+    "research/combined-comparison/verify_variants.py": "6f65aea1e4da78d26a2dd9350a9b23b03a23218706b46746b22b1f6a95fec075",
+    "quartics/quartic-962/build_source.cjs": "b99b000a57a904328d167a3b3fe9e319e84dc880f03071af9b4face29bc9a570",
+    "quartics/quartic-962/compiler/compile_ir.py": "c50510a5bed8f59543b64a3a2cb251e9aff4b300d4bfc750e13642e7b00eb46f",
+    "quartics/quartic-962/checker/checker.cjs": "50f9924557f0594a0ddb2664260d2e382d80762a0d607d87203fb7ddfb4e1cb1"
+  }
+}
