@@ -1,0 +1,12 @@
+{
+  "sha256": {
+    "research/overnight-20261106/unit_target.py": "ae2c1ff50e12ad7b792429071240718b713c68e68e2f6c6cf7b8bc85a1edd487",
+    "research/v6-comparison/explore.py": "2d3c0affcf6eeb53cf7d970cabdf7ae1a5f83d7d8368535eaacfd203102fa390",
+    "research/combined-comparison/explore.py": "8fda22f03e4dcb737fc224393da46484d1c32c1cc0af0dec68ef1939262c9a23",
+    "research/v6-comparison/verify_identities.py": "9d4ad750b062a1b068f8ea365a1366112c29c4d1bee6bffc890f5e480e497670",
+    "research/combined-comparison/verify_variants.py": "6f65aea1e4da78d26a2dd9350a9b23b03a23218706b46746b22b1f6a95fec075",
+    "research/mixed-weights-20261107/explore.py": "53a865d2a3d7078c6e94bb244aaef200b8721eafc62de28ce94ad44cddb07ad9",
+    "research/mixed-weights-20261107/verify_weights.py": "a3b9aa2bbaf00bb4efb47763f2b7a561adbc2183bfba8bbf58036acf2154ee87",
+    "research/mixed-weights-20261107/verify_run.py": "0ea5a84064cd345538237572d7fdb5cd2840e44c47c8914875930009f3170079"
+  }
+}

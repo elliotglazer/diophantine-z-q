@@ -1,65 +1,48 @@
 # Proposed PR #4 title
 
-Propose a 933-variable quartic with explicit integer coefficients, building on Version 6
+Refine the quartic proposal to 924 variables, with a 900-variable direct-target candidate
 
 # Proposed PR #4 description
 
 ## Summary
 
-Rebuilt against Version 6 at `f87226569fa7ceeae0c783c3e4d1241ac727733a`. This PR now proposes a **933-variable quartic with fully explicit integer coefficients**. It supersedes the earlier 1,267-variable presentation and incorporates the former stacked 1,180-variable refinement.
+The branch integrates upstream Version 8 at `5856286a57fba19574a40704571ee70e79738281` and preserves the frozen 933-variable ordinary-coefficient package. A new exact rational weight circuit reduces that design to **924 variables**. Combining it with the separately documented direct-target proposal gives a **900-variable candidate**.
 
-| Construction | Variables, including input | Quadratic residuals | Monomials | Coefficients |
-| --- | ---: | ---: | ---: | --- |
-| Upstream Version 6 | 962 | 919 | 55,409 | Fixed symbolic integer S = 3^(2^27) |
-| This proposal | **933** | **890** | **51,907** | **Ordinary integer strings; maximum 3,247 bits** |
+| Construction | Variables including input | Quadratic residuals | Monomials | Maximum coefficient bits |
+| --- | ---: | ---: | ---: | ---: |
+| Frozen ordinary-coefficient package | 933 | 890 | 51,907 | 3,247 |
+| Mixed weights, doubled targets | 924 | 881 | 51,880 | 3,247 |
+| Mixed weights, direct targets | 900 | 857 | 51,252 | 3,247 |
 
-The polynomial has degree four and primitive content one. The published Version 6 source and artifacts remain unchanged.
+Both new polynomials have degree four and primitive content one. The upstream and historical fork artifacts are preserved.
 
-## Mathematical and computational changes
+## Changes and justification
 
-Start from Version 6's optimized point chart, shared polynomial circuits, scaled pole witnesses and finite-correction chain. These optimizations are credited to the upstream authors. The additional changes are:
+The existing exponent-19 height refinement, comparison precisions 12/40, degree-nine logarithm circuit, redundant-inverse removal and explicit constant chain remain in place. The new change computes the detector weights in eight gates instead of nine:
 
-- Apply the exponent-19 height bound to use comparison precisions 12/40, while retaining scalar order 32.
-- Replace fourfold comparison targets with doubled targets. The proof gives the soundness argument at split and inert primes and the compatible common-index congruences using the finite doubling subgroups.
-- Remove the redundant detector delta inverse, with an explicit proof that the remaining norm equation forces every required denominator to be nonzero.
-- Compute the precision weights through the quadratic quotient equations e² q12 = q1 e²⁴ and e² q40 = q1 e⁸⁰. The shared power circuit saves one coordinate in each of the nine detectors.
-- Use a degree-nine block evaluation for G9 and direct quadratic evaluation for G2.
-- Specialize to the smaller anchor 3^(2^26), justified by the height inequalities, and encode it with seventeen uniquely determined constant-chain coordinates.
+    a=e², b=a², c=b², d=c²,
+    a*f=d², g=f²,
+    c*q12=q1*f, b*q40=q12*g.
 
-The combined result saves 247 variables relative to our earlier 1,180-variable proposal. The intermediate experiment lowering only the beta precision increased the count and is recorded but not selected.
+These equations give q12=q1*e^22 and q40=q1*e^78. Every new denominator is a power of e. The retained inverse and norm equations force e!=0 on every source solution, so this is an exact reparameterization in both directions. It saves one variable per detector without new height or local estimates.
 
-## Files and review path
+The direct-target variant additionally replaces 2P*,2Qi by P*,Qi. Its separate soundness and common-index completeness argument is documented, but still requires independent mathematical review. The 900-variable count must not be read as certification of that arithmetic argument.
 
-Begin with [research/v6-comparison/README.md](https://github.com/scduko/diophantine-z-q-explorations/blob/combined-comparison/research/v6-comparison/README.md). It gives the derivation, exact dependency boundary, count progression and reproduction commands.
+## Review and reproduction
 
-The new package includes pinned inputs, the generator, complete compressed ordinary-coefficient artifacts, elimination certificates, coordinate maps, hashes, an independent symbolic logarithm check, and a dedicated artifact replay. Earlier 1,267- and 1,180-variable artifacts and their proofs are preserved as historical references; they are not the current proposed endpoint.
+Start with [research/mixed-weights-20261107/README.md](https://github.com/scduko/diophantine-z-q-explorations/blob/combined-comparison/research/mixed-weights-20261107/README.md). It includes the exact projection proof, all new denominator obligations, input pins and reproduction commands. The new variants are generated on demand; the earlier 933 package remains the frozen compressed artifact set.
 
-## Verification
+Both new variants passed the unchanged compiler and independent algebraic checker, elimination-certificate checks, full ordinary-polynomial replay, constant-chain projection and numerical height budgets. All ten emitted logarithm polynomials and all nine emitted mixed weight circuits were separately checked. This includes inspecting the actual quotient denominators, not only a handwritten exponent chain.
 
-- All five experimental stages passed the unchanged upstream independent algebraic checker.
-- The selected 933-variable package passed a fresh hash, constant-chain, exact arithmetic budget, certificate, coordinate-map and complete sum-of-squares replay.
-- All ten emitted G2/G9 logarithm circuits were independently expanded over Q[f0,f1] and checked as exact polynomial identities.
-- The historical 1,267-variable package still replays successfully after the rebase.
-- The published Git tree was matched to the locally checked tree.
+Ordinary polynomial SHA-256:
 
-Replay the selected artifact:
+- 924: `bff480cc9d5984716cba5e34529dbdd5a1373256acb6452a20a1bf82dab4129b`
+- 900: `444f6bee0839d9df052fec4764458245c8b5d81d460c03ecb022c808c4410bad`
 
-```sh
-python3 -B research/v6-comparison/check_artifacts.py
-```
+The intuitive proof architecture is in `research/overnight-20261106/INTUITIVE_PROOF.md`; the exact comparison thresholds are in `research/overnight-20261107/COMPARISON_LEMMA.md`.
 
-Regenerate it in a new directory:
+## Dependency and review boundary
 
-```sh
-python3 -B research/v6-comparison/explore.py --only 4 --out /tmp/v6-replay
-```
+Finite algebraic checks do not certify the inherited height theorem, elliptic-curve group calculation, local arithmetic or simultaneous-prime construction. Version 8's Gaussian-appendix repairs have been integrated; the full analytic argument has not been independently re-proved by this work. Independent human mathematical review remains pending, and Lean formalization remains incomplete.
 
-Ordinary polynomial SHA-256: `5dade132700c872ea5fbfb60913e1dd82b2f6d39cb86a0db37d3b1de71303c7a`.
-
-## Arithmetic dependencies and review status
-
-Independent human mathematical review remains pending. Algebraic replay does not certify the quotient-domain lemmas, height theorem, doubled-target arithmetic argument or inherited number-theoretic results.
-
-The current dependency is Version 6's simultaneous-prime construction and its in-manuscript Gaussian ray-field estimate. Frei–Tinková is methodological provenance, not an assumed theorem in Version 6. Remaining source-version qualifications and incomplete Lean status are retained.
-
-The new composition, quotient-weight circuit, exposition and scripts were developed with AI assistance under the repository owner's direction. Upstream construction, optimization and compiler/checker attribution is preserved. No minimality claim is made.
+The new circuit, proof notes and verification scripts were developed with AI assistance under the repository owner's direction. Upstream construction and compiler/checker attribution are preserved. No global minimality claim is made.

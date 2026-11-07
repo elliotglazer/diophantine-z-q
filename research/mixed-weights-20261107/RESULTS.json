@@ -1,0 +1,32 @@
+{
+  "1": {
+    "coordinates": 900,
+    "compiledCoordinatesBeforeFreeOmission": 900,
+    "residuals": 857,
+    "activeCoordinates": 900,
+    "ordinaryCoordinateMonomials": 51252,
+    "parameterCoefficientTerms": 51252,
+    "degree": 4,
+    "maxSPower": 0,
+    "integerCoefficients": true,
+    "sIndependentCoefficientGcd": 1,
+    "maximumCoefficientBits": 3247,
+    "ordinaryExportSha256": "444f6bee0839d9df052fec4764458245c8b5d81d460c03ecb022c808c4410bad",
+    "builderSha256": "d10b80fe64ef255b696ffc501cbb7311ba4be40177b11a72f1171c10dea2d283"
+  },
+  "2": {
+    "coordinates": 924,
+    "compiledCoordinatesBeforeFreeOmission": 924,
+    "residuals": 881,
+    "activeCoordinates": 924,
+    "ordinaryCoordinateMonomials": 51880,
+    "parameterCoefficientTerms": 51880,
+    "degree": 4,
+    "maxSPower": 0,
+    "integerCoefficients": true,
+    "sIndependentCoefficientGcd": 1,
+    "maximumCoefficientBits": 3247,
+    "ordinaryExportSha256": "bff480cc9d5984716cba5e34529dbdd5a1373256acb6452a20a1bf82dab4129b",
+    "builderSha256": "5a3513dcf0a48202e10287a934e8551b6c1c22ecd5d3f7fad0831f955c0040e3"
+  }
+}
