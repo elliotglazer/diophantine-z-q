@@ -56,8 +56,10 @@ The release preparation checks are recorded in the [validation report](VALIDATIO
 
 [Examples/CompactRecurrence.lean](Examples/CompactRecurrence.lean) gives anonymous
 applications of an existing Mathlib result to a product of two compact topological
-groups. **Draft: kernel compilation and axiom validation are pending.** These
-examples are outside the accepted 48-module snapshot and the default `ZInQ` root.
+groups. Both complete proofs pass local kernel compilation and axiom checks
+with the pinned dependencies; each depends on exactly `propext`,
+`Classical.choice`, and `Quot.sound`. These examples are outside the accepted
+48-module snapshot and the default `ZInQ` root.
 With the pinned dependencies already prepared, run from `lean/`:
 
 ```sh
