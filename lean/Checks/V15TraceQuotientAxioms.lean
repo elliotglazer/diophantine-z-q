@@ -1,5 +1,8 @@
 module
 
+/- SPDX-License-Identifier: Apache-2.0
+See ../Examples/V15Application.LICENSE for the license text. -/
+
 import all Examples.V15TraceQuotient
 import Lean.Util.CollectAxioms
 

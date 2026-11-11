@@ -1,5 +1,8 @@
 module
 
+/- SPDX-License-Identifier: Apache-2.0
+See V15Application.LICENSE for the license text. -/
+
 public import Examples.V15RetainedContact
 public import Examples.V15RawRows
 
@@ -44,25 +47,25 @@ theorem raw223_retained (A : ℚ) (x : Fin 223 → ℚ) (h : Raw223Solution A x)
   unfold Retained
   refine ⟨?_,?_,?_,?_,?_,?_,?_,?_,?_,?_⟩
   · have hx := h 9 (by norm_num) (by norm_num)
-    convert hx using 1 <;> norm_num [raw223Row, raw223RowBlock0, raw223RowBlock1, raw223RowBlock2, raw223RowBlock3, raw223RowBlock4, raw223RowBlock5, raw223RowBlock6, raw223RowBlock7, raw223RowBlock8, raw223RowBlock9, raw223RowBlock10, raw223RowBlock11, raw223RowBlock12] <;> ring
+    convert hx using 1 ; norm_num [raw223Row, raw223RowBlock0, raw223RowBlock1, raw223RowBlock2, raw223RowBlock3, raw223RowBlock4, raw223RowBlock5, raw223RowBlock6, raw223RowBlock7, raw223RowBlock8, raw223RowBlock9, raw223RowBlock10, raw223RowBlock11, raw223RowBlock12] ; ring
   · have hx := h 43 (by norm_num) (by norm_num)
-    convert hx using 1 <;> norm_num [raw223Row, raw223RowBlock0, raw223RowBlock1, raw223RowBlock2, raw223RowBlock3, raw223RowBlock4, raw223RowBlock5, raw223RowBlock6, raw223RowBlock7, raw223RowBlock8, raw223RowBlock9, raw223RowBlock10, raw223RowBlock11, raw223RowBlock12] <;> ring
+    convert hx using 1 ; norm_num [raw223Row, raw223RowBlock0, raw223RowBlock1, raw223RowBlock2, raw223RowBlock3, raw223RowBlock4, raw223RowBlock5, raw223RowBlock6, raw223RowBlock7, raw223RowBlock8, raw223RowBlock9, raw223RowBlock10, raw223RowBlock11, raw223RowBlock12] ; ring
   · have hx := h 44 (by norm_num) (by norm_num)
-    convert hx using 1 <;> norm_num [raw223Row, raw223RowBlock0, raw223RowBlock1, raw223RowBlock2, raw223RowBlock3, raw223RowBlock4, raw223RowBlock5, raw223RowBlock6, raw223RowBlock7, raw223RowBlock8, raw223RowBlock9, raw223RowBlock10, raw223RowBlock11, raw223RowBlock12] <;> ring
+    convert hx using 1 ; norm_num [raw223Row, raw223RowBlock0, raw223RowBlock1, raw223RowBlock2, raw223RowBlock3, raw223RowBlock4, raw223RowBlock5, raw223RowBlock6, raw223RowBlock7, raw223RowBlock8, raw223RowBlock9, raw223RowBlock10, raw223RowBlock11, raw223RowBlock12] ; ring
   · have hx := h 45 (by norm_num) (by norm_num)
-    convert hx using 1 <;> norm_num [raw223Row, raw223RowBlock0, raw223RowBlock1, raw223RowBlock2, raw223RowBlock3, raw223RowBlock4, raw223RowBlock5, raw223RowBlock6, raw223RowBlock7, raw223RowBlock8, raw223RowBlock9, raw223RowBlock10, raw223RowBlock11, raw223RowBlock12] <;> ring
+    convert hx using 1 ; norm_num [raw223Row, raw223RowBlock0, raw223RowBlock1, raw223RowBlock2, raw223RowBlock3, raw223RowBlock4, raw223RowBlock5, raw223RowBlock6, raw223RowBlock7, raw223RowBlock8, raw223RowBlock9, raw223RowBlock10, raw223RowBlock11, raw223RowBlock12] ; ring
   · have hx := h 46 (by norm_num) (by norm_num)
-    convert hx using 1 <;> norm_num [raw223Row, raw223RowBlock0, raw223RowBlock1, raw223RowBlock2, raw223RowBlock3, raw223RowBlock4, raw223RowBlock5, raw223RowBlock6, raw223RowBlock7, raw223RowBlock8, raw223RowBlock9, raw223RowBlock10, raw223RowBlock11, raw223RowBlock12] <;> ring
+    convert hx using 1 ; norm_num [raw223Row, raw223RowBlock0, raw223RowBlock1, raw223RowBlock2, raw223RowBlock3, raw223RowBlock4, raw223RowBlock5, raw223RowBlock6, raw223RowBlock7, raw223RowBlock8, raw223RowBlock9, raw223RowBlock10, raw223RowBlock11, raw223RowBlock12] ; ring
   · have hx := h 56 (by norm_num) (by norm_num)
-    convert hx using 1 <;> norm_num [raw223Row, raw223RowBlock0, raw223RowBlock1, raw223RowBlock2, raw223RowBlock3, raw223RowBlock4, raw223RowBlock5, raw223RowBlock6, raw223RowBlock7, raw223RowBlock8, raw223RowBlock9, raw223RowBlock10, raw223RowBlock11, raw223RowBlock12] <;> ring
+    convert hx using 1 ; norm_num [raw223Row, raw223RowBlock0, raw223RowBlock1, raw223RowBlock2, raw223RowBlock3, raw223RowBlock4, raw223RowBlock5, raw223RowBlock6, raw223RowBlock7, raw223RowBlock8, raw223RowBlock9, raw223RowBlock10, raw223RowBlock11, raw223RowBlock12] ; ring
   · have hx := h 57 (by norm_num) (by norm_num)
-    convert hx using 1 <;> norm_num [raw223Row, raw223RowBlock0, raw223RowBlock1, raw223RowBlock2, raw223RowBlock3, raw223RowBlock4, raw223RowBlock5, raw223RowBlock6, raw223RowBlock7, raw223RowBlock8, raw223RowBlock9, raw223RowBlock10, raw223RowBlock11, raw223RowBlock12] <;> ring
+    convert hx using 1 ; norm_num [raw223Row, raw223RowBlock0, raw223RowBlock1, raw223RowBlock2, raw223RowBlock3, raw223RowBlock4, raw223RowBlock5, raw223RowBlock6, raw223RowBlock7, raw223RowBlock8, raw223RowBlock9, raw223RowBlock10, raw223RowBlock11, raw223RowBlock12] ; ring
   · have hx := h 68 (by norm_num) (by norm_num)
-    convert hx using 1 <;> norm_num [raw223Row, raw223RowBlock0, raw223RowBlock1, raw223RowBlock2, raw223RowBlock3, raw223RowBlock4, raw223RowBlock5, raw223RowBlock6, raw223RowBlock7, raw223RowBlock8, raw223RowBlock9, raw223RowBlock10, raw223RowBlock11, raw223RowBlock12] <;> ring
+    convert hx using 1 ; norm_num [raw223Row, raw223RowBlock0, raw223RowBlock1, raw223RowBlock2, raw223RowBlock3, raw223RowBlock4, raw223RowBlock5, raw223RowBlock6, raw223RowBlock7, raw223RowBlock8, raw223RowBlock9, raw223RowBlock10, raw223RowBlock11, raw223RowBlock12] ; ring
   · have hx := h 71 (by norm_num) (by norm_num)
-    convert hx using 1 <;> norm_num [raw223Row, raw223RowBlock0, raw223RowBlock1, raw223RowBlock2, raw223RowBlock3, raw223RowBlock4, raw223RowBlock5, raw223RowBlock6, raw223RowBlock7, raw223RowBlock8, raw223RowBlock9, raw223RowBlock10, raw223RowBlock11, raw223RowBlock12] <;> ring
+    convert hx using 1 ; norm_num [raw223Row, raw223RowBlock0, raw223RowBlock1, raw223RowBlock2, raw223RowBlock3, raw223RowBlock4, raw223RowBlock5, raw223RowBlock6, raw223RowBlock7, raw223RowBlock8, raw223RowBlock9, raw223RowBlock10, raw223RowBlock11, raw223RowBlock12] ; ring
   · have hx := h 73 (by norm_num) (by norm_num)
-    convert hx using 1 <;> norm_num [raw223Row, raw223RowBlock0, raw223RowBlock1, raw223RowBlock2, raw223RowBlock3, raw223RowBlock4, raw223RowBlock5, raw223RowBlock6, raw223RowBlock7, raw223RowBlock8, raw223RowBlock9, raw223RowBlock10, raw223RowBlock11, raw223RowBlock12] <;> ring
+    convert hx using 1 ; norm_num [raw223Row, raw223RowBlock0, raw223RowBlock1, raw223RowBlock2, raw223RowBlock3, raw223RowBlock4, raw223RowBlock5, raw223RowBlock6, raw223RowBlock7, raw223RowBlock8, raw223RowBlock9, raw223RowBlock10, raw223RowBlock11, raw223RowBlock12] ; ring
 
 theorem raw223_q_nonzero (A : ℚ) (x : Fin 223 → ℚ) (hA : A ≠ 0)
     (h : Raw223Solution A x) : coord x 96 ≠ 0 :=
@@ -135,7 +138,7 @@ theorem reverse_forward (A : ℚ) (x : Fin 223 → ℚ) (hA : A ≠ 0)
       norm_num [to223, to222, coord]
       norm_num [coord] at hQ
       field_simp [hQ]
-    · simp [to223,to222,h221,h222,coord]
+    · simp [to223,to222,h221,h222]
 
 theorem forward_reverse (A : ℚ) (y : Fin 222 → ℚ) (hA : A ≠ 0)
     (hy : Raw222Solution A y) : to222 (to223 y) = y := by
