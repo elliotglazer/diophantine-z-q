@@ -1,6 +1,6 @@
 module
 
-/-!
+/-
 # The V15 retained contact domain over all rational coordinates
 
 Source: elliotglazer/diophantine-z-q@511529bbe9d635194f0c9d925709e77a5d3afa64,
@@ -33,7 +33,7 @@ set_option maxHeartbeats 800000
 
 noncomputable section
 
-public section
+@[expose] public section
 
 namespace V15RetainedContact
 
@@ -80,7 +80,7 @@ theorem obstruction_no_rational_root (s : ℚ) : aeval s obstruction ≠ 0 := by
       35893742479489*a^8 ≠ 0 := by
     decide
   apply hmod (n : ZMod 5) (d : ZMod 5) hd
-  exact hm
+  convert hm using 1; ring
 
 /-- Unrestricted rational contact obstruction; no sign or inverse guard. -/
 theorem contact_nonzero (t q : ℚ)

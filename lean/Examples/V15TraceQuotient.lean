@@ -44,25 +44,25 @@ theorem raw223_retained (A : ℚ) (x : Fin 223 → ℚ) (h : Raw223Solution A x)
   unfold Retained
   refine ⟨?_,?_,?_,?_,?_,?_,?_,?_,?_,?_⟩
   · have hx := h 9 (by norm_num) (by norm_num)
-    convert hx using 1 <;> norm_num [raw223Row] <;> ring
+    convert hx using 1 <;> norm_num [raw223Row, raw223RowBlock0, raw223RowBlock1, raw223RowBlock2, raw223RowBlock3, raw223RowBlock4, raw223RowBlock5, raw223RowBlock6, raw223RowBlock7, raw223RowBlock8, raw223RowBlock9, raw223RowBlock10, raw223RowBlock11, raw223RowBlock12] <;> ring
   · have hx := h 43 (by norm_num) (by norm_num)
-    convert hx using 1 <;> norm_num [raw223Row] <;> ring
+    convert hx using 1 <;> norm_num [raw223Row, raw223RowBlock0, raw223RowBlock1, raw223RowBlock2, raw223RowBlock3, raw223RowBlock4, raw223RowBlock5, raw223RowBlock6, raw223RowBlock7, raw223RowBlock8, raw223RowBlock9, raw223RowBlock10, raw223RowBlock11, raw223RowBlock12] <;> ring
   · have hx := h 44 (by norm_num) (by norm_num)
-    convert hx using 1 <;> norm_num [raw223Row] <;> ring
+    convert hx using 1 <;> norm_num [raw223Row, raw223RowBlock0, raw223RowBlock1, raw223RowBlock2, raw223RowBlock3, raw223RowBlock4, raw223RowBlock5, raw223RowBlock6, raw223RowBlock7, raw223RowBlock8, raw223RowBlock9, raw223RowBlock10, raw223RowBlock11, raw223RowBlock12] <;> ring
   · have hx := h 45 (by norm_num) (by norm_num)
-    convert hx using 1 <;> norm_num [raw223Row] <;> ring
+    convert hx using 1 <;> norm_num [raw223Row, raw223RowBlock0, raw223RowBlock1, raw223RowBlock2, raw223RowBlock3, raw223RowBlock4, raw223RowBlock5, raw223RowBlock6, raw223RowBlock7, raw223RowBlock8, raw223RowBlock9, raw223RowBlock10, raw223RowBlock11, raw223RowBlock12] <;> ring
   · have hx := h 46 (by norm_num) (by norm_num)
-    convert hx using 1 <;> norm_num [raw223Row] <;> ring
+    convert hx using 1 <;> norm_num [raw223Row, raw223RowBlock0, raw223RowBlock1, raw223RowBlock2, raw223RowBlock3, raw223RowBlock4, raw223RowBlock5, raw223RowBlock6, raw223RowBlock7, raw223RowBlock8, raw223RowBlock9, raw223RowBlock10, raw223RowBlock11, raw223RowBlock12] <;> ring
   · have hx := h 56 (by norm_num) (by norm_num)
-    convert hx using 1 <;> norm_num [raw223Row] <;> ring
+    convert hx using 1 <;> norm_num [raw223Row, raw223RowBlock0, raw223RowBlock1, raw223RowBlock2, raw223RowBlock3, raw223RowBlock4, raw223RowBlock5, raw223RowBlock6, raw223RowBlock7, raw223RowBlock8, raw223RowBlock9, raw223RowBlock10, raw223RowBlock11, raw223RowBlock12] <;> ring
   · have hx := h 57 (by norm_num) (by norm_num)
-    convert hx using 1 <;> norm_num [raw223Row] <;> ring
+    convert hx using 1 <;> norm_num [raw223Row, raw223RowBlock0, raw223RowBlock1, raw223RowBlock2, raw223RowBlock3, raw223RowBlock4, raw223RowBlock5, raw223RowBlock6, raw223RowBlock7, raw223RowBlock8, raw223RowBlock9, raw223RowBlock10, raw223RowBlock11, raw223RowBlock12] <;> ring
   · have hx := h 68 (by norm_num) (by norm_num)
-    convert hx using 1 <;> norm_num [raw223Row] <;> ring
+    convert hx using 1 <;> norm_num [raw223Row, raw223RowBlock0, raw223RowBlock1, raw223RowBlock2, raw223RowBlock3, raw223RowBlock4, raw223RowBlock5, raw223RowBlock6, raw223RowBlock7, raw223RowBlock8, raw223RowBlock9, raw223RowBlock10, raw223RowBlock11, raw223RowBlock12] <;> ring
   · have hx := h 71 (by norm_num) (by norm_num)
-    convert hx using 1 <;> norm_num [raw223Row] <;> ring
+    convert hx using 1 <;> norm_num [raw223Row, raw223RowBlock0, raw223RowBlock1, raw223RowBlock2, raw223RowBlock3, raw223RowBlock4, raw223RowBlock5, raw223RowBlock6, raw223RowBlock7, raw223RowBlock8, raw223RowBlock9, raw223RowBlock10, raw223RowBlock11, raw223RowBlock12] <;> ring
   · have hx := h 73 (by norm_num) (by norm_num)
-    convert hx using 1 <;> norm_num [raw223Row] <;> ring
+    convert hx using 1 <;> norm_num [raw223Row, raw223RowBlock0, raw223RowBlock1, raw223RowBlock2, raw223RowBlock3, raw223RowBlock4, raw223RowBlock5, raw223RowBlock6, raw223RowBlock7, raw223RowBlock8, raw223RowBlock9, raw223RowBlock10, raw223RowBlock11, raw223RowBlock12] <;> ring
 
 theorem raw223_q_nonzero (A : ℚ) (x : Fin 223 → ℚ) (hA : A ≠ 0)
     (h : Raw223Solution A x) : coord x 96 ≠ 0 :=
@@ -72,7 +72,7 @@ theorem raw223_Q_nonzero (A : ℚ) (x : Fin 223 → ℚ) (hA : A ≠ 0)
     (h : Raw223Solution A x) : coord x 98 ≠ 0 := by
   have hq := raw223_q_nonzero A x hA h
   have h47 := h 47 (by norm_num) (by norm_num)
-  norm_num [raw223Row] at h47
+  norm_num [raw223Row, raw223RowBlock0, raw223RowBlock1, raw223RowBlock2, raw223RowBlock3, raw223RowBlock4, raw223RowBlock5, raw223RowBlock6, raw223RowBlock7, raw223RowBlock8, raw223RowBlock9, raw223RowBlock10, raw223RowBlock11, raw223RowBlock12] at h47
   intro hz
   have : coord x 96 = 0 := by nlinarith only [h47, hz, sq_nonneg (coord x 96)]
   exact hq this
@@ -92,19 +92,21 @@ theorem forward_coordinates (x : Fin 223 → ℚ) (i : Fin 221) :
     to222 x i.castSucc = x i.castSucc.castSucc := by
   have hi : i.val ≠ 221 := by omega
   simp [to222, hi]
+  congr 1
 
 theorem reverse_coordinates (y : Fin 222 → ℚ) (i : Fin 221) :
     to223 y i.castSucc.castSucc = y i.castSucc := by
   have hi : i.val ≠ 221 := by omega
   have hi' : i.val ≠ 222 := by omega
   simp [to223, hi, hi']
+  congr 1
 
 /-- Every literal parent row after substitution, including the deleted zero row 186. -/
 theorem row_substitution (A : ℚ) (y : Fin 222 → ℚ) (i : ℕ)
     (hlo : 1 ≤ i) (hhi : i ≤ 197) :
     raw223Row A (coord (to223 y)) i =
       if i=186 then 0 else raw222Row A (coord y) (if i<186 then i else i-1) := by
-  interval_cases i <;> norm_num [raw223Row, raw222Row, coord, to223] <;> ring
+  interval_cases i <;> norm_num [raw223Row, raw222Row, raw223RowBlock0, raw223RowBlock1, raw223RowBlock2, raw223RowBlock3, raw223RowBlock4, raw223RowBlock5, raw223RowBlock6, raw223RowBlock7, raw223RowBlock8, raw223RowBlock9, raw223RowBlock10, raw223RowBlock11, raw223RowBlock12, raw222RowBlock0, raw222RowBlock1, raw222RowBlock2, raw222RowBlock3, raw222RowBlock4, raw222RowBlock5, raw222RowBlock6, raw222RowBlock7, raw222RowBlock8, raw222RowBlock9, raw222RowBlock10, raw222RowBlock11, raw222RowBlock12, coord, to223] <;> ring
 
 theorem reverse_solution (A : ℚ) (y : Fin 222 → ℚ) (hy : Raw222Solution A y) :
     Raw223Solution A (to223 y) := by
@@ -119,7 +121,7 @@ theorem reverse_forward (A : ℚ) (x : Fin 223 → ℚ) (hA : A ≠ 0)
     (hx : Raw223Solution A x) : to223 (to222 x) = x := by
   have hQ := raw223_Q_nonzero A x hA hx
   have ht := hx 186 (by norm_num) (by norm_num)
-  norm_num [raw223Row] at ht
+  norm_num [raw223Row, raw223RowBlock0, raw223RowBlock1, raw223RowBlock2, raw223RowBlock3, raw223RowBlock4, raw223RowBlock5, raw223RowBlock6, raw223RowBlock7, raw223RowBlock8, raw223RowBlock9, raw223RowBlock10, raw223RowBlock11, raw223RowBlock12] at ht
   funext i
   rcases i with ⟨i, hi⟩
   by_cases h221 : i=221
@@ -155,14 +157,14 @@ theorem forward_solution (A : ℚ) (x : Fin 223 → ℚ) (hA : A ≠ 0)
   · have heq := row_substitution A (to222 x) j hjlo (by omega)
     rw [reverse_forward A x hA hx] at heq
     have hj' : j≠186 := by omega
-    simp only [hj', if_false, hj, if_true] at heq
+    simp only [hj', ite_false, hj, ite_true] at heq
     rw [← heq]
     exact hx j hjlo (by omega)
   · have heq := row_substitution A (to222 x) (j+1) (by omega) (by omega)
     rw [reverse_forward A x hA hx] at heq
     have hj' : j+1≠186 := by omega
     have hj'' : ¬j+1<186 := by omega
-    simp only [hj', if_false, hj'', Nat.add_sub_cancel] at heq
+    simp only [hj', ite_false, hj'', Nat.add_sub_cancel] at heq
     rw [← heq]
     exact hx (j+1) (by omega) (by omega)
 
