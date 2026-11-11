@@ -1,5 +1,28 @@
 module
 
+/-!
+# The V15 retained contact domain over all rational coordinates
+
+Source: elliotglazer/diophantine-z-q@511529bbe9d635194f0c9d925709e77a5d3afa64,
+research/version15/quartics/quartic-222/provenance/detector-q-nonzero-107/PROOF.md
+(SHA-256 d1d33a5a937fe00df6b008835c058759ccb6c575ee547e297dffc55064da16e5),
+with REQUIRED-ROWS.json (SHA-256
+6d04f2f063e3d903abdcf5c769180389a716fa360a0ced6467287aed9451977f).
+The raw224 source is shared-T-redundancy224-006/candidate224-ir.json
+(SHA-256 6b961988414509ff6619fb674b696c745b098d00ad2af326df43e4db5aa5d39f).
+
+Only rows 9,43,44,45,46,56,57,68,71,73 are assumed. Row 71 and A≠0
+force R≠0 after the scalar polynomial is proved positive. Row 68 then gives
+T≠0. Normalization uses t=x98/T and r=x99/T; no root, trace or inverse
+guard is assumed. For q=0, Mathlib's rational-root theorems applied directly
+to the integer obstruction force a denominator prime to 5. Its homogeneous
+reduction has no zero with nonzero denominator, checked by the Lean kernel.
+IsFractionRing.den is used throughout; it is not identified with Rat.den.
+
+This formalizes an existing paper calculation, with external-open-problem
+KPI zero. It neither proves the complete defining theorem nor a height bound.
+-/
+
 public import Mathlib.RingTheory.Polynomial.RationalRoot
 public import Mathlib.Algebra.Field.ZMod
 public import Mathlib.Tactic
@@ -7,6 +30,8 @@ public import Mathlib.Tactic
 set_option autoImplicit false
 set_option maxRecDepth 4096
 set_option maxHeartbeats 800000
+
+noncomputable section
 
 public section
 
@@ -27,10 +52,10 @@ def obstruction : ℤ[X] :=
 
 theorem obstruction_no_rational_root (s : ℚ) : aeval s obstruction ≠ 0 := by
   intro hs
-  have hdeg : obstruction.natDegree = 8 := by unfold obstruction; compute_degree
+  have hdeg : obstruction.natDegree = 8 := by unfold obstruction; compute_degree <;> norm_num
   have hlc : obstruction.leadingCoeff = (-35893742479489 : ℤ) := by
     rw [Polynomial.leadingCoeff, hdeg]
-    norm_num [obstruction]
+    norm_num [Polynomial.aeval_def, obstruction]
   let n : ℤ := IsFractionRing.num ℤ s
   let d : ℤ := IsFractionRing.den ℤ s
   have hd : (d : ZMod 5) ≠ 0 := by
@@ -38,17 +63,24 @@ theorem obstruction_no_rational_root (s : ℚ) : aeval s obstruction ≠ 0 := by
     rw [hlc] at hk
     intro hzero
     have hm := congrArg (Int.castRingHom (ZMod 5)) hk
-    change (-35893742479489 : ZMod 5) = (d : ZMod 5) * (k : ZMod 5) at hm
-    norm_num [hzero] at hm
+    simp only [map_mul] at hm
+    change ((-35893742479489 : ℤ) : ZMod 5) = (d : ZMod 5) * (k : ZMod 5) at hm
+    rw [hzero, zero_mul] at hm
+    exact (show ((-35893742479489 : ℤ) : ZMod 5) ≠ 0 by decide) hm
   have hn := num_isRoot_scaleRoots_of_aeval_eq_zero hs
   change (obstruction.scaleRoots d).eval n = 0 at hn
   rw [Polynomial.eval_eq_sum_range, Polynomial.natDegree_scaleRoots, hdeg] at hn
-  norm_num [Finset.sum_range_succ, Polynomial.coeff_scaleRoots, hdeg, obstruction] at hn
+  simp only [Finset.sum_range_succ, Polynomial.coeff_scaleRoots, hdeg] at hn
+  norm_num [obstruction] at hn
   have hm := congrArg (Int.castRingHom (ZMod 5)) hn
-  push_cast at hm
-  generalize hn5 : (n : ZMod 5) = a at hm
-  generalize hd5 : (d : ZMod 5) = b at hm hd
-  fin_cases a <;> fin_cases b <;> norm_num at hm hd
+  norm_num at hm
+  have hmod : ∀ a b : ZMod 5, b ≠ 0 →
+      -(39896049934224*b^8) + 141822723674536*b^6*a^2 -
+      192222345736537*b^4*a^4 + 122376041313918*b^2*a^6 -
+      35893742479489*a^8 ≠ 0 := by
+    decide
+  apply hmod (n : ZMod 5) (d : ZMod 5) hd
+  exact hm
 
 /-- Unrestricted rational contact obstruction; no sign or inverse guard. -/
 theorem contact_nonzero (t q : ℚ)
@@ -56,7 +88,7 @@ theorem contact_nonzero (t q : ℚ)
   intro hq
   subst q
   apply obstruction_no_rational_root (t-1)
-  norm_num [obstruction]
+  norm_num [Polynomial.aeval_def, obstruction]
   norm_num [P5] at h
   linear_combination (3813373161796 : ℚ)*h
 
@@ -66,7 +98,11 @@ theorem contact_product_nonzero (t q : ℚ)
       ((t-1)^2-(2398/2399)^2) * ((t-1)^2-(439/407)^2)) = ((t-1)^2)^5) :
     q ≠ 0 := by
   apply contact_nonzero t q
-  convert h using 1 <;> norm_num [P5] <;> ring
+  have hp (r : ℚ) : P5 r =
+      (r-1)*(r-9/4)*(r-4)*(r-(2398/2399)^2)*(r-(439/407)^2) := by
+    unfold P5
+    ring
+  simpa only [hp] using h
 
 def Retained (A input inputSq a b c v q f g T R w : ℚ) : Prop :=
   input^2-inputSq=0 ∧
