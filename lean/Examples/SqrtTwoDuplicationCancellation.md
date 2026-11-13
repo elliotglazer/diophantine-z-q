@@ -3,7 +3,7 @@
 This standalone helper formalizes an existing arithmetic calculation. Its public
 endpoint is
 `ZInQ.ModelDuplicationCancellation.primitive_duplication_local` in
-[SqrtTwoDuplicationCancellation.lean](SqrtTwoDuplicationCancellation.lean).
+[SqrtTwoDuplicationCancellation.lean](../../ZInQKernel/Contrib/SqrtTwoDuplicationCancellation.lean).
 For arbitrary `a b : Zsqrtd 2` with `Ideal.span {a, b} = ⊤`, put
 `root = √2`, `delta = 3 - root`,
 `F = (a^2 + delta^2*b^2)^2`, `G = 4*a*b*(a^2 - delta^2*b^2)` and

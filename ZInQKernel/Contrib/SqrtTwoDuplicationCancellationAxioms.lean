@@ -1,6 +1,6 @@
 module
 
-import all Examples.SqrtTwoDuplicationCancellation
+import all ZInQKernel.Contrib.SqrtTwoDuplicationCancellation
 import Lean.Util.CollectAxioms
 
 /-! Axiom audit for the standalone contribution, outside the accepted snapshot. -/
