@@ -45,8 +45,9 @@ global priority or historical completeness claim is made.
 The endpoint depends on the private dyadic numerator bound, norm-seven
 numerator bound, prime-support lemma and the two maximal-ideal lemmas in the
 same file. Its five Mathlib imports are listed there, at revision
-`56a005855ea17e0b0958f73ec801ae140b0a1679`; all nine package pins are in the
-unchanged [manifest](../lake-manifest.json). Important applications include
+`56a005855ea17e0b0958f73ec801ae140b0a1679`; all nine Git dependency pins are in the
+unchanged root [manifest](../../lake-manifest.json), alongside the local `z_in_q`
+package. Important applications include
 `Zsqrtd.lift` and `norm_eq_one_iff` in `Mathlib/NumberTheory/Zsqrtd/Basic.lean`,
 `RingHom.ker_isPrime` and `ker_isMaximal_of_surjective` in
 `Mathlib/RingTheory/Ideal/Maps.lean`, and `Ideal.mem_span_pair`,
@@ -71,39 +72,32 @@ review of both this inventory and these comparisons remains pending.
 
 ## Reproduction and coverage
 
-Lean is pinned to `leanprover/lean4:v4.35.0`. Following the dependency-cache and
-fresh-output compiler procedure in [the Lean guide](../README.md), acquire the
-five imports with `lake exe cache get` and compile this module directly. The
-fixed `ZInQ` library does not include `Examples`; `lake build` or the existing
-48-module check alone does not validate this contribution. For example, from
-`lean/`, with pinned dependencies already materialized:
+Lean is pinned to `leanprover/lean4:v4.35.0`. Run the following from the
+**repository root**, using its native `z_in_q_kernel` Lake package, with `lake`
+and `lean` available through `elan`. If the pinned dependencies and their
+published compiled caches are not yet available, first run `lake exe cache get`
+there. With those dependencies available:
 
 ```sh
-mkdir -p .checks
-duplication_output=$(mktemp -d "$PWD/.checks/duplication.XXXXXX")
-mkdir -p "$duplication_output/lib/Examples"
-duplication_dependencies=$(python3 - <<'PY'
-import json, os
-from pathlib import Path
-p = Path.cwd()
-print(os.pathsep.join(str(p / '.lake/packages' / r['name'] / '.lake/build/lib/lean')
-      for r in json.loads((p / 'lake-manifest.json').read_text())['packages']))
-PY
-)
-export LEAN_PATH="$duplication_output/lib:$duplication_dependencies"
-lean -j1 -Ddebug.skipKernelTC=false \
-  -o "$duplication_output/lib/Examples/SqrtTwoDuplicationCancellation.olean" \
-  Examples/SqrtTwoDuplicationCancellation.lean
-lean -j1 -Ddebug.skipKernelTC=false Checks/SqrtTwoDuplicationCancellationAxioms.lean
+lake build +ZInQKernel.Contrib.SqrtTwoDuplicationCancellation \
+  +ZInQKernel.Contrib.SqrtTwoDuplicationCancellationAxioms
+lake env lean -j1 -Ddebug.skipKernelTC=false \
+  ZInQKernel/Contrib/SqrtTwoDuplicationCancellationAxioms.lean
+duplication_output=$(mktemp -d "${TMPDIR:-/tmp}/duplication.XXXXXX")
 ```
 
-Check ordinary exported use by saving this as `Import.lean` in that output
-directory and running `lean -j1 -Ddebug.skipKernelTC=false "$duplication_output/Import.lean"`
-in the same environment:
+The selected build prepares both current modules; it may reuse valid cached
+artifacts. The second command freshly executes the actual axiom consumer with
+kernel checking enabled. Lake supplies the project and dependency import paths;
+no manual `LEAN_PATH` is needed. The accepted 48-module snapshot under `lean/`
+is a separate package: its check alone does not validate this contribution.
+
+Check ordinary exported use by saving the following as
+`"$duplication_output/Import.lean"` in the same shell:
 
 ```lean
 module
-import Examples.SqrtTwoDuplicationCancellation
+import ZInQKernel.Contrib.SqrtTwoDuplicationCancellation
 open ZInQ.ModelDuplicationCancellation
 example (a b : Zsqrtd 2) (hab : Ideal.span {a, b} = ⊤) :
     ¬ commonIdeal a b ≤ (Ideal.span {root}) ^ 7 ∧
@@ -113,27 +107,43 @@ example (a b : Zsqrtd 2) (hab : Ideal.span {a, b} = ⊤) :
   primitive_duplication_local a b hab
 ```
 
-The port, this generic ordinary importer and the separate axiom audit each
-compiled with exit 0 on November 9, 2026, using fresh project output and a
-private pinned dependency cache. The endpoint's reported axioms are exactly
-`propext`, `Classical.choice`, `Quot.sound`; the audit rejects any others.
-The port's SHA-256 is
+Then, still from the repository root, run:
+
+```sh
+lake env lean -j1 -Ddebug.skipKernelTC=false "$duplication_output/Import.lean"
+```
+
+The supplying source is
+[`ZInQKernel/Contrib/SqrtTwoDuplicationCancellation.lean`](../../ZInQKernel/Contrib/SqrtTwoDuplicationCancellation.lean),
+and the actual consumer is
+[`ZInQKernel/Contrib/SqrtTwoDuplicationCancellationAxioms.lean`](../../ZInQKernel/Contrib/SqrtTwoDuplicationCancellationAxioms.lean).
+The source's SHA-256 is
 `72a7273597722a492ab3c6fdb0c8e15f99a0c32117749548e87dc407b123fbad`;
-the audit file's is
+the current audit file's is
+`a39924bba3d0ad14d9e9ae02b2abd53cb9d025e03d780659ab3b56d9a4becb28`.
+The endpoint's reported axioms are exactly `propext`, `Classical.choice`,
+`Quot.sound`; the audit rejects any others. The source header's former `Checks/`
+placement and license basename record the original port layout. The current
+audit is linked above and the retained license is linked below.
+
+Historically, the original port, its ordinary importer and its separate axiom
+audit compiled with exit 0 on November 9, 2026, using fresh project output and
+a private pinned dependency cache. The then-current audit SHA-256 was
 `febdf4f94007977d03a2ac4dd99817d3386d4d9d9eed7834ff4616e54b219d5b`.
-The unmodified source check passed for all 48 accepted modules.
-From the repository root,
-`python -B scripts/check_audit_history.py --self-test` also passed (7 historical
-and 19 application negative controls). These are scoped execution and structural
-results. Dependencies came from published caches, not an independent rebuild.
+That validation also recorded the unchanged 48-module source check and
+`python -B scripts/check_audit_history.py --self-test` passing (7 historical
+and 19 application negative controls). Those dated results describe the former
+layout, not a fresh execution of the current commands. The commands above use
+the current root-package interface and published dependency caches; they do
+not independently rebuild Lean or Mathlib or prove an arithmetic theorem beyond
+the stated endpoint.
 The unchanged proof emits tactic-style and `push_neg` deprecation warnings.
 
 This is non-release contribution preparation. Manuscript/PDF synchronization,
 construction replays, cumulative release handoff, release manifests and mirror
 publication do not apply: none of those artifacts or claims changes. The frozen
 snapshot and its root, manifest, checkers, pins and CI configuration are intact.
-The supplied source/interface qualification identified packaging and separate
-validation requirements; those are addressed by this layout and these checks.
+The contribution remains outside the frozen snapshot, under `ZInQKernel/Contrib`.
 Non-author mathematical review, findings/inventory assessment and exact-final-
 revision protocol closure remain pending with the caller. No PR, push, merge,
 upstream acceptance or completed research-release review is claimed.
