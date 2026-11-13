@@ -37,5 +37,9 @@ example (x : G) (y : H) (U : Set G) (V : Set H)
 end Multiplicative
 
 -- These inspect the complete exported proof terms, not only their suppliers.
+/-- info: 'ZInQ.CompactRecurrence.exists_nsmul_mem_prod_gt' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
 #print axioms ZInQ.CompactRecurrence.exists_nsmul_mem_prod_gt
+/-- info: 'ZInQ.CompactRecurrence.exists_pow_mem_prod_gt' depends on axioms: [propext, Classical.choice, Quot.sound] -/
+#guard_msgs in
 #print axioms ZInQ.CompactRecurrence.exists_pow_mem_prod_gt

@@ -57,8 +57,10 @@ then run **from the repository root**:
 
 ```sh
 lake exe cache get Mathlib.Topology.Algebra.Group.SubmonoidClosure
-lake -Kdebug.skipKernelTC=false -KwarningAsError=true build \
+lake --wfail build \
   +ZInQKernel.Contrib.CompactRecurrence +ZInQKernel.Contrib.CompactRecurrenceCheck
+lake env lean -Ddebug.skipKernelTC=false -DwarningAsError=true \
+  ZInQKernel/Contrib/CompactRecurrence.lean
 lake env lean -Ddebug.skipKernelTC=false -DwarningAsError=true \
   ZInQKernel/Contrib/CompactRecurrenceCheck.lean
 python3 -B scripts/check_kernel_contract.py --base-ref a5937595cde3e3db00975b81e5171cdef92c801a
@@ -69,8 +71,8 @@ git diff --check
 
 A compatible dependency cache can be reused after checking all nine git
 revisions against the root manifest and verifying tracked-source cleanliness.
-The importer checks the full generic exported statements and prints the axiom
-closures of the **complete proofs**. Each closure is exactly `propext`,
+The importer checks the full generic exported statements and guards the printed axiom
+closures of the **complete proofs** against the exact expected whitelist. Each closure is exactly `propext`,
 `Classical.choice`, `Quot.sound`. The checks reuse pinned dependency artifacts;
 they do not rebuild Lean, Mathlib, the accepted helper snapshot, or the entire
 kernel project. The helper source check and kernel contract check have their
