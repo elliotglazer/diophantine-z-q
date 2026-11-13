@@ -97,6 +97,9 @@ A maintainer applies the proposal's `manifest_additions` (all at once, or area b
 checker routes it to `statement_or_infrastructure_review`. Once an area is registered at a trusted
 base, a PR that only adds `ZInQKernel/Contrib/H/<ID>.lean` is classified
 `proof_only_astra_review`, so proofs of different leaves can be done in parallel proof-only PRs.
+This already works with the existing single manifest: Contrib-only proof PRs edit no shared
+registry. Per-area manifest sharding is an optional optimization for parallel new-target or
+definition changes, not a prerequisite for proving registered targets.
 
 ## Contributing a proof (after registration)
 

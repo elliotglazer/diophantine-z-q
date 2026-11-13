@@ -83,7 +83,9 @@ proof is a single new file `ZInQKernel/Contrib/H/<ID>.lean` declaring
 `theorem ZInQ.Contrib.H.<ID>_holds : ZInQ.Targets.H.<ID>`. Such a PR changes no locked file, so the
 trusted checker routes it to `proof_only_astra_review`, and contributors can work on different
 leaves independently. Each provider name is distinct and pre-assigned, so proofs cannot collide on
-the manifest.
+the manifest. No manifest split is required for these Contrib-only proof PRs. Per-area
+registry/manifest sharding is optional: it can reduce conflicts between parallel new-target or
+definition PRs, but is not a blocker for proving already-registered targets.
 
 ## Current state of this branch under the unchanged checker (by design)
 

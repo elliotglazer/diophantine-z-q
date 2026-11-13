@@ -405,11 +405,15 @@ recorded by hdec-adopt (179 axiom lists) and was not re-run here.
 7. A proved target closes only that leaf. It does not discharge H. The headline changes only
    with a checked discharge theorem after the glue (§5) is done.
 
-**Initial maintainer PR (needed before any contribution).** It must land the definition-only
-modules (the code child's work: PR #36 `HDecomp` objects for `PkgI2`/`PkgI3`/`PkgI6`/
-`GlueConductor`/`GlueDescent.B2Q`, plus definition-only `PkgI1`/`PkgI4`/`HSyn` extractions),
-the 34 locked target modules, and the preregistered provider names. It must also **split the
-registry/manifest per area**, so that later contributions never touch a shared manifest:
+**Initial maintainer registration (before proof-only contributions are accepted).** Land the
+needed definition-only modules, locked target statements and pre-assigned provider names through
+statement/infrastructure review. Registration may be done all at once or by area; a contributor
+needs only the relevant target and its prerequisites registered at a trusted base.
+
+**Per-area registry/manifest sharding is optional.** It can reduce shared-file conflicts between
+parallel PRs that add new targets or change definitions. It is **not** required for parallel proofs
+of already-registered targets: those PRs add only their own `Contrib/H` files and edit no shared
+manifest. The following areas are an optional review/allocation grouping, not a sharding mandate:
 
 | Area manifest | Targets | Props | Definition sources |
 |---|---|---|---|
@@ -422,8 +426,9 @@ registry/manifest per area**, so that later contributions never touch a shared m
 | `Ramification` | T20, T21, T22 | 4 | PR #36 `Conductor/Breaks.lean`, `I6Base.lean` |
 | **Total** | **34** | **39 (35 leaves)** | |
 
-The manifest file names are the maintainers' choice. The code child has edited no manifest, and
-its registration proposal awaits human review.
+The optional manifest/shard names are the maintainers' choice. No manifest was edited, and
+registration awaits human review. The existing single-manifest layout already supports
+independent proof-only PRs once the relevant statements and provider names are registered.
 
 ## 7. Allocation lanes
 
