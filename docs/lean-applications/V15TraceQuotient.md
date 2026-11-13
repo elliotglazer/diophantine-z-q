@@ -1,21 +1,21 @@
 # V15 retained contact and the actual trace quotient
 
-This standalone application formalizes the existing V15 contact-domain argument
+This native root-package application formalizes the existing V15 contact-domain argument
 and its proposed trace quotient. The external-open-problem KPI is zero.
 Independent source review and protocol acceptance remain pending. No manuscript,
 accepted helper, frozen target, existing application contract or earlier review
 disposition is changed.
 
-`V15RetainedContact.lean` proves, for every rational `t,q`, that
+`ZInQKernel/Contrib/V15RetainedContact.lean` proves, for every rational `t,q`, that
 `(1+q) P5((t-1)^2) = ((t-1)^2)^5` implies `q != 0`. Both the expanded
 polynomial and its five literal contact factors are checked. It then proves
 `x102 != 0` for every rational raw224 tuple satisfying the ten specified rows
 and every rational `A != 0`. The parameter-family endpoint allows every integer
 `N`, using nonvanishing of `149^(2*N+1)`; it introduces no effective threshold.
 
-`V15RawRows.lean` contains every literal summand of the 197 parent residuals
+`ZInQKernel/Contrib/V15RawRows.lean` contains every literal summand of the 197 parent residuals
 and 196 target residuals. Small row definitions and lookup blocks are only
-their representation. `V15TraceQuotient.lean` applies the ten-row result to
+their representation. `ZInQKernel/Contrib/V15TraceQuotient.lean` applies the ten-row result to
 the actual parent coordinates, derives `Q != 0` from row 47, proves the
 substitution identity for every parent row, and constructs an equivalence
 between the full rational solution sets of these two explicit row families.
@@ -67,20 +67,31 @@ new mathematical claim, proof route or independent approval is supplied here.
 
 ### Frozen inputs and excerpt convention
 
-The proof packet pin is `2ed35f8e55f57b49578ab01325ec262387ce28af`.
-`C`, `R`, `Q` denote the following unchanged application files. All local application declaration
-names below are in namespace `V15RetainedContact`. The source table above keeps
+The current mathematical-module packet is pinned at
+`30a68253217ff0b7d6ae9dcd00f75ef563c683ab`, after merging upstream main
+`a5937595cde3e3db00975b81e5171cdef92c801a`. `C`, `R`, `Q` denote the
+following native root-package application files. Their declaration bodies,
+starting at `namespace V15RetainedContact`, are byte-identical to the historical
+proof packet `2ed35f8e55f57b49578ab01325ec262387ce28af`; only license locators
+and the two local module imports changed. The audit also prints the expanded
+contact and actual-denominator closures. All local application declaration
+names below remain in namespace `V15RetainedContact`.
+The [historical author index](https://github.com/loning/diophantine-z-q/blob/f2298824f5244c61a09a20bcc20fd267fe05e660/lean/Examples/V15TraceQuotient.md)
+and its original bindings remain historical evidence, not acceptance of this
+native packaging. This table and the coverage/excerpt bindings below describe
+the current files; no independent decision has been carried forward.
+The source table above keeps
 its base pin `511529bbe9d635194f0c9d925709e77a5d3afa64`; its five SHA-256
 bindings are reused, not replaced. These are mathematical data/argument sources,
 not independent review evidence.
 
-| Input at proof packet pin | Whole-file SHA-256 |
+| Input at current mathematical-module packet | Whole-file SHA-256 |
 | --- | --- |
-| `C` = [V15RetainedContact.lean](V15RetainedContact.lean) | `0b191e21c1d7712084877bcabbe800d2a5c2f2d431631dbf2e1e9941d775cb44` |
-| `R` = [V15RawRows.lean](V15RawRows.lean) | `7b2e89c8ed8cec1cb114cb76c10ee1c79b0a7bee1ec412c1d2625cbef6f63dbb` |
-| `Q` = [V15TraceQuotient.lean](V15TraceQuotient.lean) | `63f2b5c281a729276a8c1c699d575c449381bbba13d956c45e2fb21807298d22` |
-| `lean/Checks/V15TraceQuotientAxioms.lean` | `23f0474d2d6d8210b525dcf8db4ca4f2618ddf383e68faa1dfae49fea4023f6f` |
-| `lean/Examples/V15Application.LICENSE` | `45404ee75576b053a86e89e545fd6987a607107cf4d846fa78dcb6a233d53447` |
+| `C` = [V15RetainedContact.lean](../../ZInQKernel/Contrib/V15RetainedContact.lean) | `aa8d07c624946c576c8c2f743db1300e6b9b7074c38fb23ad3b38d612753b816` |
+| `R` = [V15RawRows.lean](../../ZInQKernel/Contrib/V15RawRows.lean) | `a96af3462692a97f3022038030adb53ea8c0ede51effb12922d037e03eb4543e` |
+| `Q` = [V15TraceQuotient.lean](../../ZInQKernel/Contrib/V15TraceQuotient.lean) | `5b4c71fedff1979aa70f892329a04143afb5296036485f35c055127df3cad3ef` |
+| `ZInQKernel/Contrib/V15TraceQuotientAxioms.lean` | `288c48d67a689fad9ad5edffb74e31ca6ed88c56f447a5a0ce17a48095555ad6` |
+| `docs/lean-applications/V15Application.LICENSE` | `45404ee75576b053a86e89e545fd6987a607107cf4d846fa78dcb6a233d53447` |
 
 Hashes bind raw Git blob bytes, decoded as UTF-8 only for reading; no whitespace,
 JSON, Unicode or newline normalization is performed. Ranges are inclusive,
@@ -127,7 +138,7 @@ literal definitions and unnamed proof blocks remain within their listed range.
 
 | ID | Frozen passage | Declared role and source-use/application links | Excerpt SHA-256 |
 | --- | --- | --- | --- |
-| C01 | `C:1–5` | outside: module and license notice | `02086fb9af73526ff66bc301b77d9a5c03ef5ae8857cc5e80dfce3c447e28ef7` |
+| C01 | `C:1–5` | outside: module and license notice | `62327ec805d84243f6bd9efd2605101840263e8335f86f2d4b82038700b0aa81` |
 | C02 | `C:6–27` | awaiting: source/claim and normalization prose; U1–U4 | `d7ab5d0b5230a5ee8f784a46dd8dca92d0e1d1d878e40936a37a8b453f73efef` |
 | C03 | `C:28–44` | outside: imports, options, sections and namespace syntax; dependencies identified below | `df31f9fcdff40021b70cfac3aaf3507fc263b7f4ce837a93b0abf139406c2316` |
 | C04 | `C:45–55` | awaiting: `P5`, `obstruction` definitions; U1–U2 | `caff7a407f92f8e67e2fb99a9fe949e5838bb3b33021e2ebd28b63fd9ad27afe` |
@@ -138,7 +149,7 @@ literal definitions and unnamed proof blocks remain within their listed range.
 | C09 | `C:173–180` | awaiting: `Raw224Ten`, `raw224_q_nonzero`; U4 | `2c08f2602b6e04e893888b9f980f9ba70375bcded188df73872668fb2c677e02` |
 | C10 | `C:181–184` | awaiting: `raw224_family_q_nonzero`; U4 | `a834168bc4b0efbb1d4c18d2e2881d94ecbfa97824b57f0fa3f57a9484c2c668` |
 | C11 | `C:185–185` | outside: namespace close | `5bc00a450bc879e5ec1c97d5bc62409de76c9778f3151aa120bc0bc4ce81ec45` |
-| R01 | `R:1–7` | outside: module, license and rational-type import syntax | `93729ce552df439bae79384d690fc2ae8e250c75172c36e925b77f530f36e2ee` |
+| R01 | `R:1–7` | outside: module, license and rational-type import syntax | `858e522bbf0dd6bda19abaa8993bb4287845795f992ff65a36b3ffa002441708` |
 | R02 | `R:8–24` | awaiting: literal-family and deletion claim prose; U5–U7, U13 | `a2ad5d14ceee66224a7eaa602121ec456067c90919e136d27620162c82c477d4` |
 | R03 | `R:25–29` | outside: exposure/section and namespace syntax | `8d037f4e7e2308ea7e19a79df62dbb3a669d60eccc1745243130f114bbe7acbe` |
 | R04 | `R:30–620` | awaiting: all `raw223Row_1` through `raw223Row_197` literal definitions; U5 | `bc71bf50999f43d38b1318a29c5506e7e5003c8cd56560f0dcd8c9076005ce55` |
@@ -146,7 +157,7 @@ literal definitions and unnamed proof blocks remain within their listed range.
 | R06 | `R:876–1463` | awaiting: all `raw222Row_1` through `raw222Row_196` literal definitions; U6 | `0c9b9682a4affa584974b193e63a3a8bebf6d596c263ed8b105d8e27830bbe16` |
 | R07 | `R:1464–1716` | awaiting: all `raw222RowBlock0` through `raw222RowBlock12`, `raw222Row`; U7 | `8e0dfc12a93d93e1caecdae77837e714c3e4f1d5b8317385a4f9b337307c7125` |
 | R08 | `R:1717–1718` | outside: blank line and namespace close | `f1a86215ddb17a66d66ed2cc0df20bc9c35e3e98dc55827ed5e2869bd7f4f9c3` |
-| Q01 | `Q:1–8` | outside: module, license and local import syntax | `8a60fd12c022dac1b3bddf2142c1c3a257dd0257a2a70f62e2a68c99e896c55e` |
+| Q01 | `Q:1–8` | outside: module, license and local import syntax | `7424ae5a356cedb074bdf300cc6e9e1789e6aa6679ec3a3fa2f66d0a1184aa0c` |
 | Q02 | `Q:9–23` | awaiting: chart statement, source and exceptional-case prose; U8–U18 | `d272b9fe65d0d87ea90e99ea6870082ee8d7d0ea25554bf0c10d66e965b30cd7` |
 | Q03 | `Q:24–32` | outside: options, section and namespace syntax | `f07133c4d555f4f878e2bfef6a2297da51b540267f59e5c8dfd0ffca1b2d5acf` |
 | Q04 | `Q:33–42` | awaiting: `coord`, `Raw223Solution`, `Raw222Solution`; U8 | `ac95c6fb9600dc104d581607071219a47769f197784e21f7df398b0e8b9c47ae` |
@@ -164,9 +175,9 @@ literal definitions and unnamed proof blocks remain within their listed range.
 | Q16 | `Q:182–182` | outside: namespace close | `5bc00a450bc879e5ec1c97d5bc62409de76c9778f3151aa120bc0bc4ce81ec45` |
 
 There are 35 disjoint ranges: 26 awaiting review and 9 outside the mathematical
-argument. The audit file (all 40 lines, whole-file hash above) is outside the
-three-module argument: lines 1–37 implement/print a scoped axiom check, and
-lines 38–40 give only the local `t=1,q=-1` example. That example is no supplier
+argument. The audit file (all 42 lines, whole-file hash above) is outside the
+three-module argument: lines 1–39 implement/print a scoped axiom check, and
+lines 40–42 give only the local `t=1,q=-1` example. That example is no supplier
 to the chart and no full-system existence witness. The license (all 201 lines,
 whole-file hash above) supplies redistribution terms, not a mathematical premise.
 This document's reproduction code is operational guidance, not a proof passage.
@@ -211,8 +222,10 @@ independent coverage review. Imported modules and tactic implementation are
 part of the pinned Lean/Mathlib trust base, not newly accepted project lemmas.
 No claim is made that this declaration is a source-first reconstruction, that
 all sources are independently complete, or that application, composition, CI,
-release or external-open-problem acceptance has been obtained. No fresh Lean
-compilation is represented by this documentation-only index.
+release or external-open-problem acceptance has been obtained. This index
+declares source bindings; the scoped compilation and replay
+evidence is described below. Those checks do not supply independent coverage
+or application acceptance.
 
 ## Scope and proof shape
 
@@ -223,57 +236,115 @@ applications, finite arithmetic and the quotient identities follow the reuse
 route. No new local escape witness, local freezing eligibility or mathematical
 novelty is claimed. No implementation from the unlicensed third-party search
 hits is imported or copied. The new source files have the accompanying Apache
-2.0 license; source mathematics retains its original attribution.
+2.0 license; source mathematics retains its original attribution. The pinned
+trace-quotient proof credits `arithmetic_author` for the substitution packet,
+H6 for normalization 109 and GI for trace organization 005. These mathematical
+credits are distinct from the independently authored Lean implementation,
+which was assisted by Codex CLI. The license bytes are unchanged from the
+historical application.
 
 This does not prove the complete Z-in-Q defining theorem, a final polynomial
 identity, a coefficient-height bound, SixContactMin or CertifiedRank. It does
 not identify the weighted sum-of-squares zero set, formalize the earlier
 raw224-to-raw223 construction as a whole, or establish full-system existence.
-The accepted 48-module snapshot is outside this application's import closure.
+The accepted helper snapshot is outside this application's import closure.
+The current root imports are the three contribution modules and their pinned
+Mathlib dependencies; no historical Examples provider or replacement fixture
+is used.
 
 ## Scoped reproduction
 
-Use Lean 4.35.0 and the unchanged `lean/lake-manifest.json`; Mathlib is pinned
-to `56a005855ea17e0b0958f73ec801ae140b0a1679`. Materialize the pinned dependency
-caches as described in `lean/README.md`. The default `ZInQ` library does not
-select these application modules. From the repository root, compile these
-three modules and their scoped axiom audit into fresh project output:
+Use the repository root package `z_in_q_kernel`, the committed root
+`lean-toolchain` and `lake-manifest.json`: Lean 4.35.0, Mathlib
+`56a005855ea17e0b0958f73ec801ae140b0a1679`, and all nine pinned Git
+packages. The root and helper manifests agree on those Git revisions. Existing
+compatible package caches were reused; no pin or dependency source was changed.
+The default `ZInQKernel` target is unchanged. Current CI separately discovers
+and builds every tracked `ZInQKernel/Contrib/*.lean` module.
+
+From the repository root, build the real modules with ordinary Lake targets:
+
+```sh
+lake build --wfail +ZInQKernel.Contrib.V15RetainedContact \
+  +ZInQKernel.Contrib.V15RawRows +ZInQKernel.Contrib.V15TraceQuotient \
+  +ZInQKernel.Contrib.V15TraceQuotientAxioms
+```
+
+For a fresh scoped re-elaboration, use the same source files and native package
+search paths, with a fresh output directory in front of them. The explicit
+compiler options enable kernel checking and treat warnings as errors:
 
 ```python
 import json, os, subprocess, tempfile
 from pathlib import Path
 
-p = Path("lean").resolve()
-manifest = json.loads((p / "lake-manifest.json").read_text())
-libraries = []
+root = Path.cwd()
+manifest = json.loads((root / "lake-manifest.json").read_bytes())
 for package in manifest["packages"]:
-    folder = p / ".lake/packages" / package["name"]
-    revision = subprocess.check_output(
-        ["git", "rev-parse", "HEAD"], cwd=folder, text=True).strip()
-    assert revision == package["rev"]
-    subprocess.run(["git", "diff", "--quiet", "HEAD", "--"],
-                   cwd=folder, check=True)
-    libraries.append(folder / ".lake/build/lib/lean")
-version = subprocess.check_output(["lean", "--version"], cwd=p, text=True)
-assert "version 4.35.0," in version
-(p / ".checks").mkdir(exist_ok=True)
-out = Path(tempfile.mkdtemp(prefix="v15-", dir=p / ".checks"))
+    if package["type"] != "git":
+        continue
+    folder = root / manifest["packagesDir"] / package["name"]
+    assert subprocess.check_output(
+        ["git", "rev-parse", "HEAD"], cwd=folder, text=True).strip() == package["rev"]
+    assert not subprocess.check_output(
+        ["git", "status", "--porcelain", "--untracked-files=no"], cwd=folder)
+(root / "build").mkdir(exist_ok=True)
+out = Path(tempfile.mkdtemp(prefix="v15-native-", dir=root / "build"))
 env = os.environ.copy()
 env.pop("LEAN_SRC_PATH", None)
-env["LEAN_PATH"] = os.pathsep.join(map(str, [out / "lib", *libraries]))
-modules = ["Examples/V15RetainedContact", "Examples/V15RawRows",
-           "Examples/V15TraceQuotient", "Checks/V15TraceQuotientAxioms"]
-for module in modules:
-    target = out / "lib" / (module + ".olean")
+native_path = subprocess.check_output(
+    ["lake", "env", "printenv", "LEAN_PATH"], cwd=root, text=True).strip()
+env["LEAN_PATH"] = str(out) + os.pathsep + native_path
+for name in ["V15RetainedContact", "V15RawRows", "V15TraceQuotient",
+             "V15TraceQuotientAxioms"]:
+    module = "ZInQKernel/Contrib/" + name
+    target = out / (module + ".olean")
     target.parent.mkdir(parents=True, exist_ok=True)
     subprocess.run(["lean", "-j1", "-Ddebug.skipKernelTC=false",
-                    "-o", str(target), module + ".lean"],
-                   cwd=p, env=env, check=True)
-print(out)
+                    "-DwarningAsError=true", "-o", str(target), module + ".lean"],
+                   cwd=root, env=env, check=True)
 ```
 
-The audit checks every declaration originating in the three application
-modules, including generated declarations, and rejects any axiom outside
-`propext`, `Quot.sound` and `Classical.choice`. It prints the closure of each
-main endpoint. This is a scoped application check, not a rebuild or audit of
-the accepted snapshot, Lean, or Mathlib itself.
+The scoped audit checks every declaration originating in the three application
+modules, including generated declarations, against exactly `propext`,
+`Quot.sound` and `Classical.choice`. It prints eight endpoint closures,
+including both contact forms and the actual `Q` denominator.
+
+The native migration also receives an ordinary-import check of the exact public
+statements, both coordinate-preservation lemmas and inverse identities. The
+unmodified root `scripts/audit_kernel.lean` is used for a scoped replay of the
+three real modules and a temporary exact-type specification: seven closed Prop
+types cover the two contacts, two raw224 endpoints, parent q/Q nonvanishing
+and all-row substitution; the full equivalence type is compared separately.
+Those specifications are transient checks, not new mathematical library results.
+Whole-project validation and required CI remain separate from this scoped audit.
+
+On this native packet, the four-module Lake build with `--wfail`, fresh scoped
+compilation with both explicit options above, and ordinary-import check all
+exited 0 without warnings. The three-module declaration audit checked 1,355
+declarations and all eight printed closures used exactly the three allowed
+axioms. Native kernel replay checked 1,370 declarations (the three application
+modules plus the temporary exact-type specification), with no runtime bodies
+excluded, all seven Prop providers marked `proved_exact_type`, and the full
+equivalence telescope checked. Its report explicitly says
+`protocol_acceptance=false`.
+
+Raw literal comparison matched every term in 197 parent / 196 target rows
+(1,061 / 1,059 terms), and a separate polynomial comparison matched the ten
+`Retained` conjuncts to the raw224 source rows. All 50 declared whole-file and
+excerpt SHA-256 bindings and the 35 gapless passage ranges were checked.
+These finite comparisons establish representation fidelity, not the arithmetic
+theorem. The earlier preliminary CLI reviews at
+`2ed35f8e55f57b49578ab01325ec262387ce28af` and
+`4a08e757d20c481bb1fac51fa3194f2b87c821ee` keep their original scopes.
+The earlier auxiliary-parser advisory remains limited historical evidence;
+this contributor check does not independently close it or supply acceptance.
+
+This non-release application does not update the current manuscript/PDF,
+release profile, cumulative handoff, archive manifest or publication mirrors.
+No record promotion or assembled-proof/research-release acceptance is requested.
+Independent non-author source-first reconstruction and reconciliation, separate
+coverage/application/composition decisions and final scoped closure are pending.
+The authenticated designated `gpt-6-astra` controller's exact-revision
+`Protocol / independent agent audit` and ordinary required checks, including
+maintainer workflow approval where needed, remain external gates.
