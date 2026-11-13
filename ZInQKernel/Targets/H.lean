@@ -1,0 +1,36 @@
+import ZInQKernel.Targets.H.R4
+import ZInQKernel.Targets.H.R6
+import ZInQKernel.Targets.H.R7
+import ZInQKernel.Targets.H.R9
+import ZInQKernel.Targets.H.R10
+import ZInQKernel.Targets.H.R11_R12
+import ZInQKernel.Targets.H.R13
+import ZInQKernel.Targets.H.R14
+import ZInQKernel.Targets.H.R15
+import ZInQKernel.Targets.H.T1
+import ZInQKernel.Targets.H.T2
+import ZInQKernel.Targets.H.T3
+import ZInQKernel.Targets.H.T4
+import ZInQKernel.Targets.H.T5
+import ZInQKernel.Targets.H.T6
+import ZInQKernel.Targets.H.T7
+import ZInQKernel.Targets.H.T8
+import ZInQKernel.Targets.H.T13
+import ZInQKernel.Targets.H.T14
+import ZInQKernel.Targets.H.T15
+import ZInQKernel.Targets.H.T16
+import ZInQKernel.Targets.H.T17
+import ZInQKernel.Targets.H.T18
+import ZInQKernel.Targets.H.T19
+import ZInQKernel.Targets.H.T20
+import ZInQKernel.Targets.H.T21
+import ZInQKernel.Targets.H.T22
+import ZInQKernel.Targets.H.T24
+import ZInQKernel.Targets.H.T25
+import ZInQKernel.Targets.H.T26
+import ZInQKernel.Targets.H.T27
+import ZInQKernel.Targets.H.T28
+import ZInQKernel.Targets.H.T30
+import ZInQKernel.Targets.H.T31
+
+/-! Umbrella for the proposed H targets (`docs/h-targets/README.md`). Not imported by the root `ZInQKernel`; statements only, no proofs. -/

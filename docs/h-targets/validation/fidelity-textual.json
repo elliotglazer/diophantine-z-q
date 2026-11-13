@@ -1,0 +1,18 @@
+{
+ "textual": {
+  "PkgI1": {
+   "declarations": 14,
+   "identical": 14
+  },
+  "PkgI4": {
+   "declarations": 112,
+   "identical": 112
+  },
+  "HSyn": {
+   "declarations": 13,
+   "identical": 13
+  }
+ },
+ "mismatch": [],
+ "lean_pairs": 44
+}

@@ -1,0 +1,219 @@
+{
+ "modules": [
+  "ZInQKernel.HDecomp.Conductor.Breaks",
+  "ZInQKernel.HDecomp.Conductor.Dyadic",
+  "ZInQKernel.HDecomp.Conductor.I6Base",
+  "ZInQKernel.HDecomp.Descent.B2Glue",
+  "ZInQKernel.HDecomp.Objects",
+  "ZInQKernel.Targets.H",
+  "ZInQKernel.Targets.H.Defs.HSyn",
+  "ZInQKernel.Targets.H.Defs.PkgI1",
+  "ZInQKernel.Targets.H.Defs.PkgI4",
+  "ZInQKernel.Targets.H.R10",
+  "ZInQKernel.Targets.H.R11_R12",
+  "ZInQKernel.Targets.H.R13",
+  "ZInQKernel.Targets.H.R14",
+  "ZInQKernel.Targets.H.R15",
+  "ZInQKernel.Targets.H.R4",
+  "ZInQKernel.Targets.H.R6",
+  "ZInQKernel.Targets.H.R7",
+  "ZInQKernel.Targets.H.R9",
+  "ZInQKernel.Targets.H.T1",
+  "ZInQKernel.Targets.H.T13",
+  "ZInQKernel.Targets.H.T14",
+  "ZInQKernel.Targets.H.T15",
+  "ZInQKernel.Targets.H.T16",
+  "ZInQKernel.Targets.H.T17",
+  "ZInQKernel.Targets.H.T18",
+  "ZInQKernel.Targets.H.T19",
+  "ZInQKernel.Targets.H.T2",
+  "ZInQKernel.Targets.H.T20",
+  "ZInQKernel.Targets.H.T21",
+  "ZInQKernel.Targets.H.T22",
+  "ZInQKernel.Targets.H.T24",
+  "ZInQKernel.Targets.H.T25",
+  "ZInQKernel.Targets.H.T26",
+  "ZInQKernel.Targets.H.T27",
+  "ZInQKernel.Targets.H.T28",
+  "ZInQKernel.Targets.H.T3",
+  "ZInQKernel.Targets.H.T30",
+  "ZInQKernel.Targets.H.T31",
+  "ZInQKernel.Targets.H.T4",
+  "ZInQKernel.Targets.H.T5",
+  "ZInQKernel.Targets.H.T6",
+  "ZInQKernel.Targets.H.T7",
+  "ZInQKernel.Targets.H.T8"
+ ],
+ "targets": [
+  {
+   "declaration": "ZInQ.Targets.H.R4",
+   "provider": "ZInQ.Contrib.H.R4_holds",
+   "source": "ZInQKernel/Targets/H/R4.lean"
+  },
+  {
+   "declaration": "ZInQ.Targets.H.R6",
+   "provider": "ZInQ.Contrib.H.R6_holds",
+   "source": "ZInQKernel/Targets/H/R6.lean"
+  },
+  {
+   "declaration": "ZInQ.Targets.H.R7",
+   "provider": "ZInQ.Contrib.H.R7_holds",
+   "source": "ZInQKernel/Targets/H/R7.lean"
+  },
+  {
+   "declaration": "ZInQ.Targets.H.R9",
+   "provider": "ZInQ.Contrib.H.R9_holds",
+   "source": "ZInQKernel/Targets/H/R9.lean"
+  },
+  {
+   "declaration": "ZInQ.Targets.H.R10",
+   "provider": "ZInQ.Contrib.H.R10_holds",
+   "source": "ZInQKernel/Targets/H/R10.lean"
+  },
+  {
+   "declaration": "ZInQ.Targets.H.R11_R12",
+   "provider": "ZInQ.Contrib.H.R11_R12_holds",
+   "source": "ZInQKernel/Targets/H/R11_R12.lean"
+  },
+  {
+   "declaration": "ZInQ.Targets.H.R13",
+   "provider": "ZInQ.Contrib.H.R13_holds",
+   "source": "ZInQKernel/Targets/H/R13.lean"
+  },
+  {
+   "declaration": "ZInQ.Targets.H.R14",
+   "provider": "ZInQ.Contrib.H.R14_holds",
+   "source": "ZInQKernel/Targets/H/R14.lean"
+  },
+  {
+   "declaration": "ZInQ.Targets.H.R15",
+   "provider": "ZInQ.Contrib.H.R15_holds",
+   "source": "ZInQKernel/Targets/H/R15.lean"
+  },
+  {
+   "declaration": "ZInQ.Targets.H.T1",
+   "provider": "ZInQ.Contrib.H.T1_holds",
+   "source": "ZInQKernel/Targets/H/T1.lean"
+  },
+  {
+   "declaration": "ZInQ.Targets.H.T2",
+   "provider": "ZInQ.Contrib.H.T2_holds",
+   "source": "ZInQKernel/Targets/H/T2.lean"
+  },
+  {
+   "declaration": "ZInQ.Targets.H.T3",
+   "provider": "ZInQ.Contrib.H.T3_holds",
+   "source": "ZInQKernel/Targets/H/T3.lean"
+  },
+  {
+   "declaration": "ZInQ.Targets.H.T4",
+   "provider": "ZInQ.Contrib.H.T4_holds",
+   "source": "ZInQKernel/Targets/H/T4.lean"
+  },
+  {
+   "declaration": "ZInQ.Targets.H.T5",
+   "provider": "ZInQ.Contrib.H.T5_holds",
+   "source": "ZInQKernel/Targets/H/T5.lean"
+  },
+  {
+   "declaration": "ZInQ.Targets.H.T6",
+   "provider": "ZInQ.Contrib.H.T6_holds",
+   "source": "ZInQKernel/Targets/H/T6.lean"
+  },
+  {
+   "declaration": "ZInQ.Targets.H.T7",
+   "provider": "ZInQ.Contrib.H.T7_holds",
+   "source": "ZInQKernel/Targets/H/T7.lean"
+  },
+  {
+   "declaration": "ZInQ.Targets.H.T8",
+   "provider": "ZInQ.Contrib.H.T8_holds",
+   "source": "ZInQKernel/Targets/H/T8.lean"
+  },
+  {
+   "declaration": "ZInQ.Targets.H.T13",
+   "provider": "ZInQ.Contrib.H.T13_holds",
+   "source": "ZInQKernel/Targets/H/T13.lean"
+  },
+  {
+   "declaration": "ZInQ.Targets.H.T14",
+   "provider": "ZInQ.Contrib.H.T14_holds",
+   "source": "ZInQKernel/Targets/H/T14.lean"
+  },
+  {
+   "declaration": "ZInQ.Targets.H.T15",
+   "provider": "ZInQ.Contrib.H.T15_holds",
+   "source": "ZInQKernel/Targets/H/T15.lean"
+  },
+  {
+   "declaration": "ZInQ.Targets.H.T16",
+   "provider": "ZInQ.Contrib.H.T16_holds",
+   "source": "ZInQKernel/Targets/H/T16.lean"
+  },
+  {
+   "declaration": "ZInQ.Targets.H.T17",
+   "provider": "ZInQ.Contrib.H.T17_holds",
+   "source": "ZInQKernel/Targets/H/T17.lean"
+  },
+  {
+   "declaration": "ZInQ.Targets.H.T18",
+   "provider": "ZInQ.Contrib.H.T18_holds",
+   "source": "ZInQKernel/Targets/H/T18.lean"
+  },
+  {
+   "declaration": "ZInQ.Targets.H.T19",
+   "provider": "ZInQ.Contrib.H.T19_holds",
+   "source": "ZInQKernel/Targets/H/T19.lean"
+  },
+  {
+   "declaration": "ZInQ.Targets.H.T20",
+   "provider": "ZInQ.Contrib.H.T20_holds",
+   "source": "ZInQKernel/Targets/H/T20.lean"
+  },
+  {
+   "declaration": "ZInQ.Targets.H.T21",
+   "provider": "ZInQ.Contrib.H.T21_holds",
+   "source": "ZInQKernel/Targets/H/T21.lean"
+  },
+  {
+   "declaration": "ZInQ.Targets.H.T22",
+   "provider": "ZInQ.Contrib.H.T22_holds",
+   "source": "ZInQKernel/Targets/H/T22.lean"
+  },
+  {
+   "declaration": "ZInQ.Targets.H.T24",
+   "provider": "ZInQ.Contrib.H.T24_holds",
+   "source": "ZInQKernel/Targets/H/T24.lean"
+  },
+  {
+   "declaration": "ZInQ.Targets.H.T25",
+   "provider": "ZInQ.Contrib.H.T25_holds",
+   "source": "ZInQKernel/Targets/H/T25.lean"
+  },
+  {
+   "declaration": "ZInQ.Targets.H.T26",
+   "provider": "ZInQ.Contrib.H.T26_holds",
+   "source": "ZInQKernel/Targets/H/T26.lean"
+  },
+  {
+   "declaration": "ZInQ.Targets.H.T27",
+   "provider": "ZInQ.Contrib.H.T27_holds",
+   "source": "ZInQKernel/Targets/H/T27.lean"
+  },
+  {
+   "declaration": "ZInQ.Targets.H.T28",
+   "provider": "ZInQ.Contrib.H.T28_holds",
+   "source": "ZInQKernel/Targets/H/T28.lean"
+  },
+  {
+   "declaration": "ZInQ.Targets.H.T30",
+   "provider": "ZInQ.Contrib.H.T30_holds",
+   "source": "ZInQKernel/Targets/H/T30.lean"
+  },
+  {
+   "declaration": "ZInQ.Targets.H.T31",
+   "provider": "ZInQ.Contrib.H.T31_holds",
+   "source": "ZInQKernel/Targets/H/T31.lean"
+  }
+ ]
+}

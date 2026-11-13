@@ -1,0 +1,304 @@
+{
+ "toolchain": "leanprover/lean4:v4.35.0",
+ "mathlib": "56a005855ea17e0b0958f73ec801ae140b0a1679 (public cache via lake exe cache get)",
+ "compiler_gate": "FIFO slot gate, at most 2 concurrent Lean compiler processes, each LEAN_NUM_THREADS=1",
+ "final_build": {
+  "jobs": 2,
+  "compiler_threads": 1,
+  "exit_code": 0,
+  "elapsed_seconds": 61.682738304138184,
+  "max_concurrent_compilers": 2,
+  "peak_process_group_rss_bytes": 11347087360,
+  "command": [
+   "lake",
+   "--no-cache",
+   "--no-ansi",
+   "build",
+   "ZInQKernel.Targets.H"
+  ],
+  "modules": [
+   {
+    "source": "ZInQKernel/Targets/H/T22.lean",
+    "exit": 0,
+    "wall": "0:03.72",
+    "max_rss_kib": 6951532
+   },
+   {
+    "source": "ZInQKernel/Targets/H/R7.lean",
+    "exit": 0,
+    "wall": "0:01.89",
+    "max_rss_kib": 3605216
+   },
+   {
+    "source": "ZInQKernel/Targets/H/T14.lean",
+    "exit": 0,
+    "wall": "0:03.87",
+    "max_rss_kib": 6967088
+   },
+   {
+    "source": "ZInQKernel/Targets/H/T3.lean",
+    "exit": 0,
+    "wall": "0:01.81",
+    "max_rss_kib": 3600516
+   },
+   {
+    "source": "ZInQKernel/Targets/H/R14.lean",
+    "exit": 0,
+    "wall": "0:01.78",
+    "max_rss_kib": 3468432
+   },
+   {
+    "source": "ZInQKernel/Targets/H/T1.lean",
+    "exit": 0,
+    "wall": "0:01.78",
+    "max_rss_kib": 3599472
+   },
+   {
+    "source": "ZInQKernel/Targets/H/T7.lean",
+    "exit": 0,
+    "wall": "0:01.88",
+    "max_rss_kib": 3601684
+   },
+   {
+    "source": "ZInQKernel/Targets/H/T26.lean",
+    "exit": 0,
+    "wall": "0:01.84",
+    "max_rss_kib": 3597268
+   },
+   {
+    "source": "ZInQKernel/Targets/H/T16.lean",
+    "exit": 0,
+    "wall": "0:03.76",
+    "max_rss_kib": 6955168
+   },
+   {
+    "source": "ZInQKernel/Targets/H/T21.lean",
+    "exit": 0,
+    "wall": "0:03.55",
+    "max_rss_kib": 6950200
+   },
+   {
+    "source": "ZInQKernel/Targets/H/T30.lean",
+    "exit": 0,
+    "wall": "0:03.50",
+    "max_rss_kib": 6946560
+   },
+   {
+    "source": "ZInQKernel/Targets/H/Defs/PkgI4.lean",
+    "exit": 0,
+    "wall": "0:10.67",
+    "max_rss_kib": 3958412
+   },
+   {
+    "source": "ZInQKernel/Targets/H/T15.lean",
+    "exit": 0,
+    "wall": "0:03.67",
+    "max_rss_kib": 6956940
+   },
+   {
+    "source": "ZInQKernel/Targets/H/T18.lean",
+    "exit": 0,
+    "wall": "0:01.81",
+    "max_rss_kib": 3468216
+   },
+   {
+    "source": "ZInQKernel/Targets/H.lean",
+    "exit": 0,
+    "wall": "0:03.44",
+    "max_rss_kib": 6946692
+   },
+   {
+    "source": "ZInQKernel/Targets/H/R13.lean",
+    "exit": 0,
+    "wall": "0:01.88",
+    "max_rss_kib": 3758144
+   },
+   {
+    "source": "ZInQKernel/Targets/H/R10.lean",
+    "exit": 0,
+    "wall": "0:02.10",
+    "max_rss_kib": 4154544
+   },
+   {
+    "source": "ZInQKernel/Targets/H/Defs/HSyn.lean",
+    "exit": 0,
+    "wall": "0:01.98",
+    "max_rss_kib": 3489148
+   },
+   {
+    "source": "ZInQKernel/Targets/H/T19.lean",
+    "exit": 0,
+    "wall": "0:01.85",
+    "max_rss_kib": 3469152
+   },
+   {
+    "source": "ZInQKernel/Targets/H/T24.lean",
+    "exit": 0,
+    "wall": "0:01.78",
+    "max_rss_kib": 3468404
+   },
+   {
+    "source": "ZInQKernel/Targets/H/R4.lean",
+    "exit": 0,
+    "wall": "0:01.55",
+    "max_rss_kib": 2977360
+   },
+   {
+    "source": "ZInQKernel/Targets/H/T27.lean",
+    "exit": 0,
+    "wall": "0:01.90",
+    "max_rss_kib": 3599004
+   },
+   {
+    "source": "ZInQKernel/Targets/H/T25.lean",
+    "exit": 0,
+    "wall": "0:01.84",
+    "max_rss_kib": 3759692
+   },
+   {
+    "source": "ZInQKernel/Targets/H/R11_R12.lean",
+    "exit": 0,
+    "wall": "0:01.89",
+    "max_rss_kib": 3758216
+   },
+   {
+    "source": "ZInQKernel/Targets/H/R9.lean",
+    "exit": 0,
+    "wall": "0:01.81",
+    "max_rss_kib": 3603116
+   },
+   {
+    "source": "ZInQKernel/Targets/H/T8.lean",
+    "exit": 0,
+    "wall": "0:01.82",
+    "max_rss_kib": 3595708
+   },
+   {
+    "source": "ZInQKernel/Targets/H/R15.lean",
+    "exit": 0,
+    "wall": "0:01.82",
+    "max_rss_kib": 3468152
+   },
+   {
+    "source": "ZInQKernel/Targets/H/T13.lean",
+    "exit": 0,
+    "wall": "0:01.80",
+    "max_rss_kib": 3468208
+   },
+   {
+    "source": "ZInQKernel/Targets/H/T6.lean",
+    "exit": 0,
+    "wall": "0:01.83",
+    "max_rss_kib": 3599140
+   },
+   {
+    "source": "ZInQKernel/Targets/H/T31.lean",
+    "exit": 0,
+    "wall": "0:03.48",
+    "max_rss_kib": 6946676
+   },
+   {
+    "source": "ZInQKernel/Targets/H/T17.lean",
+    "exit": 0,
+    "wall": "0:01.93",
+    "max_rss_kib": 3711964
+   },
+   {
+    "source": "ZInQKernel/Targets/H/T2.lean",
+    "exit": 0,
+    "wall": "0:02.01",
+    "max_rss_kib": 3599432
+   },
+   {
+    "source": "ZInQKernel/Targets/H/T20.lean",
+    "exit": 0,
+    "wall": "0:03.51",
+    "max_rss_kib": 6950772
+   },
+   {
+    "source": "ZInQKernel/Targets/H/R6.lean",
+    "exit": 0,
+    "wall": "0:01.82",
+    "max_rss_kib": 3601628
+   },
+   {
+    "source": "ZInQKernel/Targets/H/T4.lean",
+    "exit": 0,
+    "wall": "0:01.98",
+    "max_rss_kib": 3609080
+   },
+   {
+    "source": "ZInQKernel/Targets/H/T28.lean",
+    "exit": 0,
+    "wall": "0:01.48",
+    "max_rss_kib": 2853060
+   },
+   {
+    "source": "ZInQKernel/Targets/H/T5.lean",
+    "exit": 0,
+    "wall": "0:01.85",
+    "max_rss_kib": 3597992
+   },
+   {
+    "source": "ZInQKernel/Targets/H/Defs/PkgI1.lean",
+    "exit": 0,
+    "wall": "0:11.38",
+    "max_rss_kib": 2849768
+   }
+  ]
+ },
+ "baseline_dependency_build": {
+  "note": "first build in this worktree; only the 5 baseline HDecomp modules are listed (the Defs modules compiled in that run were an earlier, unpruned draft)",
+  "jobs": 2,
+  "compiler_threads": 1,
+  "exit_code": 1,
+  "elapsed_seconds": 49.09863018989563,
+  "max_concurrent_compilers": 2,
+  "peak_process_group_rss_bytes": 12124532736,
+  "command": [
+   "lake",
+   "--no-cache",
+   "--no-ansi",
+   "build",
+   "ZInQKernel.Targets.H.Defs.HSyn",
+   "ZInQKernel.Targets.H.Defs.PkgI1",
+   "ZInQKernel.Targets.H.Defs.PkgI4",
+   "ZInQKernel.HDecomp.Objects",
+   "ZInQKernel.HDecomp.Conductor.I6Base",
+   "ZInQKernel.HDecomp.Conductor.Breaks",
+   "ZInQKernel.HDecomp.Descent.B2Glue"
+  ],
+  "modules": [
+   {
+    "source": "ZInQKernel/HDecomp/Objects.lean",
+    "exit": 0,
+    "wall": "0:25.97",
+    "max_rss_kib": 3722168
+   },
+   {
+    "source": "ZInQKernel/HDecomp/Conductor/Breaks.lean",
+    "exit": 0,
+    "wall": "0:04.42",
+    "max_rss_kib": 6971944
+   },
+   {
+    "source": "ZInQKernel/HDecomp/Conductor/Dyadic.lean",
+    "exit": 0,
+    "wall": "0:04.31",
+    "max_rss_kib": 6938896
+   },
+   {
+    "source": "ZInQKernel/HDecomp/Conductor/I6Base.lean",
+    "exit": 0,
+    "wall": "0:05.35",
+    "max_rss_kib": 6990756
+   },
+   {
+    "source": "ZInQKernel/HDecomp/Descent/B2Glue.lean",
+    "exit": 0,
+    "wall": "0:04.87",
+    "max_rss_kib": 6962916
+   }
+  ]
+ }
+}

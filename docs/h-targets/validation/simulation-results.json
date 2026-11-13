@@ -1,0 +1,26 @@
+{
+ "base": "9bf9ad8aa99168060cd0f770a007a30ff2c31aca",
+ "checker": "scripts/check_kernel_contract.py of the base commit (unchanged)",
+ "stage1_candidate_manifest_unchanged": {
+  "exit": 1,
+  "stderr": "Kernel contract rejected: Unregistered baseline source: ZInQKernel/Targets/H.lean"
+ },
+ "stage2_proposal_applied": {
+  "status": "valid_candidate_contract",
+  "acceptance": false,
+  "files": 979,
+  "targets": 39,
+  "route": "statement_or_infrastructure_review",
+  "lock_changed": [
+   "KERNEL_CONTRACT.json"
+  ]
+ },
+ "stage3_contrib_only_on_registered_base": {
+  "status": "valid_candidate_contract",
+  "route": "proof_only_astra_review",
+  "changed": [
+   "ZInQKernel/Contrib/H/SimDemo.lean"
+  ],
+  "lock_changed": []
+ }
+}
