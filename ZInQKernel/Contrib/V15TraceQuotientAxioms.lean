@@ -1,9 +1,9 @@
 module
 
 /- SPDX-License-Identifier: Apache-2.0
-See ../Examples/V15Application.LICENSE for the license text. -/
+See docs/lean-applications/V15Application.LICENSE for the license text. -/
 
-import all Examples.V15TraceQuotient
+import all ZInQKernel.Contrib.V15TraceQuotient
 import Lean.Util.CollectAxioms
 
 /-! Scoped axiom audit of the three V15 application modules and every declaration they contain. -/
@@ -11,8 +11,8 @@ import Lean.Util.CollectAxioms
 open Lean Elab Command in
 run_cmd do
   let env ← getEnv
-  let owners : List Name := [`Examples.V15RetainedContact, `Examples.V15RawRows,
-    `Examples.V15TraceQuotient]
+  let owners : List Name := [`ZInQKernel.Contrib.V15RetainedContact, `ZInQKernel.Contrib.V15RawRows,
+    `ZInQKernel.Contrib.V15TraceQuotient]
   let mut seen : Nat := 0
   let mut checked : Nat := 0
   for idx in [:env.header.modules.size] do
@@ -29,10 +29,12 @@ run_cmd do
     throwError "Expected three V15 application modules, found {seen}"
   logInfo m!"V15_AXIOM_AUDIT_PASS modules={seen} declarations={checked}"
 
+#print axioms V15RetainedContact.contact_nonzero
 #print axioms V15RetainedContact.contact_product_nonzero
 #print axioms V15RetainedContact.raw224_q_nonzero
 #print axioms V15RetainedContact.raw224_family_q_nonzero
 #print axioms V15RetainedContact.raw223_q_nonzero
+#print axioms V15RetainedContact.raw223_Q_nonzero
 #print axioms V15RetainedContact.row_substitution
 #print axioms V15RetainedContact.solutionEquiv
 

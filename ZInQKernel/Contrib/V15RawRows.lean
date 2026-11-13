@@ -1,7 +1,7 @@
 module
 
 /- SPDX-License-Identifier: Apache-2.0
-See V15Application.LICENSE for the license text. -/
+See docs/lean-applications/V15Application.LICENSE for the license text. -/
 
 public import Mathlib.Data.Rat.Defs
 
