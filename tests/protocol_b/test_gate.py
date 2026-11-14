@@ -55,7 +55,7 @@ class FakeGH:
     repo = 'x/y'
 
     def __init__(self):
-        self.pr = {'number': 1, 'state': 'open', 'draft': False, 'head': {'sha': HEAD},
+        self.pr = {'number': 1, 'state': 'open', 'draft': False, 'merged': False, 'head': {'sha': HEAD},
                    'base': {'sha': BASE, 'ref': 'main'}, 'changed_files': 1,
                    'title': 'Change', 'body': '', 'node_id': 'PR_1'}
         self.comments, self.posts, self.edits = [], [], []
@@ -68,6 +68,24 @@ class FakeGH:
         self.merge_result = {'merged': True, 'sha': 'd' * 40}
         self.extra_rules, self.rule_pages, self.compare_requests = [], [], []
         self.comparison = {'behind_by': 0}
+        self.dispatches = []
+        self.dispatched_runs = {}
+        self.dispatch_head = 'd' * 40
+        self.auto_result = {'data': {'enablePullRequestAutoMerge': {'pullRequest': {'id': 'PR_1'}}}}
+        self.auto_callback = None
+
+    def complete_merge(self):
+        self.pr.update(merged=True, state='closed', merge_commit_sha='d' * 40)
+
+    def dispatch_workflow(self, workflow, ref):
+        if self.pr.get('merged') is not True:
+            raise AssertionError('Dispatch occurred before confirmed merge')
+        self.dispatches.append((workflow, {'ref': ref}))
+        run_id = len(self.dispatches)
+        self.dispatched_runs[run_id] = {'id': run_id, 'head_sha': self.dispatch_head,
+            'head_branch': ref, 'event': 'workflow_dispatch', 'path': '.github/workflows/' + workflow,
+            'html_url': f'https://github.com/x/y/actions/runs/{run_id}', 'status': 'queued'}
+        return {'workflow_run_id': run_id}
 
     def pages(self, path):
         if path.startswith('/rules/branches/'):
@@ -94,7 +112,11 @@ class FakeGH:
             return {'total_count': len(self.check_runs), 'check_runs': copy.deepcopy(rows)}
         if path == '/pulls/1/merge' and method == 'PUT':
             self.merge_requests.append(data)
+            if self.merge_result.get('merged') is True:
+                self.complete_merge()
             return self.merge_result
+        if path.startswith('/actions/runs/'):
+            return self.dispatched_runs[int(path.rsplit('/', 1)[1])]
         if path.startswith('/compare/'):
             self.compare_requests.append(path)
             return self.comparison
@@ -127,7 +149,9 @@ class FakeGH:
     def api(self, path, method='GET', data=None):
         assert path == '/graphql'
         self.graphql = data
-        return {'data': {}}
+        if self.auto_callback:
+            self.auto_callback(self)
+        return self.auto_result
 
 
 class FakeApp:
@@ -427,7 +451,8 @@ class Checks(unittest.TestCase):
         gh.main_sha = 'c' * 40
         _, _, errors, _ = run_pipeline(gh, mode='live')
         self.assertEqual(errors, [])
-        self.assertEqual(gh.compare_requests, [f"/compare/{'c' * 40}...{HEAD}"])
+        self.assertEqual(gh.compare_requests, [f"/compare/{'c' * 40}...{HEAD}",
+                                               f"/compare/{'d' * 40}...{'c' * 40}"])
         self.assertEqual(gh.merge_requests, [{'sha': HEAD, 'merge_method': 'merge'}])
 
     def test_failed_comparison_prevents_direct_merge(self):
