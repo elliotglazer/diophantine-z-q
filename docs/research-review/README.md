@@ -35,3 +35,7 @@ the repository's historical arguments under Protocol B.
 ## Earlier review policy
 
 Releases through Version 17 were reviewed under the project's earlier review protocol. Its texts are retained here as historical policy: [version 1.4](PROTOCOL.md), [version 1.3](protocol-v1.3.md), [version 1.2](protocol-v1.2.md) and [version 1.1](protocol-v1.1.md), with the [Astra acceptance policy](ASTRA-REVIEW-POLICY.md) and the [version 1.4 adoption record](ADOPTION-V1.4.md). Those releases and their review records keep their original standard and scope.
+
+## Archived review records
+
+The full historical review records are preserved at the [review-archive-v17 tag](https://github.com/elliotglazer/diophantine-z-q/tree/review-archive-v17). The six files in [distilled/](distilled/README.md) are an unchanged, attributed summary of those records, not a new audit or acceptance of their mathematical claims. About 57 internal findings are recorded as open in the ledger; they were not re-checked during this archiving work, and the summary does not establish their current status.
