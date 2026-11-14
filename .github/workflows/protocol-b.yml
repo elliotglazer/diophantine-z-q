@@ -982,7 +982,8 @@ jobs:
                   name, integration = rule['context'], rule.get('integration_id')
                   pinned = integration not in (None, -1)
                   matches = [c for c in checks if c['name'] == name and
-                             (not pinned or c['app']['id'] == integration)]
+                             (c.get('app') or {}).get('id') is not None and
+                             (not pinned or (c.get('app') or {}).get('id') == integration)]
                   status = statuses.get(name)
                   if status is not None and status['state'] != 'success':
                       return False
@@ -1023,7 +1024,7 @@ jobs:
                   raise RuntimeError('Protocol B review is blocked')
               if state['mode'] == 'live':
                   # Preserve the protected route for both immediate and deferred merges.
-                  rules = gh.call("/rules/branches/" + urllib.parse.quote(state['default'], safe=""))
+                  rules = gh.pages("/rules/branches/" + urllib.parse.quote(state['default'], safe=""))
                   required = {c["context"] for rule in rules if rule["type"] == "required_status_checks"
                               for c in rule["parameters"]["required_status_checks"]}
                   if not ({CHECK} | REQUIRED_COMPUTATIONS) <= required:
@@ -1050,9 +1051,15 @@ jobs:
                   if not same_policy(gh, state['policy_ref'], latest_ref):
                       raise RuntimeError('Review policy changed before requesting merge')
                   if ready:
+                      comparison = gh.call(f"/compare/{latest_ref}...{state['head']}")
+                      behind = comparison.get('behind_by')
+                      record('merge-base-check.json', {'default_tip': latest_ref, 'head': state['head'],
+                                                       'behind_by': behind})
+                      if type(behind) is not int or behind != 0:
+                          raise RuntimeError('Direct merge withheld: reviewed head must contain the current default-branch tip')
                       # Do not gate on mergeable_state: the running, non-required
-                      # gate job itself can leave it "unstable". The merge API
-                      # enforces the live ruleset and atomically checks this SHA.
+                      # gate job itself can leave it "unstable". Deployment requires
+                      # an empty ruleset bypass list. The merge API checks this SHA.
                       result = gh.call(f"/pulls/{state['number']}/merge", 'PUT',
                                        {'sha': state['head'], 'merge_method': 'merge'})
                       record('merge-result.json', result)

@@ -21,6 +21,7 @@ block = workflow.split("<<'PROTOCOL_B_PYTHON'\n", 1)[1].split('          PROTOCO
 source = '\n'.join(line[10:] if line.startswith('          ') else line for line in block.splitlines()) + '\n'
 gate = types.ModuleType('protocol_b_under_test')
 exec(compile(source, '<embedded protocol-b program>', 'exec'), gate.__dict__)
+github_pages = gate.GitHub.pages
 HEAD, BASE, APP_ID = 'a' * 40, 'b' * 40, 123456
 
 
@@ -65,8 +66,12 @@ class FakeGH:
         self.check_runs, self.statuses, self.merge_requests = [], [], []
         self.check_page_size, self.after_check_read = 100, None
         self.merge_result = {'merged': True, 'sha': 'd' * 40}
+        self.extra_rules, self.rule_pages, self.compare_requests = [], [], []
+        self.comparison = {'behind_by': 0}
 
     def pages(self, path):
+        if path.startswith('/rules/branches/'):
+            return github_pages(self, path)
         if path.endswith('/statuses'):
             return self.statuses
         if path.endswith('/files'):
@@ -90,6 +95,9 @@ class FakeGH:
         if path == '/pulls/1/merge' and method == 'PUT':
             self.merge_requests.append(data)
             return self.merge_result
+        if path.startswith('/compare/'):
+            self.compare_requests.append(path)
+            return self.comparison
         if path.startswith('/commits/'):
             return {'sha': self.main_sha}
         if path == '/pulls/1':
@@ -107,10 +115,13 @@ class FakeGH:
             self.edits.append(data)
             return {}
         if path.startswith('/rules/branches/'):
-            return [{'type': 'required_status_checks', 'parameters': {
+            rules = [{'type': 'required_status_checks', 'parameters': {
                 'strict_required_status_checks_policy': self.strict,
                 'required_status_checks': [{'context': n, 'integration_id': self.integration if n == gate.CHECK else 15368}
-                                           for n in self.required]}}]
+                                           for n in self.required]}}] + self.extra_rules
+            page = int(path.rsplit('page=', 1)[1]) if '?per_page=' in path else 1
+            self.rule_pages.append(page)
+            return rules[(page-1)*100:page*100]
         raise AssertionError(('own-token unexpected operation', path, method))
 
     def api(self, path, method='GET', data=None):
@@ -376,6 +387,61 @@ class Checks(unittest.TestCase):
         _, _, errors, _ = run_pipeline(gh, mode='live')
         self.assertEqual(errors, [])
         self.assertEqual(len(gh.merge_requests), 1)
+
+    def test_later_rules_page_unsatisfied_context_prevents_direct_merge(self):
+        gh = self.ready_gh()
+        gh.extra_rules = [{'type': 'deletion'} for _ in range(99)] + [{
+            'type': 'required_status_checks', 'parameters': {
+                'required_status_checks': [{'context': 'Later required check', 'integration_id': 15368}]}}]
+        _, _, errors, _ = run_pipeline(gh, mode='live')
+        self.assertEqual(errors, [])
+        self.assertEqual(gh.rule_pages, [1, 2])
+        self.assertEqual(gh.merge_requests, [])
+        self.assertIn('enablePullRequestAutoMerge', gh.graphql['query'])
+
+    def test_no_app_check_does_not_match_pinned_or_unpinned_requirement(self):
+        for app in ['omitted', None, {}, {'id': None}]:
+            for integration in [APP_ID, None, -1]:
+                with self.subTest(app=app, integration=integration):
+                    gh = self.ready_gh()
+                    check = next(c for c in gh.check_runs if c['name'] == gate.CHECK)
+                    if app == 'omitted': check.pop('app')
+                    else: check['app'] = app
+                    self.assertFalse(gate.required_checks_passed(gh, HEAD, [
+                        {'context': gate.CHECK, 'integration_id': integration}]))
+
+    def test_direct_merge_requires_current_default_tip_in_reviewed_head(self):
+        for behind in [1, 5, None, '0', False, -1, 'omitted']:
+            with self.subTest(behind=behind):
+                gh = self.ready_gh()
+                gh.main_sha = 'c' * 40  # A newer base tip with the same policy.
+                gh.comparison = {} if behind == 'omitted' else {'behind_by': behind}
+                _, _, errors, _ = run_pipeline(gh, mode='live')
+                self.assertTrue(any('must contain the current default-branch tip' in e for e in errors))
+                self.assertEqual(gh.compare_requests, [f"/compare/{'c' * 40}...{HEAD}"])
+                self.assertEqual(gh.merge_requests, [])
+                self.assertFalse(gh.graphql)
+
+    def test_current_default_tip_in_reviewed_head_allows_direct_merge(self):
+        gh = self.ready_gh()
+        gh.main_sha = 'c' * 40
+        _, _, errors, _ = run_pipeline(gh, mode='live')
+        self.assertEqual(errors, [])
+        self.assertEqual(gh.compare_requests, [f"/compare/{'c' * 40}...{HEAD}"])
+        self.assertEqual(gh.merge_requests, [{'sha': HEAD, 'merge_method': 'merge'}])
+
+    def test_failed_comparison_prevents_direct_merge(self):
+        gh = self.ready_gh()
+        original = gh.call
+        def fail_comparison(path, method='GET', data=None):
+            if path.startswith('/compare/'):
+                raise RuntimeError('Comparison unavailable')
+            return original(path, method, data)
+        gh.call = fail_comparison
+        _, _, errors, _ = run_pipeline(gh, mode='live')
+        self.assertIn('Comparison unavailable', errors)
+        self.assertEqual(gh.merge_requests, [])
+        self.assertFalse(gh.graphql)
 
     def test_live_does_not_direct_merge_pending_failed_missing_or_wrong_app_checks(self):
         for change in ['pending', 'failure', 'missing', 'wrong_app', 'neutral', 'legacy_failure']:
