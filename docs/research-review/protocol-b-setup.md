@@ -55,6 +55,24 @@ and web tools. Reports record actual returned model IDs, source reads and usage.
 There is no fallback model. Unavailable sources, unfinished reviews and changed
 heads do not pass.
 
+Automatic reviews run only for PR authors whose current GitHub permission is
+write, maintain, or admin. Other authors get an App check saying "awaiting a
+collaborator's /protocol-b review". A current collaborator must post that exact
+command to start each review; a manual workflow dispatch is not a substitute
+for an outside author's PR. Permissions are checked through GitHub's API.
+
+Before review, and again before each model request, the gate reads required
+computation checks. A concluded failure blocks further model calls with "fix
+failing checks first". Pending checks can run in parallel with review. A PR
+gets at most four automatic rounds; further rounds require the collaborator
+command. Started automatic rounds count even if interrupted. Each start is
+saved in the App check, with a pointer on the PR so force-pushing does not lose
+the count. Earlier report records locate historical checks; only verified App
+records authorize reuse or contribute to the count. Check output records the
+number of automatic rounds. A completed review on the same head under identical
+workflow and instruction files is reused for automatic events, including
+reopen, ready-for-review, and duplicate synchronization events.
+
 A `read_file` lookup returning HTTP 404 produces a tool result identifying the
 missing path and pinned revision. For example, a newly added file may be absent
 at `base` but readable at `head`. The model can correct the request and continue.
@@ -104,11 +122,21 @@ not change override authority, which still comes from the dedicated App's
 check output rather than bot comments. Preserve substantive objections in the
 project's findings record as well as the PR discussion.
 
-Both reviewers have a preflight context budget of 400,000 estimated tokens,
+Both reviewers default to a preflight context budget of 400,000 estimated tokens.
+The repository variable `PROTOCOL_B_MANUSCRIPT_PROFILE` defaults to `standard`
+when unset or empty. An owner can set it to `expanded` when the provider accounts
+allow the larger spending profile. Only then, if the complete GitHub diff changes
+a path under `manuscripts/`, including a rename out of that directory, both
+receive 900,000. Other PRs retain the standard profile. Unknown variable values
+stop before model calls. The expanded profile fits the published
+windows of [Astra 6](https://developers.openai.com/api/docs/models/gpt-6-astra)
+(1,050,000) and [Fable 5.2](https://platform.claude.com/docs/en/models/fable-5-2/overview)
+(1,000,000), checked November 14, 2026. Both budgets are totals,
 including a 64,000-token output allowance and an 8,192-token formatting reserve.
 The estimate includes instructions, tools and the full conversation. Ordinary
 text uses UTF-8 bytes as a conservative token estimate. Successful Anthropic
 web-result payloads instead use bounded accounting estimates: at most 20,000
+for the standard profile or 50,000 for the expanded manuscript profile
 for fetched text, 16,000 for a search result block, and 128,000 for a binary
 fetch result. These estimates do not change the actual conversation sent to
 the provider. Unknown block types and repository text receive no discount.
@@ -126,7 +154,10 @@ recalibrates the estimate. Before usable measurements, the full request is
 estimated with the same byte and web-payload accounting rules.
 
 Fable's requests cap web search at three uses and web fetch at five uses, with
-`max_content_tokens` set to 20,000 for fetched text. Direct calls share the
+`max_content_tokens` set to 20,000 for fetched text. Expanded manuscript reviews get
+ten searches, twenty fetches, and 50,000 tokens per text fetch. `budget-profile.json`
+records the configured variable, changed-path classification and selected limits.
+This opt-in does not raise either provider account's spending limit. Direct calls share the
 limit across a turn, including client-tool-result and `pause_turn`
 continuations; programmatic calls through dynamic filtering reset per
 request. Failed or pending direct calls consume the displayed allowance
@@ -135,17 +166,19 @@ local web-use cap. The fetch text limit is approximate and may truncate the
 source; omitted text has not been reviewed. It does not cover binary PDFs.
 
 The search and binary accounting reserves are assumptions, not provider
-content limits or proven upper bounds. The guard enforces a 400,000-token
+content limits or proven upper bounds. The guard enforces the selected 400,000- or 900,000-token
 **estimate**, not a guaranteed ceiling on actual context or spending. A large
 binary result can exceed the estimate within a request; the following
 request-start measurement corrects it. Provider-side web tools can add
 context during a request. The token-counting
 endpoint does not support the gate's server tools, so the gate does not send an
 incompatible counting request or silently remove those tools. An independent
-tool-result guard is reduced to 1,200,000 characters. Before a file, file-list or
+tool-result guard permits 1,200,000 characters in the standard profile and
+2,700,000 in the expanded profile, proportional to the context budget. Before a file, file-list or
 history result is returned, the gate measures the complete projected next
 request, reserving small error results for other calls in the same batch and
-4,096 tokens for recovery. An oversized read returns a tool error and leaves
+4,096 tokens for recovery. It also reserves another 64,000 tokens for the
+reviewer's own output to enter the next request. An oversized read returns a tool error and leaves
 the review running. Every result includes `remaining_context_tokens` and
 `remaining_tool_characters`, which are planning estimates rather than exact
 token allowances. Every client tool result, including an error, also includes
@@ -154,8 +187,28 @@ programmatic maximum, and the fetched-text truncation warning. Provider-owned
 server-result blocks are replayed unchanged. Rejected repository results
 neither count as source reads nor complete the history
 requirement. The model can retry a smaller read. The pre-request check remains
-the final safeguard for unexpected growth, such as a large model-generated
-message. The gate never silently truncates conversation history or repository
+the final safeguard for unexpected growth, such as a large server-tool result.
+When the remaining allowance falls below the reviewer-output reserve, trusted
+instructions tell the reviewer to finish now and list everything not reviewed.
+The original system prompt, tools and earlier messages remain unchanged to
+preserve signed thinking. Runtime guidance is appended after a user/tool-result
+message; a Fable `pause_turn` is resumed unchanged before that guidance can be
+inserted. See the provider's [append-only instruction rules](https://platform.claude.com/docs/en/build-with-claude/preserved-thinking/change-tools-or-instructions).
+A finish-now report records whether source/history reads were admitted. Without
+history, every earlier finding stays unresolved in code. Without either read
+prerequisite, the report cannot be accepted by collaborator override; a new
+review with sufficient context is needed. These completed rejection reports
+can still be reused to avoid another automatic charge on the same head.
+Required computation failures are checked before each model turn and again
+after every provider retry backoff, before a further paid request is sent.
+
+An immediate cross-reviewer stop on a fatal finding is a separate follow-up;
+this change does not add a fatal-finding field, shared cancellation flag or a
+ban on later automatic rounds specifically because a finding is fatal.
+An incomplete necessary check must be reported as a finding with a request for
+changes. That blocked decision is permitted even if the reviewer could not
+finish its source/history reads; acceptance still requires those reads and
+disposition of every prior finding. The gate never silently truncates conversation history or repository
 reads, and it does not accept a partial review. This does not make
 provider-truncated web content a complete source read.
 Scope reads to the changed argument and affected consumers.

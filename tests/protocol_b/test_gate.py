@@ -57,7 +57,8 @@ class FakeGH:
     def __init__(self):
         self.pr = {'number': 1, 'state': 'open', 'draft': False, 'merged': False, 'head': {'sha': HEAD},
                    'base': {'sha': BASE, 'ref': 'main'}, 'changed_files': 1,
-                   'title': 'Change', 'body': '', 'node_id': 'PR_1'}
+                   'title': 'Change', 'body': '', 'node_id': 'PR_1', 'user': {'login': 'author', 'type': 'User'}}
+        self.author_permission = 'write'
         self.comments, self.posts, self.edits = [], [], []
         self.permission, self.graphql = 'read', None
         self.required = gate.REQUIRED_COMPUTATIONS | {gate.CHECK}
@@ -116,7 +117,8 @@ class FakeGH:
                 self.complete_merge()
             return self.merge_result
         if path.startswith('/actions/runs/'):
-            return self.dispatched_runs[int(path.rsplit('/', 1)[1])]
+            return self.dispatched_runs.get(int(path.rsplit('/', 1)[1]),
+                                            {'event': 'issue_comment', 'path': gate.WORKFLOW})
         if path.startswith('/compare/'):
             self.compare_requests.append(path)
             return self.comparison
@@ -129,7 +131,7 @@ class FakeGH:
                 value['head']['sha'] = 'c' * 40
             return value
         if path.endswith('/permission'):
-            return {'permission': self.permission}
+            return {'permission': self.author_permission if '/author/' in path else self.permission}
         if path.endswith('/comments') and method == 'POST':
             self.posts.append(data)
             return {'id': len(self.posts) + 9}
@@ -165,18 +167,20 @@ class FakeApp:
             self.created.append(copy.deepcopy(value))
             return value
         if path.startswith('/commits/') and '/check-runs?' in path:
-            return {'check_runs': list(self.checks.values())}
-        if path == '/check-runs/20':
+            head = path.split('/')[2]
+            return {'check_runs': [c for c in self.checks.values() if c['head_sha'] == head]}
+        if path.startswith('/check-runs/'):
+            ident = int(path.rsplit('/', 1)[1])
             if method == 'GET':
-                return self.checks[20]
-            self.checks[20].update(copy.deepcopy(data))
+                return self.checks[ident]
+            self.checks[ident].update(copy.deepcopy(data))
             self.final = data
             return self.checks[20]
         raise AssertionError(('App-token unexpected operation', path, method))
 
     def prior(self, reports, app_id=APP_ID, ident=5):
         self.checks[ident] = {'id': ident, 'name': 'Protocol B / test review', 'head_sha': HEAD,
-            'app': {'id': app_id}, 'output': {'text': json.dumps({
+            'status': 'completed', 'app': {'id': app_id}, 'output': {'text': json.dumps({
                 'schema': 'protocol-b-decisions/v1', 'head': HEAD, 'reports': reports})}}
 
 
@@ -202,6 +206,8 @@ def run_pipeline(gh=None, app=None, mode='test', provider=None, event=None, fina
                 gate.main()
             except Exception as error:
                 errors.append(str(error))
+            # Keep spending-preflight reads separate from merge retry assertions.
+            gh.review_rule_pages, gh.rule_pages = list(gh.rule_pages), []
             if finalize:
                 try:
                     gate.publish()
@@ -350,7 +356,8 @@ class Checks(unittest.TestCase):
 
     def test_unfinished_job_leaves_blocked_check(self):
         _, app, _, _ = run_pipeline(finalize=False)
-        self.assertIsNone(app.final)
+        # The round intent is saved before model calls; it must not accept the PR.
+        self.assertNotEqual(app.checks[20].get('conclusion'), 'success')
         self.assertEqual(app.checks[20]['conclusion'], 'action_required')
 
     def test_head_race_blocks(self):
@@ -616,6 +623,77 @@ def anthropic_events(partial='', stop='tool_use'):
 
 
 class Transport(unittest.TestCase):
+    def test_low_context_finishes_with_unreviewed_list_after_own_output(self):
+        for family in gate.MODELS:
+            with self.subTest(family=family):
+                gh = FakeGH()
+                r = gate.Review(gh, gh.pr, [], [], {}, {}, 'trusted', family, 'local mathematical')
+                r.input['previous_review_material'] = 'x' * 230000
+                r.reads, r.history_read = [{'path': 'already-read.tex'}], True
+                decision = report(decision='changes_requested',
+                                  report='Checked the first lemma against its stated hypotheses. Not reviewed: the application to Theorem 2, so this review requests changes.',
+                                  findings=[{'id': 'BUDGET', 'location': 'Theorem 2',
+                                             'objection': 'The required application has not been reviewed.'}])
+                calls = []
+                def model(actual, instructions, conversation, **kwargs):
+                    calls.append(copy.deepcopy(conversation))
+                    if len(calls) == 1:
+                        self.assertNotIn(gate.FINISH_NOW_INSTRUCTION, instructions)
+                        text = 'Review notes: ' + 'x' * 50000
+                        output = ([{'type': 'message', 'content': [{'type': 'output_text', 'text': text}]}]
+                                  if family == 'astra' else [{'type': 'text', 'text': text}])
+                    else:
+                        self.assertEqual(instructions, 'trusted')
+                        self.assertIn(gate.FINISH_NOW_INSTRUCTION, conversation[-1]['content'])
+                        self.assertIn('Not reviewed', conversation[-1]['content'])
+                        output = ([{'type': 'function_call', 'name': 'finish_review', 'call_id': 'finish',
+                                    'arguments': json.dumps(decision)}] if family == 'astra' else
+                                  [{'type': 'tool_use', 'name': 'finish_review', 'id': 'finish', 'input': decision}])
+                    return output, gate.MODELS[actual], {}, 'fixture', 'completed' if family == 'astra' else 'end_turn'
+                with tempfile.TemporaryDirectory() as tmp, patch.object(gate, 'OUT', Path(tmp)), \
+                     patch.dict(os.environ, {'GITHUB_RUN_ID': '1', 'GITHUB_RUN_ATTEMPT': '1'}), \
+                     patch.object(gate, 'model_turn', side_effect=model):
+                    self.assertEqual(r.run(), decision)
+                    budget = json.loads((Path(tmp) / (family + '-context-budget.json')).read_text())
+                    self.assertLessEqual(budget['estimated_total'], 400000)
+                    self.assertTrue((Path(tmp) / (family + '-finish-now.json')).is_file())
+                self.assertEqual(len(calls), 2)
+                # Neither the original source input nor the reviewer's long output was truncated.
+                self.assertEqual(calls[0][0], calls[1][0])
+                self.assertIn('x' * 50000, json.dumps(calls[1]))
+
+    def test_read_projection_preserves_full_reviewer_output_reserve(self):
+        gh = FakeGH()
+        r = gate.Review(gh, gh.pr, [], [], {}, {}, 'trusted', 'fable', 'local mathematical')
+        r.input['previous_review_material'] = 'x' * 200000
+        seen = []
+        def model(family, instructions, conversation, **kwargs):
+            seen.append(copy.deepcopy(conversation))
+            if len(seen) == 2:
+                value = json.loads(conversation[-1]['content'][0]['content'])
+                self.assertIn('Read too large', value['error'])
+                self.assertGreaterEqual(value['remaining_context_tokens'], gate.REVIEWER_OUTPUT_RESERVE)
+                self.assertEqual(r.reads, [])
+                raise RuntimeError('end of reserve probe')
+            return ([{'type': 'tool_use', 'id': 'read', 'name': 'read_file',
+                      'input': {'path': 'large.tex', 'revision': 'head', 'start': 1, 'count': 1000}}],
+                    gate.MODELS[family], {}, 'fixture', 'tool_use')
+        with tempfile.TemporaryDirectory() as tmp, patch.object(gate, 'OUT', Path(tmp)), \
+             patch.object(gh, 'text', return_value=('x' * 80 + '\n') * 1000), \
+             patch.object(gate, 'model_turn', side_effect=model):
+            with self.assertRaisesRegex(RuntimeError, 'end of reserve probe'):
+                r.run()
+        self.assertEqual(len(seen), 2)
+
+    def test_budget_limits_and_web_caps_are_unchanged(self):
+        self.assertEqual(gate.CONTEXT_TOKEN_BUDGET, 400000)
+        self.assertEqual(gate.OUTPUT_TOKEN_BUDGET, 64000)
+        self.assertEqual(gate.REVIEWER_OUTPUT_RESERVE, 64000)
+        self.assertEqual(gate.WEB_MAX_USES, {'web_search': 3, 'web_fetch': 5})
+        self.assertEqual(gate.WEB_FETCH_MAX_CONTENT_TOKENS, 20000)
+        self.assertEqual(gate.WEB_SEARCH_RESULT_RESERVE, 16000)
+        self.assertEqual(gate.WEB_BINARY_RESULT_RESERVE, 128000)
+
     def test_parallel_large_reads_warn_then_smaller_read_can_finish(self):
         for family in gate.MODELS:
             with self.subTest(family=family):
@@ -625,7 +703,7 @@ class Transport(unittest.TestCase):
                 def call(name, args, ident):
                     return ({'type': 'function_call', 'name': name, 'arguments': json.dumps(args), 'call_id': ident}
                             if family == 'astra' else {'type': 'tool_use', 'name': name, 'input': args, 'id': ident})
-                def model(actual, instructions, conversation):
+                def model(actual, instructions, conversation, **kwargs):
                     seen.append(copy.deepcopy(conversation))
                     if len(seen) == 1:
                         output = [call('read_file', {'path': 'large.tex', 'revision': 'head', 'start': 1, 'count': 1000}, str(i)) for i in range(6)]
@@ -659,7 +737,7 @@ class Transport(unittest.TestCase):
             {'type': 'tool_use', 'id': 'history', 'name': 'read_history', 'input': {}},
         ]
         turns = 0
-        def model(family, instructions, conversation):
+        def model(family, instructions, conversation, **kwargs):
             nonlocal turns
             turns += 1
             if turns == 2:
@@ -676,6 +754,7 @@ class Transport(unittest.TestCase):
         tree = {'tree': [{'path': str(i) + 'x' * 500, 'type': 'blob'} for i in range(200)]}
         with tempfile.TemporaryDirectory() as tmp, patch.object(gate, 'OUT', Path(tmp)), \
              patch.object(gate, 'CONTEXT_TOKEN_BUDGET', 100000), \
+             patch.object(gate, 'failed_computation_checks', return_value=[]), \
              patch.object(gh, 'text', return_value=('x' * 65 + '\n') * 1000), \
              patch.object(gh, 'call', return_value=tree), patch.object(gate, 'model_turn', side_effect=model):
             with self.assertRaisesRegex(RuntimeError, 'end of budget-error probe'):
@@ -697,7 +776,7 @@ class Transport(unittest.TestCase):
                     if family == 'astra':
                         return {'type': 'function_call', 'name': name, 'arguments': json.dumps(args), 'call_id': ident}
                     return {'type': 'tool_use', 'name': name, 'input': args, 'id': ident}
-                def model(actual_family, instructions, conversation):
+                def model(actual_family, instructions, conversation, **kwargs):
                     seen.append(copy.deepcopy(conversation))
                     if len(seen) == 1:
                         output = [call('read_file', {'path': path, 'revision': 'base', 'start': 1, 'count': 10}, 'base')]
@@ -724,6 +803,7 @@ class Transport(unittest.TestCase):
                     return io.BytesIO(json.dumps(file_value).encode())
                 with tempfile.TemporaryDirectory() as tmp, patch.object(gate, 'OUT', Path(tmp)), \
                      patch.object(gate.urllib.request, 'urlopen', side_effect=urlopen) as fetch, \
+                     patch.object(gate, 'failed_computation_checks', return_value=[]), \
                      patch.object(gate, 'model_turn', side_effect=model):
                     self.assertEqual(r.run()['decision'], 'accept')
                     self.assertEqual(fetch.call_count, 2)
@@ -793,7 +873,7 @@ class Transport(unittest.TestCase):
                                'url': 'https://example.org/paper', 'encrypted_content': 'e' * 700000}]}
         original = copy.deepcopy([fetch, search])
         seen = []
-        def model(family, instructions, conversation):
+        def model(family, instructions, conversation, **kwargs):
             seen.append(copy.deepcopy(conversation))
             if len(seen) == 1:
                 output = [
@@ -925,7 +1005,7 @@ class Transport(unittest.TestCase):
         r.reads, r.history_read = [{'path': 'p'}], True
         paused = [{'type': 'text', 'text': 'Checking source.'}]
         seen = []
-        def model(family, instructions, conversation):
+        def model(family, instructions, conversation, **kwargs):
             seen.append(copy.deepcopy(conversation))
             output = paused if len(seen) == 1 else [{'type': 'tool_use', 'id': 'f', 'name': 'finish_review', 'input': report()}]
             return output, gate.MODELS[family], {}, 'm', 'pause_turn' if len(seen) == 1 else 'tool_use'
