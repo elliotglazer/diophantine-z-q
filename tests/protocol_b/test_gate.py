@@ -62,8 +62,13 @@ class FakeGH:
         self.required = gate.REQUIRED_COMPUTATIONS | {gate.CHECK}
         self.integration, self.allow_auto_merge, self.strict = APP_ID, True, True
         self.main_sha, self.race, self.pr_calls = BASE, False, 0
+        self.check_runs, self.statuses, self.merge_requests = [], [], []
+        self.check_page_size, self.after_check_read = 100, None
+        self.merge_result = {'merged': True, 'sha': 'd' * 40}
 
     def pages(self, path):
+        if path.endswith('/statuses'):
+            return self.statuses
         if path.endswith('/files'):
             return [changed('p.tex')]
         if '/issues/' in path:
@@ -76,6 +81,15 @@ class FakeGH:
     def call(self, path, method='GET', data=None):
         if path == '':
             return {'default_branch': 'main', 'allow_auto_merge': self.allow_auto_merge}
+        if '/check-runs?' in path:
+            page = int(path.rsplit('=', 1)[1])
+            rows = self.check_runs[(page-1)*self.check_page_size:page*self.check_page_size]
+            if self.after_check_read:
+                self.after_check_read(self)
+            return {'total_count': len(self.check_runs), 'check_runs': copy.deepcopy(rows)}
+        if path == '/pulls/1/merge' and method == 'PUT':
+            self.merge_requests.append(data)
+            return self.merge_result
         if path.startswith('/commits/'):
             return {'sha': self.main_sha}
         if path == '/pulls/1':
@@ -164,6 +178,18 @@ def run_pipeline(gh=None, app=None, mode='test', provider=None, event=None, fina
 
 
 class Checks(unittest.TestCase):
+    def ready_gh(self):
+        gh = FakeGH()
+        gh.pr['mergeable_state'] = 'unstable'
+        gh.check_runs = [{'id': i, 'name': name, 'head_sha': HEAD, 'status': 'completed',
+                         'conclusion': 'success', 'app': {'id': APP_ID if name == gate.CHECK else 15368}}
+                        for i, name in enumerate(sorted(gh.required), 1)]
+        # The live failure occurred while this non-required job was still running.
+        gh.check_runs.append({'id': 1000, 'name': 'Run reviewers and publish App check',
+                             'head_sha': HEAD, 'status': 'in_progress', 'conclusion': None,
+                             'app': {'id': 15368}})
+        return gh
+
     def test_actions_job_is_distinct_from_app_check(self):
         self.assertIn('  run_reviewers:\n    name: Run reviewers and publish App check\n', workflow)
         self.assertNotIn('\n  review:\n', workflow)
@@ -280,10 +306,11 @@ class Checks(unittest.TestCase):
         self.assertIn('NOT outside reviewed', app.final['output']['summary'])
 
     def test_test_mode_never_merges_and_uses_distinct_tokens(self):
-        gh, app, errors, _ = run_pipeline()
+        gh, app, errors, _ = run_pipeline(self.ready_gh())
         self.assertEqual(errors, [])
         self.assertEqual(app.final['conclusion'], 'success')
         self.assertFalse(gh.graphql)
+        self.assertEqual(gh.merge_requests, [])
         self.assertEqual(app.created[0]['conclusion'], 'action_required')
 
     def test_unfinished_job_leaves_blocked_check(self):
@@ -316,7 +343,7 @@ class Checks(unittest.TestCase):
 
     def test_live_requires_computation_checks_and_specific_app(self):
         for edit in ['missing', 'wrong_app', 'not_strict', 'auto_merge_off']:
-            gh = FakeGH()
+            gh = self.ready_gh()
             if edit == 'missing': gh.required = {gate.CHECK}
             if edit == 'wrong_app': gh.integration = 15368
             if edit == 'not_strict': gh.strict = False
@@ -324,11 +351,93 @@ class Checks(unittest.TestCase):
             _, _, errors, _ = run_pipeline(gh, mode='live')
             self.assertTrue(errors, edit)
             self.assertFalse(gh.graphql, edit)
+            self.assertEqual(gh.merge_requests, [], edit)
 
     def test_live_requests_only_guarded_auto_merge(self):
         gh, _, errors, _ = run_pipeline(mode='live')
         self.assertEqual(errors, [])
         self.assertIn('enablePullRequestAutoMerge', gh.graphql['query'])
+        self.assertEqual(gh.merge_requests, [])
+
+    def test_live_merges_ready_head_despite_running_nonrequired_job(self):
+        gh = self.ready_gh()
+        with patch.object(gh, 'api', side_effect=AssertionError('Do not enable auto-merge for a ready PR')):
+            _, app, errors, _ = run_pipeline(gh, mode='live')
+        self.assertEqual(errors, [])
+        self.assertEqual(app.final['conclusion'], 'success')
+        self.assertEqual(gh.merge_requests, [{'sha': HEAD, 'merge_method': 'merge'}])
+
+    def test_live_checks_all_pages_and_extra_required_contexts(self):
+        gh = self.ready_gh()
+        gh.check_page_size = 3
+        gh.required.add('Extra required check')
+        gh.check_runs.append({'id': 1001, 'name': 'Extra required check', 'head_sha': HEAD,
+                             'status': 'completed', 'conclusion': 'success', 'app': {'id': 15368}})
+        _, _, errors, _ = run_pipeline(gh, mode='live')
+        self.assertEqual(errors, [])
+        self.assertEqual(len(gh.merge_requests), 1)
+
+    def test_live_does_not_direct_merge_pending_failed_missing_or_wrong_app_checks(self):
+        for change in ['pending', 'failure', 'missing', 'wrong_app', 'neutral', 'legacy_failure']:
+            with self.subTest(change=change):
+                gh = self.ready_gh()
+                check = next(c for c in gh.check_runs if c['name'] == gate.CHECK)
+                if change == 'pending': check.update(status='in_progress', conclusion=None)
+                elif change in ('failure', 'neutral'): check['conclusion'] = change
+                elif change == 'missing': gh.check_runs.remove(check)
+                elif change == 'wrong_app': check['app']['id'] = 15368
+                else: gh.statuses = [{'id': 1, 'context': gate.CHECK, 'state': 'failure'}]
+                _, _, errors, _ = run_pipeline(gh, mode='live')
+                self.assertEqual(errors, [])
+                self.assertEqual(gh.merge_requests, [])
+                self.assertIn('enablePullRequestAutoMerge', gh.graphql['query'])
+
+    def test_live_head_or_policy_change_after_check_reads_blocks_merge(self):
+        for change in ['head', 'policy', 'base', 'draft', 'closed']:
+            with self.subTest(change=change):
+                gh = self.ready_gh()
+                def race(client):
+                    if change == 'head': client.pr['head']['sha'] = 'c' * 40
+                    elif change == 'policy':
+                        client.main_sha = 'c' * 40
+                        client.text = lambda path, ref: ref
+                    elif change == 'base': client.pr['base']['ref'] = 'other'
+                    elif change == 'draft': client.pr['draft'] = True
+                    else: client.pr['state'] = 'closed'
+                gh.after_check_read = race
+                _, _, errors, _ = run_pipeline(gh, mode='live')
+                self.assertTrue(errors)
+                self.assertEqual(gh.merge_requests, [])
+                self.assertFalse(gh.graphql)
+
+    def test_live_never_claims_a_rejected_direct_merge_succeeded(self):
+        gh = self.ready_gh()
+        gh.merge_result = {'merged': False, 'message': 'Required check changed'}
+        _, _, errors, _ = run_pipeline(gh, mode='live')
+        self.assertTrue(any('Direct merge was not confirmed' in error for error in errors))
+        self.assertEqual(len(gh.merge_requests), 1)
+        self.assertFalse(gh.graphql)
+
+    def test_readiness_rejects_wrong_head_and_changing_pagination(self):
+        for change in ['wrong_head', 'duplicate', 'changed_total', 'missing_page']:
+            with self.subTest(change=change):
+                gh = self.ready_gh()
+                gh.check_page_size = 3
+                if change == 'wrong_head': gh.check_runs[0]['head_sha'] = 'c' * 40
+                elif change == 'duplicate': gh.check_runs[1]['id'] = gh.check_runs[0]['id']
+                else:
+                    original = gh.call
+                    def broken(path, method='GET', data=None):
+                        value = original(path, method, data)
+                        if '/check-runs?' in path and path.endswith('page=2'):
+                            if change == 'changed_total': value['total_count'] += 1
+                            else: value['check_runs'] = []
+                        return value
+                    gh.call = broken
+                _, _, errors, _ = run_pipeline(gh, mode='live')
+                self.assertTrue(errors)
+                self.assertEqual(gh.merge_requests, [])
+                self.assertFalse(gh.graphql)
 
     def test_transport_error_is_not_a_math_finding(self):
         def provider(review):

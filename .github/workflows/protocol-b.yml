@@ -951,6 +951,48 @@ jobs:
                   raise RuntimeError("Protocol B review is blocked")
 
 
+          def required_checks_passed(gh, head, requirements):
+              """Conservative readiness check; GitHub still enforces rules on merge."""
+              checks, seen, total = [], set(), None
+              for page in range(1, 101):
+                  value = gh.call(f"/commits/{head}/check-runs?filter=latest&per_page=100&page={page}")
+                  if total is not None and value['total_count'] != total:
+                      raise ValueError('Check list changed during pagination; no merge requested')
+                  total = value['total_count']
+                  rows = value['check_runs']
+                  for check in rows:
+                      if check['id'] in seen or check['head_sha'] != head:
+                          raise ValueError('Duplicate or wrong-head check; no merge requested')
+                      seen.add(check['id'])
+                      checks.append(check)
+                  if len(checks) == total:
+                      break
+                  if not rows or len(checks) > total:
+                      raise ValueError('Incomplete check list; no merge requested')
+              else:
+                  raise ValueError('Check pagination limit reached; no merge requested')
+              # A legacy status with the same name also has to pass. Statuses lack
+              # an App identity here, so they cannot satisfy an App-pinned rule.
+              statuses = {}
+              for status in gh.pages(f"/commits/{head}/statuses"):
+                  prior = statuses.get(status['context'])
+                  if prior is None or status['id'] > prior['id']:
+                      statuses[status['context']] = status
+              for rule in requirements:
+                  name, integration = rule['context'], rule.get('integration_id')
+                  pinned = integration not in (None, -1)
+                  matches = [c for c in checks if c['name'] == name and
+                             (not pinned or c['app']['id'] == integration)]
+                  status = statuses.get(name)
+                  if status is not None and status['state'] != 'success':
+                      return False
+                  if not matches and (pinned or status is None):
+                      return False
+                  if any(c['status'] != 'completed' or c['conclusion'] != 'success' for c in matches):
+                      return False
+              return bool(requirements)
+
+
           def publish():
               """Use a fresh official-action token after the potentially long review."""
               path = OUT / 'decision.json'
@@ -980,7 +1022,7 @@ jobs:
               if state['conclusion'] != 'success':
                   raise RuntimeError('Protocol B review is blocked')
               if state['mode'] == 'live':
-                  # GitHub, rather than a polling service, waits for all required CI checks.
+                  # Preserve the protected route for both immediate and deferred merges.
                   rules = gh.call("/rules/branches/" + urllib.parse.quote(state['default'], safe=""))
                   required = {c["context"] for rule in rules if rule["type"] == "required_status_checks"
                               for c in rule["parameters"]["required_status_checks"]}
@@ -994,14 +1036,37 @@ jobs:
                       raise RuntimeError("Auto-merge withheld: require an up-to-date branch so changed base dependencies cannot bypass review")
                   if not gh.call('').get("allow_auto_merge"):
                       raise RuntimeError("Review passed, but repository auto-merge is disabled; complete the owner-approved activation checklist")
+                  requirements = [c for rule in rules if rule['type'] == 'required_status_checks'
+                                  for c in rule['parameters']['required_status_checks']]
+                  ready = required_checks_passed(gh, state['head'], requirements)
+                  record('merge-readiness.json', {'head': state['head'], 'requirements': requirements,
+                                                 'all_required_checks_passed': ready})
                   current = gh.call(f"/pulls/{state['number']}")
                   if current["head"]["sha"] != state['head']:
-                      raise RuntimeError("Head changed before enabling auto-merge")
-                  if not current.get("auto_merge"):
+                      raise RuntimeError("Head changed before requesting merge")
+                  if current['base']['ref'] != state['default'] or current['state'] != 'open' or current['draft']:
+                      raise RuntimeError('PR is no longer open and ready for the protected default branch')
+                  latest_ref = gh.call('/commits/' + state['default'])['sha']
+                  if not same_policy(gh, state['policy_ref'], latest_ref):
+                      raise RuntimeError('Review policy changed before requesting merge')
+                  if ready:
+                      # Do not gate on mergeable_state: the running, non-required
+                      # gate job itself can leave it "unstable". The merge API
+                      # enforces the live ruleset and atomically checks this SHA.
+                      result = gh.call(f"/pulls/{state['number']}/merge", 'PUT',
+                                       {'sha': state['head'], 'merge_method': 'merge'})
+                      record('merge-result.json', result)
+                      if result.get('merged') is not True:
+                          raise RuntimeError('Direct merge was not confirmed: ' + json.dumps(result))
+                      log('Reviewed head merged as ' + result['sha'] + '. GITHUB_TOKEN does not trigger push workflows; post-merge checks need explicit dispatch.')
+                  elif not current.get("auto_merge"):
                       result = gh.api("/graphql", "POST", {"query": "mutation($id:ID!){enablePullRequestAutoMerge(input:{pullRequestId:$id,mergeMethod:MERGE}){pullRequest{id}}}", "variables": {"id": current["node_id"]}})
+                      record('auto-merge-result.json', result)
                       if result.get("errors"):
                           raise RuntimeError(json.dumps(result["errors"]))
-                  log("Review accepted; GitHub auto-merge waits for the required computation checks.")
+                      log("Review accepted; GitHub auto-merge waits for the required computation checks.")
+                  else:
+                      log('Review accepted; GitHub auto-merge is already enabled.')
               else:
                   log("Test accepted. Auto-merge is disabled in test mode.")
 
@@ -1018,7 +1083,7 @@ jobs:
           app-id: ${{ vars.PROTOCOL_B_APP_ID }}
           private-key: ${{ secrets.PROTOCOL_B_APP_PRIVATE_KEY }}
           permission-checks: write
-      - name: Finalize the App check and request protected auto-merge
+      - name: Finalize the App check and request a protected merge
         if: always() && steps.app_finish.outcome == 'success'
         shell: bash
         env:
