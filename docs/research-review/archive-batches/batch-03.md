@@ -4,9 +4,9 @@ This index corrects the dependency accounting for PR102. The initial batch descr
 
 All targets below are preserved at `review-archive-v17`, commit `005b17abfbefd8bee7b34f3bbe8f5aabf872eb1f`. The canonical resolution of each target is `https://github.com/elliotglazer/diophantine-z-q/blob/005b17abfbefd8bee7b34f3bbe8f5aabf872eb1f/` followed by its repository path below. Its recorded SHA256 was checked against the original file. Historical manifests, verdicts and hashes are unchanged.
 
-For a listed target under `research/version14/evidence/release-completion-019/`, the original alias `work/source-risk-review-20261107/` followed by the same suffix resolves to that archived target. This is a rule for the listed targets only, not a claim that every file in the old external workspace was committed. Other observed aliases are listed separately below. Repository-path references likewise resolve at the archive commit rather than requiring a local file in today's checkout.
+An alias resolves only together with the SHA256 recorded beside it in the referring record. Paths were reused across historical versions: a same-named current file may have different bytes and is not then the referenced object. For a listed target under `research/version14/evidence/release-completion-019/`, the original alias `work/source-risk-review-20261107/` followed by the same suffix, together with that target's SHA256, resolves to its archived bytes. Other observed alias/hash pairs are listed below. This does not claim that every file in an old external workspace was committed. A bare SHA256 equal to a target hash likewise identifies the archived bytes; if several target paths share a hash, they are identical-byte copies and the original path determines the directory context for replay. A still-present repository path need not be redirected when it already has the recorded hash.
 
-The retained-reference list was obtained by searching the tracked archive files for these 34 target hashes and their known original workspace aliases, then inspecting the matching JSON path/hash records. It supplements the earlier repository-path scan. It is a targeted check, not a claim to discover arbitrary dynamically constructed paths. None of the target files was read by the traced current computation checks or the additional audit-history self-test. Required checks still run on the deletion revision; that is separate from the historical reference accounting.
+The matching-record list was obtained by searching the tracked archive files for these 34 target hashes, including bare-hash values, and their known original workspace aliases. It supplements the earlier repository-path scan. A match is not necessarily a broken path: some records refer to an identical-byte copy still present in the current checkout. This is a targeted check, not a claim to discover arbitrary dynamically constructed paths. None of the target files was read by the traced current computation checks or the additional audit-history self-test. Required checks still run on the deletion revision; that is separate from the historical reference accounting.
 
 Historical packet, installation and report-replay commands that need these payloads must use the complete archive checkout. Their invocation against the incomplete current checkout is retired for these records. For example, use `git worktree add --detach ../diophantine-review-archive 005b17abfbefd8bee7b34f3bbe8f5aabf872eb1f` and follow the original tool instructions there. Old external workspace requirements may remain. No current computation check, kernel check or manuscript build is retired, and no script or released manuscript is changed.
 
@@ -47,50 +47,51 @@ Historical packet, installation and report-replay commands that need these paylo
 - T33: `research/version15/history/protocol-candidate-005/DOSSIER.json`; SHA256 `94a1e8dc716eee864072c1730ece01532422cf36d3492b404c86d40b43c446c3`.
 - T34: `research/version15/history/protocol-candidate-005/TRANSPORT.json`; SHA256 `85d090f1b57eef53ca861ab13d916a5b2d7d492d3f03d3b273d894527bed8786`.
 
-## Additional observed aliases
+## Additional recorded alias/hash pairs
 
-- `C:/Users/glaze/Documents/Codex/2026-11-02/lo/work/source-risk-review-20261107/v14-disjoint-source-coverage-001/FINAL-COVERAGE-MANIFEST-004.json` resolves to T02.
-- `C:/Users/glaze/Documents/Codex/2026-11-02/lo/work/source-risk-review-20261107/v14-disjoint-source-coverage-001/FINAL-COVERAGE-MANIFEST-005.json` resolves to T03.
-- `C:/Users/glaze/Documents/Codex/2026-11-02/lo/work/source-risk-review-20261107/v14-disjoint-source-coverage-001/FINAL-PROTOCOL14-REVIEW-003.json` resolves to T04.
-- `C:/Users/glaze/Documents/Codex/2026-11-02/lo/work/source-risk-review-20261107/v14-disjoint-source-coverage-001/FINAL-PROTOCOL14-REVIEW-004.json` resolves to T05.
-- `C:/Users/glaze/Documents/Codex/2026-11-02/lo/work/source-risk-review-20261107/v14-final-composite-review-001/current136-reconstruction/PER-REQUIREMENT-DISPOSITIONS.json` resolves to T06.
-- `docs/manuscript-revisions/version14/final-coverage/PER-REQUIREMENT-DISPOSITIONS.json` resolves to T06.
-- `docs/manuscript-revisions/version14/final-coverage/prior-own749/PER-REQUIREMENT-DISPOSITIONS.json` resolves to T06.
-- `overlay/docs/manuscript-revisions/version14/final-coverage/PER-REQUIREMENT-DISPOSITIONS.json` resolves to T06.
-- `research/version14/evidence/release-completion-019/v14-integration-source-line-index-work-001/final-protocol-preparation/own-current-007/overlay/docs/manuscript-revisions/version14/final-coverage/PER-REQUIREMENT-DISPOSITIONS.json` resolves to T06.
-- `work/source-risk-review-20261107/v14-integration-source-line-index-work-001/final-protocol-preparation/installable-008/overlay/docs/manuscript-revisions/version14/final-coverage/PER-REQUIREMENT-DISPOSITIONS.json` resolves to T06.
-- `work/source-risk-review-20261107/v14-integration-source-line-index-work-001/final-protocol-preparation/installable-010/overlay/docs/manuscript-revisions/version14/final-coverage/PER-REQUIREMENT-DISPOSITIONS.json` resolves to T06.
-- `work/source-risk-review-20261107/v14-integration-source-line-index-work-001/final-protocol-preparation/installable-012/overlay/docs/manuscript-revisions/version14/final-coverage/PER-REQUIREMENT-DISPOSITIONS.json` resolves to T06.
-- `work/source-risk-review-20261107/v14-integration-source-line-index-work-001/final-protocol-preparation/own-current-007/overlay/docs/manuscript-revisions/version14/final-coverage/PER-REQUIREMENT-DISPOSITIONS.json` resolves to T06.
-- `docs/manuscript-revisions/version14/final-coverage/CONNECTIONS.json` resolves to T12.
-- `docs/manuscript-revisions/version14/final-coverage/DOSSIER.json` resolves to T13.
-- `docs/manuscript-revisions/version14/final-coverage/STRUCTURAL-HISTORY.json` resolves to T14.
-- `overlay/docs/manuscript-revisions/version14/final-coverage/STRUCTURAL-HISTORY.json` resolves to T14.
-- `work/source-risk-review-20261107/v14-integration-source-line-index-work-001/final-protocol-preparation/installable-012/overlay/docs/manuscript-revisions/version14/final-coverage/STRUCTURAL-HISTORY.json` resolves to T14.
-- `docs/manuscript-revisions/version14/final-coverage/CONNECTIONS.json` resolves to T16.
-- `overlay/docs/manuscript-revisions/version14/final-coverage/CONNECTIONS.json` resolves to T16.
-- `docs/manuscript-revisions/version14/final-coverage/DOSSIER.json` resolves to T17.
-- `overlay/docs/manuscript-revisions/version14/final-coverage/DOSSIER.json` resolves to T17.
-- `C:/Users/glaze/Documents/Codex/2026-11-02/lo/work/source-risk-review-20261107/v14-final-composite-review-001/current136-reconstruction/PER-REQUIREMENT-DISPOSITIONS.json` resolves to T21.
-- `docs/manuscript-revisions/version14/final-coverage/PER-REQUIREMENT-DISPOSITIONS.json` resolves to T21.
-- `docs/manuscript-revisions/version14/final-coverage/prior-own749/PER-REQUIREMENT-DISPOSITIONS.json` resolves to T21.
-- `overlay/docs/manuscript-revisions/version14/final-coverage/PER-REQUIREMENT-DISPOSITIONS.json` resolves to T21.
-- `research/version14/evidence/release-completion-019/v14-final-composite-review-001/current136-reconstruction/PER-REQUIREMENT-DISPOSITIONS.json` resolves to T21.
-- `work/source-risk-review-20261107/v14-final-composite-review-001/current136-reconstruction/PER-REQUIREMENT-DISPOSITIONS.json` resolves to T21.
-- `work/source-risk-review-20261107/v14-integration-source-line-index-work-001/final-protocol-preparation/installable-008/overlay/docs/manuscript-revisions/version14/final-coverage/PER-REQUIREMENT-DISPOSITIONS.json` resolves to T21.
-- `work/source-risk-review-20261107/v14-integration-source-line-index-work-001/final-protocol-preparation/installable-010/overlay/docs/manuscript-revisions/version14/final-coverage/PER-REQUIREMENT-DISPOSITIONS.json` resolves to T21.
-- `work/source-risk-review-20261107/v14-integration-source-line-index-work-001/final-protocol-preparation/installable-012/overlay/docs/manuscript-revisions/version14/final-coverage/PER-REQUIREMENT-DISPOSITIONS.json` resolves to T21.
-- `work/v15-222-sourcefirst-review-001/final-006/MANIFEST.json` resolves to T24.
-- `work/v15-controller-integration-author-001/MANIFEST.json` resolves to T25.
-- `work/v15-222-serialization-author-001/assembled-preflight-005/MANIFEST.json` resolves to T30.
-- `research/version15/protocol/current222/CONNECTIONS.json` resolves to T31.
-- `research/version15/protocol/current222/DOSSIER.json` resolves to T33.
+- `C:/Users/glaze/Documents/Codex/2026-11-02/lo/work/source-risk-review-20261107/v14-disjoint-source-coverage-001/FINAL-COVERAGE-MANIFEST-004.json` with SHA256 `b15460c697a627ce8c6d8069d2eb1270a4fad09d9acb09facc49325ff10cb417` resolves to T02.
+- `C:/Users/glaze/Documents/Codex/2026-11-02/lo/work/source-risk-review-20261107/v14-disjoint-source-coverage-001/FINAL-COVERAGE-MANIFEST-005.json` with SHA256 `238c5ef0d08b98de18510a3707dc2a38c73058bdf50fce3b9c7695598b8e2688` resolves to T03.
+- `C:/Users/glaze/Documents/Codex/2026-11-02/lo/work/source-risk-review-20261107/v14-disjoint-source-coverage-001/FINAL-PROTOCOL14-REVIEW-003.json` with SHA256 `b5ca796417e18f65eca0cbbd0d4daa7f3650c635ca4a7cfb8677ae5908ac5788` resolves to T04.
+- `C:/Users/glaze/Documents/Codex/2026-11-02/lo/work/source-risk-review-20261107/v14-disjoint-source-coverage-001/FINAL-PROTOCOL14-REVIEW-004.json` with SHA256 `6d4f4215251f57b95003c207a26b61f27d961158ab70c5a0aea55eda808d5bda` resolves to T05.
+- `C:/Users/glaze/Documents/Codex/2026-11-02/lo/work/source-risk-review-20261107/v14-final-composite-review-001/current136-reconstruction/PER-REQUIREMENT-DISPOSITIONS.json` with SHA256 `6f1347f5d750cfdb737bc9368a5c08ce774cb4ae0f19e380a2fe5fc313c4d526` resolves to T06.
+- `docs/manuscript-revisions/version14/final-coverage/PER-REQUIREMENT-DISPOSITIONS.json` with SHA256 `6f1347f5d750cfdb737bc9368a5c08ce774cb4ae0f19e380a2fe5fc313c4d526` resolves to T06.
+- `docs/manuscript-revisions/version14/final-coverage/prior-own749/PER-REQUIREMENT-DISPOSITIONS.json` with SHA256 `6f1347f5d750cfdb737bc9368a5c08ce774cb4ae0f19e380a2fe5fc313c4d526` resolves to T06.
+- `overlay/docs/manuscript-revisions/version14/final-coverage/PER-REQUIREMENT-DISPOSITIONS.json` with SHA256 `6f1347f5d750cfdb737bc9368a5c08ce774cb4ae0f19e380a2fe5fc313c4d526` resolves to T06.
+- `research/version14/evidence/release-completion-019/v14-integration-source-line-index-work-001/final-protocol-preparation/own-current-007/overlay/docs/manuscript-revisions/version14/final-coverage/PER-REQUIREMENT-DISPOSITIONS.json` with SHA256 `6f1347f5d750cfdb737bc9368a5c08ce774cb4ae0f19e380a2fe5fc313c4d526` resolves to T06.
+- `work/source-risk-review-20261107/v14-integration-source-line-index-work-001/final-protocol-preparation/installable-008/overlay/docs/manuscript-revisions/version14/final-coverage/PER-REQUIREMENT-DISPOSITIONS.json` with SHA256 `6f1347f5d750cfdb737bc9368a5c08ce774cb4ae0f19e380a2fe5fc313c4d526` resolves to T06.
+- `work/source-risk-review-20261107/v14-integration-source-line-index-work-001/final-protocol-preparation/installable-010/overlay/docs/manuscript-revisions/version14/final-coverage/PER-REQUIREMENT-DISPOSITIONS.json` with SHA256 `6f1347f5d750cfdb737bc9368a5c08ce774cb4ae0f19e380a2fe5fc313c4d526` resolves to T06.
+- `work/source-risk-review-20261107/v14-integration-source-line-index-work-001/final-protocol-preparation/installable-012/overlay/docs/manuscript-revisions/version14/final-coverage/PER-REQUIREMENT-DISPOSITIONS.json` with SHA256 `6f1347f5d750cfdb737bc9368a5c08ce774cb4ae0f19e380a2fe5fc313c4d526` resolves to T06.
+- `work/source-risk-review-20261107/v14-integration-source-line-index-work-001/final-protocol-preparation/own-current-007/overlay/docs/manuscript-revisions/version14/final-coverage/PER-REQUIREMENT-DISPOSITIONS.json` with SHA256 `6f1347f5d750cfdb737bc9368a5c08ce774cb4ae0f19e380a2fe5fc313c4d526` resolves to T06.
+- `docs/manuscript-revisions/version14/final-coverage/CONNECTIONS.json` with SHA256 `96d1772732338e07572f02d27a160c1a69ebd2efc2a03ce028eb76e575041ca9` resolves to T12.
+- `docs/manuscript-revisions/version14/final-coverage/DOSSIER.json` with SHA256 `29930de636cef87e8455317aebd2a477831a1b6ad77787505803552853debc60` resolves to T13.
+- `docs/manuscript-revisions/version14/final-coverage/STRUCTURAL-HISTORY.json` with SHA256 `315cd112fcace604ad1ffab86940be48b0e17cd630a75228d9dfc7625d6ac78b` resolves to T14.
+- `overlay/docs/manuscript-revisions/version14/final-coverage/STRUCTURAL-HISTORY.json` with SHA256 `315cd112fcace604ad1ffab86940be48b0e17cd630a75228d9dfc7625d6ac78b` resolves to T14.
+- `work/source-risk-review-20261107/v14-integration-source-line-index-work-001/final-protocol-preparation/installable-012/overlay/docs/manuscript-revisions/version14/final-coverage/STRUCTURAL-HISTORY.json` with SHA256 `315cd112fcace604ad1ffab86940be48b0e17cd630a75228d9dfc7625d6ac78b` resolves to T14.
+- `docs/manuscript-revisions/version14/final-coverage/CONNECTIONS.json` with SHA256 `0db0cb6dbbadd7a34babb8620798c0152459d9e29925ff1b155d675d2f018c4e` resolves to T16.
+- `overlay/docs/manuscript-revisions/version14/final-coverage/CONNECTIONS.json` with SHA256 `0db0cb6dbbadd7a34babb8620798c0152459d9e29925ff1b155d675d2f018c4e` resolves to T16.
+- `docs/manuscript-revisions/version14/final-coverage/DOSSIER.json` with SHA256 `84b8c62728f9322c482bfa9f21fa6d31955b8a4edb3b692fb00a52bed2caba8e` resolves to T17.
+- `overlay/docs/manuscript-revisions/version14/final-coverage/DOSSIER.json` with SHA256 `84b8c62728f9322c482bfa9f21fa6d31955b8a4edb3b692fb00a52bed2caba8e` resolves to T17.
+- `C:/Users/glaze/Documents/Codex/2026-11-02/lo/work/source-risk-review-20261107/v14-final-composite-review-001/current136-reconstruction/PER-REQUIREMENT-DISPOSITIONS.json` with SHA256 `6f1347f5d750cfdb737bc9368a5c08ce774cb4ae0f19e380a2fe5fc313c4d526` resolves to T21.
+- `docs/manuscript-revisions/version14/final-coverage/PER-REQUIREMENT-DISPOSITIONS.json` with SHA256 `6f1347f5d750cfdb737bc9368a5c08ce774cb4ae0f19e380a2fe5fc313c4d526` resolves to T21.
+- `docs/manuscript-revisions/version14/final-coverage/prior-own749/PER-REQUIREMENT-DISPOSITIONS.json` with SHA256 `6f1347f5d750cfdb737bc9368a5c08ce774cb4ae0f19e380a2fe5fc313c4d526` resolves to T21.
+- `overlay/docs/manuscript-revisions/version14/final-coverage/PER-REQUIREMENT-DISPOSITIONS.json` with SHA256 `6f1347f5d750cfdb737bc9368a5c08ce774cb4ae0f19e380a2fe5fc313c4d526` resolves to T21.
+- `research/version14/evidence/release-completion-019/v14-final-composite-review-001/current136-reconstruction/PER-REQUIREMENT-DISPOSITIONS.json` with SHA256 `6f1347f5d750cfdb737bc9368a5c08ce774cb4ae0f19e380a2fe5fc313c4d526` resolves to T21.
+- `work/source-risk-review-20261107/v14-final-composite-review-001/current136-reconstruction/PER-REQUIREMENT-DISPOSITIONS.json` with SHA256 `6f1347f5d750cfdb737bc9368a5c08ce774cb4ae0f19e380a2fe5fc313c4d526` resolves to T21.
+- `work/source-risk-review-20261107/v14-integration-source-line-index-work-001/final-protocol-preparation/installable-008/overlay/docs/manuscript-revisions/version14/final-coverage/PER-REQUIREMENT-DISPOSITIONS.json` with SHA256 `6f1347f5d750cfdb737bc9368a5c08ce774cb4ae0f19e380a2fe5fc313c4d526` resolves to T21.
+- `work/source-risk-review-20261107/v14-integration-source-line-index-work-001/final-protocol-preparation/installable-010/overlay/docs/manuscript-revisions/version14/final-coverage/PER-REQUIREMENT-DISPOSITIONS.json` with SHA256 `6f1347f5d750cfdb737bc9368a5c08ce774cb4ae0f19e380a2fe5fc313c4d526` resolves to T21.
+- `work/source-risk-review-20261107/v14-integration-source-line-index-work-001/final-protocol-preparation/installable-012/overlay/docs/manuscript-revisions/version14/final-coverage/PER-REQUIREMENT-DISPOSITIONS.json` with SHA256 `6f1347f5d750cfdb737bc9368a5c08ce774cb4ae0f19e380a2fe5fc313c4d526` resolves to T21.
+- `work/v15-222-sourcefirst-review-001/final-006/MANIFEST.json` with SHA256 `130fa20ff584828b42b925605081739f5c4ef3fdc18a4920acff26db61778d9c` resolves to T24.
+- `work/v15-controller-integration-author-001/MANIFEST.json` with SHA256 `c1665c1ab5baba295533f1c78e976189b4df714e782e1a5ff8b69534dd5acc92` resolves to T25.
+- `work/v15-222-serialization-author-001/assembled-preflight-005/MANIFEST.json` with SHA256 `1963ff053b0e4e3dd4da6c6a1148c0e3d16ac7746eb5c57cd85e13c104f84931` resolves to T30.
+- `research/version15/protocol/current222/CONNECTIONS.json` with SHA256 `e3a61b3847fcb65ed625a7a0a5bc0b12980ac23a7ead6b035716e8390a43f1a2` resolves to T31.
+- `research/version15/protocol/current222/DOSSIER.json` with SHA256 `94a1e8dc716eee864072c1730ece01532422cf36d3492b404c86d40b43c446c3` resolves to T33.
 
-## Retained reference records
+## Matching retained historical records
 
-These files remain unchanged. The identifiers list their referenced archived targets; they do not renew their historical approvals.
+These files remain unchanged. The identifiers list target hashes or recorded paths matched in them, including bare-hash fields; they do not renew historical approvals or imply that every match is a broken current path.
 
 - `docs/manuscript-revisions/version14/final-coverage/STRUCTURAL-HISTORY.json`: T09.
+- `docs/manuscript-revisions/version14/final5882-inventory-transport/REVIEW.md`: T01, T22.
 - `research/version14/evidence/release-completion-019/v14-application-report-bodies-arithmetic-001/bodies/RELEASE-CI-BUILD-RENDER-AND-RETRY.json`: T01, T22.
 - `research/version14/evidence/release-completion-019/v14-application-report-bodies-arithmetic-001/bodies/RELEASE-CURRENT-REVIEW-RECORD-DISTRIBUTION.json`: T01, T22.
 - `research/version14/evidence/release-completion-019/v14-application-report-bodies-arithmetic-001/bodies/RELEASE-DOCUMENTATION-AND-NAVIGATION.json`: T01, T22.
@@ -101,12 +102,17 @@ These files remain unchanged. The identifiers list their referenced archived tar
 - `research/version14/evidence/release-completion-019/v14-application-report-bodies-arithmetic-001/bodies/RELEASE-PROTECTED-RECORDS-POLICY-WRAPPER.json`: T01, T22.
 - `research/version14/evidence/release-completion-019/v14-application-report-bodies-arithmetic-001/bodies/RELEASE-PUBLIC-POLICY-AND-CONTRIBUTOR-RULES.json`: T01, T22.
 - `research/version14/evidence/release-completion-019/v14-application-report-bodies-arithmetic-001/bodies/RELEASE-RETAINED-SOURCE-AND-HISTORY-DISTRIBUTION.json`: T01, T22.
-- `research/version14/evidence/release-completion-019/v14-application-report-bodies-arithmetic-002/REVIEW.json`: T03, T05.
-- `research/version14/evidence/release-completion-019/v14-application-report-bodies-arithmetic-002/bodies/RELEASE-CURRENT-REVIEW-RECORD-DISTRIBUTION.json`: T01, T03, T05, T22.
+- `research/version14/evidence/release-completion-019/v14-application-report-bodies-arithmetic-002/REVIEW.json`: T03, T05, T06, T21.
+- `research/version14/evidence/release-completion-019/v14-application-report-bodies-arithmetic-002/bodies/RELEASE-CURRENT-REVIEW-RECORD-DISTRIBUTION.json`: T01, T03, T05, T06, T21, T22.
+- `research/version14/evidence/release-completion-019/v14-current-inventory-transport-installation-root-001/INSTALLATION.json`: T01.
+- `research/version14/evidence/release-completion-019/v14-current-reconstruction-installation-root-001/INSTALLATION.json`: T06, T21.
 - `research/version14/evidence/release-completion-019/v14-final-composite-review-001/current136-reconstruction/COMPLETION.json`: T06, T21.
+- `research/version14/evidence/release-completion-019/v14-final-composite-review-001/current136-reconstruction/OWN-CURRENT007-REVIEW.json`: T07.
 - `research/version14/evidence/release-completion-019/v14-final-composite-review-001/current136-reconstruction/USE-RECONCILIATION-REVIEW.json`: T06.
 - `research/version14/evidence/release-completion-019/v14-final-disjoint-assembly-review-001/EXTERNAL015-ACKNOWLEDGMENT.json`: T16, T17.
+- `research/version14/evidence/release-completion-019/v14-final-disjoint-assembly-review-001/protocol14-assembly-023-001/ASSEMBLY-PROTOCOL14-REVIEW.json`: T04.
 - `research/version14/evidence/release-completion-019/v14-final-disjoint-assembly-review-001/protocol14-assembly-023-001/ASSEMBLY-SUPPORT.json`: T02, T04.
+- `research/version14/evidence/release-completion-019/v14-final-disjoint-assembly-review-001/protocol14-assembly-024-001/ASSEMBLY-PROTOCOL14-REVIEW.json`: T05.
 - `research/version14/evidence/release-completion-019/v14-final-disjoint-assembly-review-001/protocol14-assembly-024-001/ASSEMBLY-SUPPORT.json`: T03, T05.
 - `research/version14/evidence/release-completion-019/v14-final-disjoint-assembly-review-001/source-report-bodies-001/FINDINGS65-REPORT.json`: T16.
 - `research/version14/evidence/release-completion-019/v14-final-disjoint-assembly-review-001/source-report-bodies-001/MAIN-APPLICATION-REPORT.json`: T16.
@@ -124,6 +130,7 @@ These files remain unchanged. The identifiers list their referenced archived tar
 - `research/version14/evidence/release-completion-019/v14-integration-source-line-index-work-001/final-protocol-preparation/installable-012/MANIFEST.json`: T06, T14, T15, T16, T17, T21.
 - `research/version14/evidence/release-completion-019/v14-integration-source-line-index-work-001/final-protocol-preparation/installable-012/PACKET-CANDIDATE.json`: T06, T14, T16, T17, T21.
 - `research/version14/evidence/release-completion-019/v14-integration-source-line-index-work-001/final-protocol-preparation/installable-024/ACCEPTED-REVIEWS.json`: T03, T05.
+- `research/version14/evidence/release-completion-019/v14-integration-source-line-index-work-001/final-protocol-preparation/installable-024/INSTALLATION-PLAN.json`: T06, T14, T16, T17, T21.
 - `research/version14/evidence/release-completion-019/v14-integration-source-line-index-work-001/final-protocol-preparation/installable-024/MANIFEST.json`: T03, T05, T06, T14, T21.
 - `research/version14/evidence/release-completion-019/v14-integration-source-line-index-work-001/final-protocol-preparation/installable-024/PACKET-CANDIDATE.json`: T06, T14, T21.
 - `research/version14/evidence/release-completion-019/v14-integration-source-line-index-work-001/final-protocol-preparation/merged-incoming-021/DOSSIER-PRE-HISTORY.json`: T16.
@@ -131,6 +138,7 @@ These files remain unchanged. The identifiers list their referenced archived tar
 - `research/version14/evidence/release-completion-019/v14-integration-source-line-index-work-001/final-protocol-preparation/own-current-007/BINDINGS.json`: T06, T07, T21.
 - `research/version14/evidence/release-completion-019/v14-integration-source-line-index-work-001/final-protocol-preparation/own-current-007/MANIFEST.json`: T20.
 - `research/version14/evidence/release-completion-019/v14-integration-source-line-index-work-001/final-protocol-preparation/own-current-007/OVERLAY-MANIFEST.json`: T06, T21.
+- `research/version14/evidence/release-completion-019/v14-inventory-contract-renewal-arithmetic-001/overlay/docs/manuscript-revisions/version14/final5882-inventory-transport/REVIEW.md`: T01, T22.
 - `research/version14/evidence/release-completion-019/v14-inventory-dependent-transport-author-002/INPUTS.json`: T01.
 - `research/version14/evidence/release-completion-019/v14-inventory-final-bindings-author-002/CURRENT-BYTE-DELTA.json`: T06, T21.
 - `research/version14/evidence/release-completion-019/v14-inventory-final-bindings-author-002/INPUTS.json`: T22.
@@ -138,14 +146,17 @@ These files remain unchanged. The identifiers list their referenced archived tar
 - `research/version14/evidence/release-completion-019/v14-inventory-final-bindings-author-002/classification/CLASSIFICATION.json`: T06, T21.
 - `research/version14/evidence/release-completion-019/v14-inventory-final-bindings-author-002/classification/FILE-INVENTORY.json`: T06, T21.
 - `research/version14/evidence/release-completion-019/v14-ordinary-nested-inventory-review-arithmetic-001/REVIEW.json`: T01, T18, T19.
+- `research/version14/evidence/release-completion-019/v14-ordinary176-review-arithmetic-003/REVIEW.json`: T01.
 - `research/version14/evidence/release-completion-019/v14-release-final-pin-correction-002/APPLICATIONS.json`: T06, T21.
 - `research/version14/evidence/release-completion-019/v14-release10-review-arithmetic-002/DECISIONS.json`: T01, T22.
 - `research/version14/evidence/release-completion-019/v14-release10-review-arithmetic-002/REVIEW.json`: T01, T22.
 - `research/version14/evidence/release-completion-019/v14-union012-installation-root-001/INSTALLATION.json`: T06, T14, T16, T17, T21.
 - `research/version15/evidence/222-normalization/v15-222-serialization-review-arithmetic-005/REVIEW.json`: T30.
+- `research/version15/evidence/222-release-infrastructure/integration-checks.json`: T25.
 - `research/version15/evidence/222-sourcefirst/final-006-target-supplement/ALLOCATED-TARGET-SELECTION.json`: T24.
 - `research/version15/evidence/222-sourcefirst/final-006-target-supplement/MANIFEST.json`: T24.
 - `research/version15/evidence/readiness-001/v15-controller-integration-review-h6-001/REVIEW.json`: T25.
 - `research/version15/evidence/readiness-001/v15-namespace-preparation-author-001/CUTOVER-INPUTS.pending.json`: T25.
 - `research/version15/history/protocol-candidate-005/COVERAGE-APPLICATION.proposed.json`: T31, T33.
+- `research/version15/protocol/current222/AUTHOR-MANIFEST.json`: T30.
 - `research/version17/MANIFEST.json`: T01, T02, T03, T04, T05, T06, T07, T08, T09, T10, T11, T12, T13, T14, T15, T16, T17, T18, T19, T20, T21, T22, T23, T24, T25, T26, T27, T28, T29, T30, T31, T32, T33, T34.
