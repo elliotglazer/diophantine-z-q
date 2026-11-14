@@ -635,7 +635,7 @@ class Transport(unittest.TestCase):
                                   findings=[{'id': 'BUDGET', 'location': 'Theorem 2',
                                              'objection': 'The required application has not been reviewed.'}])
                 calls = []
-                def model(actual, instructions, conversation):
+                def model(actual, instructions, conversation, **kwargs):
                     calls.append(copy.deepcopy(conversation))
                     if len(calls) == 1:
                         self.assertNotIn(gate.FINISH_NOW_INSTRUCTION, instructions)
@@ -643,8 +643,9 @@ class Transport(unittest.TestCase):
                         output = ([{'type': 'message', 'content': [{'type': 'output_text', 'text': text}]}]
                                   if family == 'astra' else [{'type': 'text', 'text': text}])
                     else:
-                        self.assertIn(gate.FINISH_NOW_INSTRUCTION, instructions)
-                        self.assertIn('Not reviewed', instructions)
+                        self.assertEqual(instructions, 'trusted')
+                        self.assertIn(gate.FINISH_NOW_INSTRUCTION, conversation[-1]['content'])
+                        self.assertIn('Not reviewed', conversation[-1]['content'])
                         output = ([{'type': 'function_call', 'name': 'finish_review', 'call_id': 'finish',
                                     'arguments': json.dumps(decision)}] if family == 'astra' else
                                   [{'type': 'tool_use', 'name': 'finish_review', 'id': 'finish', 'input': decision}])
@@ -666,7 +667,7 @@ class Transport(unittest.TestCase):
         r = gate.Review(gh, gh.pr, [], [], {}, {}, 'trusted', 'fable', 'local mathematical')
         r.input['previous_review_material'] = 'x' * 200000
         seen = []
-        def model(family, instructions, conversation):
+        def model(family, instructions, conversation, **kwargs):
             seen.append(copy.deepcopy(conversation))
             if len(seen) == 2:
                 value = json.loads(conversation[-1]['content'][0]['content'])
@@ -702,7 +703,7 @@ class Transport(unittest.TestCase):
                 def call(name, args, ident):
                     return ({'type': 'function_call', 'name': name, 'arguments': json.dumps(args), 'call_id': ident}
                             if family == 'astra' else {'type': 'tool_use', 'name': name, 'input': args, 'id': ident})
-                def model(actual, instructions, conversation):
+                def model(actual, instructions, conversation, **kwargs):
                     seen.append(copy.deepcopy(conversation))
                     if len(seen) == 1:
                         output = [call('read_file', {'path': 'large.tex', 'revision': 'head', 'start': 1, 'count': 1000}, str(i)) for i in range(6)]
@@ -736,7 +737,7 @@ class Transport(unittest.TestCase):
             {'type': 'tool_use', 'id': 'history', 'name': 'read_history', 'input': {}},
         ]
         turns = 0
-        def model(family, instructions, conversation):
+        def model(family, instructions, conversation, **kwargs):
             nonlocal turns
             turns += 1
             if turns == 2:
@@ -775,7 +776,7 @@ class Transport(unittest.TestCase):
                     if family == 'astra':
                         return {'type': 'function_call', 'name': name, 'arguments': json.dumps(args), 'call_id': ident}
                     return {'type': 'tool_use', 'name': name, 'input': args, 'id': ident}
-                def model(actual_family, instructions, conversation):
+                def model(actual_family, instructions, conversation, **kwargs):
                     seen.append(copy.deepcopy(conversation))
                     if len(seen) == 1:
                         output = [call('read_file', {'path': path, 'revision': 'base', 'start': 1, 'count': 10}, 'base')]
@@ -872,7 +873,7 @@ class Transport(unittest.TestCase):
                                'url': 'https://example.org/paper', 'encrypted_content': 'e' * 700000}]}
         original = copy.deepcopy([fetch, search])
         seen = []
-        def model(family, instructions, conversation):
+        def model(family, instructions, conversation, **kwargs):
             seen.append(copy.deepcopy(conversation))
             if len(seen) == 1:
                 output = [
@@ -1004,7 +1005,7 @@ class Transport(unittest.TestCase):
         r.reads, r.history_read = [{'path': 'p'}], True
         paused = [{'type': 'text', 'text': 'Checking source.'}]
         seen = []
-        def model(family, instructions, conversation):
+        def model(family, instructions, conversation, **kwargs):
             seen.append(copy.deepcopy(conversation))
             output = paused if len(seen) == 1 else [{'type': 'tool_use', 'id': 'f', 'name': 'finish_review', 'input': report()}]
             return output, gate.MODELS[family], {}, 'm', 'pause_turn' if len(seen) == 1 else 'tool_use'

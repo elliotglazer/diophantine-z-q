@@ -122,9 +122,13 @@ not change override authority, which still comes from the dedicated App's
 check output rather than bot comments. Preserve substantive objections in the
 project's findings record as well as the PR discussion.
 
-Both reviewers normally have a preflight context budget of 400,000 estimated tokens.
-If the complete GitHub diff changes a path under `manuscripts/`, including a
-rename out of that directory, both receive 900,000. This fits the published
+Both reviewers default to a preflight context budget of 400,000 estimated tokens.
+The repository variable `PROTOCOL_B_MANUSCRIPT_PROFILE` defaults to `standard`
+when unset or empty. An owner can set it to `expanded` when the provider accounts
+allow the larger spending profile. Only then, if the complete GitHub diff changes
+a path under `manuscripts/`, including a rename out of that directory, both
+receive 900,000. Other PRs retain the standard profile. Unknown variable values
+stop before model calls. The expanded profile fits the published
 windows of [Astra 6](https://developers.openai.com/api/docs/models/gpt-6-astra)
 (1,050,000) and [Fable 5.2](https://platform.claude.com/docs/en/models/fable-5-2/overview)
 (1,000,000), checked November 14, 2026. Both budgets are totals,
@@ -132,7 +136,7 @@ including a 64,000-token output allowance and an 8,192-token formatting reserve.
 The estimate includes instructions, tools and the full conversation. Ordinary
 text uses UTF-8 bytes as a conservative token estimate. Successful Anthropic
 web-result payloads instead use bounded accounting estimates: at most 20,000
-for ordinary PRs or 50,000 for manuscript PRs
+for the standard profile or 50,000 for the expanded manuscript profile
 for fetched text, 16,000 for a search result block, and 128,000 for a binary
 fetch result. These estimates do not change the actual conversation sent to
 the provider. Unknown block types and repository text receive no discount.
@@ -150,9 +154,10 @@ recalibrates the estimate. Before usable measurements, the full request is
 estimated with the same byte and web-payload accounting rules.
 
 Fable's requests cap web search at three uses and web fetch at five uses, with
-`max_content_tokens` set to 20,000 for fetched text. Manuscript PRs instead get
+`max_content_tokens` set to 20,000 for fetched text. Expanded manuscript reviews get
 ten searches, twenty fetches, and 50,000 tokens per text fetch. `budget-profile.json`
-records the profile selected from the actual changed paths. Direct calls share the
+records the configured variable, changed-path classification and selected limits.
+This opt-in does not raise either provider account's spending limit. Direct calls share the
 limit across a turn, including client-tool-result and `pause_turn`
 continuations; programmatic calls through dynamic filtering reset per
 request. Failed or pending direct calls consume the displayed allowance
@@ -168,7 +173,8 @@ request-start measurement corrects it. Provider-side web tools can add
 context during a request. The token-counting
 endpoint does not support the gate's server tools, so the gate does not send an
 incompatible counting request or silently remove those tools. An independent
-tool-result guard is reduced to 1,200,000 characters. Before a file, file-list or
+tool-result guard permits 1,200,000 characters in the standard profile and
+2,700,000 in the expanded profile, proportional to the context budget. Before a file, file-list or
 history result is returned, the gate measures the complete projected next
 request, reserving small error results for other calls in the same batch and
 4,096 tokens for recovery. It also reserves another 64,000 tokens for the
@@ -184,6 +190,21 @@ requirement. The model can retry a smaller read. The pre-request check remains
 the final safeguard for unexpected growth, such as a large server-tool result.
 When the remaining allowance falls below the reviewer-output reserve, trusted
 instructions tell the reviewer to finish now and list everything not reviewed.
+The original system prompt, tools and earlier messages remain unchanged to
+preserve signed thinking. Runtime guidance is appended after a user/tool-result
+message; a Fable `pause_turn` is resumed unchanged before that guidance can be
+inserted. See the provider's [append-only instruction rules](https://platform.claude.com/docs/en/build-with-claude/preserved-thinking/change-tools-or-instructions).
+A finish-now report records whether source/history reads were admitted. Without
+history, every earlier finding stays unresolved in code. Without either read
+prerequisite, the report cannot be accepted by collaborator override; a new
+review with sufficient context is needed. These completed rejection reports
+can still be reused to avoid another automatic charge on the same head.
+Required computation failures are checked before each model turn and again
+after every provider retry backoff, before a further paid request is sent.
+
+An immediate cross-reviewer stop on a fatal finding is a separate follow-up;
+this change does not add a fatal-finding field, shared cancellation flag or a
+ban on later automatic rounds specifically because a finding is fatal.
 An incomplete necessary check must be reported as a finding with a request for
 changes. That blocked decision is permitted even if the reviewer could not
 finish its source/history reads; acceptance still requires those reads and

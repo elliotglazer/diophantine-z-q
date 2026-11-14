@@ -55,6 +55,7 @@ jobs:
           OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           MODE: ${{ vars.PROTOCOL_B_MODE }}
+          MANUSCRIPT_PROFILE: ${{ vars.PROTOCOL_B_MANUSCRIPT_PROFILE }}
           TEST_PR: ${{ vars.PROTOCOL_B_TEST_PR }}
         run: |
           cat > "$RUNNER_TEMP/protocol-b.py" <<'PROTOCOL_B_PYTHON'
@@ -82,6 +83,7 @@ jobs:
           WORKING_MARKER = "<!-- protocol-b-working-v2 -->"
           ROUND_MARKER = "<!-- protocol-b-automatic-round-v1 -->"
           CONTEXT_TOKEN_BUDGET = 400_000
+          TOOL_CHARACTER_BUDGET = 1_200_000
           OUTPUT_TOKEN_BUDGET = 64_000
           FORMAT_TOKEN_RESERVE = 8_192
           RECOVERY_TOKEN_RESERVE = 4_096
@@ -109,13 +111,20 @@ jobs:
               Published windows: gpt-6-astra 1,050,000; claude-fable-5-2 1,000,000.
               Both profiles include the output and formatting reserves within the cap.
               """
-              global CONTEXT_TOKEN_BUDGET, WEB_MAX_USES, WEB_FETCH_MAX_CONTENT_TOKENS
+              global CONTEXT_TOKEN_BUDGET, TOOL_CHARACTER_BUDGET, WEB_MAX_USES, WEB_FETCH_MAX_CONTENT_TOKENS
+              configured = os.environ.get('MANUSCRIPT_PROFILE', '') or 'standard'
+              if configured not in {'standard', 'expanded'}:
+                  raise ValueError('MANUSCRIPT_PROFILE must be standard or expanded; no model call')
               manuscript = any(path.startswith('manuscripts/') for file in files
                                for path in (file['filename'], file.get('previous_filename', '')))
-              CONTEXT_TOKEN_BUDGET = 900_000 if manuscript else 400_000
-              WEB_MAX_USES = {'web_search': 10, 'web_fetch': 20} if manuscript else {'web_search': 3, 'web_fetch': 5}
-              WEB_FETCH_MAX_CONTENT_TOKENS = 50_000 if manuscript else 20_000
-              return {'profile': 'manuscript' if manuscript else 'ordinary',
+              expanded = manuscript and configured == 'expanded'
+              CONTEXT_TOKEN_BUDGET = 900_000 if expanded else 400_000
+              TOOL_CHARACTER_BUDGET = 1_200_000 * CONTEXT_TOKEN_BUDGET // 400_000
+              WEB_MAX_USES = {'web_search': 10, 'web_fetch': 20} if expanded else {'web_search': 3, 'web_fetch': 5}
+              WEB_FETCH_MAX_CONTENT_TOKENS = 50_000 if expanded else 20_000
+              return {'profile': 'manuscript-expanded' if expanded else 'standard',
+                      'configured_manuscript_profile': configured, 'manuscript_changed': manuscript,
+                      'tool_character_budget': TOOL_CHARACTER_BUDGET,
                       'context_token_budget': CONTEXT_TOKEN_BUDGET,
                       'output_token_budget': OUTPUT_TOKEN_BUDGET,
                       'reviewer_output_reserve': REVIEWER_OUTPUT_RESERVE,
@@ -155,11 +164,14 @@ jobs:
                   super().__init__(json.dumps(detail))
 
 
-          def request(url, headers, method="GET", data=None, stream=False):
+          def request(url, headers, method="GET", data=None, stream=False, before_retry=None):
               payload = None if data is None else json.dumps(data).encode()
               req = urllib.request.Request(url, data=payload, method=method,
                                            headers={"Content-Type": "application/json", **headers})
               for attempt in range(3):
+                # The initial guard runs in Review.run; repeat after every backoff.
+                if attempt and before_retry is not None:
+                    before_retry()
                 try:
                   response = urllib.request.urlopen(req, timeout=180)
                   break
@@ -499,11 +511,11 @@ jobs:
               return observation
 
 
-          def model_turn(family, system, conversation):
+          def model_turn(family, system, conversation, before_retry=None):
               body = model_body(family, system, conversation)
               if family == "astra":
                   response = request("https://api.openai.com/v1/responses",
-                                     {"Authorization": "Bearer " + os.environ["OPENAI_API_KEY"]}, "POST", body, True)
+                                     {"Authorization": "Bearer " + os.environ["OPENAI_API_KEY"]}, "POST", body, True, before_retry=before_retry)
                   final = None
                   for event in sse(response):
                       if event.get("type") == "response.completed":
@@ -514,7 +526,7 @@ jobs:
                       raise RuntimeError("OpenAI stream ended without a completed response")
                   return final["output"], final.get("model"), final.get("usage"), final["id"], final["status"]
               response = request("https://api.anthropic.com/v1/messages",
-                                 {"x-api-key": os.environ["ANTHROPIC_API_KEY"], "anthropic-version": "2023-06-01"}, "POST", body, True)
+                                 {"x-api-key": os.environ["ANTHROPIC_API_KEY"], "anthropic-version": "2023-06-01"}, "POST", body, True, before_retry=before_retry)
               final, blocks, partial, stopped, initial_inputs = {}, {}, {}, False, None
               for event in sse(response):
                   kind = event.get("type")
@@ -635,27 +647,34 @@ jobs:
                   conversation = [{"role": "user", "content": json.dumps(self.input)}]
                   record(self.family + "-input.json", {"instructions": self.instructions, "input": self.input})
                   turns, previous = [], None
+                  instructions, finish_sent = self.instructions, False
+                  def check_computations():
+                      failed = failed_computation_checks(self.gh, self.pr['head']['sha'], self.pr['base']['ref'])
+                      if failed:
+                          raise RuntimeError('fix failing checks first: ' + ', '.join(failed) + '; no further model call')
                   finish_instruction = FINISH_NOW_INSTRUCTION + '\nPrior finding IDs: ' + json.dumps(sorted(self.prior)) + \
                       '. If you could not review an earlier finding, disposition it as unresolved and explain that limitation.'
                   for turn in range(50):
                       log(f"{self.family}: model turn {turn+1}; {len(self.reads)} repository source reads")
-                      instructions = self.instructions + ('\n\n' + finish_instruction if self.finish_now else '')
                       projected = context_estimate(self.family, instructions, conversation, previous)
                       if (CONTEXT_TOKEN_BUDGET - RECOVERY_TOKEN_RESERVE - projected['estimated_total']
                               < REVIEWER_OUTPUT_RESERVE):
-                          if not self.finish_now:
-                              instructions += '\n\n' + finish_instruction
                           self.finish_now = True
                       if self.finish_now:
-                          # This is trusted runtime guidance, not a direction from a source file.
-                          # Keep the conversation and the hard pre-request guard unchanged.
+                          # Keep system/tools and all earlier messages immutable: signed
+                          # thinking binds their exact prefix. Fable permits an appended
+                          # system message only after a user message (including tool results).
+                          # A paused assistant turn must be resumed unchanged first.
+                          if not finish_sent and (self.family != 'fable' or conversation[-1].get('role') == 'user'):
+                              conversation.append({'role': 'system' if self.family == 'fable' else 'developer',
+                                                   'content': finish_instruction})
+                              finish_sent = True
                           record(self.family + '-finish-now.json', {'turn': turn + 1, 'reason': 'low context',
                                  'projected': projected, 'reviewer_output_reserve': REVIEWER_OUTPUT_RESERVE})
                       budget = context_budget(self.family, instructions, conversation, previous)
-                      failed = failed_computation_checks(self.gh, self.pr['head']['sha'], self.pr['base']['ref'])
-                      if failed:
-                          raise RuntimeError('fix failing checks first: ' + ', '.join(failed) + '; no further model call')
-                      output, served, usage, response_id, stop_reason = model_turn(self.family, instructions, conversation)
+                      check_computations()
+                      output, served, usage, response_id, stop_reason = model_turn(
+                          self.family, instructions, conversation, before_retry=check_computations)
                       previous = {**budget, 'usage': usage,
                                   'server_tools': any(x.get('type') == 'server_tool_use' for x in output)}
                       if served != MODELS[self.family]:
@@ -704,6 +723,10 @@ jobs:
                           value = validate_review(value, set(self.prior), self.overrides, allow_incomplete=self.finish_now)
                           if (not self.history_read or not self.reads) and not (self.finish_now and value['decision'] == 'changes_requested'):
                               raise ValueError("Final review requires prior source/history reads and no concurrent tool calls")
+                          if not self.history_read:
+                              for item in value['prior_findings']:
+                                  item.update(resolution='unresolved', reason=
+                                              'Earlier finding history was not admitted to this review. Its disposition remains unresolved.')
                           record(self.family + "-source-reads.json", self.reads)
                           return value
                       if not calls and stop_reason != "pause_turn":
@@ -753,7 +776,7 @@ jobs:
                           # In addition to the next request's output allowance, leave room
                           # for that reply to enter the following request's input context.
                           if (estimated['estimated_total'] > CONTEXT_TOKEN_BUDGET - RECOVERY_TOKEN_RESERVE - REVIEWER_OUTPUT_RESERVE
-                                  or self.chars + len(content) + 128 > 1_200_000):
+                                  or self.chars + len(content) + 128 > TOOL_CHARACTER_BUDGET):
                               value = dict(rejected)
                               values[call_index] = value
                               # Fetching a source is not evidence that the reviewer saw it.
@@ -764,7 +787,7 @@ jobs:
                               self.finish_now = True
                               value['finish_now'] = True
                               value['budget_notice'] = FINISH_NOW_INSTRUCTION
-                          value['remaining_tool_characters'] = max(0, 1_200_000 - self.chars - len(json.dumps(value, ensure_ascii=False)) - 128)
+                          value['remaining_tool_characters'] = max(0, TOOL_CHARACTER_BUDGET - self.chars - len(json.dumps(value, ensure_ascii=False)) - 128)
                           content = json.dumps(value, ensure_ascii=False)
                           self.chars += len(content)
                           record(self.family + f"-tool-{turn}-{call_index}.json", {"name": call["name"], "arguments": args, "result": value})
@@ -831,6 +854,10 @@ jobs:
               for family, envelope in latest.items():
                   if not envelope.get('complete') or envelope.get('head') != head or envelope.get('model') != MODELS[family]:
                       raise ValueError("Override cannot replace an incomplete, stale or wrong-model review")
+                  # Historical completed envelopes predate this flag; their policy
+                  # required both reads and could not produce a no-read completion.
+                  if envelope.get('read_prerequisites_complete', True) is not True:
+                      raise ValueError('Override cannot replace missing source or history reads in a finish-now report')
                   value = envelope['review']
                   here = {finding_id(envelope, f['id']) for f in value['findings']}
                   here.update(f['id'] for f in value['prior_findings'] if f['resolution'] != 'resolved')
@@ -1107,7 +1134,9 @@ jobs:
                               json.dumps({'check': check['id']}) + '\n```'})
                       reviews, failures = {}, {}
                       with concurrent.futures.ThreadPoolExecutor(max_workers=2) as pool:
-                          futures = {pool.submit(Review(gh, pr, files, discussion, prior, overrides, instructions, family, change_class).run): family for family in MODELS}
+                          reviewers = {family: Review(gh, pr, files, discussion, prior, overrides, instructions, family, change_class)
+                                       for family in MODELS}
+                          futures = {pool.submit(reviewer.run): family for family, reviewer in reviewers.items()}
                           for future in concurrent.futures.as_completed(futures):
                               family = futures[future]
                               try:
@@ -1115,6 +1144,8 @@ jobs:
                                   envelope = {"reviewer": family, "model": MODELS[family], "head": pr["head"]["sha"],
                                               "base": pr["base"]["sha"], "run": os.environ["GITHUB_RUN_ID"],
                                               "attempt": os.environ["GITHUB_RUN_ATTEMPT"], "review": value,
+                                              "read_prerequisites_complete": bool(reviewers[family].history_read and reviewers[family].reads),
+                                              "finished_early": reviewers[family].finish_now,
                                               "complete": True, "policy_ref": os.environ['GITHUB_SHA']}
                                   envelopes[family] = envelope
                                   record(family + "-report.json", envelope)

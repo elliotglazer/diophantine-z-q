@@ -1,5 +1,6 @@
 """Offline spending controls exercise the trusted embedded gate, with no API calls."""
 import copy
+import io
 import json
 import os
 import tempfile
@@ -81,7 +82,7 @@ class Spending(unittest.TestCase):
     def test_new_failure_between_turns_prevents_another_provider_request(self):
         gh = FakeGH()
         review = gate.Review(gh, gh.pr, [], [], {}, {}, 'trusted', 'fable', 'local mathematical')
-        def model(*args):
+        def model(*args, **kwargs):
             gh.check_runs = [{'id': 2, 'name': 'Paper build', 'head_sha': HEAD,
                              'status': 'completed', 'conclusion': 'failure', 'app': {'id': 15368}}]
             return ([{'type': 'tool_use', 'id': 'h', 'name': 'read_history', 'input': {}}],
@@ -171,7 +172,8 @@ class Spending(unittest.TestCase):
 
     def test_profiles_follow_changed_paths_and_renames(self):
         for file in [changed('manuscripts/new.tex'), changed('archive/old.tex', previous_filename='manuscripts/old.tex')]:
-            profile = gate.configure_budget([file])
+            with patch.dict(os.environ, {'MANUSCRIPT_PROFILE': 'expanded'}):
+                profile = gate.configure_budget([file])
             self.assertEqual(profile['context_token_budget'], 900000)
             body = gate.model_body('fable', 'trusted', [])
             self.assertEqual(body['tools'][-2]['max_uses'], 10)
@@ -198,7 +200,104 @@ class Spending(unittest.TestCase):
                         review.run()
                 else:
                     self.assertEqual(review.run()['decision'], 'changes_requested')
-                self.assertIn(gate.FINISH_NOW_INSTRUCTION, model.call_args.args[1])
+                self.assertEqual(model.call_args.args[1], 'trusted')
+                self.assertTrue(any(gate.FINISH_NOW_INSTRUCTION in str(m.get('content', ''))
+                                    for m in model.call_args.args[2] if m.get('role') == 'system'))
+
+    def test_manuscript_profile_defaults_to_current_limits_and_scales_text(self):
+        for value in ['', 'standard', 'expanded']:
+            with patch.dict(os.environ, {'MANUSCRIPT_PROFILE': value}):
+                profile = gate.configure_budget([changed('manuscripts/new.tex')])
+            expanded = value == 'expanded'
+            self.assertEqual(profile['context_token_budget'], 900000 if expanded else 400000)
+            self.assertEqual(gate.TOOL_CHARACTER_BUDGET, 2700000 if expanded else 1200000)
+            self.assertEqual(profile['fable_web_max_uses'],
+                             {'web_search': 10, 'web_fetch': 20} if expanded else {'web_search': 3, 'web_fetch': 5})
+            self.assertEqual(profile['fable_web_fetch_max_content_tokens'], 50000 if expanded else 20000)
+        with patch.dict(os.environ, {'MANUSCRIPT_PROFILE': 'expanded'}):
+            profile = gate.configure_budget([changed('docs/readme.md')])
+        self.assertEqual(profile['context_token_budget'], 400000)
+        self.assertEqual(gate.TOOL_CHARACTER_BUDGET, 1200000)
+        with patch.dict(os.environ, {'MANUSCRIPT_PROFILE': 'typo'}):
+            with self.assertRaisesRegex(ValueError, 'standard or expanded'):
+                gate.configure_budget([changed('manuscripts/new.tex')])
+
+    def test_unread_history_stays_unresolved_and_cannot_be_overridden(self):
+        gh = FakeGH()
+        prior_id = '1-1-astra-EARLIER'
+        review = gate.Review(gh, gh.pr, [], [], {prior_id: {}}, {}, 'trusted', 'fable', 'local mathematical')
+        review.input['material'] = 'x' * 280000
+        decision = report(decision='changes_requested', sources_read=[],
+                          report='Not reviewed: source statements and earlier findings. Remaining context does not suffice for this review.',
+                          findings=[{'id': 'BUDGET', 'location': 'scope', 'objection': 'Review unfinished.'}],
+                          prior_findings=[{'id': prior_id, 'resolution': 'resolved', 'reason': 'Model mistakenly assumes a repair.'}])
+        output = [{'type': 'tool_use', 'name': 'finish_review', 'id': 'finish', 'input': decision}]
+        with tempfile.TemporaryDirectory() as tmp, patch.object(gate, 'OUT', Path(tmp)), \
+             patch.object(gate, 'model_turn', return_value=(output, gate.MODELS['fable'], {}, 'm', 'tool_use')):
+            result = review.run()
+        self.assertEqual(result['prior_findings'][0]['resolution'], 'unresolved')
+        pair = {'astra': envelope(), 'fable': envelope('fable')}
+        pair['fable'].update(review=result, finished_early=True, read_prerequisites_complete=False)
+        with self.assertRaisesRegex(ValueError, 'missing source or history'):
+            gate.overridden_decision(pair, {prior_id: {}, '1-1-fable-BUDGET': {}}, HEAD)
+        gh, app, _, state = run_pipeline(FakeGH(), provider=Mock(return_value=result))
+        self.assertIs(state['reports']['fable']['read_prerequisites_complete'], False)
+        stored = json.loads(app.final['output']['text'])
+        self.assertIs(stored['reports']['fable']['read_prerequisites_complete'], False)
+
+    def test_failure_during_retry_backoff_prevents_second_provider_post(self):
+        for family in gate.MODELS:
+            gh = FakeGH()
+            review = gate.Review(gh, gh.pr, [], [], {}, {}, 'trusted', family, 'local mathematical')
+            url = 'https://api.openai.com/v1/responses' if family == 'astra' else 'https://api.anthropic.com/v1/messages'
+            error = gate.urllib.error.HTTPError(url, 429, 'rate', {}, io.BytesIO(b'{}'))
+            def fail_check(_delay):
+                gh.check_runs = [{'id': 2, 'name': 'Paper build', 'head_sha': HEAD,
+                                 'status': 'completed', 'conclusion': 'failure', 'app': {'id': 15368}}]
+            with tempfile.TemporaryDirectory() as tmp, patch.object(gate, 'OUT', Path(tmp)), \
+                 patch.dict(os.environ, {'OPENAI_API_KEY': 'fixture', 'ANTHROPIC_API_KEY': 'fixture'}), \
+                 patch.object(gate.time, 'sleep', side_effect=fail_check), \
+                 patch.object(gate.urllib.request, 'urlopen', side_effect=error) as provider:
+                with self.assertRaisesRegex(RuntimeError, 'fix failing checks first'):
+                    review.run()
+            self.assertEqual(provider.call_count, 1)
+
+    def test_low_context_preserves_signed_prefix_and_pause_continuation(self):
+        for paused in [False, True]:
+            gh = FakeGH()
+            review = gate.Review(gh, gh.pr, [], [], {}, {}, 'trusted', 'fable', 'local mathematical')
+            review.input['material'] = 'x' * 230000
+            review.reads, review.history_read = [{'path': 'earlier-source'}], True
+            signed = {'type': 'thinking', 'thinking': 'Earlier source analysis.', 'signature': 'immutable-signature'}
+            initial = [signed, {'type': 'text', 'text': 'x' * 50000}]
+            decision = report(decision='changes_requested',
+                              report='Not reviewed: the remaining source application and its exact hypotheses. This review requests changes because that required check is incomplete.',
+                              findings=[{'id': 'BUDGET', 'location': 'application', 'objection': 'Required review incomplete.'}])
+            seen = []
+            def model(family, instructions, conversation, **kwargs):
+                body = copy.deepcopy(gate.model_body(family, instructions, conversation))
+                seen.append(body)
+                if len(seen) == 1:
+                    output, stop = initial, 'pause_turn' if paused else 'end_turn'
+                else:
+                    self.assertEqual(body['system'], seen[0]['system'])
+                    self.assertEqual(body['tools'], seen[0]['tools'])
+                    self.assertEqual(body['messages'][:len(seen[-2]['messages'])], seen[-2]['messages'])
+                    self.assertEqual(body['messages'][1], {'role': 'assistant', 'content': initial})
+                    if paused and len(seen) == 2:
+                        self.assertEqual(body['messages'][-1], {'role': 'assistant', 'content': initial})
+                        output, stop = [{'type': 'tool_use', 'id': 'history', 'name': 'read_history', 'input': {}}], 'tool_use'
+                    else:
+                        self.assertEqual(body['messages'][-2]['role'], 'user')
+                        self.assertEqual(body['messages'][-1]['role'], 'system')
+                        self.assertIn(gate.FINISH_NOW_INSTRUCTION, body['messages'][-1]['content'])
+                        output, stop = [{'type': 'tool_use', 'id': 'finish', 'name': 'finish_review', 'input': decision}], 'tool_use'
+                return output, gate.MODELS[family], {}, 'fixture', stop
+            with tempfile.TemporaryDirectory() as tmp, patch.object(gate, 'OUT', Path(tmp)), \
+                 patch.dict(os.environ, {'GITHUB_RUN_ID': '1', 'GITHUB_RUN_ATTEMPT': '1'}), \
+                 patch.object(gate, 'model_turn', side_effect=model):
+                self.assertEqual(review.run()['decision'], 'changes_requested')
+            self.assertEqual(len(seen), 3 if paused else 2)
 
 
 if __name__ == '__main__':
