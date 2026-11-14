@@ -41,7 +41,8 @@ The workflow uses the official, commit-pinned `actions/create-github-app-token`
 action twice. One token creates the initially blocked check; a fresh token
 finalizes it after the potentially long model review. The action revokes its
 tokens at job cleanup. The ordinary workflow token reads sources, posts comments
-and requests protected merges. Only the App token writes the review check.
+and requests protected merges and post-merge workflow dispatches. Only the App
+token writes the review check.
 The Actions job is named `Run reviewers and publish App check`. It is distinct
 from the App-issued `Protocol B / review` check, or `Protocol B / test review`
 in test mode. A green Actions job alone is not App acceptance.
@@ -262,12 +263,14 @@ wait for its merge requirements. An API refusal remains a reported failure;
 there is no automatic replay of an uncertain write. Readiness, the compared
 commit SHAs and `behind_by`, and merge responses are retained in the run artifact.
 
-If GitHub explicitly refuses to enable auto-merge, the gate performs one new
+If GitHub returns the known `UNPROCESSABLE` refusal that the pull request is
+already in clean or unstable status, the gate performs one new
 readiness check, including the current rules, required checks, head and policy.
 If those checks now pass, it attempts the same guarded direct merge. Otherwise
 it reports the refusal. It does not repeat the auto-merge mutation. A transport
-failure, server error or ambiguous partial success is not treated as a refusal
-and does not initiate another merge attempt.
+failure, HTTP rejection, unknown GraphQL error, or ambiguous partial success is
+not treated as that refusal and does not initiate another merge attempt. A null
+mutation result alone is not evidence that the write had no side effects.
 
 Merging with the workflow's `GITHUB_TOKEN` does **not** trigger `main`'s `push`
 workflows. After a **direct merge**, this gate reads the PR back once and confirms
@@ -285,6 +288,12 @@ the artifact records the difference; it does not pin, rewind, or claim to have
 tested the older commit. Both receiving workflows retain their existing
 concurrency and cancellation behavior. The dispatched kernel job performs the
 full audit because its scope skip applies only to pull-request events.
+
+A dispatched run is not identical to a push-triggered run. The manuscript version
+check validates current state; its publication-transition check has already run
+on the PR. Dispatched kernel runs neither save the push-only kernel cache nor
+serve as push-run base evidence for later PR progress tables. Those tables can
+therefore report `not_measured`. This gate change preserves those limitations.
 
 **Deferred auto-merges require a manual step.** The review job does not poll for
 them, and there is no closed-PR or `workflow_run` handler. Once a maintainer

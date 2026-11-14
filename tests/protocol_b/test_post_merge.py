@@ -9,6 +9,7 @@ import test_gate as tg
 
 MERGE = 'd' * 40
 STATE = {'number': 1, 'head': tg.HEAD, 'default': 'main', 'policy_ref': tg.BASE}
+REFUSAL = {'type': 'UNPROCESSABLE', 'message': 'Pull request Pull request is in unstable status'}
 
 
 class PostMerge(unittest.TestCase):
@@ -78,7 +79,7 @@ class PostMerge(unittest.TestCase):
     def test_auto_refusal_rechecks_once_and_merges_newly_ready_head(self):
         gh = tg.Checks().ready_gh()
         gh.check_runs[0].update(status='in_progress', conclusion=None)
-        gh.auto_result = {'data': None, 'errors': [{'type': 'UNPROCESSABLE'}]}
+        gh.auto_result = {'data': None, 'errors': [REFUSAL]}
         def finish_ci(client):
             client.check_runs[0].update(status='completed', conclusion='success')
         gh.auto_callback = finish_ci
@@ -93,7 +94,7 @@ class PostMerge(unittest.TestCase):
             with self.subTest(fault=fault):
                 gh = tg.Checks().ready_gh()
                 gh.check_runs[0].update(status='in_progress', conclusion=None)
-                gh.auto_result = {'data': None, 'errors': [{'type': 'UNPROCESSABLE'}]}
+                gh.auto_result = {'data': None, 'errors': [REFUSAL]}
                 calls = []
                 def after_refusal(client):
                     calls.append(1)
@@ -159,7 +160,8 @@ class PostMerge(unittest.TestCase):
 
     def test_wrong_run_identity_fails_without_claiming_confirmed_run(self):
         for field, value in [('id', 42), ('head_sha', 'bad'), ('head_branch', 'other'),
-                             ('event', 'push'), ('path', '.github/workflows/other.yml')]:
+                             ('event', 'push'), ('path', '.github/workflows/other.yml'),
+                             ('path', '.github/workflows/research-checks.yml@other')]:
             with self.subTest(field=field):
                 gh = tg.FakeGH()
                 gh.complete_merge()
@@ -177,18 +179,65 @@ class PostMerge(unittest.TestCase):
                 self.assertEqual(receipt['status'], 'accepted')
                 self.assertNotIn('head_differs_from_merge', receipt)
 
-    def test_definite_http_refusal_rechecks_once(self):
-        gh = tg.Checks().ready_gh()
-        gh.check_runs[0].update(status='in_progress', conclusion=None)
-        def refuse(*args):
-            gh.check_runs[0].update(status='completed', conclusion='success')
-            raise tg.gate.RequestError({'status': 422})
-        with patch.object(gh, 'api', side_effect=refuse) as mutation:
+    def test_http_status_alone_never_triggers_fallback(self):
+        for status in (400, 403, 422, 500):
+            gh = tg.Checks().ready_gh()
+            gh.check_runs[0].update(status='in_progress', conclusion=None)
+            def refuse(*args):
+                gh.check_runs[0].update(status='completed', conclusion='success')
+                raise tg.gate.RequestError({'status': status})
+            with patch.object(gh, 'api', side_effect=refuse) as mutation:
+                _, _, errors, _ = tg.run_pipeline(gh, mode='live')
+            self.assertTrue(errors)
+            self.assertEqual(mutation.call_count, 1)
+            self.assertEqual(gh.rule_pages, [1])
+            self.assertEqual(gh.merge_requests, [])
+
+    def test_null_graphql_execution_results_and_unknown_errors_never_retry(self):
+        for data in (None, {}, {'enablePullRequestAutoMerge': None}):
+            for issues in ([{'type': 'INTERNAL', 'message': 'execution failed'}],
+                           [{'type': 'UNPROCESSABLE', 'message': 'unknown failure'}],
+                           [REFUSAL, {'type': 'INTERNAL'}]):
+                with self.subTest(data=data, errors=issues):
+                    gh = tg.Checks().ready_gh()
+                    gh.check_runs[0].update(status='in_progress', conclusion=None)
+                    gh.auto_result = {'data': data, 'errors': issues}
+                    def finish_ci(client):
+                        client.check_runs[0].update(status='completed', conclusion='success')
+                    gh.auto_callback = finish_ci
+                    _, _, errors, _ = tg.run_pipeline(gh, mode='live')
+                    self.assertTrue(errors)
+                    self.assertEqual(gh.rule_pages, [1])
+                    self.assertEqual(gh.merge_requests, [])
+                    self.assertEqual(gh.dispatches, [])
+
+    def test_known_clean_and_unstable_state_refusals_recheck_once(self):
+        for message in ('Pull request is in clean status', 'Pull request is in unstable status',
+                        'Pull request Pull request is in unstable status'):
+            gh = tg.Checks().ready_gh()
+            gh.check_runs[0].update(status='in_progress', conclusion=None)
+            gh.auto_result = {'errors': [{'type': 'UNPROCESSABLE', 'message': message}]}
+            def finish_ci(client):
+                client.check_runs[0].update(status='completed', conclusion='success')
+            gh.auto_callback = finish_ci
             _, _, errors, _ = tg.run_pipeline(gh, mode='live')
-        self.assertEqual(errors, [])
-        self.assertEqual(mutation.call_count, 1)
-        self.assertEqual(gh.rule_pages, [1, 1])
-        self.assertEqual(len(gh.merge_requests), 1)
+            self.assertEqual(errors, [])
+            self.assertEqual(gh.rule_pages, [1, 1])
+            self.assertEqual(len(gh.merge_requests), 1)
+
+    def test_bare_and_main_qualified_workflow_paths_are_accepted(self):
+        for suffix in ('', '@main'):
+            gh = tg.FakeGH()
+            gh.complete_merge()
+            original = gh.call
+            def call(path, method='GET', data=None):
+                result = original(path, method, data)
+                if path.startswith('/actions/runs/'):
+                    result['path'] += suffix
+                return result
+            gh.call = call
+            tg.gate.confirm_and_dispatch(gh, STATE, MERGE)
+            self.assertEqual(len(gh.dispatches), 2)
 
 
 if __name__ == '__main__':

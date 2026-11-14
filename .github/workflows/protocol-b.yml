@@ -1083,7 +1083,8 @@ jobs:
                       receipt['run'] = {k: run.get(k) for k in ('id', 'head_sha', 'head_branch', 'event', 'path', 'html_url', 'status')}
                       sha = run.get('head_sha')
                       if (run.get('id') != run_id or run.get('event') != 'workflow_dispatch' or
-                              run.get('head_branch') != 'main' or run.get('path') != '.github/workflows/' + workflow or
+                              run.get('head_branch') != 'main' or
+                              run.get('path') not in ('.github/workflows/' + workflow, '.github/workflows/' + workflow + '@main') or
                               not isinstance(sha, str) or not re.fullmatch(r'[0-9a-f]{40}', sha)):
                           raise RuntimeError('Unexpected dispatched run identity; reconcile Actions before retrying')
                       receipt.update(status='run_confirmed', head_sha=sha, head_differs_from_merge=(sha != merge))
@@ -1111,13 +1112,21 @@ jobs:
                       result = gh.api('/graphql', 'POST', {'query': 'mutation($id:ID!){enablePullRequestAutoMerge(input:{pullRequestId:$id,mergeMethod:MERGE}){pullRequest{id}}}', 'variables': {'id': current['node_id']}})
                       record('auto-merge-result.json', result)
                       if result.get('errors'):
-                          if (result.get('data') or {}).get('enablePullRequestAutoMerge'):
-                              raise RuntimeError('Ambiguous auto-merge response; reconcile before retrying')
-                          refusal = result['errors']
+                          # A null mutation result is not proof of no side effects.
+                          # Accept only the known explicit state refusals, never
+                          # generic/internal execution errors or mixed errors.
+                          errors = result['errors']
+                          if ((result.get('data') or {}).get('enablePullRequestAutoMerge') or
+                                  not isinstance(errors, list) or not all(
+                                      isinstance(e, dict) and e.get('type') == 'UNPROCESSABLE' and
+                                      isinstance(e.get('message'), str) and re.fullmatch(
+                                          r'Pull request (?:Pull request )?is in (?:clean|unstable) status', e['message'])
+                                      for e in errors)):
+                              raise RuntimeError('Ambiguous or unrecognized auto-merge error; reconcile before retrying')
+                          refusal = errors
                   except RequestError as error:
-                      if error.status not in (400, 403, 422):
-                          raise
-                      refusal = str(error)
+                      # HTTP status alone does not identify a state refusal.
+                      raise
                   if refusal is not None:
                       record('auto-merge-refusal.json', {'error': refusal})
                       ready, current, latest_ref = merge_readiness(gh, state, 'merge-readiness-after-refusal.json')
