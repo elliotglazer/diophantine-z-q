@@ -1,0 +1,48 @@
+{
+  "release_tag": "axiom-cache-v2",
+  "repository": "elliotglazer/diophantine-z-q",
+  "archive_name": "axiom-cache-lean4.35.0-mathlib56a0058-stacksc496df0-mordell82a30cb-bridge-v2.tar.zst",
+  "archive_bytes": 2456755655,
+  "archive_sha256": "509fa79d5b60fcdc22e4f9bb4bc732d0caf489a9d3510841544763032aab2ad2",
+  "part_limit_bytes": 1992294400,
+  "parts": [
+    {
+      "name": "axiom-cache-lean4.35.0-mathlib56a0058-stacksc496df0-mordell82a30cb-bridge-v2.tar.zst.part-000",
+      "bytes": 1992294400,
+      "sha256": "dfe6f1d3945adf1e9d49026644f567f8b2179435057ab39669a07148f1cc43e6"
+    },
+    {
+      "name": "axiom-cache-lean4.35.0-mathlib56a0058-stacksc496df0-mordell82a30cb-bridge-v2.tar.zst.part-001",
+      "bytes": 464461255,
+      "sha256": "05f95d89086e8552675922f908ba646010603fbdf6192ff6ea8df354eacdb9fb"
+    }
+  ],
+  "unpacked_tar_bytes": 8960389120,
+  "minimum_free_disk_bytes": 32212254720,
+  "historical_origin": {
+    "repository": "elliotglazer/diophantine-z-q",
+    "release_tag": "axiom-cache-v1",
+    "note": "Original released cache remains immutable; this expands the actual canonical dependency closure at unchanged pins."
+  },
+  "cache_manifest": {
+    "format": "axiom-bridge-cache/v1",
+    "platform": "linux-x86_64",
+    "lean": "v4.35.0",
+    "lean_commit": "eb6cafb7290e8bd5f2937522d8d804f58f02bafc",
+    "mathlib": "56a005855ea17e0b0958f73ec801ae140b0a1679",
+    "Stacks": "c496df0d9beea9deaeabcea8492605f9a0a2313b",
+    "Mordell": "82a30cb7857f6e3cfdb1be91f5533c0ccb57d493"
+  },
+  "coverage": [
+    "original-nine-bridge-dependencies",
+    "TateConsumers-dependencies",
+    "FrobeniusAdapters-dependencies"
+  ],
+  "producer": {
+    "source_head": "3df363de86b137e5258a656ce37359b2aa1968ff",
+    "source_tree": "6fac30dedb3ba694df00139d508daf2dab2ec6df",
+    "stock_lake_gate": "canonical-cache-v2",
+    "max_actual_compilers": 1,
+    "no_build_default_and_companions": "passed"
+  }
+}
