@@ -41,7 +41,7 @@ The workflow uses the official, commit-pinned `actions/create-github-app-token`
 action twice. One token creates the initially blocked check; a fresh token
 finalizes it after the potentially long model review. The action revokes its
 tokens at job cleanup. The ordinary workflow token reads sources, posts comments
-and requests GitHub auto-merge. Only the App token writes the review check.
+and requests protected merges. Only the App token writes the review check.
 The Actions job is named `Run reviewers and publish App check`. It is distinct
 from the App-issued `Protocol B / review` check, or `Protocol B / test review`
 in test mode. A green Actions job alone is not App acceptance.
@@ -217,11 +217,62 @@ and states that affected claims are **not outside reviewed**.
 7. After the owner approves activation, preserve all 14 computation checks and
    strict up-to-date protection, require `Protocol B / review` **from the new
    App's integration ID**, enable repository auto-merge, and set
-   `PROTOCOL_B_MODE=live`. Verify an authorized throwaway change completes the
+   `PROTOCOL_B_MODE=live`. The ruleset's bypass list must be empty. The owner
+   must confirm this and record the ruleset ID, target, active state and date
+   in the settings readback before deploying the direct-merge path.
+   Verify an authorized throwaway change completes the
    protected merge path. Update the deployment wording to reflect the result.
 
-The workflow checks these merge settings before requesting auto-merge. It
-cannot configure them itself. It never bypasses the ruleset.
+The workflow checks the required contexts, App pin, strict up-to-date flag
+and repository auto-merge setting before either merge path. It cannot
+configure them itself. Enforcement of the other rules on the merge request
+depends on the deployment condition that the ruleset's bypass list is empty;
+the workflow's branch-rules query does not verify that list.
+
+On November 14, 2026, owner Elliot Glazer reported that ruleset `26781429`,
+"Main branch PR and CI requirements", is Active, targets `main`, and has an
+empty bypass list. He reported that Fable saw the screenshot. This is recorded
+as an [owner readback](reviews/activation-2026-11-13/settings-readback.md#owner-readback-november-14-2026),
+not as a fresh API verification by this workflow. The condition must remain
+true for the direct-merge deployment; a later settings change requires a new
+readback before relying on it.
+
+After App acceptance, it reads all required check contexts from the effective
+rules, across every page, and their results on the reviewed head. The immediate path requires
+completed successful check runs from the required App identities. A legacy
+status cannot stand in for an App-pinned check; any same-name legacy status
+must also be successful. A check run with no App identity does not match.
+Missing, pending, failed, neutral or skipped check
+runs do not qualify for the immediate path. The gate's own non-required Actions
+job can still be running without preventing that path.
+
+When every required result qualifies, the workflow requests a direct merge
+through GitHub's protected merge endpoint, with the exact reviewed head SHA.
+It rechecks the head, destination branch and trusted policy before requesting
+the merge. It also compares the latest observed default-branch tip to the
+reviewed head and requires an integer `behind_by` of zero before the direct
+merge request. A missing, invalid or nonzero value, or a failed comparison,
+blocks the direct merge. This checks containment independently of GitHub's
+strict setting. The comparison uses fixed commit SHAs. A default-branch
+advance after the comparison is still subject to GitHub's strict rule under
+the empty-bypass-list deployment condition. The merge request's SHA parameter
+protects against a changed PR head. When required checks are not all successful,
+the workflow requests auto-merge, leaving GitHub to
+wait for its merge requirements. An API refusal remains a reported failure;
+there is no automatic replay of an uncertain write. Readiness, the compared
+commit SHAs and `behind_by`, and merge responses are retained in the run artifact.
+
+Merging with the workflow's `GITHUB_TOKEN` does **not** trigger `main`'s `push`
+workflows. Post-merge automation is not supplied by this change. The proposed
+follow-up is explicit `workflow_dispatch` of the main research and kernel
+checks after confirming the merge, with the merged commit recorded and checked
+as their target. Dispatch is an exception to GitHub's token-trigger suppression
+and requires Actions write permission, which this gate does not currently
+request. Deferred auto-merges need a trusted completion handler to perform the
+same dispatch when the merge actually occurs. Until implemented, a maintainer
+must start those post-merge checks manually. See GitHub's
+[workflow-trigger rules](https://docs.github.com/en/actions/how-tos/write-workflows/choose-when-workflows-run/trigger-a-workflow)
+and [merge endpoint](https://docs.github.com/en/rest/pulls/pulls#merge-a-pull-request).
 
 ## Live-test scope and deferred cases
 
