@@ -262,16 +262,47 @@ wait for its merge requirements. An API refusal remains a reported failure;
 there is no automatic replay of an uncertain write. Readiness, the compared
 commit SHAs and `behind_by`, and merge responses are retained in the run artifact.
 
+If GitHub explicitly refuses to enable auto-merge, the gate performs one new
+readiness check, including the current rules, required checks, head and policy.
+If those checks now pass, it attempts the same guarded direct merge. Otherwise
+it reports the refusal. It does not repeat the auto-merge mutation. A transport
+failure, server error or ambiguous partial success is not treated as a refusal
+and does not initiate another merge attempt.
+
 Merging with the workflow's `GITHUB_TOKEN` does **not** trigger `main`'s `push`
-workflows. Post-merge automation is not supplied by this change. The proposed
-follow-up is explicit `workflow_dispatch` of the main research and kernel
-checks after confirming the merge, with the merged commit recorded and checked
-as their target. Dispatch is an exception to GitHub's token-trigger suppression
-and requires Actions write permission, which this gate does not currently
-request. Deferred auto-merges need a trusted completion handler to perform the
-same dispatch when the merge actually occurs. Until implemented, a maintainer
-must start those post-merge checks manually. See GitHub's
-[workflow-trigger rules](https://docs.github.com/en/actions/how-tos/write-workflows/choose-when-workflows-run/trigger-a-workflow)
+workflows. After a **direct merge**, this gate reads the PR back once and confirms
+that it is merged with the reviewed head into `main`. The confirmed commit must
+match the PUT response and be contained in `main`. Only then does it dispatch
+Research checks and Kernel Lean build and audit, each with `ref: main` and no
+inputs. This needs Actions write permission on the workflow token. It does not
+change the receiving workflows, the kernel contract, or the check-only App's
+permissions, and it sends no environment secrets to the dispatched jobs.
+
+The dispatch uses GitHub API version `2026-03-10`, which returns the new run ID.
+The gate reads that exact run and records its `head_sha` alongside the confirmed
+merge commit. `main` may advance between merging and dispatching. In that case
+the artifact records the difference; it does not pin, rewind, or claim to have
+tested the older commit. Both receiving workflows retain their existing
+concurrency and cancellation behavior. The dispatched kernel job performs the
+full audit because its scope skip applies only to pull-request events.
+
+**Deferred auto-merges require a manual step.** The review job does not poll for
+them, and there is no closed-PR or `workflow_run` handler. Once a maintainer
+confirms a deferred merge, they must open Actions and run both **Research checks**
+and **Kernel Lean build and audit** with branch **main**. The same applies if
+auto-merge was already enabled. `post-merge-manual.json` records this limitation
+in the gate artifact. A successful App check is not evidence of post-merge tests.
+
+For direct merges, `merge-result.json`, `merge-confirmation.json`, and the two
+`dispatch-*.json` receipts are retained with the review artifact. Each receipt
+records intent before the API call, its response after acceptance, and the
+actual run ID, URL and head SHA after verification. A failed or uncertain
+dispatch is not retried automatically. The other workflow is still attempted.
+Inspect Actions and these receipts before manually starting any missing run;
+an accepted dispatch or returned run ID is not evidence that its checks passed.
+A failed one-shot merge readback also requires reconciliation before dispatch.
+See GitHub's [workflow-trigger rules](https://docs.github.com/en/actions/how-tos/write-workflows/choose-when-workflows-run/trigger-a-workflow),
+[dispatch API](https://docs.github.com/en/rest/actions/workflows#create-a-workflow-dispatch-event),
 and [merge endpoint](https://docs.github.com/en/rest/pulls/pulls#merge-a-pull-request).
 
 ## Live-test scope and deferred cases

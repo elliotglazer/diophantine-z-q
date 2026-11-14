@@ -19,7 +19,7 @@ permissions:
   pull-requests: write
   issues: write
   checks: read
-  actions: read
+  actions: write
 
 concurrency:
   group: protocol-b-${{ github.event.pull_request.number || github.event.issue.number || inputs.pull_request }}
@@ -183,6 +183,13 @@ jobs:
 
               def call(self, path, method="GET", data=None):
                   return self.api("/repos/" + self.repo + path, method, data)
+
+              def dispatch_workflow(self, workflow, ref):
+                  # This API version returns the exact new run ID, avoiding list-run races.
+                  return request('https://api.github.com/repos/' + self.repo +
+                                 '/actions/workflows/' + workflow + '/dispatches',
+                                 {**self.headers, 'X-GitHub-Api-Version': '2026-03-10'},
+                                 'POST', {'ref': ref})
 
               def pages(self, path):
                   result = []
@@ -995,6 +1002,136 @@ jobs:
               return bool(requirements)
 
 
+          def merge_readiness(gh, state, record_name='merge-readiness.json'):
+              # Preserve the protected route for both immediate and deferred merges.
+              rules = gh.pages("/rules/branches/" + urllib.parse.quote(state['default'], safe=""))
+              required = {c["context"] for rule in rules if rule["type"] == "required_status_checks"
+                          for c in rule["parameters"]["required_status_checks"]}
+              if not ({CHECK} | REQUIRED_COMPUTATIONS) <= required:
+                  raise RuntimeError("Auto-merge withheld: the reviewer check or computation protections are not required")
+              if not any(c['context'] == CHECK and c.get('integration_id') == int(os.environ['APP_ID'])
+                         for rule in rules if rule['type'] == 'required_status_checks'
+                         for c in rule['parameters']['required_status_checks']):
+                  raise RuntimeError('Auto-merge withheld: required review check is not pinned to the dedicated App')
+              if not any(rule["type"] == "required_status_checks" and rule["parameters"].get("strict_required_status_checks_policy") for rule in rules):
+                  raise RuntimeError("Auto-merge withheld: require an up-to-date branch so changed base dependencies cannot bypass review")
+              if not gh.call('').get("allow_auto_merge"):
+                  raise RuntimeError("Review passed, but repository auto-merge is disabled; complete the owner-approved activation checklist")
+              requirements = [c for rule in rules if rule['type'] == 'required_status_checks'
+                              for c in rule['parameters']['required_status_checks']]
+              ready = required_checks_passed(gh, state['head'], requirements)
+              record(record_name, {'head': state['head'], 'requirements': requirements,
+                                             'all_required_checks_passed': ready})
+              current = gh.call(f"/pulls/{state['number']}")
+              if current["head"]["sha"] != state['head']:
+                  raise RuntimeError("Head changed before requesting merge")
+              if current['base']['ref'] != state['default'] or current['state'] != 'open' or current['draft']:
+                  raise RuntimeError('PR is no longer open and ready for the protected default branch')
+              latest_ref = gh.call('/commits/' + state['default'])['sha']
+              if not same_policy(gh, state['policy_ref'], latest_ref):
+                  raise RuntimeError('Review policy changed before requesting merge')
+              return ready, current, latest_ref
+
+
+          def direct_merge(gh, state, latest_ref):
+              comparison = gh.call(f"/compare/{latest_ref}...{state['head']}")
+              behind = comparison.get('behind_by')
+              record('merge-base-check.json', {'default_tip': latest_ref, 'head': state['head'], 'behind_by': behind})
+              if type(behind) is not int or behind != 0:
+                  raise RuntimeError('Direct merge withheld: reviewed head must contain the current default-branch tip')
+              # Deployment requires an empty ruleset bypass list; the SHA is atomic.
+              result = gh.call(f"/pulls/{state['number']}/merge", 'PUT', {'sha': state['head'], 'merge_method': 'merge'})
+              record('merge-result.json', result)
+              if result.get('merged') is not True:
+                  raise RuntimeError('Direct merge was not confirmed: ' + json.dumps(result))
+              return result['sha']
+
+
+          def confirm_and_dispatch(gh, state, expected_merge):
+              """Confirm a direct merge once, then dispatch both existing main workflows."""
+              pr = gh.call(f"/pulls/{state['number']}")
+              if pr['head']['sha'] != state['head'] or pr['base']['ref'] != 'main' or state['default'] != 'main':
+                  raise RuntimeError('PR head or destination changed before merge confirmation')
+              merge = pr.get('merge_commit_sha')
+              if (pr.get('merged') is not True or pr['state'] != 'closed' or
+                      not isinstance(merge, str) or not re.fullmatch(r'[0-9a-f]{40}', merge)):
+                  raise RuntimeError('Direct merge is not confirmed; no checks dispatched')
+              if merge != expected_merge:
+                  raise RuntimeError('Confirmed merge differs from the merge response')
+              tip = gh.call('/commits/main')['sha']
+              comparison = gh.call(f"/compare/{merge}...{tip}")
+              if type(comparison.get('behind_by')) is not int or comparison['behind_by'] != 0:
+                  raise RuntimeError('Merged commit is not contained in main')
+              record('merge-confirmation.json', {'number': state['number'], 'head': state['head'],
+                     'base': 'main', 'merge_commit_sha': merge, 'default_tip': tip,
+                     'merged_by': pr.get('merged_by'), 'merged_at': pr.get('merged_at')})
+              failures = []
+              for workflow in ('research-checks.yml', 'kernel-lean.yml'):
+                  receipt = {'workflow': workflow, 'request': {'ref': 'main'}, 'status': 'intent',
+                             'merge_commit_sha': merge}
+                  name = 'dispatch-' + workflow + '.json'
+                  record(name, receipt)
+                  try:
+                      # Never retry a write: a timeout can mean GitHub accepted it.
+                      result = gh.dispatch_workflow(workflow, 'main')
+                      receipt.update(status='accepted', response=result)
+                      record(name, receipt)
+                      run_id = (result or {}).get('workflow_run_id')
+                      if type(run_id) is not int or run_id <= 0:
+                          raise RuntimeError('Dispatch did not return a run ID; reconcile Actions before retrying')
+                      run = gh.call(f'/actions/runs/{run_id}')
+                      receipt['run'] = {k: run.get(k) for k in ('id', 'head_sha', 'head_branch', 'event', 'path', 'html_url', 'status')}
+                      sha = run.get('head_sha')
+                      if (run.get('id') != run_id or run.get('event') != 'workflow_dispatch' or
+                              run.get('head_branch') != 'main' or run.get('path') != '.github/workflows/' + workflow or
+                              not isinstance(sha, str) or not re.fullmatch(r'[0-9a-f]{40}', sha)):
+                          raise RuntimeError('Unexpected dispatched run identity; reconcile Actions before retrying')
+                      receipt.update(status='run_confirmed', head_sha=sha, head_differs_from_merge=(sha != merge))
+                      record(name, receipt)
+                  except Exception as error:
+                      receipt['error'] = str(error)
+                      record(name, receipt)
+                      failures.append(workflow + ': ' + str(error))
+              if failures:
+                  raise RuntimeError('Post-merge dispatch needs reconciliation: ' + '; '.join(failures))
+              log('Confirmed direct merge ' + merge + '; dispatched both workflows on main. See receipts for their actual head SHAs.')
+              return merge
+
+
+          def merge_and_dispatch(gh, state):
+              ready, current, latest_ref = merge_readiness(gh, state)
+              expected_merge = None
+              if ready:
+                  expected_merge = direct_merge(gh, state, latest_ref)
+              elif not current.get('auto_merge'):
+                  # Only an explicit refusal permits the one readiness recheck. Transport
+                  # failures and ambiguous partial GraphQL success are never replayed.
+                  refusal = None
+                  try:
+                      result = gh.api('/graphql', 'POST', {'query': 'mutation($id:ID!){enablePullRequestAutoMerge(input:{pullRequestId:$id,mergeMethod:MERGE}){pullRequest{id}}}', 'variables': {'id': current['node_id']}})
+                      record('auto-merge-result.json', result)
+                      if result.get('errors'):
+                          if (result.get('data') or {}).get('enablePullRequestAutoMerge'):
+                              raise RuntimeError('Ambiguous auto-merge response; reconcile before retrying')
+                          refusal = result['errors']
+                  except RequestError as error:
+                      if error.status not in (400, 403, 422):
+                          raise
+                      refusal = str(error)
+                  if refusal is not None:
+                      record('auto-merge-refusal.json', {'error': refusal})
+                      ready, current, latest_ref = merge_readiness(gh, state, 'merge-readiness-after-refusal.json')
+                      if not ready:
+                          raise RuntimeError('Auto-merge refused and required checks are not ready after the one recheck: ' + json.dumps(refusal))
+                      expected_merge = direct_merge(gh, state, latest_ref)
+              if expected_merge is None:
+                  record('post-merge-manual.json', {'number': state['number'], 'head': state['head'],
+                         'reason': 'Deferred auto-merge: maintainer must dispatch both workflows on main after confirming merge.'})
+                  log('Deferred auto-merge. After merge, a maintainer must start Research checks and Kernel Lean build on main. No polling.')
+                  return
+              return confirm_and_dispatch(gh, state, expected_merge)
+
+
           def publish():
               """Use a fresh official-action token after the potentially long review."""
               path = OUT / 'decision.json'
@@ -1024,57 +1161,7 @@ jobs:
               if state['conclusion'] != 'success':
                   raise RuntimeError('Protocol B review is blocked')
               if state['mode'] == 'live':
-                  # Preserve the protected route for both immediate and deferred merges.
-                  rules = gh.pages("/rules/branches/" + urllib.parse.quote(state['default'], safe=""))
-                  required = {c["context"] for rule in rules if rule["type"] == "required_status_checks"
-                              for c in rule["parameters"]["required_status_checks"]}
-                  if not ({CHECK} | REQUIRED_COMPUTATIONS) <= required:
-                      raise RuntimeError("Auto-merge withheld: the reviewer check or computation protections are not required")
-                  if not any(c['context'] == CHECK and c.get('integration_id') == int(os.environ['APP_ID'])
-                             for rule in rules if rule['type'] == 'required_status_checks'
-                             for c in rule['parameters']['required_status_checks']):
-                      raise RuntimeError('Auto-merge withheld: required review check is not pinned to the dedicated App')
-                  if not any(rule["type"] == "required_status_checks" and rule["parameters"].get("strict_required_status_checks_policy") for rule in rules):
-                      raise RuntimeError("Auto-merge withheld: require an up-to-date branch so changed base dependencies cannot bypass review")
-                  if not gh.call('').get("allow_auto_merge"):
-                      raise RuntimeError("Review passed, but repository auto-merge is disabled; complete the owner-approved activation checklist")
-                  requirements = [c for rule in rules if rule['type'] == 'required_status_checks'
-                                  for c in rule['parameters']['required_status_checks']]
-                  ready = required_checks_passed(gh, state['head'], requirements)
-                  record('merge-readiness.json', {'head': state['head'], 'requirements': requirements,
-                                                 'all_required_checks_passed': ready})
-                  current = gh.call(f"/pulls/{state['number']}")
-                  if current["head"]["sha"] != state['head']:
-                      raise RuntimeError("Head changed before requesting merge")
-                  if current['base']['ref'] != state['default'] or current['state'] != 'open' or current['draft']:
-                      raise RuntimeError('PR is no longer open and ready for the protected default branch')
-                  latest_ref = gh.call('/commits/' + state['default'])['sha']
-                  if not same_policy(gh, state['policy_ref'], latest_ref):
-                      raise RuntimeError('Review policy changed before requesting merge')
-                  if ready:
-                      comparison = gh.call(f"/compare/{latest_ref}...{state['head']}")
-                      behind = comparison.get('behind_by')
-                      record('merge-base-check.json', {'default_tip': latest_ref, 'head': state['head'],
-                                                       'behind_by': behind})
-                      if type(behind) is not int or behind != 0:
-                          raise RuntimeError('Direct merge withheld: reviewed head must contain the current default-branch tip')
-                      # Do not gate on mergeable_state: the running, non-required
-                      # gate job itself can leave it "unstable". Deployment requires
-                      # an empty ruleset bypass list. The merge API checks this SHA.
-                      result = gh.call(f"/pulls/{state['number']}/merge", 'PUT',
-                                       {'sha': state['head'], 'merge_method': 'merge'})
-                      record('merge-result.json', result)
-                      if result.get('merged') is not True:
-                          raise RuntimeError('Direct merge was not confirmed: ' + json.dumps(result))
-                      log('Reviewed head merged as ' + result['sha'] + '. GITHUB_TOKEN does not trigger push workflows; post-merge checks need explicit dispatch.')
-                  elif not current.get("auto_merge"):
-                      result = gh.api("/graphql", "POST", {"query": "mutation($id:ID!){enablePullRequestAutoMerge(input:{pullRequestId:$id,mergeMethod:MERGE}){pullRequest{id}}}", "variables": {"id": current["node_id"]}})
-                      record('auto-merge-result.json', result)
-                      if result.get("errors"):
-                          raise RuntimeError(json.dumps(result["errors"]))
-                      log("Review accepted; GitHub auto-merge waits for the required computation checks.")
-                  else:
-                      log('Review accepted; GitHub auto-merge is already enabled.')
+                  merge_and_dispatch(gh, state)
               else:
                   log("Test accepted. Auto-merge is disabled in test mode.")
 
