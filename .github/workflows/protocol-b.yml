@@ -975,16 +975,17 @@ jobs:
               # an App identity here, so they cannot satisfy an App-pinned rule.
               statuses = {}
               for status in gh.pages(f"/commits/{head}/statuses"):
-                  prior = statuses.get(status['context'])
+                  context = status['context'].casefold()
+                  prior = statuses.get(context)
                   if prior is None or status['id'] > prior['id']:
-                      statuses[status['context']] = status
+                      statuses[context] = status
               for rule in requirements:
                   name, integration = rule['context'], rule.get('integration_id')
                   pinned = integration not in (None, -1)
                   matches = [c for c in checks if c['name'] == name and
                              (c.get('app') or {}).get('id') is not None and
                              (not pinned or (c.get('app') or {}).get('id') == integration)]
-                  status = statuses.get(name)
+                  status = statuses.get(name.casefold())
                   if status is not None and status['state'] != 'success':
                       return False
                   if not matches and (pinned or status is None):

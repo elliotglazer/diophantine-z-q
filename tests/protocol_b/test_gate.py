@@ -458,6 +458,39 @@ class Checks(unittest.TestCase):
                 self.assertEqual(gh.merge_requests, [])
                 self.assertIn('enablePullRequestAutoMerge', gh.graphql['query'])
 
+    def test_legacy_context_case_variants_use_latest_result(self):
+        for order in ['oldest_first', 'newest_first']:
+            for latest in ['pending', 'failure', 'error', 'success']:
+                with self.subTest(order=order, latest=latest):
+                    gh = FakeGH()
+                    gh.statuses = [
+                        {'id': 1, 'context': 'ci/example', 'state': 'success' if latest != 'success' else 'failure'},
+                        {'id': 2, 'context': 'CI/EXAMPLE', 'state': latest}]
+                    if order == 'newest_first': gh.statuses.reverse()
+                    self.assertEqual(gate.required_checks_passed(gh, HEAD, [
+                        {'context': 'Ci/Example', 'integration_id': None}]), latest == 'success')
+
+    def test_successful_check_with_case_variant_legacy_failure_defers_merge(self):
+        for latest in ['pending', 'failure', 'error']:
+            with self.subTest(latest=latest):
+                gh = self.ready_gh()
+                gh.statuses = [
+                    {'id': 1, 'context': gate.CHECK, 'state': 'success'},
+                    {'id': 2, 'context': gate.CHECK.swapcase(), 'state': latest}]
+                _, _, errors, _ = run_pipeline(gh, mode='live')
+                self.assertEqual(errors, [])
+                self.assertEqual(gh.merge_requests, [])
+                self.assertIn('enablePullRequestAutoMerge', gh.graphql['query'])
+
+    def test_successful_check_with_newer_case_variant_legacy_success_can_merge(self):
+        gh = self.ready_gh()
+        gh.statuses = [
+            {'id': 2, 'context': gate.CHECK.swapcase(), 'state': 'success'},
+            {'id': 1, 'context': gate.CHECK, 'state': 'failure'}]
+        _, _, errors, _ = run_pipeline(gh, mode='live')
+        self.assertEqual(errors, [])
+        self.assertEqual(gh.merge_requests, [{'sha': HEAD, 'merge_method': 'merge'}])
+
     def test_live_head_or_policy_change_after_check_reads_blocks_merge(self):
         for change in ['head', 'policy', 'base', 'draft', 'closed']:
             with self.subTest(change=change):
