@@ -80,16 +80,49 @@ jobs:
           INSTRUCTIONS = ".github/protocol-b-reviewer.md"
           WORKFLOW = ".github/workflows/protocol-b.yml"
           WORKING_MARKER = "<!-- protocol-b-working-v2 -->"
+          ROUND_MARKER = "<!-- protocol-b-automatic-round-v1 -->"
           CONTEXT_TOKEN_BUDGET = 400_000
           OUTPUT_TOKEN_BUDGET = 64_000
           FORMAT_TOKEN_RESERVE = 8_192
           RECOVERY_TOKEN_RESERVE = 4_096
+          REVIEWER_OUTPUT_RESERVE = OUTPUT_TOKEN_BUDGET
+          FINISH_NOW_INSTRUCTION = (
+              'Review context is low. Finish now with finish_review; do not request more '
+              'file reads, searches, or web fetches. In the report, include a Not reviewed '
+              'list naming the relevant sources, claims, or checks you did not complete '
+              '(write None if all required review is complete). If any required check '
+              'remains incomplete, request changes and identify it as an unresolved '
+              'finding. A budget limit is not evidence of acceptance. Preserve and '
+              'disposition every earlier finding; do not claim to have read omitted material.'
+          )
           WEB_MAX_USES = {'web_search': 3, 'web_fetch': 5}
           WEB_FETCH_MAX_CONTENT_TOKENS = 20_000
           # Search has no content-token cap, and the fetch cap does not cover binary
           # PDFs. These are accounting reserves, not provider-enforced limits.
           WEB_SEARCH_RESULT_RESERVE = 16_000
           WEB_BINARY_RESULT_RESERVE = 128_000
+
+
+          def configure_budget(files):
+              """Choose one profile from the complete GitHub diff, before reviewers start.
+
+              Published windows: gpt-6-astra 1,050,000; claude-fable-5-2 1,000,000.
+              Both profiles include the output and formatting reserves within the cap.
+              """
+              global CONTEXT_TOKEN_BUDGET, WEB_MAX_USES, WEB_FETCH_MAX_CONTENT_TOKENS
+              manuscript = any(path.startswith('manuscripts/') for file in files
+                               for path in (file['filename'], file.get('previous_filename', '')))
+              CONTEXT_TOKEN_BUDGET = 900_000 if manuscript else 400_000
+              WEB_MAX_USES = {'web_search': 10, 'web_fetch': 20} if manuscript else {'web_search': 3, 'web_fetch': 5}
+              WEB_FETCH_MAX_CONTENT_TOKENS = 50_000 if manuscript else 20_000
+              return {'profile': 'manuscript' if manuscript else 'ordinary',
+                      'context_token_budget': CONTEXT_TOKEN_BUDGET,
+                      'output_token_budget': OUTPUT_TOKEN_BUDGET,
+                      'reviewer_output_reserve': REVIEWER_OUTPUT_RESERVE,
+                      'fable_web_max_uses': dict(WEB_MAX_USES),
+                      'fable_web_fetch_max_content_tokens': WEB_FETCH_MAX_CONTENT_TOKENS}
+
+
           REQUIRED_COMPUTATIONS = {
               "Accepted Lean helpers and axiom audit", "Construction regeneration and finite checks",
               "Paper build", "Reconstructed quartic and Version 5 inventory",
@@ -287,7 +320,7 @@ jobs:
           ]
 
 
-          def validate_review(value, prior_ids, overrides):
+          def validate_review(value, prior_ids, overrides, allow_incomplete=False):
               if set(value) != set(FINISH_SCHEMA["required"]):
                   raise ValueError("Incomplete final report")
               if value["decision"] not in {"accept", "changes_requested"} or not isinstance(value["report"], str) or len(value["report"]) < 80:
@@ -295,7 +328,7 @@ jobs:
               for key in ("findings", "prior_findings", "sources_read", "not_outside_reviewed"):
                   if not isinstance(value[key], list):
                       raise ValueError("Expected report list: " + key)
-              if not value["sources_read"]:
+              if not value["sources_read"] and not (allow_incomplete and value['decision'] == 'changes_requested'):
                   raise ValueError("No sources read")
               ids = [x["id"] for x in value["findings"]]
               if len(ids) != len(set(ids)) or any(not re.fullmatch(r"[A-Za-z0-9_-]{1,40}", i) for i in ids):
@@ -557,6 +590,7 @@ jobs:
                   self.instructions = instructions
                   self.history_read, self.reads, self.tree, self.chars = False, [], None, 0
                   self.file_lines, self.working_comment, self.notes = {}, None, []
+                  self.finish_now = False
                   self.input = {"repository": gh.repo, "pull_request": pr["number"], "head": pr["head"]["sha"],
                                 "base": pr["base"]["sha"], "change_class": change_class,
                                 "untrusted_title": pr["title"], "untrusted_description": pr.get("body"), "files": files}
@@ -601,10 +635,27 @@ jobs:
                   conversation = [{"role": "user", "content": json.dumps(self.input)}]
                   record(self.family + "-input.json", {"instructions": self.instructions, "input": self.input})
                   turns, previous = [], None
+                  finish_instruction = FINISH_NOW_INSTRUCTION + '\nPrior finding IDs: ' + json.dumps(sorted(self.prior)) + \
+                      '. If you could not review an earlier finding, disposition it as unresolved and explain that limitation.'
                   for turn in range(50):
                       log(f"{self.family}: model turn {turn+1}; {len(self.reads)} repository source reads")
-                      budget = context_budget(self.family, self.instructions, conversation, previous)
-                      output, served, usage, response_id, stop_reason = model_turn(self.family, self.instructions, conversation)
+                      instructions = self.instructions + ('\n\n' + finish_instruction if self.finish_now else '')
+                      projected = context_estimate(self.family, instructions, conversation, previous)
+                      if (CONTEXT_TOKEN_BUDGET - RECOVERY_TOKEN_RESERVE - projected['estimated_total']
+                              < REVIEWER_OUTPUT_RESERVE):
+                          if not self.finish_now:
+                              instructions += '\n\n' + finish_instruction
+                          self.finish_now = True
+                      if self.finish_now:
+                          # This is trusted runtime guidance, not a direction from a source file.
+                          # Keep the conversation and the hard pre-request guard unchanged.
+                          record(self.family + '-finish-now.json', {'turn': turn + 1, 'reason': 'low context',
+                                 'projected': projected, 'reviewer_output_reserve': REVIEWER_OUTPUT_RESERVE})
+                      budget = context_budget(self.family, instructions, conversation, previous)
+                      failed = failed_computation_checks(self.gh, self.pr['head']['sha'], self.pr['base']['ref'])
+                      if failed:
+                          raise RuntimeError('fix failing checks first: ' + ', '.join(failed) + '; no further model call')
+                      output, served, usage, response_id, stop_reason = model_turn(self.family, instructions, conversation)
                       previous = {**budget, 'usage': usage,
                                   'server_tools': any(x.get('type') == 'server_tool_use' for x in output)}
                       if served != MODELS[self.family]:
@@ -647,10 +698,12 @@ jobs:
                       results = []
                       finish = [x for x in calls if x.get("name") == "finish_review"]
                       if finish:
-                          if len(calls) != 1 or not self.history_read or not self.reads:
+                          if len(calls) != 1:
                               raise ValueError("Final review requires prior source/history reads and no concurrent tool calls")
                           value = json.loads(finish[0]["arguments"]) if self.family == "astra" else finish[0]["input"]
-                          value = validate_review(value, set(self.prior), self.overrides)
+                          value = validate_review(value, set(self.prior), self.overrides, allow_incomplete=self.finish_now)
+                          if (not self.history_read or not self.reads) and not (self.finish_now and value['decision'] == 'changes_requested'):
+                              raise ValueError("Final review requires prior source/history reads and no concurrent tool calls")
                           record(self.family + "-source-reads.json", self.reads)
                           return value
                       if not calls and stop_reason != "pause_turn":
@@ -659,7 +712,8 @@ jobs:
                           conversation.append({"role": "user", "content": "Continue the review. When finished use finish_review; prose alone cannot pass the gate."})
                       # Reserve a small error result for every pending call before admitting
                       # large reads. Parallel calls share one next-request budget.
-                      notice = 'Estimated remaining allowance; use smaller reads or narrower searches. Repository reads are never truncated.'
+                      notice = ('Estimated remaining allowance; 64,000 tokens are reserved for the reviewer\'s own output. '
+                                'Use smaller reads or narrower searches. Repository reads are never truncated.')
                       web_remaining = web_allowance(self.family, conversation)
                       rejected = {'error': 'Read too large for the remaining review allowance. Request fewer lines or a narrower result.',
                                   'remaining_context_tokens': 0, 'remaining_tool_characters': 0,
@@ -676,7 +730,7 @@ jobs:
                                'content': json.dumps(v, ensure_ascii=False)} for c, v in zip(calls, proposed)]}]
 
                       def allowance(proposed):
-                          estimated = context_estimate(self.family, self.instructions,
+                          estimated = context_estimate(self.family, instructions,
                                                        next_conversation(proposed), previous)
                           # Leave space for allowance metadata and a recovery/decision turn.
                           return max(0, CONTEXT_TOKEN_BUDGET - RECOVERY_TOKEN_RESERVE - estimated['estimated_total'])
@@ -685,16 +739,20 @@ jobs:
                           args = json.loads(call["arguments"]) if self.family == "astra" else call["input"]
                           reads_before, history_before = len(self.reads), self.history_read
                           try:
+                              if self.finish_now:
+                                  raise ValueError('Read too large for the remaining review allowance. ' + FINISH_NOW_INSTRUCTION)
                               value = self.tool(call["name"], args)
                           except (ValueError, UnicodeError) as error:
                               value = {"error": str(error)}
                           value = {**value, 'remaining_context_tokens': 0,
                                    'remaining_tool_characters': 0, 'budget_notice': notice, 'web_uses_remaining': web_remaining}
                           values[call_index] = value
-                          estimated = context_estimate(self.family, self.instructions,
+                          estimated = context_estimate(self.family, instructions,
                                                        next_conversation(values), previous)
                           content = json.dumps(value, ensure_ascii=False)
-                          if (estimated['estimated_total'] > CONTEXT_TOKEN_BUDGET - RECOVERY_TOKEN_RESERVE
+                          # In addition to the next request's output allowance, leave room
+                          # for that reply to enter the following request's input context.
+                          if (estimated['estimated_total'] > CONTEXT_TOKEN_BUDGET - RECOVERY_TOKEN_RESERVE - REVIEWER_OUTPUT_RESERVE
                                   or self.chars + len(content) + 128 > 1_200_000):
                               value = dict(rejected)
                               values[call_index] = value
@@ -702,6 +760,10 @@ jobs:
                               del self.reads[reads_before:]
                               self.history_read = history_before
                           value['remaining_context_tokens'] = max(0, allowance(values) - 128)
+                          if self.finish_now or value['remaining_context_tokens'] < REVIEWER_OUTPUT_RESERVE:
+                              self.finish_now = True
+                              value['finish_now'] = True
+                              value['budget_notice'] = FINISH_NOW_INSTRUCTION
                           value['remaining_tool_characters'] = max(0, 1_200_000 - self.chars - len(json.dumps(value, ensure_ascii=False)) - 128)
                           content = json.dumps(value, ensure_ascii=False)
                           self.chars += len(content)
@@ -824,6 +886,105 @@ jobs:
               return gh, app
 
 
+          def collaborator(gh, user):
+              if user.get('type') != 'User' or not user.get('login'):
+                  return False
+              try:
+                  permission = gh.call('/collaborators/' + urllib.parse.quote(user['login'], safe='') + '/permission')
+              except RequestError as error:
+                  if error.status == 404:
+                      return False
+                  raise
+              return permission['permission'] in {'write', 'maintain', 'admin'}
+
+
+          def review_spend_history(gh, app, pr, name, policy):
+              """Comments only locate records; this App's check payload is authority.
+
+              Persisting check pointers in the PR keeps counts across force-pushes.
+              Old report comments also locate pre-counter reviews. A missing record
+              fails closed rather than silently resetting the spending count.
+              """
+              heads, pointers = {pr['head']['sha']}, set()
+              for comment in gh.pages(f"/issues/{pr['number']}/comments"):
+                  body = comment['body']
+                  if not own_comment(gh, comment) or not body.startswith((MARKER, ROUND_MARKER)):
+                      continue
+                  try:
+                      value = json.loads(body.split('```json\n', 1)[1].split('\n```', 1)[0])
+                  except (ValueError, IndexError):
+                      continue
+                  if body.startswith(ROUND_MARKER) and type(value.get('check')) is int:
+                      pointers.add(value['check'])
+                  elif re.fullmatch('[0-9a-f]{40}', str(value.get('head', ''))):
+                      heads.add(value['head'])
+              checks = {}
+              for head in sorted(heads):
+                  for page in range(1, 101):
+                      response = app.call(f'/commits/{head}/check-runs?filter=all&per_page=100&page={page}')
+                      for check in response['check_runs']:
+                          checks[check['id']] = check
+                      if len(response['check_runs']) < 100:
+                          break
+                  else:
+                      raise ValueError('Prior review check pagination incomplete; no model call')
+              for ident in sorted(pointers - checks.keys()):
+                  checks[ident] = app.call(f'/check-runs/{ident}')
+              rounds, completed = set(), []
+              for check in checks.values():
+                  if (check['name'] != name or (check.get('app') or {}).get('id') != int(os.environ['APP_ID'])):
+                      continue
+                  try:
+                      value = json.loads(check.get('output', {}).get('text') or '{}')
+                  except ValueError:
+                      continue
+                  if value.get('schema') != 'protocol-b-decisions/v1' or value.get('head') != check['head_sha']:
+                      continue
+                  marker = value.get('review_round') or {}
+                  if marker.get('number') == pr['number'] and marker.get('started') is True:
+                      if marker.get('trigger') == 'automatic':
+                          rounds.add((str(marker['run']), str(marker['attempt'])))
+                  reports = value.get('reports') or {}
+                  valid = (set(reports) == set(MODELS) and all(
+                      r.get('head') == check['head_sha'] and r.get('model') == MODELS[f]
+                      for f, r in reports.items()))
+                  if valid and not marker:
+                      identities = {(str(r['run']), str(r['attempt'])) for r in reports.values()}
+                      if len(identities) == 1:
+                          run, attempt = next(iter(identities))
+                          actual = gh.call(f'/actions/runs/{run}')
+                          if actual['event'] == 'pull_request_target' and actual['path'].split('@')[0] == WORKFLOW:
+                              rounds.add((run, attempt))
+                  if (valid and check['head_sha'] == pr['head']['sha'] and check.get('status') == 'completed'
+                          and all(r.get('complete') and same_policy(gh, r['policy_ref'], policy) for r in reports.values())):
+                      completed.append(check)
+              return {'automatic_rounds': len(rounds),
+                      'completed_check': max(completed, key=lambda c: c['id']) if completed else None}
+
+
+          def failed_computation_checks(gh, head, default):
+              rules = gh.pages('/rules/branches/' + urllib.parse.quote(default, safe=''))
+              requirements = [c for rule in rules if rule['type'] == 'required_status_checks'
+                              for c in rule['parameters']['required_status_checks'] if c['context'] != CHECK]
+              checks = head_checks(gh, head)
+              statuses = {}
+              for status in gh.pages(f'/commits/{head}/statuses'):
+                  key = status['context'].casefold()
+                  if key not in statuses or status['id'] > statuses[key]['id']:
+                      statuses[key] = status
+              failed = set()
+              for required in requirements:
+                  name, integration = required['context'], required.get('integration_id')
+                  matches = [c for c in checks if c['name'] == name and
+                             (integration in (None, -1) or (c.get('app') or {}).get('id') == integration)]
+                  if any(c['status'] == 'completed' and c.get('conclusion') in
+                         {'failure', 'cancelled', 'timed_out', 'action_required', 'startup_failure', 'stale'} for c in matches):
+                      failed.add(name)
+                  if statuses.get(name.casefold(), {}).get('state') in {'error', 'failure'}:
+                      failed.add(name)
+              return sorted(failed)
+
+
           def main():
               mode = os.environ.get("MODE", "off")
               if mode not in {"test", "live"}:
@@ -843,15 +1004,16 @@ jobs:
               if mode == "test" and number != int(os.environ.get("TEST_PR", "0")):
                   log("Test mode: this is not the designated throwaway PR; no action.")
                   return
-              override_command = False
+              override_command = review_command = False
               if "comment" in event:
                   command = event["comment"]["body"].strip()
-                  if not command.startswith(("/protocol-b review", "/protocol-b override ")):
+                  if command != '/protocol-b review' and not command.startswith('/protocol-b override '):
                       return
                   login = event["sender"]["login"]
-                  if gh.call("/collaborators/" + urllib.parse.quote(login, safe="") + "/permission")["permission"] not in {"write", "maintain", "admin"}:
+                  if event['comment']['user']['login'] != login or not collaborator(gh, event['comment']['user']):
                       return
                   override_command = command.startswith('/protocol-b override ')
+                  review_command = command == '/protocol-b review'
               pr = gh.call(f"/pulls/{number}")
               if pr["state"] != "open" or pr["draft"] or pr["base"]["ref"] != default:
                   return
@@ -861,6 +1023,13 @@ jobs:
               instructions = gh.text(INSTRUCTIONS, os.environ['GITHUB_SHA'])
               name = CHECK if mode == "live" else "Protocol B / test review"
               run_url = f"https://github.com/{gh.repo}/actions/runs/{os.environ['GITHUB_RUN_ID']}"
+              spend = review_spend_history(gh, app, pr, name, trusted_ref)
+              automatic = 'pull_request' in event and not review_command and not override_command
+              if automatic and spend['completed_check']:
+                  record('review-reused.json', {'check': spend['completed_check']['id'], 'head': pr['head']['sha'],
+                                               'automatic_rounds': spend['automatic_rounds'], 'model_calls': 0})
+                  log('This head already has a completed review under the same policy; no model call.')
+                  return
               # Start blocked rather than leaving an indefinitely pending check if this
               # runner is cancelled, times out, or is lost. Finalization replaces this.
               check = app.call("/check-runs", "POST", {"name": name, "head_sha": pr["head"]["sha"],
@@ -871,13 +1040,34 @@ jobs:
               conclusion, summary = "failure", "Review did not finish. See the workflow log."
               state = {'number': number, 'head': pr['head']['sha'], 'base': pr['base']['sha'], 'check': check['id'],
                        'name': name, 'mode': mode, 'policy_ref': os.environ['GITHUB_SHA'], 'default': default,
-                       'conclusion': conclusion, 'summary': summary, 'reports': {}}
+                       'conclusion': conclusion, 'summary': summary, 'reports': {},
+                       'automatic_rounds': spend['automatic_rounds']}
               record('decision.json', state)
               envelopes = {}
               try:
+                  # Do not spend model credits on an outside contributor's automatic
+                  # event or manual workflow dispatch. Each review needs a current
+                  # collaborator's explicit command; an override never calls models.
+                  if not override_command and not review_command and not collaborator(gh, pr['user']):
+                      state.update(conclusion='action_required', summary=
+                                   "Review blocked: awaiting a collaborator's /protocol-b review. No model was called.")
+                      record('decision.json', state)
+                      return
+                  if not override_command:
+                      failed = failed_computation_checks(gh, pr['head']['sha'], default)
+                      if failed:
+                          state.update(conclusion='action_required', summary='Review blocked: fix failing checks first: ' + ', '.join(failed) + '. No model was called.')
+                          record('decision.json', state)
+                          return
+                  if not override_command and not review_command and spend['automatic_rounds'] >= 4:
+                      state.update(conclusion='action_required', summary=
+                                   'Four automatic review rounds have run. A collaborator must comment /protocol-b review. No model was called.')
+                      record('decision.json', state)
+                      return
                   files = gh.pages(f"/pulls/{number}/files")
                   if len(files) != pr["changed_files"]:
                       raise ValueError("GitHub omitted changed files; cannot review an incomplete diff")
+                  record('budget-profile.json', configure_budget(files))
                   # Even missing patches remain listed so both reviewers must fetch sources.
                   declaration = "No mathematical content changed." in (pr.get("body") or "")
                   change_class = classify(files, declaration)
@@ -901,6 +1091,20 @@ jobs:
                       for key in ("OPENAI_API_KEY", "ANTHROPIC_API_KEY"):
                           if not os.environ.get(key):
                               raise ValueError("Missing protocol-b environment secret " + key)
+                      # Save the paid-round intent to the App and a discoverable PR
+                      # pointer before either worker starts. Interrupted rounds count.
+                      state['automatic_rounds'] += int(automatic)
+                      state['review_round'] = {'number': number, 'run': os.environ['GITHUB_RUN_ID'],
+                                               'attempt': os.environ['GITHUB_RUN_ATTEMPT'], 'started': True,
+                                               'trigger': 'automatic' if automatic else 'command'}
+                      record('decision.json', state)
+                      app.call(f"/check-runs/{check['id']}", 'PATCH', {'output': {
+                          'title': 'Review not yet accepted', 'summary': f"Review running. Automatic rounds: {state['automatic_rounds']}/4.",
+                          'text': json.dumps({'schema': 'protocol-b-decisions/v1', 'head': state['head'],
+                                              'reports': {}, 'review_round': state['review_round'],
+                                              'automatic_rounds': state['automatic_rounds']})}})
+                      gh.call(f'/issues/{number}/comments', 'POST', {'body': ROUND_MARKER + '\n```json\n' +
+                              json.dumps({'check': check['id']}) + '\n```'})
                       reviews, failures = {}, {}
                       with concurrent.futures.ThreadPoolExecutor(max_workers=2) as pool:
                           futures = {pool.submit(Review(gh, pr, files, discussion, prior, overrides, instructions, family, change_class).run): family for family in MODELS}
@@ -958,8 +1162,8 @@ jobs:
                   raise RuntimeError("Protocol B review is blocked")
 
 
-          def required_checks_passed(gh, head, requirements):
-              """Conservative readiness check; GitHub still enforces rules on merge."""
+          def head_checks(gh, head):
+              """Read every current check, shared by spending and merge guards."""
               checks, seen, total = [], set(), None
               for page in range(1, 101):
                   value = gh.call(f"/commits/{head}/check-runs?filter=latest&per_page=100&page={page}")
@@ -978,6 +1182,12 @@ jobs:
                       raise ValueError('Incomplete check list; no merge requested')
               else:
                   raise ValueError('Check pagination limit reached; no merge requested')
+              return checks
+
+
+          def required_checks_passed(gh, head, requirements):
+              """Conservative readiness check; GitHub still enforces rules on merge."""
+              checks = head_checks(gh, head)
               # A legacy status with the same name also has to pass. Statuses lack
               # an App identity here, so they cannot satisfy an App-pinned rule.
               statuses = {}
@@ -1162,7 +1372,10 @@ jobs:
               for envelope in compact.values():
                   envelope['review'].pop('report', None)
                   envelope['review'].pop('sources_read', None)
-              text = json.dumps({'schema': 'protocol-b-decisions/v1', 'head': state['head'], 'reports': compact})
+              text = json.dumps({'schema': 'protocol-b-decisions/v1', 'head': state['head'], 'reports': compact,
+                                 'automatic_rounds': state.get('automatic_rounds', 0),
+                                 'review_round': state.get('review_round')})
+              state['summary'] += f"\nAutomatic review rounds: {state.get('automatic_rounds', 0)}/4."
               if len(text.encode()) > 60_000 or len(state['summary'].encode()) > 60_000:
                   raise ValueError('Check output exceeds capacity; remains blocked, never truncate findings')
               app.call(f"/check-runs/{state['check']}", 'PATCH', {'status': 'completed', 'conclusion': state['conclusion'],
