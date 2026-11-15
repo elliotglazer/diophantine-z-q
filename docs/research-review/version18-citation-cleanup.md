@@ -1,0 +1,50 @@
+# Version 18 citation and prose-cleanup delta
+
+This additive record describes the cleanup candidate `manuscripts/quartic_v18.tex`, SHA256 `3cabe34b6a3797e3e131644cf138c15c5a1045fd878c92713be05cfdbd3a660c`, relative to the mathematical text merged in PR98, SHA256 `8f4a6a99ce63b1bf6c7ab2fe71507795507a94281a775bf02fa07ca2be9359ae`. Line numbers below refer to the candidate. It leaves the historical PR98 dependency record intact. It is a review submission, not an independent-acceptance record.
+
+## Source applications and short explanations
+
+| Passage | Source and hypotheses | What the text uses |
+|---|---|---|
+| Local control, lines 19098 and 19172 | Nekovar, *Selmer complexes*, Asterisque 310 (2006), Corollary 8.4.8.2(i), p.215; Kato, Asterisque 295 (2004), (12.2.3), p.220. The actual coefficient is a finite free quadratic twist over the local real cyclotomic Z2 tower. | The specialization injection, local duality, and Nakayama show that the local characteristic element has no factor at the augmentation prime. Inverting 2 permits the fixed finite-sign decomposition. The two repeated applications now use the same argument. No new global H3 assertion is made. |
+| Atkin–Lehner, line 8974 and the global-sign paragraph | Atkin–Lehner, *Hecke operators on Gamma_0(m)*, Math. Ann.185 (1970), Lemma8 p.138, Lemma9 p.139, Theorem3(iii) p.147, Lemma33(iii) p.156 and Theorem6 p.157. Divisors of the level are exact; the twist conductor actually used is odd and prime to the old level. | Cusp permutation and the differential give the translation formula. An explicit weight-two Mellin calculation supplies the global minus sign. Successive Legendre twists give the existing odd quadratic-twist formula. This is not a claim covering an arbitrary even twist conductor. |
+| Quadratic Gauss sums, lines 18858, 18891 | Montgomery–Vaughan, *Multiplicative Number Theory I*, Theorem9.17, p.300. Primitive quadratic character and signed fundamental discriminant, with the manuscript's positive-exponential convention. | The existing signed square identity, including even discriminants. |
+| Kummer pairing, line 9665 | Guillot, *A Gentle Course in Local Class Field Theory* (2018), Lemma1.20 and Theorem1.22, pp.11–13. Characteristic zero, the required roots of unity, and the finite radical subgroup. | The pairing for the actual possibly dependent radicands; no independence of the radicands is assumed. |
+| Split-cubic halving, line 22297 | Direct tangent-line argument over a field of characteristic different from two with distinct split roots. | Only the necessary implication that halving a nonzero two-torsion point makes both root differences squares. No unavailable Bekker–Zarhin theorem number is imported. |
+
+The relevant final source pages were inspected in local preparation, including the publisher-formatted Montgomery–Vaughan chapter and Guillot preview that contains the required pages. This statement records preparation scope, not a substitute for this PR's two reviewers. Public access points are [Nekovar](https://www.numdam.org/item/AST_2006__310__R1_0.pdf), [Kato](https://www.numdam.org/article/AST_2004__295__117_0.pdf), [Atkin–Lehner](https://doi.org/10.1007/BF01359701), [Montgomery–Vaughan chapter](https://personal.science.psu.edu/rcv4/personal/Publications/MNTI/13.0_pp_282_325_Primitive_characters_and_Gauss_sums.pdf), and [Guillot preview](https://api.pageplace.de/preview/DT0400.9781108389860_A35309221/preview-9781108389860_A35309221.pdf).
+
+The remaining source changes are as follows. These are source-to-consumer statements for review, not claims to have independently verified each paper's full proof.
+
+| Existing application | Citation or clarification | Retained limits |
+|---|---|---|
+| Surface Tate determinant and coefficient-prime-independent trace | Milne, *Abelian varieties* (1986), Section16 for the polarization pairing and Proposition12.9 for the endomorphism characteristic polynomial. | The Tate-module convention is unchanged. The rank-four symplectic determinant is the square of the multiplier. |
+| Division-polynomial recursion | Silverman, *The Arithmetic of Elliptic Curves*, ExerciseIII.3.7, with the author's 2015 correction for pp.105–106. | The actual formulas are unchanged; the citation now identifies the corrected numerator convention. |
+| Primitive-form extraction | Deligne–Serre (1974), Sections1.6–1.9, pp.509–510, and the existing PartI modularity argument. | The primitive twisting character uses its least conductor. Li's uniqueness and Fricke statements remain separate inputs. Chebotarev and semisimplicity identify the same representation. |
+| Pan local-ring inputs | Allen–Newton–Thorne (2020), Section3.1, Proposition3.1. | The published correction concerns the nilreduction of the trivial-character local ring. The separate project argument for distinct-character integral flatness is still identified as such. The final-Pan-body access limitation remains. |
+| Dyadic character restriction | Serre, *Local class field theory*, Section2.4, p.141, norm functoriality. | The restriction is composition with the norm. The norm of a unit is a unit, and the quadratic local character has conductor at most four. The existing ramification argument then applies. |
+| Ring-class fields and conductor kernels | Cox (1989), Sections7 and9, Proposition7.22, the proof of Theorem7.24, and Lemma9.3. | The order conductor remains arbitrary. The arguments explicitly account for the only global units, plus or minus one, and for rational principal ideals prime to the conductor. |
+| Unramified reduction and local cocycles | Silverman VII.2.1–VII.2.2 and Lang (1956), Theorem1 and its corollary. | The model is minimal integral, the extension is unramified, and the connected smooth special fibre is the object to which Lang applies. |
+| Global-to-local Brauer comparison | Milne, *Arithmetic duality theorems*, I.1.6(b), and proof of II.2.1, p.164. | This repeats the source already used for the same comparison elsewhere in the manuscript. |
+| Product decomposition at no greater stable height | Remond (2017), Theorem1.6, p.1175, as a structural input to the existing Gaudron–Remond construction. | This is not a claim that the 2017 theorem itself proves height monotonicity. The unverified final-2022-source comparison is still explicit. |
+| Rooted-forest minors | Chaiken (1982), the all-minors matrix-tree identity. | This is a polynomial identity and does not require an invertible Laplacian. The manuscript's separate symbol and contraction identities still need their own proofs. |
+| Natural-valued arguments to the precision circuit | Direct traversal of the frozen arithmetic circuit, SHA256 `f3e163f5c60b972c98b48647274f956dd7d78428e27ddc0543574a5f18120b8c`. | All three arguments of each of 15,845 calls were checked using nonnegative constants, natural variables, addition and multiplication. Call outputs were not assumed nonnegative to prove their own arguments. |
+| Maximal-stack height comparison and singular moduli | Existing stack argument and a distinct Gross–Zagier (1985) singular-moduli bibliography key. | No coarse-model pullback is imported from Yuan's Lemma2.1. The separate Gross–Zagier Heegner-points reference remains unchanged. |
+
+An unused Berger citation is removed. Uncompared final source editions and other qualifications remain explicit. Proposed changes to the local GI proof's all-limit convention were withheld; this PR does not adopt them.
+
+## P01 and preserved mathematical scope
+
+P01, line 2236, now names the printed row specification. The original private residual-system blob and the public blob are both `de0593d2d8629fc6fc29d47a3f5e7030b295f6e2`, SHA256 `b15d6477439c3e4be1e98723b69053244debce59e8715683c28fee82aa847ca4`. Their expanded-polynomial blobs also agree, SHA256 `9f461531df52ac73e02cf7a4ce270422715642c0d3112952cad4968d9a7e24ea`. Parsing the candidate checked all 214 coordinates, all 188 residuals and all 1,008 terms against that exact system. This justifies the locator change; it does not prove the arithmetic theorem.
+
+Every theorem, proposition, lemma, corollary and definition environment and every label is byte-identical to PR98's mathematical text. The polynomial and variable count are unchanged. The existing local GI proof remains present, including its bounded-normalization and increment-group arguments. No Candela–Szegedy replacement is adopted here. Neither Version16 nor Version17 is edited; the official-record selector is unchanged.
+
+The prose pass replaces task names and internal review references with existing mathematical sections, removes administrative history from the exposition, and repairs converted text and notation. It preserves the AI-use statement and attribution. The source catalogue retains source-version limitations. These prose changes do not turn an unverified source or conditional input into a proved assertion.
+
+Seventeen existing supplement/index targets were checked byte-for-byte between the PR98 merge commit and archive commit `005b17abfbefd8bee7b34f3bbe8f5aabf872eb1f`. Their bibliography links now name `review-archive-v17`, so removing archived evidence trees from main does not break the citations. This verifies identity of the linked files, not correctness of their mathematical content.
+
+## Validation and acceptance limits
+
+The full candidate builds in three LaTeX passes with no undefined reference or citation and no further cross-reference run requested. Its PDF SHA256 is `44b1e3e7687ec340a08a9569cc86d3cb49038a708d2560dd02a2b5749c48a1c7`. Statement/label comparison and the independent printed-row parser passed on the same source hash. The PDF is a local validation artifact; this PR updates the draft source, not the official TeX/PDF release pair.
+
+This record has not approved itself. Protocol B must review the source-application and prose changes at the final PR head. The old PR98 reviews and override remain historical and do not stand in for this review.
