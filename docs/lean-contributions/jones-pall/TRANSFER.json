@@ -1,0 +1,196 @@
+{
+  "schema": "jones-pall-upstream-transfer/v1",
+  "upstream_base": "4c13e0c3485e6333e4a441bca4bcf8a3dd3ac043",
+  "primary_source": "a9bc2e35c42a34a2be1cc3eeccb33cbc41de53c4",
+  "shared_dependency": {
+    "pr": "https://github.com/elliotglazer/diophantine-z-q/pull/131",
+    "source": "5b0c71a10e12d6ae6f7dfdd542d91e8338ac4207",
+    "merged": false,
+    "included_identical_payloads": 3,
+    "new_provider_namespace": false,
+    "integration_rule": "Only one common module/license/notice. Identical paths are expected overlap; remove redundant diff after authorized dependency integration, not by silently adopting an unmerged world."
+  },
+  "files": [
+    {
+      "source_commit": "a9bc2e35c42a34a2be1cc3eeccb33cbc41de53c4",
+      "source_path": "ZInQKernel/Contrib/OneProof/JonesPall.lean",
+      "source_sha256": "607aade63dfaa6a659af16f104d2127c2a5d157b1076256d520c4b260900a40e",
+      "upstream_path": "ZInQKernel/Contrib/OneProof/JonesPall.lean",
+      "upstream_sha256": "21cca978ad85e613c8e74a8193ce8f58452a9f288e902785f19f09f905236e20",
+      "bytes_identical": false,
+      "change": "full exact expanded hJP signature, missing definer import replaced",
+      "shared_dependency_payload": false,
+      "canonical_shared_commit": null
+    },
+    {
+      "source_commit": "a9bc2e35c42a34a2be1cc3eeccb33cbc41de53c4",
+      "source_path": "ZInQKernel/Contrib/OneProof/JonesPall/Quaternion.lean",
+      "source_sha256": "cb57765610895573aa2303e17849a051a45e06465ad17a690015a9aff815b826",
+      "upstream_path": "ZInQKernel/Contrib/OneProof/JonesPall/Quaternion.lean",
+      "upstream_sha256": "cb57765610895573aa2303e17849a051a45e06465ad17a690015a9aff815b826",
+      "bytes_identical": true,
+      "change": "byte-identical primary helper",
+      "shared_dependency_payload": false,
+      "canonical_shared_commit": null
+    },
+    {
+      "source_commit": "a9bc2e35c42a34a2be1cc3eeccb33cbc41de53c4",
+      "source_path": "ZInQKernel/Contrib/OneProof/JonesPall/Descent.lean",
+      "source_sha256": "f7ae7e1868ec6ecfef6c400259bc8249073bf8c832eddefbf47c7053faa0f4bd",
+      "upstream_path": "ZInQKernel/Contrib/OneProof/JonesPall/Descent.lean",
+      "upstream_sha256": "f7ae7e1868ec6ecfef6c400259bc8249073bf8c832eddefbf47c7053faa0f4bd",
+      "bytes_identical": true,
+      "change": "byte-identical primary helper",
+      "shared_dependency_payload": false,
+      "canonical_shared_commit": null
+    },
+    {
+      "source_commit": "a9bc2e35c42a34a2be1cc3eeccb33cbc41de53c4",
+      "source_path": "ZInQKernel/Contrib/OneProof/JonesPall/Parity.lean",
+      "source_sha256": "23db1fa47eea66b1bb7ca12007fec5bc55819e0c71487d9345d1f5976afee350",
+      "upstream_path": "ZInQKernel/Contrib/OneProof/JonesPall/Parity.lean",
+      "upstream_sha256": "23db1fa47eea66b1bb7ca12007fec5bc55819e0c71487d9345d1f5976afee350",
+      "bytes_identical": true,
+      "change": "byte-identical primary helper",
+      "shared_dependency_payload": false,
+      "canonical_shared_commit": null
+    },
+    {
+      "source_commit": "a9bc2e35c42a34a2be1cc3eeccb33cbc41de53c4",
+      "source_path": "ZInQKernel/Contrib/OneProof/JonesPall/Representation.lean",
+      "source_sha256": "59068462015a1904ab62bfe0293152faee11306cee6ecf515a8c5161de96e175",
+      "upstream_path": "ZInQKernel/Contrib/OneProof/JonesPall/Representation.lean",
+      "upstream_sha256": "59068462015a1904ab62bfe0293152faee11306cee6ecf515a8c5161de96e175",
+      "bytes_identical": true,
+      "change": "byte-identical primary helper",
+      "shared_dependency_payload": false,
+      "canonical_shared_commit": null
+    },
+    {
+      "source_commit": "a9bc2e35c42a34a2be1cc3eeccb33cbc41de53c4",
+      "source_path": "ZInQKernel/Contrib/OneProof/JonesPall/Mathlib.LICENSE",
+      "source_sha256": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1",
+      "upstream_path": "ThirdParty/JonesPall/Mathlib.LICENSE",
+      "upstream_sha256": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1",
+      "bytes_identical": true,
+      "change": "complete byte-identical Mathlib license",
+      "shared_dependency_payload": false,
+      "canonical_shared_commit": null
+    },
+    {
+      "source_commit": "a9bc2e35c42a34a2be1cc3eeccb33cbc41de53c4",
+      "source_path": "ZInQKernel/Contrib/OneProof/JonesPall/NOTICE.md",
+      "source_sha256": "843bb9eaf7ce8c0d706cc39624f9e1283dcd21d2dcf469389535f7d800e6f343",
+      "upstream_path": "ThirdParty/JonesPall/NOTICE-fork.md",
+      "upstream_sha256": "843bb9eaf7ce8c0d706cc39624f9e1283dcd21d2dcf469389535f7d800e6f343",
+      "bytes_identical": true,
+      "change": "byte-identical historical primary source/change notice",
+      "shared_dependency_payload": false,
+      "canonical_shared_commit": null
+    },
+    {
+      "source_commit": "a9bc2e35c42a34a2be1cc3eeccb33cbc41de53c4",
+      "source_path": "ZInQKernel/Contrib/OneProof/LegendreThreeSquares/Atlas.lean",
+      "source_sha256": "ca50ef1ad9cd9519c4fb440d53803810e9b6c9d8b8a9ca3bea75d74fbaed4797",
+      "upstream_path": "ZInQKernel/Contrib/OneProof/LegendreThreeSquares/Atlas.lean",
+      "upstream_sha256": "ca50ef1ad9cd9519c4fb440d53803810e9b6c9d8b8a9ca3bea75d74fbaed4797",
+      "bytes_identical": true,
+      "change": "exact common source from draft PR131, single canonical namespace",
+      "shared_dependency_payload": true,
+      "canonical_shared_commit": "5b0c71a10e12d6ae6f7dfdd542d91e8338ac4207"
+    },
+    {
+      "source_commit": "a9bc2e35c42a34a2be1cc3eeccb33cbc41de53c4",
+      "source_path": "ZInQKernel/Contrib/OneProof/LegendreThreeSquares/LICENSE",
+      "source_sha256": "fc78801eadec58b04e0d5cabe735eb6808e23f47b0cb92b89b55792019b54131",
+      "upstream_path": "ThirdParty/LegendreThreeSquares/LICENSE",
+      "upstream_sha256": "fc78801eadec58b04e0d5cabe735eb6808e23f47b0cb92b89b55792019b54131",
+      "bytes_identical": true,
+      "change": "exact common license from draft PR131",
+      "shared_dependency_payload": true,
+      "canonical_shared_commit": "5b0c71a10e12d6ae6f7dfdd542d91e8338ac4207"
+    },
+    {
+      "source_commit": "a9bc2e35c42a34a2be1cc3eeccb33cbc41de53c4",
+      "source_path": "ZInQKernel/Contrib/OneProof/LegendreThreeSquares/NOTICE.md",
+      "source_sha256": "823203793fc81c181e56c6e662be724823367d5c92730e509e7cc1a7df0610fb",
+      "upstream_path": "ThirdParty/LegendreThreeSquares/NOTICE-fork.md",
+      "upstream_sha256": "823203793fc81c181e56c6e662be724823367d5c92730e509e7cc1a7df0610fb",
+      "bytes_identical": true,
+      "change": "exact common historical notice from draft PR131",
+      "shared_dependency_payload": true,
+      "canonical_shared_commit": "5b0c71a10e12d6ae6f7dfdd542d91e8338ac4207"
+    }
+  ],
+  "exact_public_export": "ZInQ.Contrib.OneProof.JonesPall.jonesPall_proof",
+  "full_expanded_type": "∀ n : ℕ, Squarefree n → n % 8 = 1 → ∃ x y z : ℤ, (n : ℤ) = x ^ 2 + y ^ 2 + 16 * z ^ 2",
+  "entry_proof_body_identical": true,
+  "four_helper_files_identical": true,
+  "H29_definition_accepted_upstream": false,
+  "H29_definition_copied": false,
+  "new_lake_dependencies": 0,
+  "new_external_lean_dependencies": 0,
+  "fork_registry_and_full_H10_claimed": false,
+  "draft_only": true,
+  "source_locator_note": "Historical notices refer to original fork paths. This upstream stores licenses/notices in ThirdParty; compiled source remains in Contrib. New public docs give portable/redacted commands, not private literal argv.",
+  "initial_verified_upstream_base": "fe026617ddd1f2275d7dd0190e5a3814a1c5d1b6",
+  "proof_execution_epoch": "fe026617ddd1f2275d7dd0190e5a3814a1c5d1b6",
+  "base_refresh": {
+    "kind": "Same-source publication-base compatibility; not a new proof execution",
+    "original_verified_source_epoch": "fe026617ddd1f2275d7dd0190e5a3814a1c5d1b6",
+    "current_publication_base": "4c13e0c3485e6333e4a441bca4bcf8a3dd3ac043",
+    "old_base_tree": "0a45b73c94aa3850eb232d0b3c13da94092e6223",
+    "new_base_tree": "36b3f3c3246764239a96010f08c232efb538814b",
+    "exact_base_change_paths": [
+      "M\t.github/protocol-b-reviewer.md",
+      "M\t.github/workflows/protocol-b.yml",
+      "M\tPROJECT.md",
+      "M\tdocs/research-review/README.md",
+      "M\tdocs/research-review/protocol-b-setup.md",
+      "A\ttests/protocol_b/test_acceptance_history.py",
+      "A\ttests/protocol_b/test_carried_access.py",
+      "A\ttests/protocol_b/test_comment_occurrences.py",
+      "M\ttests/protocol_b/test_continuity.py",
+      "M\ttests/protocol_b/test_continuity_repairs.py",
+      "A\ttests/protocol_b/test_delivered_closure.py",
+      "A\ttests/protocol_b/test_final_capture.py",
+      "M\ttests/protocol_b/test_gate.py",
+      "A\ttests/protocol_b/test_prior_salvage.py",
+      "A\ttests/protocol_b/test_resolution_order.py",
+      "M\ttests/protocol_b/test_round_summary.py",
+      "A\ttests/protocol_b/test_scope_history.py",
+      "A\ttests/protocol_b/test_scope_override.py",
+      "A\ttests/protocol_b/test_severity.py",
+      "M\ttests/protocol_b/test_spend.py",
+      "A\ttests/protocol_b/test_supplement_delivery.py"
+    ],
+    "changed_base_path_count": 21,
+    "baseline_Lean_blobs_compared": 948,
+    "baseline_Lean_or_pin_contract_audit_changes": [],
+    "all_six_contribution_source_hashes_and_import_graph_unchanged": true,
+    "shared_PR131_three_payload_blobs_unchanged": true,
+    "source_context_receipt_sha256": "fa4764c6df533bb755377a7e4d68d96135d220f0deacf0c078b52c30408d8ca4",
+    "policy_changes": "Review note severity and explicit incomplete-scope decisions; prior findings, actual decisions, source-access limitations and publication obligations stay distinct. No override, review command or ready transition invoked.",
+    "policy_read_scope": "Current PROJECT, reviewer guide, research-review README and setup read in full; current draft guard, merge readiness, direct/auto-merge and final-publication branches read. Not a whole workflow implementation audit.",
+    "draft_guard_lines": [
+      2075,
+      2077
+    ],
+    "draft_merge_refusal_lines": [
+      2412,
+      2419
+    ],
+    "success_merge_path_lines": [
+      2489,
+      2528
+    ],
+    "final_success_merge_lines": [
+      2762,
+      2767
+    ],
+    "fresh_compiler_type_axiom_or_raw_replay_run": false,
+    "full_upstream_CI_or_App_acceptance_claimed": false,
+    "proof_results_retain_original_epoch": true,
+    "public_commands_are_not_literal_private_argv": true
+  }
+}

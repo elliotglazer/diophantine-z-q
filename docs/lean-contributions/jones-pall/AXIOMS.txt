@@ -1,0 +1,26 @@
+Public-safe selected export/type/axiom output; private runtime argv is not included.
+jonesPall_proof : ∀ (n : ℕ), Squarefree n → n % 8 = 1 → ∃ x y z, ↑n = x ^ 2 + y ^ 2 + 16 * z ^ 2
+jonesPall_representation : ∀ (n : ℕ), Squarefree n → n % 8 = 1 → ∃ x y z, ↑n = x ^ 2 + y ^ 2 + 16 * z ^ 2
+exists_norm_prime_annihilator : ∀ (p : ℕ),
+  Nat.Prime p →
+    p ≠ 2 →
+      ∀ (v : Q),
+        ¬DvdQ (↑p) v → DvdQ (↑p) (v * v) → ↑p ∣ Quaternion.normSq v → ∃ q, Quaternion.normSq q = ↑p ∧ DvdQ (↑p) (q * v)
+exists_halving_multiplier : ∀ (q : Q), 2 ∣ Quaternion.normSq q → ∃ u, Quaternion.normSq u = 2 ∧ DvdQ 2 (u * q)
+@conjugation_bad_pattern : ∀ {q : Q} {a b c : ℤ},
+  Quaternion.normSq q % 4 = 3 →
+    a % 2 = 1 →
+      b % 4 = 2 →
+        c % 4 = 2 →
+          4 ∣ (q * { re := 0, imI := a, imJ := b, imK := c } * star q).imJ ∧
+            4 ∣ (q * { re := 0, imI := a, imJ := b, imK := c } * star q).imK
+'ZInQ.Contrib.OneProof.JonesPall.jonesPall_proof' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ZInQ.Contrib.OneProof.JonesPall.jonesPall_representation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ZInQ.Contrib.OneProof.JonesPall.exists_norm_prime_annihilator' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ZInQ.Contrib.OneProof.JonesPall.exists_halving_multiplier' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ZInQ.Contrib.OneProof.JonesPall.conjugation_bad_pattern' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ZInQ.Contrib.OneProof.LegendreThreeSquares.Atlas.Nat.exists_three_squares_of_not_four_pow_mul_eight_mul_add_seven' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

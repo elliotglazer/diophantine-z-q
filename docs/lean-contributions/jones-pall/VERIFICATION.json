@@ -1,0 +1,136 @@
+{
+  "schema": "jones-pall-upstream-verified-component/v1",
+  "upstream_base": "fe026617ddd1f2275d7dd0190e5a3814a1c5d1b6",
+  "primary_source": "a9bc2e35c42a34a2be1cc3eeccb33cbc41de53c4",
+  "compiler": "Lean 4.35.0 eb6cafb7290e8bd5f2937522d8d804f58f02bafc",
+  "mathlib": "56a005855ea17e0b0958f73ec801ae140b0a1679",
+  "source_build": {
+    "modules": 6,
+    "newly_compiled": 6,
+    "borrowed_project_objects": 0,
+    "exit_code": 0,
+    "seconds": 35.948,
+    "source_sha256": {
+      "ZInQKernel.Contrib.OneProof.JonesPall": "21cca978ad85e613c8e74a8193ce8f58452a9f288e902785f19f09f905236e20",
+      "ZInQKernel.Contrib.OneProof.JonesPall.Descent": "f7ae7e1868ec6ecfef6c400259bc8249073bf8c832eddefbf47c7053faa0f4bd",
+      "ZInQKernel.Contrib.OneProof.JonesPall.Parity": "23db1fa47eea66b1bb7ca12007fec5bc55819e0c71487d9345d1f5976afee350",
+      "ZInQKernel.Contrib.OneProof.JonesPall.Quaternion": "cb57765610895573aa2303e17849a051a45e06465ad17a690015a9aff815b826",
+      "ZInQKernel.Contrib.OneProof.JonesPall.Representation": "59068462015a1904ab62bfe0293152faee11306cee6ecf515a8c5161de96e175",
+      "ZInQKernel.Contrib.OneProof.LegendreThreeSquares.Atlas": "ca50ef1ad9cd9519c4fb440d53803810e9b6c9d8b8a9ca3bea75d74fbaed4797"
+    }
+  },
+  "actual_type_check": {
+    "full_expanded_hJP_literal": true,
+    "closed_at_export": true,
+    "integer_witness_carrier": true,
+    "n_one_example": true,
+    "additional_outer_premises": false,
+    "exit_code": 0,
+    "check_source_sha256": "88dd14fff372e2d999c7607bdc435ae982208f6112401ce5dd9977ac886a1e7c",
+    "raw_output_sha256": "a989f47a0be528715353b4c0d5a94b51ea6540fc463349b0f490ddf222aabc82"
+  },
+  "axioms": {
+    "actual_reports": 6,
+    "all_exactly_standard_three": true,
+    "allowed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "selected_raw_replay": {
+    "modules": 7,
+    "declarations": 190,
+    "raw_serialized_bodies": 190,
+    "runtime_not_replayed": [],
+    "duplicate_bodies_checked": 0,
+    "actual_axioms_used": [
+      "Quot.sound",
+      "Classical.choice",
+      "propext"
+    ],
+    "independent_full_literal_type": "∀ (n : Nat),\n  Squarefree n →\n    Eq (instHMod.hMod n 8) 1 →\n      Exists fun x =>\n        Exists fun y =>\n          Exists fun z =>\n            Eq n.cast\n              (instHAdd.hAdd (instHAdd.hAdd (instHPow.hPow x 2) (instHPow.hPow y 2))\n                (instHMul.hMul 16 (instHPow.hPow z 2)))",
+    "exit_code": 0,
+    "seconds": 18.059,
+    "auditor_sha256": "79096b836bce4c04735cc4ab2f6af21e207cb9b1b84fc46b959b55369787198a",
+    "spec_sha256": "a6f8e7d0b0e20baf950e8e31a0e549429c590b63c631c4dddd7e5083d1635e54",
+    "raw_output_sha256": "5c9a89b19192f644d6c013d58c8eb90912f33e4df97d939540c34fe1ef83d1a2"
+  },
+  "common_dependency": {
+    "pr": "https://github.com/elliotglazer/diophantine-z-q/pull/131",
+    "source": "5b0c71a10e12d6ae6f7dfdd542d91e8338ac4207",
+    "exact_same_Atlas_source_occurrences": 1,
+    "common_namespace_duplicated": false,
+    "unmerged_dependency_admitted_as_baseline": false
+  },
+  "full_upstream_registry_or_CI": "NOT_RUN; selected component check only",
+  "primary_cold_fork_registry_discharge": "Primary writer-owned; not forecast",
+  "H29_assembly_and_full_H10_proved": false,
+  "App_or_human_acceptance": false,
+  "command_rendering": "Public commands are portable/redacted descriptions, not literal private argv. Full originals retained privately.",
+  "kernel_adversarial_tests": {
+    "tests": 18,
+    "exit_code": 0,
+    "seconds": 117.66,
+    "scope": "Unchanged actual pinned-kernel auditor negative controls; not full project CI"
+  },
+  "current_publication_base": "4c13e0c3485e6333e4a441bca4bcf8a3dd3ac043",
+  "base_refresh": {
+    "kind": "Same-source publication-base compatibility; not a new proof execution",
+    "original_verified_source_epoch": "fe026617ddd1f2275d7dd0190e5a3814a1c5d1b6",
+    "current_publication_base": "4c13e0c3485e6333e4a441bca4bcf8a3dd3ac043",
+    "old_base_tree": "0a45b73c94aa3850eb232d0b3c13da94092e6223",
+    "new_base_tree": "36b3f3c3246764239a96010f08c232efb538814b",
+    "exact_base_change_paths": [
+      "M\t.github/protocol-b-reviewer.md",
+      "M\t.github/workflows/protocol-b.yml",
+      "M\tPROJECT.md",
+      "M\tdocs/research-review/README.md",
+      "M\tdocs/research-review/protocol-b-setup.md",
+      "A\ttests/protocol_b/test_acceptance_history.py",
+      "A\ttests/protocol_b/test_carried_access.py",
+      "A\ttests/protocol_b/test_comment_occurrences.py",
+      "M\ttests/protocol_b/test_continuity.py",
+      "M\ttests/protocol_b/test_continuity_repairs.py",
+      "A\ttests/protocol_b/test_delivered_closure.py",
+      "A\ttests/protocol_b/test_final_capture.py",
+      "M\ttests/protocol_b/test_gate.py",
+      "A\ttests/protocol_b/test_prior_salvage.py",
+      "A\ttests/protocol_b/test_resolution_order.py",
+      "M\ttests/protocol_b/test_round_summary.py",
+      "A\ttests/protocol_b/test_scope_history.py",
+      "A\ttests/protocol_b/test_scope_override.py",
+      "A\ttests/protocol_b/test_severity.py",
+      "M\ttests/protocol_b/test_spend.py",
+      "A\ttests/protocol_b/test_supplement_delivery.py"
+    ],
+    "changed_base_path_count": 21,
+    "baseline_Lean_blobs_compared": 948,
+    "baseline_Lean_or_pin_contract_audit_changes": [],
+    "all_six_contribution_source_hashes_and_import_graph_unchanged": true,
+    "shared_PR131_three_payload_blobs_unchanged": true,
+    "source_context_receipt_sha256": "fa4764c6df533bb755377a7e4d68d96135d220f0deacf0c078b52c30408d8ca4",
+    "policy_changes": "Review note severity and explicit incomplete-scope decisions; prior findings, actual decisions, source-access limitations and publication obligations stay distinct. No override, review command or ready transition invoked.",
+    "policy_read_scope": "Current PROJECT, reviewer guide, research-review README and setup read in full; current draft guard, merge readiness, direct/auto-merge and final-publication branches read. Not a whole workflow implementation audit.",
+    "draft_guard_lines": [
+      2075,
+      2077
+    ],
+    "draft_merge_refusal_lines": [
+      2412,
+      2419
+    ],
+    "success_merge_path_lines": [
+      2489,
+      2528
+    ],
+    "final_success_merge_lines": [
+      2762,
+      2767
+    ],
+    "fresh_compiler_type_axiom_or_raw_replay_run": false,
+    "full_upstream_CI_or_App_acceptance_claimed": false,
+    "proof_results_retain_original_epoch": true,
+    "public_commands_are_not_literal_private_argv": true
+  }
+}
