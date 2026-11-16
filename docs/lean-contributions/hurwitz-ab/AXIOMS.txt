@@ -1,0 +1,28 @@
+Public-safe complete literal type and actual axiom output; original runtime argv is omitted.
+TYZSquareOddness.hurwitz_norm_approximation : ∀ (q : ℍ[ℚ]),
+  ∃ a,
+    (∃ r s t u e, a = { re := ↑r - ↑e / 2, imI := ↑s + ↑e / 2, imJ := ↑t + ↑e / 2, imK := ↑u + ↑e / 2 }) ∧
+      Quaternion.normSq (q - a) < 1
+TYZSquareOddness.hurwitz_of_integral_trace_norm : ∀ (q : ℍ[ℚ]),
+  (∃ a, 2 * q.re = ↑a) →
+    (∃ b, -2 * q.imI = ↑b) →
+      (∃ c, -2 * q.imJ = ↑c) →
+        (∃ s, -(q.re + q.imI + q.imJ + q.imK) = ↑s) →
+          (∃ n, Quaternion.normSq q = ↑n) →
+            ∃ r s t u e, q = { re := ↑r - ↑e / 2, imI := ↑s + ↑e / 2, imJ := ↑t + ↑e / 2, imK := ↑u + ↑e / 2 }
+TYZSquareOddness.exists_hurwitz_coordinates_norm_lt_one : ∀ (q : ℍ[ℚ]),
+  ∃ a b c d e,
+    Quaternion.normSq (q - { re := ↑a - ↑e / 2, imI := ↑b + ↑e / 2, imJ := ↑c + ↑e / 2, imK := ↑d + ↑e / 2 }) < 1
+TYZSquareOddness.exists_hurwitz_coordinates_of_double_integral_norm : ∀ (q : ℍ[ℚ]) (a b c d n : ℤ),
+  2 * q.re = ↑a →
+    2 * q.imI = ↑b →
+      2 * q.imJ = ↑c →
+        2 * q.imK = ↑d →
+          Quaternion.normSq q = ↑n →
+            ∃ r s t u e, q = { re := ↑r - ↑e / 2, imI := ↑s + ↑e / 2, imJ := ↑t + ↑e / 2, imK := ↑u + ↑e / 2 }
+'TYZSquareOddness.hurwitz_norm_approximation' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TYZSquareOddness.hurwitz_of_integral_trace_norm' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TYZSquareOddness.exists_hurwitz_coordinates_norm_lt_one' depends on axioms: [propext, Classical.choice, Quot.sound]
+'TYZSquareOddness.exists_hurwitz_coordinates_of_double_integral_norm' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
