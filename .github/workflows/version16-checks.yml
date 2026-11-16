@@ -1,8 +1,6 @@
 name: Version 16 correction checks
 
 on:
-  push:
-  pull_request:
   workflow_dispatch:
 
 permissions:
@@ -20,4 +18,4 @@ jobs:
         with:
           python-version: '3.12.14'
       - name: Check exact manuscript corrections and artifact bindings
-        run: python -B research/version16/check.py
+        run: python -B research/version17/ci-compatibility/run.py version16-check

@@ -6,19 +6,19 @@
   },
   "profile": {
     "path": "docs/current-manuscript.json",
-    "sha256": "09eec8156ee16c4b35f99b8abcd3221ed15fec568e046f6456e8638cd9846f33"
+    "sha256": "2ea6e40e597b908b751910c74f4c2c9fa47cd170838bcf17bbc7f2b6c7552562"
   },
   "historical_review": {
     "path": "docs/audit-history/current.json",
     "sha256": "2b0dd7653076633f53c1e32b43dd4c11a664b5ace5b5685ff6afc30ed4b82ca4"
   },
   "selected_manuscript": {
-    "path": "manuscripts/quartic_v16.tex",
-    "sha256": "aeb2b6a42a03943d7f8c46682389c8da693d2903ba92ccc164bbbd236451de74"
+    "path": "manuscripts/quartic_v18.tex",
+    "sha256": "0cb9c70baed00d736c88636243c4da96c38ce4f96090d029d0020ce459435a29"
   },
   "review": {
-    "path": "docs/research-review/record-manuscript-policy-2026-11-11/REVIEW.json",
-    "sha256": "154173c3448fffaa6afd52ce3a583ad82f626e30fde5c7e8f0d8982c8b503370"
+    "path": "research/version18/reviews/pr120-builder-review.json",
+    "sha256": "c2202083d20b3e72407ffd53159262fdfce6abc62c8702b8b04f97cdedb97e97"
   },
-  "scope": "The exact accepted policy/software review covers this profile-driven builder and profile. The selected current TeX is checked at its exact profile pin. The V14 application record remains historical and every contract, edit, approval, follow-up and evidence check still applies to its own pinned manuscript. This binding neither transfers those V14 approvals to V16 nor supplies mathematical or protected release acceptance."
+  "scope": "The original Fable owner-session review binds the exact unchanged builder, repaired Version18 selector, source, PDF and recorded build, and checks preservation of released Version16 and Version17 files. Earlier reviews remain unchanged at their original paths. This is build correspondence only, not assembled-proof or protected App acceptance."
 }
