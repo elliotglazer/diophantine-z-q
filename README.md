@@ -1,6 +1,32 @@
 # Z is Diophantine in Q
 
-## Version 15
+## Contributors and citation
+
+This project uses the collective agentic notes from Stefan Baranczuk, Jose Brox, Gabe Conant, Sohail Farhangi, Cameron Freer, James Freitag, Elliot Glazer, and Caroline Terry.
+
+See also [Jose Brox's repository](https://github.com/JoseBrox/diophantine-z-q_improvements) for updated results and related work.
+
+Cite this work as "ℤℚ Diophantine Project contributors. ℤ _is Diophantine in_ ℚ. 2026. https://github.com/elliotglazer/diophantine-z-q"  
+
+## Version 18
+
+[Read the manuscript](manuscripts/quartic_v18.pdf) or [open the TeX source](manuscripts/quartic_v18.tex). This edition presents Jose Brox's 196-variable quartic, built on Gabriel Conant's 198-variable construction. Its 182 quadratic residuals give a quartic with 2,943 nonzero coordinate monomials. The complete arithmetic proof, elimination lemma and coefficient table are included in the manuscript.
+
+The coefficients are integer polynomials in the fixed integer `A = 149^(2*BB(2^1000)+1)`, using the manuscript's blank-tape running-time Busy Beaver convention. Their maximum absolute value is `A^2`, strictly below `BB(2^2000)`. This specifies one polynomial; `A` is not another variable, and the finite checks do not evaluate Busy Beaver. The 314-variable decimal quartic and the original large construction remain separate results.
+
+See the [release guide](research/version18/README.md), [artifact index](research/version18/ARTIFACT-INDEX.md), [reproduction instructions](research/version18/REPRODUCTION.md) and [release notes](research/version18/RELEASE-NOTES.md). The Tao-Ziegler step asserted without proof in Versions 16 and 17 is now proved. The inverse-theorem dependency now uses Candela-Szegedy together with the retained increment-group argument; the exact source-version limitations remain recorded.
+
+## Version 17 history
+
+[Read the manuscript](manuscripts/quartic_v17.pdf) or [open the TeX source](manuscripts/quartic_v17.tex). Dated November 13, 2026, this edition presents the 214-variable quartic family and its full arithmetic argument, followed by the corrected Version 16 foundation. It retains the original large construction and the 314-variable quartic with a complete decimal coefficient table. The 214-variable family's defining threshold remains ineffective; the coefficient calculation for N >= 53 does not certify a defining member. See the [release guide and review scope](research/version17/README.md), [artifact index](research/version17/ARTIFACT-INDEX.md) and [cumulative handoff](research/version17/CUMULATIVE-HANDOFF.md).
+
+Version 17 promotes PR30's receiving revision 3, with updated title, date and PDF metadata. Its mathematical body is unchanged. Earlier receiving guides and scoped reviews remain historical evidence. The required independent reviews and protected App check apply to the exact final PR revision; a staged manuscript or a successful build alone does not establish release acceptance.
+
+## Version 16 history
+
+[Read Version 16](manuscripts/quartic_v16.pdf) or [open its TeX](manuscripts/quartic_v16.tex). This edition adds the horizontal-normalization justification, corrects two Gaudron–Rémond citations, and identifies the Tao–Ziegler fixed-modulus argument as an adaptation of the published proofs. Its [correction inventory](research/version16/README.md) and [cumulative handoff](research/version16/CUMULATIVE-HANDOFF.md) preserve their original review scope.
+
+## Version 15 history
 
 [Read the manuscript](research/version15/snapshots/v15-222-004/manuscript/quartic_v15.pdf), [open the TeX source](research/version15/snapshots/v15-222-004/manuscript/quartic_v15.tex), or [browse the research index](research/version15/README.md). This update selects a quartic family in **222 total variables** with **2,277 nonzero coordinate monomials**, alongside the original huge construction and the retained 314-variable decimal quartic. The [published Version 15 release](https://github.com/elliotglazer/diophantine-z-q/releases/tag/quartic-222-version-15) includes the manuscript and cumulative research archive.
 
@@ -10,7 +36,6 @@ The [222-variable package](research/version15/quartics/quartic-222/README.md) in
 
 This repository also preserves *Z is Diophantine in Q*, Version 14, dated November 9, 2026. It gives quartics in **299 total variables** with exact symbolic coefficients and **314 total variables** with every coefficient written out in decimal. The original large construction, earlier quartic proofs and Version 11 Kato index-set and limiting-class repair remain in the manuscript. The Version 9 starting reductions were contributed by Gabriel Conant with ChatGPT.
 
-The project uses the collective agentic notes from Stefan Baranczuk, Jose Brox, Gabe Conant, Sohail Farhangi, James Freitag, Elliot Glazer, Jennifer Park, and Caroline Terry.
 
 | To | Open |
 | --- | --- |
@@ -20,13 +45,12 @@ The project uses the collective agentic notes from Stefan Baranczuk, Jose Brox, 
 | Reproduce the 498/514-variable quartics | [Tables, proof inventory and independent reviews](docs/manuscript-revisions/version12/README.md) |
 | Reproduce the 523/540-variable quartics | [Tables, source, dependency chain and checks](docs/quartic-523-540/README.md) |
 | Read the fully expanded Version 4 quartic | [4,973-variable package](quartics/quartic-4973/README.md), [integer monomial table](quartics/quartic-4973/polynomial.expanded.txt) |
-| Follow the current mathematical research review protocol | [Protocol_D](https://github.com/elliotglazer/protocols/blob/main/Protocol_D.md), [local copy](docs/research-review/PROTOCOL.md), [contributor guide](docs/research-review/README.md) |
-| Reuse the protocol in another project | [Starter kit: protocol, agent instructions, and project brief](docs/research-review/starter-kit/README.md) |
+| Review requirements for pull requests | [Contributor guide](docs/research-review/README.md) |
 | Inspect the Version 11 repair and repository audit integration | [Version 11 source audit](docs/manuscript-revisions/version11/README.md), [audit integration protocol](docs/audit-history/PROTOCOL.md) |
 | Inspect the nine earlier review corrections | [Version 10 response and inventory](docs/manuscript-revisions/version10/README.md) |
-| Inspect theorem applications and conventions | [Version 9 extension](docs/quartic-523-540/README.md), [inherited proof inventory](docs/quartic-962/README.md) |
-| Build the manuscript or run the checks | [Build instructions](docs/building.md) |
-| Download the current research handoff | [Version 15 cumulative ZIP](https://github.com/elliotglazer/diophantine-z-q/releases/download/quartic-222-version-15/z-in-q-version15-cumulative.zip), [contents and verification](research/version15/CUMULATIVE-HANDOFF.md), [Version 14 archive](research/version14/CUMULATIVE-HANDOFF.md) |
+| Inspect theorem applications and conventions | [Version 18 source and review index](research/version18/ARTIFACT-INDEX.md), [Version 16 source-use inventory](research/version16/protocol/DOSSIER.json), [Version 16 corrections](research/version16/APPLICATIONS.json), [Version 9 extension](docs/quartic-523-540/README.md), [inherited proof inventory](docs/quartic-962/README.md) |
+| Build the manuscript or run the checks | [Current manuscript build](docs/current-manuscript-build.md), [historical construction checks](docs/building.md) |
+| Download the current research handoff | [Version 18 cumulative handoff and reconstruction](research/version18/CUMULATIVE-HANDOFF.md), [Version 17 historical handoff](research/version17/CUMULATIVE-HANDOFF.md), [Version 16 cumulative ZIP](https://github.com/elliotglazer/diophantine-z-q/releases/download/quartic-222-version-16/z-in-q-version16-cumulative.zip), [reconstruction and checksum](research/version16/CUMULATIVE-HANDOFF.md), [Version 15 cumulative ZIP](https://github.com/elliotglazer/diophantine-z-q/releases/download/quartic-222-version-15/z-in-q-version15-cumulative.zip), [contents and verification](research/version15/CUMULATIVE-HANDOFF.md), [Version 14 archive](research/version14/CUMULATIVE-HANDOFF.md) |
 | Download the Version 7 research handoffs | [Full handoff](https://github.com/elliotglazer/diophantine-z-q/releases/download/quartic-962-version-7/z-in-q-version7-full-handoff.zip), [current-only handoff](https://github.com/elliotglazer/diophantine-z-q/releases/download/quartic-962-version-7/z-in-q-version7-current-handoff.zip), [contents and verification](handoff/README.md) |
 | Read collaborator notes and the height replacement | [Research update](research/2026-11-06-collaborator-notes/README.md) |
 | Read the October 11 manuscript | [Manuscript and provenance](October%2011%20Manuscript/README.md) |
@@ -51,6 +75,8 @@ $$
 
 | Construction | Total variables, including input | Degree | Nonzero monomials | Coefficient magnitude |
 | --- | ---: | ---: | ---: | --- |
+| Version 18, fixed Busy Beaver specification | 196 | 4 | 2,943 | `A^2 = 149^(4*BB(2^1000)+2) < BB(2^2000)` |
+| Version 17, selected family | 214 | 4 | 2,919 | $149^{4N+2}+1$ for $N\ge53$; defining threshold ineffective |
 | Version 15, selected family | 222 | 4 | 2,277 | $A_N^2+1$ for $N\ge53$, where $A_N=149^{2N+1}$ |
 | Original | 292,890,231,905 | Less than $2\uparrow\uparrow7$ | Not expanded | Less than $2\uparrow\uparrow8$ |
 | Version 14, decimal table | 314 | 4 | 6,672 | Less than $2^{6496}$ |
@@ -80,11 +106,15 @@ The earlier 962-variable polynomial builds on an independent reconstruction of t
 
 ## Verification scope
 
+For the conditional Lean formalization, contribution targets and CI checks, see
+the [Lean contribution guide](docs/lean-contributions.md). The root kernel project
+and the manuscript's explicit quartic have distinct proof status.
+
 The finite checks verify the source program, algebraic coordinate changes, projection-preserving eliminations, complete sum-of-squares expansion and coefficient statistics. Independent checks and rejection tests accompany the package. These checks do not prove the source system's arithmetic characterization of the integers.
 
-The manuscript supplies that arithmetic argument. The [Version 15 research index](research/version15/README.md) records the current selection and its review scope. The [Version 14 guide](docs/manuscript-revisions/version14/GUIDE.md) records that edition's constructions and separates the finite checks from their mathematical review. The [Version 13 guide](docs/manuscript-revisions/version13/GUIDE.md) separates the new component and composition reviews, the finite table checks, and the 39-application inventory. These internal reviews retain the inherited arithmetic inputs and source qualifications. The [Version 12 application inventory and reviews](docs/manuscript-revisions/version12/README.md) cover that edition's reductions while retaining the prior arithmetic inputs and their source qualifications. The [Version 9 extension](docs/quartic-523-540/README.md) connects the new arithmetic arguments to the inherited proofs. The [Version 7 inventory](docs/quartic-962/README.md) records exact theorem applications, source versions, hypotheses, conventions and translations. Version 6 proves the needed Gaussian ray-field estimate within the manuscript, following the method of Frei–Tinková without assuming their theorem. The replacement uses Mitsui's published prime-ideal estimate, Green–Tao's one-parameter results, and ordinary-prime transference.
+The manuscript supplies that arithmetic argument. The [Version 18 research index](research/version18/README.md) records the current selection and its review scope. The [Version 17 research index](research/version17/README.md) retains that earlier edition. The [Version 15 research index](research/version15/README.md) preserves that earlier selection. The [Version 14 guide](docs/manuscript-revisions/version14/GUIDE.md) records that edition's constructions and separates the finite checks from their mathematical review. The [Version 13 guide](docs/manuscript-revisions/version13/GUIDE.md) separates the new component and composition reviews, the finite table checks, and the 39-application inventory. These internal reviews retain the inherited arithmetic inputs and source qualifications. The [Version 12 application inventory and reviews](docs/manuscript-revisions/version12/README.md) cover that edition's reductions while retaining the prior arithmetic inputs and their source qualifications. The [Version 9 extension](docs/quartic-523-540/README.md) connects the new arithmetic arguments to the inherited proofs. The [Version 7 inventory](docs/quartic-962/README.md) records exact theorem applications, source versions, hypotheses, conventions and translations. Version 6 proves the needed Gaussian ray-field estimate within the manuscript, following the method of Frei–Tinková without assuming their theorem. The replacement uses Mitsui's published prime-ideal estimate, Green–Tao's one-parameter results, and ordinary-prime transference.
 
-Historical inventories retain their original source-version qualifications, including the earlier Dodos–Kanellopoulos and Kollár applications. Those citations are absent from the Version 14 manuscript. Consult the [Version 15 source and application records](research/version15/README.md) for the current selection; a historical acceptance is limited to its recorded source and argument.
+Historical inventories retain their original source-version qualifications, including the earlier Dodos–Kanellopoulos and Kollár applications. Those citations are absent from the Version 14 manuscript. Consult the [Version 18 source and application records](research/version18/ARTIFACT-INDEX.md) for the current selection; a historical acceptance is limited to its recorded source and argument.
 
 The [Version 4 inventory](docs/quartic-4973/README.md) and the [earlier 82-record inventory](docs/theorem-application-audit/README.md) retain their own frozen scopes. Structural inventory checks detect stale or mismatched records; they are not proofs of mathematical theorems.
 
@@ -94,7 +124,7 @@ The Lean formalization is incomplete. The accepted snapshot contains 48 helper m
 
 The October 11, 2026 manuscript, *A conditional Diophantine definition of Z in Q from four arithmetic inputs*, was produced by Sohail Farhangi with ChatGPT 6. Its PDF is preserved without modification. Its provenance and conditional scope are distinct from the November manuscript.
 
-The November manuscript was produced by Elliot Glazer with Astra 6, Sol 6.1, and Opus 5.5, with auditing from Fable 5.1. The [Version 5 manuscript](manuscripts/archive/quartic_1272.pdf), [Version 4 manuscript](manuscripts/archive/quartic_4973.pdf), [Version 3 manuscript](manuscripts/archive/quartic_9625.pdf) and [Version 2 manuscript](manuscripts/archive/quartic_12504.pdf) remain historical references, with their separate polynomial packages and inventories. Earlier research handoffs identify their own snapshots.
+The November manuscript was produced by Elliot Glazer with Astra 6, Sol 6.1, and Opus 5.5, with auditing from Fable 5.1 and 5.2. The [Version 5 manuscript](manuscripts/archive/quartic_1272.pdf), [Version 4 manuscript](manuscripts/archive/quartic_4973.pdf), [Version 3 manuscript](manuscripts/archive/quartic_9625.pdf) and [Version 2 manuscript](manuscripts/archive/quartic_12504.pdf) remain historical references, with their separate polynomial packages and inventories. Earlier research handoffs identify their own snapshots.
 
 The project builds on OpenAI's October 6, 2026 preprint, [*Hilbert's tenth problem over the rational numbers*](https://github.com/openai/math/blob/main/preprints/Hilberts-tenth-problem-over-the-rational-numbers-October-6-2026/main.pdf). The rank-one elliptic-curve and local-divisibility strategy goes back to Thanases Pheidas, as credited in the manuscript. The current construction also credits the collective agentic notes for its formulas and degree obstruction, and Zhi-Wei Sun for the prime-pattern strategy.
 

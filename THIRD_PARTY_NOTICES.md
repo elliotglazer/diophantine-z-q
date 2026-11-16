@@ -9,13 +9,19 @@ Project licensing applies only to original project material. It does not relicen
 - Jonas Bayer, Marco David, Benedikt Stock, Abhik Pal, Yuri Matiyasevich, and Dierk Schleicher, [*Diophantine Equations and the DPRM Theorem*](https://isa-afp.org/entries/DPRM_Theorem.html), Archive of Formal Proofs, June 6, 2022. The entry is distributed under the BSD license linked on its page. The alpha-sequence and exponentiation constructions are credited in the relevant project sources. The curated construction directory does not vendor the Isabelle development.
 - Other mathematical sources for [Version 3](manuscripts/archive/quartic_9625.pdf) are identified in its bibliography and [dependency evidence](docs/quartic-9625/README.md). The October 11 manuscript has its own bibliography. Historical review reports preserve their particular citations and scope.
 
+## Version 18 construction sources
+
+The 196-coordinate reduction is Jose Brox's construction at commit `5c35db3253a70b0875acec4b451cdaac4da3c8fd` of [diophantine-z-q_improvements](https://github.com/JoseBrox/diophantine-z-q_improvements). The [source pins](research/version18/196/provenance/SOURCE-PINS.json) authenticate all 29 preserved source files. The selected table is the unbalanced `family196/polynomial.json`; other supplied variants are retained provenance, not additional selected records.
+
+The parent is Gabriel Conant's supplied `H10-quartic198.zip`, SHA-256 `33439f62ec243375b19f50c2801cad36500f21902285a82e5c08984a0c5568c4`. Its [complete package](research/version18/198/upstream/H10-quartic198/) retains its original layout, credits and notices, including Brox's parent sources at `e950bd2`. The [package inventory](research/version18/198/provenance/PACKAGE-PINS.json) identifies the exact bytes. Preserve the supplied `source/LICENSE` and `source/THIRD_PARTY.md`; the project's license does not relicense them. The new independent checkers and proof components identify their own authorship and scope.
+
 ## Version 9 contribution
 
 Gabriel Conant with ChatGPT supplied the November 7, 2026 odd-product reduction and the November 6 point-chart note. The contributed files in `quartics/quartic-523-540/` preserve their credits. `INTEGRATION.json` identifies the exact source archive and the two verifier repairs. The current manuscript incorporates these arguments and explicitly connects their inherited inputs to its earlier proofs. The original project license does not relicense contributed or cited third-party material.
 
 ## Version 6 sources
 
-The current manuscript credits the collective agentic notes of Stefan Baranczuk, Jose Brox, Gabe Conant, Sohail Farhangi, James Freitag, Elliot Glazer, Jennifer Park, and Caroline Terry. The 962-variable construction continues the independent reconstruction described below, with its own source changes and checks. The degree-four obstruction also follows the public improvements notes. The [Version 6 inventory](docs/quartic-962/README.md) binds each application to its exact source and review scope.
+The project credits the collective agentic notes of Stefan Baranczuk, Jose Brox, Gabe Conant, Sohail Farhangi, James Freitag, Elliot Glazer, and Caroline Terry. The 962-variable construction continues the independent reconstruction described below, with its own source changes and checks. The degree-four obstruction also follows the public improvements notes. The [Version 6 inventory](docs/quartic-962/README.md) binds each application to its exact source and review scope.
 
 Version 6 proves the required fixed Gaussian ray-field special case within the manuscript rather than assuming Frei–Tinková's theorem. Their work remains credited for the method. The replacement uses published results whose exact inspected versions are recorded in the inventory; no blanket claim is made that all final publisher texts were accessible. Downloaded reference articles and page images used for this new research are identified by source metadata and hashes rather than included in the new research directory.
 
