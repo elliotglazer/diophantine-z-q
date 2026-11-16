@@ -1,0 +1,422 @@
+{
+  "schema": "y3-tangent-trace-upstream-focused-verification/v1",
+  "fixed_source_parent": "581ab23c9e3c5b3af96086ff556a8d649c88a873",
+  "primary_head": "b7964a7a69534e736ef66dfe46e532a7b371f086",
+  "compiler": "Lean4.35.0 eb6cafb7290e8bd5f2937522d8d804f58f02bafc",
+  "Mathlib": "56a005855ea17e0b0958f73ec801ae140b0a1679",
+  "source_build": {
+    "fresh_modules": 13,
+    "seven_frozen_Y3_helpers": 7,
+    "three_fork_baseline_defining_modules_newly_admitted": 3,
+    "three_existing_upstream_baseline_modules_rebuilt": 3,
+    "borrowed_project_objects": 0,
+    "exit_code": 0,
+    "seconds": 122.29,
+    "source_sha256": {
+      "ZInQKernel.Contrib.CloudW03NeronSurj.PortUtil": "4df376bfcb5928778aacc5da73a9d3ceb4e0ef11d0da8130fe962a1c9dfdbe10",
+      "ZInQKernel.Contrib.CloudW03NeronSurj.Vendor.Definitions.Def_AlgebraicGeometry_NeronModelPropertyBundleCarrier": "b7f2636d6796583c7a23a36294007ea2950f035ed8a2b61dcad2d3942ad2a756",
+      "ZInQKernel.Contrib.CloudW03NeronSurj.Vendor.Definitions.Def_AlgebraicGeometry_RelativeGroupLaw": "d4c24140426f04e55e02a586042ad7e9b192a54d9ebdb422a9f4ce3184aeffb6",
+      "ZInQKernel.Contrib.HDecomp.QM.Structures": "0ee93924ff4f1b2ff63dc0562a2a3be166b950663bcbd423f19c9f9488a63441",
+      "ZInQKernel.Contrib.OneProof.Y3FineModuli": "9df5ebe46fa8a6e6b02f6f1407de47a1c399b83bd8f724c8a9edb2ee3d9bf09b",
+      "ZInQKernel.Contrib.OneProof.Y3FineModuli.CharZeroTrace": "1f451359fcae09cf7ebce3ead5e3665df7055c2ca5c0b563ef17efa19fedf10e",
+      "ZInQKernel.Contrib.OneProof.Y3FineModuli.CotangentLifts": "0f6a48edd3d81f16101f65ac24e063117da828d1737eabcb3f24e7cada216e6a",
+      "ZInQKernel.Contrib.OneProof.Y3FineModuli.LiteralOrderTrace": "fdcdb4757985323e12be4fea7d0b12c609fa39b921c081a85688dca6a995e719",
+      "ZInQKernel.Contrib.OneProof.Y3FineModuli.SourceTangentPoints": "bfa64796b9d50d548195dad9f1adff4f06eada1b5d18c582bf3bb493ed3f9240",
+      "ZInQKernel.Contrib.OneProof.Y3FineModuli.TangentDimension": "5fe4c7e3fa4edb2453eaa4f68da2f6ef2d4678b615569f82fc855bf3da5ada0f",
+      "ZInQKernel.Contrib.OneProof.Y3FineModuli.TangentOperators": "43fbe8088cc1633ccb636e6fa57282ac5dd0a9a5841a2988463cd254480c9636",
+      "ZInQKernel.HDecomp.A6.A6": "dbb4c58fcc53cf82426116149bdfcc11a8d115940aeb0dba316599773f291e59",
+      "ZInQKernel.HDecomp.Objects": "60178cdd4a2cbaaf44c18676b9677b85721ccc8efc04fdfe6ec0cf4a3a1fec1d"
+    },
+    "warning_lines_by_module": {
+      "ZInQKernel.Contrib.CloudW03NeronSurj.PortUtil": 0,
+      "ZInQKernel.Contrib.CloudW03NeronSurj.Vendor.Definitions.Def_AlgebraicGeometry_NeronModelPropertyBundleCarrier": 8,
+      "ZInQKernel.Contrib.CloudW03NeronSurj.Vendor.Definitions.Def_AlgebraicGeometry_RelativeGroupLaw": 0,
+      "ZInQKernel.Contrib.HDecomp.QM.Structures": 0,
+      "ZInQKernel.Contrib.OneProof.Y3FineModuli": 0,
+      "ZInQKernel.Contrib.OneProof.Y3FineModuli.CharZeroTrace": 0,
+      "ZInQKernel.Contrib.OneProof.Y3FineModuli.CotangentLifts": 0,
+      "ZInQKernel.Contrib.OneProof.Y3FineModuli.LiteralOrderTrace": 5,
+      "ZInQKernel.Contrib.OneProof.Y3FineModuli.SourceTangentPoints": 0,
+      "ZInQKernel.Contrib.OneProof.Y3FineModuli.TangentDimension": 17,
+      "ZInQKernel.Contrib.OneProof.Y3FineModuli.TangentOperators": 0,
+      "ZInQKernel.HDecomp.A6.A6": 0,
+      "ZInQKernel.HDecomp.Objects": 9
+    }
+  },
+  "closed_literal_contract_checks": [
+    {
+      "name": "CheckTraceContracts",
+      "source_sha256": "86426ba2e059a8137ba5cee4e9b3f5ef11fd254afeb683a90dad545740721277",
+      "raw_log_sha256": "0ed55c0b1779a2da6ed791eb4a856621f7a739195ff0124c38eb2dbe7145f154",
+      "exit_code": 0,
+      "seconds": 3.692,
+      "actual_axiom_prints": 4
+    },
+    {
+      "name": "CheckFrozenGeometryContracts",
+      "source_sha256": "17d53053f1389d4b437f286fbf631b211b659b30a2fd577c22f1aa3ec2cce68c",
+      "raw_log_sha256": "3baea88422d929575ac36c759bfb9e74a9a3519188026c892da4de32d5780f9c",
+      "exit_code": 0,
+      "seconds": 4.105,
+      "actual_axiom_prints": 5
+    },
+    {
+      "name": "CheckTangentDefinitionGuards",
+      "source_sha256": "4bbba7bfa914f0db9b3755bc740dfa8c50a399f440a66927b38f95de369d05f6",
+      "raw_log_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exit_code": 0,
+      "seconds": 3.864,
+      "actual_axiom_prints": 0
+    }
+  ],
+  "source_style_geometry_order_dimension_and_five_tangent_definitions_passed": true,
+  "actual_axiom_reports": {
+    "print_count": 9,
+    "distinct_declared_exports": 5,
+    "all_exactly": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "prints_not_called_nine_distinct_proofs": true
+  },
+  "selected_raw_audit": {
+    "modules": 14,
+    "serialized_declarations_considered": 934,
+    "raw_occurrences": 934,
+    "duplicates": 0,
+    "runtime_NOT_replayed": [
+      "ZInQ.Contrib.OneProof.Y3FineModuli.Source.CerednikDrinfeld.QM.nsmulPt._unsafe_rec"
+    ],
+    "kernel_replay_eligible_count": 933,
+    "standard_axioms_used": [
+      "Quot.sound",
+      "Classical.choice",
+      "propext"
+    ],
+    "full_source_style_geometry_headline": "∀ {R : Type} [inst : CommRing R] {A : AlgebraicGeometry.Scheme}\n  {f : CategoryTheory.catToReflQuiver.Hom A (AlgebraicGeometry.Spec { carrier := R, commRing := inst })}\n  (L : ZInQ.Contrib.CloudW03NeronSurj.FLT.GoodReductionJacobian.RelativeGroupLaw R f)\n  [AlgebraicGeometry.SmoothOfRelativeDimension 2 f]\n  (act : (Subtype fun x => SetLike.instMembership.mem LeafQM.O x) → CategoryTheory.catToReflQuiver.Hom A A)\n  (act_over :\n    ∀ (x : Subtype fun x => SetLike.instMembership.mem LeafQM.O x),\n      Eq (AlgebraicGeometry.Scheme.instCategory.comp (act x) f) f),\n  (∀ (x : Subtype fun x => SetLike.instMembership.mem LeafQM.O x) {T : AlgebraicGeometry.Scheme}\n      (t : CategoryTheory.catToReflQuiver.Hom T (AlgebraicGeometry.Spec { carrier := R, commRing := inst }))\n      (P Q : ZInQ.Contrib.CloudW03NeronSurj.FLT.NeronModelInfra.SchemeHomOver t f),\n      Eq (ZInQ.Contrib.OneProof.Y3FineModuli.Source.CerednikDrinfeld.QM.pushPt (act x) ⋯ (L.mul t P Q))\n        (L.mul t (ZInQ.Contrib.OneProof.Y3FineModuli.Source.CerednikDrinfeld.QM.pushPt (act x) ⋯ P)\n          (ZInQ.Contrib.OneProof.Y3FineModuli.Source.CerednikDrinfeld.QM.pushPt (act x) ⋯ Q))) →\n    Eq (act 1) (AlgebraicGeometry.Scheme.instCategory.id A) →\n      (∀ (x y : Subtype fun x => SetLike.instMembership.mem LeafQM.O x),\n          Eq (act (instHMul.hMul x y)) (AlgebraicGeometry.Scheme.instCategory.comp (act y) (act x))) →\n        (∀ (x y : Subtype fun x => SetLike.instMembership.mem LeafQM.O x) {T : AlgebraicGeometry.Scheme}\n            (t : CategoryTheory.catToReflQuiver.Hom T (AlgebraicGeometry.Spec { carrier := R, commRing := inst }))\n            (P : ZInQ.Contrib.CloudW03NeronSurj.FLT.NeronModelInfra.SchemeHomOver t f),\n            Eq (ZInQ.Contrib.OneProof.Y3FineModuli.Source.CerednikDrinfeld.QM.pushPt (act (instHAdd.hAdd x y)) ⋯ P)\n              (L.mul t (ZInQ.Contrib.OneProof.Y3FineModuli.Source.CerednikDrinfeld.QM.pushPt (act x) ⋯ P)\n                (ZInQ.Contrib.OneProof.Y3FineModuli.Source.CerednikDrinfeld.QM.pushPt (act y) ⋯ P))) →\n          ∀ (k : Type) [inst_2 : Field k] [IsAlgClosed k] [CharZero k] (sk : RingHom R k) (V : Type)\n            [inst_5 : AddCommGroup V] [inst_6 : Module k V] [Module.Finite k V]\n            (τ :\n              V →\n                ZInQ.Contrib.CloudW03NeronSurj.FLT.NeronModelInfra.SchemeHomOver\n                  (ZInQ.Contrib.OneProof.Y3FineModuli.Source.CerednikDrinfeld.QM.tangentBase k sk) f),\n            Function.Injective τ →\n              (∀\n                  (P :\n                    ZInQ.Contrib.CloudW03NeronSurj.FLT.NeronModelInfra.SchemeHomOver\n                      (ZInQ.Contrib.OneProof.Y3FineModuli.Source.CerednikDrinfeld.QM.tangentBase k sk) f),\n                  Iff (Set.instMembership.mem (Set.range τ) P)\n                    (ZInQ.Contrib.OneProof.Y3FineModuli.Source.CerednikDrinfeld.QM.IsTangentVector L k sk P)) →\n                (∀ (v w : V),\n                    Eq (τ (instHAdd.hAdd v w))\n                      (L.mul (ZInQ.Contrib.OneProof.Y3FineModuli.Source.CerednikDrinfeld.QM.tangentBase k sk) (τ v)\n                        (τ w))) →\n                  (∀ (c : k) (v : V),\n                      Eq (τ (instHSMul.hSMul c v)).val\n                        (AlgebraicGeometry.Scheme.instCategory.comp\n                          (ZInQ.Contrib.OneProof.Y3FineModuli.Source.CerednikDrinfeld.QM.tangentScale k c) (τ v).val)) →\n                    ∀ (m : Subtype fun x => SetLike.instMembership.mem LeafQM.O x) (Φ : LinearMap (RingHom.id k) V V),\n                      (∀ (v : V),\n                          Eq (τ (LinearMap.instFunLike.coe Φ v))\n                            (ZInQ.Contrib.OneProof.Y3FineModuli.Source.CerednikDrinfeld.QM.pushPt (act m) ⋯ (τ v))) →\n                        ∀ (n : Int),\n                          Eq (instHAdd.hAdd m.val (QuaternionAlgebra.instStarQuaternionAlgebra.star m.val))\n                              (QuaternionAlgebra.coe n.cast) →\n                            Eq (LinearMap.instFunLike.coe (LinearMap.trace k V) Φ) n.cast",
+    "literal_geometry_target": [
+      {
+        "type": "∀ {R : Type} [inst : CommRing R] {A : AlgebraicGeometry.Scheme}\n  {f : CategoryTheory.catToReflQuiver.Hom A (AlgebraicGeometry.Spec { carrier := R, commRing := inst })}\n  (L : ZInQ.Contrib.CloudW03NeronSurj.FLT.GoodReductionJacobian.RelativeGroupLaw R f)\n  [AlgebraicGeometry.SmoothOfRelativeDimension 2 f]\n  (act : (Subtype fun x => SetLike.instMembership.mem LeafQM.O x) → CategoryTheory.catToReflQuiver.Hom A A)\n  (act_over :\n    ∀ (x : Subtype fun x => SetLike.instMembership.mem LeafQM.O x),\n      Eq (AlgebraicGeometry.Scheme.instCategory.comp (act x) f) f),\n  (∀ (x : Subtype fun x => SetLike.instMembership.mem LeafQM.O x) {T : AlgebraicGeometry.Scheme}\n      (t : CategoryTheory.catToReflQuiver.Hom T (AlgebraicGeometry.Spec { carrier := R, commRing := inst }))\n      (P Q : ZInQ.Contrib.CloudW03NeronSurj.FLT.NeronModelInfra.SchemeHomOver t f),\n      Eq (ZInQ.Contrib.OneProof.Y3FineModuli.Source.CerednikDrinfeld.QM.pushPt (act x) ⋯ (L.mul t P Q))\n        (L.mul t (ZInQ.Contrib.OneProof.Y3FineModuli.Source.CerednikDrinfeld.QM.pushPt (act x) ⋯ P)\n          (ZInQ.Contrib.OneProof.Y3FineModuli.Source.CerednikDrinfeld.QM.pushPt (act x) ⋯ Q))) →\n    Eq (act 1) (AlgebraicGeometry.Scheme.instCategory.id A) →\n      (∀ (x y : Subtype fun x => SetLike.instMembership.mem LeafQM.O x),\n          Eq (act (instHMul.hMul x y)) (AlgebraicGeometry.Scheme.instCategory.comp (act y) (act x))) →\n        (∀ (x y : Subtype fun x => SetLike.instMembership.mem LeafQM.O x) {T : AlgebraicGeometry.Scheme}\n            (t : CategoryTheory.catToReflQuiver.Hom T (AlgebraicGeometry.Spec { carrier := R, commRing := inst }))\n            (P : ZInQ.Contrib.CloudW03NeronSurj.FLT.NeronModelInfra.SchemeHomOver t f),\n            Eq (ZInQ.Contrib.OneProof.Y3FineModuli.Source.CerednikDrinfeld.QM.pushPt (act (instHAdd.hAdd x y)) ⋯ P)\n              (L.mul t (ZInQ.Contrib.OneProof.Y3FineModuli.Source.CerednikDrinfeld.QM.pushPt (act x) ⋯ P)\n                (ZInQ.Contrib.OneProof.Y3FineModuli.Source.CerednikDrinfeld.QM.pushPt (act y) ⋯ P))) →\n          ∀ (k : Type) [inst_2 : Field k] [IsAlgClosed k] [CharZero k] (sk : RingHom R k) (V : Type)\n            [inst_5 : AddCommGroup V] [inst_6 : Module k V] [Module.Finite k V]\n            (τ :\n              V →\n                ZInQ.Contrib.CloudW03NeronSurj.FLT.NeronModelInfra.SchemeHomOver\n                  (ZInQ.Contrib.OneProof.Y3FineModuli.Source.CerednikDrinfeld.QM.tangentBase k sk) f),\n            Function.Injective τ →\n              (∀\n                  (P :\n                    ZInQ.Contrib.CloudW03NeronSurj.FLT.NeronModelInfra.SchemeHomOver\n                      (ZInQ.Contrib.OneProof.Y3FineModuli.Source.CerednikDrinfeld.QM.tangentBase k sk) f),\n                  Iff (Set.instMembership.mem (Set.range τ) P)\n                    (ZInQ.Contrib.OneProof.Y3FineModuli.Source.CerednikDrinfeld.QM.IsTangentVector L k sk P)) →\n                (∀ (v w : V),\n                    Eq (τ (instHAdd.hAdd v w))\n                      (L.mul (ZInQ.Contrib.OneProof.Y3FineModuli.Source.CerednikDrinfeld.QM.tangentBase k sk) (τ v)\n                        (τ w))) →\n                  (∀ (c : k) (v : V),\n                      Eq (τ (instHSMul.hSMul c v)).val\n                        (AlgebraicGeometry.Scheme.instCategory.comp\n                          (ZInQ.Contrib.OneProof.Y3FineModuli.Source.CerednikDrinfeld.QM.tangentScale k c) (τ v).val)) →\n                    ∀ (m : Subtype fun x => SetLike.instMembership.mem LeafQM.O x) (Φ : LinearMap (RingHom.id k) V V),\n                      (∀ (v : V),\n                          Eq (τ (LinearMap.instFunLike.coe Φ v))\n                            (ZInQ.Contrib.OneProof.Y3FineModuli.Source.CerednikDrinfeld.QM.pushPt (act m) ⋯ (τ v))) →\n                        ∀ (n : Int),\n                          Eq (instHAdd.hAdd m.val (QuaternionAlgebra.instStarQuaternionAlgebra.star m.val))\n                              (QuaternionAlgebra.coe n.cast) →\n                            Eq (LinearMap.instFunLike.coe (LinearMap.trace k V) Φ) n.cast",
+        "status": "proved_exact_type",
+        "provider": "ZInQ.Contrib.OneProof.Y3FineModuli.literal_order_charZero_tangent_trace",
+        "declaration": "Y3UpstreamReference.LiteralGeometryTraceContract"
+      }
+    ],
+    "runtime_behavior_certified": false,
+    "auditor_unchanged": true,
+    "auditor_sha256": "79096b836bce4c04735cc4ab2f6af21e207cb9b1b84fc46b959b55369787198a",
+    "spec_sha256": "5ebd47310401a6ffb82292cd2747dc57eff441d93a72c5fb8047d9dd139ad639",
+    "log_sha256": "837a65bceba7d2145ede29c1c652f9c512c28c7b5f503eeaea301fa9e287085a",
+    "report_sha256": "ac69037661fe1ac491ffb2cb9aa8c6cea399c48295ea2128577d1b7fc779324c",
+    "seconds": 24.809,
+    "exit_code": 0
+  },
+  "runtime_disclosure": {
+    "PortUtil_raw_declarations": [
+      {
+        "type": "Lean.Elab.Command.CommandElab",
+        "runtime_owner_PortUtil": true,
+        "name": "_aux_ZInQKernel_Contrib_CloudW03NeronSurj_PortUtil___elabRules_commandW03_export___1",
+        "module": "ZInQKernel.Contrib.CloudW03NeronSurj.PortUtil",
+        "kind": "definition",
+        "is_unsafe": false,
+        "is_partial": false,
+        "generated_name": true
+      },
+      {
+        "type": "(motive : Option Lean.Name → Sort u_1) →\n  (x : Option Lean.Name) → ((target : Lean.Name) → motive (Option.some target)) → (Unit → motive Option.none) → motive x",
+        "runtime_owner_PortUtil": true,
+        "name": "_aux_ZInQKernel_Contrib_CloudW03NeronSurj_PortUtil___elabRules_commandW03_alias___1.match_1",
+        "module": "ZInQKernel.Contrib.CloudW03NeronSurj.PortUtil",
+        "kind": "definition",
+        "is_unsafe": false,
+        "is_partial": false,
+        "generated_name": true
+      },
+      {
+        "type": "(motive : Prod (Array Lean.FVarId) Lean.MVarId → Sort u_1) →\n  (x : Prod (Array Lean.FVarId) Lean.MVarId) →\n    ((fst : Array Lean.FVarId) → (g' : Lean.MVarId) → motive { fst := fst, snd := g' }) → motive x",
+        "runtime_owner_PortUtil": true,
+        "name": "_aux_ZInQKernel_Contrib_CloudW03NeronSurj_PortUtil___elabRules_tacticW03_exact_reverting__1.match_1",
+        "module": "ZInQKernel.Contrib.CloudW03NeronSurj.PortUtil",
+        "kind": "definition",
+        "is_unsafe": false,
+        "is_partial": false,
+        "generated_name": true
+      },
+      {
+        "type": "Lean.ParserDescr",
+        "runtime_owner_PortUtil": true,
+        "name": "commandW03_export__",
+        "module": "ZInQKernel.Contrib.CloudW03NeronSurj.PortUtil",
+        "kind": "definition",
+        "is_unsafe": false,
+        "is_partial": false,
+        "generated_name": false
+      },
+      {
+        "type": "Lean.ParserDescr",
+        "runtime_owner_PortUtil": true,
+        "name": "commandW03_ns_",
+        "module": "ZInQKernel.Contrib.CloudW03NeronSurj.PortUtil",
+        "kind": "definition",
+        "is_unsafe": false,
+        "is_partial": false,
+        "generated_name": false
+      },
+      {
+        "type": "Lean.Elab.Command.CommandElab",
+        "runtime_owner_PortUtil": true,
+        "name": "_aux_ZInQKernel_Contrib_CloudW03NeronSurj_PortUtil___elabRules_commandW03_alias___1",
+        "module": "ZInQKernel.Contrib.CloudW03NeronSurj.PortUtil",
+        "kind": "definition",
+        "is_unsafe": false,
+        "is_partial": false,
+        "generated_name": true
+      },
+      {
+        "type": "(motive : List (Lean.ScopedEnvExtension.State Lean.EnvExtensionState) → Sort u_1) →\n  (x : List (Lean.ScopedEnvExtension.State Lean.EnvExtensionState)) →\n    ((top : Lean.ScopedEnvExtension.State Lean.EnvExtensionState) →\n        (stack : List (Lean.ScopedEnvExtension.State Lean.EnvExtensionState)) → motive (List.cons top stack)) →\n      ((x : List (Lean.ScopedEnvExtension.State Lean.EnvExtensionState)) → motive x) → motive x",
+        "runtime_owner_PortUtil": true,
+        "name": "_aux_ZInQKernel_Contrib_CloudW03NeronSurj_PortUtil___elabRules_commandW03_reactivate__1.match_1",
+        "module": "ZInQKernel.Contrib.CloudW03NeronSurj.PortUtil",
+        "kind": "definition",
+        "is_unsafe": false,
+        "is_partial": false,
+        "generated_name": true
+      },
+      {
+        "type": "Lean.ParserDescr",
+        "runtime_owner_PortUtil": true,
+        "name": "commandW03_alias__",
+        "module": "ZInQKernel.Contrib.CloudW03NeronSurj.PortUtil",
+        "kind": "definition",
+        "is_unsafe": false,
+        "is_partial": false,
+        "generated_name": false
+      },
+      {
+        "type": "{α : Type u} →\n  {motive : List α → Sort u_1} →\n    (t : List α) →\n      ((head : α) → (tail : List α) → motive (List.cons head tail)) → (Nat.hasNotBit 2 t.ctorIdx → motive t) → motive t",
+        "runtime_owner_PortUtil": true,
+        "name": "_aux_ZInQKernel_Contrib_CloudW03NeronSurj_PortUtil___elabRules_commandW03_reactivate__1._sparseCasesOn_1",
+        "module": "ZInQKernel.Contrib.CloudW03NeronSurj.PortUtil",
+        "kind": "definition",
+        "is_unsafe": false,
+        "is_partial": false,
+        "generated_name": true
+      },
+      {
+        "type": "Lean.Elab.Tactic.Tactic",
+        "runtime_owner_PortUtil": true,
+        "name": "_aux_ZInQKernel_Contrib_CloudW03NeronSurj_PortUtil___elabRules_tacticW03_exact_reverting__1",
+        "module": "ZInQKernel.Contrib.CloudW03NeronSurj.PortUtil",
+        "kind": "definition",
+        "is_unsafe": false,
+        "is_partial": false,
+        "generated_name": true
+      },
+      {
+        "type": "Lean.ParserDescr",
+        "runtime_owner_PortUtil": true,
+        "name": "commandW03_open_",
+        "module": "ZInQKernel.Contrib.CloudW03NeronSurj.PortUtil",
+        "kind": "definition",
+        "is_unsafe": false,
+        "is_partial": false,
+        "generated_name": false
+      },
+      {
+        "type": "Lean.ParserDescr",
+        "runtime_owner_PortUtil": true,
+        "name": "tacticW03_exact_reverting_",
+        "module": "ZInQKernel.Contrib.CloudW03NeronSurj.PortUtil",
+        "kind": "definition",
+        "is_unsafe": false,
+        "is_partial": false,
+        "generated_name": false
+      },
+      {
+        "type": "Lean.ParserDescr",
+        "runtime_owner_PortUtil": true,
+        "name": "commandW03_reactivate_",
+        "module": "ZInQKernel.Contrib.CloudW03NeronSurj.PortUtil",
+        "kind": "definition",
+        "is_unsafe": false,
+        "is_partial": false,
+        "generated_name": false
+      },
+      {
+        "type": "(motive : Prod Lean.Name Lean.ConstantInfo → Sort u_1) →\n  (x : Prod Lean.Name Lean.ConstantInfo) →\n    ((c : Lean.Name) → (snd : Lean.ConstantInfo) → motive { fst := c, snd := snd }) → motive x",
+        "runtime_owner_PortUtil": true,
+        "name": "_aux_ZInQKernel_Contrib_CloudW03NeronSurj_PortUtil___elabRules_commandW03_export_all___1.match_1",
+        "module": "ZInQKernel.Contrib.CloudW03NeronSurj.PortUtil",
+        "kind": "definition",
+        "is_unsafe": false,
+        "is_partial": false,
+        "generated_name": true
+      },
+      {
+        "type": "Lean.Elab.Command.CommandElab",
+        "runtime_owner_PortUtil": true,
+        "name": "_aux_ZInQKernel_Contrib_CloudW03NeronSurj_PortUtil___elabRules_commandW03_export_all___1",
+        "module": "ZInQKernel.Contrib.CloudW03NeronSurj.PortUtil",
+        "kind": "definition",
+        "is_unsafe": false,
+        "is_partial": false,
+        "generated_name": true
+      },
+      {
+        "type": "String → Lean.Elab.Command.CommandElabM Unit",
+        "runtime_owner_PortUtil": true,
+        "name": "ZInQ.Contrib.CloudW03NeronSurj.PortUtil.openCore",
+        "module": "ZInQKernel.Contrib.CloudW03NeronSurj.PortUtil",
+        "kind": "definition",
+        "is_unsafe": false,
+        "is_partial": false,
+        "generated_name": false
+      },
+      {
+        "type": "Lean.ParserDescr",
+        "runtime_owner_PortUtil": true,
+        "name": "w03OpenIn",
+        "module": "ZInQKernel.Contrib.CloudW03NeronSurj.PortUtil",
+        "kind": "definition",
+        "is_unsafe": false,
+        "is_partial": false,
+        "generated_name": false
+      },
+      {
+        "type": "Lean.Elab.Command.CommandElab",
+        "runtime_owner_PortUtil": true,
+        "name": "_aux_ZInQKernel_Contrib_CloudW03NeronSurj_PortUtil___elabRules_commandW03_open__1",
+        "module": "ZInQKernel.Contrib.CloudW03NeronSurj.PortUtil",
+        "kind": "definition",
+        "is_unsafe": false,
+        "is_partial": false,
+        "generated_name": true
+      },
+      {
+        "type": "Lean.Elab.Command.CommandElab",
+        "runtime_owner_PortUtil": true,
+        "name": "_aux_ZInQKernel_Contrib_CloudW03NeronSurj_PortUtil___elabRules_commandW03_reactivate__1",
+        "module": "ZInQKernel.Contrib.CloudW03NeronSurj.PortUtil",
+        "kind": "definition",
+        "is_unsafe": false,
+        "is_partial": false,
+        "generated_name": true
+      },
+      {
+        "type": "Lean.Macro",
+        "runtime_owner_PortUtil": true,
+        "name": "_aux_ZInQKernel_Contrib_CloudW03NeronSurj_PortUtil___macroRules_w03OpenIn_1",
+        "module": "ZInQKernel.Contrib.CloudW03NeronSurj.PortUtil",
+        "kind": "definition",
+        "is_unsafe": false,
+        "is_partial": false,
+        "generated_name": true
+      },
+      {
+        "type": "Lean.Name",
+        "runtime_owner_PortUtil": true,
+        "name": "ZInQ.Contrib.CloudW03NeronSurj.PortUtil.portPrefix",
+        "module": "ZInQKernel.Contrib.CloudW03NeronSurj.PortUtil",
+        "kind": "definition",
+        "is_unsafe": false,
+        "is_partial": false,
+        "generated_name": false
+      },
+      {
+        "type": "Lean.Elab.Command.CommandElab",
+        "runtime_owner_PortUtil": true,
+        "name": "_aux_ZInQKernel_Contrib_CloudW03NeronSurj_PortUtil___elabRules_commandW03_ns__1",
+        "module": "ZInQKernel.Contrib.CloudW03NeronSurj.PortUtil",
+        "kind": "definition",
+        "is_unsafe": false,
+        "is_partial": false,
+        "generated_name": true
+      },
+      {
+        "type": "Lean.ParserDescr",
+        "runtime_owner_PortUtil": true,
+        "name": "commandW03_export_all__",
+        "module": "ZInQKernel.Contrib.CloudW03NeronSurj.PortUtil",
+        "kind": "definition",
+        "is_unsafe": false,
+        "is_partial": false,
+        "generated_name": false
+      }
+    ],
+    "PortUtil_count": 23,
+    "PortUtil_mathematical_runtime_behavior_claimed": false,
+    "generated_unsafe_or_partial_declarations_NOT_replayed": [
+      {
+        "type": "{R : Type u} →\n  [inst : CommRing R] →\n    {A : AlgebraicGeometry.Scheme} →\n      {f : CategoryTheory.catToReflQuiver.Hom A (AlgebraicGeometry.Spec { carrier := R, commRing := inst })} →\n        ZInQ.Contrib.CloudW03NeronSurj.FLT.GoodReductionJacobian.RelativeGroupLaw R f →\n          {T : AlgebraicGeometry.Scheme} →\n            (t : CategoryTheory.catToReflQuiver.Hom T (AlgebraicGeometry.Spec { carrier := R, commRing := inst })) →\n              Nat →\n                ZInQ.Contrib.CloudW03NeronSurj.FLT.NeronModelInfra.SchemeHomOver t f →\n                  ZInQ.Contrib.CloudW03NeronSurj.FLT.NeronModelInfra.SchemeHomOver t f",
+        "runtime_owner_PortUtil": false,
+        "name": "ZInQ.Contrib.OneProof.Y3FineModuli.Source.CerednikDrinfeld.QM.nsmulPt._unsafe_rec",
+        "module": "ZInQKernel.Contrib.OneProof.Y3FineModuli.SourceTangentPoints",
+        "kind": "definition",
+        "is_unsafe": false,
+        "is_partial": true,
+        "generated_name": true
+      }
+    ],
+    "inventory_sha256": "44ef0b2e616b65e8c50edea9ab234096a339ca12cd96c50758cb739df7ff432c",
+    "inventory_matches_unchanged_auditor_skipset": true,
+    "explanation": "The safe mathematical nsmulPt definition is considered by the kernel; its generated executable _unsafe_rec is NOT replayed. PortUtil elaborator/namespace/generated infrastructure has metadata/type checks, not runtime-behavior certification."
+  },
+  "kernel_negative_controls": {
+    "count": 18,
+    "exit_code": 0,
+    "seconds": 121.495
+  },
+  "source_contract_tests": {
+    "count": 7,
+    "exit_code": 0,
+    "scope": "Current fixed-parent source checker tests only; not App/CI acceptance"
+  },
+  "old_source_review": {
+    "M1_no_target_QMAbScheme_projection": "RETAINED",
+    "M2_helper_no_R1_field_discharge": "RETAINED",
+    "L4_lint_warning_scope": "RETAINED",
+    "L1_L2_L3_original_notice_reference_provenance_and_guards": "Resolved in original supplement; preserved not re-certified as App"
+  },
+  "public_standard_cache_provenance": "Only retained public source-key/hash/comment-matched archives/packages; not signed master origin, full Mathlib rebuild or private/project/C7/A4 admission",
+  "whole_imported_library_or_full_registry_CI_App_R1_H10_acceptance": false,
+  "no_new_primary_affine_object_primitive": true,
+  "public_commands": "Portable/redacted templates, not original private paths/argv",
+  "source_contract_candidate": {
+    "status": "valid_candidate_contract",
+    "locks": 945,
+    "modules": 954,
+    "acceptance": false,
+    "source_parent": "581ab23c9e3c5b3af96086ff556a8d649c88a873"
+  },
+  "warning_count_correction": {
+    "kind": "Metadata-only counting-method correction, not proof/check/source change",
+    "diagnostic_method": "Count positioned filename.lean:line:column: warning headers, not warning substrings in explanatory hints",
+    "positioned_warning_headers_by_module": {
+      "ZInQKernel.Contrib.CloudW03NeronSurj.PortUtil": 0,
+      "ZInQKernel.Contrib.CloudW03NeronSurj.Vendor.Definitions.Def_AlgebraicGeometry_NeronModelPropertyBundleCarrier": 8,
+      "ZInQKernel.Contrib.CloudW03NeronSurj.Vendor.Definitions.Def_AlgebraicGeometry_RelativeGroupLaw": 0,
+      "ZInQKernel.Contrib.HDecomp.QM.Structures": 0,
+      "ZInQKernel.Contrib.OneProof.Y3FineModuli": 0,
+      "ZInQKernel.Contrib.OneProof.Y3FineModuli.CharZeroTrace": 0,
+      "ZInQKernel.Contrib.OneProof.Y3FineModuli.CotangentLifts": 0,
+      "ZInQKernel.Contrib.OneProof.Y3FineModuli.LiteralOrderTrace": 5,
+      "ZInQKernel.Contrib.OneProof.Y3FineModuli.SourceTangentPoints": 0,
+      "ZInQKernel.Contrib.OneProof.Y3FineModuli.TangentDimension": 17,
+      "ZInQKernel.Contrib.OneProof.Y3FineModuli.TangentOperators": 0,
+      "ZInQKernel.HDecomp.A6.A6": 0,
+      "ZInQKernel.HDecomp.Objects": 8
+    },
+    "positioned_warning_total": 38,
+    "new_Y3_helper_warning_total": 22,
+    "retained_original_warning_substring_line_total": 39,
+    "existing_source_build_warning_lines_are_substring_matches_not_diagnostic_count": true,
+    "one_additional_hint_text_match": {
+      "module": "ZInQKernel.HDecomp.Objects",
+      "line": 56,
+      "text": "Hint: The binding can be removed (if unused) or named `_` (if used implicitly). Alternatively, prefix the name with `_` to silence this warning:"
+    },
+    "original_logs_and_all_proof_bytes_unchanged": true
+  }
+}

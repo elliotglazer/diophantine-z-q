@@ -1,0 +1,159 @@
+Public-safe actual source-style type/axiom outputs; private runtime argv is omitted.
+## CheckTraceContracts actual type/AX output
+@quaternion_generators_trace_zero : ∀ {k : Type u_1} {V : Type u_2} [inst : Field k] [CharZero k]
+  [inst_2 : AddCommGroup V] [inst_3 : Module k V] (ρ : ↥LeafQM.O →+* Module.End k V),
+  (LinearMap.trace k V) (ρ LeafQM.AV.oi) = 0 ∧
+    (LinearMap.trace k V) (ρ LeafQM.AV.oj) = 0 ∧ (LinearMap.trace k V) (ρ (LeafQM.AV.oi * LeafQM.AV.oj)) = 0
+@literal_order_trace_eq_intCast : ∀ {k : Type u_1} {V : Type u_2} [inst : Field k] [CharZero k]
+  [inst_2 : AddCommGroup V] [inst_3 : Module k V] [FiniteDimensional k V] (ρ : ↥LeafQM.O →+* Module.End k V),
+  Module.finrank k V = 2 → ∀ (m : ↥LeafQM.O) (z : ℤ), ↑m + star ↑m = ↑↑z → (LinearMap.trace k V) (ρ m) = ↑z
+@Source.literal_order_tangent_operators : ∀ {S : Type u_1} [inst : CommRing S] {A : AlgebraicGeometry.Scheme}
+  {f : A ⟶ AlgebraicGeometry.Spec ↧S}
+  (L : ZInQ.Contrib.CloudW03NeronSurj.FLT.GoodReductionJacobian.RelativeGroupLaw S f) (act : ↥LeafQM.O → (A ⟶ A))
+  (act_over : ∀ (x : ↥LeafQM.O), CategoryTheory.CategoryStruct.comp (act x) f = f),
+  (∀ (x : ↥LeafQM.O) {T : AlgebraicGeometry.Scheme} (t : T ⟶ AlgebraicGeometry.Spec ↧S)
+      (P Q : ZInQ.Contrib.CloudW03NeronSurj.FLT.NeronModelInfra.SchemeHomOver t f),
+      Source.CerednikDrinfeld.QM.pushPt (act x) ⋯ (L.mul t P Q) =
+        L.mul t (Source.CerednikDrinfeld.QM.pushPt (act x) ⋯ P) (Source.CerednikDrinfeld.QM.pushPt (act x) ⋯ Q)) →
+    act 1 = CategoryTheory.CategoryStruct.id A →
+      (∀ (x y : ↥LeafQM.O), act (x * y) = CategoryTheory.CategoryStruct.comp (act y) (act x)) →
+        (∀ (x y : ↥LeafQM.O) {T : AlgebraicGeometry.Scheme} (t : T ⟶ AlgebraicGeometry.Spec ↧S)
+            (P : ZInQ.Contrib.CloudW03NeronSurj.FLT.NeronModelInfra.SchemeHomOver t f),
+            Source.CerednikDrinfeld.QM.pushPt (act (x + y)) ⋯ P =
+              L.mul t (Source.CerednikDrinfeld.QM.pushPt (act x) ⋯ P) (Source.CerednikDrinfeld.QM.pushPt (act y) ⋯ P)) →
+          ∀ (k : Type u_1) [inst_1 : Field k] (sk : S →+* k) (V : Type u_1) [inst_2 : AddCommGroup V]
+            [inst_3 : Module k V]
+            (τ :
+              V →
+                ZInQ.Contrib.CloudW03NeronSurj.FLT.NeronModelInfra.SchemeHomOver
+                  (Source.CerednikDrinfeld.QM.tangentBase k sk) f),
+            Function.Injective τ →
+              (∀
+                  (P :
+                    ZInQ.Contrib.CloudW03NeronSurj.FLT.NeronModelInfra.SchemeHomOver
+                      (Source.CerednikDrinfeld.QM.tangentBase k sk) f),
+                  P ∈ Set.range τ ↔ Source.CerednikDrinfeld.QM.IsTangentVector L k sk P) →
+                (∀ (v w : V), τ (v + w) = L.mul (Source.CerednikDrinfeld.QM.tangentBase k sk) (τ v) (τ w)) →
+                  (∀ (c : k) (v : V),
+                      ↑(τ (c • v)) =
+                        CategoryTheory.CategoryStruct.comp (Source.CerednikDrinfeld.QM.tangentScale k c) ↑(τ v)) →
+                    ∃ ρ,
+                      (∀ (x : ↥LeafQM.O) (v : V), τ ((ρ x) v) = Source.CerednikDrinfeld.QM.pushPt (act x) ⋯ (τ v)) ∧
+                        ∀ (m : ↥LeafQM.O) (Φ : V →ₗ[k] V),
+                          (∀ (v : V), τ (Φ v) = Source.CerednikDrinfeld.QM.pushPt (act m) ⋯ (τ v)) → ρ m = Φ
+@literal_order_charZero_tangent_trace : ∀ {R : Type} [inst : CommRing R] {A : AlgebraicGeometry.Scheme}
+  {f : A ⟶ AlgebraicGeometry.Spec ↧R}
+  (L : ZInQ.Contrib.CloudW03NeronSurj.FLT.GoodReductionJacobian.RelativeGroupLaw R f)
+  [AlgebraicGeometry.SmoothOfRelativeDimension 2 f] (act : ↥LeafQM.O → (A ⟶ A))
+  (act_over : ∀ (x : ↥LeafQM.O), CategoryTheory.CategoryStruct.comp (act x) f = f),
+  (∀ (x : ↥LeafQM.O) {T : AlgebraicGeometry.Scheme} (t : T ⟶ AlgebraicGeometry.Spec ↧R)
+      (P Q : ZInQ.Contrib.CloudW03NeronSurj.FLT.NeronModelInfra.SchemeHomOver t f),
+      Source.CerednikDrinfeld.QM.pushPt (act x) ⋯ (L.mul t P Q) =
+        L.mul t (Source.CerednikDrinfeld.QM.pushPt (act x) ⋯ P) (Source.CerednikDrinfeld.QM.pushPt (act x) ⋯ Q)) →
+    act 1 = CategoryTheory.CategoryStruct.id A →
+      (∀ (x y : ↥LeafQM.O), act (x * y) = CategoryTheory.CategoryStruct.comp (act y) (act x)) →
+        (∀ (x y : ↥LeafQM.O) {T : AlgebraicGeometry.Scheme} (t : T ⟶ AlgebraicGeometry.Spec ↧R)
+            (P : ZInQ.Contrib.CloudW03NeronSurj.FLT.NeronModelInfra.SchemeHomOver t f),
+            Source.CerednikDrinfeld.QM.pushPt (act (x + y)) ⋯ P =
+              L.mul t (Source.CerednikDrinfeld.QM.pushPt (act x) ⋯ P) (Source.CerednikDrinfeld.QM.pushPt (act y) ⋯ P)) →
+          ∀ (k : Type) [inst_2 : Field k] [IsAlgClosed k] [CharZero k] (sk : R →+* k) (V : Type)
+            [inst_5 : AddCommGroup V] [inst_6 : Module k V] [Module.Finite k V]
+            (τ :
+              V →
+                ZInQ.Contrib.CloudW03NeronSurj.FLT.NeronModelInfra.SchemeHomOver
+                  (Source.CerednikDrinfeld.QM.tangentBase k sk) f),
+            Function.Injective τ →
+              (∀
+                  (P :
+                    ZInQ.Contrib.CloudW03NeronSurj.FLT.NeronModelInfra.SchemeHomOver
+                      (Source.CerednikDrinfeld.QM.tangentBase k sk) f),
+                  P ∈ Set.range τ ↔ Source.CerednikDrinfeld.QM.IsTangentVector L k sk P) →
+                (∀ (v w : V), τ (v + w) = L.mul (Source.CerednikDrinfeld.QM.tangentBase k sk) (τ v) (τ w)) →
+                  (∀ (c : k) (v : V),
+                      ↑(τ (c • v)) =
+                        CategoryTheory.CategoryStruct.comp (Source.CerednikDrinfeld.QM.tangentScale k c) ↑(τ v)) →
+                    ∀ (m : ↥LeafQM.O) (Φ : V →ₗ[k] V),
+                      (∀ (v : V), τ (Φ v) = Source.CerednikDrinfeld.QM.pushPt (act m) ⋯ (τ v)) →
+                        ∀ (n : ℤ), ↑m + star ↑m = ↑↑n → (LinearMap.trace k V) Φ = ↑n
+'ZInQ.Contrib.OneProof.Y3FineModuli.quaternion_generators_trace_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ZInQ.Contrib.OneProof.Y3FineModuli.literal_order_trace_eq_intCast' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ZInQ.Contrib.OneProof.Y3FineModuli.Source.literal_order_tangent_operators' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ZInQ.Contrib.OneProof.Y3FineModuli.literal_order_charZero_tangent_trace' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+
+## CheckFrozenGeometryContracts actual type/AX output
+@ZInQ.Contrib.OneProof.Y3FineModuli.quaternion_generators_trace_zero : ∀ {k : Type u_1} {V : Type u_2} [inst : Field k]
+  [CharZero k] [inst_2 : AddCommGroup V] [inst_3 : Module k V] (ρ : ↥LeafQM.O →+* Module.End k V),
+  (LinearMap.trace k V) (ρ LeafQM.AV.oi) = 0 ∧
+    (LinearMap.trace k V) (ρ LeafQM.AV.oj) = 0 ∧ (LinearMap.trace k V) (ρ (LeafQM.AV.oi * LeafQM.AV.oj)) = 0
+@ZInQ.Contrib.OneProof.Y3FineModuli.literal_order_trace_eq_intCast : ∀ {k : Type u_1} {V : Type u_2} [inst : Field k]
+  [CharZero k] [inst_2 : AddCommGroup V] [inst_3 : Module k V] [FiniteDimensional k V]
+  (ρ : ↥LeafQM.O →+* Module.End k V),
+  Module.finrank k V = 2 → ∀ (m : ↥LeafQM.O) (z : ℤ), ↑m + star ↑m = ↑↑z → (LinearMap.trace k V) (ρ m) = ↑z
+@ZInQ.Contrib.OneProof.Y3FineModuli.Source.literal_order_tangent_operators : ∀ {S : Type u_1} [inst : CommRing S]
+  {A : Scheme} {f : A ⟶ Spec ↧S} (L : RelativeGroupLaw S f) (act : ↥LeafQM.O → (A ⟶ A))
+  (act_over : ∀ (x : ↥LeafQM.O), act x ≫ f = f),
+  (∀ (x : ↥LeafQM.O) {T : Scheme} (t : T ⟶ Spec ↧S) (P Q : SchemeHomOver t f),
+      pushPt (act x) ⋯ (L.mul t P Q) = L.mul t (pushPt (act x) ⋯ P) (pushPt (act x) ⋯ Q)) →
+    act 1 = 𝟙 A →
+      (∀ (x y : ↥LeafQM.O), act (x * y) = act y ≫ act x) →
+        (∀ (x y : ↥LeafQM.O) {T : Scheme} (t : T ⟶ Spec ↧S) (P : SchemeHomOver t f),
+            pushPt (act (x + y)) ⋯ P = L.mul t (pushPt (act x) ⋯ P) (pushPt (act y) ⋯ P)) →
+          ∀ (k : Type u_1) [inst_1 : Field k] (sk : S →+* k) (V : Type u_1) [inst_2 : AddCommGroup V]
+            [inst_3 : Module k V] (τ : V → SchemeHomOver (tangentBase k sk) f),
+            Function.Injective τ →
+              (∀ (P : SchemeHomOver (tangentBase k sk) f), P ∈ Set.range τ ↔ IsTangentVector L k sk P) →
+                (∀ (v w : V), τ (v + w) = L.mul (tangentBase k sk) (τ v) (τ w)) →
+                  (∀ (c : k) (v : V), ↑(τ (c • v)) = tangentScale k c ≫ ↑(τ v)) →
+                    ∃ ρ,
+                      (∀ (x : ↥LeafQM.O) (v : V), τ ((ρ x) v) = pushPt (act x) ⋯ (τ v)) ∧
+                        ∀ (m : ↥LeafQM.O) (Φ : V →ₗ[k] V), (∀ (v : V), τ (Φ v) = pushPt (act m) ⋯ (τ v)) → ρ m = Φ
+@ZInQ.Contrib.OneProof.Y3FineModuli.literal_order_charZero_tangent_trace : ∀ {R : Type} [inst : CommRing R] {A : Scheme}
+  {f : A ⟶ Spec ↧R} (L : RelativeGroupLaw R f) [SmoothOfRelativeDimension 2 f] (act : ↥LeafQM.O → (A ⟶ A))
+  (act_over : ∀ (x : ↥LeafQM.O), act x ≫ f = f),
+  (∀ (x : ↥LeafQM.O) {T : Scheme} (t : T ⟶ Spec ↧R) (P Q : SchemeHomOver t f),
+      pushPt (act x) ⋯ (L.mul t P Q) = L.mul t (pushPt (act x) ⋯ P) (pushPt (act x) ⋯ Q)) →
+    act 1 = 𝟙 A →
+      (∀ (x y : ↥LeafQM.O), act (x * y) = act y ≫ act x) →
+        (∀ (x y : ↥LeafQM.O) {T : Scheme} (t : T ⟶ Spec ↧R) (P : SchemeHomOver t f),
+            pushPt (act (x + y)) ⋯ P = L.mul t (pushPt (act x) ⋯ P) (pushPt (act y) ⋯ P)) →
+          ∀ (k : Type) [inst_2 : Field k] [IsAlgClosed k] [CharZero k] (sk : R →+* k) (V : Type)
+            [inst_5 : AddCommGroup V] [inst_6 : Module k V] [Module.Finite k V]
+            (τ : V → SchemeHomOver (tangentBase k sk) f),
+            Function.Injective τ →
+              (∀ (P : SchemeHomOver (tangentBase k sk) f), P ∈ Set.range τ ↔ IsTangentVector L k sk P) →
+                (∀ (v w : V), τ (v + w) = L.mul (tangentBase k sk) (τ v) (τ w)) →
+                  (∀ (c : k) (v : V), ↑(τ (c • v)) = tangentScale k c ≫ ↑(τ v)) →
+                    ∀ (m : ↥LeafQM.O) (Φ : V →ₗ[k] V),
+                      (∀ (v : V), τ (Φ v) = pushPt (act m) ⋯ (τ v)) →
+                        ∀ (n : ℤ), ↑m + star ↑m = ↑↑n → (LinearMap.trace k V) Φ = ↑n
+@ZInQ.Contrib.OneProof.Y3FineModuli.Source.P2MW.S_CerednikDrinfeld_QM_finrank_eq_of_range_iff_isTangentVector_of_smoothOfRelativeDimension.solution : ∀
+  {S : Type u_1} [inst : CommRing S] {A : Scheme} {f : A ⟶ Spec ↧S} (L : RelativeGroupLaw S f) (n : ℕ)
+  [SmoothOfRelativeDimension n f] (k : Type u_1) [inst_2 : Field k] (sk : S →+* k) (V : Type u_1)
+  [inst_3 : AddCommGroup V] [inst_4 : Module k V] (τ : V → SchemeHomOver (tangentBase k sk) f),
+  Function.Injective τ →
+    (∀ (P : SchemeHomOver (tangentBase k sk) f), P ∈ Set.range τ ↔ IsTangentVector L k sk P) →
+      (∀ (v w : V), τ (v + w) = L.mul (tangentBase k sk) (τ v) (τ w)) →
+        (∀ (c : k) (v : V), ↑(τ (c • v)) = tangentScale k c ≫ ↑(τ v)) → Module.finrank k V = n
+'ZInQ.Contrib.OneProof.Y3FineModuli.quaternion_generators_trace_zero' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ZInQ.Contrib.OneProof.Y3FineModuli.literal_order_trace_eq_intCast' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ZInQ.Contrib.OneProof.Y3FineModuli.Source.literal_order_tangent_operators' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ZInQ.Contrib.OneProof.Y3FineModuli.literal_order_charZero_tangent_trace' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'ZInQ.Contrib.OneProof.Y3FineModuli.Source.P2MW.S_CerednikDrinfeld_QM_finrank_eq_of_range_iff_isTangentVector_of_smoothOfRelativeDimension.solution' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]

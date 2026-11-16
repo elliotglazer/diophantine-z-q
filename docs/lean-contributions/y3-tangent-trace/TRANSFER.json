@@ -1,0 +1,212 @@
+{
+  "schema": "y3-tangent-trace-upstream-transfer/v1",
+  "fixed_reviewed_source_parent": "581ab23c9e3c5b3af96086ff556a8d649c88a873",
+  "primary_fork_pr": "https://github.com/Deicyde/diophantine-z-q/pull/40",
+  "primary_head": "b7964a7a69534e736ef66dfe46e532a7b371f086",
+  "primary_base": "0caafe66103a89994198e26d8d68af6ae227ed0e",
+  "original_proof_base": "2880fef1e827a05ab9238cd200e555c585f00e30",
+  "public_FLT_source": "6e837e75355538c7f80bab5b956861e86c4eacc2",
+  "fork_new_Y3_Lean_modules": 7,
+  "additional_exact_fork_baseline_W03_defining_modules": 3,
+  "existing_accepted_upstream_defining_modules": [
+    {
+      "fork_path": "ZInQKernel/HDecomp/QM/Structures.lean",
+      "upstream_path": "ZInQKernel/Contrib/HDecomp/QM/Structures.lean",
+      "fork_sha256": "0ee93924ff4f1b2ff63dc0562a2a3be166b950663bcbd423f19c9f9488a63441",
+      "upstream_sha256": "0ee93924ff4f1b2ff63dc0562a2a3be166b950663bcbd423f19c9f9488a63441",
+      "byte_identical": true,
+      "role": "Exact same literal LeafQM.O/type/generator relations"
+    },
+    {
+      "fork_path": "ZInQKernel/HDecomp/A6/A6.lean",
+      "upstream_path": "ZInQKernel/HDecomp/A6/A6.lean",
+      "fork_sha256": "dbb4c58fcc53cf82426116149bdfcc11a8d115940aeb0dba316599773f291e59",
+      "upstream_sha256": "dbb4c58fcc53cf82426116149bdfcc11a8d115940aeb0dba316599773f291e59",
+      "byte_identical": true,
+      "role": "Exact same accepted A6 defining import"
+    },
+    {
+      "fork_path": "ZInQKernel/HDecomp/Objects.lean",
+      "upstream_path": "ZInQKernel/HDecomp/Objects.lean",
+      "fork_sha256": "bf2519646471349e64f5e3069a69c6946ed8f3a7bbfb34123e681b8d581ba6f3",
+      "upstream_sha256": "60178cdd4a2cbaaf44c18676b9677b85721ccc8efc04fdfe6ec0cf4a3a1fec1d",
+      "byte_identical": false,
+      "role": "Accepted actual Objects; only unconsumed QMDichotomy/Yu packaging differs from fork"
+    }
+  ],
+  "owned_Lean_modules_total": 10,
+  "no_second_provider_or_namespaced_definition": true,
+  "all_7_helper_bodies_and_types_unchanged": true,
+  "literal_LeafQM_O_source_identity": true,
+  "only_QM_import_lines_remapped": 3,
+  "updated_original_NOTICE_sha256": "ae277d3736aca81ce260eda2a8f39e30a97a97b56acab09ea97cdf169e8d032d",
+  "new_Lake_or_external_Lean_dependencies": 0,
+  "runtime_boundary": "Exact existing fork PortUtil is newly admitted upstream solely as canonical defining-cone compatibility. It contains elaborator/scoped/namespace helpers; only w03_open is used by the two definitions. This is not a theorem/kernel bypass. Runtime code/skips are disclosed separately; no claim that all ten sources lack elaborators.",
+  "old_M1_M2_L4_retained": "No target QMAbScheme/GrpObj projection, no R1 field/discharge, lint limits retained. Original L1-L3 resolved in unchanged final notice/checks.",
+  "not_supplied": [
+    "Primary new affine object-action primitive",
+    "W03 Basic/Main/Audit or whole Neron closure",
+    "R1/M1 target-object projection",
+    "Full81 level/torsion/generation",
+    "Moduli curve/Qbar point/PtEquiv/global universal family/classification",
+    "W28 maximality/ramification reproof",
+    "Whole imported-library/registry/CI/App/H10 acceptance"
+  ],
+  "files": [
+    {
+      "original_head": "b7964a7a69534e736ef66dfe46e532a7b371f086",
+      "original_path": "ZInQKernel/Contrib/OneProof/Y3FineModuli.lean",
+      "original_sha256": "ebfa1da9a77f728ae9b0aa727c5e42ea8ee29d95fad0823e31fd27714a3e94f2",
+      "upstream_path": "ZInQKernel/Contrib/OneProof/Y3FineModuli.lean",
+      "upstream_sha256": "9df5ebe46fa8a6e6b02f6f1407de47a1c399b83bd8f724c8a9edb2ee3d9bf09b",
+      "byte_identical": false,
+      "role": "Seven frozen Y3 helper sources; only three QM defining-import path edits"
+    },
+    {
+      "original_head": "b7964a7a69534e736ef66dfe46e532a7b371f086",
+      "original_path": "ZInQKernel/Contrib/OneProof/Y3FineModuli/CharZeroTrace.lean",
+      "original_sha256": "1f451359fcae09cf7ebce3ead5e3665df7055c2ca5c0b563ef17efa19fedf10e",
+      "upstream_path": "ZInQKernel/Contrib/OneProof/Y3FineModuli/CharZeroTrace.lean",
+      "upstream_sha256": "1f451359fcae09cf7ebce3ead5e3665df7055c2ca5c0b563ef17efa19fedf10e",
+      "byte_identical": true,
+      "role": "Seven frozen Y3 helper sources; only three QM defining-import path edits"
+    },
+    {
+      "original_head": "b7964a7a69534e736ef66dfe46e532a7b371f086",
+      "original_path": "ZInQKernel/Contrib/OneProof/Y3FineModuli/CotangentLifts.lean",
+      "original_sha256": "0f6a48edd3d81f16101f65ac24e063117da828d1737eabcb3f24e7cada216e6a",
+      "upstream_path": "ZInQKernel/Contrib/OneProof/Y3FineModuli/CotangentLifts.lean",
+      "upstream_sha256": "0f6a48edd3d81f16101f65ac24e063117da828d1737eabcb3f24e7cada216e6a",
+      "byte_identical": true,
+      "role": "Seven frozen Y3 helper sources; only three QM defining-import path edits"
+    },
+    {
+      "original_head": "b7964a7a69534e736ef66dfe46e532a7b371f086",
+      "original_path": "ZInQKernel/Contrib/OneProof/Y3FineModuli/LiteralOrderTrace.lean",
+      "original_sha256": "e9b336a3bc9243dcdeeb6c66eea804cdc1dacd26f75b3ac581acea4a534a27d5",
+      "upstream_path": "ZInQKernel/Contrib/OneProof/Y3FineModuli/LiteralOrderTrace.lean",
+      "upstream_sha256": "fdcdb4757985323e12be4fea7d0b12c609fa39b921c081a85688dca6a995e719",
+      "byte_identical": false,
+      "role": "Seven frozen Y3 helper sources; only three QM defining-import path edits"
+    },
+    {
+      "original_head": "b7964a7a69534e736ef66dfe46e532a7b371f086",
+      "original_path": "ZInQKernel/Contrib/OneProof/Y3FineModuli/NOTICE.md",
+      "original_sha256": "ae277d3736aca81ce260eda2a8f39e30a97a97b56acab09ea97cdf169e8d032d",
+      "upstream_path": "ThirdParty/Y3FineModuli/NOTICE-fork.md",
+      "upstream_sha256": "ae277d3736aca81ce260eda2a8f39e30a97a97b56acab09ea97cdf169e8d032d",
+      "byte_identical": true,
+      "role": "Updated final original directory notice, not the obsolete initial packet notice"
+    },
+    {
+      "original_head": "b7964a7a69534e736ef66dfe46e532a7b371f086",
+      "original_path": "ZInQKernel/Contrib/OneProof/Y3FineModuli/SOURCE_MAP.md",
+      "original_sha256": "a539be49d52ef6fc8523914fae3503b545f9cc2c166cd7e51eef99548cafe2e6",
+      "upstream_path": "docs/lean-contributions/y3-tangent-trace/SOURCE_MAP-fork.md",
+      "upstream_sha256": "a539be49d52ef6fc8523914fae3503b545f9cc2c166cd7e51eef99548cafe2e6",
+      "byte_identical": true,
+      "role": "Historical fork source map/verification with original context retained"
+    },
+    {
+      "original_head": "b7964a7a69534e736ef66dfe46e532a7b371f086",
+      "original_path": "ZInQKernel/Contrib/OneProof/Y3FineModuli/SourceTangentPoints.lean",
+      "original_sha256": "bfa64796b9d50d548195dad9f1adff4f06eada1b5d18c582bf3bb493ed3f9240",
+      "upstream_path": "ZInQKernel/Contrib/OneProof/Y3FineModuli/SourceTangentPoints.lean",
+      "upstream_sha256": "bfa64796b9d50d548195dad9f1adff4f06eada1b5d18c582bf3bb493ed3f9240",
+      "byte_identical": true,
+      "role": "Seven frozen Y3 helper sources; only three QM defining-import path edits"
+    },
+    {
+      "original_head": "b7964a7a69534e736ef66dfe46e532a7b371f086",
+      "original_path": "ZInQKernel/Contrib/OneProof/Y3FineModuli/TangentDimension.lean",
+      "original_sha256": "5fe4c7e3fa4edb2453eaa4f68da2f6ef2d4678b615569f82fc855bf3da5ada0f",
+      "upstream_path": "ZInQKernel/Contrib/OneProof/Y3FineModuli/TangentDimension.lean",
+      "upstream_sha256": "5fe4c7e3fa4edb2453eaa4f68da2f6ef2d4678b615569f82fc855bf3da5ada0f",
+      "byte_identical": true,
+      "role": "Seven frozen Y3 helper sources; only three QM defining-import path edits"
+    },
+    {
+      "original_head": "b7964a7a69534e736ef66dfe46e532a7b371f086",
+      "original_path": "ZInQKernel/Contrib/OneProof/Y3FineModuli/TangentOperators.lean",
+      "original_sha256": "22f44165a057259b8c23d6eebf66307498255c89e6a2af110299bc9156cc260c",
+      "upstream_path": "ZInQKernel/Contrib/OneProof/Y3FineModuli/TangentOperators.lean",
+      "upstream_sha256": "43fbe8088cc1633ccb636e6fa57282ac5dd0a9a5841a2988463cd254480c9636",
+      "byte_identical": false,
+      "role": "Seven frozen Y3 helper sources; only three QM defining-import path edits"
+    },
+    {
+      "original_head": "b7964a7a69534e736ef66dfe46e532a7b371f086",
+      "original_path": "ZInQKernel/Contrib/OneProof/Y3FineModuli/VERIFICATION.md",
+      "original_sha256": "69888a430e18595fd6ab9e09d01d3455e8754f6f78bc375f9ab4cd4e1bb6f0fb",
+      "upstream_path": "docs/lean-contributions/y3-tangent-trace/VERIFICATION-fork.md",
+      "upstream_sha256": "69888a430e18595fd6ab9e09d01d3455e8754f6f78bc375f9ab4cd4e1bb6f0fb",
+      "byte_identical": true,
+      "role": "Historical fork source map/verification with original context retained"
+    },
+    {
+      "original_head": "b7964a7a69534e736ef66dfe46e532a7b371f086",
+      "original_path": "ZInQKernel/Contrib/OneProof/Y3FineModuli/Vendor/AnthropicFLT/ATTRIBUTION.upstream.md",
+      "original_sha256": "698fb76c8d80b2ed78ebd48b271f2ee5815b3654fb8ec5c699b21b16ce0d9698",
+      "upstream_path": "ThirdParty/Y3FineModuli/ATTRIBUTION.upstream.md",
+      "upstream_sha256": "698fb76c8d80b2ed78ebd48b271f2ee5815b3654fb8ec5c699b21b16ce0d9698",
+      "byte_identical": true,
+      "role": "Complete original license/notice/attribution, shared with exact W03 defining capsule"
+    },
+    {
+      "original_head": "b7964a7a69534e736ef66dfe46e532a7b371f086",
+      "original_path": "ZInQKernel/Contrib/OneProof/Y3FineModuli/Vendor/AnthropicFLT/LICENSE",
+      "original_sha256": "746bc52848eabf8765635fe532e0680756a10b18e7b3fb26e7433ab4edf34034",
+      "upstream_path": "ThirdParty/Y3FineModuli/LICENSE",
+      "upstream_sha256": "746bc52848eabf8765635fe532e0680756a10b18e7b3fb26e7433ab4edf34034",
+      "byte_identical": true,
+      "role": "Complete original license/notice/attribution, shared with exact W03 defining capsule"
+    },
+    {
+      "original_head": "b7964a7a69534e736ef66dfe46e532a7b371f086",
+      "original_path": "ZInQKernel/Contrib/OneProof/Y3FineModuli/Vendor/AnthropicFLT/NOTICE.upstream",
+      "original_sha256": "42b1821f19a6aaa25e6811d22ab8f2fdc6433d4a37bc810b1cfafa5b6dd6b0b6",
+      "upstream_path": "ThirdParty/Y3FineModuli/NOTICE.upstream",
+      "upstream_sha256": "42b1821f19a6aaa25e6811d22ab8f2fdc6433d4a37bc810b1cfafa5b6dd6b0b6",
+      "byte_identical": true,
+      "role": "Complete original license/notice/attribution, shared with exact W03 defining capsule"
+    },
+    {
+      "original_head": "b7964a7a69534e736ef66dfe46e532a7b371f086",
+      "original_path": "ZInQKernel/Contrib/CloudW03NeronSurj/PortUtil.lean",
+      "original_sha256": "4df376bfcb5928778aacc5da73a9d3ceb4e0ef11d0da8130fe962a1c9dfdbe10",
+      "upstream_path": "ZInQKernel/Contrib/CloudW03NeronSurj/PortUtil.lean",
+      "upstream_sha256": "4df376bfcb5928778aacc5da73a9d3ceb4e0ef11d0da8130fe962a1c9dfdbe10",
+      "byte_identical": true,
+      "role": "Exact same canonical fork-baseline defining dependency; not previously accepted upstream. Runtime PortUtil separately disclosed."
+    },
+    {
+      "original_head": "b7964a7a69534e736ef66dfe46e532a7b371f086",
+      "original_path": "ZInQKernel/Contrib/CloudW03NeronSurj/Vendor/Definitions/Def_AlgebraicGeometry_NeronModelPropertyBundleCarrier.lean",
+      "original_sha256": "b7f2636d6796583c7a23a36294007ea2950f035ed8a2b61dcad2d3942ad2a756",
+      "upstream_path": "ZInQKernel/Contrib/CloudW03NeronSurj/Vendor/Definitions/Def_AlgebraicGeometry_NeronModelPropertyBundleCarrier.lean",
+      "upstream_sha256": "b7f2636d6796583c7a23a36294007ea2950f035ed8a2b61dcad2d3942ad2a756",
+      "byte_identical": true,
+      "role": "Exact same canonical fork-baseline defining dependency; not previously accepted upstream. Runtime PortUtil separately disclosed."
+    },
+    {
+      "original_head": "b7964a7a69534e736ef66dfe46e532a7b371f086",
+      "original_path": "ZInQKernel/Contrib/CloudW03NeronSurj/Vendor/Definitions/Def_AlgebraicGeometry_RelativeGroupLaw.lean",
+      "original_sha256": "d4c24140426f04e55e02a586042ad7e9b192a54d9ebdb422a9f4ce3184aeffb6",
+      "upstream_path": "ZInQKernel/Contrib/CloudW03NeronSurj/Vendor/Definitions/Def_AlgebraicGeometry_RelativeGroupLaw.lean",
+      "upstream_sha256": "d4c24140426f04e55e02a586042ad7e9b192a54d9ebdb422a9f4ce3184aeffb6",
+      "byte_identical": true,
+      "role": "Exact same canonical fork-baseline defining dependency; not previously accepted upstream. Runtime PortUtil separately disclosed."
+    },
+    {
+      "original_head": "b7964a7a69534e736ef66dfe46e532a7b371f086",
+      "original_path": "ZInQKernel/Contrib/CloudW03NeronSurj/NOTICE.md",
+      "original_sha256": "e9ce362e1e56e4a6d5b97356da36a62d63a7dd8d2da2e3f55402eb4070e89d45",
+      "upstream_path": "ThirdParty/Y3FineModuli/W03-NOTICE-fork.md",
+      "upstream_sha256": "e9ce362e1e56e4a6d5b97356da36a62d63a7dd8d2da2e3f55402eb4070e89d45",
+      "byte_identical": true,
+      "role": "Preserved W03 compatibility/change notice; only three defining files admitted, not its full Neron proof"
+    }
+  ],
+  "draft_only": true,
+  "public_provenance": "Historical fork notices/maps remain byte-preserved outside Contrib. Current index states the accepted-vs-intake boundaries and portable/redacted commands; raw originals stay private."
+}
