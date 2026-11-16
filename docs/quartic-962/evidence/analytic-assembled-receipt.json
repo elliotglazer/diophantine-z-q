@@ -1,0 +1,37 @@
+{
+  "status": "accepted_exact_extractions_of_end_to_end_reviewed_candidate",
+  "date": "2026-11-06",
+  "candidate": {
+    "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+    "sha256": "b43f096ba3a4b1a979778ae1593ce3ad89048a2d28016e5ee9f35b124238dce7"
+  },
+  "review": {
+    "path": "work/frei-tinkova-removal-001/published-input-audit/INTEGRATION_REVIEW.md",
+    "sha256": "da734643973984eb58ae8e0f40feaca714b82503e32989efbde832d8b1444c42"
+  },
+  "dependency_inventory": {
+    "path": "work/frei-tinkova-removal-001/published-input-audit/INTEGRATION_DEPENDENCIES.json",
+    "sha256": "653c15532ed8fcf139df8ca73013fdb47d99d645a4f236928768589ed7ec05dd"
+  },
+  "fragments": {
+    "gaussian_analytic": {
+      "path": "work/quartic-version6-preparation/assembled-components/gaussian-analytic.tex",
+      "sha256": "bb9ea5e6cc12700e7c19f78a35e69d7838f7e4bb600539554c23007d7fdc2c2d",
+      "bytes": 82248,
+      "exact_candidate_occurrences": 1,
+      "first_line": 16533,
+      "last_line": 18274,
+      "status": "accepted_exact_extraction"
+    },
+    "sun_completed": {
+      "path": "work/quartic-version6-preparation/assembled-components/sun-completed.tex",
+      "sha256": "080e99f4830a61d4c275b36b580c82ce905145d3f8bd93437aed6f5d8ee5445a",
+      "bytes": 114425,
+      "exact_candidate_occurrences": 1,
+      "first_line": 16159,
+      "last_line": 18608,
+      "status": "accepted_exact_extraction"
+    }
+  },
+  "scope": "Exact extraction and end-to-end composition acceptance subject to the review limitations. SW component independently accepted by quotients reviewer, not self-certified here. Retained sieve and external inputs remain explicit dependencies. No whole-quartic or publication approval."
+}

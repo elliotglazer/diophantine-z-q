@@ -1,0 +1,88 @@
+{
+  "status": "accepted_assembly_fidelity",
+  "reviewer": "/root/astra_sub1000_quotients",
+  "date": "2026-11-06",
+  "scope": "Exact assembly fidelity with authorized attribution and two display-layout updates; complete analytic audit separate",
+  "files": [
+    {
+      "path": "work\\quartic-version6-preparation\\manuscript\\quartic_962-analytic-candidate.tex",
+      "sha256": "06f98ff070139c3b6c60589c65867ceb4366b023f7960551abd52f85fa67e30c"
+    },
+    {
+      "path": "work\\quartic-version6-preparation\\assemble_preparation.py",
+      "sha256": "a7c72c39d6c885b76ec15a76f8ceeed5acebf90d2a4a1eb15636ac523d57fa0f"
+    },
+    {
+      "path": "work\\quartic-version6-preparation\\assemble_analytic_candidate.py",
+      "sha256": "6fd860620e9a94a07b419a75012db6e64b869bcdbeda7864845b57eea9fb322c"
+    },
+    {
+      "path": "work\\quartic-version6-preparation\\quartic-962\\construction.tex",
+      "sha256": "529e821f776ae230d860e5efe01dfd55c05af9d2cdbb8c42bf907f9d42167769"
+    },
+    {
+      "path": "work\\quartic-version6-preparation\\lower-bound\\degree_lower_bound.tex",
+      "sha256": "6db65ff9d69dfd1e3c5186cc3bec0ee84d2cb4120bf0a2a875469cc3a07cd71f"
+    },
+    {
+      "path": "work\\quartic-version6-preparation\\final-assembly-review\\check_assembly.py",
+      "sha256": "bd83c5e6ba6f2478384d1480b7bfb5642e4f4224254a29a7ae4870d48241907d"
+    },
+    {
+      "path": "work\\quartic-version6-preparation\\final-assembly-review\\assembly-check.json",
+      "sha256": "434752a6786c139477db6ff0165987f2e972b694355e94970242c0c12fde4d61"
+    },
+    {
+      "path": "work\\quartic-version6-preparation\\final-assembly-review\\REVIEW.md",
+      "sha256": "84e1af8bc66554bf8e946316473c9b6989892ce94e4ad3ed1bd0f81352a224b8"
+    },
+    {
+      "path": "work\\quartic-version6-preparation\\final-assembly-review\\check_editorial.py",
+      "sha256": "c9a95dc49297ced9a8bada99520efc593364ccb0843c71f5933fb37cc597bc4d"
+    },
+    {
+      "path": "work\\quartic-version6-preparation\\final-assembly-review\\editorial-check.json",
+      "sha256": "1aafc72cbd23d0a7e0bf7f463c31883347b57225578b9dcdcc30c13cbbdca515"
+    },
+    {
+      "path": "work\\quartic-version6-preparation\\final-assembly-review\\check_layout.py",
+      "sha256": "b2966d3339e13b9a14e78dd50485e31a926b2a78b0c4ba687678482e7991aee8"
+    },
+    {
+      "path": "work\\quartic-version6-preparation\\final-assembly-review\\layout-check.json",
+      "sha256": "90f291debf8a058bd7eb465716801dfc2eff3d1335a44bff440b446d087fdd60"
+    }
+  ],
+  "checks": 35,
+  "published": false,
+  "sourceQualification": "Existing lower-bound receipt checks Kollar author-version statement and published metadata, not full published text.",
+  "assembled_fragments": {
+    "gaussian-analytic": {
+      "path": "work\\quartic-version6-preparation\\assembled-components\\gaussian-analytic.tex",
+      "sha256": "d5c64b97b0141f5f72a9d69b936e6b02a4d97f7b76444e25d978bbf2c1af9af4",
+      "acceptance_scope": "exact final assembled span; attribution and display-layout changes preserve prior mathematical reviews"
+    },
+    "source962": {
+      "path": "work\\quartic-version6-preparation\\assembled-components\\source962.tex",
+      "sha256": "b45243a1f4c1ce5d635afbcc1d2bb7b7b47e9ee50b0e97dcff3cd031857183e5",
+      "acceptance_scope": "exact final assembled span; attribution and display-layout changes preserve prior mathematical reviews"
+    },
+    "sun-completed": {
+      "path": "work\\quartic-version6-preparation\\assembled-components\\sun-completed.tex",
+      "sha256": "e8c458ecf141252f9e0038697d17e2f146345f0d5f93bd75df49188e52ddfd33",
+      "acceptance_scope": "exact final assembled span; attribution and display-layout changes preserve prior mathematical reviews"
+    },
+    "degree-lower-bound": {
+      "path": "work\\quartic-version6-preparation\\assembled-components\\degree-lower-bound.tex",
+      "sha256": "f0df47dc7c7a0de1f9c34f16ad2decc3c2684d87ec09911d45293c08c804a55c",
+      "acceptance_scope": "exact final assembled span; attribution and display-layout changes preserve prior mathematical reviews"
+    }
+  },
+  "previous_receipt": {
+    "path": "work\\quartic-version6-preparation\\final-assembly-review\\history-a00e3aca\\receipt.json",
+    "sha256": "53abce86fe8f44543993ea4dce093d4b8ea55bd7a337e4917d511cb74735daa1"
+  },
+  "checks_note": "35 prior assembly checks plus exact reconstruction of the prior candidate without the eight editorial replacements, exact replay of the current candidate and four exports, blank-author check, visible-attribution check, and URL preservation.",
+  "candidate_sha256": "06f98ff070139c3b6c60589c65867ceb4366b023f7960551abd52f85fa67e30c",
+  "layout_validation": "Two substitutions only; identical math tokens ignoring layout; reverse substitutions reproduce prior candidate hash; all four exports exactly replayed."
+}

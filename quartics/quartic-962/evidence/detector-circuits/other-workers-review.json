@@ -1,0 +1,24 @@
+{
+  "status": "pass",
+  "scope": "Actual emitted pole gates expanded and all20 structural pole rows exactly equal canonical formulas; all8 emitted correction rows factor exactly. Independent coordinates used for upstream expressions.",
+  "poles": [
+    "detector0",
+    "detector1",
+    "detector2",
+    "detector3",
+    "detector4",
+    "detector5",
+    "detector6",
+    "detector7",
+    "detector8",
+    "scalar"
+  ],
+  "hashes": {
+    "source-compression\\build_variant.py": "8df448309bfb0c2a242b62fc06877b4b9e636d1d94e279f65e5cdaf714189252",
+    "source-compression\\build_source.cjs": "ca8abfd90445412117cc6aee975367ea1713bb6df981384e64ac2a4d4fbfd8f8",
+    "source-compression\\raw-ir.json": "e49c121ac10c468534dbc4151037c41e3e8a714f1465754e44f13a6408db2cdb",
+    "source-compression\\PROOF.md": "96f116281ac3510c09e3f19fd6dfc2c48207fbef718648478c16ee8945974e47",
+    "dag-sharing\\log-replacement.cjs": "477a36eb473f45a464e2b46192dc660259857cdc3a89caede9d9f5505e695095",
+    "dag-sharing\\log-candidate\\raw-translated-ir.json": "58545a67e2f39b1282dde536f97ffe770580ca52a454575cc35677d633878418"
+  }
+}

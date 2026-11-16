@@ -1,0 +1,42 @@
+{
+  "archives": [
+    {
+      "all_member_hashes_and_crc_verified": true,
+      "archive_files": 1847,
+      "baseline_included": true,
+      "baseline_sha256": "8bca6f77f4721140c3d9db0d518595472a463a58f04f3efcf14173a9cf0ff236",
+      "bytes": 440334958,
+      "current_files": 1837,
+      "externally_bound_archive": false,
+      "externally_bound_plan": true,
+      "filename": "z-in-q-version6-full-handoff.zip",
+      "plan_sha256": "ebcfc46a93c709ce1d015c319f95af2777e2ec0e34d461b681559ccad51c43c8",
+      "scope": "Payload integrity and exact current proof-package closure. Authenticate the snapshot using the published archive or plan SHA256.",
+      "sha256": "93b53944ea93de08dc653beb70202797c1cbbdf19602ae583940bbf137dd43bc",
+      "snapshot_commit": "a9e834bac43b17e3f8415791f4adbd904f686b9d",
+      "status": "PASS"
+    },
+    {
+      "all_member_hashes_and_crc_verified": true,
+      "archive_files": 1846,
+      "baseline_included": false,
+      "baseline_sha256": "8bca6f77f4721140c3d9db0d518595472a463a58f04f3efcf14173a9cf0ff236",
+      "bytes": 57899295,
+      "current_files": 1837,
+      "externally_bound_archive": false,
+      "externally_bound_plan": true,
+      "filename": "z-in-q-version6-current-handoff.zip",
+      "plan_sha256": "ebcfc46a93c709ce1d015c319f95af2777e2ec0e34d461b681559ccad51c43c8",
+      "scope": "Payload integrity and exact current proof-package closure. Authenticate the snapshot using the published archive or plan SHA256.",
+      "sha256": "677ed62f74f9331202ae8612877dd32090c4933d6b1bbbf13f613970bc94081e",
+      "snapshot_commit": "a9e834bac43b17e3f8415791f4adbd904f686b9d",
+      "status": "PASS"
+    }
+  ],
+  "builder_sha256": "3b21ee52d0a6d71d78360b3020cd451035d4f1e7d11196c558287b8c3ea86e51",
+  "date": "2026-11-06",
+  "plan_sha256": "ebcfc46a93c709ce1d015c319f95af2777e2ec0e34d461b681559ccad51c43c8",
+  "status": "PASS",
+  "verifier_sha256": "6c9256b8eb279f71d01b44f7ac1bd41f58f4b4b013dee15d0290f887d64a6d81",
+  "version": 6
+}

@@ -1,0 +1,76 @@
+{
+  "archives": [
+    {
+      "all_member_hashes_and_crc_verified": true,
+      "archive_files": 1847,
+      "baseline_included": true,
+      "baseline_sha256": "8bca6f77f4721140c3d9db0d518595472a463a58f04f3efcf14173a9cf0ff236",
+      "bytes": 440334958,
+      "current_files": 1837,
+      "externally_bound_archive": false,
+      "externally_bound_plan": true,
+      "filename": "z-in-q-version6-full-handoff.zip",
+      "plan_sha256": "ebcfc46a93c709ce1d015c319f95af2777e2ec0e34d461b681559ccad51c43c8",
+      "scope": "Payload integrity and exact current proof-package closure. Authenticate the snapshot using the published archive or plan SHA256.",
+      "sha256": "93b53944ea93de08dc653beb70202797c1cbbdf19602ae583940bbf137dd43bc",
+      "snapshot_commit": "a9e834bac43b17e3f8415791f4adbd904f686b9d",
+      "status": "PASS"
+    },
+    {
+      "all_member_hashes_and_crc_verified": true,
+      "archive_files": 1846,
+      "baseline_included": false,
+      "baseline_sha256": "8bca6f77f4721140c3d9db0d518595472a463a58f04f3efcf14173a9cf0ff236",
+      "bytes": 57899295,
+      "current_files": 1837,
+      "externally_bound_archive": false,
+      "externally_bound_plan": true,
+      "filename": "z-in-q-version6-current-handoff.zip",
+      "plan_sha256": "ebcfc46a93c709ce1d015c319f95af2777e2ec0e34d461b681559ccad51c43c8",
+      "scope": "Payload integrity and exact current proof-package closure. Authenticate the snapshot using the published archive or plan SHA256.",
+      "sha256": "677ed62f74f9331202ae8612877dd32090c4933d6b1bbbf13f613970bc94081e",
+      "snapshot_commit": "a9e834bac43b17e3f8415791f4adbd904f686b9d",
+      "status": "PASS"
+    }
+  ],
+  "authenticatedCurrentExtraction": true,
+  "authenticatedFullArchive": true,
+  "extractedInventoryTests": 25,
+  "extractedReproductionChecks": 14,
+  "files": {
+    "BUILD_RECEIPT.json": {
+      "bytes": 1982,
+      "sha256": "316ee459e95c26900756e7803fc2328057109089ec7bc30758063c8a1f2048ef"
+    },
+    "COMMANDS.json": {
+      "bytes": 5180,
+      "sha256": "74e97e2aab64e30a697bb9c182242808e5d32772b6fa0b152e718ca0cad28417"
+    },
+    "EXTRACTED_INVENTORY.json": {
+      "bytes": 16120,
+      "sha256": "02351a02422170ae47ae9612ce66807e3cc9eb64d2bb21d0504d753cc571a9e6"
+    },
+    "EXTRACTED_REPLAY.json": {
+      "bytes": 1472,
+      "sha256": "07cd35c0d087493a92caf3b0cb4eebaa17772089e046b2f0dda2d4a1f69977d8"
+    },
+    "FULL_ARCHIVE_VERIFY.json": {
+      "bytes": 599,
+      "sha256": "acd7c5d5896a213665d237b428f7ff398747d0fe0e3c7594b54a2dbee9ebc826"
+    },
+    "SHA256SUMS": {
+      "bytes": 203,
+      "sha256": "c7f650b216ddba84374b4530f2712400467474a4cc7b26560de82cde81b48efd"
+    }
+  },
+  "planSha256": "ebcfc46a93c709ce1d015c319f95af2777e2ec0e34d461b681559ccad51c43c8",
+  "publication": "Not performed by the handoff build task",
+  "schema": "quartic-v6-handoff-delivery-v1",
+  "snapshotCommit": "a9e834bac43b17e3f8415791f4adbd904f686b9d",
+  "sourceWorktree": {
+    "head": "a9e834bac43b17e3f8415791f4adbd904f686b9d",
+    "porcelainStatus": "",
+    "unchanged": true
+  },
+  "status": "PASS"
+}

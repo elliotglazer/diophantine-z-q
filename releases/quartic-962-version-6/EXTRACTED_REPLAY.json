@@ -1,0 +1,37 @@
+{
+  "archive": {
+    "all_member_hashes_and_crc_verified": true,
+    "archive_files": 1846,
+    "baseline_included": false,
+    "baseline_sha256": "8bca6f77f4721140c3d9db0d518595472a463a58f04f3efcf14173a9cf0ff236",
+    "current_files": 1837,
+    "externally_bound_archive": true,
+    "externally_bound_plan": true,
+    "plan_sha256": "ebcfc46a93c709ce1d015c319f95af2777e2ec0e34d461b681559ccad51c43c8",
+    "scope": "Payload integrity and exact current proof-package closure. Authenticate the snapshot using the published archive or plan SHA256.",
+    "snapshot_commit": "a9e834bac43b17e3f8415791f4adbd904f686b9d",
+    "status": "PASS"
+  },
+  "checks": [
+    "package_integrity",
+    "serialization_policy",
+    "baseline_source_bindings",
+    "accepted_equivalence_evidence",
+    "compiler_selftest",
+    "build",
+    "compile_translated",
+    "independent_certificate_check",
+    "emitted_quotient_semantics",
+    "point_chart_equivalence",
+    "emitted_polynomial_circuits",
+    "anchor_equivalence",
+    "frozen_artifact_identity",
+    "fixed_integer_statistics"
+  ],
+  "packageManifestSha256": "36fca72cb0eb126193ffa43d890ff09d5e29cbf1274561d2632ed1e227163787",
+  "polynomialSha256": "6b798de7d00ac3c7d725ca0a69d39f1eac1ddb02fee2756cb6323770b952af32",
+  "replayOutsideExtractedSnapshot": true,
+  "reproductionReceiptSha256": "a4b3c028f3a8b665cd5c7904d2f91ca09b7501cfffee8efd85a104cf5fef49c0",
+  "schema": "quartic-v6-handoff-extracted-replay-v1",
+  "status": "PASS"
+}

@@ -1,0 +1,9 @@
+{
+  "status": "passed",
+  "rawTranslatedSha256": "5dfeb3db5a87d950e4d621d48d53c1cc36fb9e126c32d47a681f86789fa0f5c5",
+  "checkedRawGates": 958,
+  "reductionOperations": 927,
+  "newQuotientNumeratorDenominatorChecks": 18,
+  "compiledCoordinates": 1016,
+  "compiledResiduals": 973
+}

@@ -1,0 +1,91 @@
+{
+  "status": "candidate_requires_final_integrated_review_not_published",
+  "source_sha256": "06f98ff070139c3b6c60589c65867ceb4366b023f7960551abd52f85fa67e30c",
+  "edits": [
+    "Replace external FT assumption by internal Gaussian proof scope",
+    "Insert full reviewed analytic components and bridge candidate",
+    "Remove superseded FT proof-repair remark; replacement states correct inverse norm",
+    "Specialize polynomial count to exactly proved Gaussian fields",
+    "Replace FT linear invocation and imported cube argument",
+    "Bind boundary treatment to explicit localization proof",
+    "Add published analytic references; reuse existing Green--Tao bibliography keys",
+    "Use collective attribution in the introduction",
+    "Use collective attribution for the shared-point construction",
+    "Preserve source credit without individual manuscript attribution",
+    "Retain exact linked source passages",
+    "Use collective attribution for the degree obstruction",
+    "Remove individual name from theorem title",
+    "Use collective bibliography credit",
+    "Keep the real source URL with a neutral visible link label"
+  ],
+  "citation_key_map": {
+    "GTMobius2012": "moebius",
+    "v6gtlinear": "greentao",
+    "Brox2026": "agentic-improvements"
+  },
+  "ordinary_weight_notation_map": {
+    "\\Lambda_{b,W}": "\\lambda_{b,W}"
+  },
+  "display_layout_edits": [
+    "Split the density and two normalized weights into three aligned rows",
+    "Split the centered nilsequence estimate and weight definition into two aligned rows"
+  ],
+  "inputs": [
+    {
+      "path": "work\\quartic-version6-preparation\\manuscript\\quartic_962-preparation.tex",
+      "sha256": "c2d24a8be893e7fb137370434352a6d54f0e3ca50bcd640bf3f9ce8f51c546e8"
+    },
+    {
+      "path": "work\\frei-tinkova-removal-001\\progression_mainterms.tex",
+      "sha256": "8564d37de829edff8e0864362b6185f6b44f1ac4c1f053c0a34fe6b16444a35b"
+    },
+    {
+      "path": "work\\frei-tinkova-removal-001\\published-input-audit\\gaussian_hecke_sw.tex",
+      "sha256": "56c7d6a62678123d2fd89bfc473f6934e75bd1da04233b292bda4cc9be77262e"
+    },
+    {
+      "path": "work\\frei-tinkova-removal-001\\quotient-audit\\norm_transfer.tex",
+      "sha256": "d2d8fa98291def5007fdd76ee4226acf7f4d77d0dd086d8ce3bc984785b13c16"
+    },
+    {
+      "path": "work\\frei-tinkova-removal-001\\type-i-ii\\type_i_ii.tex",
+      "sha256": "8af77dc5439c82ec79c223b0fead55b6b5fb4987f159525794d82190ed439136"
+    },
+    {
+      "path": "work\\frei-tinkova-removal-001\\factorization\\affine_pullback.tex",
+      "sha256": "10edb90817918605156a7f1193e42fa2777336b063406776129d4233021f2778"
+    },
+    {
+      "path": "work\\frei-tinkova-removal-001\\factorization\\factorization.tex",
+      "sha256": "53c1e8b15c0460c5eb4fdcac92f800605fdb846e5b04d13ea847dd7063fa7649"
+    },
+    {
+      "path": "work\\frei-tinkova-removal-001\\gowers-bridge\\bridge.tex",
+      "sha256": "b9284d40889c3d4308fd0c3d532b7d59c792f22894acc6db21c19a2422c307cd"
+    },
+    {
+      "path": "work\\frei-tinkova-removal-001\\published-input-audit\\bibliography.tex",
+      "sha256": "73bb6ad148114ae79bc204ab18ddf4337658a1b35e392f45c090a2d06c43135b"
+    }
+  ],
+  "labels": 319,
+  "references": 504,
+  "components": [
+    {
+      "path": "work\\quartic-version6-preparation\\assembled-components\\degree-lower-bound.tex",
+      "sha256": "f0df47dc7c7a0de1f9c34f16ad2decc3c2684d87ec09911d45293c08c804a55c"
+    },
+    {
+      "path": "work\\quartic-version6-preparation\\assembled-components\\gaussian-analytic.tex",
+      "sha256": "d5c64b97b0141f5f72a9d69b936e6b02a4d97f7b76444e25d978bbf2c1af9af4"
+    },
+    {
+      "path": "work\\quartic-version6-preparation\\assembled-components\\source962.tex",
+      "sha256": "b45243a1f4c1ce5d635afbcc1d2bb7b7b47e9ee50b0e97dcff3cd031857183e5"
+    },
+    {
+      "path": "work\\quartic-version6-preparation\\assembled-components\\sun-completed.tex",
+      "sha256": "e8c458ecf141252f9e0038697d17e2f146345f0d5f93bd75df49188e52ddfd33"
+    }
+  ]
+}

@@ -1,220 +1,131 @@
 # Z is Diophantine in Q
 
-**Blueprint site: https://deicyde.github.io/diophantine-z-q/**
+## Contributors and citation
 
-Browse every statement of the formal proof there: its informal statement and proof sketch, the
-statements it depends on, its Lean declarations with links into the source, and whether it is
-proved. The site is rebuilt from `main` after each passing verification run.
+This project uses the collective agentic notes from Stefan Baranczuk, Jose Brox, Gabe Conant, Sohail Farhangi, Cameron Freer, James Freitag, Elliot Glazer, and Caroline Terry.
 
-**Contribute to the single proof: [docs/one-proof/OPEN.md](docs/one-proof/OPEN.md)** lists every open
-hypothesis of `ZInQ.OneProof.frozenTarget`, the one Lean theorem that proves the frozen target, with its exact
-Lean statement, its kind (published theorem or glue), its source and who is working on it.
-[docs/one-proof/CONTRIBUTING.md](docs/one-proof/CONTRIBUTING.md) explains how to prove one, where the file goes,
-and how to check it with `#discharges`.
+See also [Jose Brox's repository](https://github.com/JoseBrox/diophantine-z-q_improvements) for updated results and related work.
 
-> **This fork** proves the 11/5 manuscript's Theorem 1.1 in Lean from five explicit hypotheses,
-> stated as `Prop`s, not axioms. The first is the six-contact height estimate (the manuscript's
-> Theorem 4.1), in the one instance `SixContactMin` from which both of the proof's uses follow. Its
-> proof combines refereed theorems and exact computations with new arguments, the manuscript's and
-> this repository's, that have been reviewed only by AI models. The other four are statements
-> about L-functions of elliptic curves over ℚ (Mathlib's `WeierstrassCurve.LSeries`), three of them
-> only about the congruent number curves `C_d : y² = x³ − d²x`. From them Lean derives the
-> positive-rank statement that the proof needs:
->
-> - `Literature.GrossZagier`: if the L-function of an elliptic curve over ℚ has a simple zero at
->   `s = 1`, the curve has a rational point of infinite order. This is Gross–Zagier (1986), with an
->   auxiliary quadratic twist (Bump–Friedberg–Hoffstein 1990) and modularity
->   (Breuil–Conrad–Diamond–Taylor 2001).
-> - `Literature.FunctionalEquation5`: for squarefree `d ≡ 5 (mod 8)`, the functional equation of
->   `L(C_d, s)` with conductor `32d²` and root number `−1` (Deuring, Hecke; Birch–Stephens 1966),
->   stated on the strip `0 < Re s < 2`.
-> - `Literature.HeckeContinuation`: for every positive integer `d`, `L(C_d, s)`, defined by its
->   Euler product for `Re s > 3/2`, extends to an entire function (Deuring, Hecke: `C_d` has
->   complex multiplication by `ℤ[i]`, so `L(C_d, s)` is the L-function of a Hecke character of
->   `ℚ(i)`; standard, but the locator audit cited below did not read an original source).
-> - `Literature.TYZThm35ReadingA`: for squarefree `d ≡ 5 (mod 8)`, if `L(C_d, s)` vanishes to order
->   at least 2 at `s = 1`, then the genus sums `T5aCl d` and `T5bCl d` are both `0` in `ℤ/2`. Both
->   are sums over set partitions of the primes of `d`, of the products over the blocks `B` of
->   `#2Cl(ℚ(√−d_B))`, the order of the subgroup of squares in the class group, where `d_B` is the
->   product of the primes in `B`; `T5aCl d` runs over the partitions with one block `≡ 5` and all
->   others `≡ 1 (mod 8)`, and `T5bCl d` over those with one block `≡ 7`, one `≡ 3` and all others
->   `≡ 1 (mod 8)`.
->
->   This is a consequence of Theorem 3.5(2) of Tian–Yuan–Zhang (TYZ), *Genus periods, genus points
->   and congruent number problem* (arXiv:1411.4728v1; Asian J. Math. 21 (2017), 721–774), for
->   `n = d ≡ 5 (mod 8)`, under one reading of its genus sums. TYZ write the decompositions of `n` as
->   `n = d₀d₁⋯d_ℓ`; in reading A they are set partitions of the primes of `n`, each counted once,
->   with a trivial factor `d₁ = 1` allowed. In that reading TYZ's two sums are `T5aCl d` and
->   `T5aCl d + T5bCl d`, so their evenness is the conclusion above
->   ([docs/research/nt-tyz.md](docs/research/nt-tyz.md) §1.3). `TYZThm35ReadingA` needs the
->   theorem only when `𝓛(n) = 0`: the paper defines its invariant `𝓛(n)` from `L(C_n, 1)` or
->   `L′(C_n, 1)` and sets it to `0` exactly when the order of vanishing at `s = 1` is at least 2.
->   The printed hypothesis is a condition on TYZ's genus point `P(n)`, followed by an "i.e." that
->   restates it as the evenness of `2^{−ρ(n)}𝓛(n)` and is not proved in the paper. When
->   `𝓛(n) = 0`, the condition on `P(n)` follows directly from the first assertion of the paper's
->   Theorem 3.5 and its Lemma 3.18 (nt-tyz.md §2.2, F6), so the "i.e." is not needed.
->
->   **No refereed text found by the project's literature search, which AI agents carried out,
->   states reading A explicitly** (the one statement found, Smith, arXiv:1603.08479, Theorem 2.1,
->   is unrefereed). TYZ's introductory theorem stating the same parity criteria (Theorem 1.2 of the
->   arXiv version, Theorem 1.4 of the journal version) requires every factor `d_i > 1`, and read
->   that way it is false: `d = 26565` and `d = 33117` are counterexamples, in both versions (exact
->   class-group computations and explicit points giving rank at least 3, not checked in Lean;
->   nt-tyz.md §1.4). The paper's proof of Theorem 3.5(2) passes through its Proposition 3.4,
->   whose proof is only a sketch in the arXiv version; the journal's proof was not assessed on
->   this point. The comparison of the arXiv and journal versions, including these theorem numbers,
->   was an audit by AI agents with web access
->   ([docs/research/locators.md](docs/research/locators.md)), not a check by a human.
->
->   As supporting evidence, not as a hypothesis: Proposition N (nt-tyz.md §4; a new argument
->   reviewed twice by AI models and never by a human) proves `TYZThm35ReadingA` without
->   Proposition 3.4, from unambiguous results of the paper, among them the convolution identity of
->   its Lemma 2.9 (which the repository's notes and Lean names call Lemma 2.8). Lean checks that
->   proof from `PropN.TYZInputs`, a hand encoding of those results in
->   `ZInQKernel/Hypotheses/TYZInputs.lean` (`PropN.tyzThm35ReadingA_of_tyzInputs`); Lean does not
->   check that the encoding matches the paper.
->
-> From `Literature.TYZThm35ReadingA` and `Literature.HeckeContinuation`, Lean derives
-> (`Literature.tyzRow5b_of_readingA`) the intermediate statement `Literature.TYZRow5b`: for
-> squarefree `d ≡ 5 (mod 8)` with `T5bCl d` odd, `L(C_d, s)` vanishes to order at most 1 at
-> `s = 1`.
->
-> `ZInQ.exists_bounded_integer_polynomial_defining_integers_of_sixContactMin_tyzThm35ReadingA_heckeContinuation_functionalEquation5_grossZagier`
-> (`ZInQKernel/MainLiterature.lean`) has no `sorry`, uses no `native_decide`, and depends only on
-> the axioms `propext`, `Classical.choice` and `Quot.sound`; so does the intermediate form
-> `ZInQ.exists_bounded_integer_polynomial_defining_integers_of_sixContactMin_tyzRow5b_functionalEquation5_grossZagier`,
-> with `Literature.TYZRow5b` in place of `Literature.TYZThm35ReadingA` and
-> `Literature.HeckeContinuation`. Trust statements list every step, published or not, with its
-> source and how it was checked:
-> [docs/research/h-trust.md](docs/research/h-trust.md) for H, and
-> [docs/research/cr3-trust.md](docs/research/cr3-trust.md) for `CertifiedRankTYZClRk`, the
-> positive-rank statement that Lean derives from the L-function statements;
-> [docs/research/wk-cr3.md](docs/research/wk-cr3.md) §3 (reviewed in
-> [docs/research/rv-lit.md](docs/research/rv-lit.md)) checks `GrossZagier`, `FunctionalEquation5`
-> and `TYZRow5b` against their sources (the locator audit found that the original source of the
-> conductor and functional equation in `FunctionalEquation5` has not been fully read).
-> `CertifiedRankTYZClRk` itself, and weaker forms down to positive rank on the two curves per input
-> that the proof uses, give variants of the theorem ([KERNEL_PLAN.md](KERNEL_PLAN.md)).
->
-> Everything else is proved in Lean, and every finite computation is checked by the kernel. That
-> includes every step from the four L-function statements, through `CertifiedRankTYZClRk`, to the
-> certified-rank statement CR₃ that the construction uses (`ZInQ.CertifiedRank`: when the explicit
-> 2-Selmer system of `C_d` has 8 elements and contains a class `a` with `|a| ≡ 7 (mod 8)`, `C_d` has
-> a rational point with `x ∈ aℚ*²`): Rédei's formula, Theorem 3.6 and Corollary 4.4 of
-> [docs/research/tyz-5b.md](docs/research/tyz-5b.md), Proposition 0
-> ([docs/research/descent-alt.md](docs/research/descent-alt.md) §4.1), the complete 2-descent and
-> Mordell–Weil for the curves `C_d`. Three more inputs started as hypotheses and are proved:
-> Mordell–Weil for the generator curve; the catalogue bound, by an effective Dirichlet theorem
-> ([docs/effective-dirichlet-plan.md](docs/effective-dirichlet-plan.md)); and pole completeness,
-> by an explicit 2-descent from CR₃ ([docs/research/slot-k.md](docs/research/slot-k.md)). For
-> that step the polynomial's pole template uses the congruent number curves
-> `y² = x(x − ℓ)(x + ℓ)` where the manuscript has `x + 3ℓ`; the statement proved, with its
-> variable count and bounds, is the manuscript's. A fourth, the twenty-two-prime pattern, is not
-> needed: a change in a completeness proof ([docs/research/nt-22p.md](docs/research/nt-22p.md))
-> uses long progressions of good primes instead, which come from Szemerédi's theorem in the primes
-> (Vasily Ilin's Lean proof of the Green–Tao theorem, vendored in `ThirdParty/GreenTao/` and
-> extended to dense sets of primes) and a density theorem for those primes
-> ([docs/research/pd-paper.md](docs/research/pd-paper.md)). The theorem from `SixContactMin` and
-> CR₃ itself is `ZInQ.exists_bounded_integer_polynomial_defining_integers_of_sixContactMin_certifiedRank`
-> (`ZInQKernel/MainGreenTao.lean`), and the three-hypothesis version that keeps the manuscript's
-> prime pattern and none of the vendored code is
-> `ZInQ.exists_bounded_integer_polynomial_defining_integers_of` (`ZInQKernel/Main.lean`); both have
-> the same axioms. See [KERNEL_PLAN.md](KERNEL_PLAN.md), the
-> [final audit](docs/kernel-audits/final-audit-2026-11-07.md) of the earlier version with
-> hypotheses H, PC, 22P and CAT, the [blueprint site](https://deicyde.github.io/diophantine-z-q/)
-> and its sources in
-> [blueprint/](blueprint/README.md). The rest of this README is upstream's.
+Cite this work as "ℤℚ Diophantine Project contributors. ℤ _is Diophantine in_ ℚ. 2026. https://github.com/elliotglazer/diophantine-z-q"  
 
-This repository contains the November 5, 2026 manuscript **Z is Diophantine in Q**, the October 11, 2026 manuscript **A conditional Diophantine definition of Z in Q from four arithmetic inputs**, and comparison notes. A research archive preserves the constructions, computations, proof drafts, reviews, and partial Lean formalization developed for the 11/5 manuscript.
+## Version 18
 
-## Start here
+[Read the manuscript](manuscripts/quartic_v18.pdf) or [open the TeX source](manuscripts/quartic_v18.tex). This edition presents Jose Brox's 196-variable quartic, built on Gabriel Conant's 198-variable construction. Its 182 quadratic residuals give a quartic with 2,943 nonzero coordinate monomials. The complete arithmetic proof, elimination lemma and coefficient table are included in the manuscript.
 
-| To… | Open… |
+The coefficients are integer polynomials in the fixed integer `A = 149^(2*BB(2^1000)+1)`, using the manuscript's blank-tape running-time Busy Beaver convention. Their maximum absolute value is `A^2`, strictly below `BB(2^2000)`. This specifies one polynomial; `A` is not another variable, and the finite checks do not evaluate Busy Beaver. The 314-variable decimal quartic and the original large construction remain separate results.
+
+See the [release guide](research/version18/README.md), [artifact index](research/version18/ARTIFACT-INDEX.md), [reproduction instructions](research/version18/REPRODUCTION.md) and [release notes](research/version18/RELEASE-NOTES.md). The Tao-Ziegler step asserted without proof in Versions 16 and 17 is now proved. The inverse-theorem dependency now uses Candela-Szegedy together with the retained increment-group argument; the exact source-version limitations remain recorded.
+
+## Version 17 history
+
+[Read the manuscript](manuscripts/quartic_v17.pdf) or [open the TeX source](manuscripts/quartic_v17.tex). Dated November 13, 2026, this edition presents the 214-variable quartic family and its full arithmetic argument, followed by the corrected Version 16 foundation. It retains the original large construction and the 314-variable quartic with a complete decimal coefficient table. The 214-variable family's defining threshold remains ineffective; the coefficient calculation for N >= 53 does not certify a defining member. See the [release guide and review scope](research/version17/README.md), [artifact index](research/version17/ARTIFACT-INDEX.md) and [cumulative handoff](research/version17/CUMULATIVE-HANDOFF.md).
+
+Version 17 promotes PR30's receiving revision 3, with updated title, date and PDF metadata. Its mathematical body is unchanged. Earlier receiving guides and scoped reviews remain historical evidence. The required independent reviews and protected App check apply to the exact final PR revision; a staged manuscript or a successful build alone does not establish release acceptance.
+
+## Version 16 history
+
+[Read Version 16](manuscripts/quartic_v16.pdf) or [open its TeX](manuscripts/quartic_v16.tex). This edition adds the horizontal-normalization justification, corrects two Gaudron–Rémond citations, and identifies the Tao–Ziegler fixed-modulus argument as an adaptation of the published proofs. Its [correction inventory](research/version16/README.md) and [cumulative handoff](research/version16/CUMULATIVE-HANDOFF.md) preserve their original review scope.
+
+## Version 15 history
+
+[Read the manuscript](research/version15/snapshots/v15-222-004/manuscript/quartic_v15.pdf), [open the TeX source](research/version15/snapshots/v15-222-004/manuscript/quartic_v15.tex), or [browse the research index](research/version15/README.md). This update selects a quartic family in **222 total variables** with **2,277 nonzero coordinate monomials**, alongside the original huge construction and the retained 314-variable decimal quartic. The [published Version 15 release](https://github.com/elliotglazer/diophantine-z-q/releases/tag/quartic-222-version-15) includes the manuscript and cumulative research archive.
+
+The [222-variable package](research/version15/quartics/quartic-222/README.md) includes raw and sparse tables, a fixed-parameter generator, and finite checks. Its defining threshold N0 remains ineffective; the coefficient bound for N >= 53 does not certify that defining threshold. [Release notes](research/version15/RELEASE-NOTES.md) and the [cumulative handoff](research/version15/CUMULATIVE-HANDOFF.md) retain the construction and review history.
+
+## Version 14 history
+
+This repository also preserves *Z is Diophantine in Q*, Version 14, dated November 9, 2026. It gives quartics in **299 total variables** with exact symbolic coefficients and **314 total variables** with every coefficient written out in decimal. The original large construction, earlier quartic proofs and Version 11 Kato index-set and limiting-class repair remain in the manuscript. The Version 9 starting reductions were contributed by Gabriel Conant with ChatGPT.
+
+
+| To | Open |
 | --- | --- |
-| Read the 11/5 argument | [11/5 manuscript PDF](diophantine_zq.pdf) |
-| Inspect or edit the 11/5 manuscript | [11/5 TeX source](diophantine_zq.tex) |
-| Read the 10/11 manuscript and compare the constructions | [October 11 Manuscript](October%2011%20Manuscript/README.md) |
-| Browse the polynomial and run its checks | [Curated construction](construction/README.md) |
-| Build the 11/5 manuscript or accepted Lean modules | [Build instructions](docs/building.md) |
-| Inspect the formalization | [Accepted Lean helper snapshot](lean/README.md) |
-| Find the construction, supporting calculations, or earlier approaches | [Research guide](docs/research-guide.md) |
-| Audit exact theorem applications, conventions and repairs | [Theorem application inventory](docs/theorem-application-audit/README.md) |
-| Download the saved research history | [Research handoff zip, 340 MB](https://github.com/elliotglazer/diophantine-z-q/releases/download/research-handoff-2026-11-04-r2/z-in-q-research-handoff-2026-11-04-r2.zip) |
-| Check a download | [SHA-256 checksums](SHA256SUMS) and [verification instructions](docs/research-guide.md#verify-and-restore-the-archive) |
-| Report a mathematical or implementation issue | [Contribution guide](CONTRIBUTING.md) |
-| Cite the 11/5 manuscript or research archive | [BibTeX entries](CITATION.bib) |
+| Read Version 14 | [Manuscript PDF](manuscripts/quartic_v14.pdf), [TeX source](manuscripts/quartic_v14.tex) |
+| Reproduce the 299/314-variable quartics | [Tables, proof inventory and review scopes](docs/manuscript-revisions/version14/GUIDE.md) |
+| Reproduce the 394/411-variable quartics | [Tables, proof inventory and review scopes](docs/manuscript-revisions/version13/GUIDE.md) |
+| Reproduce the 498/514-variable quartics | [Tables, proof inventory and independent reviews](docs/manuscript-revisions/version12/README.md) |
+| Reproduce the 523/540-variable quartics | [Tables, source, dependency chain and checks](docs/quartic-523-540/README.md) |
+| Read the fully expanded Version 4 quartic | [4,973-variable package](quartics/quartic-4973/README.md), [integer monomial table](quartics/quartic-4973/polynomial.expanded.txt) |
+| Review requirements for pull requests | [Contributor guide](docs/research-review/README.md) |
+| Inspect the Version 11 repair and repository audit integration | [Version 11 source audit](docs/manuscript-revisions/version11/README.md), [audit integration protocol](docs/audit-history/PROTOCOL.md) |
+| Inspect the nine earlier review corrections | [Version 10 response and inventory](docs/manuscript-revisions/version10/README.md) |
+| Inspect theorem applications and conventions | [Version 18 source and review index](research/version18/ARTIFACT-INDEX.md), [Version 16 source-use inventory](research/version16/protocol/DOSSIER.json), [Version 16 corrections](research/version16/APPLICATIONS.json), [Version 9 extension](docs/quartic-523-540/README.md), [inherited proof inventory](docs/quartic-962/README.md) |
+| Build the manuscript or run the checks | [Current manuscript build](docs/current-manuscript-build.md), [historical construction checks](docs/building.md) |
+| Download the current research handoff | [Version 18 cumulative handoff and reconstruction](research/version18/CUMULATIVE-HANDOFF.md), [Version 17 historical handoff](research/version17/CUMULATIVE-HANDOFF.md), [Version 16 cumulative ZIP](https://github.com/elliotglazer/diophantine-z-q/releases/download/quartic-222-version-16/z-in-q-version16-cumulative.zip), [reconstruction and checksum](research/version16/CUMULATIVE-HANDOFF.md), [Version 15 cumulative ZIP](https://github.com/elliotglazer/diophantine-z-q/releases/download/quartic-222-version-15/z-in-q-version15-cumulative.zip), [contents and verification](research/version15/CUMULATIVE-HANDOFF.md), [Version 14 archive](research/version14/CUMULATIVE-HANDOFF.md) |
+| Download the Version 7 research handoffs | [Full handoff](https://github.com/elliotglazer/diophantine-z-q/releases/download/quartic-962-version-7/z-in-q-version7-full-handoff.zip), [current-only handoff](https://github.com/elliotglazer/diophantine-z-q/releases/download/quartic-962-version-7/z-in-q-version7-current-handoff.zip), [contents and verification](handoff/README.md) |
+| Read collaborator notes and the height replacement | [Research update](research/2026-11-06-collaborator-notes/README.md) |
+| Read the October 11 manuscript | [Manuscript and provenance](October%2011%20Manuscript/README.md) |
+| Find earlier manuscripts and research history | [Manuscript archive](manuscripts/README.md), [research guide](docs/research-guide.md) |
+| Inspect the partial formalization | [Accepted Lean helpers](lean/README.md) |
+| Cite the manuscript or report an issue | [BibTeX](CITATION.bib), [contribution guide](CONTRIBUTING.md) |
 
-The current 11/5 TeX source and PDF, together with the dated research handoff snapshot, are also available from the [current research release](https://github.com/elliotglazer/diophantine-z-q/releases/tag/research-handoff-2026-11-04-r2).
+Version 9 integrates the odd-product argument, smaller anchor, direct targets and asymmetric formal-depth refinement. The new inventory binds every addition and preserves the existing literature-version qualifications. Version 8 remains in the [manuscript archive](manuscripts/README.md).
 
-## The 11/5 manuscript's result
+Version 7 incorporates four further audits of the Gaussian appendix and their repairs. See the [audit summary](docs/quartic-962/gaussian-audit-20261106.md) for the changes and review limits.
 
-To say that the integers are **Diophantine in the rationals** is to say that being an integer can be expressed by one polynomial equation with rational auxiliary variables. The 11/5 manuscript presents a construction of a fixed polynomial with integer coefficients such that
+The Version 7 full handoff includes the Version 7 public snapshot, selected research notes, and the unchanged Version 6 full handoff, which preserves the Version 5 and earlier November 4 archives. The current-only handoff omits the embedded historical archive. Neither includes a conversational transcript.
+
+## Polynomial constructions
+
+For each polynomial, the input and all witnesses range over the rationals. The asserted defining property is
 
 $$
-q\in\mathbb Z
-\quad\Longleftrightarrow\quad
-\exists\,\mathbf w\in\mathbb Q^{292\,890\,231\,904},\quad P(q,\mathbf w)=0,
-\qquad q\in\mathbb Q.
+q\in\mathbb Z \quad\Longleftrightarrow\quad
+\exists\,\mathbf w\in\mathbb Q^{m-1},\quad P(q,\mathbf w)=0.
 $$
 
-The input is the ordinary rational number $q$. The witnesses are rational numbers as well. The same polynomial must work for every input.
+| Construction | Total variables, including input | Degree | Nonzero monomials | Coefficient magnitude |
+| --- | ---: | ---: | ---: | --- |
+| Version 18, fixed Busy Beaver specification | 196 | 4 | 2,943 | `A^2 = 149^(4*BB(2^1000)+2) < BB(2^2000)` |
+| Version 17, selected family | 214 | 4 | 2,919 | $149^{4N+2}+1$ for $N\ge53$; defining threshold ineffective |
+| Version 15, selected family | 222 | 4 | 2,277 | $A_N^2+1$ for $N\ge53$, where $A_N=149^{2N+1}$ |
+| Original | 292,890,231,905 | Less than $2\uparrow\uparrow7$ | Not expanded | Less than $2\uparrow\uparrow8$ |
+| Version 14, decimal table | 314 | 4 | 6,672 | Less than $2^{6496}$ |
+| Version 14, symbolic table | 299 | 4 | 6,630 | Maximum $186624\cdot3^{2^{26}}$ |
+| Version 13, decimal table | 411 | 4 | 6,388 | Less than $2^{3247}$ |
+| Version 13, symbolic table | 394 | 4 | 6,338 | Maximum $16\cdot3^{2^{26}}$ |
+| Version 12, decimal table | 514 | 4 | 24,716 | Maximum $3^{2048}+1005072314676622<2^{3247}$ |
+| Version 12, symbolic table | 498 | 4 | 24,669 | Maximum $16\cdot3^{2^{26}}$ |
+| Version 9, decimal table | 540 | 4 | 35,213 | Maximum $3^{2048}+1005072314631333<2^{3247}$ |
+| Version 9, symbolic table | 523 | 4 | 35,163 | Maximum $64\cdot3^{2^{27}}$ |
+| Version 4 quartic, retained | 4,973 | 4 | 72,925 | Maximum 685,783,949,153,203,534,233,890, less than $2^{80}$ |
+| Version 6 quartic | 962 | 4 | 55,409 | Maximum $64\cdot3^{2^{28}}$ |
 
-The stated bounds for this polynomial are:
+The [314-variable decimal table](quartics/quartic-314-fully-expanded.txt) contains every coefficient in decimal and occupies 264,430 bytes. The [299-variable table](quartics/quartic-299-symbolic-coefficients.json) uses the fixed integer $C=3^{2^{25}}$. See the [Version 14 guide](docs/manuscript-revisions/version14/GUIDE.md) for the construction, inventory and review scopes.
 
-| Quantity | Bound |
-| --- | --- |
-| Total ambient variables, including the input | 292,890,231,905 |
-| Total degree | Less than $2\uparrow\uparrow 7$ |
-| Absolute value of each coefficient | Less than $2\uparrow\uparrow 8$ |
+The [411-variable decimal table](quartics/quartic-411-fully-expanded.txt) contains every coefficient in decimal and occupies 214,957 bytes. The [394-variable table](quartics/quartic-394-symbolic-coefficients.json) uses the fixed integer $C=3^{2^{25}}$, not an extra variable. Both have content one. The ordinary companion adds sixteen constant-chain coordinates and one multiplication coordinate to keep its residuals quadratic. [Version 13 checks and reviews](docs/manuscript-revisions/version13/GUIDE.md) explain the construction and their separate scopes.
 
-Here $2\uparrow\uparrow n$ is a right-associated tower of $n$ twos: $2\uparrow\uparrow 1=2$ and $2\uparrow\uparrow(n+1)=2^{2\uparrow\uparrow n}$. The variable count is an ambient bound; it does not assert that every variable occurs essentially. The construction is specified through finite formulas and substitutions, rather than an expanded list of monomials.
+The [514-variable table](quartics/quartic-514-fully-expanded.txt) contains every coefficient in decimal and occupies 690,922 bytes. The [498-variable table](quartics/quartic-498-symbolic-coefficients.json) uses the fixed integer $C=3^{2^{25}}$, not an extra variable. [Version 12 checks and reviews](docs/manuscript-revisions/version12/README.md) cover the exact coefficient data and new mathematical transformations separately.
 
-The 11/5 manuscript derives three consequences:
+The [540-variable table](quartics/quartic-540-fully-expanded.txt) contains all coefficients in decimal and occupies 708,848 bytes. The [523-variable table](quartics/quartic-523-symbolic-coefficients.json) uses the fixed integer $S=3^{2^{26}}$, not an extra variable. [Reproduction and convention checks](docs/quartic-523-540/README.md) cover both.
 
-- A refutation of Mazur's finite-connected-components conjecture for the closure of rational points in the real locus.
-- A universal rational Diophantine polynomial with ordinary integer program and input parameters.
-- Many-one equivalence of $\operatorname{HTP}(\mathbb Q)$ with the halting set $0'$.
+The [original construction](construction/README.md) is specified by an expression tree. The [Version 4 monomial table](quartics/quartic-4973/polynomial.expanded.txt) writes every coefficient as an ordinary integer. Its SHA-256 is `094f6a7ed17e7cc8d5d17a2f809127bbaffd0fe343cb2a32d18ac97e61279876`.
 
-The bounds above concern the integer-defining polynomial $P$. They do not automatically apply to the universal polynomial or its specializations.
+The [Version 6 table](quartics/quartic-962/polynomial.json) lists every monomial and specifies its integer coefficient using the fixed constant $S=3^{2^{27}}$. It has 55,401 coefficients independent of $S$, seven linear in $S$, and one equal to $64S^2$. Its SHA-256 is `6b798de7d00ac3c7d725ca0a69d39f1eac1ddb02fee2756cb6323770b952af32`. The large coefficients are not written out digit by digit. Version 9 provides a smaller complete decimal table, while retaining this older proof baseline.
 
-## Relation to earlier work
+The earlier 962-variable polynomial builds on an independent reconstruction of the public [agentic improvements notes](https://github.com/JoseBrox/diophantine-z-q_improvements), followed by changes of coordinates, smaller arithmetic circuits, and 32 certified eliminations. It is not identified with the unavailable original 1,315-variable table. Its 919 quadratic residuals and their complete sum of squares are included. The manuscript also gives the notes' degree-four lower-bound argument over the rationals. Thus degree four is necessary for a single defining polynomial; the variable and monomial counts are not claimed minimal.
 
-The 11/5 construction builds on OpenAI's preprint [*Hilbert's tenth problem over the rational numbers*](https://github.com/openai/math/blob/main/preprints/Hilberts-tenth-problem-over-the-rational-numbers-October-6-2026/main.pdf), dated October 6, 2026. The 11/5 manuscript concerns a Diophantine definition of the ordinary embedded integers and its stated quantitative bounds. Undecidability of the existential theory of the rationals is not presented here as a new corollary of this project.
+## Verification scope
 
-The 11/5 manuscript's bibliography and source-application appendices identify its other mathematical inputs. The [research guide](docs/research-guide.md#map-of-the-argument) connects the 11/5 arguments to their supporting files.
+For the conditional Lean formalization, contribution targets and CI checks, see
+the [Lean contribution guide](docs/lean-contributions.md). The root kernel project
+and the manuscript's explicit quartic have distinct proof status.
 
-## Comparison with the 10/11 manuscript
+The finite checks verify the source program, algebraic coordinate changes, projection-preserving eliminations, complete sum-of-squares expansion and coefficient statistics. Independent checks and rejection tests accompany the package. These checks do not prove the source system's arithmetic characterization of the integers.
 
-The [10/11 manuscript](October%2011%20Manuscript/ZIsDiophantineInQBySohailsGPT-6.pdf) and the 11/5 manuscript use the same elliptic curve and share a strategy: build arithmetic on integer labels, control the height of a candidate rational scalar, and force it to equal its labelled integer by sufficiently accurate approximation. The 10/11 manuscript uses congruence at the fixed prime $3$; the 11/5 manuscript uses real approximation with an auxiliary shift.
+The manuscript supplies that arithmetic argument. The [Version 18 research index](research/version18/README.md) records the current selection and its review scope. The [Version 17 research index](research/version17/README.md) retains that earlier edition. The [Version 15 research index](research/version15/README.md) preserves that earlier selection. The [Version 14 guide](docs/manuscript-revisions/version14/GUIDE.md) records that edition's constructions and separates the finite checks from their mathematical review. The [Version 13 guide](docs/manuscript-revisions/version13/GUIDE.md) separates the new component and composition reviews, the finite table checks, and the 39-application inventory. These internal reviews retain the inherited arithmetic inputs and source qualifications. The [Version 12 application inventory and reviews](docs/manuscript-revisions/version12/README.md) cover that edition's reductions while retaining the prior arithmetic inputs and their source qualifications. The [Version 9 extension](docs/quartic-523-540/README.md) connects the new arithmetic arguments to the inherited proofs. The [Version 7 inventory](docs/quartic-962/README.md) records exact theorem applications, source versions, hypotheses, conventions and translations. Version 6 proves the needed Gaussian ray-field estimate within the manuscript, following the method of Frei–Tinková without assuming their theorem. The replacement uses Mitsui's published prime-ideal estimate, Green–Tao's one-parameter results, and ordinary-prime transference.
 
-The 10/11 argument is explicitly conditional on four OpenAI arithmetic inputs. The 11/5 manuscript presents an unconditional argument and gives simultaneous numerical bounds for its specified polynomial. The 10/11 manuscript does not give a numerical variable count or coefficient bound. Its degree-four conversion is also available for the 11/5 polynomial, with additional variables, so degree alone does not establish a smaller construction. See the [full comparison notes](October%2011%20Manuscript/README.md) for the interfaces, qualifications, and source references.
+Historical inventories retain their original source-version qualifications, including the earlier Dodos–Kanellopoulos and Kollár applications. Those citations are absent from the Version 14 manuscript. Consult the [Version 18 source and application records](research/version18/ARTIFACT-INDEX.md) for the current selection; a historical acceptance is limited to its recorded source and argument.
 
-## Verification status
+The [Version 4 inventory](docs/quartic-4973/README.md) and the [earlier 82-record inventory](docs/theorem-application-audit/README.md) retain their own frozen scopes. Structural inventory checks detect stale or mismatched records; they are not proofs of mathematical theorems.
 
-The [November 5 theorem application inventory](docs/theorem-application-audit/README.md) records 82 scoped review decisions, 147 citations and 443 anchored contexts, with exact source versions, maps, hypotheses and convention changes. The identified source-application obligations have been reviewed and their repairs integrated, including the de Rham comparison and local cochain arguments. [Explicit internal premises remain](docs/theorem-application-audit/DEPENDENCIES.md). These AI reviews do not independently certify every internal lemma or the main theorem.
+The Lean formalization is incomplete. The accepted snapshot contains 48 helper modules; the main bounded-polynomial declaration still contains `sorry`. AI review and successful finite checks do not constitute independent human peer review or a completed formal proof.
 
-The 11/5 manuscript presents an unconditional proof. Revision 2 of the 11/5 manuscript includes the later restricted-converse and theta justifications and replaces the von Känel–Kret height dependency with a direct modularity argument and a CM argument. [Four independent AI reviews](docs/reviews/height-replacement/REPORT.md) found no unresolved gap in the replacement within their stated scopes. The revised 11/5 text includes their requested clarifications. These reviews are distinct from independent human peer review and machine verification. See the [revision notes](docs/revision-2.md).
+## Earlier work and provenance
 
-**The Lean formalization is incomplete.** At the November 4 handoff, the main bounded-polynomial declaration still contains `sorry`. The last accepted production snapshot is integration 31, containing 48 modules and 463 explicit public declarations. These counts include definitions and helper results; they are not a count of completed main-proof obligations. Later accepted work remains outside that integration.
+The October 11, 2026 manuscript, *A conditional Diophantine definition of Z in Q from four arithmetic inputs*, was produced by Sohail Farhangi with ChatGPT 6. Its PDF is preserved without modification. Its provenance and conditional scope are distinct from the November manuscript.
 
-The archive preserves superseded and unsuccessful approaches as well as later work. Start with its `CURRENT_STATE.json`, `START_HERE.md`, and `current/` directory before relying on a historical status report. See [the formalization notes](docs/research-guide.md#lean-formalization) for the remaining groups of obligations.
+The November manuscript was produced by Elliot Glazer with Astra 6, Sol 6.1, and Opus 5.5, with auditing from Fable 5.1 and 5.2. The [Version 5 manuscript](manuscripts/archive/quartic_1272.pdf), [Version 4 manuscript](manuscripts/archive/quartic_4973.pdf), [Version 3 manuscript](manuscripts/archive/quartic_9625.pdf) and [Version 2 manuscript](manuscripts/archive/quartic_12504.pdf) remain historical references, with their separate polynomial packages and inventories. Earlier research handoffs identify their own snapshots.
 
-## Research archive
+The project builds on OpenAI's October 6, 2026 preprint, [*Hilbert's tenth problem over the rational numbers*](https://github.com/openai/math/blob/main/preprints/Hilberts-tenth-problem-over-the-rational-numbers-October-6-2026/main.pdf). The rank-one elliptic-curve and local-divisibility strategy goes back to Thanases Pheidas, as credited in the manuscript. The current construction also credits the collective agentic notes for its formulas and degree obstruction, and Zhi-Wei Sun for the prime-pattern strategy.
 
-The handoff indexes 57,450 original file locations. Repeated byte-identical files share stored content. It includes a searchable offline `INDEX.html`, a manifest with hashes, a research timeline, and a utility for restoring the original directory layout. Conversational transcripts and credentials are excluded.
-
-The root-level TeX source is the reviewed revision of the 11/5 manuscript; the matching 148-page PDF was rebuilt from it. The November 4 handoff preserves the first release's research history and adds subsequent sources, manuscript versions, feedback and reviews. The repository offers one current release; earlier research versions remain inside the handoff archive. The November 5 audit and its new sources are documented separately in the repository and its source-restoration manifest; the November 4 handoff is not an updated copy of that audit.
-
-## Reproducible checks
-
-The [curated construction](construction/README.md) provides the finite expression, its pinned input, and executable checks without requiring the historical archive. The [Lean directory](lean/README.md) contains the byte-identical accepted helper snapshot, its dependency pins, and a separate unproved target.
-
-The [CI workflow](.github/workflows/research-checks.yml) checks construction regeneration, finite arithmetic cases and inventory consistency, compiles the 11/5 manuscript, and builds the accepted Lean modules with an axiom audit. See [build instructions](docs/building.md) for local commands and the limits of each check. A green CI run concerns those checks, not completion of the main proof.
-
-## AI usage and attribution
-
-The October 11 Manuscript was produced by Sohail Farhangi with ChatGPT 6. The November 5 Manuscript was produced by Elliot Glazer with Astra 6, Sol 6.1, and Opus 5.5, with auditing from Fable 5.1.
-
-[CITATION.bib](CITATION.bib) supplies citation entries for the 11/5 manuscript and research archive with the author field intentionally omitted. Identify a research artifact by the release tag and file hash as well. [Archival release notes](docs/archiving.md) explain the DOI status.
-
-Licenses for original project material are awaiting the maintainer's selection. [Third-party notices](THIRD_PARTY_NOTICES.md) identify upstream software and mathematical sources; the project's license will not relicense those materials. The historical archive needs a per-source redistribution review before public release.
+The manuscript author field is blank, and [CITATION.bib](CITATION.bib) intentionally omits author fields. See [archival notes](docs/archiving.md) for citation and DOI status, and [third-party notices](THIRD_PARTY_NOTICES.md) for source attribution and redistribution scope.

@@ -4,4 +4,78 @@ construction/** -text
 lean/** -text
 docs/reviews/** -text
 docs/theorem-application-audit/** -text
+quartics/** -text
+degree8-original/** -text
+docs/degree8-original/** -text
+docs/quartic-12504/** -text
+docs/quartic-9625/** -text
+docs/quartic-4973/** -text
+docs/quartic-4973-validation/** -text
+docs/quartic-1272/** -text
+docs/quartic-1272-validation/** -text
+handoff/** -text
+research/** -text
+"October 11 Manuscript/README.md" text eol=lf
+docs/quartic-962/** -text
+docs/quartic-962-validation/** -text
+scripts/check_quartic962.py -text
+scripts/quartic962_checks.cjs -text
+scripts/check_historical_inventory.py -text
+manuscripts/** -text
+
+docs/quartic-523-540/** -text
+scripts/check_odd_product.py -text
+docs/manuscript-revisions/version10/** -text
+docs/audit-history/** -text
+docs/manuscript-revisions/version11/** -text
+scripts/check_application_reviews.py -text
+docs/manuscript-revisions/version12/** -text
+scripts/check_quartic498.py -text
+docs/manuscript-revisions/version13/** -text
+scripts/check_quartic394.py -text
+scripts/build_paper.py -text
+scripts/check_quartic394_portable.py -text
+scripts/quartic394_path_bootstrap.py -text
+docs/manuscript-revisions/version14/** -text
+docs/research-review/proof-sources/** -text
+
+# Preserve the exact bytes bound by the protocol adoption reviews.
+AGENTS.md -text
+README.md -text
+CONTRIBUTING.md -text
+.github/pull_request_template.md -text
+docs/research-review/** -text
+
+# Exact Version 15 research and verification bytes.
+research/version15/** -text
+scripts/v15/** -text
+.github/workflows/version15-checks.yml -text
+.github/workflows/version15-current.yml -text
+
+# Preserve the Version 16 workflow bytes recorded in its manifest.
+.github/workflows/version16-checks.yml -text
+CITATION.bib -text
+docs/building.md -text
+
+# Preserve the exact current-profile bytes bound by its reviewed selector.
+docs/current-manuscript.json -text
+
+# The kernel contract hashes these source bytes on every platform.
+.gitattributes -text
+ZInQKernel.lean -text
+ZInQKernel/** -text
+ThirdParty/** -text
+lakefile.toml -text
+lake-manifest.json -text
+lean-toolchain -text
+KERNEL_CONTRACT.json text eol=lf
+scripts/check_kernel*.py text eol=lf
+scripts/test_kernel*.py text eol=lf
+scripts/audit_kernel.lean text eol=lf
+scripts/kernel_base_report.py text eol=lf
+scripts/kernel_diagnostics.py text eol=lf
+scripts/kernel_pr_scope.py text eol=lf
+scripts/check_target.py -text
+scripts/print_axioms.lean -text
+.github/workflows/kernel-lean.yml text eol=lf
 ZInQKernel.lean merge=union

@@ -1,0 +1,18 @@
+{
+  "status": "passed",
+  "formalPolynomialIdentities": [
+    "doubling positivity numerator identity",
+    "field quotient determinant",
+    "field conjugate product imaginary component",
+    "paired log quotient fusion identity",
+    "scalar local parameter ratio fusion identity",
+    "R inverse reconstruction",
+    "q1 reconstruction residual",
+    "trace quotient reconstruction"
+  ],
+  "rawCoordinates": 1255,
+  "compiledCoordinates": 1223,
+  "compiledSavings": 49,
+  "inheritedDomainLemma": "Finite doubles/differences have nonzero ordinate; baseline Brox4311-4348",
+  "newOrderedFieldArgument": "All scales strictly positive by the checked doubling identity; see EQUIVALENCE.md"
+}

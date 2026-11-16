@@ -1,0 +1,284 @@
+% Independent arithmetic justification for the unchanged original 15671-witness circuit.
+\subsection{The original forty-one-prime pattern}
+Let
+\[
+ \mathcal D=\{0,1,2401,-343/32\},\quad R=47027=31\cdot37\cdot41,
+ \quad W=25878772920=4\prod_{q\le29}q,
+\]
+\[
+ c=18484837801,\qquad V_0=32W=828120733440.
+\]
+For integers $a_1,\ldots,a_k$, $k\le9$, put $A_i=Ra_i+3$,
+$w_i=A_iv-u$. There are $5+4k$ displayed positions
+\begin{equation}\label{eq:old41-list}
+ v/V_0,\qquad u-\delta v,\qquad
+ u-(A_i-\delta)v\quad(\delta\in\mathcal D,\ 1\le i\le k).
+\end{equation}
+For every lower bound these positions can simultaneously be positive
+primes beyond that bound, congruent to $c$ modulo $W$, with the
+following property. For the curve
+$E:y^2=x^3-(3-\sqrt2)^2x$, both reductions above each prime are good,
+and their cardinalities $d_1,d_2$ satisfy
+\[
+ \gcd(d_1,d_2)=4,\qquad p\nmid d_1d_2.
+\]
+This is a same-prime statement and asserts no cross-prime gcd condition.
+
+\begin{proof}
+Use $u=c+Wx$, $v=V_0(c+Wy)$. Put
+\[
+ \mathcal S=\mathcal D\cup\bigcup_i(A_i-\mathcal D),\quad
+ K_s=V_0s\in W\mathbb Z,
+ \quad\Psi_0=c+Wy,\quad\Psi_s=c+Wx-K_s(c+Wy).
+\]
+Remove duplicate targets. The remaining slopes are all distinct.
+Indeed, the nonzero integral differences in $\mathcal D-\mathcal D$
+are $\pm1,\pm2400,\pm2401$, none divisible by $31$.
+The integral sums in $\mathcal D+\mathcal D$ are
+$0,1,2,2401,2402,4802$, with residues $0,1,2,14,15,28$ modulo $31$,
+none equal to $A_i\equiv3$. These facts exclude intersections between
+secondary families and between primary and secondary families.
+The $m=1+|\mathcal S|\le41$ forms have pairwise independent linear
+parts. Repeated targets may be restored afterwards with repeated values.
+
+At $q\mid W$, the forms equal $c$; direct reduction gives
+$c\equiv1\pmod8$, $c\equiv3\pmod7$, and $c\equiv1\pmod q$ at
+all other odd primes $q\le29$. Thus the forms and their successors
+are units at every odd $q\mid W$. For $q>29$, the affine map from
+$(x,y)$ to $(u,v)$ is invertible. At $q=31,37,41$, all $A_i=3$
+modulo $q$, so $|\mathcal S\bmod q|\le8$. For $q\ge43$ this
+cardinality is at most $40$. In either case choose distinct residues
+$b,e$ outside the slopes. Put $\gamma=V_0^{-1}$ modulo $q$ and,
+reversing $b,e$ if necessary, require $e-b\ne-\gamma$. Then
+\[
+ v=(e-b)^{-1},\quad u=bv
+\]
+satisfies
+\[
+ u-sv=v(b-s)\ne0,\quad u-sv+1=v(e-s)\ne0,
+ \quad\gamma v\ne0,\quad\gamma v+1\ne0.
+\]
+This proves all the value and successor local conditions. No condition
+on a successor is imposed at $2$.
+
+Add an unused integer coordinate $z$, and choose a fixed rectangular
+box $\Omega$ inside the cone $v>0$, $u/v>\max(0,|A_1|,\ldots,|A_k|)+2413$ in the
+homogeneous leading coordinates. All forms on $X\Omega$ lie between
+$\alpha X$ and $\beta X$ for positive fixed constants. Fix $Q>82$
+containing every prime divisor of $W$ and every nonzero $K_s-K_t$.
+Impose one good residue at every prime up to $Q$. For a cutoff $L>Q$,
+exclude $\Psi_\nu=0,-1$ at every additional prime up to $L$.
+The surviving proportion is
+\[
+ \gg_{\boldsymbol a}\prod_{Q<q\le L}(1-2m/q)
+ \gg_{\boldsymbol a}(\log L)^{-2m},
+\]
+by \cite[Theorem~1, modulus~2]{williams-mertens}.
+
+For fixed $L$, apply \cite[Main Theorem, p.~1763]{greentao} to every
+surviving lattice residue in the convex box. The singleton partition
+in \cite[Definition~1.5 and Lemma~1.6]{greentao} bounds complexity by
+$m-2\le39$. The inputs $\mathrm{MN}(39)$ and $\mathrm{GI}(39)$ follow
+from \cite[Theorem~1.1]{moebius} and \cite[Theorem~1.3]{gtz}.
+At imposed primes the local factor is $(1-1/q)^{-m}$; at the other
+primes it is $1+O(m^2/q^2)$. The singular product therefore has a
+positive lower bound independent of $L$. All coefficient and modulus
+bounds are fixed before $X$ tends to infinity. Summing the finitely
+many asymptotics and removing proper prime powers gives
+\begin{equation}\label{eq:old41-lower}
+ \#\{\text{prime patterns}\}\ge
+ c_{\boldsymbol a}\frac{X^3}{(\log L)^{2m}(\log X)^m}.
+\end{equation}
+The constant $c_{\boldsymbol a}>0$ is independent of $L$; the threshold
+for $X$ may depend on it. Proper powers contribute at most
+$O_{\boldsymbol a}(X^{5/2}(\log X)^{m+1})$ before removing von Mangoldt
+weights, since each fixed value has $O_{\boldsymbol a}(X^2)$ fibers.
+
+We give the uniform upper estimates needed to impose the order condition.
+For forbidden sets of cardinality $\rho(q)$ in a two-dimensional box
+of side $N$, put $g(q)=\rho(q)/q^2$, $h(q)=g(q)/(1-g(q))$, and extend
+multiplicatively on squarefree support. CRT gives
+\[
+ A_d=N^2g(d)+R_d,\qquad |R_d|\ll Nd+d^2.
+\]
+With $G(Z)=\sum_{d\le Z}h(d)$, take
+\[
+ \lambda_d=\frac{\mu(d)}{G(Z)\prod_{q\mid d}(1-g(q))}
+ \sum_{\substack{e\le Z/d\\(e,d)=1}}h(e)\quad(d\le Z).
+\]
+Then $\lambda_1=1$, $|\lambda_d|\le d$, and the Selberg quadratic
+form equals $G(Z)^{-1}$. To verify the last assertion, use
+$y_r=\sum_{r\mid d}\lambda_dg(d)=\mu(r)h(r)/G(Z)$ and
+$1/g(n)=\sum_{r\mid n}1/h(r)$. The number of sifted points is thus
+\begin{equation}\label{eq:old41-upper}
+ \ll N^2/G(Z)+NZ^6+Z^8.
+\end{equation}
+For $\rho(q)=2q-1$, supported on $q\equiv1\pmod4$ with at most one
+prime omitted, $G(Z)\gg_Q\log Z$, uniformly in that omission.
+For $\rho(q)=(m-1)q$ at all $q>Q$,
+$G(Z)\gg_{Q,m}(\log Z)^{m-1}$. These follow from
+\cite[Theorem~1, moduli~4 and~2]{williams-mertens}. Truncation is
+justified by using $z=Z^{1/512}$ and the probability distribution
+$h(d)/\prod_{q\le z}(1+h(q))$: its expected $\log d$ is at most
+$40\sum_{q\le z}(\log q)/q<\tfrac12\log Z$ for large $Z$.
+Thus at least half the mass lies below $Z$. Removing one norm-sieve
+prime changes its product by a factor at least $1/2$.
+
+For a selected prime, $(7/p)=-1$ and $p\equiv1\pmod8$. The two
+reductions of $3-\sqrt2$ have product $7$ and opposite square classes,
+so their traces are opposite. Their discriminants $64d^6$ are units.
+The automorphism $(x,y)\mapsto(-x,iy)$ is rational over $\mathbb F_p$.
+By the Tate-module injection \cite[III.7.4]{silverman}, its rational
+centralizer is $\mathbb Q(i)$: at the auxiliary prime $3$ the
+centralizer has dimension two because $T^2+1$ is irreducible.
+Frobenius is integral by \cite[V.2.3.1(b)]{silverman}; hence it is
+$a+bi\in\mathbb Z[i]$. The trace and determinant formulas
+\cite[III.8.6]{silverman} give
+\[
+ a^2+b^2=p,\qquad d_1=p+1-2a,\qquad d_2=p+1+2a.
+\]
+Full rational two-torsion gives $4\mid d_1,d_2$, and
+$v_2(d_1+d_2)=2$, so their gcd has $2$-part exactly $4$.
+Also $0<d_i<2p$ and $d_i\ne p$, so $p\nmid d_1d_2$.
+An odd common divisor $\ell$ divides $a$ and $p+1$, and forces
+$b^2\equiv-1\pmod\ell$. The successor conditions exclude $\ell\le L$.
+
+The number of bad prime values of any fixed form is
+\begin{equation}\label{eq:old41-bad}
+ \ll_{\boldsymbol a}X/(L\log X)+X^{7/8}+\sqrt X\log X.
+\end{equation}
+Indeed, for $L<\ell\le X^{1/8}$, write
+$a=\ell r$, $b=b_0+\ell s$, with at most two $b_0$ modulo $\ell$.
+The box has side $N\asymp\sqrt X/\ell\gg X^{3/8}$.
+Use the norm case of \eqref{eq:old41-upper} with $Z=X^{1/100}$;
+its error is uniformly $o(N^2/\log X)$. Sum
+$O(X/(\ell^2\log X))$. For $\ell>X^{1/8}$, $a\ne0$ gives
+$O(\sqrt X/\ell)$ choices with no additive constant, and the
+$b$ count is $O(\sqrt X/\ell+1)$. Summation proves the remaining terms.
+
+On a fiber $\Psi_0=p$, use $(x,z)$; the other forms are
+$c+Wx-K_s p$. On a fiber $\Psi_{s_0}=p$, use $(y,z)$ and
+\[
+ x=K_{s_0}y+\frac{p-c(1-K_{s_0})}{W},\qquad
+ \Psi_s=p+(K_{s_0}-K_s)\Psi_0.
+\]
+The quotient is integral for an actual fiber. For
+$Q<q\le X^{1/100}<p$, the remaining zero lines are distinct and
+parallel, with total cardinality $(m-1)q$. The second case of
+\eqref{eq:old41-upper} bounds each fiber by
+$O_{\boldsymbol a}(X^2/(\log X)^{m-1})$, independently of $p,L$.
+Multiply by \eqref{eq:old41-bad} and sum over $m$ positions.
+The bad patterns are at most
+\[
+ C_{\boldsymbol a}\frac{X^3}{L(\log X)^m}
+ +O_{\boldsymbol a}\left(
+ X^{23/8}/(\log X)^{m-1}+X^{5/2}/(\log X)^{m-2}\right).
+\]
+Choose $L$ so large that $C_{\boldsymbol a}/L$ is less than half
+$c_{\boldsymbol a}/(\log L)^{2m}$, then choose $X$ large.
+A good pattern survives, proving the assertion.
+\end{proof}
+
+\subsection{A shared auxiliary point with private shifts}
+Let $\mathcal P$ be the finite set of distinct selected primes, all
+larger than $76176$. At each $p$ fix an orientation of its two places,
+and let $d_{p,1},d_{p,2}$ be the corresponding group cardinalities.
+Set
+\[
+ j=\operatorname{lcm}_{p\in\mathcal P}d_{p,2}>0,
+ \qquad J=[j]P_*.
+\]
+For each $p$, independently choose an integer $h_p$ satisfying
+\begin{equation}\label{eq:old41-private-crt}
+ h_p\equiv0\pmod{d_{p,1}},\qquad
+ h_p\equiv4\pmod{d_{p,2}},\qquad
+ h_p\equiv4\pmod{p^{64+v_p(j)}}.
+\end{equation}
+The first two congruences are compatible because their modulus gcd
+is $4$. The last is compatible because $p\nmid d_{p,1}d_{p,2}$.
+The resulting arithmetic progression contains an $h_p$ outside
+$\{0,4,-4\}$. Put
+\[
+ X_0=[h_p]P_*,\qquad X_i=[h_p n_i]P_*,\qquad
+ Y_i=[(h_p-4)n_i]P_*,\quad n_0=1.
+\]
+These are private for each contact occurrence, whereas $J$ is common.
+Use the same orientation at repeated occurrences of $p$.
+
+At the primary place all $X_i$ are formal; at the opposite place
+$J$ and all $Y_i$ are formal. The formal logarithm is a homomorphism
+and an isometry on $p\mathbb Z_p$ by
+\cite[IV.6.4 and its proof; VII.2.1--2.2]{silverman}. The hypotheses hold
+because $p$ is odd, split, and of good reduction. For any integers
+$k,j$ whose multiples of $P_*$ lie in the formal group,
+\[
+ \frac{\log([k]P_*)}{\log([j]P_*)}=\frac{k}{j}.
+\]
+To see this without defining a logarithm of $P_*$ itself, apply the
+homomorphism law to $[j]([k]P_*)=[k]([j]P_*)$. Nonzero formal
+multiples have nonzero logarithm. Therefore
+\[
+ v_p\left(\frac{z(Y_i)}{z(J)}\right)
+ =v_p\left(\frac{(h_p-4)n_i}{j}\right)\ge64,
+ \qquad
+ \frac{\log(X_i)}{\log(X_0)}=n_i.
+\]
+This proves the required local comparison conditions. Although other
+$d_{q,2}$ may be divisible by $p$, their effect is exactly the term
+$v_p(j)$ in \eqref{eq:old41-private-crt}; no cross-prime gcd assertion
+is needed.
+
+For the original truncation
+\[
+ L(z)=z\sum_{r=0}^{15}\frac{(-1)^r\binom{2r}{r}}{4r+1}(Dz^4)^r,
+\]
+the full logarithm has the same series extended over all $r\ge0$.
+This follows by integrating
+$(1+4Dz^4)^{-1/2}$, the invariant differential in the parameter
+$z=-x/y$. If $v_p(z)\ge1$ and $p>76176$, every omitted term has
+valuation at least $65v_p(z)$: its integer numerator can only increase
+valuation, and for $n=4r+1\ge65$,
+$n v_p(z)-v_p(n)\ge65v_p(z)$.
+For $n<p$ this is immediate; for $n\ge p$ use $n-65\ge v_p(n)$.
+Thus $L(z)/\log(z)\in1+p^{64}\mathbb Z_p$. The required primary
+truncated-log ratios are congruent to the integers $n_i$ modulo $p^{64}$.
+
+Conversely, in an accepted comparison at any $p>76176$, its conjugate
+parameter-ratio tests imply
+\[
+ m_i-4n_i\equiv0\pmod{p^{64}},\qquad h-4\equiv0\pmod{p^{64}},
+\]
+since $j$ is a nonzero integer. Hence $h$ is a $p$-unit. The same
+logarithm identity and truncation estimate give
+$L(X_i)/L(X_0)\equiv m_i/h\equiv n_i\pmod{p^{64}}$ and show
+that this ratio is integral. The rational proxy test then gives the
+claimed integrality and congruence for every $b_i$.
+
+\subsection{The common root approximation and parity boundary}
+For each distinct selected $p$, retain the chosen square root
+$\rho_p$ of $2$. After constructing the private points, each field
+test $A+B\sqrt2$ of order $k$ has $v_p(A+B\rho_p)\ge k$.
+Choose a common integer $\theta$ sufficiently close to $\rho_p$ at
+every selected prime that
+$v_p(\theta-\rho_p)\ge k-v_p(B)$ for every nonzero coefficient $B$,
+and at least one. There are finitely many requirements; CRT supplies
+such an integer. Since $\theta+\rho_p$ is a unit,
+\[
+ v_p((\theta^2-2)B)\ge k,\qquad v_p(A+\theta B)\ge k.
+\]
+Repeated primes require the same root and impose compatible precision
+bounds. Conversely, the root test and these two rational tests imply
+the field test at the selected root. This verifies the circuit's one
+common $\theta$, not a separate root variable per contact.
+
+Every raw contact parameter in the complete assignment is a positive
+prime congruent to $c$ modulo $W$. It is therefore a square in
+$\mathbb Q_2,\mathbb Q_3,\mathbb Q_{17}$. The binary norm batch has
+unit root at its contact prime, because normalized leaves are integral
+and its leftmost constant leaf is $1$. Its root is positive and nonzero
+in the real embedding. The argument $r\mathcal W^2$ consequently is
+positive, has square reduced denominator, and is locally square at
+$2,3,17$. These are the exact hypotheses of the original specialized
+parity-completeness input. This verifies its consumption but does not
+constitute a new proof of that input. In particular no integrality of
+the comparison points at these three small primes is required here.

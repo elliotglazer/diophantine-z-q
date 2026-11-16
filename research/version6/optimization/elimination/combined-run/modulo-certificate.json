@@ -1,0 +1,162 @@
+{
+  "baselineSha256": "5198a0dccc3946f4faf2c90aa629183580b593a19e2b4ddc676cb01ae8c7bea4",
+  "operations": [
+    {
+      "coordinate": 527,
+      "name": "detector0.Adelta4.square.quadratic",
+      "pivot": 455,
+      "replacement": [
+        {
+          "monomial": [
+            37,
+            37
+          ],
+          "sPower": 0,
+          "coefficient": "1"
+        },
+        {
+          "monomial": [
+            37,
+            523
+          ],
+          "sPower": 0,
+          "coefficient": "-1"
+        },
+        {
+          "monomial": [
+            523,
+            523
+          ],
+          "sPower": 0,
+          "coefficient": "1/4"
+        }
+      ],
+      "changes": [
+        {
+          "row": 456,
+          "result": [
+            {
+              "monomial": [],
+              "sPower": 0,
+              "coefficient": "1952786"
+            },
+            {
+              "monomial": [
+                37
+              ],
+              "sPower": 0,
+              "coefficient": "-9763930"
+            },
+            {
+              "monomial": [
+                37,
+                37
+              ],
+              "sPower": 0,
+              "coefficient": "15622288"
+            },
+            {
+              "monomial": [
+                37,
+                523
+              ],
+              "sPower": 0,
+              "coefficient": "-19527860"
+            },
+            {
+              "monomial": [
+                37,
+                528
+              ],
+              "sPower": 0,
+              "coefficient": "-32"
+            },
+            {
+              "monomial": [
+                523
+              ],
+              "sPower": 0,
+              "coefficient": "3905572"
+            },
+            {
+              "monomial": [
+                523,
+                523
+              ],
+              "sPower": 0,
+              "coefficient": "9763930"
+            },
+            {
+              "monomial": [
+                523,
+                524
+              ],
+              "sPower": 0,
+              "coefficient": "-1952786"
+            },
+            {
+              "monomial": [
+                523,
+                528
+              ],
+              "sPower": 0,
+              "coefficient": "76265"
+            },
+            {
+              "monomial": [
+                525,
+                528
+              ],
+              "sPower": 0,
+              "coefficient": "1205412"
+            }
+          ],
+          "multiples": [
+            {
+              "row": 452,
+              "factor": [
+                {
+                  "monomial": [
+                    523
+                  ],
+                  "sPower": 0,
+                  "coefficient": "1952786"
+                }
+              ]
+            },
+            {
+              "row": 451,
+              "factor": [
+                {
+                  "monomial": [
+                    37
+                  ],
+                  "sPower": 0,
+                  "coefficient": "7811144"
+                },
+                {
+                  "monomial": [
+                    523
+                  ],
+                  "sPower": 0,
+                  "coefficient": "-7811144"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "counts": {
+    "coordinates": 1024,
+    "residuals": 981,
+    "degree": 2
+  },
+  "scanned": 872,
+  "elapsedSeconds": 23.06590175628662,
+  "affineRounds": [
+    0
+  ],
+  "affineElapsedSeconds": 0.20929932594299316
+}

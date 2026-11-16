@@ -1,3 +1,5 @@
+Historical inventory. Its decisions bind only source/audited-baseline.tex at SHA256 cb1148cd6c7769d2af3f1636b60ff0ada4b40431978d1e98d0c339274b3d792b. The current manuscript is ../../quartic_12504.tex; see ../quartic-12504/baseline-bridge.json for exact unchanged excerpts and ../quartic-12504/theorem-applications.json for the current quartic source.
+
 # Theorem application inventory
 
 Manuscript SHA256: `cb1148cd6c7769d2af3f1636b60ff0ada4b40431978d1e98d0c339274b3d792b`. Line numbers refer only to this frozen source.
@@ -94,7 +96,7 @@ The JSON files preserve every citation occurrence and excerpt hash, source byte 
 <a id="a001"></a>
 ## A001: Quaternionic polarization and quotient
 
-Manuscript: [L404](../../diophantine_zq.tex#L404), [L404](../../diophantine_zq.tex#L404), [L409](../../diophantine_zq.tex#L409), [L439](../../diophantine_zq.tex#L439).
+Manuscript: [L404](source/audited-baseline.tex#L404), [L404](source/audited-baseline.tex#L404), [L409](source/audited-baseline.tex#L409), [L439](source/audited-baseline.tex#L439).
 
 **Source:** [babagranath](SOURCES.md#babagranath), [linyang](SOURCES.md#linyang), [buzzard](SOURCES.md#buzzard). Baba–Granath §§2.1,3, Theorem 1, Lemma 2, Proposition 10; Lin–Yang equation (3), Lemma 3; Buzzard §1 for uniqueness of canonical polarization..
 
@@ -119,7 +121,7 @@ The registered source applications and their explicit translations. Listed inter
 <a id="a002"></a>
 ## A002: Integral moduli model
 
-Manuscript: [L443](../../diophantine_zq.tex#L443), [L441](../../diophantine_zq.tex#L441), [L484](../../diophantine_zq.tex#L484).
+Manuscript: [L443](source/audited-baseline.tex#L443), [L441](source/audited-baseline.tex#L441), [L484](source/audited-baseline.tex#L484).
 
 **Source:** [buzzard](SOURCES.md#buzzard), [stacks-07S7](SOURCES.md#stacks-07S7). Buzzard corrected 14 June 2002 author version, §1 pp.3–4, Theorem 2.1 p.5, Corollary 2.3 p.7; Stacks tag 07S7..
 
@@ -144,7 +146,7 @@ The registered source applications and their explicit translations. Listed inter
 <a id="a003"></a>
 ## A003: CM class number to discriminant
 
-Manuscript: [L581](../../diophantine_zq.tex#L581), [L580](../../diophantine_zq.tex#L580), [L592](../../diophantine_zq.tex#L592).
+Manuscript: [L581](source/audited-baseline.tex#L581), [L580](source/audited-baseline.tex#L580), [L592](source/audited-baseline.tex#L592).
 
 **Source:** [fowler](SOURCES.md#fowler). Fowler, publisher version, Proposition 2.7; §2.1 for order class numbers.
 
@@ -173,7 +175,7 @@ Source interface and explicitly listed translations only; not the entire applica
 <a id="a004"></a>
 ## A004: CM Faltings metric formula
 
-Manuscript: [L595](../../diophantine_zq.tex#L595), [L594](../../diophantine_zq.tex#L594), [L611](../../diophantine_zq.tex#L611).
+Manuscript: [L595](source/audited-baseline.tex#L595), [L594](source/audited-baseline.tex#L594), [L611](source/audited-baseline.tex#L611).
 
 **Source:** [cmheight](SOURCES.md#cmheight). Equation (6.2), pp.13–14; potential good reduction in proof of Theorem 1.3.
 
@@ -198,7 +200,7 @@ Manuscript: [L595](../../diophantine_zq.tex#L595), [L594](../../diophantine_zq.t
 <a id="a005"></a>
 ## A005: CM isogeny bound
 
-Manuscript: [L595](../../diophantine_zq.tex#L595), [L612](../../diophantine_zq.tex#L612), [L625](../../diophantine_zq.tex#L625).
+Manuscript: [L595](source/audited-baseline.tex#L595), [L612](source/audited-baseline.tex#L612), [L625](source/audited-baseline.tex#L625).
 
 **Source:** [gr2014](SOURCES.md#gr2014). Theorem 1.4.
 
@@ -223,7 +225,7 @@ Manuscript: [L595](../../diophantine_zq.tex#L595), [L612](../../diophantine_zq.t
 <a id="a006"></a>
 ## A006: Height variation and additivity
 
-Manuscript: [L595](../../diophantine_zq.tex#L595), [L619](../../diophantine_zq.tex#L619), [L626](../../diophantine_zq.tex#L626), [L894](../../diophantine_zq.tex#L894), [L899](../../diophantine_zq.tex#L899).
+Manuscript: [L595](source/audited-baseline.tex#L595), [L619](source/audited-baseline.tex#L619), [L626](source/audited-baseline.tex#L626), [L894](source/audited-baseline.tex#L894), [L899](source/audited-baseline.tex#L899).
 
 **Source:** [faltings1983](SOURCES.md#faltings1983), [faltings1984](SOURCES.md#faltings1984). Faltings 1983, metric on p.351 and Lemma 5 on p.358, visually checked; 1984 erratum; closure-batch-003.
 
@@ -248,7 +250,7 @@ Bounded application and listed translations only. Referenced internal premises a
 <a id="a007"></a>
 ## A007: Sign-cocycle global splitting
 
-Manuscript: [L681](../../diophantine_zq.tex#L681), [L659](../../diophantine_zq.tex#L659), [L702](../../diophantine_zq.tex#L702).
+Manuscript: [L681](source/audited-baseline.tex#L681), [L659](source/audited-baseline.tex#L659), [L702](source/audited-baseline.tex#L702).
 
 **Source:** [milne](SOURCES.md#milne), [milne-cft](SOURCES.md#milne-cft). Milne CFT v4.03, III Theorem 3.4 and VIII Theorem 4.2; closure-batch-002 gives the local character and cochain calculations.
 
@@ -273,7 +275,7 @@ Bounded application and listed translations only. Referenced internal premises a
 <a id="a008"></a>
 ## A008: Semisimplicity and scalar commutant
 
-Manuscript: [L718](../../diophantine_zq.tex#L718), [L712](../../diophantine_zq.tex#L712), [L733](../../diophantine_zq.tex#L733).
+Manuscript: [L718](source/audited-baseline.tex#L718), [L712](source/audited-baseline.tex#L712), [L733](source/audited-baseline.tex#L733).
 
 **Source:** [faltings1983](SOURCES.md#faltings1983), [faltings1984](SOURCES.md#faltings1984). Faltings 1983, section 5, Satz 3 and Satz 4, printed p. 360; 1984 erratum, p. 381..
 
@@ -311,7 +313,7 @@ Exact source interface, all registered consumers, scalar/field/map/convention tr
 <a id="a009"></a>
 ## A009: de Rham property and weights
 
-Manuscript: [L718](../../diophantine_zq.tex#L718), [L10953](../../diophantine_zq.tex#L10953), [L10953](../../diophantine_zq.tex#L10953), [L10953](../../diophantine_zq.tex#L10953), [L10967](../../diophantine_zq.tex#L10967), [L10967](../../diophantine_zq.tex#L10967), [L10980](../../diophantine_zq.tex#L10980), [L733](../../diophantine_zq.tex#L733), [L738](../../diophantine_zq.tex#L738), [L11001](../../diophantine_zq.tex#L11001).
+Manuscript: [L718](source/audited-baseline.tex#L718), [L10953](source/audited-baseline.tex#L10953), [L10953](source/audited-baseline.tex#L10953), [L10953](source/audited-baseline.tex#L10953), [L10967](source/audited-baseline.tex#L10967), [L10967](source/audited-baseline.tex#L10967), [L10980](source/audited-baseline.tex#L10980), [L733](source/audited-baseline.tex#L733), [L738](source/audited-baseline.tex#L738), [L11001](source/audited-baseline.tex#L11001).
 
 **Source:** [scholze2013](SOURCES.md#scholze2013), [scholze-erratum](SOURCES.md#scholze-erratum), [brinon-conrad](SOURCES.md#brinon-conrad), [milne-av](SOURCES.md#milne-av). Scholze published 2013, Corollary 1.8 pp.5-6, Theorems 9.1 p.74 and 9.3 p.75, with published 2016 corrigendum; Brinon-Conrad 2009 Theorem 5.2.1 and Propositions 6.3.3,6.3.8; Milne AV v2.00, I Theorem 12.1(a).
 
@@ -336,7 +338,7 @@ Bounded application and listed translations only. Referenced internal premises a
 <a id="a010"></a>
 ## A010: de Rham to potentially semistable
 
-Manuscript: [L718](../../diophantine_zq.tex#L718), [L737](../../diophantine_zq.tex#L737), [L739](../../diophantine_zq.tex#L739).
+Manuscript: [L718](source/audited-baseline.tex#L718), [L737](source/audited-baseline.tex#L737), [L739](source/audited-baseline.tex#L739).
 
 **Source:** [berger2002](SOURCES.md#berger2002). Berger pinned author article, Theorem 0.7, author p. 6, and Corollary 5.22, author p. 52. This numbering is not the separate arXiv v3 numbering..
 
@@ -372,7 +374,7 @@ Exact source interface, all registered consumers, scalar/field/map/convention tr
 <a id="a011"></a>
 ## A011: Modularity of r5
 
-Manuscript: [L755](../../diophantine_zq.tex#L755), [L755](../../diophantine_zq.tex#L755), [L755](../../diophantine_zq.tex#L755), [L755](../../diophantine_zq.tex#L755), [L753](../../diophantine_zq.tex#L753), [L771](../../diophantine_zq.tex#L771).
+Manuscript: [L755](source/audited-baseline.tex#L755), [L755](source/audited-baseline.tex#L755), [L755](source/audited-baseline.tex#L755), [L755](source/audited-baseline.tex#L755), [L753](source/audited-baseline.tex#L753), [L771](source/audited-baseline.tex#L771).
 
 **Source:** [pan2022](SOURCES.md#pan2022), [conrad-local-characters](SOURCES.md#conrad-local-characters), [li-newforms](SOURCES.md#li-newforms), [shimura-factors](SOURCES.md#shimura-factors), [milne-av](SOURCES.md#milne-av), [milne-cft](SOURCES.md#milne-cft). Part I Theorem 12.1(a), p. 55; Theorem 10.15, p. 49; Proposition 10.20, p. 50; Lemma 14.5, p. 63; Part IV Theorem 3.5, pp. 141-142 and Lemma 3.9, p. 143.; arXiv:1901.07166v2, Theorem 1.0.4, p. 4, with Conjecture 1.0.1, p. 2.; Version 4.03, August 6, 2020, Chapter VIII Theorem 7.4.; Appendix B, pp. 32-33, Definition B.1 and the following one-dimensional Hodge-Tate/local algebraicity assertion.; Theorem 1, printed pp. 526-527; finite-character twisting in Section 4, equation (4.1), p. 531.; Printed p. 285 conventions; p. 294 old/new decomposition; p. 296 unnumbered paragraph immediately before Lemma 6; p. 298 Theorem 5..
 
@@ -399,7 +401,7 @@ The registered source applications and their explicit translations. Listed inter
 <a id="a012"></a>
 ## A012: Ramification breaks and conductor
 
-Manuscript: [L796](../../diophantine_zq.tex#L796), [L814](../../diophantine_zq.tex#L814), [L794](../../diophantine_zq.tex#L794), [L846](../../diophantine_zq.tex#L846).
+Manuscript: [L796](source/audited-baseline.tex#L796), [L814](source/audited-baseline.tex#L814), [L794](source/audited-baseline.tex#L794), [L846](source/audited-baseline.tex#L846).
 
 **Source:** [serrelocal](SOURCES.md#serrelocal), [silverman](SOURCES.md#silverman). Chapter VI, Sections 4.1-4.3, printed pp. 155-161; chapter title pp. 128-129..
 
@@ -424,7 +426,7 @@ The registered source applications and their explicit translations. Listed inter
 <a id="a013"></a>
 ## A013: Semistable reduction after torsion extension
 
-Manuscript: [L814](../../diophantine_zq.tex#L814), [L812](../../diophantine_zq.tex#L812), [L845](../../diophantine_zq.tex#L845).
+Manuscript: [L814](source/audited-baseline.tex#L814), [L812](source/audited-baseline.tex#L812), [L845](source/audited-baseline.tex#L845).
 
 **Source:** [silverbergzarhin](SOURCES.md#silverbergzarhin). Silverberg-Zarhin, Theorem 3.5, printed p. 406, with n >= 3 visually verified; Theorem 3.3, p. 405, for semistable inertia..
 
@@ -462,7 +464,7 @@ Exact source interface, all registered consumers, scalar/field/map/convention tr
 <a id="a014"></a>
 ## A014: Modular Jacobian Belyi height
 
-Manuscript: [L860](../../diophantine_zq.tex#L860), [L858](../../diophantine_zq.tex#L858), [L874](../../diophantine_zq.tex#L874).
+Manuscript: [L860](source/audited-baseline.tex#L860), [L858](source/audited-baseline.tex#L858), [L874](source/audited-baseline.tex#L874).
 
 **Source:** [javanpeykar](SOURCES.md#javanpeykar). Javanpeykar published ANT 8 (2014), Theorem 1.1.1, p. 90; modular curves pp. 92-93; section 2.1, p. 93; section 2.3, pp. 97-98..
 
@@ -498,7 +500,7 @@ Exact source interface, all registered consumers, scalar/field/map/convention tr
 <a id="a015"></a>
 ## A015: Isogeny back from modular Jacobian
 
-Manuscript: [L878](../../diophantine_zq.tex#L878), [L876](../../diophantine_zq.tex#L876), [L891](../../diophantine_zq.tex#L891).
+Manuscript: [L878](source/audited-baseline.tex#L878), [L876](source/audited-baseline.tex#L876), [L891](source/audited-baseline.tex#L891).
 
 **Source:** [gr2014](SOURCES.md#gr2014). Gaudron-Remond published Duke 163 (2014), kappa and original stable-height convention p. 2058; couple of isogenies definition p. 2059; Theorem 1.4 p. 2060..
 
@@ -536,7 +538,7 @@ Exact source interface, all registered consumers, scalar/field/map/convention tr
 <a id="a016"></a>
 ## A016: Lower bound for complementary factor
 
-Manuscript: [L878](../../diophantine_zq.tex#L878), [L893](../../diophantine_zq.tex#L893), [L899](../../diophantine_zq.tex#L899).
+Manuscript: [L878](source/audited-baseline.tex#L878), [L893](source/audited-baseline.tex#L893), [L899](source/audited-baseline.tex#L899).
 
 **Source:** [gr2014](SOURCES.md#gr2014). Gaudron-Remond section 9, proof of Lemma 9.1, printed p. 2098, and repeated Bost bound p. 2101..
 
@@ -572,7 +574,7 @@ Exact source interface, all registered consumers, scalar/field/map/convention tr
 <a id="a017"></a>
 ## A017: Theta formula for quaternionic coordinate
 
-Manuscript: [L908](../../diophantine_zq.tex#L908), [L908](../../diophantine_zq.tex#L908), [L906](../../diophantine_zq.tex#L906), [L928](../../diophantine_zq.tex#L928).
+Manuscript: [L908](source/audited-baseline.tex#L908), [L908](source/audited-baseline.tex#L908), [L906](source/audited-baseline.tex#L906), [L928](source/audited-baseline.tex#L928).
 
 **Source:** [linyang](SOURCES.md#linyang), [lny](SOURCES.md#lny). Lin-Yang equations (2),(14), pp.3,17; Lauter-Naehrig-Yang section 2.2, p.4.
 
@@ -597,7 +599,7 @@ The registered source applications and their explicit translations. Listed inter
 <a id="a018"></a>
 ## A018: Theta to Faltings height
 
-Manuscript: [L934](../../diophantine_zq.tex#L934), [L939](../../diophantine_zq.tex#L939), [L957](../../diophantine_zq.tex#L957).
+Manuscript: [L934](source/audited-baseline.tex#L934), [L939](source/audited-baseline.tex#L939), [L957](source/audited-baseline.tex#L957).
 
 **Source:** [pazuki](SOURCES.md#pazuki). §§2.2–2.3 and Corollary1.3(2), r=2,g=2.
 
@@ -624,7 +626,7 @@ See [dependency phases](DEPENDENCIES.md) and [the machine-readable distinctions]
 <a id="a019"></a>
 ## A019: Cassels–Tate alternating quotient
 
-Manuscript: [L1072](../../diophantine_zq.tex#L1072), [L1069](../../diophantine_zq.tex#L1069), [L1082](../../diophantine_zq.tex#L1082).
+Manuscript: [L1072](source/audited-baseline.tex#L1072), [L1069](source/audited-baseline.tex#L1069), [L1082](source/audited-baseline.tex#L1082).
 
 **Source:** [poonenstoll](SOURCES.md#poonenstoll), [silverman](SOURCES.md#silverman). Poonen-Stoll corrected author version, Corollaries 4 and 7, Theorem 8(3), p.11; Silverman 2009, X Theorem 4.2(a), p.333 and VIII Theorem 6.7; closure-batch-003.
 
@@ -649,7 +651,7 @@ Bounded application and listed translations only. Referenced internal premises a
 <a id="a020"></a>
 ## A020: Forward rank-one theorem
 
-Manuscript: [L1086](../../diophantine_zq.tex#L1086), [L1086](../../diophantine_zq.tex#L1086), [L1084](../../diophantine_zq.tex#L1084), [L1113](../../diophantine_zq.tex#L1113), [L4015](../../diophantine_zq.tex#L4015), [L4029](../../diophantine_zq.tex#L4029).
+Manuscript: [L1086](source/audited-baseline.tex#L1086), [L1086](source/audited-baseline.tex#L1086), [L1084](source/audited-baseline.tex#L1084), [L1113](source/audited-baseline.tex#L1113), [L4015](source/audited-baseline.tex#L4015), [L4029](source/audited-baseline.tex#L4029).
 
 **Source:** [gz](SOURCES.md#gz), [kolyvagin](SOURCES.md#kolyvagin), [kato](SOURCES.md#kato), [bcdt](SOURCES.md#bcdt). Kolyvagin MPI/90-69, Theorem 1 pp.4-5 and Theorems 2-5; Kato 2004 Corollary 14.3 p.235; BCDT Theorem A.
 
@@ -674,7 +676,7 @@ The registered source applications and their explicit translations. Listed inter
 <a id="a021"></a>
 ## A021: Finite complexity asymptotic for 22 primes
 
-Manuscript: [L1382](../../diophantine_zq.tex#L1382), [L1405](../../diophantine_zq.tex#L1405), [L1405](../../diophantine_zq.tex#L1405), [L1405](../../diophantine_zq.tex#L1405), [L1405](../../diophantine_zq.tex#L1405), [L1504](../../diophantine_zq.tex#L1504), [L1534](../../diophantine_zq.tex#L1534), [L1322](../../diophantine_zq.tex#L1322), [L1452](../../diophantine_zq.tex#L1452).
+Manuscript: [L1382](source/audited-baseline.tex#L1382), [L1405](source/audited-baseline.tex#L1405), [L1405](source/audited-baseline.tex#L1405), [L1405](source/audited-baseline.tex#L1405), [L1405](source/audited-baseline.tex#L1405), [L1504](source/audited-baseline.tex#L1504), [L1534](source/audited-baseline.tex#L1534), [L1322](source/audited-baseline.tex#L1322), [L1452](source/audited-baseline.tex#L1452).
 
 **Source:** [greentao](SOURCES.md#greentao), [moebius](SOURCES.md#moebius), [gtz](SOURCES.md#gtz), [williams-mertens](SOURCES.md#williams-mertens). Green-Tao Main Theorem p.1763, Definition 1.5 pp.1759-1760; Moebius Theorem 1.1; GTZ v5 Theorem 1.3 with separate erratum; Williams 1974 Theorem 1 p.356 for fixed moduli 2 and 4.
 
@@ -701,7 +703,7 @@ The registered source applications and their explicit translations. Listed inter
 <a id="a022"></a>
 ## A022: 2-isogeny Selmer parity
 
-Manuscript: [L1771](../../diophantine_zq.tex#L1771), [L8222](../../diophantine_zq.tex#L8222), [L1777](../../diophantine_zq.tex#L1777), [L1795](../../diophantine_zq.tex#L1795), [L8243](../../diophantine_zq.tex#L8243), [L8252](../../diophantine_zq.tex#L8252).
+Manuscript: [L1771](source/audited-baseline.tex#L1771), [L8222](source/audited-baseline.tex#L8222), [L1777](source/audited-baseline.tex#L1777), [L1795](source/audited-baseline.tex#L1795), [L8243](source/audited-baseline.tex#L8243), [L8252](source/audited-baseline.tex#L8252).
 
 **Source:** [dd](SOURCES.md#dd). DD Theorem 1.8 (= Corollary 5.8), printed p.4; definition of rk_p immediately before Conjecture 1.4.
 
@@ -724,7 +726,7 @@ Manuscript: [L1771](../../diophantine_zq.tex#L1771), [L8222](../../diophantine_z
 <a id="a023"></a>
 ## A023: Kato rational Euler-system divisibility
 
-Manuscript: [L1884](../../diophantine_zq.tex#L1884), [L1882](../../diophantine_zq.tex#L1882), [L1893](../../diophantine_zq.tex#L1893), [L7215](../../diophantine_zq.tex#L7215), [L7344](../../diophantine_zq.tex#L7344).
+Manuscript: [L1884](source/audited-baseline.tex#L1884), [L1882](source/audited-baseline.tex#L1882), [L1893](source/audited-baseline.tex#L1893), [L7215](source/audited-baseline.tex#L7215), [L7344](source/audited-baseline.tex#L7344).
 
 **Source:** [kato](SOURCES.md#kato). Theorems13.4(2),13.5(2),13.6–13.7; §13.1.
 
@@ -747,7 +749,7 @@ Manuscript: [L1884](../../diophantine_zq.tex#L1884), [L1882](../../diophantine_z
 <a id="a024"></a>
 ## A024: Even nonvanishing with bounded prime support
 
-Manuscript: [L1981](../../diophantine_zq.tex#L1981), [L9995](../../diophantine_zq.tex#L9995), [L1980](../../diophantine_zq.tex#L1980), [L1993](../../diophantine_zq.tex#L1993), [L9986](../../diophantine_zq.tex#L9986), [L10031](../../diophantine_zq.tex#L10031).
+Manuscript: [L1981](source/audited-baseline.tex#L1981), [L9995](source/audited-baseline.tex#L9995), [L1980](source/audited-baseline.tex#L1980), [L1993](source/audited-baseline.tex#L1993), [L9986](source/audited-baseline.tex#L9986), [L10031](source/audited-baseline.tex#L10031).
 
 **Source:** [hl](SOURCES.md#hl). Theorem on pp.435–436.
 
@@ -770,7 +772,7 @@ Manuscript: [L1981](../../diophantine_zq.tex#L1981), [L9995](../../diophantine_z
 <a id="a025"></a>
 ## A025: Odd nonvanishing and negative genus partner
 
-Manuscript: [L1981](../../diophantine_zq.tex#L1981), [L8222](../../diophantine_zq.tex#L8222), [L1980](../../diophantine_zq.tex#L1980), [L1993](../../diophantine_zq.tex#L1993), [L8243](../../diophantine_zq.tex#L8243), [L8266](../../diophantine_zq.tex#L8266).
+Manuscript: [L1981](source/audited-baseline.tex#L1981), [L8222](source/audited-baseline.tex#L8222), [L1980](source/audited-baseline.tex#L1980), [L1993](source/audited-baseline.tex#L1993), [L8243](source/audited-baseline.tex#L8243), [L8266](source/audited-baseline.tex#L8266).
 
 **Source:** [bfh](SOURCES.md#bfh). Opening theorem clauses(i),(ii), printed pp.543–544.
 
@@ -793,7 +795,7 @@ Manuscript: [L1981](../../diophantine_zq.tex#L1981), [L8222](../../diophantine_z
 <a id="a026"></a>
 ## A026: Local root number under quadratic twist
 
-Manuscript: [L1994](../../diophantine_zq.tex#L1994), [L1994](../../diophantine_zq.tex#L1994), [L2002](../../diophantine_zq.tex#L2002).
+Manuscript: [L1994](source/audited-baseline.tex#L1994), [L1994](source/audited-baseline.tex#L1994), [L2002](source/audited-baseline.tex#L2002).
 
 **Source:** [desjardins](SOURCES.md#desjardins). Proposition3.3.
 
@@ -816,7 +818,7 @@ Manuscript: [L1994](../../diophantine_zq.tex#L1994), [L1994](../../diophantine_z
 <a id="a027"></a>
 ## A027: Explicit Gross–Zagier comparison
 
-Manuscript: [L2418](../../diophantine_zq.tex#L2418), [L8261](../../diophantine_zq.tex#L8261), [L2413](../../diophantine_zq.tex#L2413), [L2446](../../diophantine_zq.tex#L2446), [L8267](../../diophantine_zq.tex#L8267), [L8304](../../diophantine_zq.tex#L8304).
+Manuscript: [L2418](source/audited-baseline.tex#L2418), [L8261](source/audited-baseline.tex#L8261), [L2413](source/audited-baseline.tex#L2413), [L2446](source/audited-baseline.tex#L2446), [L8267](source/audited-baseline.tex#L8267), [L8304](source/audited-baseline.tex#L8304).
 
 **Source:** [cst](SOURCES.md#cst). Theorem1.1, published pp.2524–2525.
 
@@ -841,7 +843,7 @@ See [dependency phases](DEPENDENCIES.md) and [the machine-readable distinctions]
 <a id="a028"></a>
 ## A028: Oriented supersingular reduction
 
-Manuscript: [L2522](../../diophantine_zq.tex#L2522), [L9150](../../diophantine_zq.tex#L9150), [L9195](../../diophantine_zq.tex#L9195), [L9213](../../diophantine_zq.tex#L9213), [L9225](../../diophantine_zq.tex#L9225), [L9225](../../diophantine_zq.tex#L9225), [L9225](../../diophantine_zq.tex#L9225), [L9245](../../diophantine_zq.tex#L9245), [L9265](../../diophantine_zq.tex#L9265), [L2519](../../diophantine_zq.tex#L2519), [L2536](../../diophantine_zq.tex#L2536), [L8460](../../diophantine_zq.tex#L8460), [L9148](../../diophantine_zq.tex#L9148), [L9154](../../diophantine_zq.tex#L9154), [L9185](../../diophantine_zq.tex#L9185), [L9341](../../diophantine_zq.tex#L9341).
+Manuscript: [L2522](source/audited-baseline.tex#L2522), [L9150](source/audited-baseline.tex#L9150), [L9195](source/audited-baseline.tex#L9195), [L9213](source/audited-baseline.tex#L9213), [L9225](source/audited-baseline.tex#L9225), [L9225](source/audited-baseline.tex#L9225), [L9225](source/audited-baseline.tex#L9225), [L9245](source/audited-baseline.tex#L9245), [L9265](source/audited-baseline.tex#L9265), [L2519](source/audited-baseline.tex#L2519), [L2536](source/audited-baseline.tex#L2536), [L8460](source/audited-baseline.tex#L8460), [L9148](source/audited-baseline.tex#L9148), [L9154](source/audited-baseline.tex#L9154), [L9185](source/audited-baseline.tex#L9185), [L9341](source/audited-baseline.tex#L9341).
 
 **Source:** [cornutjetchev](SOURCES.md#cornutjetchev), [voight-quaternion](SOURCES.md#voight-quaternion). H.1–H.3; Lemma2.1(ii),(iv); §§3.1–3.6, Theorem3.1, Corollary3.2; §§4.9–4.10.
 
@@ -876,7 +878,7 @@ External theorem applicability, source-to-consumer maps and conventions; publish
 <a id="a029"></a>
 ## A029: Full-space Fourier proportionality
 
-Manuscript: [L2553](../../diophantine_zq.tex#L2553), [L7957](../../diophantine_zq.tex#L7957), [L7957](../../diophantine_zq.tex#L7957), [L7968](../../diophantine_zq.tex#L7968), [L8003](../../diophantine_zq.tex#L8003), [L2553](../../diophantine_zq.tex#L2553), [L2566](../../diophantine_zq.tex#L2566), [L7954](../../diophantine_zq.tex#L7954), [L8028](../../diophantine_zq.tex#L8028).
+Manuscript: [L2553](source/audited-baseline.tex#L2553), [L7957](source/audited-baseline.tex#L7957), [L7957](source/audited-baseline.tex#L7957), [L7968](source/audited-baseline.tex#L7968), [L8003](source/audited-baseline.tex#L8003), [L2553](source/audited-baseline.tex#L2553), [L2566](source/audited-baseline.tex#L2566), [L7954](source/audited-baseline.tex#L7954), [L8028](source/audited-baseline.tex#L8028).
 
 **Source:** [waldspurger](SOURCES.md#waldspurger). §I.2, Proposition2 p.377; Corollary2 and proof pp.483–484.
 
@@ -909,7 +911,7 @@ External theorem applicability, source-to-consumer maps and conventions; publish
 <a id="a030"></a>
 ## A030: Nonzero packet and initial Fourier functional
 
-Manuscript: [L7821](../../diophantine_zq.tex#L7821), [L7821](../../diophantine_zq.tex#L7821), [L7929](../../diophantine_zq.tex#L7929), [L7816](../../diophantine_zq.tex#L7816), [L7953](../../diophantine_zq.tex#L7953).
+Manuscript: [L7821](source/audited-baseline.tex#L7821), [L7821](source/audited-baseline.tex#L7821), [L7929](source/audited-baseline.tex#L7929), [L7816](source/audited-baseline.tex#L7816), [L7953](source/audited-baseline.tex#L7953).
 
 **Source:** [waldspurger](SOURCES.md#waldspurger), [waldspurgerICM](SOURCES.md#waldspurgerICM). 1983 Theorem1,Proposition1; 1981 Proposition18 proof pp.466–467, §I.3 pp.377–378.
 
@@ -942,7 +944,7 @@ External theorem applicability, source-to-consumer maps and conventions; publish
 <a id="a031"></a>
 ## A031: Algebraic half-integral model and descent
 
-Manuscript: [L8041](../../diophantine_zq.tex#L8041), [L8053](../../diophantine_zq.tex#L8053), [L8036](../../diophantine_zq.tex#L8036), [L8114](../../diophantine_zq.tex#L8114).
+Manuscript: [L8041](source/audited-baseline.tex#L8041), [L8053](source/audited-baseline.tex#L8053), [L8036](source/audited-baseline.tex#L8036), [L8114](source/audited-baseline.tex#L8114).
 
 **Source:** [ramsey](SOURCES.md#ramsey). Definition3.1,Theorem4.2,Remark4.4.
 
@@ -975,7 +977,7 @@ External theorem applicability, source-to-consumer maps and conventions; publish
 <a id="a032"></a>
 ## A032: Carayol local correspondence and U_p
 
-Manuscript: [L9773](../../diophantine_zq.tex#L9773), [L9799](../../diophantine_zq.tex#L9799), [L9813](../../diophantine_zq.tex#L9813), [L2567](../../diophantine_zq.tex#L2567), [L2583](../../diophantine_zq.tex#L2583), [L9761](../../diophantine_zq.tex#L9761), [L9880](../../diophantine_zq.tex#L9880).
+Manuscript: [L9773](source/audited-baseline.tex#L9773), [L9799](source/audited-baseline.tex#L9799), [L9813](source/audited-baseline.tex#L9813), [L2567](source/audited-baseline.tex#L2567), [L2583](source/audited-baseline.tex#L2583), [L9761](source/audited-baseline.tex#L9761), [L9880](source/audited-baseline.tex#L9880).
 
 **Source:** [carayol](SOURCES.md#carayol), [casselman](SOURCES.md#casselman). Carayol sections 0.3-0.7, Theorem A pp.409-411; Casselman Theorem 1 pp.302-306, corollary p.306, Theorem 4 p.313.
 
@@ -1000,7 +1002,7 @@ The registered source applications and their explicit translations. Listed inter
 <a id="a033"></a>
 ## A033: Non-CM open image
 
-Manuscript: [L2870](../../diophantine_zq.tex#L2870), [L3597](../../diophantine_zq.tex#L3597), [L8319](../../diophantine_zq.tex#L8319), [L2879](../../diophantine_zq.tex#L2879), [L2898](../../diophantine_zq.tex#L2898), [L3595](../../diophantine_zq.tex#L3595), [L3631](../../diophantine_zq.tex#L3631), [L8307](../../diophantine_zq.tex#L8307), [L8341](../../diophantine_zq.tex#L8341).
+Manuscript: [L2870](source/audited-baseline.tex#L2870), [L3597](source/audited-baseline.tex#L3597), [L8319](source/audited-baseline.tex#L8319), [L2879](source/audited-baseline.tex#L2879), [L2898](source/audited-baseline.tex#L2898), [L3595](source/audited-baseline.tex#L3595), [L3631](source/audited-baseline.tex#L3631), [L8307](source/audited-baseline.tex#L8307), [L8341](source/audited-baseline.tex#L8341).
 
 **Source:** [serre](SOURCES.md#serre). Opening theorem and reformulation pp.259–260.
 
@@ -1031,7 +1033,7 @@ External theorem applicability, source-to-consumer maps and conventions; publish
 <a id="a034"></a>
 ## A034: Heegner norm relations
 
-Manuscript: [L2914](../../diophantine_zq.tex#L2914), [L2912](../../diophantine_zq.tex#L2912), [L2949](../../diophantine_zq.tex#L2949).
+Manuscript: [L2914](source/audited-baseline.tex#L2914), [L2912](source/audited-baseline.tex#L2912), [L2949](source/audited-baseline.tex#L2949).
 
 **Source:** [ccl](SOURCES.md#ccl). Theorem2.15.
 
@@ -1062,7 +1064,7 @@ External theorem applicability, source-to-consumer maps and conventions; publish
 <a id="a035"></a>
 ## A035: CM Frobenius congruence
 
-Manuscript: [L2948](../../diophantine_zq.tex#L2948), [L2951](../../diophantine_zq.tex#L2951), [L2965](../../diophantine_zq.tex#L2965).
+Manuscript: [L2948](source/audited-baseline.tex#L2948), [L2951](source/audited-baseline.tex#L2951), [L2965](source/audited-baseline.tex#L2965).
 
 **Source:** [howard2012](SOURCES.md#howard2012). §1.7,formula(13) (restricted conductor family).
 
@@ -1093,7 +1095,7 @@ External theorem applicability, source-to-consumer maps and conventions; publish
 <a id="a036"></a>
 ## A036: Connected special fiber cohomology
 
-Manuscript: [L3034](../../diophantine_zq.tex#L3034), [L3031](../../diophantine_zq.tex#L3031), [L3056](../../diophantine_zq.tex#L3056).
+Manuscript: [L3034](source/audited-baseline.tex#L3034), [L3031](source/audited-baseline.tex#L3031), [L3056](source/audited-baseline.tex#L3056).
 
 **Source:** [lang1956](SOURCES.md#lang1956). Lang, Algebraic groups over finite fields, Theorem 1 and its corollary, p.557; Theorem 2 on the same page identifies torsors.
 
@@ -1116,7 +1118,7 @@ Manuscript: [L3034](../../diophantine_zq.tex#L3034), [L3031](../../diophantine_z
 <a id="a037"></a>
 ## A037: Local Kummer annihilator
 
-Manuscript: [L3442](../../diophantine_zq.tex#L3442), [L3408](../../diophantine_zq.tex#L3408), [L3452](../../diophantine_zq.tex#L3452).
+Manuscript: [L3442](source/audited-baseline.tex#L3442), [L3408](source/audited-baseline.tex#L3408), [L3452](source/audited-baseline.tex#L3452).
 
 **Source:** [milne](SOURCES.md#milne). Milne ADT I.2.3 p.28 and I.3.2–3.5 pp.41–44, especially the Kummer diagram in the proof on pp.42–43.
 
@@ -1141,7 +1143,7 @@ See [dependency phases](DEPENDENCIES.md) and [the machine-readable distinctions]
 <a id="a038"></a>
 ## A038: Global Selmer duality
 
-Manuscript: [L3442](../../diophantine_zq.tex#L3442), [L3820](../../diophantine_zq.tex#L3820), [L3440](../../diophantine_zq.tex#L3440), [L3456](../../diophantine_zq.tex#L3456), [L3813](../../diophantine_zq.tex#L3813), [L3836](../../diophantine_zq.tex#L3836).
+Manuscript: [L3442](source/audited-baseline.tex#L3442), [L3820](source/audited-baseline.tex#L3820), [L3440](source/audited-baseline.tex#L3440), [L3456](source/audited-baseline.tex#L3456), [L3813](source/audited-baseline.tex#L3813), [L3836](source/audited-baseline.tex#L3836).
 
 **Source:** [nekovar](SOURCES.md#nekovar). Nekovar 5.1, 5.2.4, 5.4.3; 6.2.5–6.2.8 pp.139–141 and Theorem 6.3.4 p.143.
 
@@ -1166,7 +1168,7 @@ See [dependency phases](DEPENDENCIES.md) and [the machine-readable distinctions]
 <a id="a039"></a>
 ## A039: Change of arithmetic support
 
-Manuscript: [L3483](../../diophantine_zq.tex#L3483), [L4612](../../diophantine_zq.tex#L4612), [L3480](../../diophantine_zq.tex#L3480), [L3497](../../diophantine_zq.tex#L3497), [L4609](../../diophantine_zq.tex#L4609), [L4631](../../diophantine_zq.tex#L4631).
+Manuscript: [L3483](source/audited-baseline.tex#L3483), [L4612](source/audited-baseline.tex#L4612), [L3480](source/audited-baseline.tex#L3480), [L3497](source/audited-baseline.tex#L3497), [L4609](source/audited-baseline.tex#L4609), [L4631](source/audited-baseline.tex#L4631).
 
 **Source:** [nekovar](SOURCES.md#nekovar). Nekovar Proposition 7.8.8(i),(ii), pp.186–187; its finite-module excision proof on p.187.
 
@@ -1189,7 +1191,7 @@ Manuscript: [L3483](../../diophantine_zq.tex#L3483), [L4612](../../diophantine_z
 <a id="a040"></a>
 ## A040: Algebraic isogeny ratio
 
-Manuscript: [L4020](../../diophantine_zq.tex#L4020), [L4016](../../diophantine_zq.tex#L4016), [L4031](../../diophantine_zq.tex#L4031), [L4068](../../diophantine_zq.tex#L4068), [L4141](../../diophantine_zq.tex#L4141).
+Manuscript: [L4020](source/audited-baseline.tex#L4020), [L4016](source/audited-baseline.tex#L4016), [L4031](source/audited-baseline.tex#L4031), [L4068](source/audited-baseline.tex#L4068), [L4141](source/audited-baseline.tex#L4141).
 
 **Source:** [milne](SOURCES.md#milne). Milne ADT proof of I.7.3 pp.97–100, equation (7.3.1) p.98 and its Poitou–Tate proof pp.99–100.
 
@@ -1214,7 +1216,7 @@ See [dependency phases](DEPENDENCIES.md) and [the machine-readable distinctions]
 <a id="a041"></a>
 ## A041: Naturality for primitive/relaxed correction
 
-Manuscript: [L4082](../../diophantine_zq.tex#L4082), [L4144](../../diophantine_zq.tex#L4144), [L4206](../../diophantine_zq.tex#L4206).
+Manuscript: [L4082](source/audited-baseline.tex#L4082), [L4144](source/audited-baseline.tex#L4144), [L4206](source/audited-baseline.tex#L4206).
 
 **Source:** [nekovar](SOURCES.md#nekovar). Nekovar 6.4.1.1–6.4.1.6 and Proposition 6.4.2, p.144; Corollary 6.4.3, p.145.
 
@@ -1239,7 +1241,7 @@ See [dependency phases](DEPENDENCIES.md) and [the machine-readable distinctions]
 <a id="a042"></a>
 ## A042: Global residual Euler characteristic
 
-Manuscript: [L4519](../../diophantine_zq.tex#L4519), [L4486](../../diophantine_zq.tex#L4486), [L4539](../../diophantine_zq.tex#L4539).
+Manuscript: [L4519](source/audited-baseline.tex#L4519), [L4486](source/audited-baseline.tex#L4486), [L4539](source/audited-baseline.tex#L4539).
 
 **Source:** [milne](SOURCES.md#milne). Milne ADT second edition, I Theorem 4.10(c) p.57, Corollaries 4.15-4.16 p.62, Theorem 5.1 and footnote 13 p.67; closure-batch-005.
 
@@ -1264,7 +1266,7 @@ Bounded application and listed translations only. Referenced internal premises a
 <a id="a043"></a>
 ## A043: Local residual Euler characteristic
 
-Manuscript: [L4544](../../diophantine_zq.tex#L4544), [L4542](../../diophantine_zq.tex#L4542), [L4586](../../diophantine_zq.tex#L4586).
+Manuscript: [L4544](source/audited-baseline.tex#L4544), [L4542](source/audited-baseline.tex#L4542), [L4586](source/audited-baseline.tex#L4586).
 
 **Source:** [milne](SOURCES.md#milne). Milne ADT I.2.3 p.28; I.2.8 p.31; I.3.3 p.41 for the local point-group rank.
 
@@ -1287,7 +1289,7 @@ Manuscript: [L4544](../../diophantine_zq.tex#L4544), [L4542](../../diophantine_z
 <a id="a044"></a>
 ## A044: Derivative switch exact annihilator
 
-Manuscript: [L4844](../../diophantine_zq.tex#L4844), [L5055](../../diophantine_zq.tex#L5055), [L4846](../../diophantine_zq.tex#L4846), [L4911](../../diophantine_zq.tex#L4911), [L5054](../../diophantine_zq.tex#L5054), [L5096](../../diophantine_zq.tex#L5096).
+Manuscript: [L4844](source/audited-baseline.tex#L4844), [L5055](source/audited-baseline.tex#L5055), [L4846](source/audited-baseline.tex#L4846), [L4911](source/audited-baseline.tex#L4911), [L5054](source/audited-baseline.tex#L5054), [L5096](source/audited-baseline.tex#L5096).
 
 **Source:** [nekovar](SOURCES.md#nekovar). Nekovar Proposition 6.3.3 and Theorem 6.3.4, pp.142–143.
 
@@ -1312,7 +1314,7 @@ See [dependency phases](DEPENDENCIES.md) and [the machine-readable distinctions]
 <a id="a045"></a>
 ## A045: Finite self-duality dimension budget
 
-Manuscript: [L5269](../../diophantine_zq.tex#L5269), [L7684](../../diophantine_zq.tex#L7684), [L5259](../../diophantine_zq.tex#L5259), [L5286](../../diophantine_zq.tex#L5286), [L7670](../../diophantine_zq.tex#L7670), [L7706](../../diophantine_zq.tex#L7706).
+Manuscript: [L5269](source/audited-baseline.tex#L5269), [L7684](source/audited-baseline.tex#L7684), [L5259](source/audited-baseline.tex#L5259), [L5286](source/audited-baseline.tex#L5286), [L7670](source/audited-baseline.tex#L7670), [L7706](source/audited-baseline.tex#L7706).
 
 **Source:** [nekovar](SOURCES.md#nekovar). Nekovar 5.1.1–5.1.6 and Theorem 6.3.4 p.143; for the real appendix 5.7.1.4–5.7.1.7, pp.131–132.
 
@@ -1337,7 +1339,7 @@ See [dependency phases](DEPENDENCIES.md) and [the machine-readable distinctions]
 <a id="a046"></a>
 ## A046: Explicit progression cutoff
 
-Manuscript: [L6285](../../diophantine_zq.tex#L6285), [L6283](../../diophantine_zq.tex#L6283), [L6333](../../diophantine_zq.tex#L6333).
+Manuscript: [L6285](source/audited-baseline.tex#L6285), [L6283](source/audited-baseline.tex#L6283), [L6333](source/audited-baseline.tex#L6333).
 
 **Source:** [bmor](SOURCES.md#bmor). BMOR arXiv v3 and published author PDF, Theorem 1.2 and Corollary 6.17 with parameter A=1.
 
@@ -1362,7 +1364,7 @@ The registered source applications and their explicit translations. Listed inter
 <a id="a047"></a>
 ## A047: Mazur conjecture formulation
 
-Manuscript: [L6470](../../diophantine_zq.tex#L6470), [L6468](../../diophantine_zq.tex#L6468), [L6502](../../diophantine_zq.tex#L6502).
+Manuscript: [L6470](source/audited-baseline.tex#L6470), [L6468](source/audited-baseline.tex#L6468), [L6502](source/audited-baseline.tex#L6502).
 
 **Source:** [mazur1995](SOURCES.md#mazur1995). Conjecture3,printed p.165.
 
@@ -1387,7 +1389,7 @@ Manuscript: [L6470](../../diophantine_zq.tex#L6470), [L6468](../../diophantine_z
 <a id="a048"></a>
 ## A048: MRDP universal predicate
 
-Manuscript: [L6497](../../diophantine_zq.tex#L6497), [L6497](../../diophantine_zq.tex#L6497), [L6505](../../diophantine_zq.tex#L6505), [L6569](../../diophantine_zq.tex#L6569).
+Manuscript: [L6497](source/audited-baseline.tex#L6497), [L6497](source/audited-baseline.tex#L6497), [L6505](source/audited-baseline.tex#L6505), [L6569](source/audited-baseline.tex#L6569).
 
 **Source:** [matiyasevich1971](SOURCES.md#matiyasevich1971). Matiyasevich 1971 English translation, pp.2-3, definition of an enumerable predicate, Basic Theorem and positive-to-integer conversion.
 
@@ -1412,7 +1414,7 @@ Bounded application and listed translations only. Referenced internal premises a
 <a id="a049"></a>
 ## A049: Kato retained lattice and symbols
 
-Manuscript: [L6845](../../diophantine_zq.tex#L6845), [L6899](../../diophantine_zq.tex#L6899), [L6926](../../diophantine_zq.tex#L6926).
+Manuscript: [L6845](source/audited-baseline.tex#L6845), [L6899](source/audited-baseline.tex#L6899), [L6926](source/audited-baseline.tex#L6926).
 
 **Source:** [kato](SOURCES.md#kato). (8.1.3),§§8.2,8.9,8.11;13.6–13.7.
 
@@ -1435,7 +1437,7 @@ Manuscript: [L6845](../../diophantine_zq.tex#L6845), [L6899](../../diophantine_z
 <a id="a050"></a>
 ## A050: Kato smoothing and reciprocity
 
-Manuscript: [L6845](../../diophantine_zq.tex#L6845), [L6928](../../diophantine_zq.tex#L6928), [L6950](../../diophantine_zq.tex#L6950), [L7116](../../diophantine_zq.tex#L7116), [L7214](../../diophantine_zq.tex#L7214).
+Manuscript: [L6845](source/audited-baseline.tex#L6845), [L6928](source/audited-baseline.tex#L6928), [L6950](source/audited-baseline.tex#L6950), [L7116](source/audited-baseline.tex#L7116), [L7214](source/audited-baseline.tex#L7214).
 
 **Source:** [kato](SOURCES.md#kato). (4.2.4),§5.2,Theorem6.6,Theorem9.7.
 
@@ -1458,7 +1460,7 @@ Manuscript: [L6845](../../diophantine_zq.tex#L6845), [L6928](../../diophantine_z
 <a id="a051"></a>
 ## A051: Kato weighted norm relation
 
-Manuscript: [L6845](../../diophantine_zq.tex#L6845), [L6952](../../diophantine_zq.tex#L6952), [L7116](../../diophantine_zq.tex#L7116), [L7256](../../diophantine_zq.tex#L7256), [L7344](../../diophantine_zq.tex#L7344).
+Manuscript: [L6845](source/audited-baseline.tex#L6845), [L6952](source/audited-baseline.tex#L6952), [L7116](source/audited-baseline.tex#L7116), [L7256](source/audited-baseline.tex#L7256), [L7344](source/audited-baseline.tex#L7344).
 
 **Source:** [kato](SOURCES.md#kato). Proposition8.12; §13.1; (5.1.1),(5.2.1–2).
 
@@ -1481,7 +1483,7 @@ Manuscript: [L6845](../../diophantine_zq.tex#L6845), [L6952](../../diophantine_z
 <a id="a052"></a>
 ## A052: Quaternionic ternary theta input
 
-Manuscript: [L8462](../../diophantine_zq.tex#L8462), [L8462](../../diophantine_zq.tex#L8462), [L9150](../../diophantine_zq.tex#L9150), [L8458](../../diophantine_zq.tex#L8458), [L8460](../../diophantine_zq.tex#L8460), [L8487](../../diophantine_zq.tex#L8487), [L9148](../../diophantine_zq.tex#L9148), [L9154](../../diophantine_zq.tex#L9154).
+Manuscript: [L8462](source/audited-baseline.tex#L8462), [L8462](source/audited-baseline.tex#L8462), [L9150](source/audited-baseline.tex#L9150), [L8458](source/audited-baseline.tex#L8458), [L8460](source/audited-baseline.tex#L8460), [L8487](source/audited-baseline.tex#L8487), [L9148](source/audited-baseline.tex#L9148), [L9154](source/audited-baseline.tex#L9154).
 
 **Source:** [jetchevkane](SOURCES.md#jetchevkane), [voight-quaternion](SOURCES.md#voight-quaternion). Jetchev-Kane arXiv:0908.3905v1 sections 1.1-1.2 pp1-2 and 2.5 p6; Voight corrected online edition v1.0.7u (2026-08-05), Main Theorem 14.6.1 p223/PDF243 and Proposition 14.6.7 p224/PDF244..
 
@@ -1518,7 +1520,7 @@ External theorem applicability, source-to-consumer maps and conventions; publish
 <a id="a053"></a>
 ## A053: Weil representation operators
 
-Manuscript: [L8623](../../diophantine_zq.tex#L8623), [L8688](../../diophantine_zq.tex#L8688), [L8688](../../diophantine_zq.tex#L8688), [L8746](../../diophantine_zq.tex#L8746), [L8837](../../diophantine_zq.tex#L8837), [L8614](../../diophantine_zq.tex#L8614), [L8869](../../diophantine_zq.tex#L8869).
+Manuscript: [L8623](source/audited-baseline.tex#L8623), [L8688](source/audited-baseline.tex#L8688), [L8688](source/audited-baseline.tex#L8688), [L8746](source/audited-baseline.tex#L8746), [L8837](source/audited-baseline.tex#L8837), [L8614](source/audited-baseline.tex#L8614), [L8869](source/audited-baseline.tex#L8869).
 
 **Source:** [weil](SOURCES.md#weil). I.13–I.14,Theorem2;II.25,II.28,Proposition4.
 
@@ -1551,7 +1553,7 @@ External theorem applicability, source-to-consumer maps and conventions; publish
 <a id="a054"></a>
 ## A054: Global theta modularity and holomorphy at cusps
 
-Manuscript: [L8938](../../diophantine_zq.tex#L8938), [L8953](../../diophantine_zq.tex#L8953), [L8968](../../diophantine_zq.tex#L8968), [L8968](../../diophantine_zq.tex#L8968), [L8870](../../diophantine_zq.tex#L8870), [L9017](../../diophantine_zq.tex#L9017).
+Manuscript: [L8938](source/audited-baseline.tex#L8938), [L8953](source/audited-baseline.tex#L8953), [L8968](source/audited-baseline.tex#L8968), [L8968](source/audited-baseline.tex#L8968), [L8870](source/audited-baseline.tex#L8870), [L9017](source/audited-baseline.tex#L9017).
 
 **Source:** [weil](SOURCES.md#weil). II.27;III Theorem6;II.30 Proposition5;III.41 Theorem6.
 
@@ -1586,7 +1588,7 @@ External theorem applicability, source-to-consumer maps and conventions; publish
 <a id="a055"></a>
 ## A055: Four-square existential encoding
 
-Manuscript: [L187](../../diophantine_zq.tex#L187), [L199](../../diophantine_zq.tex#L199), [L362](../../diophantine_zq.tex#L362), [L369](../../diophantine_zq.tex#L369).
+Manuscript: [L187](source/audited-baseline.tex#L187), [L199](source/audited-baseline.tex#L199), [L362](source/audited-baseline.tex#L362), [L369](source/audited-baseline.tex#L369).
 
 **Source:** [matiyasevich1971](SOURCES.md#matiyasevich1971). Matiyasevich 1971 English translation, p.2, explicit statement and use of Lagrange four squares; closure-batch-001 checks rational and typed-index translations.
 
@@ -1611,7 +1613,7 @@ Bounded application and listed translations only. Referenced internal premises a
 <a id="a056"></a>
 ## A056: Division polynomials and multiplication maps
 
-Manuscript: [L210](../../diophantine_zq.tex#L210), [L207](../../diophantine_zq.tex#L207), [L220](../../diophantine_zq.tex#L220).
+Manuscript: [L210](source/audited-baseline.tex#L210), [L207](source/audited-baseline.tex#L207), [L220](source/audited-baseline.tex#L220).
 
 **Source:** [silverman](SOURCES.md#silverman), [sutherland](SOURCES.md#sutherland). Sutherland MIT 18.783 Fall 2025 Lecture 5, sections 5.5-5.6, Lemmas 5.20 and 5.24 and Theorem 5.21; direct specialization in closure-batch-010.
 
@@ -1636,7 +1638,7 @@ The registered source applications and their explicit translations. Listed inter
 <a id="a057"></a>
 ## A057: Dirichlet primes in progressions
 
-Manuscript: [L237](../../diophantine_zq.tex#L237), [L1054](../../diophantine_zq.tex#L1054), [L1338](../../diophantine_zq.tex#L1338), [L1982](../../diophantine_zq.tex#L1982), [L1983](../../diophantine_zq.tex#L1983), [L2163](../../diophantine_zq.tex#L2163), [L2641](../../diophantine_zq.tex#L2641), [L2643](../../diophantine_zq.tex#L2643), [L2668](../../diophantine_zq.tex#L2668), [L9956](../../diophantine_zq.tex#L9956), [L10014](../../diophantine_zq.tex#L10014), [L10485](../../diophantine_zq.tex#L10485), [L10823](../../diophantine_zq.tex#L10823).
+Manuscript: [L237](source/audited-baseline.tex#L237), [L1054](source/audited-baseline.tex#L1054), [L1338](source/audited-baseline.tex#L1338), [L1982](source/audited-baseline.tex#L1982), [L1983](source/audited-baseline.tex#L1983), [L2163](source/audited-baseline.tex#L2163), [L2641](source/audited-baseline.tex#L2641), [L2643](source/audited-baseline.tex#L2643), [L2668](source/audited-baseline.tex#L2668), [L9956](source/audited-baseline.tex#L9956), [L10014](source/audited-baseline.tex#L10014), [L10485](source/audited-baseline.tex#L10485), [L10823](source/audited-baseline.tex#L10823).
 
 **Source:** [milne-cft](SOURCES.md#milne-cft). Milne CFT v4.03, V Theorem 2.2.
 
@@ -1667,7 +1669,7 @@ Source interface and explicitly listed translations only; not the entire applica
 <a id="a058"></a>
 ## A058: Quadratic-field arithmetic and two-isogeny descent
 
-Manuscript: [L270](../../diophantine_zq.tex#L270), [L289](../../diophantine_zq.tex#L289).
+Manuscript: [L270](source/audited-baseline.tex#L270), [L289](source/audited-baseline.tex#L289).
 
 **Source:** [milne-ant](SOURCES.md#milne-ant), [silverman](SOURCES.md#silverman). Milne ANT v3.08, Theorems 4.3 and 5.1; Silverman 2009, X Example 4.8, pp.336-337; corrected coordinate and kernel derivations in closure-batch-002.
 
@@ -1692,7 +1694,7 @@ Bounded application and listed translations only. Referenced internal premises a
 <a id="a059"></a>
 ## A059: Mordell–Weil and torsion reduction
 
-Manuscript: [L288](../../diophantine_zq.tex#L288), [L298](../../diophantine_zq.tex#L298).
+Manuscript: [L288](source/audited-baseline.tex#L288), [L298](source/audited-baseline.tex#L298).
 
 **Source:** [silverman](SOURCES.md#silverman). Silverman 2009, VIII Theorem 6.7, p.239; VII Proposition 3.1, p.192; closure-batch-001 and exact generator-arithmetic receipt.
 
@@ -1717,7 +1719,7 @@ Bounded application and listed translations only. Referenced internal premises a
 <a id="a060"></a>
 ## A060: Canonical height and small-height enumeration
 
-Manuscript: [L300](../../diophantine_zq.tex#L300), [L344](../../diophantine_zq.tex#L344).
+Manuscript: [L300](source/audited-baseline.tex#L300), [L344](source/audited-baseline.tex#L344).
 
 **Source:** [silverman](SOURCES.md#silverman). Silverman 2009, VIII Theorem 9.1, following definition, Remark 9.2 and Theorem 9.3, pp.247-249; closure-batch-001 and exact generator-arithmetic receipt.
 
@@ -1742,7 +1744,7 @@ Bounded application and listed translations only. Referenced internal premises a
 <a id="a061"></a>
 ## A061: Good reduction and finite endomorphism descent
 
-Manuscript: [L520](../../diophantine_zq.tex#L520), [L560](../../diophantine_zq.tex#L560).
+Manuscript: [L520](source/audited-baseline.tex#L520), [L560](source/audited-baseline.tex#L560).
 
 **Source:** [milne-av](SOURCES.md#milne-av). Part I Theorem 12.1(a), p. 55; Theorem 10.15, p. 49; Proposition 10.20, p. 50; Lemma 14.5, p. 63; Part IV Theorem 3.5, pp. 141-142 and Lemma 3.9, p. 143..
 
@@ -1767,7 +1769,7 @@ The registered source applications and their explicit translations. Listed inter
 <a id="a062"></a>
 ## A062: Skolem–Noether for scalar descent
 
-Manuscript: [L630](../../diophantine_zq.tex#L630), [L657](../../diophantine_zq.tex#L657).
+Manuscript: [L630](source/audited-baseline.tex#L630), [L657](source/audited-baseline.tex#L657).
 
 **Source:** [milne-cft](SOURCES.md#milne-cft). Milne CFT v4.03, Chapter IV Theorem 2.10..
 
@@ -1803,7 +1805,7 @@ Exact source interface, all registered consumers, scalar/field/map/convention tr
 <a id="a063"></a>
 ## A063: Faltings Hom and Poincare complement
 
-Manuscript: [L858](../../diophantine_zq.tex#L858), [L865](../../diophantine_zq.tex#L865).
+Manuscript: [L858](source/audited-baseline.tex#L858), [L865](source/audited-baseline.tex#L865).
 
 **Source:** [faltings1983](SOURCES.md#faltings1983), [faltings1984](SOURCES.md#faltings1984), [milne-av](SOURCES.md#milne-av). Faltings 1983, section 5, Corollary 1, p. 361, with 1984 erratum p. 381; Milne AV v2.00, Part I Proposition 10.1 and proof, p. 42..
 
@@ -1841,7 +1843,7 @@ Exact source interface, all registered consumers, scalar/field/map/convention tr
 <a id="a064"></a>
 ## A064: Compatible traces and semisimple identification
 
-Manuscript: [L773](../../diophantine_zq.tex#L773), [L792](../../diophantine_zq.tex#L792).
+Manuscript: [L773](source/audited-baseline.tex#L773), [L792](source/audited-baseline.tex#L792).
 
 **Source:** [milne-av](SOURCES.md#milne-av), [milne-cft](SOURCES.md#milne-cft). Part I Theorem 12.1(a), p. 55; Theorem 10.15, p. 49; Proposition 10.20, p. 50; Lemma 14.5, p. 63; Part IV Theorem 3.5, pp. 141-142 and Lemma 3.9, p. 143.; Version 4.03, August 6, 2020, Chapter VIII Theorem 7.4..
 
@@ -1868,7 +1870,7 @@ The registered source applications and their explicit translations. Listed inter
 <a id="a065"></a>
 ## A065: CM class polynomial and integral j
 
-Manuscript: [L580](../../diophantine_zq.tex#L580), [L586](../../diophantine_zq.tex#L586), [L594](../../diophantine_zq.tex#L594), [L595](../../diophantine_zq.tex#L595), [L1009](../../diophantine_zq.tex#L1009), [L1012](../../diophantine_zq.tex#L1012), [L1759](../../diophantine_zq.tex#L1759), [L1765](../../diophantine_zq.tex#L1765).
+Manuscript: [L580](source/audited-baseline.tex#L580), [L586](source/audited-baseline.tex#L586), [L594](source/audited-baseline.tex#L594), [L595](source/audited-baseline.tex#L595), [L1009](source/audited-baseline.tex#L1009), [L1012](source/audited-baseline.tex#L1012), [L1759](source/audited-baseline.tex#L1759), [L1765](source/audited-baseline.tex#L1765).
 
 **Source:** [fowler](SOURCES.md#fowler). Fowler publisher version, §2.1, printed p.613.
 
@@ -1899,7 +1901,7 @@ Source interface and explicitly listed translations only; not the entire applica
 <a id="a066"></a>
 ## A066: Modularity and modular parametrization
 
-Manuscript: [L1086](../../diophantine_zq.tex#L1086), [L1771](../../diophantine_zq.tex#L1771), [L1771](../../diophantine_zq.tex#L1771), [L1777](../../diophantine_zq.tex#L1777), [L1788](../../diophantine_zq.tex#L1788), [L6833](../../diophantine_zq.tex#L6833), [L6838](../../diophantine_zq.tex#L6838), [L770](../../diophantine_zq.tex#L770).
+Manuscript: [L1086](source/audited-baseline.tex#L1086), [L1771](source/audited-baseline.tex#L1771), [L1771](source/audited-baseline.tex#L1771), [L1777](source/audited-baseline.tex#L1777), [L1788](source/audited-baseline.tex#L1788), [L6833](source/audited-baseline.tex#L6833), [L6838](source/audited-baseline.tex#L6838), [L770](source/audited-baseline.tex#L770).
 
 **Source:** [bcdt](SOURCES.md#bcdt), [milnemf](SOURCES.md#milnemf). BCDT inspected author manuscript Theorem A and Introduction (1)-(6); Milne MF v1.31 Remark 11.18 and Theorem 11.19.
 
@@ -1924,7 +1926,7 @@ The registered source applications and their explicit translations. Listed inter
 <a id="a067"></a>
 ## A067: Finite Chebotarev realizations
 
-Manuscript: [L2486](../../diophantine_zq.tex#L2486), [L3532](../../diophantine_zq.tex#L3532), [L3543](../../diophantine_zq.tex#L3543), [L3549](../../diophantine_zq.tex#L3549), [L3622](../../diophantine_zq.tex#L3622), [L3660](../../diophantine_zq.tex#L3660), [L3668](../../diophantine_zq.tex#L3668), [L3672](../../diophantine_zq.tex#L3672), [L4753](../../diophantine_zq.tex#L4753), [L4807](../../diophantine_zq.tex#L4807), [L4810](../../diophantine_zq.tex#L4810), [L4816](../../diophantine_zq.tex#L4816), [L5106](../../diophantine_zq.tex#L5106), [L8306](../../diophantine_zq.tex#L8306), [L8331](../../diophantine_zq.tex#L8331), [L8360](../../diophantine_zq.tex#L8360), [L8363](../../diophantine_zq.tex#L8363), [L9664](../../diophantine_zq.tex#L9664), [L9710](../../diophantine_zq.tex#L9710), [L9766](../../diophantine_zq.tex#L9766), [L9894](../../diophantine_zq.tex#L9894), [L9917](../../diophantine_zq.tex#L9917).
+Manuscript: [L2486](source/audited-baseline.tex#L2486), [L3532](source/audited-baseline.tex#L3532), [L3543](source/audited-baseline.tex#L3543), [L3549](source/audited-baseline.tex#L3549), [L3622](source/audited-baseline.tex#L3622), [L3660](source/audited-baseline.tex#L3660), [L3668](source/audited-baseline.tex#L3668), [L3672](source/audited-baseline.tex#L3672), [L4753](source/audited-baseline.tex#L4753), [L4807](source/audited-baseline.tex#L4807), [L4810](source/audited-baseline.tex#L4810), [L4816](source/audited-baseline.tex#L4816), [L5106](source/audited-baseline.tex#L5106), [L8306](source/audited-baseline.tex#L8306), [L8331](source/audited-baseline.tex#L8331), [L8360](source/audited-baseline.tex#L8360), [L8363](source/audited-baseline.tex#L8363), [L9664](source/audited-baseline.tex#L9664), [L9710](source/audited-baseline.tex#L9710), [L9766](source/audited-baseline.tex#L9766), [L9894](source/audited-baseline.tex#L9894), [L9917](source/audited-baseline.tex#L9917).
 
 **Source:** [milne-cft](SOURCES.md#milne-cft). Milne CFT v4.03, VIII Theorem 7.4 p.259; V.1 and V.1.9 pp.152-153; finite-field application register and compatibility checks in closure-batch-008.
 
@@ -1949,7 +1951,7 @@ Bounded application and listed translations only. Referenced internal premises a
 <a id="a068"></a>
 ## A068: Class field reciprocity and moving characters
 
-Manuscript: [L2916](../../diophantine_zq.tex#L2916), [L2984](../../diophantine_zq.tex#L2984), [L3086](../../diophantine_zq.tex#L3086), [L3104](../../diophantine_zq.tex#L3104), [L3515](../../diophantine_zq.tex#L3515), [L3594](../../diophantine_zq.tex#L3594), [L4230](../../diophantine_zq.tex#L4230), [L4326](../../diophantine_zq.tex#L4326).
+Manuscript: [L2916](source/audited-baseline.tex#L2916), [L2984](source/audited-baseline.tex#L2984), [L3086](source/audited-baseline.tex#L3086), [L3104](source/audited-baseline.tex#L3104), [L3515](source/audited-baseline.tex#L3515), [L3594](source/audited-baseline.tex#L3594), [L4230](source/audited-baseline.tex#L4230), [L4326](source/audited-baseline.tex#L4326).
 
 **Source:** [milne-cft](SOURCES.md#milne-cft). Milne CFT v4.03, V Theorem 1.7 pp.150-151, V.1.9-1.10 pp.152-153, Proposition 3.3 p.157, Theorems 3.5-3.6 and Remark 3.8 p.158, Proposition 5.2 p.178, Theorems 5.3 and 5.5 pp.178-179; closure-batch-009 and independent second review.
 
@@ -1974,7 +1976,7 @@ Bounded application and listed translations only. Referenced internal premises a
 <a id="a069"></a>
 ## A069: Tame quadratic-twist components
 
-Manuscript: [L4082](../../diophantine_zq.tex#L4082), [L4114](../../diophantine_zq.tex#L4114), [L4138](../../diophantine_zq.tex#L4138).
+Manuscript: [L4082](source/audited-baseline.tex#L4082), [L4114](source/audited-baseline.tex#L4114), [L4138](source/audited-baseline.tex#L4138).
 
 **Source:** [edixhoven](SOURCES.md#edixhoven). Edixhoven 1992 Theorem 5.3 and Remark 5.4.1, pp.299-300.
 
@@ -1999,7 +2001,7 @@ The registered source applications and their explicit translations. Listed inter
 <a id="a070"></a>
 ## A070: Cusp torsion and Hecke equivariance
 
-Manuscript: [L2914](../../diophantine_zq.tex#L2914), [L2931](../../diophantine_zq.tex#L2931), [L2948](../../diophantine_zq.tex#L2948), [L8409](../../diophantine_zq.tex#L8409), [L8423](../../diophantine_zq.tex#L8423).
+Manuscript: [L2914](source/audited-baseline.tex#L2914), [L2931](source/audited-baseline.tex#L2931), [L2948](source/audited-baseline.tex#L2948), [L8409](source/audited-baseline.tex#L8409), [L8423](source/audited-baseline.tex#L8423).
 
 **Source:** [elkik](SOURCES.md#elkik), [milnemf](SOURCES.md#milnemf). Elkik 1990 Theorem p.59; actual normalized newform quotient described in A066.
 
@@ -2024,7 +2026,7 @@ The registered source applications and their explicit translations. Listed inter
 <a id="a071"></a>
 ## A071: Formal groups, local logarithm and reduction orders
 
-Manuscript: [L814](../../diophantine_zq.tex#L814), [L1131](../../diophantine_zq.tex#L1131), [L1131](../../diophantine_zq.tex#L1131), [L1131](../../diophantine_zq.tex#L1131), [L3034](../../diophantine_zq.tex#L3034), [L3167](../../diophantine_zq.tex#L3167), [L6102](../../diophantine_zq.tex#L6102), [L6170](../../diophantine_zq.tex#L6170), [L6202](../../diophantine_zq.tex#L6202), [L6285](../../diophantine_zq.tex#L6285), [L6285](../../diophantine_zq.tex#L6285), [L1223](../../diophantine_zq.tex#L1223), [L1263](../../diophantine_zq.tex#L1263), [L6100](../../diophantine_zq.tex#L6100), [L6126](../../diophantine_zq.tex#L6126), [L6173](../../diophantine_zq.tex#L6173), [L6197](../../diophantine_zq.tex#L6197), [L6312](../../diophantine_zq.tex#L6312), [L6356](../../diophantine_zq.tex#L6356).
+Manuscript: [L814](source/audited-baseline.tex#L814), [L1131](source/audited-baseline.tex#L1131), [L1131](source/audited-baseline.tex#L1131), [L1131](source/audited-baseline.tex#L1131), [L3034](source/audited-baseline.tex#L3034), [L3167](source/audited-baseline.tex#L3167), [L6102](source/audited-baseline.tex#L6102), [L6170](source/audited-baseline.tex#L6170), [L6202](source/audited-baseline.tex#L6202), [L6285](source/audited-baseline.tex#L6285), [L6285](source/audited-baseline.tex#L6285), [L1223](source/audited-baseline.tex#L1223), [L1263](source/audited-baseline.tex#L1263), [L6100](source/audited-baseline.tex#L6100), [L6126](source/audited-baseline.tex#L6126), [L6173](source/audited-baseline.tex#L6173), [L6197](source/audited-baseline.tex#L6197), [L6312](source/audited-baseline.tex#L6312), [L6356](source/audited-baseline.tex#L6356).
 
 **Source:** [silverman](SOURCES.md#silverman). Silverman IV.1, IV.2.3, IV.3.2, IV.5.5, IV.6.2-6.4; VII.2.1-2.2, VII.6.3.
 
@@ -2049,7 +2051,7 @@ The registered source applications and their explicit translations. Listed inter
 <a id="a072"></a>
 ## A072: Hasse bound and CM reduction identities
 
-Manuscript: [L1563](../../diophantine_zq.tex#L1563), [L1563](../../diophantine_zq.tex#L1563), [L1563](../../diophantine_zq.tex#L1563), [L1563](../../diophantine_zq.tex#L1563), [L1552](../../diophantine_zq.tex#L1552), [L1596](../../diophantine_zq.tex#L1596).
+Manuscript: [L1563](source/audited-baseline.tex#L1563), [L1563](source/audited-baseline.tex#L1563), [L1563](source/audited-baseline.tex#L1563), [L1563](source/audited-baseline.tex#L1563), [L1552](source/audited-baseline.tex#L1552), [L1596](source/audited-baseline.tex#L1596).
 
 **Source:** [silverman](SOURCES.md#silverman). Silverman III.7.4 pp.89-91, III.8.6 p.99, V.1.1 p.138, V.2.3.1 p.142.
 
@@ -2074,7 +2076,7 @@ The registered source applications and their explicit translations. Listed inter
 <a id="a073"></a>
 ## A073: S-unit Kummer sequence and genus bound
 
-Manuscript: [L4479](../../diophantine_zq.tex#L4479), [L4518](../../diophantine_zq.tex#L4518).
+Manuscript: [L4479](source/audited-baseline.tex#L4479), [L4518](source/audited-baseline.tex#L4518).
 
 **Source:** [milne-cft](SOURCES.md#milne-cft), [milne-ant](SOURCES.md#milne-ant). Milne CFT v4.03, II Proposition 1.22 and Corollary 1.23 p.67, VII Appendix A.1-A.5 pp.226-227; Milne ANT v3.08, Theorems 4.3-4.4 p.70 and 5.11 p.90; closure-batch-005.
 
@@ -2099,7 +2101,7 @@ Bounded application and listed translations only. Referenced internal premises a
 <a id="a074"></a>
 ## A074: Schreier and pro-2 generators
 
-Manuscript: [L4528](../../diophantine_zq.tex#L4528), [L4539](../../diophantine_zq.tex#L4539).
+Manuscript: [L4528](source/audited-baseline.tex#L4528), [L4539](source/audited-baseline.tex#L4539).
 
 **Source:** [milne-cft](SOURCES.md#milne-cft). Milne CFT v4.03, VII Appendix A.1-A.5 pp.226-227 for squareclasses; explicit pro-2 generation and index-two word-rewriting proof in closure-batch-005.
 
@@ -2124,7 +2126,7 @@ Bounded application and listed translations only. Referenced internal premises a
 <a id="a075"></a>
 ## A075: Derived algebra and finite free models
 
-Manuscript: [L3451](../../diophantine_zq.tex#L3451), [L4388](../../diophantine_zq.tex#L4388), [L4450](../../diophantine_zq.tex#L4450), [L4734](../../diophantine_zq.tex#L4734), [L5259](../../diophantine_zq.tex#L5259), [L5287](../../diophantine_zq.tex#L5287), [L5409](../../diophantine_zq.tex#L5409), [L7386](../../diophantine_zq.tex#L7386), [L7398](../../diophantine_zq.tex#L7398).
+Manuscript: [L3451](source/audited-baseline.tex#L3451), [L4388](source/audited-baseline.tex#L4388), [L4450](source/audited-baseline.tex#L4450), [L4734](source/audited-baseline.tex#L4734), [L5259](source/audited-baseline.tex#L5259), [L5287](source/audited-baseline.tex#L5287), [L5409](source/audited-baseline.tex#L5409), [L7386](source/audited-baseline.tex#L7386), [L7398](source/audited-baseline.tex#L7398).
 
 **Source:** [nekovar](SOURCES.md#nekovar), [milne](SOURCES.md#milne), [crainic2004](SOURCES.md#crainic2004), [stacks-derived](SOURCES.md#stacks-derived). Nekovar 2006, 5.1 pp.113-114, 5.2.4, 5.4.3, 6.2.5-6.2.8 and 6.3.4 p.143; Milne ADT I.4.10(c), I.4.15-I.4.16; Crainic arXiv:math/0403266v1, 2.1-2.4 and 3.2; Stacks Tag 03T3, Lemma 64.6.3(2); closure-batch-006.
 
@@ -2151,7 +2153,7 @@ Bounded application and listed translations only. Referenced internal premises a
 <a id="a076"></a>
 ## A076: Compactness, ultrafilter and finite intersection
 
-Manuscript: [L2013](../../diophantine_zq.tex#L2013), [L2048](../../diophantine_zq.tex#L2048), [L2149](../../diophantine_zq.tex#L2149), [L2593](../../diophantine_zq.tex#L2593), [L2603](../../diophantine_zq.tex#L2603), [L2626](../../diophantine_zq.tex#L2626), [L4388](../../diophantine_zq.tex#L4388), [L4450](../../diophantine_zq.tex#L4450), [L4796](../../diophantine_zq.tex#L4796), [L4823](../../diophantine_zq.tex#L4823), [L6111](../../diophantine_zq.tex#L6111), [L6126](../../diophantine_zq.tex#L6126), [L9729](../../diophantine_zq.tex#L9729), [L10257](../../diophantine_zq.tex#L10257), [L10506](../../diophantine_zq.tex#L10506), [L10551](../../diophantine_zq.tex#L10551), [L10586](../../diophantine_zq.tex#L10586), [L10790](../../diophantine_zq.tex#L10790), [L10813](../../diophantine_zq.tex#L10813), [L10831](../../diophantine_zq.tex#L10831), [L10859](../../diophantine_zq.tex#L10859).
+Manuscript: [L2013](source/audited-baseline.tex#L2013), [L2048](source/audited-baseline.tex#L2048), [L2149](source/audited-baseline.tex#L2149), [L2593](source/audited-baseline.tex#L2593), [L2603](source/audited-baseline.tex#L2603), [L2626](source/audited-baseline.tex#L2626), [L4388](source/audited-baseline.tex#L4388), [L4450](source/audited-baseline.tex#L4450), [L4796](source/audited-baseline.tex#L4796), [L4823](source/audited-baseline.tex#L4823), [L6111](source/audited-baseline.tex#L6111), [L6126](source/audited-baseline.tex#L6126), [L9729](source/audited-baseline.tex#L9729), [L10257](source/audited-baseline.tex#L10257), [L10506](source/audited-baseline.tex#L10506), [L10551](source/audited-baseline.tex#L10551), [L10586](source/audited-baseline.tex#L10586), [L10790](source/audited-baseline.tex#L10790), [L10813](source/audited-baseline.tex#L10813), [L10831](source/audited-baseline.tex#L10831), [L10859](source/audited-baseline.tex#L10859).
 
 **Source:** [stacks-finite-limits](SOURCES.md#stacks-finite-limits), [milne-cft](SOURCES.md#milne-cft). Stacks Tags 086J and 08ZY, exact HTML snapshots of 2026-11-05; Milne CFT v4.03, V Theorem 2.2 p.155, VIII Corollary 7.3 p.258; direct common-alphabet and finite-stage arguments in closure-batch-006 and closure-batch-007.
 
@@ -2176,7 +2178,7 @@ Bounded application and listed translations only. Referenced internal premises a
 <a id="a077"></a>
 ## A077: AFP alpha/exponentiation source
 
-Manuscript: [L5855](../../diophantine_zq.tex#L5855), [L5788](../../diophantine_zq.tex#L5788), [L5974](../../diophantine_zq.tex#L5974).
+Manuscript: [L5855](source/audited-baseline.tex#L5855), [L5788](source/audited-baseline.tex#L5788), [L5974](source/audited-baseline.tex#L5974).
 
 **Source:** [afp](SOURCES.md#afp). AFP development git mirror b4f3b892d0ae25cea27412ba4007cdb63e44b0eb; Exp_Matrices.alpha_equations and alpha_equivalence; Alpha_Sequence.alpha_dioph; Exponential_Relation.exp_repr and exp_dioph.
 
@@ -2201,7 +2203,7 @@ The registered source applications and their explicit translations. Listed inter
 <a id="a078"></a>
 ## A078: Tame covers and integral branch persistence
 
-Manuscript: [L461](../../diophantine_zq.tex#L461), [L530](../../diophantine_zq.tex#L530).
+Manuscript: [L461](source/audited-baseline.tex#L461), [L530](source/audited-baseline.tex#L530).
 
 **Source:** [stacks-0E97](SOURCES.md#stacks-0E97), [stacks-07S7](SOURCES.md#stacks-07S7), [stacks-0EYG](SOURCES.md#stacks-0EYG). Stacks tags 0E97 (stable-model uniqueness), 07S7 (free finite quotient), 0EYG (tame Kummer local form); explicit invariant-parameter and normalization arguments in REPORT.md..
 
@@ -2226,7 +2228,7 @@ The registered source applications and their explicit translations. Listed inter
 <a id="a079"></a>
 ## A079: Abelian varieties from analytic QM data
 
-Manuscript: [L564](../../diophantine_zq.tex#L564), [L569](../../diophantine_zq.tex#L569), [L576](../../diophantine_zq.tex#L576).
+Manuscript: [L564](source/audited-baseline.tex#L564), [L569](source/audited-baseline.tex#L569), [L576](source/audited-baseline.tex#L576).
 
 **Source:** [milne-av](SOURCES.md#milne-av). Milne Abelian Varieties v2.00, Part I Theorems 2.8–2.9, printed p.14 / PDF p.20. Part I Theorem 12.1(a) remains relevant to another consumer, not this application..
 
@@ -2251,7 +2253,7 @@ The registered source applications and their explicit translations. Listed inter
 <a id="a080"></a>
 ## A080: Cohomology functoriality and finite descent
 
-Manuscript: [L3004](../../diophantine_zq.tex#L3004), [L3219](../../diophantine_zq.tex#L3219), [L3337](../../diophantine_zq.tex#L3337), [L6953](../../diophantine_zq.tex#L6953), [L7074](../../diophantine_zq.tex#L7074), [L2967](../../diophantine_zq.tex#L2967), [L3031](../../diophantine_zq.tex#L3031), [L3200](../../diophantine_zq.tex#L3200), [L3370](../../diophantine_zq.tex#L3370), [L6952](../../diophantine_zq.tex#L6952), [L7034](../../diophantine_zq.tex#L7034).
+Manuscript: [L3004](source/audited-baseline.tex#L3004), [L3219](source/audited-baseline.tex#L3219), [L3337](source/audited-baseline.tex#L3337), [L6953](source/audited-baseline.tex#L6953), [L7074](source/audited-baseline.tex#L7074), [L2967](source/audited-baseline.tex#L2967), [L3031](source/audited-baseline.tex#L3031), [L3200](source/audited-baseline.tex#L3200), [L3370](source/audited-baseline.tex#L3370), [L6952](source/audited-baseline.tex#L6952), [L7034](source/audited-baseline.tex#L7034).
 
 **Source:** [milne](SOURCES.md#milne), [nekovar](SOURCES.md#nekovar), [stackscohom](SOURCES.md#stackscohom). Nekovar 4.1.3-4.1.4 p.96, 8.1.1-8.1.7 pp.189-200, 8.6.2-8.6.4 pp.222-226; Stacks 03Q9 and 03QA.
 
@@ -2278,7 +2280,7 @@ The registered source applications and their explicit translations. Listed inter
 <a id="a081"></a>
 ## A081: Local torsion and nonzero clearing factor
 
-Manuscript: [L7331](../../diophantine_zq.tex#L7331), [L7349](../../diophantine_zq.tex#L7349).
+Manuscript: [L7331](source/audited-baseline.tex#L7331), [L7349](source/audited-baseline.tex#L7349).
 
 **Source:** [nekovar](SOURCES.md#nekovar), [kato](SOURCES.md#kato), [milne](SOURCES.md#milne), [silverman](SOURCES.md#silverman). Nekovar 2006, Proposition 8.4.8.1(ii), Corollary 8.4.8.2, Proposition 8.4.8.3, pp.214-216, and Lemma 8.11.3 p.256; Kato 2004 (12.2.3) p.220; Milne ADT I Corollary 2.3 p.28; Silverman IV Theorem 6.4(b), Remark 6.5 p.132; closure-batch-004.
 
@@ -2305,7 +2307,7 @@ Bounded application and listed translations only. Referenced internal premises a
 <a id="a082"></a>
 ## A082: Forward analytic rank zero
 
-Manuscript: [L1086](../../diophantine_zq.tex#L1086), [L1086](../../diophantine_zq.tex#L1086), [L1086](../../diophantine_zq.tex#L1086), [L2385](../../diophantine_zq.tex#L2385), [L2614](../../diophantine_zq.tex#L2614), [L4050](../../diophantine_zq.tex#L4050), [L5264](../../diophantine_zq.tex#L5264), [L7624](../../diophantine_zq.tex#L7624), [L7778](../../diophantine_zq.tex#L7778), [L8265](../../diophantine_zq.tex#L8265), [L10138](../../diophantine_zq.tex#L10138), [L10277](../../diophantine_zq.tex#L10277).
+Manuscript: [L1086](source/audited-baseline.tex#L1086), [L1086](source/audited-baseline.tex#L1086), [L1086](source/audited-baseline.tex#L1086), [L2385](source/audited-baseline.tex#L2385), [L2614](source/audited-baseline.tex#L2614), [L4050](source/audited-baseline.tex#L4050), [L5264](source/audited-baseline.tex#L5264), [L7624](source/audited-baseline.tex#L7624), [L7778](source/audited-baseline.tex#L7778), [L8265](source/audited-baseline.tex#L8265), [L10138](source/audited-baseline.tex#L10138), [L10277](source/audited-baseline.tex#L10277).
 
 **Source:** [kolyvagin](SOURCES.md#kolyvagin), [kato](SOURCES.md#kato), [bcdt](SOURCES.md#bcdt). Kolyvagin MPI/90-69, Theorem 1 pp.4-5 and Theorems 2-5; Kato 2004 Corollary 14.3 p.235; BCDT Theorem A.
 

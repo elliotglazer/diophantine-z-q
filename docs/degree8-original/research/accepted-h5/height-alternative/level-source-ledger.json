@@ -1,0 +1,53 @@
+{
+  "schema": "original15671-level-height-inputs-v1",
+  "date": "2026-11-05",
+  "application": "level-transfer.tex LT1-LT7",
+  "scope": "Height transfer from companion modularity and conductor bound; not the full geometric H5 proof",
+  "sources": [
+    {
+      "key": "gr2023",
+      "authors": "Eric Gaudron and Gael Remond",
+      "title": "Nouveaux theoremes d'isogenie",
+      "publication": "Memoires de la Societe Mathematique de France 176 (2023)",
+      "doi": "10.24033/msmf.484",
+      "url": "https://smf.emath.fr/system/files/filepdf/smf_mem_176_0.pdf",
+      "locators": "section 1.5 p7 normalization and Xi definition; Theorem 1.9(1) p8",
+      "sha256": "b1e2e32bec626cf6d27fb7d6d8702b5c707e0c3dc002d979088e62d8cda514a4",
+      "local": "gr2023-published.pdf",
+      "use": "Base field is L'; source is J1(N) over L'; target is A times Z, known L'-isogenous. General Xi-squared bound, no maximal-order improvement. Half-log height variation gives LT3.",
+      "reuse": "Publisher PDF is local audit evidence; no permission to redistribute assumed."
+    },
+    {
+      "key": "javanpeykar",
+      "author": "Ariyan Javanpeykar",
+      "title": "Polynomial bounds for Arakelov invariants of Belyi curves",
+      "publication": "Algebra & Number Theory 8 (2014), 89-140",
+      "doi": "10.2140/ant.2014.8.89",
+      "url": "https://msp.org/ant/2014/8-1/p03.xhtml",
+      "locators": "Theorem 1.1.1 p90; section 2.3 stable Jacobian height convention",
+      "sha256": "ec890fb41c58dee038ee2e06b530954f3aab85035238cd54a4c0ef081fcb8ea0",
+      "local": "../../theorem-application-audit-20261105/primary/javanpeykar.pdf",
+      "use": "X1(N) smooth projective geometrically connected, genus at least2 because A maps nontrivially to its Jacobian. Genus and standard Belyi degree at most N squared imply hF(J)<=13000000 N^12."
+    },
+    {
+      "key": "vonKaenel2021",
+      "author": "Rafael von Kanel",
+      "title": "The effective Shafarevich conjecture for abelian varieties of GL2-type",
+      "publication": "Forum of Mathematics, Sigma 9 (2021), e39",
+      "doi": "10.1017/fms.2021.29",
+      "locators": "(5.9) p13 modular genus at most N squared over24; (2.2) p5 Bost lower bound in original Faltings metric",
+      "sha256": "5749ce3a371c571655b44174e2a0d65c2e53dc179f518f0e52d585ff73da46f9",
+      "local": "../height-literature/vk21-published.pdf",
+      "use": "Only the modular genus and Bost estimates are needed here. The dimension-dependent Theorem A is not used in the level-based repair."
+    }
+  ],
+  "external_interfaces": [
+    "Non-CM absolute simplicity, original field degree <=576 and compatible conjugate isogenies from geometric construction",
+    "Sign splitting with order m<=2R and kernel field degree <=2304R",
+    "Modularity and a common Tate constituent over L'",
+    "Conductor bound N<=210^4000 R^2, implied by companion sharper bound 210^300 R^2",
+    "Faltings Hom theorem and half-log isogeny-height variation; Poincare reducibility"
+  ],
+  "conclusion": "hF(A)<2^24*210^48000*R^24<4608^165888*R^24",
+  "unpublished_assumptions": []
+}

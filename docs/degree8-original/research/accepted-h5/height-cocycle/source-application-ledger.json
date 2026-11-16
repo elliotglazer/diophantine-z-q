@@ -1,0 +1,67 @@
+{
+  "schema": "D210-scalar-cocycle-audit/v1",
+  "status": "independently_reviewed_at_stated_scalar_splitting_scope",
+  "proof": "normalizer-and-local-obstruction.tex",
+  "conclusion": "For the accepted D210 family and tame branch model, scalar splitting coefficient fields have no uniform degree bound; some non-CM rational fibers require degree at least8192, exceeding4608.",
+  "scope": "Only the proposed scalar-coefficient-field descent strategy; not a disproof of H5, not a lower bound for every possible auxiliary-variety construction, and not an objection to baseline H6's M-dependent coefficient fields.",
+  "sources": [
+    {
+      "id": "Voight2021",
+      "author": "John Voight",
+      "title": "Quaternion Algebras",
+      "publication": "Graduate Texts in Mathematics 288, Springer, 2021",
+      "chapter": "43, QM abelian surfaces, pp799-830",
+      "doi": "10.1007/978-3-030-56694-4_43",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-030-56694-4_43",
+      "locators": ["Equation43.1.2: A_tau=C^2/O(tau,1), with left O action", "Equation43.1.3: Atkin-Lehner normalizer quotient", "Main Theorem43.6.14: QM moduli uniformization"],
+      "verification": "Read the published Springer chapter HTML, not an unpublished update of the book.",
+      "application": "The scalar normalizer map and its lattice index are proved directly in the audit. The map commutes with all O endomorphisms."
+    },
+    {
+      "id": "GonzalezRotger2006",
+      "authors": "Josep Gonzalez and Victor Rotger",
+      "title": "Non-elliptic Shimura curves of genus one",
+      "publication": "J. Math. Soc. Japan58(4)(2006),927-948",
+      "doi": "10.2969/jmsj/1179759530",
+      "url": "https://www.jstage.jst.go.jp/article/jmath/58/4/58_4_927/_pdf",
+      "local_pdf": "../height-geometry/primary/gonzalez-rotger-2006.pdf",
+      "sha256": "e595d1a428f20e1c6b3695bc37be658ca12c517fb6600171f531fe931b796c3a",
+      "locators": ["Theorem5.8(1), pp943-944: H_R=K Q(P)", "Proposition5.6: finiteness of CM points of fixed order"],
+      "application": "A point above a rational parameter has degree at most16, so its order class number is at most16."
+    },
+    {
+      "id": "Heilbronn1934",
+      "author": "Hans Heilbronn",
+      "title": "On the class-number in imaginary quadratic fields",
+      "publication": "Quarterly Journal of Mathematics, Oxford Series5(1)(1934),150-160",
+      "doi": "10.1093/qmath/os-5.1.150",
+      "url": "https://academic.oup.com/qjmath/article-abstract/os-5/1/150/1576262",
+      "application": "The imaginary quadratic field class number tends to infinity with discriminant. Combined with the elementary order class-number formula, only finitely many orders have class number at most16.",
+      "verification": "Publisher metadata verified. The classical class-number growth theorem is used by name; no effective discriminant bound or computation is claimed."
+    }
+  ],
+  "classical_inputs": [
+    "Rational isogeny degree and determinant of multiplication by a quaternion",
+    "Semilinear matrix-algebra descent and its Brauer cocycle",
+    "Odd-prime Hilbert-symbol formula",
+    "Tame local Galois group relation F tau F^-1=tau^p (equivalently local class field theory)",
+    "Chinese remainder theorem and Dirichlet's theorem for a reduced residue class",
+    "Order class-number formula for imaginary quadratic orders"
+  ],
+  "family_inputs": [
+    "The accepted normalizer description of the level-three cover and all-compatible-homomorphism field",
+    "The published quotient-identification repair and derived inertia label w105 at s=0",
+    "The tame integral branch model away from a fixed finite bad set"
+  ],
+  "proof_steps": [
+    "j(b,z) I_2 maps A_bz to A_z, commutes with O, and has degree Nrd(b)^2",
+    "In the non-CM case the compatible Hom space is one-dimensional over Q, so degree squareclass is intrinsic",
+    "The square-root degree character is w_m -> m and is trivial on level changes",
+    "The natural-action Brauer image of c is the fixed quaternion algebra, whereas the sign class is B plus the positive degree-character cups",
+    "At valuation-one contact with branch0, the sign class is nonzero at p exactly when105 is nonsquare modulo p",
+    "For any scalar splitting beta, epsilon=beta^2/d is a finite character whose values lie in the coefficient field",
+    "Nonzero local square-root obstruction forces epsilon to contain a root of unity of order2^v2(p-1)",
+    "CRT and Dirichlet provide arbitrarily large v2(p-1) with105 nonsquare; finitely many rational CM parameters can be avoided"
+  ],
+  "computations": "No heavy computation or explicit search for primes or CM points was performed."
+}

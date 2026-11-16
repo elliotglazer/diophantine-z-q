@@ -1,0 +1,604 @@
+{
+  "format": "quartic-12504-dependency-closure/v1",
+  "root": "thm:quartic",
+  "edges": [
+    {
+      "from": "thm:quartic",
+      "to": "thm:quartic-source-arithmetic",
+      "kind": "arithmetic"
+    },
+    {
+      "from": "thm:quartic",
+      "to": "certificate_binding",
+      "kind": "finite"
+    },
+    {
+      "from": "acyclic_circuit_equivalence",
+      "to": "constant_definition_equivalence",
+      "kind": "local"
+    },
+    {
+      "from": "scalar_norm_inverse_equivalence",
+      "to": "constant_definition_equivalence",
+      "kind": "local"
+    },
+    {
+      "from": "private_contact_inverse_removal",
+      "to": "root_error_and_contact_nonvanishing",
+      "kind": "local"
+    },
+    {
+      "from": "point_chart_equivalence",
+      "to": "quadratic_field_and_rational_inverse",
+      "kind": "local"
+    },
+    {
+      "from": "ordinate_elimination_equivalence",
+      "to": "constant_definition_equivalence",
+      "kind": "local"
+    },
+    {
+      "from": "parity_block_existential_equivalence",
+      "to": "constant_definition_equivalence",
+      "kind": "local"
+    },
+    {
+      "from": "bottom_norm_absorption_equivalence",
+      "to": "root_error_and_contact_nonvanishing",
+      "kind": "local"
+    },
+    {
+      "from": "bottom_norm_absorption_equivalence",
+      "to": "constant_definition_equivalence",
+      "kind": "local"
+    },
+    {
+      "from": "reciprocal_curve_and_logarithm_identity",
+      "to": "quadratic_field_and_rational_inverse",
+      "kind": "local"
+    },
+    {
+      "from": "reciprocal_logarithm_tail",
+      "to": "reciprocal_curve_and_logarithm_identity",
+      "kind": "local"
+    },
+    {
+      "from": "reciprocal_global_nonvanishing",
+      "to": "quadratic_field_and_rational_inverse",
+      "kind": "local"
+    },
+    {
+      "from": "compressed_primary_equivalence",
+      "to": "reciprocal_global_nonvanishing",
+      "kind": "local"
+    },
+    {
+      "from": "compressed_primary_equivalence",
+      "to": "quadratic_field_and_rational_inverse",
+      "kind": "local"
+    },
+    {
+      "from": "reciprocal_circuit_evaluation",
+      "to": "acyclic_circuit_equivalence",
+      "kind": "local"
+    },
+    {
+      "from": "reciprocal_circuit_evaluation",
+      "to": "reciprocal_curve_and_logarithm_identity",
+      "kind": "local"
+    },
+    {
+      "from": "mixed_precision_proxy_congruences",
+      "to": "reciprocal_logarithm_tail",
+      "kind": "local"
+    },
+    {
+      "from": "mixed_precision_proxy_congruences",
+      "to": "compressed_primary_equivalence",
+      "kind": "local"
+    },
+    {
+      "from": "reciprocal_source_integer_projection",
+      "to": "mixed_precision_proxy_congruences",
+      "kind": "local"
+    },
+    {
+      "from": "reciprocal_source_integer_projection",
+      "to": "reciprocal_global_nonvanishing",
+      "kind": "local"
+    },
+    {
+      "from": "reciprocal_source_integer_projection",
+      "to": "compressed_primary_equivalence",
+      "kind": "local"
+    },
+    {
+      "from": "reciprocal_source_integer_projection",
+      "to": "reciprocal_circuit_evaluation",
+      "kind": "local"
+    },
+    {
+      "from": "reciprocal_curve_and_logarithm_identity",
+      "to": "formal_group",
+      "kind": "inherited"
+    },
+    {
+      "from": "reciprocal_logarithm_tail",
+      "to": "formal_group",
+      "kind": "inherited"
+    },
+    {
+      "from": "mixed_precision_proxy_congruences",
+      "to": "common_auxiliary",
+      "kind": "inherited"
+    },
+    {
+      "from": "mixed_precision_proxy_congruences",
+      "to": "norm_tests",
+      "kind": "inherited"
+    },
+    {
+      "from": "mixed_precision_proxy_congruences",
+      "to": "root_approximation",
+      "kind": "inherited"
+    },
+    {
+      "from": "mixed_precision_proxy_congruences",
+      "to": "prime_pattern",
+      "kind": "inherited"
+    },
+    {
+      "from": "reciprocal_source_integer_projection",
+      "to": "five_contact_height",
+      "kind": "inherited"
+    },
+    {
+      "from": "reciprocal_source_integer_projection",
+      "to": "generator_index_height",
+      "kind": "inherited"
+    },
+    {
+      "from": "reciprocal_source_integer_projection",
+      "to": "anchor",
+      "kind": "inherited"
+    },
+    {
+      "from": "reciprocal_source_integer_projection",
+      "to": "scalar_height",
+      "kind": "inherited"
+    },
+    {
+      "from": "reciprocal_source_integer_projection",
+      "to": "lucas_growth",
+      "kind": "inherited"
+    },
+    {
+      "from": "reciprocal_source_integer_projection",
+      "to": "prime_pattern",
+      "kind": "inherited"
+    },
+    {
+      "from": "reciprocal_source_integer_projection",
+      "to": "pole_parity",
+      "kind": "inherited"
+    },
+    {
+      "from": "reciprocal_source_integer_projection",
+      "to": "norm_tests",
+      "kind": "inherited"
+    },
+    {
+      "from": "reciprocal_source_integer_projection",
+      "to": "common_auxiliary",
+      "kind": "inherited"
+    },
+    {
+      "from": "reciprocal_source_integer_projection",
+      "to": "root_approximation",
+      "kind": "inherited"
+    },
+    {
+      "from": "scalar_height",
+      "to": "five_contact_height",
+      "kind": "inherited"
+    },
+    {
+      "from": "scalar_height",
+      "to": "formal_group",
+      "kind": "inherited"
+    },
+    {
+      "from": "scalar_height",
+      "to": "norm_tests",
+      "kind": "inherited"
+    },
+    {
+      "from": "scalar_height",
+      "to": "pole_parity",
+      "kind": "inherited"
+    },
+    {
+      "from": "thm:quartic-source-arithmetic",
+      "to": "reciprocal_source_integer_projection",
+      "kind": "local"
+    },
+    {
+      "from": "thm:quartic",
+      "to": "quadratic_field_and_rational_inverse",
+      "kind": "local"
+    },
+    {
+      "from": "thm:quartic",
+      "to": "constant_definition_equivalence",
+      "kind": "local"
+    },
+    {
+      "from": "thm:quartic",
+      "to": "invertible_row_equivalence",
+      "kind": "local"
+    },
+    {
+      "from": "thm:quartic",
+      "to": "acyclic_circuit_equivalence",
+      "kind": "local"
+    },
+    {
+      "from": "thm:quartic",
+      "to": "scalar_norm_inverse_equivalence",
+      "kind": "local"
+    },
+    {
+      "from": "thm:quartic",
+      "to": "root_error_and_contact_nonvanishing",
+      "kind": "local"
+    },
+    {
+      "from": "thm:quartic",
+      "to": "private_contact_inverse_removal",
+      "kind": "local"
+    },
+    {
+      "from": "thm:quartic",
+      "to": "point_chart_equivalence",
+      "kind": "local"
+    },
+    {
+      "from": "thm:quartic",
+      "to": "ordinate_elimination_equivalence",
+      "kind": "local"
+    },
+    {
+      "from": "thm:quartic",
+      "to": "parity_block_existential_equivalence",
+      "kind": "local"
+    },
+    {
+      "from": "thm:quartic",
+      "to": "bottom_norm_absorption_equivalence",
+      "kind": "local"
+    },
+    {
+      "from": "thm:quartic",
+      "to": "normalization_and_sum_of_squares",
+      "kind": "local"
+    },
+    {
+      "from": "thm:quartic",
+      "to": "rational_coordinate_shear",
+      "kind": "local"
+    }
+  ],
+  "local_lemmas": [
+    "quadratic_field_and_rational_inverse",
+    "constant_definition_equivalence",
+    "invertible_row_equivalence",
+    "acyclic_circuit_equivalence",
+    "scalar_norm_inverse_equivalence",
+    "root_error_and_contact_nonvanishing",
+    "private_contact_inverse_removal",
+    "point_chart_equivalence",
+    "ordinate_elimination_equivalence",
+    "parity_block_existential_equivalence",
+    "bottom_norm_absorption_equivalence",
+    "normalization_and_sum_of_squares",
+    "reciprocal_curve_and_logarithm_identity",
+    "reciprocal_logarithm_tail",
+    "reciprocal_global_nonvanishing",
+    "compressed_primary_equivalence",
+    "reciprocal_circuit_evaluation",
+    "mixed_precision_proxy_congruences",
+    "reciprocal_source_integer_projection",
+    "rational_coordinate_shear"
+  ],
+  "inherited_families": [
+    {
+      "id": "five_contact_height",
+      "labels": [
+        "hyp:o8-height",
+        "eq:original-cm-bound"
+      ],
+      "statement": "For rational a outside {0,1,2401,-343/32}, h(a)<=H_*M5(a)^24, with primes<=76176 exceptional and log2 H_*<4783227.",
+      "maps": "The same rational height targets, same normalization of odd projective contacts and original stable Faltings heights as the accepted proof; no new coefficient field or exponent.",
+      "documents": [
+        "degree8-original/arithmetic/current-proof.json",
+        "degree8-original/arithmetic/H5_FINAL_ACCEPTANCE.md",
+        "degree8-original/arithmetic/SMALLER_ONLY_ACCEPTANCE.md",
+        "docs/degree8-original/research/accepted-h5/height-geometry/source-application-ledger.json",
+        "docs/degree8-original/research/accepted-h5/yuan-published/source-application-ledger.json",
+        "docs/degree8-original/research/accepted-h5/height-cocycle/source-application-ledger.json",
+        "docs/degree8-original/research/accepted-h5/height-level-repair/source-application-ledger.json",
+        "docs/degree8-original/research/accepted-h5/height-alternative/conductor-source-ledger.json",
+        "docs/degree8-original/research/accepted-h5/height-alternative/level-source-ledger.json",
+        "docs/degree8-original/research/accepted-h5/height-cm/source-application-ledger.json",
+        "docs/degree8-original/research/accepted-h5/pan-published/source-application-ledger.json"
+      ],
+      "qualifications": "Current assembled proof governs. Historical level-source ledger pads C to210^4000; current accepted proof uses210^300. Pan AMS text was unavailable: retained published Calegari formulation plus specified author Pan proof. Yuan uses author-attested English translation of published Chinese paper, not an independently checked Chinese-typesetting comparison."
+    },
+    {
+      "id": "generator_index_height",
+      "labels": [
+        "prop:generator",
+        "eq:o8-indexheight"
+      ],
+      "statement": "The fixed curve K=Q(sqrt2),d=3-sqrt2,D=d² has2E(K)=ZP_* and h(x(nP_*))>=n²-6.",
+      "maps": "Same curve isomorphism, fixed point, nonzero indexed chart points and absolute logarithmic height. No new rank assertion.",
+      "documents": [
+        "docs/theorem-application-audit/applications.json",
+        "docs/theorem-application-audit/sources.json",
+        "docs/theorem-application-audit/computations/generator-arithmetic.json"
+      ],
+      "baseline_applications": [
+        "A058",
+        "A059",
+        "A060"
+      ],
+      "qualifications": "Inherits exact reviewed generator/descent and height calculations; source rewrite does not re-prove them."
+    },
+    {
+      "id": "formal_group",
+      "labels": [
+        "subsec:o8-common-J-proof"
+      ],
+      "statement": "Formal logarithm is normalized by z=-x/y, is a homomorphism and isometry on the stated formal subgroup.",
+      "maps": "At selected split good primes p>76176, v_p(p)=1 and D is a unit. Parameter f=1/x has valuation2v_p(z).",
+      "documents": [
+        "degree8-original/arithmetic/anchor/source-application-ledger.json",
+        "docs/theorem-application-audit/applications.json",
+        "docs/theorem-application-audit/sources.json"
+      ],
+      "baseline_applications": [
+        "A071"
+      ],
+      "qualifications": "Silverman2009 formal-group construction retained. The new reciprocal-coordinate series identity and tail proof are explicit local lemmas, not new external results."
+    },
+    {
+      "id": "anchor",
+      "labels": [
+        "subsec:o8-anchor-proof",
+        "subsec:o8-anchor-cutoff",
+        "eq:o8-anchor-bound"
+      ],
+      "statement": "The24-squaring anchor has nonzero indices in2*3^(2^23-1)Z and gives |s|>(20H_*)².",
+      "maps": "Literal seven-witness semilocal predicate for Z_(2) intersection Z_(3), curve local computations at2 and3, determinant-one coordinate change.",
+      "documents": [
+        "degree8-original/arithmetic/anchor/source-application-ledger.json",
+        "degree8-original/arithmetic/anchor/reference-anchor-check.json"
+      ],
+      "qualifications": "Koenigsmann2016 Definition4, Observation5, Proposition6 and Silverman2009 locators remain exactly as ledger. Not an altered chain or a new height cutoff."
+    },
+    {
+      "id": "prime_pattern",
+      "labels": [
+        "subsec:o8-pattern-proof",
+        "eq:o8-contacts"
+      ],
+      "statement": "The original41 raw contact positions admit the ordinary-prime pattern for the same integral targets obtained using one clearing denominator e.",
+      "maps": "Nine targets, including e and the eight coefficients of e*x(Q). Fixed W,c,V0; fixed coefficients/cutoff before growing box; same-prime reduction order gcd4.",
+      "documents": [
+        "degree8-original/arithmetic/sieve/source-ledger.json",
+        "degree8-original/arithmetic/sieve/applications.json",
+        "degree8-original/arithmetic/sieve/audit.md"
+      ],
+      "qualifications": "Retain published GT/MN/GI statements and the explicitly inherited corrected-author/erratum proof-version convention in the ledger. No37-contact or arbitrary-rational-target extension."
+    },
+    {
+      "id": "pole_parity",
+      "labels": [
+        "hyp:RC",
+        "hyp:o8-pole",
+        "lem:original-seven-parity-completeness"
+      ],
+      "statement": "The literal seven-witness pole predicate excludes negative odd valuations outside{2,3,17}; its stated completeness applies to positive arguments with square reduced denominator and local square classes.",
+      "maps": "The same rational parameter, original restricted-converse dependency and scalar sign correction are retained.",
+      "documents": [
+        "degree8-original/arithmetic/parity/AUDIT.md",
+        "degree8-original/arithmetic/parity/reference-parity-checks.json",
+        "docs/theorem-application-audit/DEPENDENCIES.md",
+        "docs/theorem-application-audit/applications.json"
+      ],
+      "qualifications": "Do not identify the arithmetic parity theorem with the later algebraic twelve-witness quadratic presentation. The restricted-converse dependency retains its existing manuscript proof status."
+    },
+    {
+      "id": "norm_tests",
+      "labels": [],
+      "statement": "Binary norm descent with constant all-left leaf and the pole condition implies each rational leaf has its assigned positive integer valuation order.",
+      "maps": "N_r(a,b)=a²+rb²; exact current grouping by order1,16,64; all-left constant retained. Negative odd raw valuation excluded before positive-R descent.",
+      "documents": [
+        "degree8-original/source/module-specification.md"
+      ],
+      "manuscript_region": "The exact norm tests, in sec:degree8-original",
+      "qualifications": "Elementary proof is uniform in positive orders, so mixed16/64 does not require a new arithmetic input."
+    },
+    {
+      "id": "common_auxiliary",
+      "labels": [
+        "subsec:o8-common-J-proof"
+      ],
+      "statement": "One common comparison point J and the private shifts yield the stated index congruences and admit compatible CRT choices.",
+      "maps": "Same orientations, j and h_p≡4 mod p^(64+v_p(j)); exclude h_p=0,4,-4. Private difference-point z and J are retained.",
+      "documents": [
+        "degree8-original/source/module-specification.md",
+        "degree8-original/arithmetic/sieve/applications.json"
+      ],
+      "qualifications": "New source only changes primary finite logarithm evaluations and beta orders."
+    },
+    {
+      "id": "root_approximation",
+      "labels": [
+        "subsec:o8-root-proof"
+      ],
+      "statement": "One rational integer theta transfers finitely many field tests to the coefficientwise rational tests at the specified individual orders.",
+      "maps": "Theta selected last with coefficient-valuation dependent precision and same selected roots; no fixed blanket precision claim.",
+      "documents": [
+        "degree8-original/source/module-specification.md"
+      ],
+      "qualifications": "Root-error test stays order1; both rational tests for each field expression inherit its exact order."
+    },
+    {
+      "id": "scalar_height",
+      "labels": [
+        "eq:o8-scalarheight"
+      ],
+      "statement": "The unchanged scalar batch forces M5(beta)^48|s and h(beta)<=H_*sqrt(|s|).",
+      "maps": "beta=X²+2, same five-factor scalar polynomial, same six coefficients and orders[1,1,1,1,48,48], same sign/small-prime square-class factor.",
+      "documents": [
+        "degree8-original/source/module-specification.md"
+      ],
+      "depends_on": [
+        "five_contact_height",
+        "formal_group",
+        "norm_tests",
+        "pole_parity"
+      ],
+      "qualifications": "No reciprocal-log evaluation is used by the scalar batch and no order32 change is present."
+    },
+    {
+      "id": "lucas_growth",
+      "labels": [
+        "lem:o8-lucas"
+      ],
+      "statement": "The retained integer Lucas relation with |s|>=7,z!=0 gives log B>|s|-3; constructive solutions exist for admissible s.",
+      "maps": "Same signs, same indices and same quartic defect Delta; beta does not occur in the defect.",
+      "documents": [],
+      "qualifications": "Elementary manuscript lemma, unchanged."
+    }
+  ],
+  "source_application_documents": [
+    {
+      "path": "degree8-original/arithmetic/H5_FINAL_ACCEPTANCE.md",
+      "sha256": "db62a7fa5fbcd2d4bc711436f2fb4f98c37de9122751ea7aeb097d96680905eb",
+      "bytes": 5906
+    },
+    {
+      "path": "degree8-original/arithmetic/SMALLER_ONLY_ACCEPTANCE.md",
+      "sha256": "3de379463fb4a32702f5098fd08dfa3d62a5a116641803c0411c48d212026b27",
+      "bytes": 3740
+    },
+    {
+      "path": "degree8-original/arithmetic/anchor/reference-anchor-check.json",
+      "sha256": "60c236722fb2f53f95829c48e007c31828c60c8e7c8e21332e4d1b74ab1623b3",
+      "bytes": 2970
+    },
+    {
+      "path": "degree8-original/arithmetic/anchor/source-application-ledger.json",
+      "sha256": "2f81ceea6b525913b1790c2695da9fb3cc3c9c8b63bfbe7e16bc26d0a227e5ef",
+      "bytes": 5111
+    },
+    {
+      "path": "degree8-original/arithmetic/current-proof.json",
+      "sha256": "af4570f0f20c0e1895b3567f2c18a13d0cc40d939ac051047a757a3c145d753e",
+      "bytes": 3151
+    },
+    {
+      "path": "degree8-original/arithmetic/parity/AUDIT.md",
+      "sha256": "be1b8d92771b59005a63acdd527b67a8cdd55b1f31e105733f70ab444d462aa7",
+      "bytes": 8709
+    },
+    {
+      "path": "degree8-original/arithmetic/parity/reference-parity-checks.json",
+      "sha256": "a810dbeacccabb6fddec943b403a1a1767e2ed335c1657ab377a6777fe4cc5d4",
+      "bytes": 2544
+    },
+    {
+      "path": "degree8-original/arithmetic/sieve/applications.json",
+      "sha256": "28b8f85d33be96b7148de22214dbe7fd39d221a99ab56c75534ad47edc18b062",
+      "bytes": 4736
+    },
+    {
+      "path": "degree8-original/arithmetic/sieve/audit.md",
+      "sha256": "2e03f01cbe555c2d6f4edcafd5b08c6f2b16b8e3f2e4ce0a55dfbcabbc015c7e",
+      "bytes": 10076
+    },
+    {
+      "path": "degree8-original/arithmetic/sieve/source-ledger.json",
+      "sha256": "e98599849e678182edac7c825a58ec9d86604198fbdd277e64faa128eae2b125",
+      "bytes": 6692
+    },
+    {
+      "path": "degree8-original/source/module-specification.md",
+      "sha256": "8d48b84bb189f04d6d8970a53b272df1df7d8fb575dd8059f35ba93c504f566b",
+      "bytes": 7851
+    },
+    {
+      "path": "docs/degree8-original/research/accepted-h5/height-alternative/conductor-source-ledger.json",
+      "sha256": "d4f8201815c62b06aa17f1079d8512b8f93d4bf004c0072cec2f7d0bf2206627",
+      "bytes": 2960
+    },
+    {
+      "path": "docs/degree8-original/research/accepted-h5/height-alternative/level-source-ledger.json",
+      "sha256": "a688ffadbdea896a60fefa89001e26b23ce5cf454350dcc121847ec7824da58f",
+      "bytes": 3084
+    },
+    {
+      "path": "docs/degree8-original/research/accepted-h5/height-cm/source-application-ledger.json",
+      "sha256": "2e5d985886fa467b60fbed0dc780bedd59717f062c151fd6eb7cdc0dbe6ef68b",
+      "bytes": 4681
+    },
+    {
+      "path": "docs/degree8-original/research/accepted-h5/height-cocycle/source-application-ledger.json",
+      "sha256": "593bb0857eb8801fa6c7da320f05e3e6085fe507983a42c0eecab513a4ca3e44",
+      "bytes": 4672
+    },
+    {
+      "path": "docs/degree8-original/research/accepted-h5/height-geometry/source-application-ledger.json",
+      "sha256": "ccc5a1f092021e34fe833982221530e2bea41703384e87701956b2e4728f4cee",
+      "bytes": 2930
+    },
+    {
+      "path": "docs/degree8-original/research/accepted-h5/height-level-repair/source-application-ledger.json",
+      "sha256": "d7f365bc056fc49a31ca07a6cb1a33fa1a27141616076b632539e9c4ad7cac2c",
+      "bytes": 34453
+    },
+    {
+      "path": "docs/degree8-original/research/accepted-h5/pan-published/source-application-ledger.json",
+      "sha256": "8a6cb4f7a188aa48d3a56f17d2ee0ad488df516d494da784109d9408ec6dd3ea",
+      "bytes": 3502
+    },
+    {
+      "path": "docs/degree8-original/research/accepted-h5/yuan-published/source-application-ledger.json",
+      "sha256": "1251c3510cf14b184897d37a1236f7abc4a752e913e3ea00afd2db6b1236a2d3",
+      "bytes": 3693
+    },
+    {
+      "path": "docs/theorem-application-audit/DEPENDENCIES.md",
+      "sha256": "55c7350cfc1002457519dff926a0b388c179936802118b9b39aa2317ba400f90",
+      "bytes": 4011
+    },
+    {
+      "path": "docs/theorem-application-audit/applications.json",
+      "sha256": "1d53028414eefe1eeed85db566aae47b2b00d4206f3eaffeec8625f0e3c089bb",
+      "bytes": 604109
+    },
+    {
+      "path": "docs/theorem-application-audit/computations/generator-arithmetic.json",
+      "sha256": "b3d54ec0ffc02f51f20636a22a4bd31a6caa41a96680a65edea3291c928d888f",
+      "bytes": 4083
+    },
+    {
+      "path": "docs/theorem-application-audit/sources.json",
+      "sha256": "6e8732d40657374f58e148cfdbf830b72426eafbc92fd3bd969e4e8a3f9802cf",
+      "bytes": 67747
+    }
+  ],
+  "scope": "Closed at explicit inherited manuscript theorems and their pinned source-application ledgers. Those retained results preserve their existing proof/review qualifications; this is not a new independent proof of them."
+}

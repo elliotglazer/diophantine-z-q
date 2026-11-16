@@ -1,0 +1,38 @@
+[
+  {
+    "file": "fogels1963.pdf",
+    "url": "https://www.impan.pl/shop/en/publication/transaction/download/product/95181",
+    "sha256": "16ad86d54689add23af0c0c54150e999c52c01bba851c97881a9a285dd8c8570",
+    "bytes": 1219450,
+    "pages": "307–309; two scanned spreads",
+    "status": "published; theorem and zero-free region visually checked",
+    "retrieved": "2026-11-06"
+  },
+  {
+    "file": "mitsui1956.pdf",
+    "url": "https://www.jstage.jst.go.jp/article/jjm1924/26/0/26_0_1/_pdf",
+    "sha256": "b71fbd5ae9443991479a73a4e7bde68165b0c0e90b290cd0bd94fd9da416f963",
+    "bytes": 2823723,
+    "pages": "1–42",
+    "status": "published; pp2,11,12 visually checked",
+    "retrieved": "2026-11-06"
+  },
+  {
+    "file": "coleman-swallow-published.pdf",
+    "url": "https://www.impan.pl/shop/en/publication/transaction/download/product/82013",
+    "sha256": "69b420c8aebc65a81eef69fcb4dc97ac38241bde3e2780f1d0a695c190a48282",
+    "bytes": 310412,
+    "pages": "349–377",
+    "status": "published; p357 corroboration read",
+    "retrieved": "2026-11-06"
+  },
+  {
+    "file": "fogels1962.pdf",
+    "url": "https://matwbn.icm.edu.pl/ksiazki/aa/aa7/aa721.pdf",
+    "sha256": "352d3dac82ddea2d2cdd4736f28ccfc25e0dce369185909ac3b8164b9054e613",
+    "bytes": 4719366,
+    "pages": "87–106; scanned spreads",
+    "status": "published; retrieved but not relied upon or fully audited",
+    "retrieved": "2026-11-06"
+  }
+]

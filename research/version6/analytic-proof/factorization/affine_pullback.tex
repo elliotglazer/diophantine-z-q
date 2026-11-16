@@ -1,0 +1,213 @@
+% Section fragment. Requires the gn-* lemmas from norm_transfer.tex.
+\subsection{Fixed-modulus affine interpolation}
+\label{sec:ga-affine}
+
+Fix integers $W\geq1$ and $0\leq b<W$. The modulus $W$ remains fixed
+as the size parameter tends to infinity. We first justify the affine
+interpolation needed to apply ideal-norm estimates to a $W$-tricked
+sequence.
+
+\begin{lemma}[Linear coefficient extrapolation]\label{lem:ga-linear-coefficients}
+Let $X\geq1$ and let $p:\mathbb Z\to\mathbb R/\mathbb Z$ have degree at most $d$.
+Suppose $P(t)=u+vt$ with $u,v\in\mathbb Z$, $v\ne0$,
+$|u|\leq C X$, $|v|\leq E$, and $L\geq X/E$, where $E\geq2$.
+There is an integer $1\leq k\leq C_dE^{C_d}$ such that
+\[
+ \|kp\|_{C^\infty[X]}
+ \leq C_d(C+E)^{C_d}\|p\circ P\|_{C^\infty[L]}.
+\]
+\end{lemma}
+\begin{proof}
+Expand $\binom{u+vt}j$ in the binomial basis in $t$. All coefficients
+are integers, the diagonal coefficient is $v^j$, and the coefficient in
+row $\ell$ is $O_d((C+E)^jX^{j-\ell})$. Starting in degree $d$, clear
+the nonzero diagonal entries successively. Their product is a nonzero
+integer bounded by $E^{O_d(1)}$. At degree $j$ use
+$X^j/L^j\leq E^j$; a higher-row error is multiplied by
+$O_d((C+E)^hX^{h-j})$, canceling its $X^{-h}$ factor. Multiplication
+to the common product of diagonal entries proves the claim, exactly
+as in Lemma~\ref{lem:gn-quadratic-coefficients}.
+\end{proof}
+
+\begin{lemma}[Affine interpolation preserves quantitative distribution]
+\label{lem:ga-affine-interpolation}
+Fix dimension and degree bounds $m,d$. There are $a,\sigma>0$, depending
+only on $m,d$, and thresholds depending on $W,m,d$, with the following
+property. Suppose a nilmanifold and its rational filtration satisfy the
+Green--Tao conventions, its adapted basis is $Q$-rational, and
+$g\in\operatorname{poly}(\mathbb Z,G_\bullet)$. Suppose also that
+\[
+ N^{-\sigma}\leq\delta\leq\delta_0(W,m,d),\qquad
+ Q\leq\delta^{-a},
+\]
+and that $g$ is totally $\delta$-equidistributed on $[N]$. There is
+$\widetilde g\in\operatorname{poly}(\mathbb Z,G_\bullet)$ satisfying
+\[
+ \widetilde g(Wn+b)=g(n)\quad(n\in\mathbb Z)
+\]
+which is totally $\delta^a$-equidistributed on $[WN+b]$.
+\end{lemma}
+\begin{proof}
+Use the one-parameter coordinate characterization in
+\cite[Lemma 6.7]{GTOrbits2012}. Each second-kind Mal'cev coordinate of
+$g(n)$ is a polynomial, with the prescribed degree bound from the
+filtration. Evaluate those same polynomials at real arguments and apply
+the inverse coordinate map, obtaining $g_{\mathbb R}(t)$. Set
+\[
+ \widetilde g(t)=g_{\mathbb R}((t-b)/W).
+\]
+Affine composition preserves the coordinate degree bounds, so the same
+characterization shows that this is a polynomial sequence for the
+original filtration. It gives the stated identity on integer $n$.
+Equivalently, one may use the Taylor product with real powers; those
+powers exist in a connected simply connected nilpotent group.
+
+Put $X=WN+b$ and $\epsilon=\delta^a$. Suppose the asserted total
+$\epsilon$-equidistribution fails. Then on a progression
+\[
+ u+v[L]\subseteq[X],\qquad L\geq\epsilon X,
+ \quad u,v\in\mathbb Z,\quad
+ 1\leq v\leq2/\epsilon,\quad |u|\leq2X,
+\]
+the sequence is not $\epsilon$-equidistributed. By the one-parameter
+quantitative Leibman theorem \cite[Theorem 2.9]{GTOrbits2012}, there is
+a nontrivial horizontal character $\eta$ satisfying
+\[
+ |\eta|\ll\epsilon^{-C},\qquad
+ \|\eta\circ\widetilde g\circ(u+vt)\|_{C^\infty[L]}
+       \ll\epsilon^{-C}.
+\]
+The rationality hypothesis holds since $Q\leq\epsilon^{-1}$.
+Lemma~\ref{lem:ga-linear-coefficients} gives a positive integer
+$k\ll\epsilon^{-C}$ such that
+\[
+ \|k\eta\circ\widetilde g\|_{C^\infty[X]}
+      \ll\epsilon^{-C}.
+\]
+Forward composition with the fixed integer polynomial $Wn+b$ gives
+\[
+ \|k\eta\circ g\|_{C^\infty[N]}
+      \ll_{W,d}\epsilon^{-C}.
+\]
+For this last bound expand $\binom{Wn+b}j$ in the binomial basis; its
+matrix is integral, and $X$ is comparable to $WN$. The character
+$k\eta$ remains nontrivial.
+
+Let $C_{\mathrm{aff}}$ bound all exponents in these estimates, including
+the character size. Fix explicitly
+\[
+ 0<a<\min\{1,c_0/(2C_{\mathrm{aff}})\},\qquad
+ 0<\sigma<\min\{\sigma_0,1/(2a)\},
+\]
+where $c_0,\sigma_0$ are from
+Lemma~\ref{lem:gn-horizontal-obstruction}. Decrease $\delta_0$ to
+absorb fixed $W$-dependent constants. The resulting character bounds
+contradict that lemma and total $\delta$-equidistribution of $g$.
+The inequality $a\sigma<1/2$ ensures $\epsilon X\gg N^{1/2}$, so all
+progression parametrizations and floor estimates used above hold for
+large $N$. This proves the assertion on the entire interval $[WN+b]$,
+including progressions outside the residue class $b$ modulo $W$.
+\end{proof}
+
+The Gaussian input in the following lemma is furnished by
+Proposition~\ref{gi-minor-arc}; its rational counterpart is
+Corollary~\ref{gi-ordinary-primes}.
+
+\begin{lemma}[$W$-tricked minor-arc interface]\label{lem:ga-wtrick-ma}
+For $E=\mathbb Q(i)$ and a fixed ray character $\chi$, put
+\[
+ T_\chi(t)=\sum_{\mathrm N\mathfrak a=t}
+             \Lambda_E(\mathfrak a)\chi(\mathfrak a).
+\]
+Assume the mean-zero ideal estimate
+\begin{equation}\label{eq:ga-ideal-input}
+ \left|\sum_{\substack{\mathrm N\mathfrak a\leq X\\
+                          \mathrm N\mathfrak a\in R}}
+  \Lambda_E(\mathfrak a)\chi(\mathfrak a)
+             F_0(h(\mathrm N\mathfrak a)\Gamma)\right|
+ \ll Q_1X\log(2X)^7\eta^{c_E}\|F_0\|_{\mathrm{Lip}}
+\end{equation}
+for a positive $c_E$, whenever $h$ is totally $\eta$-equidistributed,
+the basis is $Q_1$-rational, and $R$ is any interval progression of
+modulus at most $Q_1$. Then, under the hypotheses of
+Lemma~\ref{lem:ga-affine-interpolation}, for every Lipschitz $F_0$
+with Haar mean zero and every interval progression
+$P\subseteq[N]$ of modulus $q\leq Q$,
+\begin{equation}\label{eq:ga-wtrick-ideal}
+ \left|\sum_{n\in P}T_\chi(Wn+b)F_0(g(n)\Gamma)\right|
+ \ll_{H_0,W,m,d}QN\log(2N)^7\delta^{ac_E}
+                     \|F_0\|_{\mathrm{Lip}}.
+\end{equation}
+The same implication holds for $E=\mathbb Q$ and the corresponding
+ordinary von Mangoldt estimate.
+\end{lemma}
+\begin{proof}
+Take $X=WN+b$ and the sequence $\widetilde g$ constructed above. The
+conditions $t=Wn+b$ and $n\in P$ specify an interval progression $R$
+of modulus $Wq$. Apply \eqref{eq:ga-ideal-input} with
+$Q_1=\max\{Q,Wq,2\}\ll_WQ$ and $\eta=\delta^a$. The ideal sum
+then equals the left side of \eqref{eq:ga-wtrick-ideal} exactly, while
+$X\ll_WN$ and $\log(2X)\ll_W\log(2N)$. No assertion about
+fractional-argument distribution has been assumed: it was proved in
+Lemma~\ref{lem:ga-affine-interpolation}.
+\end{proof}
+
+\begin{corollary}[Centered ray-prime weights]\label{cor:ga-centered-primes}
+Suppose a conjugation-invariant fixed Gaussian ray condition has the
+checked finite-character expansion
+\[
+ \Lambda'_C(t)=\frac12\sum_\chi c_\chi T_\chi(t)+e(t),
+ \qquad \sum_{t\leq X}|e(t)|\ll_{H_0}\sqrt X\log(2X)^2.
+\]
+Assume both the Gaussian estimate \eqref{eq:ga-ideal-input} and its
+ordinary rational counterpart, with positive exponents $c_E,c_{\mathbb Q}$.
+Let $G/\Gamma$ and $g$ satisfy the hypotheses of
+Lemma~\ref{lem:ga-affine-interpolation}, and let $F_0$ be Lipschitz with
+Haar mean zero.
+Then any fixed linear combination of the $W$-tricked ray-prime weight
+and the $W$-tricked ordinary-prime weight obeys, for every interval
+progression $P\subseteq[N]$ of modulus at most $Q$,
+\[
+ \left|\sum_{n\in P}w_N(n)F_0(g(n)\Gamma)\right|
+ \ll QN\log(2N)^7\delta^{c_W}\|F_0\|_{\mathrm{Lip}},
+ \qquad c_W=a\min\{c_E,c_{\mathbb Q}\}>0,
+\]
+for mean-zero $F_0$, in a regime
+$\delta\geq N^{-\sigma_1}$ and $Q\leq\delta^{-a}$ with fixed
+$\sigma_1>0$. Constants may depend on $H_0,W$ and the fixed linear
+combination. In particular this applies to the proposed centering
+\[
+ w_N(n)=\frac{\varphi(W)}W\Lambda'_C(Wn+b)
+             -\mu_C(b)\Lambda_{b,W}(n),
+\]
+once the normalization of $\Lambda_{b,W}$, the scalar $\mu_C(b)$ and
+the displayed character expansion have been fixed and checked.
+\end{corollary}
+\begin{proof}
+Apply Lemma~\ref{lem:ga-wtrick-ma} to the finitely many characters and
+to the rational von Mangoldt function. The Gaussian factor $1/2$
+accounts for the two conjugate prime ideals above an eligible split
+rational prime. Replacing ordinary von Mangoldt by its prime-only
+version also has a proper-prime-power error
+$O_W(\sqrt N\log(2N)^2)$. Thus the stated estimate holds with the
+additional error
+$O_{H_0,W}(\sqrt N\log(2N)^2\|F_0\|_\infty)$.
+Choose $\sigma_1\leq\sigma$ so small that $\sigma_1c_W<1/4$.
+Then $N\delta^{c_W}\geq N^{3/4}$ throughout the claimed regime, and
+the square-root errors are absorbed. All normalization factors are
+fixed constants because $W$ is fixed. This proves the minor-arc
+estimate but does not assert the centered progression estimate
+\eqref{eq:gf-sw}, which must be proved separately from the arithmetic
+main terms.
+\end{proof}
+
+\begin{remark}\label{rem:ga-choice-order}
+Fix the arithmetic moduli first, then the positive exponents in this
+subsection. They do not depend on the later factorization exponent
+$B$. Proposition~\ref{prop:gf-factorization} chooses $B$ large enough
+to satisfy the resulting upper complexity condition. Its output
+$M$ is polylogarithmic in $N$, so its equidistribution parameter also
+obeys $\delta\geq N^{-\sigma_1}$ for sufficiently large $N$.
+The affine interpolation argument is motivated by the corresponding
+step of Frei--Tinkova, but uses no theorem from that work as an input.
+\end{remark}

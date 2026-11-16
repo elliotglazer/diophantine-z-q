@@ -1,0 +1,104 @@
+% Actual level-based repair: no uniform coefficient-field bound is used.
+% The modular representation and level estimate are proved in the companion
+% height-level-repair fragment. This file proves its height consequence.
+\paragraph{Transfer from the level, allowing unbounded coefficient degree.}
+Let $A/L$ be the non-CM quaternionic surface. Write $R\geq1$ for the
+squarefree product of the prescribed rational bad primes, including $2$,
+and assume $[L:\mathbb Q]\leq576$. The modularity construction provides
+a weight-two newform of level $N$ and a field $L'$ over which the Tate
+modules of $A$ and $J=J_1(N)$ share an irreducible constituent. In the
+notation of the sign-splitting construction, the auxiliary Dirichlet
+character has order
+\[
+ m\leq 2\prod_{\substack{p\mid R\\p\ne2}}(p-1)\leq2R.
+\]
+The sign-splitting cochain has values in $\mu_{2m}$. If one instead
+uses the full scalar splitting map, it also includes the square root
+of the degree map; that factor equals one on $G_L$. Thus in either
+notation the restriction to $G_L$ is a character valued in
+$\mu_{2m}$, and its kernel field satisfies
+\[
+ d'=[L':\mathbb Q]\leq2m[L:\mathbb Q]\leq2304R.
+\tag{LT1}
+\]
+The quadratic twist used to remove extra ramification does not increase
+this bound, since $2$ divides $2m$. There is no bound here on $m$
+independent of $R$.
+
+Faltings' Hom theorem, followed by scalar extension in the Hom space,
+gives a nonzero $L'$-homomorphism $A\to J$. Absolute simplicity of $A$
+and Poincar\'e reducibility therefore give an $L'$-isogeny
+$A\times Z\to J$ for an abelian variety $Z/L'$. Put $g=\dim J$;
+then $g\geq2$. The modular genus estimate
+\cite[(5.9), p.~13]{vonKaenel2021} gives $g\leq N^2/24$.
+The standard Belyi map has degree at most $N^2$ and
+\cite[Theorem~1.1.1 and \S2.3]{javanpeykar} gives
+\[
+ h_F(J)\leq13000000N^{12}.
+\tag{LT2}
+\]
+All heights in this argument use the original stable Faltings metric.
+
+Suppose the companion local argument has proved $N\leq C R^2$,
+where $C\geq1$. Then
+\[
+ g\leq C^2R^4/24,\qquad
+ h_F(J)\leq13000000C^{12}R^{24}.
+\]
+Set $l=\log C$ and $r=\log R$. The published
+Gaudron--R\'emond Theorem~1.9(1), M\'emoires SMF 176 (2023),
+pp.~7--8, combined with half-logarithmic isogeny-height variation,
+gives
+\[
+ h_F(A)+h_F(Z)\leq h_F(J)+V,
+ \quad
+ V=2g^2\left(8g^2\log(7g)+\log d'
+       +\log\max(1,\log d',h_F(J))\right).
+\tag{LT3}
+\]
+Here the source variety for the isogeny estimate is $J_{L'}$.
+The three logarithms in (LT3) satisfy respectively
+\[
+ \log(7g)\leq2l+4r,\quad
+ \log d'<8+r,\quad
+ \log\max(1,\log d',h_F(J))<17+12l+24r.
+\]
+For the last assertion, the bound in (LT2) also dominates $1$ and
+$\log d'$; use $8+r\leq9R^{24}$.
+It follows that
+\[
+ V\leq
+ \frac{C^8R^{16}}{24^4}(32l+64r)
+ +\frac{C^4R^8}{288}(25+12l+25r).
+\tag{LT4}
+\]
+Using $l\leq C^4/4$, $r\leq R^8/8$, and also
+$r\leq R^{16}/16$ in the second summand gives
+\[
+ \frac{V}{C^{12}R^{24}}
+ \leq\frac{16}{24^4}+\frac{25+3+25/16}{288}<1.
+\tag{LT5}
+\]
+The Bost lower bound in \cite[(2.2), p.~5]{vonKaenel2021}
+gives $h_F(Z)\geq-\tfrac12\dim Z\log(2\pi^2)>-\tfrac32g$.
+Consequently
+\[
+ h_F(A)<(13000000+1+1)C^{12}R^{24}
+       <2^{24}C^{12}R^{24}.
+\tag{LT6}
+\]
+This calculation needs no uniform bound on the degree of the newform's
+coefficient field and no assertion that all its geometric factors are
+isogenous to $A$.
+
+For the companion conductor estimate one may take $C=210^{4000}$.
+Since $210<2^8$ and $4608>2^{12}$,
+\[
+ 2^{24}C^{12}=2^{24}210^{48000}
+ <2^{384024}<2^{1990656}<4608^{165888}.
+\tag{LT7}
+\]
+Thus the non-CM height inequality is strictly within the original
+coefficient budget, once the stated modularity and level estimate have
+been established. In the five-contact application $R=B_*M(s)$, so
+the radical exponent is exactly $24$, as required.

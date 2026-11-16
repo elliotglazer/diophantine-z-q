@@ -1,3 +1,5 @@
+Historical inventory. Its decisions bind only source/audited-baseline.tex at SHA256 cb1148cd6c7769d2af3f1636b60ff0ada4b40431978d1e98d0c339274b3d792b. The current manuscript is ../../quartic_12504.tex; see ../quartic-12504/baseline-bridge.json for exact unchanged excerpts and ../quartic-12504/theorem-applications.json for the current quartic source.
+
 # Theorem application inventory, November 5, 2026
 
 The inventory records 82 scoped source/application decisions. Each decision identifies the external result, the manuscript passages that use it, the relevant hypotheses and conventions, and the evidence for the recorded translation. The decisions include the repairs and dependency qualifications linked in the records.

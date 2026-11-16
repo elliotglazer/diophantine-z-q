@@ -1,0 +1,121 @@
+% Conditional alternative interface. No existence of beta is asserted.
+\paragraph{Numerical room for a different descent.}
+Put $K=4608^{165888}$. Let $C/\mathbb Q$ be of product
+$\mathrm{GL}_2$-type, with dimension $1\leq n\leq N=4608$, and good
+reduction outside the primes dividing the squarefree integer $R\geq1$.
+The more precise published bound
+\cite[(6.7), p.~19]{vonKaenel2021} gives
+\[
+ h_F(C)\leq n\bigl(18000\nu^{12}+(8n)^6\log\nu\bigr),\qquad
+ \nu=(2n+1)^{6\rho}R^2,
+ \quad\rho=\#\{p\mid R:p\leq2n+1\}.
+\]
+There are $48$ reduced residue classes modulo $210$. Except for
+$2,3,5,7$, every prime at most $9217$ lies in one of them. Consequently
+\[
+ \rho\leq4+48\lceil9217/210\rceil=2116.
+\]
+Set $a=9217^{12696}$. The preceding bound and
+$\log R\leq R^{24}/24$ imply
+\[
+ h_F(C)\leq
+ \bigl(18000Na^{12}+N(8N)^6(\log a+1/12)\bigr)R^{24}
+ < 36000Na^{12}R^{24}.
+\]
+For the last inequality it suffices to compare the two displayed
+coefficients; the second is smaller than the first already using
+$\log a<12696\cdot10$, $8N<40000$, and $a>9217$ with its stated
+exponent. Since $\log(36000N)<20$ and $\log9217<9.13$,
+\[
+ \log(36000Na^{12})<20+152352\cdot9.13
+ =1390993.76<1391000.
+\tag{ALT1}
+\]
+On the other hand, $\log4608>8.43$, whence
+\[
+ \log K>165888\cdot8.43=1398435.84.
+\tag{ALT2}
+\]
+Thus even $n=4608$, four times the former dimension limit $1152$,
+leaves a strict numerical margin.
+
+Suppose in addition that $C_{L'}$ is isogenous to $A^k$, where $A$
+is the surface in the height argument, $k\geq1$, and
+$d'=[L':\mathbb Q]<2^{35}$. The published Gaudron--R\'emond
+isogeny bound, in the normalization recorded in the separate descent
+audit, bounds the variation by
+\[
+ v(C_{L'})\leq2n^2\left(8n^2\log(7n)+\log d'
+ +\log\max(1,\log d',h_F(C))\right).
+\]
+Using $n\leq4608$, $\log(7n)<11$, $\log d'<25$, and (ALT1),
+the right hand side is less than $e^{42}R^{24}$. Therefore
+\[
+ kh_F(A)\leq h_F(C)+v(C_{L'})
+ <(e^{1391000}+e^{42})R^{24}<K R^{24}.
+\tag{ALT3}
+\]
+This verifies the original non-CM numerical budget under the stated
+alternative descent hypotheses. It does not establish those hypotheses.
+
+\paragraph{A coefficient-field version of the missing input.}
+Let the non-CM surface $A$ and all its compatible conjugate isogenies
+be defined over the Galois field $L$, where $[L:\mathbb Q]\leq576$.
+Write $B=\operatorname{End}_{\overline{\mathbb Q}}^0(A)$ and suppose
+that $B$ is the quaternion division algebra of discriminant $210$.
+Choose the compatible-isogeny cocycle $c$ with the identity isogeny
+on $G_L$. A sufficient alternative input is a continuous splitting
+map $\beta:G_{\mathbb Q}\to\overline{\mathbb Q}^{\times}$ with
+\[
+ c(\sigma,\tau)=\beta(\sigma)\beta(\tau)/\beta(\sigma\tau),
+ \quad E=\mathbb Q(\beta(G_{\mathbb Q})),\quad [E:\mathbb Q]\leq4608,
+\]
+such that $E$ splits $B$ and $\beta$ is trivial on inertia outside
+the prescribed rational support $R$. Assume also that $L/\mathbb Q$
+is unramified there and that $A$ has good reduction there.
+
+Here is why these conditions suffice, without requiring $\beta$ to
+factor through $\operatorname{Gal}(L/\mathbb Q)$.
+Put $e=[E:\mathbb Q]$. The construction in
+\cite[Propositions~2.10--2.11 and Corollary~2.12]{guitart2012}
+gives $X/\mathbb Q$, geometrically isogenous to $A^e$, with
+$\operatorname{End}_{\mathbb Q}^0(X)=E\otimes B=M_2(E)$.
+A rational matrix idempotent therefore gives $X\sim_{\mathbb Q}C^2$,
+where $\operatorname{End}_{\mathbb Q}^0(C)=E$ and $\dim C=e$.
+In particular $C$ is of $\mathrm{GL}_2$-type.
+
+The restriction $\beta|_{G_L}$ is a character because $c$ is trivial
+on $G_L\times G_L$. Its finite image is contained in the roots of
+unity of $E$. If that group has order $w$, then $\varphi(w)\leq e$
+and $w\leq2e^2$. The latter elementary inequality follows by
+multiplying $\varphi(p^a)^2/p^a$: each odd-prime factor is at least
+one and the factor at $2$ is at least $1/2$.
+Let $L'$ be the fixed field of the kernel of this character on $G_L$.
+The explicit transformation formula for the isogeny in
+Proposition~2.10 makes that isogeny defined over $L'$. Consequently
+\[
+ [L':\mathbb Q]\leq576\cdot2e^2
+ \leq24461180928<2^{35},\qquad C_{L'}\sim A^{e/2}.
+\]
+At primes outside $R$ inertia acts trivially on the Tate module of
+$A$ and on the twisting data; the same is true for $X$ and its
+factor $C$. The N\'eron--Ogg--Shafarevich criterion gives the needed
+good reduction. Formula (ALT3) now applies.
+
+There is also a variant that avoids checking whether $E$ splits $B$.
+If $e\leq2304$, use $X$ itself. A quaternion algebra over $E$ has a
+maximal subfield of degree two over $E$, whether it is split or a
+division algebra. Hence $E\otimes B$ contains a number field of
+degree $2e=\dim X$ over $\mathbb Q$. Thus $X$ is of
+$\mathrm{GL}_2$-type in the broader convention of
+\cite{vonKaenel2021}, even when its endomorphism algebra is not a
+field. Its dimension is at most $4608$, its geometric power relation
+is $X_{L'}\sim A^e$, and the same good reduction and transfer
+arguments apply. This variant still requires the stated bound on
+the coefficient field and the inertia condition.
+
+% Additional published bibliography entry:
+% \bibitem{guitart2012} X. Guitart, Abelian varieties with many
+% endomorphisms and their absolutely simple factors,
+% Rev. Mat. Iberoam. 28 (2012), no. 2, 591--601.
+% DOI: 10.4171/RMI/686.

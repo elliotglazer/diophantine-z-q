@@ -1,0 +1,20 @@
+{
+  "raw": {
+    "baseCoordinates": 90,
+    "structuralResiduals": 47,
+    "coordinates": 994,
+    "residuals": 951,
+    "gates": 904
+  },
+  "reduction": {
+    "eliminations": 32,
+    "rowAdditions": 0,
+    "rounds": 33,
+    "heuristicMaxGrowth": 400
+  },
+  "activeCoordinates": 962,
+  "residuals": 919,
+  "maximumResidualDegree": 2,
+  "quarticDegree": 4,
+  "savingsFrom1272": 310
+}

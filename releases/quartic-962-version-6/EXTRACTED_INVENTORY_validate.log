@@ -1,0 +1,278 @@
+{
+  "schema": "quartic-v6-inventory-coverage-v1",
+  "manuscript": {
+    "path": "quartic_962.tex",
+    "bytes": 903386,
+    "sha256": "06f98ff070139c3b6c60589c65867ceb4366b023f7960551abd52f85fa67e30c"
+  },
+  "external_application_families": 125,
+  "inherited_v5_applications": 8,
+  "retired_v5_applications": [
+    {
+      "id": "V5-SUN-FT-LINEAR",
+      "reason": "Replaced V5 proof context. The V6 Gaussian derivation has its own reviewed applications; the old context is not asserted unchanged.",
+      "replacement_ids": [
+        "V6-GA-GT-MAJORANT",
+        "V6-GA-GT-RELATIVE-GN",
+        "V6-GN-LEIBMAN",
+        "FT-REPLACEMENT-MITSUI-GAUSSIAN"
+      ]
+    },
+    {
+      "id": "V5-SUN-DK-RELATIVE-INVERSE",
+      "reason": "Replaced V5 proof context. The V6 Gaussian derivation has its own reviewed applications; the old context is not asserted unchanged.",
+      "replacement_ids": [
+        "V6-GA-DK-INVERSE"
+      ]
+    },
+    {
+      "id": "V5-SUN-TZ-MODEL",
+      "reason": "Replaced V5 proof context. The V6 Gaussian derivation has its own reviewed applications; the old context is not asserted unchanged.",
+      "replacement_ids": [
+        "V6-GA-TZ-MODEL",
+        "V6-GA-TZ-MODEL-COROLLARY"
+      ]
+    },
+    {
+      "id": "V5-SUN-TZ-CONCAT",
+      "reason": "Replaced V5 proof context. The V6 Gaussian derivation has its own reviewed applications; the old context is not asserted unchanged.",
+      "replacement_ids": [
+        "V6-GA-TZ-CONCAT"
+      ]
+    },
+    {
+      "id": "V5-SUN-TZ-VN",
+      "reason": "Replaced V5 proof context. The V6 Gaussian derivation has its own reviewed applications; the old context is not asserted unchanged.",
+      "replacement_ids": [
+        "V6-GA-TZ-POLYNOMIAL-GN"
+      ]
+    },
+    {
+      "id": "V5-SUN-TZ-MAJORANT",
+      "reason": "Replaced V5 proof context. The V6 Gaussian derivation has its own reviewed applications; the old context is not asserted unchanged.",
+      "replacement_ids": [
+        "V6-GA-TZ-MAJORANT",
+        "V6-GA-TZ-BOUNDARY-MOMENTS"
+      ]
+    }
+  ],
+  "inherited_source_ledgers": 8,
+  "explicit_citations": 226,
+  "cited_keys": 88,
+  "bibliography_entries": 88,
+  "internal_results": 150,
+  "references": 504,
+  "unresolved_references": [],
+  "unresolved_application_bridges": [],
+  "unregistered_citations": [],
+  "new_results_without_review_record": [],
+  "new_applications_missing_labels": [],
+  "interfaces_missing_labels": [],
+  "pending_review_records": [],
+  "unresolved_declared_dependencies": [],
+  "unknown_citation_application_ids": [],
+  "reviewed_fragments": [
+    {
+      "id": "source962",
+      "path": "docs/quartic-962/evidence/reviewed-source962.tex",
+      "provenance": {
+        "accepted_status": "accepted_assembly_fidelity",
+        "kind": "reviewed",
+        "receipt_path": "docs/quartic-962/evidence/assembly-review-receipt.json",
+        "sha256_pointer": "/assembled_fragments/source962/sha256",
+        "status_pointer": "/status"
+      },
+      "review": "Exact current export accepted by assembly review. Mathematical acceptance is inherited only through the explicitly reviewed attribution/layout-only chain; original component qualifications remain.",
+      "sha256": "b45243a1f4c1ce5d635afbcc1d2bb7b7b47e9ee50b0e97dcff3cd031857183e5",
+      "status": "accepted_exact_reviewed_export",
+      "current": {
+        "path": "quartic_962.tex",
+        "start_character": 499671,
+        "end_character": 542939,
+        "first_line": 10527,
+        "last_line": 11557,
+        "text_sha256": "805bdf4b0d6ad27bac182cac4f4084935b8d9c8718808dad86a71cc8d1f94a0a"
+      }
+    },
+    {
+      "id": "degree-lower-bound",
+      "path": "docs/quartic-962/evidence/reviewed-degree-lower-bound.tex",
+      "provenance": {
+        "accepted_status": "accepted_assembly_fidelity",
+        "kind": "reviewed",
+        "receipt_path": "docs/quartic-962/evidence/assembly-review-receipt.json",
+        "sha256_pointer": "/assembled_fragments/degree-lower-bound/sha256",
+        "status_pointer": "/status"
+      },
+      "review": "Exact current export accepted by assembly review. Mathematical acceptance is inherited only through the explicitly reviewed attribution/layout-only chain; original component qualifications remain.",
+      "sha256": "f0df47dc7c7a0de1f9c34f16ad2decc3c2684d87ec09911d45293c08c804a55c",
+      "status": "accepted_exact_reviewed_export",
+      "current": {
+        "path": "quartic_962.tex",
+        "start_character": 542973,
+        "end_character": 551592,
+        "first_line": 11561,
+        "last_line": 11734,
+        "text_sha256": "bdf85b2479ec816babf20ac4f997316c14986f68b1f5c5b6f5d1f5c135c69ee5"
+      }
+    },
+    {
+      "id": "gaussian-analytic",
+      "mathematical_provenance": {
+        "accepted_status": "accepted_exact_extractions_of_end_to_end_reviewed_candidate",
+        "receipt_path": "docs/quartic-962/evidence/analytic-assembled-receipt.json",
+        "scope": "Accepts prior mathematically identical export. Current layout-only rebind is supplied by primary assembly provenance and its two pinned predecessor receipts.",
+        "sha256_pointer": "/fragments/gaussian_analytic/sha256"
+      },
+      "path": "docs/quartic-962/evidence/reviewed-gaussian-analytic.tex",
+      "provenance": {
+        "accepted_status": "accepted_assembly_fidelity",
+        "kind": "reviewed",
+        "receipt_path": "docs/quartic-962/evidence/assembly-review-receipt.json",
+        "sha256_pointer": "/assembled_fragments/gaussian-analytic/sha256",
+        "status_pointer": "/status"
+      },
+      "review": "Exact current export accepted by assembly review. Mathematical acceptance is inherited only through the explicitly reviewed attribution/layout-only chain; original component qualifications remain.",
+      "sha256": "d5c64b97b0141f5f72a9d69b936e6b02a4d97f7b76444e25d978bbf2c1af9af4",
+      "status": "accepted_exact_reviewed_export",
+      "current": {
+        "path": "quartic_962.tex",
+        "start_character": 783724,
+        "end_character": 866026,
+        "first_line": 16533,
+        "last_line": 18277,
+        "text_sha256": "580e663a1aff9a032be52365cabb3805c54d0c1e155ee17df8b6f803f1202ad8"
+      }
+    },
+    {
+      "id": "sun-completed",
+      "mathematical_provenance": {
+        "accepted_status": "accepted_exact_extractions_of_end_to_end_reviewed_candidate",
+        "receipt_path": "docs/quartic-962/evidence/analytic-assembled-receipt.json",
+        "scope": "Accepts prior mathematically identical export. Current layout-only rebind is supplied by primary assembly provenance and its two pinned predecessor receipts.",
+        "sha256_pointer": "/fragments/sun_completed/sha256"
+      },
+      "path": "docs/quartic-962/evidence/reviewed-sun-completed.tex",
+      "provenance": {
+        "accepted_status": "accepted_assembly_fidelity",
+        "kind": "reviewed",
+        "receipt_path": "docs/quartic-962/evidence/assembly-review-receipt.json",
+        "sha256_pointer": "/assembled_fragments/sun-completed/sha256",
+        "status_pointer": "/status"
+      },
+      "review": "Exact current export accepted by assembly review. Mathematical acceptance is inherited only through the explicitly reviewed attribution/layout-only chain; original component qualifications remain.",
+      "sha256": "e8c458ecf141252f9e0038697d17e2f146345f0d5f93bd75df49188e52ddfd33",
+      "status": "accepted_exact_reviewed_export",
+      "current": {
+        "path": "quartic_962.tex",
+        "start_character": 766438,
+        "end_character": 880917,
+        "first_line": 16159,
+        "last_line": 18611,
+        "text_sha256": "747b174d28cdc2f79887d7135a5b9583f376eda728ccae58d390023d58936932"
+      }
+    },
+    {
+      "id": "arithmetic-bridges",
+      "path": "docs/quartic-1272/evidence/reviewed-arithmetic-bridges.tex",
+      "provenance": {
+        "kind": "exact_predecessor_span",
+        "span": {
+          "end_character": 499454,
+          "first_line": 10253,
+          "last_line": 10522,
+          "path": "quartic_1272.tex",
+          "start_character": 487679,
+          "text_sha256": "b81c7f9709f2188d26cddd6bca13c2e05f5a934739925d0b1f9062b7e0a830ea"
+        }
+      },
+      "review": "Unchanged V5 arithmetic bridge.",
+      "sha256": "94696c3d3113c6ff23b8ff3039a17447424151d49f5ecbf1f178304aaf2d5544",
+      "status": "exact_predecessor_reviewed_span",
+      "current": {
+        "path": "quartic_962.tex",
+        "start_character": 487894,
+        "end_character": 499669,
+        "first_line": 10256,
+        "last_line": 10525,
+        "text_sha256": "b81c7f9709f2188d26cddd6bca13c2e05f5a934739925d0b1f9062b7e0a830ea"
+      }
+    }
+  ],
+  "new_source_qualifications": [
+    {
+      "id": "V5-Q-VOIGHT",
+      "text": "The published 2021 Proposition 14.6.7 was inspected directly, but the local download did not yield a PDF. No byte hash of the published chapter is claimed; the old corrected-book hash is a distinct version."
+    },
+    {
+      "current_scope": "Historical V5 qualification retained for provenance. The V5 application is retired; current V6 applications and their own qualifications govern active use.",
+      "id": "V5-Q-FT",
+      "text": "The Frei\u2013Tinkov\u00e1 theorem is checked against arXiv:2408.17441v3, accepted/to appear in Mathematika as reported by the author. No final published text was verified. The proof is therefore not described as using exclusively final published theorem versions."
+    },
+    {
+      "id": "V5-Q-RECONSTRUCTION",
+      "text": "The present 1272-coordinate coefficient table is independently reconstructed. It is not identified with the unavailable Brox 1315-coordinate gate/table artifact."
+    },
+    {
+      "id": "V5-Q-BL-BHB",
+      "text": "Browning\u2013Loughran and Browning\u2013Heath-Brown are verified published works. Exact theorem checks used the pinned accepted manuscripts and compared preprints; inaccessible final typeset text was not compared."
+    },
+    {
+      "current_scope": "Historical V5 qualification retained for provenance. The V5 application is retired; current V6 applications and their own qualifications govern active use.",
+      "id": "V5-Q-DK",
+      "text": "Dodos\u2013Kanellopoulos is a verified published work. The exact Theorem 5.1 was inspected in arXiv:1610.00487v4, after publication; the final typeset statement was not compared. The appendix repairs the majorant norm exponent in the imported Frei\u2013Tinkov\u00e1 proof route. That local repair does not independently close all of the preprint\u2019s new analytic proof steps."
+    },
+    {
+      "id": "V6-GAUSSIAN-ANALYTIC-SCOPE",
+      "text": "Only the one-parameter published GT results and specified rational/metric claim are used. Gaussian ideal convolution, coefficient extrapolation, norm transfer and general-weight recombination are newly proved steps, not quotations of an external theorem. No unrestricted general-number-field result is claimed."
+    },
+    {
+      "id": "V6-GT-MOBIUS-KEY",
+      "text": "The reviewed fragments used GTMobius2012; integrated citation key moebius denotes the same published paper. Its Section 3 is provenance and its p.547 Claim is a scoped theorem input. The paper\u2019s M\u00f6bius orthogonality theorem is not invoked for the new von Mangoldt estimates."
+    },
+    {
+      "citation_key": "v5dk",
+      "id": "DK-final-typeset",
+      "qualification": "Theorem5.1 checked at author-v4 pp12-13. Publisher final typeset bytes unavailable in parallel audit; equality to the final typeset statement is not asserted."
+    },
+    {
+      "citation_key": "greentao",
+      "id": "GT-no-local-byte-pin",
+      "qualification": "Published PDF inspected through web extraction; no byte-identical local copy was pinned."
+    },
+    {
+      "id": "V6-LOWER-SOURCE-QUALIFICATION",
+      "text": "Kollar exact Theorem 2 checked in pinned author preprint and published metadata, not final journal text. Muller integral specialization checked in the published PDF. No novelty priority claim."
+    }
+  ],
+  "all_external_inputs_published": false,
+  "all_final_published_versions_checked": false,
+  "uses_frei_tinkova_as_assumed_theorem": false,
+  "external_proofs_independently_closed": false,
+  "external_proof_subaudits": [],
+  "external_proof_scope": "This inventory checks exact source applications and reviewed fragment identity, not mathematical truth. The authored Version 6 register retires the Frei\u2013Tinkova assumed theorem and records its replacement proofs. Published-result status does not assert comparison with every final typeset version or re-prove all external papers.",
+  "source_qualifications": [
+    {
+      "id": "V1",
+      "text": "Preserve current-proof and assumption-status qualifications. Restricted converse and baseline arithmetic retain their stated proof status; numerical or finite checks do not upgrade them."
+    },
+    {
+      "id": "V2",
+      "text": "Prime-pattern sources include published GT/MN/GI plus inherited arXiv1009.3998v5(23Apr2026) and author erratum conventions. They are inherited correction/version inputs, not newly introduced unpublished theorems. Do not claim a published-only proof with no such qualification."
+    },
+    {
+      "id": "V3",
+      "text": "Pan interface uses Calegari ICM2022 published2023 formulation pp611-612,624 and inspected Pan author theorem. No comparison with inaccessible Pan journal full text is claimed."
+    },
+    {
+      "id": "V4",
+      "text": "Yuan geometry/metric evidence includes the author-attested English translation of the published Chinese text; no direct Chinese-typesetting comparison is claimed."
+    },
+    {
+      "id": "V5",
+      "text": "Preserve exact original stable Faltings metric, Tate/arithmetic-Frobenius convention, effective diamond quotient, and final primitive-form twist."
+    }
+  ],
+  "scope": "Mechanically exhaustive explicit citations and declared result environments; semantic theorem use and mathematical truth require the recorded reviews.",
+  "status": "PASS_DOCUMENT_BINDING"
+}

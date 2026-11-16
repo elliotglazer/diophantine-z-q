@@ -1,0 +1,4818 @@
+{
+  "schema": "brox-coordinate-map-v1",
+  "mapping": [
+    {
+      "sourceId": 0,
+      "compactId": 0,
+      "name": "input"
+    },
+    {
+      "sourceId": 1,
+      "compactId": 1,
+      "name": "A.chart.t0"
+    },
+    {
+      "sourceId": 2,
+      "compactId": 2,
+      "name": "A.chart.t1"
+    },
+    {
+      "sourceId": 3,
+      "compactId": 3,
+      "name": "A.chart.h0"
+    },
+    {
+      "sourceId": 4,
+      "compactId": 4,
+      "name": "A.chart.h1"
+    },
+    {
+      "sourceId": 5,
+      "compactId": 5,
+      "name": "S.chart.t0"
+    },
+    {
+      "sourceId": 6,
+      "compactId": 6,
+      "name": "S.chart.t1"
+    },
+    {
+      "sourceId": 7,
+      "compactId": 7,
+      "name": "S.chart.h0"
+    },
+    {
+      "sourceId": 8,
+      "compactId": 8,
+      "name": "S.chart.h1"
+    },
+    {
+      "sourceId": 9,
+      "compactId": 9,
+      "name": "T.chart.t0"
+    },
+    {
+      "sourceId": 10,
+      "compactId": 10,
+      "name": "T.chart.t1"
+    },
+    {
+      "sourceId": 11,
+      "compactId": 11,
+      "name": "T.chart.h0"
+    },
+    {
+      "sourceId": 12,
+      "compactId": 12,
+      "name": "T.chart.h1"
+    },
+    {
+      "sourceId": 13,
+      "compactId": 13,
+      "name": "Z.chart.t0"
+    },
+    {
+      "sourceId": 14,
+      "compactId": 14,
+      "name": "Z.chart.t1"
+    },
+    {
+      "sourceId": 15,
+      "compactId": 15,
+      "name": "Z.chart.h0"
+    },
+    {
+      "sourceId": 16,
+      "compactId": 16,
+      "name": "Z.chart.h1"
+    },
+    {
+      "sourceId": 17,
+      "compactId": 17,
+      "name": "H.chart.t0"
+    },
+    {
+      "sourceId": 18,
+      "compactId": 18,
+      "name": "H.chart.t1"
+    },
+    {
+      "sourceId": 19,
+      "compactId": 19,
+      "name": "H.chart.h0"
+    },
+    {
+      "sourceId": 20,
+      "compactId": 20,
+      "name": "H.chart.h1"
+    },
+    {
+      "sourceId": 21,
+      "compactId": 21,
+      "name": "UA.chart.t0"
+    },
+    {
+      "sourceId": 22,
+      "compactId": 22,
+      "name": "UA.chart.t1"
+    },
+    {
+      "sourceId": 23,
+      "compactId": 23,
+      "name": "UA.chart.h0"
+    },
+    {
+      "sourceId": 24,
+      "compactId": 24,
+      "name": "UA.chart.h1"
+    },
+    {
+      "sourceId": 25,
+      "compactId": 25,
+      "name": "US.chart.t0"
+    },
+    {
+      "sourceId": 26,
+      "compactId": 26,
+      "name": "US.chart.t1"
+    },
+    {
+      "sourceId": 27,
+      "compactId": 27,
+      "name": "US.chart.h0"
+    },
+    {
+      "sourceId": 28,
+      "compactId": 28,
+      "name": "US.chart.h1"
+    },
+    {
+      "sourceId": 29,
+      "compactId": 29,
+      "name": "UT.chart.t0"
+    },
+    {
+      "sourceId": 30,
+      "compactId": 30,
+      "name": "UT.chart.t1"
+    },
+    {
+      "sourceId": 31,
+      "compactId": 31,
+      "name": "UT.chart.h0"
+    },
+    {
+      "sourceId": 32,
+      "compactId": 32,
+      "name": "UT.chart.h1"
+    },
+    {
+      "sourceId": 33,
+      "compactId": 33,
+      "name": "UZ.chart.t0"
+    },
+    {
+      "sourceId": 34,
+      "compactId": 34,
+      "name": "UZ.chart.t1"
+    },
+    {
+      "sourceId": 35,
+      "compactId": 35,
+      "name": "UZ.chart.h0"
+    },
+    {
+      "sourceId": 36,
+      "compactId": 36,
+      "name": "UZ.chart.h1"
+    },
+    {
+      "sourceId": 37,
+      "compactId": 37,
+      "name": "lambda"
+    },
+    {
+      "sourceId": 38,
+      "compactId": 38,
+      "name": "detector0.scaled_e"
+    },
+    {
+      "sourceId": 39,
+      "compactId": 39,
+      "name": "detector0.s"
+    },
+    {
+      "sourceId": 40,
+      "compactId": 40,
+      "name": "detector0.p"
+    },
+    {
+      "sourceId": 41,
+      "compactId": 41,
+      "name": "detector0.q"
+    },
+    {
+      "sourceId": 42,
+      "compactId": 42,
+      "name": "detector1.scaled_e"
+    },
+    {
+      "sourceId": 43,
+      "compactId": 43,
+      "name": "detector1.s"
+    },
+    {
+      "sourceId": 44,
+      "compactId": 44,
+      "name": "detector1.p"
+    },
+    {
+      "sourceId": 45,
+      "compactId": 45,
+      "name": "detector1.q"
+    },
+    {
+      "sourceId": 46,
+      "compactId": 46,
+      "name": "detector2.scaled_e"
+    },
+    {
+      "sourceId": 47,
+      "compactId": 47,
+      "name": "detector2.s"
+    },
+    {
+      "sourceId": 48,
+      "compactId": 48,
+      "name": "detector2.p"
+    },
+    {
+      "sourceId": 49,
+      "compactId": 49,
+      "name": "detector2.q"
+    },
+    {
+      "sourceId": 50,
+      "compactId": 50,
+      "name": "detector3.scaled_e"
+    },
+    {
+      "sourceId": 51,
+      "compactId": 51,
+      "name": "detector3.s"
+    },
+    {
+      "sourceId": 52,
+      "compactId": 52,
+      "name": "detector3.p"
+    },
+    {
+      "sourceId": 53,
+      "compactId": 53,
+      "name": "detector3.q"
+    },
+    {
+      "sourceId": 54,
+      "compactId": 54,
+      "name": "detector4.scaled_e"
+    },
+    {
+      "sourceId": 55,
+      "compactId": 55,
+      "name": "detector4.s"
+    },
+    {
+      "sourceId": 56,
+      "compactId": 56,
+      "name": "detector4.p"
+    },
+    {
+      "sourceId": 57,
+      "compactId": 57,
+      "name": "detector4.q"
+    },
+    {
+      "sourceId": 58,
+      "compactId": 58,
+      "name": "detector5.scaled_e"
+    },
+    {
+      "sourceId": 59,
+      "compactId": 59,
+      "name": "detector5.s"
+    },
+    {
+      "sourceId": 60,
+      "compactId": 60,
+      "name": "detector5.p"
+    },
+    {
+      "sourceId": 61,
+      "compactId": 61,
+      "name": "detector5.q"
+    },
+    {
+      "sourceId": 62,
+      "compactId": 62,
+      "name": "detector6.scaled_e"
+    },
+    {
+      "sourceId": 63,
+      "compactId": 63,
+      "name": "detector6.s"
+    },
+    {
+      "sourceId": 64,
+      "compactId": 64,
+      "name": "detector6.p"
+    },
+    {
+      "sourceId": 65,
+      "compactId": 65,
+      "name": "detector6.q"
+    },
+    {
+      "sourceId": 66,
+      "compactId": 66,
+      "name": "detector7.scaled_e"
+    },
+    {
+      "sourceId": 67,
+      "compactId": 67,
+      "name": "detector7.s"
+    },
+    {
+      "sourceId": 68,
+      "compactId": 68,
+      "name": "detector7.p"
+    },
+    {
+      "sourceId": 69,
+      "compactId": 69,
+      "name": "detector7.q"
+    },
+    {
+      "sourceId": 70,
+      "compactId": 70,
+      "name": "detector8.scaled_e"
+    },
+    {
+      "sourceId": 71,
+      "compactId": 71,
+      "name": "detector8.s"
+    },
+    {
+      "sourceId": 72,
+      "compactId": 72,
+      "name": "detector8.p"
+    },
+    {
+      "sourceId": 73,
+      "compactId": 73,
+      "name": "detector8.q"
+    },
+    {
+      "sourceId": 74,
+      "compactId": 74,
+      "name": "scalar.preparation"
+    },
+    {
+      "sourceId": 75,
+      "compactId": 75,
+      "name": "scalar.scaled_e"
+    },
+    {
+      "sourceId": 76,
+      "compactId": 76,
+      "name": "scalar.s"
+    },
+    {
+      "sourceId": 77,
+      "compactId": 77,
+      "name": "scalar.p"
+    },
+    {
+      "sourceId": 78,
+      "compactId": 78,
+      "name": "scalar.q"
+    },
+    {
+      "sourceId": 79,
+      "compactId": 79,
+      "name": "anchor.U"
+    },
+    {
+      "sourceId": 80,
+      "compactId": 80,
+      "name": "anchor.V"
+    },
+    {
+      "sourceId": 81,
+      "compactId": 81,
+      "name": "anchor.W"
+    },
+    {
+      "sourceId": 82,
+      "compactId": 82,
+      "name": "correction.partial.2"
+    },
+    {
+      "sourceId": 83,
+      "compactId": 83,
+      "name": "correction.partial.3"
+    },
+    {
+      "sourceId": 84,
+      "compactId": 84,
+      "name": "correction.partial.5"
+    },
+    {
+      "sourceId": 85,
+      "compactId": 85,
+      "name": "correction.partial.7"
+    },
+    {
+      "sourceId": 86,
+      "compactId": 86,
+      "name": "correction.partial.11"
+    },
+    {
+      "sourceId": 87,
+      "compactId": 87,
+      "name": "correction.partial.13"
+    },
+    {
+      "sourceId": 88,
+      "compactId": 88,
+      "name": "correction.partial.17"
+    },
+    {
+      "sourceId": 89,
+      "compactId": 89,
+      "name": "correction.partial.sign"
+    },
+    {
+      "sourceId": 90,
+      "compactId": 90,
+      "name": "A.chart.tSquare.0.quadratic"
+    },
+    {
+      "sourceId": 91,
+      "compactId": 91,
+      "name": "A.chart.tSquare.1.quadratic"
+    },
+    {
+      "sourceId": 92,
+      "compactId": 92,
+      "name": "A.chart.x.0.quadratic"
+    },
+    {
+      "sourceId": 93,
+      "compactId": 93,
+      "name": "A.chart.x.1.quadratic"
+    },
+    {
+      "sourceId": 94,
+      "compactId": 94,
+      "name": "A.chart.y.0.quadratic"
+    },
+    {
+      "sourceId": 95,
+      "compactId": 95,
+      "name": "A.chart.y.1.quadratic"
+    },
+    {
+      "sourceId": 96,
+      "compactId": 96,
+      "name": "S.chart.tSquare.0.quadratic"
+    },
+    {
+      "sourceId": 97,
+      "compactId": 97,
+      "name": "S.chart.tSquare.1.quadratic"
+    },
+    {
+      "sourceId": 98,
+      "compactId": 98,
+      "name": "S.chart.x.0.quadratic"
+    },
+    {
+      "sourceId": 99,
+      "compactId": 99,
+      "name": "S.chart.x.1.quadratic"
+    },
+    {
+      "sourceId": 100,
+      "compactId": 100,
+      "name": "S.chart.y.0.quadratic"
+    },
+    {
+      "sourceId": 101,
+      "compactId": 101,
+      "name": "S.chart.y.1.quadratic"
+    },
+    {
+      "sourceId": 102,
+      "compactId": 102,
+      "name": "T.chart.tSquare.0.quadratic"
+    },
+    {
+      "sourceId": 103,
+      "compactId": 103,
+      "name": "T.chart.tSquare.1.quadratic"
+    },
+    {
+      "sourceId": 104,
+      "compactId": 104,
+      "name": "T.chart.x.0.quadratic"
+    },
+    {
+      "sourceId": 105,
+      "compactId": 105,
+      "name": "T.chart.x.1.quadratic"
+    },
+    {
+      "sourceId": 106,
+      "compactId": 106,
+      "name": "T.chart.y.0.quadratic"
+    },
+    {
+      "sourceId": 107,
+      "compactId": 107,
+      "name": "T.chart.y.1.quadratic"
+    },
+    {
+      "sourceId": 108,
+      "compactId": 108,
+      "name": "Z.chart.tSquare.0.quadratic"
+    },
+    {
+      "sourceId": 109,
+      "compactId": 109,
+      "name": "Z.chart.tSquare.1.quadratic"
+    },
+    {
+      "sourceId": 110,
+      "compactId": 110,
+      "name": "Z.chart.x.0.quadratic"
+    },
+    {
+      "sourceId": 111,
+      "compactId": 111,
+      "name": "Z.chart.x.1.quadratic"
+    },
+    {
+      "sourceId": 112,
+      "compactId": 112,
+      "name": "Z.chart.y.0.quadratic"
+    },
+    {
+      "sourceId": 113,
+      "compactId": 113,
+      "name": "Z.chart.y.1.quadratic"
+    },
+    {
+      "sourceId": 114,
+      "compactId": 114,
+      "name": "H.chart.tSquare.0.quadratic"
+    },
+    {
+      "sourceId": 115,
+      "compactId": 115,
+      "name": "H.chart.tSquare.1.quadratic"
+    },
+    {
+      "sourceId": 116,
+      "compactId": 116,
+      "name": "H.chart.x.0.quadratic"
+    },
+    {
+      "sourceId": 117,
+      "compactId": 117,
+      "name": "H.chart.x.1.quadratic"
+    },
+    {
+      "sourceId": 118,
+      "compactId": 118,
+      "name": "H.chart.y.0.quadratic"
+    },
+    {
+      "sourceId": 119,
+      "compactId": 119,
+      "name": "H.chart.y.1.quadratic"
+    },
+    {
+      "sourceId": 120,
+      "compactId": 120,
+      "name": "UA.chart.tSquare.0.quadratic"
+    },
+    {
+      "sourceId": 121,
+      "compactId": 121,
+      "name": "UA.chart.tSquare.1.quadratic"
+    },
+    {
+      "sourceId": 122,
+      "compactId": 122,
+      "name": "UA.chart.x.0.quadratic"
+    },
+    {
+      "sourceId": 123,
+      "compactId": 123,
+      "name": "UA.chart.x.1.quadratic"
+    },
+    {
+      "sourceId": 124,
+      "compactId": 124,
+      "name": "UA.chart.y.0.quadratic"
+    },
+    {
+      "sourceId": 125,
+      "compactId": 125,
+      "name": "UA.chart.y.1.quadratic"
+    },
+    {
+      "sourceId": 126,
+      "compactId": 126,
+      "name": "US.chart.tSquare.0.quadratic"
+    },
+    {
+      "sourceId": 127,
+      "compactId": 127,
+      "name": "US.chart.tSquare.1.quadratic"
+    },
+    {
+      "sourceId": 128,
+      "compactId": 128,
+      "name": "US.chart.x.0.quadratic"
+    },
+    {
+      "sourceId": 129,
+      "compactId": 129,
+      "name": "US.chart.x.1.quadratic"
+    },
+    {
+      "sourceId": 130,
+      "compactId": 130,
+      "name": "US.chart.y.0.quadratic"
+    },
+    {
+      "sourceId": 131,
+      "compactId": 131,
+      "name": "US.chart.y.1.quadratic"
+    },
+    {
+      "sourceId": 132,
+      "compactId": 132,
+      "name": "UT.chart.tSquare.0.quadratic"
+    },
+    {
+      "sourceId": 133,
+      "compactId": 133,
+      "name": "UT.chart.tSquare.1.quadratic"
+    },
+    {
+      "sourceId": 134,
+      "compactId": 134,
+      "name": "UT.chart.x.0.quadratic"
+    },
+    {
+      "sourceId": 135,
+      "compactId": 135,
+      "name": "UT.chart.x.1.quadratic"
+    },
+    {
+      "sourceId": 136,
+      "compactId": 136,
+      "name": "UT.chart.y.0.quadratic"
+    },
+    {
+      "sourceId": 137,
+      "compactId": 137,
+      "name": "UT.chart.y.1.quadratic"
+    },
+    {
+      "sourceId": 138,
+      "compactId": 138,
+      "name": "UZ.chart.tSquare.0.quadratic"
+    },
+    {
+      "sourceId": 139,
+      "compactId": 139,
+      "name": "UZ.chart.tSquare.1.quadratic"
+    },
+    {
+      "sourceId": 140,
+      "compactId": 140,
+      "name": "UZ.chart.x.0.quadratic"
+    },
+    {
+      "sourceId": 141,
+      "compactId": 141,
+      "name": "UZ.chart.x.1.quadratic"
+    },
+    {
+      "sourceId": 142,
+      "compactId": 142,
+      "name": "UZ.chart.y.0.quadratic"
+    },
+    {
+      "sourceId": 143,
+      "compactId": 143,
+      "name": "UZ.chart.y.1.quadratic"
+    },
+    {
+      "sourceId": 146,
+      "compactId": 144,
+      "name": "A2.slope.0"
+    },
+    {
+      "sourceId": 147,
+      "compactId": 145,
+      "name": "A2.slope.1"
+    },
+    {
+      "sourceId": 148,
+      "compactId": 146,
+      "name": "A2.slopeSquare.0.quadratic"
+    },
+    {
+      "sourceId": 149,
+      "compactId": 147,
+      "name": "A2.slopeSquare.1.quadratic"
+    },
+    {
+      "sourceId": 150,
+      "compactId": 148,
+      "name": "A2.yProduct.0.quadratic"
+    },
+    {
+      "sourceId": 151,
+      "compactId": 149,
+      "name": "A2.yProduct.1.quadratic"
+    },
+    {
+      "sourceId": 154,
+      "compactId": 150,
+      "name": "A4.slope.0"
+    },
+    {
+      "sourceId": 155,
+      "compactId": 151,
+      "name": "A4.slope.1"
+    },
+    {
+      "sourceId": 156,
+      "compactId": 152,
+      "name": "A4.slopeSquare.0.quadratic"
+    },
+    {
+      "sourceId": 157,
+      "compactId": 153,
+      "name": "A4.slopeSquare.1.quadratic"
+    },
+    {
+      "sourceId": 158,
+      "compactId": 154,
+      "name": "A4.yProduct.0.quadratic"
+    },
+    {
+      "sourceId": 159,
+      "compactId": 155,
+      "name": "A4.yProduct.1.quadratic"
+    },
+    {
+      "sourceId": 162,
+      "compactId": 156,
+      "name": "S2.slope.0"
+    },
+    {
+      "sourceId": 163,
+      "compactId": 157,
+      "name": "S2.slope.1"
+    },
+    {
+      "sourceId": 164,
+      "compactId": 158,
+      "name": "S2.slopeSquare.0.quadratic"
+    },
+    {
+      "sourceId": 165,
+      "compactId": 159,
+      "name": "S2.slopeSquare.1.quadratic"
+    },
+    {
+      "sourceId": 166,
+      "compactId": 160,
+      "name": "S2.yProduct.0.quadratic"
+    },
+    {
+      "sourceId": 167,
+      "compactId": 161,
+      "name": "S2.yProduct.1.quadratic"
+    },
+    {
+      "sourceId": 170,
+      "compactId": 162,
+      "name": "S4.slope.0"
+    },
+    {
+      "sourceId": 171,
+      "compactId": 163,
+      "name": "S4.slope.1"
+    },
+    {
+      "sourceId": 172,
+      "compactId": 164,
+      "name": "S4.slopeSquare.0.quadratic"
+    },
+    {
+      "sourceId": 173,
+      "compactId": 165,
+      "name": "S4.slopeSquare.1.quadratic"
+    },
+    {
+      "sourceId": 174,
+      "compactId": 166,
+      "name": "S4.yProduct.0.quadratic"
+    },
+    {
+      "sourceId": 175,
+      "compactId": 167,
+      "name": "S4.yProduct.1.quadratic"
+    },
+    {
+      "sourceId": 178,
+      "compactId": 168,
+      "name": "T2.slope.0"
+    },
+    {
+      "sourceId": 179,
+      "compactId": 169,
+      "name": "T2.slope.1"
+    },
+    {
+      "sourceId": 180,
+      "compactId": 170,
+      "name": "T2.slopeSquare.0.quadratic"
+    },
+    {
+      "sourceId": 181,
+      "compactId": 171,
+      "name": "T2.slopeSquare.1.quadratic"
+    },
+    {
+      "sourceId": 182,
+      "compactId": 172,
+      "name": "T2.yProduct.0.quadratic"
+    },
+    {
+      "sourceId": 183,
+      "compactId": 173,
+      "name": "T2.yProduct.1.quadratic"
+    },
+    {
+      "sourceId": 186,
+      "compactId": 174,
+      "name": "T4.slope.0"
+    },
+    {
+      "sourceId": 187,
+      "compactId": 175,
+      "name": "T4.slope.1"
+    },
+    {
+      "sourceId": 188,
+      "compactId": 176,
+      "name": "T4.slopeSquare.0.quadratic"
+    },
+    {
+      "sourceId": 189,
+      "compactId": 177,
+      "name": "T4.slopeSquare.1.quadratic"
+    },
+    {
+      "sourceId": 190,
+      "compactId": 178,
+      "name": "T4.yProduct.0.quadratic"
+    },
+    {
+      "sourceId": 191,
+      "compactId": 179,
+      "name": "T4.yProduct.1.quadratic"
+    },
+    {
+      "sourceId": 194,
+      "compactId": 180,
+      "name": "Z2.slope.0"
+    },
+    {
+      "sourceId": 195,
+      "compactId": 181,
+      "name": "Z2.slope.1"
+    },
+    {
+      "sourceId": 196,
+      "compactId": 182,
+      "name": "Z2.slopeSquare.0.quadratic"
+    },
+    {
+      "sourceId": 197,
+      "compactId": 183,
+      "name": "Z2.slopeSquare.1.quadratic"
+    },
+    {
+      "sourceId": 198,
+      "compactId": 184,
+      "name": "Z2.yProduct.0.quadratic"
+    },
+    {
+      "sourceId": 199,
+      "compactId": 185,
+      "name": "Z2.yProduct.1.quadratic"
+    },
+    {
+      "sourceId": 202,
+      "compactId": 186,
+      "name": "Z4.slope.0"
+    },
+    {
+      "sourceId": 203,
+      "compactId": 187,
+      "name": "Z4.slope.1"
+    },
+    {
+      "sourceId": 204,
+      "compactId": 188,
+      "name": "Z4.slopeSquare.0.quadratic"
+    },
+    {
+      "sourceId": 205,
+      "compactId": 189,
+      "name": "Z4.slopeSquare.1.quadratic"
+    },
+    {
+      "sourceId": 206,
+      "compactId": 190,
+      "name": "Z4.yProduct.0.quadratic"
+    },
+    {
+      "sourceId": 207,
+      "compactId": 191,
+      "name": "Z4.yProduct.1.quadratic"
+    },
+    {
+      "sourceId": 208,
+      "compactId": 192,
+      "name": "V0.dxInverse.0"
+    },
+    {
+      "sourceId": 209,
+      "compactId": 193,
+      "name": "V0.dxInverse.1"
+    },
+    {
+      "sourceId": 210,
+      "compactId": 194,
+      "name": "V0.slope.0.quadratic"
+    },
+    {
+      "sourceId": 211,
+      "compactId": 195,
+      "name": "V0.slope.1.quadratic"
+    },
+    {
+      "sourceId": 212,
+      "compactId": 196,
+      "name": "V0.slopeSquare.0.quadratic"
+    },
+    {
+      "sourceId": 213,
+      "compactId": 197,
+      "name": "V0.slopeSquare.1.quadratic"
+    },
+    {
+      "sourceId": 214,
+      "compactId": 198,
+      "name": "V0.yProduct.0.quadratic"
+    },
+    {
+      "sourceId": 215,
+      "compactId": 199,
+      "name": "V0.yProduct.1.quadratic"
+    },
+    {
+      "sourceId": 216,
+      "compactId": 200,
+      "name": "V1.dxInverse.0"
+    },
+    {
+      "sourceId": 217,
+      "compactId": 201,
+      "name": "V1.dxInverse.1"
+    },
+    {
+      "sourceId": 218,
+      "compactId": 202,
+      "name": "V1.slope.0.quadratic"
+    },
+    {
+      "sourceId": 219,
+      "compactId": 203,
+      "name": "V1.slope.1.quadratic"
+    },
+    {
+      "sourceId": 220,
+      "compactId": 204,
+      "name": "V1.slopeSquare.0.quadratic"
+    },
+    {
+      "sourceId": 221,
+      "compactId": 205,
+      "name": "V1.slopeSquare.1.quadratic"
+    },
+    {
+      "sourceId": 222,
+      "compactId": 206,
+      "name": "V1.yProduct.0.quadratic"
+    },
+    {
+      "sourceId": 223,
+      "compactId": 207,
+      "name": "V1.yProduct.1.quadratic"
+    },
+    {
+      "sourceId": 224,
+      "compactId": 208,
+      "name": "V2.dxInverse.0"
+    },
+    {
+      "sourceId": 225,
+      "compactId": 209,
+      "name": "V2.dxInverse.1"
+    },
+    {
+      "sourceId": 226,
+      "compactId": 210,
+      "name": "V2.slope.0.quadratic"
+    },
+    {
+      "sourceId": 227,
+      "compactId": 211,
+      "name": "V2.slope.1.quadratic"
+    },
+    {
+      "sourceId": 228,
+      "compactId": 212,
+      "name": "V2.slopeSquare.0.quadratic"
+    },
+    {
+      "sourceId": 229,
+      "compactId": 213,
+      "name": "V2.slopeSquare.1.quadratic"
+    },
+    {
+      "sourceId": 230,
+      "compactId": 214,
+      "name": "V2.yProduct.0.quadratic"
+    },
+    {
+      "sourceId": 231,
+      "compactId": 215,
+      "name": "V2.yProduct.1.quadratic"
+    },
+    {
+      "sourceId": 232,
+      "compactId": 216,
+      "name": "V3.dxInverse.0"
+    },
+    {
+      "sourceId": 233,
+      "compactId": 217,
+      "name": "V3.dxInverse.1"
+    },
+    {
+      "sourceId": 234,
+      "compactId": 218,
+      "name": "V3.slope.0.quadratic"
+    },
+    {
+      "sourceId": 235,
+      "compactId": 219,
+      "name": "V3.slope.1.quadratic"
+    },
+    {
+      "sourceId": 236,
+      "compactId": 220,
+      "name": "V3.slopeSquare.0.quadratic"
+    },
+    {
+      "sourceId": 237,
+      "compactId": 221,
+      "name": "V3.slopeSquare.1.quadratic"
+    },
+    {
+      "sourceId": 238,
+      "compactId": 222,
+      "name": "V3.yProduct.0.quadratic"
+    },
+    {
+      "sourceId": 239,
+      "compactId": 223,
+      "name": "V3.yProduct.1.quadratic"
+    },
+    {
+      "sourceId": 240,
+      "compactId": 224,
+      "name": "V4.dxInverse.0"
+    },
+    {
+      "sourceId": 241,
+      "compactId": 225,
+      "name": "V4.dxInverse.1"
+    },
+    {
+      "sourceId": 242,
+      "compactId": 226,
+      "name": "V4.slope.0.quadratic"
+    },
+    {
+      "sourceId": 243,
+      "compactId": 227,
+      "name": "V4.slope.1.quadratic"
+    },
+    {
+      "sourceId": 244,
+      "compactId": 228,
+      "name": "V4.slopeSquare.0.quadratic"
+    },
+    {
+      "sourceId": 245,
+      "compactId": 229,
+      "name": "V4.slopeSquare.1.quadratic"
+    },
+    {
+      "sourceId": 246,
+      "compactId": 230,
+      "name": "V4.yProduct.0.quadratic"
+    },
+    {
+      "sourceId": 247,
+      "compactId": 231,
+      "name": "V4.yProduct.1.quadratic"
+    },
+    {
+      "sourceId": 248,
+      "compactId": 232,
+      "name": "U0.f.0"
+    },
+    {
+      "sourceId": 249,
+      "compactId": 233,
+      "name": "U0.f.1"
+    },
+    {
+      "sourceId": 250,
+      "compactId": 234,
+      "name": "U1.f.0"
+    },
+    {
+      "sourceId": 251,
+      "compactId": 235,
+      "name": "U1.f.1"
+    },
+    {
+      "sourceId": 252,
+      "compactId": 236,
+      "name": "U1.z.0"
+    },
+    {
+      "sourceId": 253,
+      "compactId": 237,
+      "name": "U1.z.1"
+    },
+    {
+      "sourceId": 254,
+      "compactId": 238,
+      "name": "U2.f.0"
+    },
+    {
+      "sourceId": 255,
+      "compactId": 239,
+      "name": "U2.f.1"
+    },
+    {
+      "sourceId": 256,
+      "compactId": 240,
+      "name": "U2.z.0"
+    },
+    {
+      "sourceId": 257,
+      "compactId": 241,
+      "name": "U2.z.1"
+    },
+    {
+      "sourceId": 258,
+      "compactId": 242,
+      "name": "U3.f.0"
+    },
+    {
+      "sourceId": 259,
+      "compactId": 243,
+      "name": "U3.f.1"
+    },
+    {
+      "sourceId": 260,
+      "compactId": 244,
+      "name": "U3.z.0"
+    },
+    {
+      "sourceId": 261,
+      "compactId": 245,
+      "name": "U3.z.1"
+    },
+    {
+      "sourceId": 262,
+      "compactId": 246,
+      "name": "U4.f.0"
+    },
+    {
+      "sourceId": 263,
+      "compactId": 247,
+      "name": "U4.f.1"
+    },
+    {
+      "sourceId": 264,
+      "compactId": 248,
+      "name": "U4.z.0"
+    },
+    {
+      "sourceId": 265,
+      "compactId": 249,
+      "name": "U4.z.1"
+    },
+    {
+      "sourceId": 266,
+      "compactId": 250,
+      "name": "V0.f.0"
+    },
+    {
+      "sourceId": 267,
+      "compactId": 251,
+      "name": "V0.f.1"
+    },
+    {
+      "sourceId": 268,
+      "compactId": 252,
+      "name": "V1.f.0"
+    },
+    {
+      "sourceId": 269,
+      "compactId": 253,
+      "name": "V1.f.1"
+    },
+    {
+      "sourceId": 270,
+      "compactId": 254,
+      "name": "V1.z.0"
+    },
+    {
+      "sourceId": 271,
+      "compactId": 255,
+      "name": "V1.z.1"
+    },
+    {
+      "sourceId": 272,
+      "compactId": 256,
+      "name": "V2.f.0"
+    },
+    {
+      "sourceId": 273,
+      "compactId": 257,
+      "name": "V2.f.1"
+    },
+    {
+      "sourceId": 274,
+      "compactId": 258,
+      "name": "V2.z.0"
+    },
+    {
+      "sourceId": 275,
+      "compactId": 259,
+      "name": "V2.z.1"
+    },
+    {
+      "sourceId": 276,
+      "compactId": 260,
+      "name": "V3.f.0"
+    },
+    {
+      "sourceId": 277,
+      "compactId": 261,
+      "name": "V3.f.1"
+    },
+    {
+      "sourceId": 278,
+      "compactId": 262,
+      "name": "V3.z.0"
+    },
+    {
+      "sourceId": 279,
+      "compactId": 263,
+      "name": "V3.z.1"
+    },
+    {
+      "sourceId": 280,
+      "compactId": 264,
+      "name": "V4.f.0"
+    },
+    {
+      "sourceId": 281,
+      "compactId": 265,
+      "name": "V4.f.1"
+    },
+    {
+      "sourceId": 282,
+      "compactId": 266,
+      "name": "V4.z.0"
+    },
+    {
+      "sourceId": 283,
+      "compactId": 267,
+      "name": "V4.z.1"
+    },
+    {
+      "sourceId": 284,
+      "compactId": 268,
+      "name": "logU0.fSquare.0.quadratic"
+    },
+    {
+      "sourceId": 285,
+      "compactId": 269,
+      "name": "logU0.fSquare.1.quadratic"
+    },
+    {
+      "sourceId": 286,
+      "compactId": 270,
+      "name": "logU0.wPower2.0.quadratic"
+    },
+    {
+      "sourceId": 287,
+      "compactId": 271,
+      "name": "logU0.wPower2.1.quadratic"
+    },
+    {
+      "sourceId": 288,
+      "compactId": 272,
+      "name": "logU0.wPower3.0.quadratic"
+    },
+    {
+      "sourceId": 289,
+      "compactId": 273,
+      "name": "logU0.wPower3.1.quadratic"
+    },
+    {
+      "sourceId": 290,
+      "compactId": 274,
+      "name": "logU0.squareRootPolynomial.0.quadratic"
+    },
+    {
+      "sourceId": 291,
+      "compactId": 275,
+      "name": "logU0.squareRootPolynomial.1.quadratic"
+    },
+    {
+      "sourceId": 292,
+      "compactId": 276,
+      "name": "logU0.polynomial.0.quadratic"
+    },
+    {
+      "sourceId": 293,
+      "compactId": 277,
+      "name": "logU0.polynomial.1.quadratic"
+    },
+    {
+      "sourceId": 294,
+      "compactId": 278,
+      "name": "logU0.0"
+    },
+    {
+      "sourceId": 295,
+      "compactId": 279,
+      "name": "logU0.1"
+    },
+    {
+      "sourceId": 296,
+      "compactId": 280,
+      "name": "logU1.fSquare.0.quadratic"
+    },
+    {
+      "sourceId": 297,
+      "compactId": 281,
+      "name": "logU1.fSquare.1.quadratic"
+    },
+    {
+      "sourceId": 298,
+      "compactId": 282,
+      "name": "logU1.wPower2.0.quadratic"
+    },
+    {
+      "sourceId": 299,
+      "compactId": 283,
+      "name": "logU1.wPower2.1.quadratic"
+    },
+    {
+      "sourceId": 300,
+      "compactId": 284,
+      "name": "logU1.polynomial.0.quadratic"
+    },
+    {
+      "sourceId": 301,
+      "compactId": 285,
+      "name": "logU1.polynomial.1.quadratic"
+    },
+    {
+      "sourceId": 304,
+      "compactId": 286,
+      "name": "logU2.fSquare.0.quadratic"
+    },
+    {
+      "sourceId": 305,
+      "compactId": 287,
+      "name": "logU2.fSquare.1.quadratic"
+    },
+    {
+      "sourceId": 306,
+      "compactId": 288,
+      "name": "logU2.wPower2.0.quadratic"
+    },
+    {
+      "sourceId": 307,
+      "compactId": 289,
+      "name": "logU2.wPower2.1.quadratic"
+    },
+    {
+      "sourceId": 308,
+      "compactId": 290,
+      "name": "logU2.wPower3.0.quadratic"
+    },
+    {
+      "sourceId": 309,
+      "compactId": 291,
+      "name": "logU2.wPower3.1.quadratic"
+    },
+    {
+      "sourceId": 310,
+      "compactId": 292,
+      "name": "logU2.squareRootPolynomial.0.quadratic"
+    },
+    {
+      "sourceId": 311,
+      "compactId": 293,
+      "name": "logU2.squareRootPolynomial.1.quadratic"
+    },
+    {
+      "sourceId": 312,
+      "compactId": 294,
+      "name": "logU2.polynomial.0.quadratic"
+    },
+    {
+      "sourceId": 313,
+      "compactId": 295,
+      "name": "logU2.polynomial.1.quadratic"
+    },
+    {
+      "sourceId": 316,
+      "compactId": 296,
+      "name": "logU3.fSquare.0.quadratic"
+    },
+    {
+      "sourceId": 317,
+      "compactId": 297,
+      "name": "logU3.fSquare.1.quadratic"
+    },
+    {
+      "sourceId": 318,
+      "compactId": 298,
+      "name": "logU3.wPower2.0.quadratic"
+    },
+    {
+      "sourceId": 319,
+      "compactId": 299,
+      "name": "logU3.wPower2.1.quadratic"
+    },
+    {
+      "sourceId": 320,
+      "compactId": 300,
+      "name": "logU3.wPower3.0.quadratic"
+    },
+    {
+      "sourceId": 321,
+      "compactId": 301,
+      "name": "logU3.wPower3.1.quadratic"
+    },
+    {
+      "sourceId": 322,
+      "compactId": 302,
+      "name": "logU3.squareRootPolynomial.0.quadratic"
+    },
+    {
+      "sourceId": 323,
+      "compactId": 303,
+      "name": "logU3.squareRootPolynomial.1.quadratic"
+    },
+    {
+      "sourceId": 324,
+      "compactId": 304,
+      "name": "logU3.polynomial.0.quadratic"
+    },
+    {
+      "sourceId": 325,
+      "compactId": 305,
+      "name": "logU3.polynomial.1.quadratic"
+    },
+    {
+      "sourceId": 328,
+      "compactId": 306,
+      "name": "logU4.fSquare.0.quadratic"
+    },
+    {
+      "sourceId": 329,
+      "compactId": 307,
+      "name": "logU4.fSquare.1.quadratic"
+    },
+    {
+      "sourceId": 330,
+      "compactId": 308,
+      "name": "logU4.wPower2.0.quadratic"
+    },
+    {
+      "sourceId": 331,
+      "compactId": 309,
+      "name": "logU4.wPower2.1.quadratic"
+    },
+    {
+      "sourceId": 332,
+      "compactId": 310,
+      "name": "logU4.wPower3.0.quadratic"
+    },
+    {
+      "sourceId": 333,
+      "compactId": 311,
+      "name": "logU4.wPower3.1.quadratic"
+    },
+    {
+      "sourceId": 334,
+      "compactId": 312,
+      "name": "logU4.squareRootPolynomial.0.quadratic"
+    },
+    {
+      "sourceId": 335,
+      "compactId": 313,
+      "name": "logU4.squareRootPolynomial.1.quadratic"
+    },
+    {
+      "sourceId": 336,
+      "compactId": 314,
+      "name": "logU4.polynomial.0.quadratic"
+    },
+    {
+      "sourceId": 337,
+      "compactId": 315,
+      "name": "logU4.polynomial.1.quadratic"
+    },
+    {
+      "sourceId": 340,
+      "compactId": 316,
+      "name": "logV0.fSquare.0.quadratic"
+    },
+    {
+      "sourceId": 341,
+      "compactId": 317,
+      "name": "logV0.fSquare.1.quadratic"
+    },
+    {
+      "sourceId": 342,
+      "compactId": 318,
+      "name": "logV0.wPower2.0.quadratic"
+    },
+    {
+      "sourceId": 343,
+      "compactId": 319,
+      "name": "logV0.wPower2.1.quadratic"
+    },
+    {
+      "sourceId": 344,
+      "compactId": 320,
+      "name": "logV0.wPower3.0.quadratic"
+    },
+    {
+      "sourceId": 345,
+      "compactId": 321,
+      "name": "logV0.wPower3.1.quadratic"
+    },
+    {
+      "sourceId": 346,
+      "compactId": 322,
+      "name": "logV0.squareRootPolynomial.0.quadratic"
+    },
+    {
+      "sourceId": 347,
+      "compactId": 323,
+      "name": "logV0.squareRootPolynomial.1.quadratic"
+    },
+    {
+      "sourceId": 348,
+      "compactId": 324,
+      "name": "logV0.polynomial.0.quadratic"
+    },
+    {
+      "sourceId": 349,
+      "compactId": 325,
+      "name": "logV0.polynomial.1.quadratic"
+    },
+    {
+      "sourceId": 350,
+      "compactId": 326,
+      "name": "logV0.0"
+    },
+    {
+      "sourceId": 351,
+      "compactId": 327,
+      "name": "logV0.1"
+    },
+    {
+      "sourceId": 352,
+      "compactId": 328,
+      "name": "logV1.fSquare.0.quadratic"
+    },
+    {
+      "sourceId": 353,
+      "compactId": 329,
+      "name": "logV1.fSquare.1.quadratic"
+    },
+    {
+      "sourceId": 354,
+      "compactId": 330,
+      "name": "logV1.wPower2.0.quadratic"
+    },
+    {
+      "sourceId": 355,
+      "compactId": 331,
+      "name": "logV1.wPower2.1.quadratic"
+    },
+    {
+      "sourceId": 356,
+      "compactId": 332,
+      "name": "logV1.polynomial.0.quadratic"
+    },
+    {
+      "sourceId": 357,
+      "compactId": 333,
+      "name": "logV1.polynomial.1.quadratic"
+    },
+    {
+      "sourceId": 360,
+      "compactId": 334,
+      "name": "logV2.fSquare.0.quadratic"
+    },
+    {
+      "sourceId": 361,
+      "compactId": 335,
+      "name": "logV2.fSquare.1.quadratic"
+    },
+    {
+      "sourceId": 362,
+      "compactId": 336,
+      "name": "logV2.wPower2.0.quadratic"
+    },
+    {
+      "sourceId": 363,
+      "compactId": 337,
+      "name": "logV2.wPower2.1.quadratic"
+    },
+    {
+      "sourceId": 364,
+      "compactId": 338,
+      "name": "logV2.wPower3.0.quadratic"
+    },
+    {
+      "sourceId": 365,
+      "compactId": 339,
+      "name": "logV2.wPower3.1.quadratic"
+    },
+    {
+      "sourceId": 366,
+      "compactId": 340,
+      "name": "logV2.squareRootPolynomial.0.quadratic"
+    },
+    {
+      "sourceId": 367,
+      "compactId": 341,
+      "name": "logV2.squareRootPolynomial.1.quadratic"
+    },
+    {
+      "sourceId": 368,
+      "compactId": 342,
+      "name": "logV2.polynomial.0.quadratic"
+    },
+    {
+      "sourceId": 369,
+      "compactId": 343,
+      "name": "logV2.polynomial.1.quadratic"
+    },
+    {
+      "sourceId": 372,
+      "compactId": 344,
+      "name": "logV3.fSquare.0.quadratic"
+    },
+    {
+      "sourceId": 373,
+      "compactId": 345,
+      "name": "logV3.fSquare.1.quadratic"
+    },
+    {
+      "sourceId": 374,
+      "compactId": 346,
+      "name": "logV3.wPower2.0.quadratic"
+    },
+    {
+      "sourceId": 375,
+      "compactId": 347,
+      "name": "logV3.wPower2.1.quadratic"
+    },
+    {
+      "sourceId": 376,
+      "compactId": 348,
+      "name": "logV3.wPower3.0.quadratic"
+    },
+    {
+      "sourceId": 377,
+      "compactId": 349,
+      "name": "logV3.wPower3.1.quadratic"
+    },
+    {
+      "sourceId": 378,
+      "compactId": 350,
+      "name": "logV3.squareRootPolynomial.0.quadratic"
+    },
+    {
+      "sourceId": 379,
+      "compactId": 351,
+      "name": "logV3.squareRootPolynomial.1.quadratic"
+    },
+    {
+      "sourceId": 380,
+      "compactId": 352,
+      "name": "logV3.polynomial.0.quadratic"
+    },
+    {
+      "sourceId": 381,
+      "compactId": 353,
+      "name": "logV3.polynomial.1.quadratic"
+    },
+    {
+      "sourceId": 384,
+      "compactId": 354,
+      "name": "logV4.fSquare.0.quadratic"
+    },
+    {
+      "sourceId": 385,
+      "compactId": 355,
+      "name": "logV4.fSquare.1.quadratic"
+    },
+    {
+      "sourceId": 386,
+      "compactId": 356,
+      "name": "logV4.wPower2.0.quadratic"
+    },
+    {
+      "sourceId": 387,
+      "compactId": 357,
+      "name": "logV4.wPower2.1.quadratic"
+    },
+    {
+      "sourceId": 388,
+      "compactId": 358,
+      "name": "logV4.wPower3.0.quadratic"
+    },
+    {
+      "sourceId": 389,
+      "compactId": 359,
+      "name": "logV4.wPower3.1.quadratic"
+    },
+    {
+      "sourceId": 390,
+      "compactId": 360,
+      "name": "logV4.squareRootPolynomial.0.quadratic"
+    },
+    {
+      "sourceId": 391,
+      "compactId": 361,
+      "name": "logV4.squareRootPolynomial.1.quadratic"
+    },
+    {
+      "sourceId": 392,
+      "compactId": 362,
+      "name": "logV4.polynomial.0.quadratic"
+    },
+    {
+      "sourceId": 393,
+      "compactId": 363,
+      "name": "logV4.polynomial.1.quadratic"
+    },
+    {
+      "sourceId": 396,
+      "compactId": 364,
+      "name": "L1.0"
+    },
+    {
+      "sourceId": 397,
+      "compactId": 365,
+      "name": "L1.1"
+    },
+    {
+      "sourceId": 398,
+      "compactId": 366,
+      "name": "LP1.0"
+    },
+    {
+      "sourceId": 399,
+      "compactId": 367,
+      "name": "LP1.1"
+    },
+    {
+      "sourceId": 400,
+      "compactId": 368,
+      "name": "L2.0"
+    },
+    {
+      "sourceId": 401,
+      "compactId": 369,
+      "name": "L2.1"
+    },
+    {
+      "sourceId": 402,
+      "compactId": 370,
+      "name": "LP2.0"
+    },
+    {
+      "sourceId": 403,
+      "compactId": 371,
+      "name": "LP2.1"
+    },
+    {
+      "sourceId": 404,
+      "compactId": 372,
+      "name": "L3.0"
+    },
+    {
+      "sourceId": 405,
+      "compactId": 373,
+      "name": "L3.1"
+    },
+    {
+      "sourceId": 406,
+      "compactId": 374,
+      "name": "LP3.0"
+    },
+    {
+      "sourceId": 407,
+      "compactId": 375,
+      "name": "LP3.1"
+    },
+    {
+      "sourceId": 408,
+      "compactId": 376,
+      "name": "L4.0"
+    },
+    {
+      "sourceId": 409,
+      "compactId": 377,
+      "name": "L4.1"
+    },
+    {
+      "sourceId": 410,
+      "compactId": 378,
+      "name": "LP4.0"
+    },
+    {
+      "sourceId": 411,
+      "compactId": 379,
+      "name": "LP4.1"
+    },
+    {
+      "sourceId": 412,
+      "compactId": 380,
+      "name": "inputSquare.quadratic"
+    },
+    {
+      "sourceId": 413,
+      "compactId": 381,
+      "name": "Lucas.C.0.quadratic"
+    },
+    {
+      "sourceId": 414,
+      "compactId": 382,
+      "name": "Lucas.C.1.quadratic"
+    },
+    {
+      "sourceId": 415,
+      "compactId": 383,
+      "name": "Lucas.AT.0.quadratic"
+    },
+    {
+      "sourceId": 416,
+      "compactId": 384,
+      "name": "Lucas.AT.1.quadratic"
+    },
+    {
+      "sourceId": 417,
+      "compactId": 385,
+      "name": "Lucas.F0.quadratic"
+    },
+    {
+      "sourceId": 418,
+      "compactId": 386,
+      "name": "Lucas.F1.quadratic"
+    },
+    {
+      "sourceId": 419,
+      "compactId": 387,
+      "name": "symmetric.1.left.left.co2.0.quadratic"
+    },
+    {
+      "sourceId": 420,
+      "compactId": 388,
+      "name": "symmetric.1.left.left.co2.1.quadratic"
+    },
+    {
+      "sourceId": 421,
+      "compactId": 389,
+      "name": "symmetric.1.left.right.right.co2.0.quadratic"
+    },
+    {
+      "sourceId": 422,
+      "compactId": 390,
+      "name": "symmetric.1.left.right.right.co2.1.quadratic"
+    },
+    {
+      "sourceId": 423,
+      "compactId": 391,
+      "name": "symmetric.1.left.right.co2.0.quadratic"
+    },
+    {
+      "sourceId": 424,
+      "compactId": 392,
+      "name": "symmetric.1.left.right.co2.1.quadratic"
+    },
+    {
+      "sourceId": 425,
+      "compactId": 393,
+      "name": "symmetric.1.left.right.co3.0.quadratic"
+    },
+    {
+      "sourceId": 426,
+      "compactId": 394,
+      "name": "symmetric.1.left.right.co3.1.quadratic"
+    },
+    {
+      "sourceId": 427,
+      "compactId": 395,
+      "name": "symmetric.1.left.co2.0.quadratic"
+    },
+    {
+      "sourceId": 428,
+      "compactId": 396,
+      "name": "symmetric.1.left.co2.1.quadratic"
+    },
+    {
+      "sourceId": 429,
+      "compactId": 397,
+      "name": "symmetric.1.left.co3.0.quadratic"
+    },
+    {
+      "sourceId": 430,
+      "compactId": 398,
+      "name": "symmetric.1.left.co3.1.quadratic"
+    },
+    {
+      "sourceId": 431,
+      "compactId": 399,
+      "name": "symmetric.1.left.co4.0.quadratic"
+    },
+    {
+      "sourceId": 432,
+      "compactId": 400,
+      "name": "symmetric.1.left.co4.1.quadratic"
+    },
+    {
+      "sourceId": 433,
+      "compactId": 401,
+      "name": "symmetric.1.left.co5.0.quadratic"
+    },
+    {
+      "sourceId": 434,
+      "compactId": 402,
+      "name": "symmetric.1.left.co5.1.quadratic"
+    },
+    {
+      "sourceId": 435,
+      "compactId": 403,
+      "name": "symmetric.1.right.left.co2.0.quadratic"
+    },
+    {
+      "sourceId": 436,
+      "compactId": 404,
+      "name": "symmetric.1.right.left.co2.1.quadratic"
+    },
+    {
+      "sourceId": 437,
+      "compactId": 405,
+      "name": "symmetric.1.right.right.right.co2.0.quadratic"
+    },
+    {
+      "sourceId": 438,
+      "compactId": 406,
+      "name": "symmetric.1.right.right.right.co2.1.quadratic"
+    },
+    {
+      "sourceId": 439,
+      "compactId": 407,
+      "name": "symmetric.1.right.right.co2.0.quadratic"
+    },
+    {
+      "sourceId": 440,
+      "compactId": 408,
+      "name": "symmetric.1.right.right.co2.1.quadratic"
+    },
+    {
+      "sourceId": 441,
+      "compactId": 409,
+      "name": "symmetric.1.right.right.co3.0.quadratic"
+    },
+    {
+      "sourceId": 442,
+      "compactId": 410,
+      "name": "symmetric.1.right.right.co3.1.quadratic"
+    },
+    {
+      "sourceId": 443,
+      "compactId": 411,
+      "name": "symmetric.1.right.co2.0.quadratic"
+    },
+    {
+      "sourceId": 444,
+      "compactId": 412,
+      "name": "symmetric.1.right.co2.1.quadratic"
+    },
+    {
+      "sourceId": 445,
+      "compactId": 413,
+      "name": "symmetric.1.right.co3.0.quadratic"
+    },
+    {
+      "sourceId": 446,
+      "compactId": 414,
+      "name": "symmetric.1.right.co3.1.quadratic"
+    },
+    {
+      "sourceId": 447,
+      "compactId": 415,
+      "name": "symmetric.1.right.co4.0.quadratic"
+    },
+    {
+      "sourceId": 448,
+      "compactId": 416,
+      "name": "symmetric.1.right.co4.1.quadratic"
+    },
+    {
+      "sourceId": 449,
+      "compactId": 417,
+      "name": "symmetric.1.right.co5.0.quadratic"
+    },
+    {
+      "sourceId": 450,
+      "compactId": 418,
+      "name": "symmetric.1.right.co5.1.quadratic"
+    },
+    {
+      "sourceId": 451,
+      "compactId": 419,
+      "name": "symmetric.1.co2.0.quadratic"
+    },
+    {
+      "sourceId": 452,
+      "compactId": 420,
+      "name": "symmetric.1.co2.1.quadratic"
+    },
+    {
+      "sourceId": 453,
+      "compactId": 421,
+      "name": "symmetric.1.co3.0.quadratic"
+    },
+    {
+      "sourceId": 454,
+      "compactId": 422,
+      "name": "symmetric.1.co3.1.quadratic"
+    },
+    {
+      "sourceId": 455,
+      "compactId": 423,
+      "name": "symmetric.1.co4.0.quadratic"
+    },
+    {
+      "sourceId": 456,
+      "compactId": 424,
+      "name": "symmetric.1.co4.1.quadratic"
+    },
+    {
+      "sourceId": 457,
+      "compactId": 425,
+      "name": "symmetric.1.co5.0.quadratic"
+    },
+    {
+      "sourceId": 458,
+      "compactId": 426,
+      "name": "symmetric.1.co5.1.quadratic"
+    },
+    {
+      "sourceId": 459,
+      "compactId": 427,
+      "name": "symmetric.1.co6.0.quadratic"
+    },
+    {
+      "sourceId": 460,
+      "compactId": 428,
+      "name": "symmetric.1.co6.1.quadratic"
+    },
+    {
+      "sourceId": 461,
+      "compactId": 429,
+      "name": "symmetric.1.co7.0.quadratic"
+    },
+    {
+      "sourceId": 462,
+      "compactId": 430,
+      "name": "symmetric.1.co7.1.quadratic"
+    },
+    {
+      "sourceId": 463,
+      "compactId": 431,
+      "name": "symmetric.1.co8.0.quadratic"
+    },
+    {
+      "sourceId": 464,
+      "compactId": 432,
+      "name": "symmetric.1.co8.1.quadratic"
+    },
+    {
+      "sourceId": 465,
+      "compactId": 433,
+      "name": "symmetric.1.co9.0.quadratic"
+    },
+    {
+      "sourceId": 466,
+      "compactId": 434,
+      "name": "symmetric.1.co9.1.quadratic"
+    },
+    {
+      "sourceId": 467,
+      "compactId": 435,
+      "name": "symmetric.1.co10.0.quadratic"
+    },
+    {
+      "sourceId": 468,
+      "compactId": 436,
+      "name": "symmetric.1.co10.1.quadratic"
+    },
+    {
+      "sourceId": 469,
+      "compactId": 437,
+      "name": "testSquare.16.0.0.quadratic"
+    },
+    {
+      "sourceId": 470,
+      "compactId": 438,
+      "name": "testSquare.16.0.1.quadratic"
+    },
+    {
+      "sourceId": 471,
+      "compactId": 439,
+      "name": "testSquare.16.1.0.quadratic"
+    },
+    {
+      "sourceId": 472,
+      "compactId": 440,
+      "name": "testSquare.16.1.1.quadratic"
+    },
+    {
+      "sourceId": 473,
+      "compactId": 441,
+      "name": "symmetric.16.co2.0.quadratic"
+    },
+    {
+      "sourceId": 474,
+      "compactId": 442,
+      "name": "symmetric.16.co2.1.quadratic"
+    },
+    {
+      "sourceId": 475,
+      "compactId": 443,
+      "name": "testSquare.52.0.0.quadratic"
+    },
+    {
+      "sourceId": 476,
+      "compactId": 444,
+      "name": "testSquare.52.0.1.quadratic"
+    },
+    {
+      "sourceId": 477,
+      "compactId": 445,
+      "name": "testSquare.52.1.0.quadratic"
+    },
+    {
+      "sourceId": 478,
+      "compactId": 446,
+      "name": "testSquare.52.1.1.quadratic"
+    },
+    {
+      "sourceId": 479,
+      "compactId": 447,
+      "name": "testSquare.52.2.0.quadratic"
+    },
+    {
+      "sourceId": 480,
+      "compactId": 448,
+      "name": "testSquare.52.2.1.quadratic"
+    },
+    {
+      "sourceId": 481,
+      "compactId": 449,
+      "name": "testSquare.52.3.0.quadratic"
+    },
+    {
+      "sourceId": 482,
+      "compactId": 450,
+      "name": "testSquare.52.3.1.quadratic"
+    },
+    {
+      "sourceId": 483,
+      "compactId": 451,
+      "name": "symmetric.52.left.co2.0.quadratic"
+    },
+    {
+      "sourceId": 484,
+      "compactId": 452,
+      "name": "symmetric.52.left.co2.1.quadratic"
+    },
+    {
+      "sourceId": 485,
+      "compactId": 453,
+      "name": "symmetric.52.right.co2.0.quadratic"
+    },
+    {
+      "sourceId": 486,
+      "compactId": 454,
+      "name": "symmetric.52.right.co2.1.quadratic"
+    },
+    {
+      "sourceId": 487,
+      "compactId": 455,
+      "name": "symmetric.52.co2.0.quadratic"
+    },
+    {
+      "sourceId": 488,
+      "compactId": 456,
+      "name": "symmetric.52.co2.1.quadratic"
+    },
+    {
+      "sourceId": 489,
+      "compactId": 457,
+      "name": "symmetric.52.co3.0.quadratic"
+    },
+    {
+      "sourceId": 490,
+      "compactId": 458,
+      "name": "symmetric.52.co3.1.quadratic"
+    },
+    {
+      "sourceId": 491,
+      "compactId": 459,
+      "name": "symmetric.52.co4.0.quadratic"
+    },
+    {
+      "sourceId": 492,
+      "compactId": 460,
+      "name": "symmetric.52.co4.1.quadratic"
+    },
+    {
+      "sourceId": 493,
+      "compactId": 461,
+      "name": "A.scale0.quadratic"
+    },
+    {
+      "sourceId": 494,
+      "compactId": 462,
+      "name": "A.x1Square.quadratic"
+    },
+    {
+      "sourceId": 495,
+      "compactId": 463,
+      "name": "A.scale1.quadratic"
+    },
+    {
+      "sourceId": 496,
+      "compactId": 464,
+      "name": "S.scale0.quadratic"
+    },
+    {
+      "sourceId": 497,
+      "compactId": 465,
+      "name": "S.x1Square.quadratic"
+    },
+    {
+      "sourceId": 498,
+      "compactId": 466,
+      "name": "S.scale1.quadratic"
+    },
+    {
+      "sourceId": 499,
+      "compactId": 467,
+      "name": "T.scale0.quadratic"
+    },
+    {
+      "sourceId": 500,
+      "compactId": 468,
+      "name": "T.x1Square.quadratic"
+    },
+    {
+      "sourceId": 501,
+      "compactId": 469,
+      "name": "T.scale1.quadratic"
+    },
+    {
+      "sourceId": 502,
+      "compactId": 470,
+      "name": "Z.scale0.quadratic"
+    },
+    {
+      "sourceId": 503,
+      "compactId": 471,
+      "name": "Z.x1Square.quadratic"
+    },
+    {
+      "sourceId": 504,
+      "compactId": 472,
+      "name": "Z.scale1.quadratic"
+    },
+    {
+      "sourceId": 505,
+      "compactId": 473,
+      "name": "detector0.Fsquare.quadratic"
+    },
+    {
+      "sourceId": 506,
+      "compactId": 474,
+      "name": "detector0.Fmiddle.quadratic"
+    },
+    {
+      "sourceId": 507,
+      "compactId": 475,
+      "name": "detector0.F.quadratic"
+    },
+    {
+      "sourceId": 508,
+      "compactId": 476,
+      "name": "detector0.deltaInverse"
+    },
+    {
+      "sourceId": 509,
+      "compactId": 477,
+      "name": "detector0.Adelta4.square.quadratic"
+    },
+    {
+      "sourceId": 510,
+      "compactId": 478,
+      "name": "detector0.eWeight"
+    },
+    {
+      "sourceId": 511,
+      "compactId": 479,
+      "name": "detector0.deltaInverse2.quadratic"
+    },
+    {
+      "sourceId": 512,
+      "compactId": 480,
+      "name": "detector0.q1"
+    },
+    {
+      "sourceId": 513,
+      "compactId": 481,
+      "name": "detector0.e2.quadratic"
+    },
+    {
+      "sourceId": 514,
+      "compactId": 482,
+      "name": "detector0.e3.quadratic"
+    },
+    {
+      "sourceId": 515,
+      "compactId": 483,
+      "name": "detector0.e6.quadratic"
+    },
+    {
+      "sourceId": 516,
+      "compactId": 484,
+      "name": "detector0.e12.quadratic"
+    },
+    {
+      "sourceId": 517,
+      "compactId": 485,
+      "name": "detector0.e24.quadratic"
+    },
+    {
+      "sourceId": 518,
+      "compactId": 486,
+      "name": "detector0.e48.quadratic"
+    },
+    {
+      "sourceId": 519,
+      "compactId": 487,
+      "name": "detector0.e96.quadratic"
+    },
+    {
+      "sourceId": 520,
+      "compactId": 488,
+      "name": "detector0.q1e6.quadratic"
+    },
+    {
+      "sourceId": 521,
+      "compactId": 489,
+      "name": "detector0.q16.quadratic"
+    },
+    {
+      "sourceId": 522,
+      "compactId": 490,
+      "name": "detector0.q52.quadratic"
+    },
+    {
+      "sourceId": 523,
+      "compactId": 491,
+      "name": "detector0.E1.power2.quadratic"
+    },
+    {
+      "sourceId": 524,
+      "compactId": 492,
+      "name": "detector0.E1.power3.quadratic"
+    },
+    {
+      "sourceId": 525,
+      "compactId": 493,
+      "name": "detector0.E1.power4.quadratic"
+    },
+    {
+      "sourceId": 526,
+      "compactId": 494,
+      "name": "detector0.E1.power5.quadratic"
+    },
+    {
+      "sourceId": 527,
+      "compactId": 495,
+      "name": "detector0.E1.high.0.quadratic"
+    },
+    {
+      "sourceId": 528,
+      "compactId": 496,
+      "name": "detector0.E1.high.1.quadratic"
+    },
+    {
+      "sourceId": 529,
+      "compactId": 497,
+      "name": "detector0.E1.sum.0.quadratic"
+    },
+    {
+      "sourceId": 530,
+      "compactId": 498,
+      "name": "detector0.E1.sum.1.quadratic"
+    },
+    {
+      "sourceId": 531,
+      "compactId": 499,
+      "name": "detector0.E16.power2.quadratic"
+    },
+    {
+      "sourceId": 532,
+      "compactId": 500,
+      "name": "detector0.E16.sum.0.quadratic"
+    },
+    {
+      "sourceId": 533,
+      "compactId": 501,
+      "name": "detector0.E16.sum.1.quadratic"
+    },
+    {
+      "sourceId": 534,
+      "compactId": 502,
+      "name": "detector0.Wfirst.0.quadratic"
+    },
+    {
+      "sourceId": 535,
+      "compactId": 503,
+      "name": "detector0.Wfirst.1.quadratic"
+    },
+    {
+      "sourceId": 536,
+      "compactId": 504,
+      "name": "detector0.E52.power2.quadratic"
+    },
+    {
+      "sourceId": 537,
+      "compactId": 505,
+      "name": "detector0.E52.power3.quadratic"
+    },
+    {
+      "sourceId": 538,
+      "compactId": 506,
+      "name": "detector0.E52.power4.quadratic"
+    },
+    {
+      "sourceId": 539,
+      "compactId": 507,
+      "name": "detector0.E52.sum.0.quadratic"
+    },
+    {
+      "sourceId": 540,
+      "compactId": 508,
+      "name": "detector0.E52.sum.1.quadratic"
+    },
+    {
+      "sourceId": 541,
+      "compactId": 509,
+      "name": "detector0.W.0.quadratic"
+    },
+    {
+      "sourceId": 542,
+      "compactId": 510,
+      "name": "detector0.W.1.quadratic"
+    },
+    {
+      "sourceId": 543,
+      "compactId": 511,
+      "name": "detector0.w0Inverse"
+    },
+    {
+      "sourceId": 544,
+      "compactId": 512,
+      "name": "detector0.normOver2w0"
+    },
+    {
+      "sourceId": 545,
+      "compactId": 513,
+      "name": "detector0.Rnorm"
+    },
+    {
+      "sourceId": 546,
+      "compactId": 514,
+      "name": "detector0.B.quadratic"
+    },
+    {
+      "sourceId": 547,
+      "compactId": 515,
+      "name": "detector0.p2.quadratic"
+    },
+    {
+      "sourceId": 548,
+      "compactId": 516,
+      "name": "detector0.U2.quadratic"
+    },
+    {
+      "sourceId": 549,
+      "compactId": 517,
+      "name": "detector0.Bh.quadratic"
+    },
+    {
+      "sourceId": 550,
+      "compactId": 518,
+      "name": "detector0.s2.quadratic"
+    },
+    {
+      "sourceId": 551,
+      "compactId": 519,
+      "name": "detector0.q2.quadratic"
+    },
+    {
+      "sourceId": 552,
+      "compactId": 520,
+      "name": "detector1.t.quadratic"
+    },
+    {
+      "sourceId": 553,
+      "compactId": 521,
+      "name": "detector1.Fsquare.quadratic"
+    },
+    {
+      "sourceId": 554,
+      "compactId": 522,
+      "name": "detector1.Fmiddle.quadratic"
+    },
+    {
+      "sourceId": 555,
+      "compactId": 523,
+      "name": "detector1.F.quadratic"
+    },
+    {
+      "sourceId": 556,
+      "compactId": 524,
+      "name": "detector1.deltaInverse"
+    },
+    {
+      "sourceId": 557,
+      "compactId": 525,
+      "name": "detector1.Adelta.quadratic"
+    },
+    {
+      "sourceId": 558,
+      "compactId": 526,
+      "name": "detector1.Adelta4.half.square.quadratic"
+    },
+    {
+      "sourceId": 559,
+      "compactId": 527,
+      "name": "detector1.Adelta4.square.quadratic"
+    },
+    {
+      "sourceId": 560,
+      "compactId": 528,
+      "name": "detector1.eWeight"
+    },
+    {
+      "sourceId": 561,
+      "compactId": 529,
+      "name": "detector1.deltaInverse2.quadratic"
+    },
+    {
+      "sourceId": 562,
+      "compactId": 530,
+      "name": "detector1.q1"
+    },
+    {
+      "sourceId": 563,
+      "compactId": 531,
+      "name": "detector1.e2.quadratic"
+    },
+    {
+      "sourceId": 564,
+      "compactId": 532,
+      "name": "detector1.e3.quadratic"
+    },
+    {
+      "sourceId": 565,
+      "compactId": 533,
+      "name": "detector1.e6.quadratic"
+    },
+    {
+      "sourceId": 566,
+      "compactId": 534,
+      "name": "detector1.e12.quadratic"
+    },
+    {
+      "sourceId": 567,
+      "compactId": 535,
+      "name": "detector1.e24.quadratic"
+    },
+    {
+      "sourceId": 568,
+      "compactId": 536,
+      "name": "detector1.e48.quadratic"
+    },
+    {
+      "sourceId": 569,
+      "compactId": 537,
+      "name": "detector1.e96.quadratic"
+    },
+    {
+      "sourceId": 570,
+      "compactId": 538,
+      "name": "detector1.q1e6.quadratic"
+    },
+    {
+      "sourceId": 571,
+      "compactId": 539,
+      "name": "detector1.q16.quadratic"
+    },
+    {
+      "sourceId": 572,
+      "compactId": 540,
+      "name": "detector1.q52.quadratic"
+    },
+    {
+      "sourceId": 573,
+      "compactId": 541,
+      "name": "detector1.E1.power2.quadratic"
+    },
+    {
+      "sourceId": 574,
+      "compactId": 542,
+      "name": "detector1.E1.power3.quadratic"
+    },
+    {
+      "sourceId": 575,
+      "compactId": 543,
+      "name": "detector1.E1.power4.quadratic"
+    },
+    {
+      "sourceId": 576,
+      "compactId": 544,
+      "name": "detector1.E1.power5.quadratic"
+    },
+    {
+      "sourceId": 577,
+      "compactId": 545,
+      "name": "detector1.E1.high.0.quadratic"
+    },
+    {
+      "sourceId": 578,
+      "compactId": 546,
+      "name": "detector1.E1.high.1.quadratic"
+    },
+    {
+      "sourceId": 579,
+      "compactId": 547,
+      "name": "detector1.E1.sum.0.quadratic"
+    },
+    {
+      "sourceId": 580,
+      "compactId": 548,
+      "name": "detector1.E1.sum.1.quadratic"
+    },
+    {
+      "sourceId": 581,
+      "compactId": 549,
+      "name": "detector1.E16.power2.quadratic"
+    },
+    {
+      "sourceId": 582,
+      "compactId": 550,
+      "name": "detector1.E16.sum.0.quadratic"
+    },
+    {
+      "sourceId": 583,
+      "compactId": 551,
+      "name": "detector1.E16.sum.1.quadratic"
+    },
+    {
+      "sourceId": 584,
+      "compactId": 552,
+      "name": "detector1.Wfirst.0.quadratic"
+    },
+    {
+      "sourceId": 585,
+      "compactId": 553,
+      "name": "detector1.Wfirst.1.quadratic"
+    },
+    {
+      "sourceId": 586,
+      "compactId": 554,
+      "name": "detector1.E52.power2.quadratic"
+    },
+    {
+      "sourceId": 587,
+      "compactId": 555,
+      "name": "detector1.E52.power3.quadratic"
+    },
+    {
+      "sourceId": 588,
+      "compactId": 556,
+      "name": "detector1.E52.power4.quadratic"
+    },
+    {
+      "sourceId": 589,
+      "compactId": 557,
+      "name": "detector1.E52.sum.0.quadratic"
+    },
+    {
+      "sourceId": 590,
+      "compactId": 558,
+      "name": "detector1.E52.sum.1.quadratic"
+    },
+    {
+      "sourceId": 591,
+      "compactId": 559,
+      "name": "detector1.W.0.quadratic"
+    },
+    {
+      "sourceId": 592,
+      "compactId": 560,
+      "name": "detector1.W.1.quadratic"
+    },
+    {
+      "sourceId": 593,
+      "compactId": 561,
+      "name": "detector1.w0Inverse"
+    },
+    {
+      "sourceId": 594,
+      "compactId": 562,
+      "name": "detector1.normOver2w0"
+    },
+    {
+      "sourceId": 595,
+      "compactId": 563,
+      "name": "detector1.Rnorm"
+    },
+    {
+      "sourceId": 596,
+      "compactId": 564,
+      "name": "detector1.B.quadratic"
+    },
+    {
+      "sourceId": 597,
+      "compactId": 565,
+      "name": "detector1.p2.quadratic"
+    },
+    {
+      "sourceId": 598,
+      "compactId": 566,
+      "name": "detector1.U2.quadratic"
+    },
+    {
+      "sourceId": 599,
+      "compactId": 567,
+      "name": "detector1.Bh.quadratic"
+    },
+    {
+      "sourceId": 600,
+      "compactId": 568,
+      "name": "detector1.s2.quadratic"
+    },
+    {
+      "sourceId": 601,
+      "compactId": 569,
+      "name": "detector1.q2.quadratic"
+    },
+    {
+      "sourceId": 602,
+      "compactId": 570,
+      "name": "detector2.t.quadratic"
+    },
+    {
+      "sourceId": 603,
+      "compactId": 571,
+      "name": "detector2.Fsquare.quadratic"
+    },
+    {
+      "sourceId": 604,
+      "compactId": 572,
+      "name": "detector2.Fmiddle.quadratic"
+    },
+    {
+      "sourceId": 605,
+      "compactId": 573,
+      "name": "detector2.F.quadratic"
+    },
+    {
+      "sourceId": 606,
+      "compactId": 574,
+      "name": "detector2.deltaInverse"
+    },
+    {
+      "sourceId": 607,
+      "compactId": 575,
+      "name": "detector2.Adelta.quadratic"
+    },
+    {
+      "sourceId": 608,
+      "compactId": 576,
+      "name": "detector2.Adelta4.half.square.quadratic"
+    },
+    {
+      "sourceId": 609,
+      "compactId": 577,
+      "name": "detector2.Adelta4.square.quadratic"
+    },
+    {
+      "sourceId": 610,
+      "compactId": 578,
+      "name": "detector2.eWeight"
+    },
+    {
+      "sourceId": 611,
+      "compactId": 579,
+      "name": "detector2.deltaInverse2.quadratic"
+    },
+    {
+      "sourceId": 612,
+      "compactId": 580,
+      "name": "detector2.q1"
+    },
+    {
+      "sourceId": 613,
+      "compactId": 581,
+      "name": "detector2.e2.quadratic"
+    },
+    {
+      "sourceId": 614,
+      "compactId": 582,
+      "name": "detector2.e3.quadratic"
+    },
+    {
+      "sourceId": 615,
+      "compactId": 583,
+      "name": "detector2.e6.quadratic"
+    },
+    {
+      "sourceId": 616,
+      "compactId": 584,
+      "name": "detector2.e12.quadratic"
+    },
+    {
+      "sourceId": 617,
+      "compactId": 585,
+      "name": "detector2.e24.quadratic"
+    },
+    {
+      "sourceId": 618,
+      "compactId": 586,
+      "name": "detector2.e48.quadratic"
+    },
+    {
+      "sourceId": 619,
+      "compactId": 587,
+      "name": "detector2.e96.quadratic"
+    },
+    {
+      "sourceId": 620,
+      "compactId": 588,
+      "name": "detector2.q1e6.quadratic"
+    },
+    {
+      "sourceId": 621,
+      "compactId": 589,
+      "name": "detector2.q16.quadratic"
+    },
+    {
+      "sourceId": 622,
+      "compactId": 590,
+      "name": "detector2.q52.quadratic"
+    },
+    {
+      "sourceId": 623,
+      "compactId": 591,
+      "name": "detector2.E1.power2.quadratic"
+    },
+    {
+      "sourceId": 624,
+      "compactId": 592,
+      "name": "detector2.E1.power3.quadratic"
+    },
+    {
+      "sourceId": 625,
+      "compactId": 593,
+      "name": "detector2.E1.power4.quadratic"
+    },
+    {
+      "sourceId": 626,
+      "compactId": 594,
+      "name": "detector2.E1.power5.quadratic"
+    },
+    {
+      "sourceId": 627,
+      "compactId": 595,
+      "name": "detector2.E1.high.0.quadratic"
+    },
+    {
+      "sourceId": 628,
+      "compactId": 596,
+      "name": "detector2.E1.high.1.quadratic"
+    },
+    {
+      "sourceId": 629,
+      "compactId": 597,
+      "name": "detector2.E1.sum.0.quadratic"
+    },
+    {
+      "sourceId": 630,
+      "compactId": 598,
+      "name": "detector2.E1.sum.1.quadratic"
+    },
+    {
+      "sourceId": 631,
+      "compactId": 599,
+      "name": "detector2.E16.power2.quadratic"
+    },
+    {
+      "sourceId": 632,
+      "compactId": 600,
+      "name": "detector2.E16.sum.0.quadratic"
+    },
+    {
+      "sourceId": 633,
+      "compactId": 601,
+      "name": "detector2.E16.sum.1.quadratic"
+    },
+    {
+      "sourceId": 634,
+      "compactId": 602,
+      "name": "detector2.Wfirst.0.quadratic"
+    },
+    {
+      "sourceId": 635,
+      "compactId": 603,
+      "name": "detector2.Wfirst.1.quadratic"
+    },
+    {
+      "sourceId": 636,
+      "compactId": 604,
+      "name": "detector2.E52.power2.quadratic"
+    },
+    {
+      "sourceId": 637,
+      "compactId": 605,
+      "name": "detector2.E52.power3.quadratic"
+    },
+    {
+      "sourceId": 638,
+      "compactId": 606,
+      "name": "detector2.E52.power4.quadratic"
+    },
+    {
+      "sourceId": 639,
+      "compactId": 607,
+      "name": "detector2.E52.sum.0.quadratic"
+    },
+    {
+      "sourceId": 640,
+      "compactId": 608,
+      "name": "detector2.E52.sum.1.quadratic"
+    },
+    {
+      "sourceId": 641,
+      "compactId": 609,
+      "name": "detector2.W.0.quadratic"
+    },
+    {
+      "sourceId": 642,
+      "compactId": 610,
+      "name": "detector2.W.1.quadratic"
+    },
+    {
+      "sourceId": 643,
+      "compactId": 611,
+      "name": "detector2.w0Inverse"
+    },
+    {
+      "sourceId": 644,
+      "compactId": 612,
+      "name": "detector2.normOver2w0"
+    },
+    {
+      "sourceId": 645,
+      "compactId": 613,
+      "name": "detector2.Rnorm"
+    },
+    {
+      "sourceId": 646,
+      "compactId": 614,
+      "name": "detector2.B.quadratic"
+    },
+    {
+      "sourceId": 647,
+      "compactId": 615,
+      "name": "detector2.p2.quadratic"
+    },
+    {
+      "sourceId": 648,
+      "compactId": 616,
+      "name": "detector2.U2.quadratic"
+    },
+    {
+      "sourceId": 649,
+      "compactId": 617,
+      "name": "detector2.Bh.quadratic"
+    },
+    {
+      "sourceId": 650,
+      "compactId": 618,
+      "name": "detector2.s2.quadratic"
+    },
+    {
+      "sourceId": 651,
+      "compactId": 619,
+      "name": "detector2.q2.quadratic"
+    },
+    {
+      "sourceId": 652,
+      "compactId": 620,
+      "name": "detector3.t.quadratic"
+    },
+    {
+      "sourceId": 653,
+      "compactId": 621,
+      "name": "detector3.Fsquare.quadratic"
+    },
+    {
+      "sourceId": 654,
+      "compactId": 622,
+      "name": "detector3.Fmiddle.quadratic"
+    },
+    {
+      "sourceId": 655,
+      "compactId": 623,
+      "name": "detector3.F.quadratic"
+    },
+    {
+      "sourceId": 656,
+      "compactId": 624,
+      "name": "detector3.deltaInverse"
+    },
+    {
+      "sourceId": 657,
+      "compactId": 625,
+      "name": "detector3.Adelta.quadratic"
+    },
+    {
+      "sourceId": 658,
+      "compactId": 626,
+      "name": "detector3.Adelta4.half.square.quadratic"
+    },
+    {
+      "sourceId": 659,
+      "compactId": 627,
+      "name": "detector3.Adelta4.square.quadratic"
+    },
+    {
+      "sourceId": 660,
+      "compactId": 628,
+      "name": "detector3.eWeight"
+    },
+    {
+      "sourceId": 661,
+      "compactId": 629,
+      "name": "detector3.deltaInverse2.quadratic"
+    },
+    {
+      "sourceId": 662,
+      "compactId": 630,
+      "name": "detector3.q1"
+    },
+    {
+      "sourceId": 663,
+      "compactId": 631,
+      "name": "detector3.e2.quadratic"
+    },
+    {
+      "sourceId": 664,
+      "compactId": 632,
+      "name": "detector3.e3.quadratic"
+    },
+    {
+      "sourceId": 665,
+      "compactId": 633,
+      "name": "detector3.e6.quadratic"
+    },
+    {
+      "sourceId": 666,
+      "compactId": 634,
+      "name": "detector3.e12.quadratic"
+    },
+    {
+      "sourceId": 667,
+      "compactId": 635,
+      "name": "detector3.e24.quadratic"
+    },
+    {
+      "sourceId": 668,
+      "compactId": 636,
+      "name": "detector3.e48.quadratic"
+    },
+    {
+      "sourceId": 669,
+      "compactId": 637,
+      "name": "detector3.e96.quadratic"
+    },
+    {
+      "sourceId": 670,
+      "compactId": 638,
+      "name": "detector3.q1e6.quadratic"
+    },
+    {
+      "sourceId": 671,
+      "compactId": 639,
+      "name": "detector3.q16.quadratic"
+    },
+    {
+      "sourceId": 672,
+      "compactId": 640,
+      "name": "detector3.q52.quadratic"
+    },
+    {
+      "sourceId": 673,
+      "compactId": 641,
+      "name": "detector3.E1.power2.quadratic"
+    },
+    {
+      "sourceId": 674,
+      "compactId": 642,
+      "name": "detector3.E1.power3.quadratic"
+    },
+    {
+      "sourceId": 675,
+      "compactId": 643,
+      "name": "detector3.E1.power4.quadratic"
+    },
+    {
+      "sourceId": 676,
+      "compactId": 644,
+      "name": "detector3.E1.power5.quadratic"
+    },
+    {
+      "sourceId": 677,
+      "compactId": 645,
+      "name": "detector3.E1.high.0.quadratic"
+    },
+    {
+      "sourceId": 678,
+      "compactId": 646,
+      "name": "detector3.E1.high.1.quadratic"
+    },
+    {
+      "sourceId": 679,
+      "compactId": 647,
+      "name": "detector3.E1.sum.0.quadratic"
+    },
+    {
+      "sourceId": 680,
+      "compactId": 648,
+      "name": "detector3.E1.sum.1.quadratic"
+    },
+    {
+      "sourceId": 681,
+      "compactId": 649,
+      "name": "detector3.E16.power2.quadratic"
+    },
+    {
+      "sourceId": 682,
+      "compactId": 650,
+      "name": "detector3.E16.sum.0.quadratic"
+    },
+    {
+      "sourceId": 683,
+      "compactId": 651,
+      "name": "detector3.E16.sum.1.quadratic"
+    },
+    {
+      "sourceId": 684,
+      "compactId": 652,
+      "name": "detector3.Wfirst.0.quadratic"
+    },
+    {
+      "sourceId": 685,
+      "compactId": 653,
+      "name": "detector3.Wfirst.1.quadratic"
+    },
+    {
+      "sourceId": 686,
+      "compactId": 654,
+      "name": "detector3.E52.power2.quadratic"
+    },
+    {
+      "sourceId": 687,
+      "compactId": 655,
+      "name": "detector3.E52.power3.quadratic"
+    },
+    {
+      "sourceId": 688,
+      "compactId": 656,
+      "name": "detector3.E52.power4.quadratic"
+    },
+    {
+      "sourceId": 689,
+      "compactId": 657,
+      "name": "detector3.E52.sum.0.quadratic"
+    },
+    {
+      "sourceId": 690,
+      "compactId": 658,
+      "name": "detector3.E52.sum.1.quadratic"
+    },
+    {
+      "sourceId": 691,
+      "compactId": 659,
+      "name": "detector3.W.0.quadratic"
+    },
+    {
+      "sourceId": 692,
+      "compactId": 660,
+      "name": "detector3.W.1.quadratic"
+    },
+    {
+      "sourceId": 693,
+      "compactId": 661,
+      "name": "detector3.w0Inverse"
+    },
+    {
+      "sourceId": 694,
+      "compactId": 662,
+      "name": "detector3.normOver2w0"
+    },
+    {
+      "sourceId": 695,
+      "compactId": 663,
+      "name": "detector3.Rnorm"
+    },
+    {
+      "sourceId": 696,
+      "compactId": 664,
+      "name": "detector3.B.quadratic"
+    },
+    {
+      "sourceId": 697,
+      "compactId": 665,
+      "name": "detector3.p2.quadratic"
+    },
+    {
+      "sourceId": 698,
+      "compactId": 666,
+      "name": "detector3.U2.quadratic"
+    },
+    {
+      "sourceId": 699,
+      "compactId": 667,
+      "name": "detector3.Bh.quadratic"
+    },
+    {
+      "sourceId": 700,
+      "compactId": 668,
+      "name": "detector3.s2.quadratic"
+    },
+    {
+      "sourceId": 701,
+      "compactId": 669,
+      "name": "detector3.q2.quadratic"
+    },
+    {
+      "sourceId": 702,
+      "compactId": 670,
+      "name": "detector4.t.quadratic"
+    },
+    {
+      "sourceId": 703,
+      "compactId": 671,
+      "name": "detector4.Fsquare.quadratic"
+    },
+    {
+      "sourceId": 704,
+      "compactId": 672,
+      "name": "detector4.Fmiddle.quadratic"
+    },
+    {
+      "sourceId": 705,
+      "compactId": 673,
+      "name": "detector4.F.quadratic"
+    },
+    {
+      "sourceId": 706,
+      "compactId": 674,
+      "name": "detector4.deltaInverse"
+    },
+    {
+      "sourceId": 707,
+      "compactId": 675,
+      "name": "detector4.Adelta.quadratic"
+    },
+    {
+      "sourceId": 708,
+      "compactId": 676,
+      "name": "detector4.Adelta4.half.square.quadratic"
+    },
+    {
+      "sourceId": 709,
+      "compactId": 677,
+      "name": "detector4.Adelta4.square.quadratic"
+    },
+    {
+      "sourceId": 710,
+      "compactId": 678,
+      "name": "detector4.eWeight"
+    },
+    {
+      "sourceId": 711,
+      "compactId": 679,
+      "name": "detector4.deltaInverse2.quadratic"
+    },
+    {
+      "sourceId": 712,
+      "compactId": 680,
+      "name": "detector4.q1"
+    },
+    {
+      "sourceId": 713,
+      "compactId": 681,
+      "name": "detector4.e2.quadratic"
+    },
+    {
+      "sourceId": 714,
+      "compactId": 682,
+      "name": "detector4.e3.quadratic"
+    },
+    {
+      "sourceId": 715,
+      "compactId": 683,
+      "name": "detector4.e6.quadratic"
+    },
+    {
+      "sourceId": 716,
+      "compactId": 684,
+      "name": "detector4.e12.quadratic"
+    },
+    {
+      "sourceId": 717,
+      "compactId": 685,
+      "name": "detector4.e24.quadratic"
+    },
+    {
+      "sourceId": 718,
+      "compactId": 686,
+      "name": "detector4.e48.quadratic"
+    },
+    {
+      "sourceId": 719,
+      "compactId": 687,
+      "name": "detector4.e96.quadratic"
+    },
+    {
+      "sourceId": 720,
+      "compactId": 688,
+      "name": "detector4.q1e6.quadratic"
+    },
+    {
+      "sourceId": 721,
+      "compactId": 689,
+      "name": "detector4.q16.quadratic"
+    },
+    {
+      "sourceId": 722,
+      "compactId": 690,
+      "name": "detector4.q52.quadratic"
+    },
+    {
+      "sourceId": 723,
+      "compactId": 691,
+      "name": "detector4.E1.power2.quadratic"
+    },
+    {
+      "sourceId": 724,
+      "compactId": 692,
+      "name": "detector4.E1.power3.quadratic"
+    },
+    {
+      "sourceId": 725,
+      "compactId": 693,
+      "name": "detector4.E1.power4.quadratic"
+    },
+    {
+      "sourceId": 726,
+      "compactId": 694,
+      "name": "detector4.E1.power5.quadratic"
+    },
+    {
+      "sourceId": 727,
+      "compactId": 695,
+      "name": "detector4.E1.high.0.quadratic"
+    },
+    {
+      "sourceId": 728,
+      "compactId": 696,
+      "name": "detector4.E1.high.1.quadratic"
+    },
+    {
+      "sourceId": 729,
+      "compactId": 697,
+      "name": "detector4.E1.sum.0.quadratic"
+    },
+    {
+      "sourceId": 730,
+      "compactId": 698,
+      "name": "detector4.E1.sum.1.quadratic"
+    },
+    {
+      "sourceId": 731,
+      "compactId": 699,
+      "name": "detector4.E16.power2.quadratic"
+    },
+    {
+      "sourceId": 732,
+      "compactId": 700,
+      "name": "detector4.E16.sum.0.quadratic"
+    },
+    {
+      "sourceId": 733,
+      "compactId": 701,
+      "name": "detector4.E16.sum.1.quadratic"
+    },
+    {
+      "sourceId": 734,
+      "compactId": 702,
+      "name": "detector4.Wfirst.0.quadratic"
+    },
+    {
+      "sourceId": 735,
+      "compactId": 703,
+      "name": "detector4.Wfirst.1.quadratic"
+    },
+    {
+      "sourceId": 736,
+      "compactId": 704,
+      "name": "detector4.E52.power2.quadratic"
+    },
+    {
+      "sourceId": 737,
+      "compactId": 705,
+      "name": "detector4.E52.power3.quadratic"
+    },
+    {
+      "sourceId": 738,
+      "compactId": 706,
+      "name": "detector4.E52.power4.quadratic"
+    },
+    {
+      "sourceId": 739,
+      "compactId": 707,
+      "name": "detector4.E52.sum.0.quadratic"
+    },
+    {
+      "sourceId": 740,
+      "compactId": 708,
+      "name": "detector4.E52.sum.1.quadratic"
+    },
+    {
+      "sourceId": 741,
+      "compactId": 709,
+      "name": "detector4.W.0.quadratic"
+    },
+    {
+      "sourceId": 742,
+      "compactId": 710,
+      "name": "detector4.W.1.quadratic"
+    },
+    {
+      "sourceId": 743,
+      "compactId": 711,
+      "name": "detector4.w0Inverse"
+    },
+    {
+      "sourceId": 744,
+      "compactId": 712,
+      "name": "detector4.normOver2w0"
+    },
+    {
+      "sourceId": 745,
+      "compactId": 713,
+      "name": "detector4.Rnorm"
+    },
+    {
+      "sourceId": 746,
+      "compactId": 714,
+      "name": "detector4.B.quadratic"
+    },
+    {
+      "sourceId": 747,
+      "compactId": 715,
+      "name": "detector4.p2.quadratic"
+    },
+    {
+      "sourceId": 748,
+      "compactId": 716,
+      "name": "detector4.U2.quadratic"
+    },
+    {
+      "sourceId": 749,
+      "compactId": 717,
+      "name": "detector4.Bh.quadratic"
+    },
+    {
+      "sourceId": 750,
+      "compactId": 718,
+      "name": "detector4.s2.quadratic"
+    },
+    {
+      "sourceId": 751,
+      "compactId": 719,
+      "name": "detector4.q2.quadratic"
+    },
+    {
+      "sourceId": 752,
+      "compactId": 720,
+      "name": "detector5.t.quadratic"
+    },
+    {
+      "sourceId": 753,
+      "compactId": 721,
+      "name": "detector5.Fsquare.quadratic"
+    },
+    {
+      "sourceId": 754,
+      "compactId": 722,
+      "name": "detector5.Fmiddle.quadratic"
+    },
+    {
+      "sourceId": 755,
+      "compactId": 723,
+      "name": "detector5.F.quadratic"
+    },
+    {
+      "sourceId": 756,
+      "compactId": 724,
+      "name": "detector5.deltaInverse"
+    },
+    {
+      "sourceId": 757,
+      "compactId": 725,
+      "name": "detector5.Adelta.quadratic"
+    },
+    {
+      "sourceId": 758,
+      "compactId": 726,
+      "name": "detector5.Adelta4.half.square.quadratic"
+    },
+    {
+      "sourceId": 759,
+      "compactId": 727,
+      "name": "detector5.Adelta4.square.quadratic"
+    },
+    {
+      "sourceId": 760,
+      "compactId": 728,
+      "name": "detector5.eWeight"
+    },
+    {
+      "sourceId": 761,
+      "compactId": 729,
+      "name": "detector5.deltaInverse2.quadratic"
+    },
+    {
+      "sourceId": 762,
+      "compactId": 730,
+      "name": "detector5.q1"
+    },
+    {
+      "sourceId": 763,
+      "compactId": 731,
+      "name": "detector5.e2.quadratic"
+    },
+    {
+      "sourceId": 764,
+      "compactId": 732,
+      "name": "detector5.e3.quadratic"
+    },
+    {
+      "sourceId": 765,
+      "compactId": 733,
+      "name": "detector5.e6.quadratic"
+    },
+    {
+      "sourceId": 766,
+      "compactId": 734,
+      "name": "detector5.e12.quadratic"
+    },
+    {
+      "sourceId": 767,
+      "compactId": 735,
+      "name": "detector5.e24.quadratic"
+    },
+    {
+      "sourceId": 768,
+      "compactId": 736,
+      "name": "detector5.e48.quadratic"
+    },
+    {
+      "sourceId": 769,
+      "compactId": 737,
+      "name": "detector5.e96.quadratic"
+    },
+    {
+      "sourceId": 770,
+      "compactId": 738,
+      "name": "detector5.q1e6.quadratic"
+    },
+    {
+      "sourceId": 771,
+      "compactId": 739,
+      "name": "detector5.q16.quadratic"
+    },
+    {
+      "sourceId": 772,
+      "compactId": 740,
+      "name": "detector5.q52.quadratic"
+    },
+    {
+      "sourceId": 773,
+      "compactId": 741,
+      "name": "detector5.E1.power2.quadratic"
+    },
+    {
+      "sourceId": 774,
+      "compactId": 742,
+      "name": "detector5.E1.power3.quadratic"
+    },
+    {
+      "sourceId": 775,
+      "compactId": 743,
+      "name": "detector5.E1.power4.quadratic"
+    },
+    {
+      "sourceId": 776,
+      "compactId": 744,
+      "name": "detector5.E1.power5.quadratic"
+    },
+    {
+      "sourceId": 777,
+      "compactId": 745,
+      "name": "detector5.E1.high.0.quadratic"
+    },
+    {
+      "sourceId": 778,
+      "compactId": 746,
+      "name": "detector5.E1.high.1.quadratic"
+    },
+    {
+      "sourceId": 779,
+      "compactId": 747,
+      "name": "detector5.E1.sum.0.quadratic"
+    },
+    {
+      "sourceId": 780,
+      "compactId": 748,
+      "name": "detector5.E1.sum.1.quadratic"
+    },
+    {
+      "sourceId": 781,
+      "compactId": 749,
+      "name": "detector5.E16.power2.quadratic"
+    },
+    {
+      "sourceId": 782,
+      "compactId": 750,
+      "name": "detector5.E16.sum.0.quadratic"
+    },
+    {
+      "sourceId": 783,
+      "compactId": 751,
+      "name": "detector5.E16.sum.1.quadratic"
+    },
+    {
+      "sourceId": 784,
+      "compactId": 752,
+      "name": "detector5.Wfirst.0.quadratic"
+    },
+    {
+      "sourceId": 785,
+      "compactId": 753,
+      "name": "detector5.Wfirst.1.quadratic"
+    },
+    {
+      "sourceId": 786,
+      "compactId": 754,
+      "name": "detector5.E52.power2.quadratic"
+    },
+    {
+      "sourceId": 787,
+      "compactId": 755,
+      "name": "detector5.E52.power3.quadratic"
+    },
+    {
+      "sourceId": 788,
+      "compactId": 756,
+      "name": "detector5.E52.power4.quadratic"
+    },
+    {
+      "sourceId": 789,
+      "compactId": 757,
+      "name": "detector5.E52.sum.0.quadratic"
+    },
+    {
+      "sourceId": 790,
+      "compactId": 758,
+      "name": "detector5.E52.sum.1.quadratic"
+    },
+    {
+      "sourceId": 791,
+      "compactId": 759,
+      "name": "detector5.W.0.quadratic"
+    },
+    {
+      "sourceId": 792,
+      "compactId": 760,
+      "name": "detector5.W.1.quadratic"
+    },
+    {
+      "sourceId": 793,
+      "compactId": 761,
+      "name": "detector5.w0Inverse"
+    },
+    {
+      "sourceId": 794,
+      "compactId": 762,
+      "name": "detector5.normOver2w0"
+    },
+    {
+      "sourceId": 795,
+      "compactId": 763,
+      "name": "detector5.Rnorm"
+    },
+    {
+      "sourceId": 796,
+      "compactId": 764,
+      "name": "detector5.B.quadratic"
+    },
+    {
+      "sourceId": 797,
+      "compactId": 765,
+      "name": "detector5.p2.quadratic"
+    },
+    {
+      "sourceId": 798,
+      "compactId": 766,
+      "name": "detector5.U2.quadratic"
+    },
+    {
+      "sourceId": 799,
+      "compactId": 767,
+      "name": "detector5.Bh.quadratic"
+    },
+    {
+      "sourceId": 800,
+      "compactId": 768,
+      "name": "detector5.s2.quadratic"
+    },
+    {
+      "sourceId": 801,
+      "compactId": 769,
+      "name": "detector5.q2.quadratic"
+    },
+    {
+      "sourceId": 802,
+      "compactId": 770,
+      "name": "detector6.t.quadratic"
+    },
+    {
+      "sourceId": 803,
+      "compactId": 771,
+      "name": "detector6.Fsquare.quadratic"
+    },
+    {
+      "sourceId": 804,
+      "compactId": 772,
+      "name": "detector6.Fmiddle.quadratic"
+    },
+    {
+      "sourceId": 805,
+      "compactId": 773,
+      "name": "detector6.F.quadratic"
+    },
+    {
+      "sourceId": 806,
+      "compactId": 774,
+      "name": "detector6.deltaInverse"
+    },
+    {
+      "sourceId": 807,
+      "compactId": 775,
+      "name": "detector6.Adelta.quadratic"
+    },
+    {
+      "sourceId": 808,
+      "compactId": 776,
+      "name": "detector6.Adelta4.half.square.quadratic"
+    },
+    {
+      "sourceId": 809,
+      "compactId": 777,
+      "name": "detector6.Adelta4.square.quadratic"
+    },
+    {
+      "sourceId": 810,
+      "compactId": 778,
+      "name": "detector6.eWeight"
+    },
+    {
+      "sourceId": 811,
+      "compactId": 779,
+      "name": "detector6.deltaInverse2.quadratic"
+    },
+    {
+      "sourceId": 812,
+      "compactId": 780,
+      "name": "detector6.q1"
+    },
+    {
+      "sourceId": 813,
+      "compactId": 781,
+      "name": "detector6.e2.quadratic"
+    },
+    {
+      "sourceId": 814,
+      "compactId": 782,
+      "name": "detector6.e3.quadratic"
+    },
+    {
+      "sourceId": 815,
+      "compactId": 783,
+      "name": "detector6.e6.quadratic"
+    },
+    {
+      "sourceId": 816,
+      "compactId": 784,
+      "name": "detector6.e12.quadratic"
+    },
+    {
+      "sourceId": 817,
+      "compactId": 785,
+      "name": "detector6.e24.quadratic"
+    },
+    {
+      "sourceId": 818,
+      "compactId": 786,
+      "name": "detector6.e48.quadratic"
+    },
+    {
+      "sourceId": 819,
+      "compactId": 787,
+      "name": "detector6.e96.quadratic"
+    },
+    {
+      "sourceId": 820,
+      "compactId": 788,
+      "name": "detector6.q1e6.quadratic"
+    },
+    {
+      "sourceId": 821,
+      "compactId": 789,
+      "name": "detector6.q16.quadratic"
+    },
+    {
+      "sourceId": 822,
+      "compactId": 790,
+      "name": "detector6.q52.quadratic"
+    },
+    {
+      "sourceId": 823,
+      "compactId": 791,
+      "name": "detector6.E1.power2.quadratic"
+    },
+    {
+      "sourceId": 824,
+      "compactId": 792,
+      "name": "detector6.E1.power3.quadratic"
+    },
+    {
+      "sourceId": 825,
+      "compactId": 793,
+      "name": "detector6.E1.power4.quadratic"
+    },
+    {
+      "sourceId": 826,
+      "compactId": 794,
+      "name": "detector6.E1.power5.quadratic"
+    },
+    {
+      "sourceId": 827,
+      "compactId": 795,
+      "name": "detector6.E1.high.0.quadratic"
+    },
+    {
+      "sourceId": 828,
+      "compactId": 796,
+      "name": "detector6.E1.high.1.quadratic"
+    },
+    {
+      "sourceId": 829,
+      "compactId": 797,
+      "name": "detector6.E1.sum.0.quadratic"
+    },
+    {
+      "sourceId": 830,
+      "compactId": 798,
+      "name": "detector6.E1.sum.1.quadratic"
+    },
+    {
+      "sourceId": 831,
+      "compactId": 799,
+      "name": "detector6.E16.power2.quadratic"
+    },
+    {
+      "sourceId": 832,
+      "compactId": 800,
+      "name": "detector6.E16.sum.0.quadratic"
+    },
+    {
+      "sourceId": 833,
+      "compactId": 801,
+      "name": "detector6.E16.sum.1.quadratic"
+    },
+    {
+      "sourceId": 834,
+      "compactId": 802,
+      "name": "detector6.Wfirst.0.quadratic"
+    },
+    {
+      "sourceId": 835,
+      "compactId": 803,
+      "name": "detector6.Wfirst.1.quadratic"
+    },
+    {
+      "sourceId": 836,
+      "compactId": 804,
+      "name": "detector6.E52.power2.quadratic"
+    },
+    {
+      "sourceId": 837,
+      "compactId": 805,
+      "name": "detector6.E52.power3.quadratic"
+    },
+    {
+      "sourceId": 838,
+      "compactId": 806,
+      "name": "detector6.E52.power4.quadratic"
+    },
+    {
+      "sourceId": 839,
+      "compactId": 807,
+      "name": "detector6.E52.sum.0.quadratic"
+    },
+    {
+      "sourceId": 840,
+      "compactId": 808,
+      "name": "detector6.E52.sum.1.quadratic"
+    },
+    {
+      "sourceId": 841,
+      "compactId": 809,
+      "name": "detector6.W.0.quadratic"
+    },
+    {
+      "sourceId": 842,
+      "compactId": 810,
+      "name": "detector6.W.1.quadratic"
+    },
+    {
+      "sourceId": 843,
+      "compactId": 811,
+      "name": "detector6.w0Inverse"
+    },
+    {
+      "sourceId": 844,
+      "compactId": 812,
+      "name": "detector6.normOver2w0"
+    },
+    {
+      "sourceId": 845,
+      "compactId": 813,
+      "name": "detector6.Rnorm"
+    },
+    {
+      "sourceId": 846,
+      "compactId": 814,
+      "name": "detector6.B.quadratic"
+    },
+    {
+      "sourceId": 847,
+      "compactId": 815,
+      "name": "detector6.p2.quadratic"
+    },
+    {
+      "sourceId": 848,
+      "compactId": 816,
+      "name": "detector6.U2.quadratic"
+    },
+    {
+      "sourceId": 849,
+      "compactId": 817,
+      "name": "detector6.Bh.quadratic"
+    },
+    {
+      "sourceId": 850,
+      "compactId": 818,
+      "name": "detector6.s2.quadratic"
+    },
+    {
+      "sourceId": 851,
+      "compactId": 819,
+      "name": "detector6.q2.quadratic"
+    },
+    {
+      "sourceId": 852,
+      "compactId": 820,
+      "name": "detector7.t.quadratic"
+    },
+    {
+      "sourceId": 853,
+      "compactId": 821,
+      "name": "detector7.Fsquare.quadratic"
+    },
+    {
+      "sourceId": 854,
+      "compactId": 822,
+      "name": "detector7.Fmiddle.quadratic"
+    },
+    {
+      "sourceId": 855,
+      "compactId": 823,
+      "name": "detector7.F.quadratic"
+    },
+    {
+      "sourceId": 856,
+      "compactId": 824,
+      "name": "detector7.deltaInverse"
+    },
+    {
+      "sourceId": 857,
+      "compactId": 825,
+      "name": "detector7.Adelta.quadratic"
+    },
+    {
+      "sourceId": 858,
+      "compactId": 826,
+      "name": "detector7.Adelta4.half.square.quadratic"
+    },
+    {
+      "sourceId": 859,
+      "compactId": 827,
+      "name": "detector7.Adelta4.square.quadratic"
+    },
+    {
+      "sourceId": 860,
+      "compactId": 828,
+      "name": "detector7.eWeight"
+    },
+    {
+      "sourceId": 861,
+      "compactId": 829,
+      "name": "detector7.deltaInverse2.quadratic"
+    },
+    {
+      "sourceId": 862,
+      "compactId": 830,
+      "name": "detector7.q1"
+    },
+    {
+      "sourceId": 863,
+      "compactId": 831,
+      "name": "detector7.e2.quadratic"
+    },
+    {
+      "sourceId": 864,
+      "compactId": 832,
+      "name": "detector7.e3.quadratic"
+    },
+    {
+      "sourceId": 865,
+      "compactId": 833,
+      "name": "detector7.e6.quadratic"
+    },
+    {
+      "sourceId": 866,
+      "compactId": 834,
+      "name": "detector7.e12.quadratic"
+    },
+    {
+      "sourceId": 867,
+      "compactId": 835,
+      "name": "detector7.e24.quadratic"
+    },
+    {
+      "sourceId": 868,
+      "compactId": 836,
+      "name": "detector7.e48.quadratic"
+    },
+    {
+      "sourceId": 869,
+      "compactId": 837,
+      "name": "detector7.e96.quadratic"
+    },
+    {
+      "sourceId": 870,
+      "compactId": 838,
+      "name": "detector7.q1e6.quadratic"
+    },
+    {
+      "sourceId": 871,
+      "compactId": 839,
+      "name": "detector7.q16.quadratic"
+    },
+    {
+      "sourceId": 872,
+      "compactId": 840,
+      "name": "detector7.q52.quadratic"
+    },
+    {
+      "sourceId": 873,
+      "compactId": 841,
+      "name": "detector7.E1.power2.quadratic"
+    },
+    {
+      "sourceId": 874,
+      "compactId": 842,
+      "name": "detector7.E1.power3.quadratic"
+    },
+    {
+      "sourceId": 875,
+      "compactId": 843,
+      "name": "detector7.E1.power4.quadratic"
+    },
+    {
+      "sourceId": 876,
+      "compactId": 844,
+      "name": "detector7.E1.power5.quadratic"
+    },
+    {
+      "sourceId": 877,
+      "compactId": 845,
+      "name": "detector7.E1.high.0.quadratic"
+    },
+    {
+      "sourceId": 878,
+      "compactId": 846,
+      "name": "detector7.E1.high.1.quadratic"
+    },
+    {
+      "sourceId": 879,
+      "compactId": 847,
+      "name": "detector7.E1.sum.0.quadratic"
+    },
+    {
+      "sourceId": 880,
+      "compactId": 848,
+      "name": "detector7.E1.sum.1.quadratic"
+    },
+    {
+      "sourceId": 881,
+      "compactId": 849,
+      "name": "detector7.E16.power2.quadratic"
+    },
+    {
+      "sourceId": 882,
+      "compactId": 850,
+      "name": "detector7.E16.sum.0.quadratic"
+    },
+    {
+      "sourceId": 883,
+      "compactId": 851,
+      "name": "detector7.E16.sum.1.quadratic"
+    },
+    {
+      "sourceId": 884,
+      "compactId": 852,
+      "name": "detector7.Wfirst.0.quadratic"
+    },
+    {
+      "sourceId": 885,
+      "compactId": 853,
+      "name": "detector7.Wfirst.1.quadratic"
+    },
+    {
+      "sourceId": 886,
+      "compactId": 854,
+      "name": "detector7.E52.power2.quadratic"
+    },
+    {
+      "sourceId": 887,
+      "compactId": 855,
+      "name": "detector7.E52.power3.quadratic"
+    },
+    {
+      "sourceId": 888,
+      "compactId": 856,
+      "name": "detector7.E52.power4.quadratic"
+    },
+    {
+      "sourceId": 889,
+      "compactId": 857,
+      "name": "detector7.E52.sum.0.quadratic"
+    },
+    {
+      "sourceId": 890,
+      "compactId": 858,
+      "name": "detector7.E52.sum.1.quadratic"
+    },
+    {
+      "sourceId": 891,
+      "compactId": 859,
+      "name": "detector7.W.0.quadratic"
+    },
+    {
+      "sourceId": 892,
+      "compactId": 860,
+      "name": "detector7.W.1.quadratic"
+    },
+    {
+      "sourceId": 893,
+      "compactId": 861,
+      "name": "detector7.w0Inverse"
+    },
+    {
+      "sourceId": 894,
+      "compactId": 862,
+      "name": "detector7.normOver2w0"
+    },
+    {
+      "sourceId": 895,
+      "compactId": 863,
+      "name": "detector7.Rnorm"
+    },
+    {
+      "sourceId": 896,
+      "compactId": 864,
+      "name": "detector7.B.quadratic"
+    },
+    {
+      "sourceId": 897,
+      "compactId": 865,
+      "name": "detector7.p2.quadratic"
+    },
+    {
+      "sourceId": 898,
+      "compactId": 866,
+      "name": "detector7.U2.quadratic"
+    },
+    {
+      "sourceId": 899,
+      "compactId": 867,
+      "name": "detector7.Bh.quadratic"
+    },
+    {
+      "sourceId": 900,
+      "compactId": 868,
+      "name": "detector7.s2.quadratic"
+    },
+    {
+      "sourceId": 901,
+      "compactId": 869,
+      "name": "detector7.q2.quadratic"
+    },
+    {
+      "sourceId": 902,
+      "compactId": 870,
+      "name": "detector8.t.quadratic"
+    },
+    {
+      "sourceId": 903,
+      "compactId": 871,
+      "name": "detector8.Fsquare.quadratic"
+    },
+    {
+      "sourceId": 904,
+      "compactId": 872,
+      "name": "detector8.Fmiddle.quadratic"
+    },
+    {
+      "sourceId": 905,
+      "compactId": 873,
+      "name": "detector8.F.quadratic"
+    },
+    {
+      "sourceId": 906,
+      "compactId": 874,
+      "name": "detector8.deltaInverse"
+    },
+    {
+      "sourceId": 907,
+      "compactId": 875,
+      "name": "detector8.Adelta.quadratic"
+    },
+    {
+      "sourceId": 908,
+      "compactId": 876,
+      "name": "detector8.Adelta4.half.square.quadratic"
+    },
+    {
+      "sourceId": 909,
+      "compactId": 877,
+      "name": "detector8.Adelta4.square.quadratic"
+    },
+    {
+      "sourceId": 910,
+      "compactId": 878,
+      "name": "detector8.eWeight"
+    },
+    {
+      "sourceId": 911,
+      "compactId": 879,
+      "name": "detector8.deltaInverse2.quadratic"
+    },
+    {
+      "sourceId": 912,
+      "compactId": 880,
+      "name": "detector8.q1"
+    },
+    {
+      "sourceId": 913,
+      "compactId": 881,
+      "name": "detector8.e2.quadratic"
+    },
+    {
+      "sourceId": 914,
+      "compactId": 882,
+      "name": "detector8.e3.quadratic"
+    },
+    {
+      "sourceId": 915,
+      "compactId": 883,
+      "name": "detector8.e6.quadratic"
+    },
+    {
+      "sourceId": 916,
+      "compactId": 884,
+      "name": "detector8.e12.quadratic"
+    },
+    {
+      "sourceId": 917,
+      "compactId": 885,
+      "name": "detector8.e24.quadratic"
+    },
+    {
+      "sourceId": 918,
+      "compactId": 886,
+      "name": "detector8.e48.quadratic"
+    },
+    {
+      "sourceId": 919,
+      "compactId": 887,
+      "name": "detector8.e96.quadratic"
+    },
+    {
+      "sourceId": 920,
+      "compactId": 888,
+      "name": "detector8.q1e6.quadratic"
+    },
+    {
+      "sourceId": 921,
+      "compactId": 889,
+      "name": "detector8.q16.quadratic"
+    },
+    {
+      "sourceId": 922,
+      "compactId": 890,
+      "name": "detector8.q52.quadratic"
+    },
+    {
+      "sourceId": 923,
+      "compactId": 891,
+      "name": "detector8.E1.power2.quadratic"
+    },
+    {
+      "sourceId": 924,
+      "compactId": 892,
+      "name": "detector8.E1.power3.quadratic"
+    },
+    {
+      "sourceId": 925,
+      "compactId": 893,
+      "name": "detector8.E1.power4.quadratic"
+    },
+    {
+      "sourceId": 926,
+      "compactId": 894,
+      "name": "detector8.E1.power5.quadratic"
+    },
+    {
+      "sourceId": 927,
+      "compactId": 895,
+      "name": "detector8.E1.high.0.quadratic"
+    },
+    {
+      "sourceId": 928,
+      "compactId": 896,
+      "name": "detector8.E1.high.1.quadratic"
+    },
+    {
+      "sourceId": 929,
+      "compactId": 897,
+      "name": "detector8.E1.sum.0.quadratic"
+    },
+    {
+      "sourceId": 930,
+      "compactId": 898,
+      "name": "detector8.E1.sum.1.quadratic"
+    },
+    {
+      "sourceId": 931,
+      "compactId": 899,
+      "name": "detector8.E16.power2.quadratic"
+    },
+    {
+      "sourceId": 932,
+      "compactId": 900,
+      "name": "detector8.E16.sum.0.quadratic"
+    },
+    {
+      "sourceId": 933,
+      "compactId": 901,
+      "name": "detector8.E16.sum.1.quadratic"
+    },
+    {
+      "sourceId": 934,
+      "compactId": 902,
+      "name": "detector8.Wfirst.0.quadratic"
+    },
+    {
+      "sourceId": 935,
+      "compactId": 903,
+      "name": "detector8.Wfirst.1.quadratic"
+    },
+    {
+      "sourceId": 936,
+      "compactId": 904,
+      "name": "detector8.E52.power2.quadratic"
+    },
+    {
+      "sourceId": 937,
+      "compactId": 905,
+      "name": "detector8.E52.power3.quadratic"
+    },
+    {
+      "sourceId": 938,
+      "compactId": 906,
+      "name": "detector8.E52.power4.quadratic"
+    },
+    {
+      "sourceId": 939,
+      "compactId": 907,
+      "name": "detector8.E52.sum.0.quadratic"
+    },
+    {
+      "sourceId": 940,
+      "compactId": 908,
+      "name": "detector8.E52.sum.1.quadratic"
+    },
+    {
+      "sourceId": 941,
+      "compactId": 909,
+      "name": "detector8.W.0.quadratic"
+    },
+    {
+      "sourceId": 942,
+      "compactId": 910,
+      "name": "detector8.W.1.quadratic"
+    },
+    {
+      "sourceId": 943,
+      "compactId": 911,
+      "name": "detector8.w0Inverse"
+    },
+    {
+      "sourceId": 944,
+      "compactId": 912,
+      "name": "detector8.normOver2w0"
+    },
+    {
+      "sourceId": 945,
+      "compactId": 913,
+      "name": "detector8.Rnorm"
+    },
+    {
+      "sourceId": 946,
+      "compactId": 914,
+      "name": "detector8.B.quadratic"
+    },
+    {
+      "sourceId": 947,
+      "compactId": 915,
+      "name": "detector8.p2.quadratic"
+    },
+    {
+      "sourceId": 948,
+      "compactId": 916,
+      "name": "detector8.U2.quadratic"
+    },
+    {
+      "sourceId": 949,
+      "compactId": 917,
+      "name": "detector8.Bh.quadratic"
+    },
+    {
+      "sourceId": 950,
+      "compactId": 918,
+      "name": "detector8.s2.quadratic"
+    },
+    {
+      "sourceId": 951,
+      "compactId": 919,
+      "name": "detector8.q2.quadratic"
+    },
+    {
+      "sourceId": 952,
+      "compactId": 920,
+      "name": "scalar.rPair1.quadratic"
+    },
+    {
+      "sourceId": 953,
+      "compactId": 921,
+      "name": "scalar.rFour.quadratic"
+    },
+    {
+      "sourceId": 954,
+      "compactId": 922,
+      "name": "scalar.r.quadratic"
+    },
+    {
+      "sourceId": 955,
+      "compactId": 923,
+      "name": "scalar.rInverse"
+    },
+    {
+      "sourceId": 956,
+      "compactId": 924,
+      "name": "scalar.rInverse32.half.half.half.half.square.quadratic"
+    },
+    {
+      "sourceId": 957,
+      "compactId": 925,
+      "name": "scalar.rInverse32.half.half.half.square.quadratic"
+    },
+    {
+      "sourceId": 958,
+      "compactId": 926,
+      "name": "scalar.rInverse32.half.half.square.quadratic"
+    },
+    {
+      "sourceId": 959,
+      "compactId": 927,
+      "name": "scalar.rInverse32.half.square.quadratic"
+    },
+    {
+      "sourceId": 960,
+      "compactId": 928,
+      "name": "scalar.rInverse32.square.quadratic"
+    },
+    {
+      "sourceId": 961,
+      "compactId": 929,
+      "name": "Sscalar.f.0"
+    },
+    {
+      "sourceId": 962,
+      "compactId": 930,
+      "name": "Sscalar.f.1"
+    },
+    {
+      "sourceId": 963,
+      "compactId": 931,
+      "name": "Sscalar.z.0"
+    },
+    {
+      "sourceId": 964,
+      "compactId": 932,
+      "name": "Sscalar.z.1"
+    },
+    {
+      "sourceId": 965,
+      "compactId": 933,
+      "name": "scalar.zRatio.0"
+    },
+    {
+      "sourceId": 966,
+      "compactId": 934,
+      "name": "scalar.zRatio.1"
+    },
+    {
+      "sourceId": 967,
+      "compactId": 935,
+      "name": "scalar.leaf1.quadratic"
+    },
+    {
+      "sourceId": 968,
+      "compactId": 936,
+      "name": "scalar.leaf3.quadratic"
+    },
+    {
+      "sourceId": 969,
+      "compactId": 937,
+      "name": "scalar.leaf4.quadratic"
+    },
+    {
+      "sourceId": 970,
+      "compactId": 938,
+      "name": "scalar.leaf5.quadratic"
+    },
+    {
+      "sourceId": 971,
+      "compactId": 939,
+      "name": "scalar.n0"
+    },
+    {
+      "sourceId": 972,
+      "compactId": 940,
+      "name": "scalar.n1"
+    },
+    {
+      "sourceId": 973,
+      "compactId": 941,
+      "name": "scalar.n3.rightSquare.quadratic"
+    },
+    {
+      "sourceId": 974,
+      "compactId": 942,
+      "name": "scalar.n3.quadratic"
+    },
+    {
+      "sourceId": 975,
+      "compactId": 943,
+      "name": "scalar.nLeft.rightSquare.quadratic"
+    },
+    {
+      "sourceId": 976,
+      "compactId": 944,
+      "name": "scalar.nLeft.quadratic"
+    },
+    {
+      "sourceId": 977,
+      "compactId": 945,
+      "name": "scalar.nRight.rightSquare.quadratic"
+    },
+    {
+      "sourceId": 978,
+      "compactId": 946,
+      "name": "scalar.nRight.quadratic"
+    },
+    {
+      "sourceId": 979,
+      "compactId": 947,
+      "name": "scalar.W.rightSquare.quadratic"
+    },
+    {
+      "sourceId": 980,
+      "compactId": 948,
+      "name": "scalar.W.quadratic"
+    },
+    {
+      "sourceId": 981,
+      "compactId": 949,
+      "name": "scalar.correctedR.quadratic"
+    },
+    {
+      "sourceId": 982,
+      "compactId": 950,
+      "name": "scalar.W2.quadratic"
+    },
+    {
+      "sourceId": 983,
+      "compactId": 951,
+      "name": "scalar.b.quadratic"
+    },
+    {
+      "sourceId": 984,
+      "compactId": 952,
+      "name": "scalar.bInverse"
+    },
+    {
+      "sourceId": 985,
+      "compactId": 953,
+      "name": "scalar.p2.quadratic"
+    },
+    {
+      "sourceId": 986,
+      "compactId": 954,
+      "name": "scalar.t2.quadratic"
+    },
+    {
+      "sourceId": 987,
+      "compactId": 955,
+      "name": "scalar.bt2.quadratic"
+    },
+    {
+      "sourceId": 988,
+      "compactId": 956,
+      "name": "scalar.U"
+    },
+    {
+      "sourceId": 989,
+      "compactId": 957,
+      "name": "scalar.U2.quadratic"
+    },
+    {
+      "sourceId": 990,
+      "compactId": 958,
+      "name": "scalar.Bh.quadratic"
+    },
+    {
+      "sourceId": 991,
+      "compactId": 959,
+      "name": "scalar.s2.quadratic"
+    },
+    {
+      "sourceId": 992,
+      "compactId": 960,
+      "name": "scalar.q2.quadratic"
+    },
+    {
+      "sourceId": 993,
+      "compactId": 961,
+      "name": "anchor.physicalA.quadratic"
+    }
+  ],
+  "omittedFreeCoordinates": [],
+  "freeReconstructionValue": "0",
+  "freeExtensionProof": "Omitted coordinates occur in no final residual or polynomial term. Every solution extends by assigning zero to them; forgetting them preserves every residual."
+}

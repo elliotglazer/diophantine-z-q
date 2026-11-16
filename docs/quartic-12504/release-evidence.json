@@ -1,0 +1,75 @@
+{
+  "scope": "Exact imported review records and six original module inputs; review status does not substitute for arithmetic proof or finite replay.",
+  "files": [
+    {
+      "path": "docs/quartic-12504/reviews/RECIPROCAL_PROOF.md",
+      "sha256": "be5b08dd9ded743606d5c6a5fc869c4e9764575da49e5d80af13aca09950a98a",
+      "bytes": 17301
+    },
+    {
+      "path": "docs/quartic-12504/reviews/INDEPENDENT_RECIPROCAL_REVIEW.md",
+      "sha256": "13061be3b0b4f943adcf0873d903f58bc75106c2550f77f08a928bce9ebef0cb",
+      "bytes": 13131
+    },
+    {
+      "path": "docs/quartic-12504/reviews/BETA16_INDEPENDENT_REVIEW.md",
+      "sha256": "3555a3b6cefcb9de8187aa79e9881ce0b47aef66072c013a8642aab62f4ed671",
+      "bytes": 11378
+    },
+    {
+      "path": "docs/quartic-12504/reviews/COMPILER_REVIEW.md",
+      "sha256": "d2abea8e364cd89860c3c9f5f4f73f40209abcee6a1c92174ee372bd30ebd222",
+      "bytes": 12510
+    },
+    {
+      "path": "docs/quartic-12504/reviews/SOURCE_AUDIT_REVIEW.md",
+      "sha256": "c2044f08f8faa4be0b1e5750636ce8e8e27f83a85775059912a2bf2f7f055b37",
+      "bytes": 6969
+    },
+    {
+      "path": "docs/quartic-12504/reviews/SOURCE_AUDIT_INDEPENDENT_REVIEW.md",
+      "sha256": "0bfa4f057888f50fa2729399f584c376b2070513705956b9af490871e4328ee7",
+      "bytes": 11116
+    },
+    {
+      "path": "docs/quartic-12504/reviews/RELEASE_ARITHMETIC_REVIEW.md",
+      "sha256": "e56b311d5718c8c18f3fc4886c1edc71f340d434bf205cd9c0849cb101fc134e",
+      "bytes": 28994
+    },
+    {
+      "path": "docs/quartic-12504/reviews/RELEASE_MANUSCRIPT_REVIEW.md",
+      "sha256": "97cc865d6f37c64b54ef83d259d3b29e677b620ad948388da48de39c30d20970",
+      "bytes": 12917
+    },
+    {
+      "path": "degree8-original/modules/Z_definition.json",
+      "sha256": "75fe909cbd7992c77ec99a2fe18495745362054d20083e4e6a3ff705bb17035e",
+      "bytes": 40576
+    },
+    {
+      "path": "degree8-original/modules/q_anchor.json",
+      "sha256": "e4d8f1c9395d254fef83bddefdf304c520af8fee0575926be3aa7189376965cb",
+      "bytes": 1337
+    },
+    {
+      "path": "degree8-original/modules/q_height_batch.json",
+      "sha256": "6682b1069de2edb5fe5ef5ffd5d53ac74652699d8166c509bccad63bf741860a",
+      "bytes": 3809
+    },
+    {
+      "path": "degree8-original/modules/q_primeparity.json",
+      "sha256": "de1bd279f6ca85b6f4d972c36a4ad079cc9678c47a8672904c168eedbab17478",
+      "bytes": 820
+    },
+    {
+      "path": "degree8-original/modules/q_batch41.json",
+      "sha256": "8963245225447a7065b67de902ad27b8820dbeba5562d13756fdf1f71902ae6a",
+      "bytes": 7057
+    },
+    {
+      "path": "degree8-original/modules/q_compare4.json",
+      "sha256": "639574951f42451345b3286a57ca922273567f20a548ee2426939c7a30a07212",
+      "bytes": 40242
+    }
+  ]
+}

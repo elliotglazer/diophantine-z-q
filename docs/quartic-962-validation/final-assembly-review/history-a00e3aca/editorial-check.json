@@ -1,0 +1,37 @@
+{
+  "status": "passed",
+  "previous_candidate_sha256": "b43f096ba3a4b1a979778ae1593ce3ad89048a2d28016e5ee9f35b124238dce7",
+  "candidate_sha256": "a00e3aca8bb55987bce8548ab9e5ce4392c89d1d76459a7c7ac33fca303a287b",
+  "eight_editorial_replacements_and_citation_key_only": true,
+  "author_blank": true,
+  "no_visible_personal_attribution": true,
+  "all_real_urls_preserved": true,
+  "exact_outputs": [
+    {
+      "path": "manuscript\\quartic_962-analytic-candidate.tex",
+      "sha256": "a00e3aca8bb55987bce8548ab9e5ce4392c89d1d76459a7c7ac33fca303a287b",
+      "exact_replay": true
+    },
+    {
+      "path": "assembled-components\\gaussian-analytic.tex",
+      "sha256": "bb9ea5e6cc12700e7c19f78a35e69d7838f7e4bb600539554c23007d7fdc2c2d",
+      "exact_replay": true
+    },
+    {
+      "path": "assembled-components\\source962.tex",
+      "sha256": "b45243a1f4c1ce5d635afbcc1d2bb7b7b47e9ee50b0e97dcff3cd031857183e5",
+      "exact_replay": true
+    },
+    {
+      "path": "assembled-components\\degree-lower-bound.tex",
+      "sha256": "f0df47dc7c7a0de1f9c34f16ad2decc3c2684d87ec09911d45293c08c804a55c",
+      "exact_replay": true
+    },
+    {
+      "path": "assembled-components\\sun-completed.tex",
+      "sha256": "080e99f4830a61d4c275b36b580c82ce905145d3f8bd93437aed6f5d8ee5445a",
+      "exact_replay": true
+    }
+  ],
+  "script_sha256": "d2e7903de7513f65606bf66633200accec15567aecdc9985119ed4164b864661"
+}

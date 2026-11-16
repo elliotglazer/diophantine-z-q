@@ -1,0 +1,484 @@
+% Working proof fragment, not integrated into a release.
+% Depends on the separately proved Lemma lem:gn-norm-transfer.
+% No Frei--Tinkova theorem is assumed in this fragment.
+% Their ideal-norm Type I/II strategy is retained as methodological attribution.
+\subsection{Gaussian ideal Vaughan decomposition and Type I/II estimates}
+\label{gi-section}
+
+We give the ideal decomposition and the subsequent integer-parameter
+recombination in full.  The architecture is that of
+\cite[Section~3]{GTMobius2012}, with the Gaussian ideal-norm adaptation
+attributed to Frei--Tinkova.  The analytic inputs used here are the
+separately proved Lemma~\ref{lem:gn-norm-transfer} and the published
+one-parameter results \cite[Theorem~2.9 and Lemma~4.5]{GTOrbits2012}.
+In particular, no theorem of Frei--Tinkova is an assumed input.
+
+Fix the Gaussian ray modulus $H_0$.  All ideals in this subsection are
+nonzero integral ideals of $\mathbb Z[i]$.  Write $\mathrm N\mathfrak a$
+for the absolute ideal norm, $\mu_E$ for ideal Mobius, and
+$\Lambda_E(\mathfrak p^j)=\log\mathrm N\mathfrak p$ for $j\geq1$, with
+$\Lambda_E$ zero on other ideals.  A ray character $\chi$ is extended by
+zero on ideals not coprime to $H_0$.  It is completely multiplicative
+and satisfies $|\chi|\leq1$.  We use a Lipschitz norm that includes the
+supremum norm.  All nilmanifolds have connected, simply connected
+nilpotent covering group, a cocompact lattice, and an adapted rational
+Mal'cev basis, with the filtration and polynomial-sequence conventions
+of \cite{GTOrbits2012}.
+
+\begin{lemma}[Ideal multiplicities and moments]\label{gi-moments}
+Let $a_E(n)=\#\{\mathfrak a:\mathrm N\mathfrak a=n\}$.  For $X\geq1$,
+\begin{align}
+ a_E(n)&\leq\tau(n),\label{gi-multiplicity}\\
+ \sum_{n\leq X}a_E(n)^2&\leq X(1+\log X)^3,&
+ \sum_{n\leq X}\frac{a_E(n)^2}{n}&\leq(1+\log X)^4.\label{gi-two-moments}
+\end{align}
+Moreover
+\begin{equation}\label{gi-ideal-count}
+ A_E(X):=\#\{\mathfrak a:\mathrm N\mathfrak a\leq X\}
+       =\frac{\pi}{4}X+O(\sqrt X+1).
+\end{equation}
+In particular $A_E(X)\ll X$, and the number of ideals of norm in
+$(B/2,B]$ is comparable to $B$ for all sufficiently large $B$.
+\end{lemma}
+\begin{proof}
+At a split rational prime $p$ one has $a_E(p^k)=k+1$; at an inert prime
+it is one for even $k$ and zero for odd $k$; and $a_E(2^k)=1$.
+Multiplicativity proves \eqref{gi-multiplicity}.  Prime by prime,
+$(k+1)^2\leq\binom{k+3}{3}$, so $\tau(n)^2\leq d_4(n)$.
+Summing over ordered quadruples with product at most $X$, and summing
+the last coordinate first, bounds $\sum_{n\leq X}d_4(n)$ by
+$X(1+\log X)^3$.  Bounding each of the four harmonic sums separately
+gives $\sum_{n\leq X}d_4(n)/n\leq(1+\log X)^4$.
+Every ideal has exactly four Gaussian generators.  Counting lattice
+points in the disk of radius $\sqrt X$, and dividing by four, proves
+\eqref{gi-ideal-count}: the unit squares meeting its boundary lie
+between circles of radii $\sqrt X-\sqrt2$ and $\sqrt X+\sqrt2$ and
+number $O(\sqrt X+1)$.
+\end{proof}
+
+\begin{lemma}[Exact ideal Vaughan identity]\label{gi-vaughan}
+Let $N\geq8$, $U=V=N^{1/3}$, $L=\log(2N)$, and let
+$f:\mathbb N\longrightarrow\mathbb C$ satisfy $|f|\leq1$ and vanish
+outside $(N/2,N]$.  Then
+\begin{equation}\label{gi-vaughan-sum}
+ \sum_{\mathfrak a}\Lambda_E(\mathfrak a)\chi(\mathfrak a)
+                       f(\mathrm N\mathfrak a)=T_0-T_1+T_2,
+\end{equation}
+where
+\begin{align*}
+ T_0&=\sum_{\mathrm N\mathfrak d\leq U}\mu_E(\mathfrak d)\chi(\mathfrak d)
+       \sum_{\mathfrak b}\log(\mathrm N\mathfrak b)\chi(\mathfrak b)
+                  f(\mathrm N\mathfrak d\,\mathrm N\mathfrak b),\\
+ T_1&=\sum_{\mathrm N\mathfrak d\leq UV}\alpha_{\mathfrak d}\chi(\mathfrak d)
+       \sum_{\mathfrak b}\chi(\mathfrak b)
+                  f(\mathrm N\mathfrak d\,\mathrm N\mathfrak b),\\
+ T_2&=\sum_{V<\mathrm N\mathfrak d\leq N/U}\beta_{\mathfrak d}\chi(\mathfrak d)
+       \sum_{\mathrm N\mathfrak b>U}\mu_E(\mathfrak b)\chi(\mathfrak b)
+                  f(\mathrm N\mathfrak d\,\mathrm N\mathfrak b),
+\end{align*}
+with
+\begin{align*}
+ \alpha_{\mathfrak d}
+   &=\sum_{\substack{\mathfrak b\mathfrak c=\mathfrak d\\
+              \mathrm N\mathfrak b\leq U,\ \mathrm N\mathfrak c\leq V}}
+                        \mu_E(\mathfrak b)\Lambda_E(\mathfrak c),&
+ \beta_{\mathfrak d}
+   &=\sum_{\substack{\mathfrak c\mid\mathfrak d\\\mathrm N\mathfrak c>V}}
+                        \Lambda_E(\mathfrak c).
+\end{align*}
+Both coefficients have absolute value at most $L$.
+\end{lemma}
+\begin{proof}
+Convolution on ideals satisfies
+$\mu_E*1=\mathbf1_{\mathfrak a=(1)}$, $1*\Lambda_E=\log\mathrm N$,
+and $\mu_E*\log\mathrm N=\Lambda_E$, as one checks on prime powers.
+Splitting $\mu_E$ at $U$ and $\Lambda_E$ at $V$ gives the exact identity
+\begin{equation}\label{gi-convolution-identity}
+ \Lambda_E=\mu_{\leq U}*\log\mathrm N+\Lambda_{\leq V}
+       -\mu_{\leq U}*1*\Lambda_{\leq V}
+       +\mu_{>U}*1*\Lambda_{>V}.
+\end{equation}
+The second term vanishes on the support of $f$.  Complete multiplicativity
+of $\chi$, including its zero extension, permits separation of each
+convolution factor and yields \eqref{gi-vaughan-sum} with exactly the
+stated cutoffs.  Finally
+$\sum_{\mathfrak c\mid\mathfrak d}\Lambda_E(\mathfrak c)
+=\log\mathrm N\mathfrak d$ and every summand is nonnegative.  This
+proves the coefficient bounds, with no discarded endpoint or error term.
+\end{proof}
+
+\begin{proposition}[Quantitative extraction]\label{gi-extraction}
+There are absolute constants $c_0>0$ and $N_0$ such that the following
+holds.  Under Lemma~\ref{gi-vaughan}, suppose $N\geq N_0$,
+$0<\epsilon\leq1$, and
+\begin{equation}\label{gi-large-correlation}
+ \left|\sum_{\mathfrak a}\Lambda_E(\mathfrak a)\chi(\mathfrak a)
+                         f(\mathrm N\mathfrak a)\right|\geq\epsilon NL.
+\end{equation}
+Put $\theta=c_0\epsilon^4/L^{24}$.  At least one of the following holds.
+\begin{enumerate}
+\item Some dyadic $R\leq2N^{1/3}$ has at least $\theta R$ integers
+$r\in(R/2,R]$ satisfying
+\[
+ \left|\sum_{\mathfrak b}\log(\mathrm N\mathfrak b)\chi(\mathfrak b)
+                   f(r\mathrm N\mathfrak b)\right|\geq\theta N/r.
+\]
+\item Some dyadic $R\leq2N^{2/3}$ has at least $\theta R$ integers
+$r\in(R/2,R]$ satisfying the same inequality without the logarithm.
+\item There are dyadic $R,B$ with
+\begin{equation}\label{gi-dyadic-ranges}
+ N^{1/3}<R\leq2N^{2/3},\qquad N/2<RB<4N,
+\end{equation}
+and at least $\theta R^2$ pairs $r,r'\in(R/2,R]$ satisfying
+\begin{equation}\label{gi-type-two-correlation}
+ \left|\sum_{B/2<\mathrm N\mathfrak b\leq B}
+       f(r\mathrm N\mathfrak b)\overline{f(r'\mathrm N\mathfrak b)}
+       \right|\geq\theta B.
+\end{equation}
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+One of $|T_i|$ is at least $\epsilon NL/3$.  For $T_0$ put
+\[
+ G(r)=\frac{r}{NL}\left|\sum_{\mathfrak b}\log(\mathrm N\mathfrak b)
+                   \chi(\mathfrak b)f(r\mathrm N\mathfrak b)\right|;
+\]
+for $T_1$ use $r/N$ times the absolute unweighted inner sum.  In either
+case Lemma~\ref{gi-moments} gives $G\ll1$ and
+\[
+ \epsilon\ll\sum_{r\leq N^e}\frac{a_E(r)G(r)}r,
+ \qquad e=1/3\text{ or }2/3.
+\]
+Cauchy--Schwarz and \eqref{gi-two-moments} imply
+$\sum_{r\leq N^e}G(r)^2/r\gg\epsilon^2/L^4$.
+There are $O(L)$ dyadic cells, so one satisfies
+\[
+ \sum_{R/2<r\leq R}G(r)^2\gg R\epsilon^2/L^5.
+\]
+Since $G\ll1$, at least $cR\epsilon^2/L^5$ terms have
+$G(r)\geq c\epsilon/L^{5/2}$.  Both the count and the claimed amplitudes
+follow after decreasing $c_0$.
+
+For $T_2$, split both ideal norms into dyadic cells.  There are $O(L^2)$
+rectangles, and a nonzero cell satisfies \eqref{gi-dyadic-ranges} and
+$B\geq N^{1/3}/4$.  A rectangle contributes at least $c\epsilon N/L$;
+we use the weaker bound $c\epsilon N/L^2$.  Grouping $\mathfrak d$ by
+$r=\mathrm N\mathfrak d$ writes this contribution as
+\[
+ T=\sum_{R/2<r\leq R}A_r\sum_{\mathfrak b\in\mathcal B}c_{\mathfrak b}
+                   f(r\mathrm N\mathfrak b),\qquad
+ \mathcal B=\{\mathfrak b:B/2<\mathrm N\mathfrak b\leq B\}.
+\]
+Here $|A_r|\leq L a_E(r)$ and $|c_{\mathfrak b}|\leq1$; the restriction
+$\mathrm N\mathfrak b>U$ belongs to $c_{\mathfrak b}$.  All product
+cutoffs remain in $f$, so the domain is rectangular.  By
+\eqref{gi-two-moments}, $\sum_r|A_r|^2\ll RL^5$.  Thus, with
+$F_{r,\mathfrak b}=f(r\mathrm N\mathfrak b)$,
+\begin{equation}\label{gi-first-cauchy}
+ T_*:=\sum_r\left|\sum_{\mathfrak b\in\mathcal B}
+                          c_{\mathfrak b}F_{r,\mathfrak b}\right|^2
+          \gg \epsilon^2 RB^2/L^9.
+\end{equation}
+Put $M=|\mathcal B|\asymp B$.  Expansion and Cauchy--Schwarz in the
+ordered pair $(\mathfrak b,\mathfrak b')$ give
+\begin{align}
+ T_*^2
+ &=\left|\sum_{\mathfrak b,\mathfrak b'}
+ c_{\mathfrak b}\overline{c_{\mathfrak b'}}
+ \sum_r F_{r,\mathfrak b}\overline{F_{r,\mathfrak b'}}\right|^2\notag\\
+ &\leq M^2\sum_{\mathfrak b,\mathfrak b'}
+       \left|\sum_rF_{r,\mathfrak b}\overline{F_{r,\mathfrak b'}}\right|^2
+ =M^2\sum_{r,r'}\left|\sum_{\mathfrak b}
+                  F_{r,\mathfrak b}\overline{F_{r',\mathfrak b}}\right|^2.
+ \label{gi-second-cauchy}
+\end{align}
+Consequently
+\[
+ \mathbb E_{r,r'}\left|\mathbb E_{\mathfrak b\in\mathcal B}
+              F_{r,\mathfrak b}\overline{F_{r',\mathfrak b}}\right|^2
+       \gg\epsilon^4/L^{18}.
+\]
+Every summand is at most one.  Thresholding gives
+\eqref{gi-type-two-correlation} and its stated count, with the weaker
+common parameter $\theta=c_0\epsilon^4/L^{24}$.  The character and Mobius
+coefficients have disappeared.  All conjugates in
+\eqref{gi-second-cauchy} are necessary.
+\end{proof}
+
+\paragraph{Progressions and interval restrictions.}\label{gi-progressions}
+In the application,
+\[
+ f(n)=1_{N/2<n\leq N}\,1_{u<n\leq v}\,1_{n\equiv b\pmod q}
+                              F(g(n)\Gamma).
+\]
+For Type I the congruence $rn\equiv b\pmod q$ is either insoluble or
+one class modulo $q/\gcd(r,q)$.  In Type II its intersection with
+$r'n\equiv b\pmod q$ is either empty or one class modulo
+\[
+ \operatorname{lcm}\bigl(q/\gcd(r,q),q/\gcd(r',q)\bigr),
+\]
+which divides $q$.  The remaining restrictions are interval intersections.
+Lemma~\ref{lem:gn-norm-transfer} covers them without a lower bound on
+their lengths.  On the product nilmanifold the function is
+$F(x)\overline{F(y)}$, whose Haar integral is
+$|\int F|^2=0$.  After normalizing $\|F\|_{\mathrm{Lip}}=1$, its
+Lipschitz norm for the sum metric is at most two.  Thus all mean-zero,
+modulus and interval hypotheses for product norm transfer are satisfied.
+
+\begin{lemma}[Integer-parameter recombination]\label{gi-recombination}
+For each $m,d$ there are $C_{\rm rec},K_{\rm rec}\geq2$ with the following
+property.  Let $0<\eta<\eta_0$, $N\geq\eta^{-K_{\rm rec}}$, and let $g$
+have degree at most $d$ on an $m$-dimensional nilmanifold with an
+$\eta^{-1}$-rational adapted basis.  Each of the following implies that
+$(g(n)\Gamma)_{n\leq N}$ is not totally $\eta^{C_{\rm rec}}$-equidistributed.
+\begin{enumerate}
+\item For at least $\eta R$ values $r\in(R/2,R]$, where
+$R\leq2N^{2/3}$, the orbit $(g(rn)\Gamma)_{n\leq\lceil N/r\rceil}$
+is not totally $\eta$-equidistributed.
+\item For at least $\eta R^2$ pairs $r,r'\in(R/2,R]$, where
+$N^{1/3}/4\leq R\leq2N^{2/3}$ and $N/2<RB<4N$, the product orbit
+$(g(rn),g(r'n))_{n\leq B}$ is not totally $\eta$-equidistributed.
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+All constants in this proof depend only on $m,d$.  Failure of total
+equidistribution gives a progression $a+q[\ell]\subseteq[M]$ with
+$\ell\geq\eta M$, $q\leq2/\eta$, and $|a|\leq2M$ on which ordinary
+$\eta$-equidistribution fails.  Apply
+\cite[Theorem~2.9]{GTOrbits2012}, in dimension $m$ or $2m$.  A nonzero
+horizontal character has magnitude and restricted smoothness norm at
+most $\eta^{-C_1}$, after shrinking $\eta_0$ to absorb fixed factors.
+
+Here is the required removal of a possibly large shift.  Write the scalar
+phase $p(a+qt)$ in monomials.  Multiplication by $d!$ clears conversion
+from its binomial coefficients.  Inverting $t=(n-a)/q$ and multiplying
+by $q^d$ clears every remaining denominator.  The error in the coefficient
+of $n^i$ is bounded by
+\begin{equation}\label{gi-shift-removal}
+ C_d\eta^{-C_1}\sum_{j=i}^d q^{d-j}|a|^{j-i}\ell^{-j}
+       \leq\eta^{-C_2}M^{-i},\qquad i\geq1.
+\end{equation}
+The integer parts disappear modulo one.  Thus a nonzero integer multiple
+of the character has magnitude and $C^\infty[M]$ norm at most
+$\eta^{-C_2}$.  This argument does not treat $a=O(M)$ as a bounded-height
+rational parameter.  There are at most $\eta^{-C_3}$ possible resulting
+characters, since their lattice has rank at most $2m$.  Pigeonholing
+therefore fixes one character on a set of density at least $\eta^{C_4}$.
+
+In Type I write
+$\psi(g(n))=\sum_{j=0}^d\beta_jn^j$ modulo one.  For the selected set
+$S\subseteq(R/2,R]$, coefficient conversion gives
+\begin{equation}\label{gi-one-coefficients}
+ \|d!\beta_jr^j\|_{\mathbb R/\mathbb Z}
+       \leq\eta^{-C_5}(R/N)^j,\qquad 1\leq j\leq d.
+\end{equation}
+If $R\leq\eta^{-C_6}$ for a sufficiently large fixed $C_6$, choose one
+$r\in S$ and multiply the character by $d!r^d$.  Multiplication of the
+$j$th bound by $r^{d-j}$ gives magnitude and $C^\infty[N]$ norm bounded
+by a fixed power of $\eta^{-1}$.  This treats every small dyadic scale,
+including $R=1$.
+
+Otherwise apply \cite[Lemma~4.5]{GTOrbits2012} to
+$r\mapsto d!\beta_jr^j$ on $[\lceil R\rceil]$.  The selected set has
+density at least a fixed power of $\eta$, and its values lie in an arc
+of length at most $2\eta^{-C_5}(R/N)^j$.  Taking $K_{\rm rec}$ large,
+the bound $R\leq2N^{2/3}$ makes this length at most half the density.
+The choice of $C_6$ also places the recurrence length beyond the fixed
+inverse density powers.  The published recurrence lemma supplies
+nonzero integers $t_j$, $|t_j|\leq\eta^{-C_7}$, such that
+\begin{equation}\label{gi-recurrent-coefficients}
+ \|t_j(d!)^2\beta_j\|_{\mathbb R/\mathbb Z}
+                    \leq\eta^{-C_8}N^{-j}.
+\end{equation}
+The extra factorial clears the leading-coefficient conversion.  Taking
+the product of the $t_j$ and the fixed factorials gives a single nonzero
+horizontal character of magnitude and $C^\infty[N]$ norm at most
+$\eta^{-C_9}$.
+
+For Type II the pigeonholed character is $\psi_1\oplus\psi_2$, not both
+zero.  Write the two scalar phases with coefficients $\beta_j,\beta'_j$.
+The information replacing \eqref{gi-one-coefficients} is
+\begin{equation}\label{gi-two-coefficients}
+ \|d!(\beta_jr^j+\beta'_jr'^j)\|_{\mathbb R/\mathbb Z}
+                        \leq\eta^{-C_5}(R/N)^j.
+\end{equation}
+Interchange the two coordinates if necessary so that $\psi_1\ne0$.
+Fix an $r'$ with at least $\eta^{C_4}R$ partners.  Equation
+\eqref{gi-two-coefficients} puts $d!\beta_jr^j$ in an arc centered at
+$-d!\beta'_jr'^j$.  The same published recurrence lemma permits this
+arbitrary center and gives \eqref{gi-recurrent-coefficients} for
+$\psi_1$.  Its large-length requirement follows from
+$R\geq N^{1/3}/4$ and a sufficiently large $K_{\rm rec}$.  There is no
+substitution of $(r-r_0)^j$ for $r^j-r_0^j$.
+
+Finally let $\Psi$ denote the nonzero character just obtained.  Its
+binomial expansion shows that for
+$1\leq n\leq c\eta^{2C_9+4}N$ the phase $\Psi(g(n))$ stays within
+$1/10$ of $\Psi(g(0))$.  Choose a mean-zero Lipschitz circle function
+equal to one on that arc and compose it with $\Psi$.  Its mean is zero
+because a nonzero horizontal character pushes Haar measure to circle
+Haar measure.  Its Lipschitz norm is bounded by a fixed power of
+$\eta^{-1}$ by \cite[Appendix~A]{GTOrbits2012}.  Choose $C_{\rm rec}$
+larger than the length and Lipschitz exponents, and then enlarge
+$K_{\rm rec}$ so the initial interval is nonempty.  Its average one
+contradicts total $\eta^{C_{\rm rec}}$-equidistribution.  This proves
+both assertions.  All exponent constants are finite combinations of
+the published one-parameter constants and degree-$d$ polynomial algebra.
+\end{proof}
+
+\begin{proposition}[Power-form Gaussian ideal minor-arc bound]
+\label{gi-minor-arc}
+For each $m,d$ there is $c_{\rm G}>0$ with the following property.
+Fix $H_0$ and a finite-order Gaussian ray character $\chi$ of modulus
+$H_0$, extended by zero.  Let $G/\Gamma$ have dimension $m$, filtration
+degree $d$, and a $Q$-rational adapted basis, with $Q\geq2$.  Suppose
+$(g(n)\Gamma)_{n\leq N}$ is totally $\delta$-equidistributed, where
+$0<\delta<1$.  If $F$ is Lipschitz and $\int F=0$, then for every
+interval progression $P\subseteq[N]$ of common difference at most $Q$,
+\begin{equation}\label{gi-power-bound}
+ \left|\sum_{\mathrm N\mathfrak a\leq N}\Lambda_E(\mathfrak a)
+       \chi(\mathfrak a)1_P(\mathrm N\mathfrak a)
+       F(g(\mathrm N\mathfrak a)\Gamma)\right|
+ \ll_{H_0,m,d} QN\log(2N)^7\delta^{c_{\rm G}}\|F\|_{\mathrm{Lip}}.
+\end{equation}
+No lower bound on the length of $P$ or on $\delta$ is required.
+\end{proposition}
+\begin{proof}
+Normalize $\|F\|_{\mathrm{Lip}}=1$.  Take the smaller positive exponents
+$\kappa,\sigma$ in Lemma~\ref{lem:gn-norm-transfer} for dimensions $m$
+and $2m$, and decrease $\kappa$ to at most one.  Partial summation gives
+the same transfer bound with an extra factor $\log(2M)$ for a
+$\log\mathrm N\mathfrak b$ weight: the unweighted lemma holds for
+every partial interval, and $\int_1^Mdt/t\leq\log(2M)$.
+Let $C_{\rm rec},K_{\rm rec}$ be as in Lemma~\ref{gi-recombination},
+and choose
+\begin{equation}\label{gi-exponent-choice}
+ a_*=\frac1{4C_{\rm rec}},\qquad
+ c_* =\frac{a_*\kappa}{32},\qquad
+ s_* =\min\left\{\frac1{100},\frac1{4a_*K_{\rm rec}},
+                             \frac{\sigma}{12a_*}\right\}.
+\end{equation}
+First assume $N^{-s_*}\leq\delta\leq\delta_0$, with the fixed cutoff
+$\delta_0$ sufficiently small, and restrict the sum to $(N/2,N]$.
+We claim that its absolute value is
+\begin{equation}\label{gi-shell-bound}
+                  \ll QNL^7\delta^{c_*},\qquad L=\log(2N).
+\end{equation}
+The elementary bound is $O(NL)$.  Thus the claim is immediate when
+$QL^6\delta^{c_*}\geq1$, and in the other case
+$Q\leq\delta^{-c_*}$ and $L\leq\delta^{-c_*/6}$.
+If \eqref{gi-shell-bound} fails with a sufficiently large implied
+constant, Proposition~\ref{gi-extraction} applies with
+$\epsilon$ a fixed large multiple of $QL^6\delta^{c_*}$; if this
+exceeds the permitted range, the elementary bound already proves the
+claim.  The extracted density and normalized amplitude are at least
+a fixed positive constant times $\delta^{4c_*}$, hence at least
+$\delta^{5c_*}$ after decreasing $\delta_0$.
+
+Set $\eta=\delta^{a_*}$.  If an extracted orbit were totally
+$\eta$-equidistributed, Lemma~\ref{lem:gn-norm-transfer}, with the
+progression analysis above, would bound the extracted sum by
+\[
+ O(M\delta^{a_*\kappa}L^e),\qquad e=0\text{ or }1.
+\]
+Here $M=\lceil N/r\rceil\geq N^{1/3}/2$ in Type I and
+$M=B\geq N^{1/3}/4$ in Type II.  The rationality and modulus hypotheses
+hold because $c_*<a_*\kappa$.  The lower-parameter hypothesis holds
+because $a_*s_*\leq\sigma/12$; increasing the fixed threshold for $N$
+absorbs the constants two and four.  Since $a_*\kappa=32c_*$, the
+displayed bound is smaller than $M\delta^{5c_*}$, even for $e=1$.
+This is a contradiction.  Thus every extracted orbit fails total
+$\eta$-equidistribution.  Its density is at least $\eta$, since
+$a_*>5c_*$.  Also $N\geq\eta^{-K_{\rm rec}}$ by
+$a_*s_*K_{\rm rec}\leq1/4$, and $Q\leq\eta^{-1}$.
+Lemma~\ref{gi-recombination} now contradicts total
+$\delta$-equidistribution, because
+$\eta^{C_{\rm rec}}=\delta^{1/4}>\delta$.  This proves
+\eqref{gi-shell-bound}.  Fixed values $\delta\geq\delta_0$ are covered
+by the elementary bound with a larger constant.
+
+We spell out the passage through all scales.  Use exact real endpoints
+$M_j=2^{-j}N$ and retain shells with $M_j\geq2\sqrt\delta N$.
+The discarded norms are at most $2\sqrt\delta N$ and their total
+absolute weight is $O(\sqrt\delta NL)$ by Lemma~\ref{gi-moments}.
+There is no rounding of ideal-norm cutoffs.  On $[\lfloor M_j\rfloor]$
+the orbit is totally $2\sqrt\delta$-equidistributed: every progression
+of the requisite length has at least $\delta N$ terms for sufficiently
+large $N$, and the original discrepancy bound is stronger.
+For $\delta\geq N^{-s_*/4}$ the lower-parameter condition for the shell
+bound holds on every retained scale, since
+$M_j\geq N^{1-s_*/8}$ up to fixed constants.  The progression is merely
+intersected with the shell; its common difference remains at most $Q$.
+Summing the shell estimates and using $\sum_jM_j\leq2N$ gives
+\begin{equation}\label{gi-full-intermediate}
+                  O(QNL^7\delta^{c_*/2}).
+\end{equation}
+For $1/N<\delta<N^{-s_*/4}$ replace $\delta$ by
+$\delta^{s_*/8}\geq N^{-s_*/8}$.  Total equidistribution at the
+original parameter implies it at this larger one.  The exponent in
+\eqref{gi-full-intermediate} becomes $c_*s_*/16$.
+For $\delta\leq1/N$, singleton progressions imply
+$|F(g(n)\Gamma)|\leq\delta$ at each integer $n$, so the elementary
+$O(NL)$ weight bound suffices.  All remaining bounded $N$ are absorbed
+by the fixed constant.  Thus one may take
+\begin{equation}\label{gi-final-exponent}
+                         c_{\rm G}=c_*s_*/16>0.
+\end{equation}
+Its dependence is only on $m,d$ and the corresponding norm-transfer
+exponents; $H_0$ enters constants and thresholds, not this exponent.
+\end{proof}
+
+\begin{corollary}[Ordinary prime term]\label{gi-ordinary-primes}
+Under the nilmanifold hypotheses of Proposition~\ref{gi-minor-arc},
+there is $c_{\mathbb Q}>0$, depending only on $m,d$, such that
+\begin{equation}\label{gi-ordinary-bound}
+ \left|\sum_{n\leq N}\Lambda'(n)1_P(n)F(g(n)\Gamma)\right|
+ \ll_{m,d} QN\log(2N)^7\delta^{c_{\mathbb Q}}\|F\|_{\mathrm{Lip}},
+\end{equation}
+where $\Lambda'(p)=\log p$ on rational primes and is zero otherwise.
+The same bound holds for ordinary von Mangoldt $\Lambda$.
+\end{corollary}
+\begin{proof}
+For positive integers the convolution identities
+$\mu*1=1_{n=1}$, $1*\Lambda=\log$, and $\mu*\log=\Lambda$ give
+\eqref{gi-convolution-identity} with exactly the displayed norm cutoffs
+replaced by integer cutoffs.  Its coefficients are bounded by
+$\sum_{c\mid d}\Lambda(c)=\log d$.  Integer multiplicity is one,
+so both moment bounds in Lemma~\ref{gi-moments} remain valid.  The
+two Cauchy--Schwarz calculations \eqref{gi-first-cauchy} and
+\eqref{gi-second-cauchy} apply to the resulting finite integer sums
+and give Proposition~\ref{gi-extraction} with the same conservative
+parameter $c_0\epsilon^4/L^{24}$.  Lemma~\ref{gi-recombination} concerns
+only integer dilation parameters and is unchanged.
+
+The unweighted replacement for norm transfer follows directly from
+total equidistribution.  If an interval progression $J\subseteq[X]$
+has $|J|\geq\zeta X$, then
+\[
+ \left|\sum_{n\in J}F(g(n)\Gamma)\right|
+       \leq |J|\zeta\|F\|_{\mathrm{Lip}}
+       \leq X\zeta\|F\|_{\mathrm{Lip}}.
+\]
+If $|J|<\zeta X$, its cardinality and the supremum norm give the same
+bound.  This treats every modulus and every truncated interval.
+Partial summation supplies the logarithmic weight; the identical
+long-progression/short-progression dichotomy treats the mean-zero
+product function $F\otimes\overline F$ on the product nilmanifold.
+Thus the exponent choices and all shell steps in the proof of
+Proposition~\ref{gi-minor-arc} apply, with any sufficiently small
+fixed positive transfer exponents, to give \eqref{gi-ordinary-bound}
+for $\Lambda$.  No extension of a Mobius theorem to $\Lambda$ is assumed.
+
+Finally proper prime powers contribute at most
+$O(\sqrt N\log(2N)^2\|F\|_{\mathrm{Lip}})$, by counting at most
+$N^{1/k}$ possible bases for each $2\leq k\leq\log_2N$.
+Shrink $c_{\mathbb Q}$ below $1/4$.  If $\delta>1/N$, this error is
+absorbed because $N\delta^{c_{\mathbb Q}}\geq N^{1-c_{\mathbb Q}}$.
+If $\delta\leq1/N$, singleton equidistribution and
+$\sum_{n\leq N}\Lambda'(n)\leq N\log(2N)$ prove the bound directly.
+This gives the assertion for $\Lambda'$ as well.
+\end{proof}
+
+% Scope: these are mean-zero minor-arc estimates.  Progression main terms,
+% fixed-field Hecke Siegel--Walfisz, factorization and the final cube/counting
+% argument remain separately proved inputs; no integration is asserted here.

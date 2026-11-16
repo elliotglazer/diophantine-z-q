@@ -1,0 +1,370 @@
+\subsection{From Gaussian nilsequence estimates to the polynomial count}
+\label{subsec:gaussian-gowers-bridge}
+
+Fix the Gaussian ray field $K/\Q(i)$ and the conjugation-invariant ray
+classes used in the preceding argument. Let $D$ be divisible by the
+conductor of $K^{\rm ab}/\Q$. For each relevant union $C$ of classes,
+let $\Lambda'_C$ be its rational prime weight and let $\mu_C(b)$ be the
+conditional density in \eqref{eq:v5-mu}. In particular
+$0\leq\mu_C(b)\leq1$. We use the following conclusion of the preceding
+Gaussian norm, progression and factorization arguments, as assembled in
+Corollary~\ref{cor:ga-fixed-centered-nilsequence}: for every fixed
+multiple $V$ of $D$, every unit $b\pmod V$, every fixed bounded-complexity
+nilsequence $F(g(n)\Gamma)$, and every $B>0$,
+\begin{equation}\label{eq:gaussian-centered-nil-input}
+\begin{aligned}
+ \left|\mathbb E_{n\leq L}h_{C,V,b}(n)F(g(n)\Gamma)\right|
+ &\ll_{V,B,\mathrm{complexity}}(\log L)^{-B},\\
+ h_{C,V,b}(n)&=\frac{\varphi(V)}V
+ \bigl(\Lambda'_C(Vn+b)-\mu_C(b)\Lambda'(Vn+b)\bigr).
+\end{aligned}
+\end{equation}
+The bound is uniform in the polynomial orbit and functions with the stated
+complexity bound. The field, its ray modulus and $V$ are fixed in this
+statement. We do not assume any uniform rate as $V$ varies.
+
+\paragraph{Published transference inputs.}
+We use Green--Tao, \emph{Linear equations in primes}~\cite{greentao},
+Proposition~6.4 and Appendix~D for the ordinary prime majorant,
+Proposition~7.1 and Appendix~C for its generalized von Neumann bound,
+and Lemma~4.4 with its subsequent normal-form reduction.
+These are statements about the ordinary prime majorant and arbitrary
+functions dominated by it; they do not assert an Artin-prime theorem.
+We also use Dodos--Kanellopoulos~\cite{v5dk}, Theorem~5.1, in the
+following form, checked in arXiv:1610.00487v4, pp.~12--13. The final
+typeset statement has not been compared. For target interval norm $U^s[L]$, $s\geq2$, its hypothesis on a
+nonnegative majorant on a prime cyclic group of size
+$L'\in[CL,2CL]$, $C\geq20$, is
+\begin{equation}\label{eq:gaussian-dk-correct-exponent}
+ \|\nu-1\|_{U^{2s}(\Z/L'\Z)}\leq\eta.
+\end{equation}
+For a real function $|f|\leq\nu$ with $\|f\|_{U^s[L]}\geq\delta$,
+the conclusion is a correlation bounded below with a bounded Lipschitz
+linear nilsequence on an $(s-1)$-step nilmanifold. Its nilmanifold,
+Lipschitz bound and positive correlation threshold depend only on
+$s,C,\delta$. The interval norm is the normalized zero-extension norm.
+In particular a target $U^{u+1}$ requires majorant norm $U^{2u+2}$.
+
+\paragraph{An auxiliary cutoff, distinct from the polynomial cutoff.}
+Put
+\[
+ V_z=D\prod_{\substack{p\leq z\\p\nmid D}}p.
+\]
+Here $z$ is an auxiliary cutoff used only to prove the next linear
+replacement statement. It is not the cutoff $v$ defining $W,A$ in
+\eqref{eq:v5-global-gowers}.
+For every fixed integer $s\geq2$, one can choose $z=z(L)\to\infty$
+sufficiently slowly that
+\begin{equation}\label{eq:gaussian-refined-gowers}
+ \max_{C,\ (b,V_z)=1}\|h_{C,V_z,b}\|_{U^s[L]}=o(1).
+\end{equation}
+The maximum is over the fixed finite list of ray-class unions and the
+finitely many unit residues for the current $V_z$.
+
+Here are all normalization and limit details. First choose the complexity
+of the ordinary prime majorant larger than both the requirements of the
+intended generalized von Neumann bound and
+$\max(4^s,4s)$. Choose its ambient constant $C\geq20$ large enough for
+both published majorant and generalized von Neumann statements. If
+$\lambda_{V,b}(n)=(\varphi(V)/V)\Lambda'(Vn+b)$, then
+$|h_{C,V,b}|\leq\lambda_{V,b}$. The majorant simultaneously dominates
+a fixed number of such ordinary weights on $[L^{3/5},L]$, with a
+multiplicative constant depending only on the chosen complexities.
+Consequently there is $\alpha>0$, depending only on the fixed
+complexities and the fixed factor in the modulus, such that
+$\alpha 1_{[L^{3/5},L]}h_{C,V_z,b}$ is dominated in absolute value by
+$\nu$ on $[L]$. The same $\alpha$ works for all cutoffs and unit residues.
+In applying the inverse theorem to a lower bound $\delta$ for the
+unscaled norm, use the lower bound $\alpha\delta/2$ for this truncated,
+scaled function, once the truncation error is at most $\delta/2$.
+
+For sufficiently large $z$, $V_z=E\prod_{p\leq z}p$ with $E$ fixed.
+The ordinary divisor-sum construction works with this $V_z$: at primes
+dividing $E$, the unit residue excludes every divisor term containing
+that prime, and at all other primes its local factors are unchanged.
+The same observation applies to the correlation upper bounds in
+Appendix~D. Thus the stated pseudorandomness conditions remain valid,
+uniformly in unit residues, with constants allowed to depend on $E$.
+Expand the centered $(2s)$-cube of $\nu-1$. It contains at most $4^s$
+distinct forms, in $2s+1$ variables, with coefficients zero or one.
+Every subproduct has mean $1+o(1)$ by the linear-forms condition;
+inclusion--exclusion gives \eqref{eq:gaussian-dk-correct-exponent} with
+a left side tending to zero. This estimate is on the full cyclic group.
+
+The removed initial interval contributes $o(1)$ to the interval $U^s$
+norm. Indeed the weights are $O(\log L)$ if $V_z=L^{o(1)}$, and a cube
+with its initial vertex in this interval has relative count
+$O(L^{-2/5})$. The $2^s$th power of the norm of the removed function is
+at most $O((\log L)^{2^s}L^{-2/5})$. Its correlation with a bounded
+nilsequence is also $o(1)$.
+
+If \eqref{eq:gaussian-refined-gowers} fails by some fixed $\delta>0$,
+Theorem~5.1 gives a fixed-complexity nilsequence correlation bounded
+away from zero, contradicting \eqref{eq:gaussian-centered-nil-input}.
+There is no illicit varying-modulus use of that input. For each integer
+$z$ and each of the finitely many residues modulo $V_z$, first take a
+size threshold for the required nilsequence estimates. Diagonalize
+these thresholds also over $\delta=1,1/2,1/3,\ldots$ and over the finite
+list of norm orders needed. Impose in addition
+$z(L)\leq\log\log\log L$ and all size thresholds of the majorant.
+At stage $j$, choose the cutoff $z_j$ large enough for the limiting
+majorant errors to be below half the inverse-theorem tolerances needed
+for the first $j$ tests; only then choose their size threshold $L_j$.
+The resulting increasing step function tends to infinity and proves
+the assertion for all sufficiently large $L$. The fixed smooth metric
+in the inverse theorem is comparable to a fixed Mal'cev metric, and a
+linear orbit with arbitrary base point is a polynomial orbit, so the
+nilsequence input applies to exactly the supplied correlations.
+When this construction is used at the refined scale $L\asymp N/V_{z_j}$
+below, choose the physical threshold $N_j$ so large that every constant
+multiple of $N/V_{z_j}$ used by the normal-form reduction is at least
+$L_j$ for $N\geq N_j$. Impose the same growth constraints there.
+Thus the cutoff is constant on each physical-scale stage; no implicit
+equation $z=z(N/V_z)$ is being assumed.
+
+\begin{lemma}[Fixed-system linear replacement]
+\label{lem:gaussian-linear-replacement}
+Let $\Psi=(\psi_1,\ldots,\psi_t):\Z^d\to\Z^t$ have fixed nonzero integer
+linear parts of finite complexity. Allow its constant terms to vary
+with $N$, subject to $\|\Psi\|_N\leq L_0$ for a fixed $L_0$.
+Uniformly over convex regions $\mathcal K\subseteq[-N,N]^d$ with
+$\Psi(\mathcal K)\subseteq[1,L_0N]^t$,
+\begin{equation}\label{eq:gaussian-linear-replacement}
+ \sum_{\mathbf n\in\mathcal K\cap\Z^d}
+ \left(\prod_{i=1}^t\Lambda'_{C_i}(\psi_i(\mathbf n))
+ -\prod_{i=1}^t\mu_{C_i}(\psi_i(\mathbf n)\bmod D)
+                         \Lambda'(\psi_i(\mathbf n))\right)=o(N^d).
+\end{equation}
+The same conclusion holds for a mixed product in which any selected
+factors have already been replaced by their ordinary-prime models.
+\end{lemma}
+\begin{proof}
+We can discard points where some $\psi_i\leq N^{9/10}$.
+For a nonconstant fixed linear form their number is
+$O_{\Psi,L_0}(N^{d-1}(N^{9/10}+1))$; the product of weights is
+$O((\log N)^t)$. This is $o(N^d)$, uniformly in the constant terms.
+Apply the auxiliary $V_z$-trick to the variables:
+$\mathbf n=V_z\mathbf m+\mathbf r$.
+If one output residue is not a unit modulo $V_z$, its prime weight
+vanishes on the remaining range, since the output is larger than
+every prime dividing $V_z$. For an admissible residue vector write
+\[
+ \psi_i(V_z\mathbf m+\mathbf r)
+       =V_z\widetilde\psi_{i,\mathbf r}(\mathbf m)+b_{i,\mathbf r},
+       \qquad1\leq b_{i,\mathbf r}\leq V_z.
+\]
+The new linear coefficients are the original ones. Its normalized
+constant terms remain bounded at scale $N/V_z$. Because $D\mid V_z$,
+the factor $\mu_{C_i}$ is constant on this residue vector.
+
+Telescope the difference of the two products. After normalization by
+$(\varphi(V_z)/V_z)^t$, each term has one factor $h_{C_i,V_z,b_i}$;
+all other factors are nonnegative and at most
+$\lambda_{V_z,b_j}$. Introduce a common ordinary-prime majorant for
+these at most $t$ weights and truncate as above. Multiply every
+factor by a common fixed $\alpha_0>0$ so that each has absolute value
+at most that majorant, and apply the normal-form extension of
+Green--Tao Lemma~4.4 and Proposition~7.1. Here $\alpha_0$ depends
+only on the fixed system, the chosen complexities and the fixed
+conductor, not on $z$ or the residue vector. The small factor has
+the required norm by \eqref{eq:gaussian-refined-gowers}. Dividing
+the resulting estimate by $\alpha_0^t$ changes only a fixed constant.
+The normal-form extension adds only a fixed number of variables with
+fixed coefficients; its convex-region reduction is the one following
+Lemma~4.4, and divides out their box volume. The error on each residue
+vector is therefore $o((N/V_z)^d)$, uniformly in the vector and convex
+region. The discarded initial segment stays outside the retained
+output range since $V_z=N^{o(1)}$.
+
+One can make this reduction explicit. For each pair $i\ne j$ choose
+an integer vector $v_{ij}$ with $\dot\psi_j(v_{ij})=0$ and
+$\dot\psi_i(v_{ij})\ne0$; fixed nonproportional linear parts ensure
+such vectors exist with fixed size. Replace $\mathbf m$ by
+$\mathbf x+\sum_{i\ne j}y_{ij}v_{ij}$ and allow each new $y_{ij}$
+to range over an integer interval of length comparable to $N/V_z$.
+The block $y_{ij}$ for fixed $i$ certifies normal form. The region
+defined by the original convex constraint on this sum and the new box
+is convex. The integer change $(\mathbf x,\mathbf y)\mapsto
+(\mathbf x+\sum y_{ij}v_{ij},\mathbf y)$ is bijective, so its sum
+is exactly the original sum times the number of points in the new box.
+Division by that number gives the asserted error. If there is only one
+form, choose an integer vector $v$ with $\dot\psi_1(v)\ne0$ and replace
+$\mathbf m$ by $\mathbf x+yv$. The same box and bijection argument
+gives the reduction in this case.
+
+No growing factor is lost when summing residue vectors. If
+$\mathcal R_z$ is the set of admissible vectors, then
+\begin{equation}\label{eq:gaussian-admissibility-mass}
+ \frac{|\mathcal R_z|}{V_z^d}
+       \left(\frac{V_z}{\varphi(V_z)}\right)^t
+   =\prod_{p\mid V_z}\beta_p(\Psi)=O_{\Psi,L_0}(1).
+\end{equation}
+Exclude the finitely many primes dividing a chosen nonzero
+coefficient of each linear part, and a chosen nonzero two-by-two
+minor for each pair of linear parts. At every remaining prime each
+output hyperplane has probability $p^{-1}$, and any two meet with
+probability $p^{-2}$. Hence $\beta_p=1+O_t(p^{-2})$, uniformly in
+the constant terms. This also covers $t=1$, when there are no pair
+minors and the good-prime factor is exactly one.
+The finitely many remaining factors are bounded by $(p/(p-1))^t$.
+The Chinese remainder theorem proves the equality, also for the fixed
+prime powers dividing $D$. Multiplying the per-residue error by this
+bounded mass gives $o(N^d)$. The proof works unchanged for the mixed
+products. All auxiliary thresholds can be chosen uniformly over bounded
+constant terms and convex regions, because the published majorant and
+generalized von Neumann conclusions have this uniformity.
+\end{proof}
+
+\paragraph{The exact local cube needed in the appendix.}
+Now fix the appendix cutoff $v$, and put $W,A,n,R$ as in its proof.
+This is a new limiting argument; the auxiliary cutoff in the proof of
+Lemma~\ref{lem:gaussian-linear-replacement} has already been eliminated
+from that lemma's statement. Let
+\[
+ f_{C,b}(x)=\frac{\varphi(W)}W\Lambda'_C(Wx+b)1_{R\leq x\leq n},
+ \qquad g_{C,b}=f_{C,b}-\mu_C(b).
+\]
+For fixed $a\geq2$ and $C_1<C_2<C_3$, uniformly over
+$q\leq A^{C_1}$ and $nA^{-C_3}\leq J\leq nA^{-C_2}$,
+\begin{equation}\label{eq:gaussian-global-gowers}
+ \|g_{C,b}\|_{U^a_{q[J]}}^{2^a}
+       \ll_{a,C_1,C_2,C_3,\rho,D}\frac1{\log v}+o_v(1).
+\end{equation}
+The norm uses the difference multiset $q(h-h')$, $h,h'\in[J]$, on
+$\Z/n\Z$.
+
+To prove this, remove the cutoff $x<R$ at cost
+$O((\log n)^{2^a}R/n)=o_v(1)$. Expand the centered cube and partition
+its domain according to every wrap-around integer $m_\omega$.
+The relevant affine forms are precisely
+\[
+ W\left(x+q\sum_{r=1}^a\omega_r(h_r-h'_r)-m_\omega n\right)+b,
+ \qquad\omega\in\{0,1\}^a.
+\]
+They have pairwise nonproportional linear parts. Each region is convex;
+there are $O_a(1)$ regions because $qJ/n<1$. For fixed $v$, the number
+of possible $q$ is finite and $J/n$ stays in a fixed positive compact
+interval. Apply Lemma~\ref{lem:gaussian-linear-replacement} to every
+subproduct and region. Its error is $o_v(n^{2a+1})$ uniformly in $J$,
+and division by $nJ^{2a}$ gives $o_v(1)$. Since every output is $b$
+modulo $D$, all its conditional densities are the same $\mu_C(b)$.
+Thus the centered Artin cube equals $\mu_C(b)^{2^a}$ times the
+centered ordinary-prime cube, plus $o_v(1)$.
+
+The ordinary cube is evaluated exactly as in Tao--Ziegler~\cite{v5tz},
+Proposition~6, published pages 39--40, using the ordinary-prime linear
+correlation theorem, for example the published formulation in
+Bienvenu~\cite{v6bienvenu}, Theorem~1.1, pages 79--80.
+The factors at $p\mid W$ cancel the normalization.
+For $p\nmid Wq$, pairwise independent gradients give local factor
+$1+O_a(p^{-2})$, uniformly in the wrap constants. For $p\mid q$,
+$p>v$, the factor is $1+O_a(p^{-1})$. Since
+$\log q=O_{C_1,\rho,D}(v)$, there are $O(v/\log v)$ such prime divisors.
+Their product is $1+O(1/\log v)$, and the other large-prime factors
+give $1+O(1/v)$. Centering cancels the common main term. Prime powers,
+if the ordinary theorem is stated for $\Lambda$, contribute $o_v(1)$
+by their $O(\sqrt n\log^2 n)$ total weight and the fixed linear-fiber
+bound. This proves \eqref{eq:gaussian-global-gowers}, and hence supplies
+\eqref{eq:v5-global-gowers} without an Artin linear-correlations theorem.
+
+\paragraph{Completion by the published polynomial transfer.}
+The remainder of the proof of Proposition~\ref{prop:v5-artin-patterns},
+starting with its arbitrary-function dense-model step, now applies
+unchanged to these fixed Gaussian ray fields. Specifically use the
+published Tao--Ziegler~\cite{v5tz} Theorem~11 and Corollary~3, then Theorem~9 and
+Theorem~13. The model for an arbitrary $f\leq\lambda_{W,b}$ is used;
+one does not assert that an Artin weight has model one. Equation
+\eqref{eq:gaussian-global-gowers} shows that its bounded model, minus
+$\mu_C(b)$, has small global norms. The model is bounded by a fixed
+constant depending on the chosen sieve exponent. Divide its difference
+from $\mu_C(b)$ by a fixed bound for that difference before applying
+Theorem~9, whose hypothesis is a bound by one. After restoring this
+fixed factor, concatenation and model approximation give the required
+local norm bounds. None of these scaling constants depends on $v$.
+
+Keep the original parameter order: local box order and coefficient
+bound first, then $B_0>C+2$, then the global order $a$, and finally
+small $\rho$. Only then let $v$ increase. The quantities
+$M_0=\lfloor T/W\rfloor$, $M_1=\lfloor M_0/A\rfloor$ and
+$J=\lfloor A^{-2B_0a}M_1^2\rfloor$ satisfy the size hypotheses recorded
+in the appendix when $T/\sqrt N\geq4\sqrt W/A$.
+For each fixed $v$ the estimates are uniform for $T$ in that allowed
+range. The final assertion $T=o(\sqrt N)$ is imposed only along the
+subsequent diagonal $v=v(N)\to\infty$, not while $v$ is frozen.
+
+After $u=Wx+b$, $w=Wm+c$, the polynomials are
+$c_jWm^2+2c_jcm+(b+c_jc^2-b_j)/W$, with distinct leading coefficients.
+The bounded-model transfer kills every term containing a centered
+factor. Output-boundary strips have width $O(T^2)=o(N)$.
+For completeness, dominate them first by strips of width $\epsilon N$.
+Here is the needed localization of the ordinary majorant estimate.
+This argument also covers negative coefficients $c_j$. For the true
+integer count use an enlarged period $n_* = \lceil B N/W\rceil$, where
+$B>2+\max_j|c_j|$ is fixed. We may assume $T\leq\sqrt N$.
+Nonpositive outputs have prime weight zero, and every positive output
+is at most $(1+\max_j|c_j|)N$. Discard also tuples for which some
+positive output is at most $W\lceil n_*^\rho\rceil+W$. For each $w$
+there are $O_k(W n_*^\rho+W)$ such $u$, so their total weight is
+$O_k((W n_*^\rho+W)T(\log N)^k)=o_v(NT)$, uniformly in the
+allowed $T$ range. All remaining true outputs have their ordinary
+prime majorants on $[n_*]$ without wrap-around. Use the same
+localization calculation on the original period $n$ to bound the
+artificial wrapped terms of the cyclic count. The parameters $n_*$
+and $n$ differ by a fixed factor, so both applications satisfy the
+same polynomial-forms hypotheses. In the following calculation $n$
+denotes either chosen ambient period.
+Write $\nu_0(x)$ for the majorant factor with constant shift if there
+is one, and set $\nu_0=1$ otherwise. There is at most one such factor.
+Put $F(x)=\mathbb E_m\prod_i\nu_i(x+P_i(m))$, omitting that factor.
+Tao--Ziegler, Theorem~15 in Appendix~A (published page~57), applied to
+$\nu_0F$, $\nu_0F^2$ and $\nu_0$, gives
+\[
+ \mathbb E_x\nu_0(x)(F(x)-1)^2=o_{v\to\infty}(1)+o_v(1).
+\]
+In the square use independent variables $m,m'$; the differences
+between all its nonconstant shift polynomials are nonconstant,
+including those from distinct copies. Weighted Cauchy--Schwarz now
+shows, for every interval $I$ in the $x$ variable,
+\[
+ \mathbb E_x1_I(x)\nu_0(x)F(x)
+ =\mathbb E_x1_I(x)\nu_0(x)+o_{v\to\infty}(1)+o_v(1).
+\]
+For fixed relative interval length the one-dimensional divisor-sum
+mean estimate gives
+$\mathbb E_x1_I\nu_0=|I|/n+o_{v\to\infty}(1)+o_v(1)$;
+it follows either directly from the ordinary majorant construction
+or from its linear-forms estimate on that fixed interval.
+The normalized prime weights are bounded by fixed multiples of
+their sieve majorants, with constants depending on the fixed sieve
+exponent. Thus a strip of width $\epsilon N$ has total weight
+$[O(\epsilon)+o_{v\to\infty}(1)+o_{v,\epsilon}(1)]NT$, with that
+fixed domination factor included in the implied constants.
+The errors here have the same iterated order as the rest of the
+polynomial transfer. Then take $\epsilon\downarrow0$ as described
+below. This avoids a spurious factor $(\log N)^k$ from a pointwise
+bound. The same positive majorant treats interval endpoints.
+
+Choose increasing cutoffs $v_j$ for which the global/local errors and
+$4\sqrt{W(v_j)}/A(v_j)$ tend to zero, and then choose size thresholds
+valid for all the finitely many residues, step values and transfer
+parameters at that cutoff.
+At stage $j$ impose the boundary estimates for every
+$\epsilon\in\{1,1/2,\ldots,1/j\}$, preserving all earlier tests.
+Let $v(N)=v_j$ between successive thresholds and take
+$\omega(N)\geq4\sqrt{W(v(N))}/A(v(N))$, tending to zero sufficiently
+slowly. This gives the uniform assertion for
+$\omega(N)\sqrt N\leq T=o(\sqrt N)$.
+Indeed, for an arbitrary such $T$, first fix $k$; eventually
+$T^2/N<1/k$ and the estimate for the strip of width $N/k$ applies.
+Take the upper limit as $N\to\infty$ and then $k\to\infty$.
+There is no requirement that $T^2/N<1/j(N)$ along the chosen stages.
+The main term is precisely \eqref{eq:v5-artin-series}; the admissible
+residue mass is bounded, so summation does not amplify errors.
+The $u\in[N/2,N]$ version follows by using that convex interval directly,
+or by subtraction with thresholds enlarged for $N/2$.
+
+This bridge uses the separately established Gaussian nilsequence input
+and published ordinary-prime transference. It uses no statement or
+estimate from Frei--Tinkov\'a as a theorem.
+
+

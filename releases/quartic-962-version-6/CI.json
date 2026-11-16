@@ -1,0 +1,82 @@
+[
+  {
+    "id": 42266165233,
+    "name": "Research checks",
+    "head_sha": "a9e834bac43b17e3f8415791f4adbd904f686b9d",
+    "status": "completed",
+    "conclusion": "success",
+    "html_url": "https://github.com/elliotglazer/diophantine-z-q/actions/runs/42266165233",
+    "jobs": [
+      {
+        "id": 128058519365,
+        "name": "Construction regeneration and finite checks",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 128058519639,
+        "name": "Version 6 quartic reproduction and inventory",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 128058519642,
+        "name": "Paper build",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 128058519791,
+        "name": "Accepted Lean helpers and axiom audit",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 128058519889,
+        "name": "Reconstructed quartic and Version 5 inventory",
+        "status": "completed",
+        "conclusion": "success"
+      }
+    ]
+  },
+  {
+    "id": 42266179345,
+    "name": "Version 6 manuscript and quartic verification",
+    "head_sha": "a9e834bac43b17e3f8415791f4adbd904f686b9d",
+    "status": "completed",
+    "conclusion": "success",
+    "html_url": "https://github.com/elliotglazer/diophantine-z-q/actions/runs/42266179345",
+    "jobs": [
+      {
+        "id": 128058574305,
+        "name": "reproduction",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 128058574726,
+        "name": "metadata",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 128058574738,
+        "name": "reconstruction",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 128058574791,
+        "name": "historical_reconstruction",
+        "status": "completed",
+        "conclusion": "success"
+      },
+      {
+        "id": 128058574919,
+        "name": "paper",
+        "status": "completed",
+        "conclusion": "success"
+      }
+    ]
+  }
+]

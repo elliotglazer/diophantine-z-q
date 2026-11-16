@@ -1,0 +1,8 @@
+{
+  "unresolved_new_refs": [],
+  "environment_errors": [],
+  "open_environments": [],
+  "duplicate_new_label": false,
+  "baseline_sha256": "06f98ff070139c3b6c60589c65867ceb4366b023f7960551abd52f85fa67e30c",
+  "pdflatex": "not run successfully: local MiKTeX setup requires denied AppData initialization"
+}

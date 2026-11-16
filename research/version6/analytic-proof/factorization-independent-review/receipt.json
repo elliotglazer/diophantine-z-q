@@ -1,0 +1,30 @@
+{
+  "status": "accepted_after_affine_precision_repairs",
+  "reviewer": "dag-sharing worker independent of factorization author",
+  "files": [
+    {
+      "path": "work\\frei-tinkova-removal-001\\factorization\\AFFINE_PULLBACK.md",
+      "sha256": "a7849af9a4c44af44e8bfecd4f4e94fdee58c36f5ccfef3b20dca032ee1126a1"
+    },
+    {
+      "path": "work\\frei-tinkova-removal-001\\factorization\\FACTORIZATION.md",
+      "sha256": "93eaf841621c852ae89b0447051f9773a89f3a31e44bd75dcf0e2666878cf559"
+    }
+  ],
+  "scope": [
+    "Fixed-W affine interpolation with total equidistribution on full expanded interval",
+    "Conditional transfer of accepted mean-zero estimates to W-tricked weights",
+    "Generic factorization implication from growth, centered progression and mean-zero minor-arc hypotheses"
+  ],
+  "repairs": [
+    "Require both u and v integral in linear coefficient lemma",
+    "Explicit a*C_aff<c0/2 and a*sigma<1/2 inequalities"
+  ],
+  "gapsRemainingInReviewedImplications": [],
+  "notEstablished": [
+    "Centered arithmetic progression main terms",
+    "Exact ray-prime character expansion",
+    "Final prime-pattern theorem",
+    "Removal of full Frei-Tinkova dependency"
+  ]
+}

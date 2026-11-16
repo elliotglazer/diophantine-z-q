@@ -1,0 +1,360 @@
+% Replace the former exact-compilation subsection with this fragment.
+% Retain the preceding shared-point arithmetic source and its hypotheses.
+% No claim here removes or proves its simultaneous-prime input.
+\subsection{The quadratic compilation in 962 variables}
+\label{subsec:v6-962-compilation}
+
+We compile the shared-point source above using different point charts,
+pole coordinates, and arithmetic circuits. Every change has explicit
+rational witness maps. The arithmetic source, including its simultaneous
+prime input, is unchanged. Throughout this subsection
+\[
+ K=\Q(\sqrt2),\qquad D=(3-\sqrt2)^2=11-6\sqrt2,
+ \qquad \mathsf S=3^{2^{27}}.
+\]
+An equation in $K$ means its two rational component equations. The fixed
+integer $\mathsf S$ is a coefficient, not a coordinate. An assignment of
+a quadratic expression to one rational coordinate adds one quadratic
+equation. Affine expressions require no coordinate.
+
+\begin{theorem}[The 962-variable quartic]
+\label{thm:v6-962-polynomial}
+The complete table specified below defines
+\[
+ P_{962}\in\Z[X_0,\ldots,X_{961}]
+\]
+with degree four, exactly $55409$ nonzero coordinate monomials, integer
+coefficient content one, and coefficient height
+\[
+ H(P_{962})=64\mathsf S^2=64\cdot3^{2^{28}}<2^{429496736}.
+\]
+It is the sum of squares of $919$ quadratic residuals and has the same
+rational input projection as the shared-point source of
+Theorem~\ref{thm:v5-source-projection}. Consequently, under that theorem's
+arithmetic hypotheses, for every $x\in\Q$,
+\[
+ x\in\Z\quad\Longleftrightarrow\quad
+ \exists X_1,\ldots,X_{961}\in\Q,\quad
+ P_{962}(x,X_1,\ldots,X_{961})=0.
+\]
+The $962$ variables include the input and $961$ existential witnesses.
+\end{theorem}
+
+\paragraph{A quadratic chart for the nine points.}
+For each point introduce $t,h\in K$ and set
+\begin{equation}\label{eq:v6-point-chart}
+ u=t^2,\qquad X=h^2,\qquad
+ u(X-u/4)=D,\qquad Y=h(u/2-X).
+\end{equation}
+The three assignments use six rational coordinates. The displayed
+constraint contributes two quadratic residuals. The four rational
+components of $t,h$ replace the four halfpoint components.
+
+\begin{lemma}[Exact point-chart maps]\label{lem:v6-point-chart}
+The chart \eqref{eq:v6-point-chart} describes precisely the finite doubles
+used in the shared-point source, with the same rational witnesses up to
+the following invertible changes. It preserves all required nonzero
+point-coordinate domains. The rational component $X_0$ of $X$ is positive.
+\end{lemma}
+\begin{proof}
+For an old halfpoint $(a,b)$ with $b^2=a^3-Da$ and its tangent equation,
+both $a,b$ are nonzero. Indeed $b=0$ would give $a=0$ or $a^2=D$,
+whereas the tangent numerator $3a^2-D$ would be $-D$ or $2D$. Then
+$a=0$ is excluded by the curve equation. Define
+\[
+ t=b/a,\qquad h=(a^2+D)/(2b)=a/t-t/2.
+\]
+The curve equation gives $t^2=a-D/a$. Substitution gives
+$t^2(h^2-t^2/4)=D$. The doubling formulas give exactly $X=h^2$
+and $Y=h(t^2/2-h^2)$.
+
+Conversely, a chart solution has $t\ne0$ because $D\ne0$. Set
+\[
+ a=th+t^2/2,\qquad b=at,\qquad m=h+t.
+\]
+If $a=0$, then $h=-t/2$, contradicting the chart equation. Thus $b\ne0$.
+Direct expansion gives
+\[
+ a^2-t^2a=D,\quad b^2=a^3-Da,\quad
+ 2bm=3a^2-D,\quad m^2-2a=h^2,
+\]
+and $m(a-h^2)-b=h(t^2/2-h^2)$. The substitutions are inverse, so they
+recover exactly the old finite double. Lemma~\ref{lem:v5-point-domains}
+therefore supplies its nonzero abscissa and ordinate, and the same remains
+true for the unchanged guarded differences and subsequent doublings.
+
+Both real embeddings of $D$ are positive. Since $t\ne0$, the chart
+equation implies $h^2=t^2/4+D/t^2>0$ under both embeddings. Hence
+$X_0$, the average of these two positive values, is positive.
+\end{proof}
+
+The five affine subtraction formulas keep their original inverses of
+the differences of abscissas. Neither a subtraction guard nor a point
+occurrence is deleted. Relative to the direct halfpoint doubling circuit,
+the chart saves two rational arithmetic coordinates for each of the nine
+points.
+
+\paragraph{The logarithm polynomial.}
+Retain the source's coefficients
+\[
+ a_0=1,\quad a_1=-2/5,\quad
+ a_j=a_{j-1}(4j-5)/(4j+1).
+\]
+For $P(w)=\sum_{j=0}^{12}a_jw^j$ write
+\begin{equation}\label{eq:v6-log-square-completion}
+ P(w)=a_{12}Q(w)^2+R(w),\qquad
+ \deg Q=6,\quad Q\text{ monic},\quad\deg R\le5.
+\end{equation}
+This identity is constructed without any witness division. Starting
+with the leading coefficient of $Q$ equal to one, match degrees eleven
+down to six successively. At each step the new coefficient is determined
+by division by $2a_{12}\ne0$. The remainder then has degree at most five.
+After computing $w^2,w^3$, every term through $w^6$ is quadratic in
+$1,w,w^2,w^3$. Assigning $Q$ and then $a_{12}Q^2+R$ therefore uses
+four field assignments, rather than five. The eight order-$52$
+logarithms save sixteen rational coordinates. The order-$16$ logarithms
+keep their exact degree-three polynomials. No truncation order changes.
+
+Usually the final logarithm is $\ell=zP(Df^2)$, with
+$f=1/x$ and $z=-x/y$. For $U_0$ and $V_0$ only, omit the separate $z$
+coordinates and impose the direct quotient equations
+\begin{equation}\label{eq:v6-log-quotient}
+ y\ell=-xP(Df^2).
+\end{equation}
+The polynomial output is an affine expression in assigned coordinates,
+so these are quadratic component equations. The ordinate is nonzero by
+Lemma~\ref{lem:v5-point-domains}; hence \eqref{eq:v6-log-quotient}
+is exactly the old logarithm. The source's logarithm-nonvanishing result
+and every logarithm-ratio domain remain unchanged. In the scalar block
+replace $z(H)\rho=z(S)$ by
+\begin{equation}\label{eq:v6-scalar-ratio}
+ x(H)\rho=-y(H)z(S).
+\end{equation}
+Both $x(H),y(H)$ are nonzero, so this has the same unique value
+$\rho=z(S)/z(H)$.
+
+\paragraph{Products, tests, and detector evaluation.}
+For each of the three orders, compute the elementary symmetric
+coefficients of $\prod_j(1+qD_j^2)$ by a balanced product tree.
+At an internal node with coefficient vectors $a_i,b_j$, assign each
+component of $\sum_{i+j=k}a_ib_j$ as one quadratic expression.
+This is the ordinary coefficient-convolution identity. It preserves
+every coefficient and every test, including its assigned order.
+
+The degree-ten detector polynomial is evaluated in two blocks:
+\begin{equation}\label{eq:v6-detector-block-evaluation}
+ \sum_{j=0}^{10}c_jq^j
+ =\sum_{j=0}^{4}c_jq^j
+   +q^5\left(\sum_{j=0}^{5}c_{j+5}q^j\right).
+\end{equation}
+Compute $q^2,q^3,q^4,q^5$ using four scalar assignments, assign the
+two components of the parenthesized block, and assign the two final
+components directly. The low block is not assigned separately.
+Every final summand is quadratic in the available coordinates. This
+uses eight rational coordinates. The degree-two and degree-four
+polynomials use their direct power sums, with their two component
+sums assigned once. These formulas are identities over $K$.
+
+The Lucas expression is regrouped as
+\[
+ t^2-a(a-2)tb+((a-2)b)^2-1
+ =t^2-(at)C+C^2-1,\qquad C=(a-2)b.
+\]
+Thus one field multiplication is removed without changing the tested
+polynomial. The fixed quintic is evaluated by its exact coefficients
+using $t^2$; it remains
+$F_5(t)=t(t+1/2)(t+1)(t-1/2399)(t+32/407)$.
+
+\paragraph{Weight quotients and their domains.}
+Fix a detector and write $A$ for its scale, $\delta=A\lambda-1$,
+and $e$ for its weight. The scales are
+\[
+ 1,\quad x(Q)_0^2,\quad (1+x(Q)_1^2)^2
+ \qquad(Q=A,S,T,Z).
+\]
+They are all positive by Lemma~\ref{lem:v6-point-chart}. Retain the
+inverse $\delta i=1$, and replace the separate fifth-power product
+and inverse of $F_5$ by
+\begin{equation}\label{eq:v6-weight-domain}
+ F_5(A\lambda)e=(A\delta)^4(A\delta).
+\end{equation}
+Here $(A\delta)^4$ denotes the output of its retained power-assignment
+gates; the displayed product is quadratic in the available coordinates.
+The right side is nonzero, so this equation forces both $F_5(A\lambda)$
+and $e$ nonzero. In particular the removed inverse of $F_5$ is recovered
+uniquely. Define the low-order weight by
+\[
+ \delta q_1=e i^2,
+\]
+where $i^2$ is likewise a retained square-assignment output. This gives
+the unchanged $q_1=e/\delta^3$. Retain the repeated-squaring
+values $e^6,e^{24},e^{96}$ and set
+\[
+ c=q_1e^6,\qquad q_{16}=ce^{24},\qquad q_{52}=ce^{96}.
+\]
+These are the old $q_1e^{30}$ and $q_1e^{102}$, with one shared product.
+
+If the detector product is $W=w_0+w_1\sqrt2$, retain $w_0j=1$ and use
+\begin{equation}\label{eq:v6-norm-final-weight}
+ w_0n=(w_0^2-2w_1^2)/2,\qquad ev=in,\qquad B=nv.
+\end{equation}
+The trace guard is essential and is retained. It gives $W\ne0$ in $K$,
+so $\operatorname{Norm}(W)\ne0$ and
+$n=\operatorname{Norm}(W)/(2w_0)\ne0$. Equations
+\eqref{eq:v6-weight-domain}--\eqref{eq:v6-norm-final-weight} therefore
+give
+\[
+ B=\frac{i}{e}\left(\frac{\operatorname{Norm}(W)}{2w_0}\right)^2\ne0,
+\]
+the original detector input. The reverse map restores $R=i/e$, its
+old inverse intermediates, and $n^2$ by their unique rational values.
+No inverse is inferred from an unguarded zero-over-zero quotient.
+
+\paragraph{The scalar norm and finite corrections.}
+The scalar contact polynomial $r$ and its inverse $ri=1$ remain.
+Writing $f=f(H)_0$, $u=f(H)_1$, and $g=f(S)_0$, retain the leaf
+$\ell=ui$ and replace two norm-tree
+nodes by
+\[
+ rn_0=r+f^2,\qquad rn_1=u\ell+g^2.
+\]
+with the existing leaf $ui$ retained. Since $r\ne0$, these equal
+$n_0=1+r(fi)^2$ and $n_1=(ui)^2+r(gi)^2$. All other nodes and all
+orders in the scalar norm tree are unchanged.
+
+Replace the eight Boolean correction choices and their seven product
+coordinates by $c_0,\ldots,c_7\in\Q$ satisfying
+\begin{equation}\label{eq:v6-correction-chain}
+ c_0^2=1,\qquad
+ (c_j-c_{j-1})(c_j-p_jc_{j-1})=0\quad(1\le j\le7),
+\end{equation}
+where $(p_1,\ldots,p_7)=(2,3,5,7,11,13,17)$. Induction shows
+$c_j\ne0$ and $c_j/c_{j-1}\in\{1,p_j\}$. Thus $c_7$ is exactly an
+allowed signed squarefree correction. Conversely every original
+choice determines such a chain. Recover the original Booleans by
+\[
+ \epsilon_-=(1-c_0)/2,\qquad
+ \epsilon_j=\frac{c_j/c_{j-1}-1}{p_j-1}.
+\]
+All denominators are nonzero. The scalar preparation coordinate,
+its defining quotient, and the explicit inverse of its pole input
+are retained.
+
+\paragraph{The ten pole blocks.}
+Write $b$ for a pole input, $C=17b$, and $U$ for its prepared value.
+For the nine coordinate poles $U=b$. In the scalar pole $U$ retains
+the source's preparation formula and its denominator domain.
+Every $C$ is nonzero: this was proved above for coordinate detectors,
+and the scalar input has its retained inverse.
+
+Replace the old witness $e_0$ by $z=Ce_0$. Introduce the five
+intermediates
+\[
+ P=p^2,\quad F=U^2,\quad H=z(C-F),\quad V=s^2,\quad Q=q^2,
+\]
+and impose
+\begin{equation}\label{eq:v6-scaled-poles}
+ CP=(C-z)(C+3z),\qquad CQ=(V-H)(V+3H).
+\end{equation}
+Every equation is quadratic. Under $z=Ce_0$, the first residual is
+$C$ times the old residual $p^2-C(1-e_0)(1+3e_0)$, and the second
+is unchanged because $H=Ce_0(C-U^2)$. The inverse map $e_0=z/C$
+is defined. This saves one arithmetic coordinate at each pole,
+without changing the pole predicate or any preparation condition.
+
+\paragraph{Counts and the final polynomial.}
+The initial allocation is
+\[
+\begin{array}{l|r|r}
+ &\text{coordinates}&\text{structural residuals}\\\hline
+ \text{input}&1&0\\
+ \text{nine point charts}&36&18\\
+ \text{common slope}&1&0\\
+ \text{nine coordinate poles}&36&18\\
+ \text{scalar pole with preparation}&5&2\\
+ \text{private anchor}&3&1\\
+ \text{signed correction chain}&8&8\\\hline
+ \text{total}&90&47
+\end{array}
+\]
+The complete program has $904$ arithmetic coordinates and their
+$904$ defining equations. Hence the raw counts are $994$ coordinates
+and $951$ quadratic residuals.
+
+The private anchor uses exactly the old affine change
+\[
+ u=\mathsf S+(U-3V+3W)/4,\quad
+ v=\mathsf S/2+V/4,\quad w=3\mathsf S/2+W/4.
+\]
+Its determinant is $1/64$. If $T=f_0^2+f_0f_1-f_1^2$, sixteen times
+the old anchor after substitution is
+\[
+ -48T^2+U^2-6UV+6UW+15V^2-18VW+7W^2+8\mathsf S U.
+\]
+No anchor condition or witness is removed.
+
+Each certified compiler elimination solves a row $aY+q=0$ with
+$a\in\Q^*$ and $q$ independent of $Y$, substitutes $Y=-q/a$
+everywhere, and removes that row. It is accepted only if every
+remaining residual is still quadratic. The reverse map reinserts
+the unique displayed value of $Y$. There are exactly $32$ such
+eliminations, no row additions, and no omission of an unused coordinate.
+The input is retained. Consequently
+\[
+ 90+904-32=962,\qquad47+904-32=919.
+\]
+Normalize the remaining rows to primitive integer polynomials
+$q_1,\ldots,q_{919}$ and define
+\begin{equation}\label{eq:v6-final-polynomial}
+ P_{962}(X_0,\ldots,X_{961})=\sum_{\nu=1}^{919}q_\nu^2.
+\end{equation}
+The complete coefficient table is
+\nolinkurl{quartics/quartic-962/polynomial.json}, with SHA-256
+\begin{center}\small
+\nolinkurl{6b798de7d00ac3c7d725ca0a69d39f1eac1ddb02fee2756cb6323770b952af32}.
+\end{center}
+An entry with coefficient $c$, exponent \texttt{sPower} $k$, and
+coordinate list $[i_1,\ldots,i_d]$ means
+$c\mathsf S^kX_{i_1}\cdots X_{i_d}$. Every entry is included and repeated
+indices give powers. This defines an ordinary integer polynomial.
+
+\begin{proof}[Proof of Theorem~\ref{thm:v6-962-polynomial}]
+For a source solution apply the point-chart, correction-chain and
+pole substitutions, and evaluate all new assignment and quotient
+coordinates in dependency order. The identities and domain proofs
+above show that every structural residual vanishes. Conversely apply
+the inverse substitutions, restore every deleted quotient by its
+proved nonzero denominator, and evaluate the source assignments.
+Every source point, logarithm, test, detector input, scalar value and
+anchor value is recovered. These maps fix $X_0$. The affine anchor
+change, certified eliminations and nonzero row normalizations preserve
+the same projection. Over $\Q$, \eqref{eq:v6-final-polynomial} vanishes
+exactly when all $919$ residuals vanish. This proves the projection
+statement, and Theorem~\ref{thm:v5-source-projection} gives its conditional
+arithmetic interpretation.
+
+Independent exact convolution gives $55409$ distinct monomials.
+Of their coefficients, $55401$ are $\mathsf S$-independent integers,
+seven are $c\mathsf S$ with $0<|c|\le768$, and one is
+$64\mathsf S^2$. The largest absolute $\mathsf S$-independent coefficient
+has bit length $1526$. Thus no coefficient vanishes on specialization
+and $64\mathsf S^2$ is the exact height. It occurs at $X_{79}^2$,
+where $X_{79}=U$. The coefficient of $X_0^4$ is one, proving degree
+four and integer content one. Finally
+$\log_2(64\mathsf S^2)<6+(8/5)2^{28}<429496736$ because $3^5<2^8$.
+\end{proof}
+
+The frozen package includes the builder, raw systems, all $904$ gate
+definitions, the exact elimination and normalization certificate,
+compact coordinate map, final residuals, complete coefficient table,
+source-equivalence proofs and independent reviews. Its manifest has
+SHA-256
+\begin{center}\small
+\nolinkurl{36fca72cb0eb126193ffa43d890ff09d5e29cbf1274561d2632ed1e227163787}.
+\end{center}
+The independent checker verifies every gate, all $894$ certificate
+operations, the complete sum-of-squares expansion, support,
+integrality, content and height. A fresh isolated reproduction gives
+the same seven deterministic artifacts byte for byte. These finite
+checks establish the stated algebraic facts; they do not prove any
+inherited arithmetic input.

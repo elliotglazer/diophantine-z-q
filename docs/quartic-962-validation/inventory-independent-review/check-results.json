@@ -1,0 +1,15 @@
+{
+  "status": "passed",
+  "candidate_sha256": "06f98ff070139c3b6c60589c65867ceb4366b023f7960551abd52f85fa67e30c",
+  "register_sha256": "b7a42a50809c85ef14a9380a15576ef0170bad571ef713c329e31f594f8c12cf",
+  "current_source_spans_checked": 1488,
+  "evidence_pins_checked": 45,
+  "locally_available_source_versions_checked": {
+    "work/quartic-version5-release/sun-proof/sources/GT-orbits-published.pdf": "8c7ea5eced84dc5da97508f4eda39fa84c958d3e659a797ab402645c1c207c8f",
+    "work/quartic-version5-release/sun-proof/sources/GT-mobius-published.pdf": "5259dbc9ee73df46edd765ca27c8b3c0ec466f6b78abafa5f54237b11d44a314",
+    "work/frei-tinkova-removal-001/published-input-audit/mitsui1956.pdf": "b71fbd5ae9443991479a73a4e7bde68165b0c0e90b290cd0bd94fd9da416f963"
+  },
+  "new_applications": 30,
+  "retired_applications": 6,
+  "review_scope": "Pin fidelity and correct retirement scope; mathematical coverage assessed in REVIEW.md, not inferred from these checks."
+}

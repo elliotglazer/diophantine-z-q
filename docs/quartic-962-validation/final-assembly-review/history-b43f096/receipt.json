@@ -1,0 +1,60 @@
+{
+  "status": "accepted_assembly_fidelity",
+  "reviewer": "/root/astra_sub1000_quotients",
+  "date": "2026-11-06",
+  "scope": "Exact assembly transformations, retained V5 source, frozen compiler component mapping and lower-bound insertion; complete analytic audit separate",
+  "files": [
+    {
+      "path": "work\\quartic-version6-preparation\\manuscript\\quartic_962-analytic-candidate.tex",
+      "sha256": "b43f096ba3a4b1a979778ae1593ce3ad89048a2d28016e5ee9f35b124238dce7"
+    },
+    {
+      "path": "work\\quartic-version6-preparation\\assemble_preparation.py",
+      "sha256": "a7c72c39d6c885b76ec15a76f8ceeed5acebf90d2a4a1eb15636ac523d57fa0f"
+    },
+    {
+      "path": "work\\quartic-version6-preparation\\assemble_analytic_candidate.py",
+      "sha256": "e648e4817f7e43afb853083a89d57ff99ac543f8e9c5aa0c545825f781ff894b"
+    },
+    {
+      "path": "work\\quartic-version6-preparation\\quartic-962\\construction.tex",
+      "sha256": "529e821f776ae230d860e5efe01dfd55c05af9d2cdbb8c42bf907f9d42167769"
+    },
+    {
+      "path": "work\\quartic-version6-preparation\\lower-bound\\degree_lower_bound.tex",
+      "sha256": "6db65ff9d69dfd1e3c5186cc3bec0ee84d2cb4120bf0a2a875469cc3a07cd71f"
+    },
+    {
+      "path": "work\\quartic-version6-preparation\\final-assembly-review\\check_assembly.py",
+      "sha256": "bd83c5e6ba6f2478384d1480b7bfb5642e4f4224254a29a7ae4870d48241907d"
+    },
+    {
+      "path": "work\\quartic-version6-preparation\\final-assembly-review\\assembly-check.json",
+      "sha256": "434752a6786c139477db6ff0165987f2e972b694355e94970242c0c12fde4d61"
+    },
+    {
+      "path": "work\\quartic-version6-preparation\\final-assembly-review\\REVIEW.md",
+      "sha256": "bf6e6d8f40e4bbaa281b5fde5b3b08e9b6ccc7956cee249156619cd7d29d6d86"
+    }
+  ],
+  "checks": 35,
+  "published": false,
+  "sourceQualification": "Existing lower-bound receipt checks Kollar author-version statement and published metadata, not full published text.",
+  "assembled_fragments": {
+    "gaussian-analytic": {
+      "path": "work\\quartic-version6-preparation\\assembled-components\\gaussian-analytic.tex",
+      "sha256": "bb9ea5e6cc12700e7c19f78a35e69d7838f7e4bb600539554c23007d7fdc2c2d",
+      "acceptance_scope": "exact assembled span; component proofs and analytic closure use separate independent reviews"
+    },
+    "source962": {
+      "path": "work\\quartic-version6-preparation\\assembled-components\\source962.tex",
+      "sha256": "174c26a34f6ae94cd120e2084901440a1dd4c9f6ca5576703f14914b58b69ccb",
+      "acceptance_scope": "exact assembled span; component proofs and analytic closure use separate independent reviews"
+    },
+    "sun-completed": {
+      "path": "work\\quartic-version6-preparation\\assembled-components\\sun-completed.tex",
+      "sha256": "080e99f4830a61d4c275b36b580c82ce905145d3f8bd93437aed6f5d8ee5445a",
+      "acceptance_scope": "exact assembled span; component proofs and analytic closure use separate independent reviews"
+    }
+  }
+}

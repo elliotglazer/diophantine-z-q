@@ -1,0 +1,120 @@
+{
+  "status": "PASS",
+  "scope": "Literal anchor rows, constant-chain rows, exact scalar arithmetic and conditional numerical cutoff only.",
+  "no_heavy_expansion_performed": true,
+  "literal_counts": {
+    "anchor_private_witnesses": 16,
+    "anchor_residuals": 6,
+    "shared_chain_witnesses": 25,
+    "shared_chain_residuals": 25
+  },
+  "root_wiring": {
+    "anchor_calls": [
+      {
+        "module": "q_anchor",
+        "args": [
+          26,
+          27
+        ]
+      }
+    ],
+    "S_abscissa_pair": [
+      30,
+      31
+    ],
+    "reciprocal_pair": [
+      26,
+      27
+    ],
+    "both_coordinate_inverse_equations_verified": true
+  },
+  "P_new_mod_3": [
+    [
+      0,
+      1
+    ],
+    [
+      0,
+      0
+    ]
+  ],
+  "z_2P_old": [
+    [
+      -6351748793760,
+      3287811625151
+    ],
+    [
+      -5612900635092,
+      3287811625151
+    ]
+  ],
+  "z_2P_new": [
+    [
+      3396356159088,
+      3287811625151
+    ],
+    [
+      -4135204317756,
+      3287811625151
+    ]
+  ],
+  "z_2P_new_coefficient_3_adic_valuations": [
+    1,
+    1
+  ],
+  "z_P_new": [
+    [
+      232,
+      357
+    ],
+    [
+      86,
+      357
+    ]
+  ],
+  "normalized_2_adic_parameter_valuation": "3/2",
+  "anchor_constant_recipe": "C=3^(2^24); C digits not materialized",
+  "anchor_index_subgroup_recipe": "2*3^(2^23-1) Z, excluding index zero when S is required nonzero",
+  "height_bound_assumption": "log_2(H)<4783227, requiring separate H5 verification",
+  "cutoff_integer_comparison": {
+    "left": 25165821,
+    "right": 19132928,
+    "strictly_greater": true
+  },
+  "anchor_and_chain_sos_coefficient_L1_upper_bound": 6956,
+  "anchor_and_chain_sos_degree_upper_bound": 4,
+  "source_files": [
+    {
+      "path": "polynomial/modules/q_anchor.json",
+      "sha256": "961e0cdbaefef28d3fa718f4e5924b5b60e4c500fb4bf2ce33e0898a4650c270"
+    },
+    {
+      "path": "polynomial/modules/Z_definition.json",
+      "sha256": "3481dc07810493980b94071aab3e728ead885710213d1fef337199e8d2f73885"
+    },
+    {
+      "path": "polynomial/shared.json",
+      "sha256": "e8da6dac27a0aab65ab8a377a9a9c78bd8baccd40f4dff229fce17759b03cc28"
+    },
+    {
+      "path": "polynomial/counts.json",
+      "sha256": "024d5958d0a0872739457d009373149fd174943a6102b4b03d9b24865e524f9a"
+    },
+    {
+      "path": "article/short-polynomial-proof-sections.tex",
+      "sha256": "2185b5031f986ecc24260bb7f963c746dee22d2fa887e58d1a67e688867b7b5f"
+    },
+    {
+      "path": "source-inputs/focused_diophantine.tex",
+      "sha256": "2b986ebe8dadbc7579a4390a2d0268c87170f0c4753e3ffba0fafd1eadf463a4"
+    },
+    {
+      "path": "audits/unit-scale-anchor-audit.md",
+      "sha256": "009baba2dfc934c3f19166a48408ba6cafbbb971db776460b5a76552ff712bb4"
+    },
+    {
+      "path": "module-specification.md",
+      "sha256": "8d48b84bb189f04d6d8970a53b272df1df7d8fb575dd8059f35ba93c504f566b"
+    }
+  ]
+}

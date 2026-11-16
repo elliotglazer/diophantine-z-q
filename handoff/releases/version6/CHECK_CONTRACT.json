@@ -1,0 +1,54 @@
+{
+  "schema": "quartic-962-release-check-contract-v1",
+  "packagePath": "quartics/quartic-962",
+  "entrypoint": "scripts/check_quartic962.py",
+  "helper": "scripts/quartic962_checks.cjs",
+  "receiptSchema": "quartic-962-reproduction-v1",
+  "status": "PASS",
+  "packageManifestSha256": "36fca72cb0eb126193ffa43d890ff09d5e29cbf1274561d2632ed1e227163787",
+  "polynomialPath": "polynomial.json",
+  "polynomialSha256": "6b798de7d00ac3c7d725ca0a69d39f1eac1ddb02fee2756cb6323770b952af32",
+  "baselinePolynomialSha256": "02e4771ba6e6c2abc749e33e8440cc256939f48005d5102fba7d9853489c8586",
+  "baselineManifestSha256": "aa7f04c54e8b778a419a1be8d24e0b3a9a8540c50202d41815864a156d6985c6",
+  "byteIdentical": true,
+  "result": {
+    "variablesIncludingInput": 962,
+    "existentialWitnesses": 961,
+    "degree": 4,
+    "monomials": 55409,
+    "quadraticResiduals": 919,
+    "primitiveContent": "1",
+    "height": "64*3^(2^28)"
+  },
+  "requiredChecks": [
+    "package_integrity",
+    "serialization_policy",
+    "baseline_source_bindings",
+    "accepted_equivalence_evidence",
+    "compiler_selftest",
+    "build",
+    "compile_translated",
+    "independent_certificate_check",
+    "emitted_quotient_semantics",
+    "point_chart_equivalence",
+    "emitted_polynomial_circuits",
+    "anchor_equivalence",
+    "frozen_artifact_identity",
+    "fixed_integer_statistics"
+  ],
+  "deterministicArtifacts": [
+    "raw-ir.json",
+    "raw-translated-ir.json",
+    "compiled-ir.json",
+    "reduction-certificate.json",
+    "coordinate-map.json",
+    "polynomial.json",
+    "specialization-certificate.json"
+  ],
+  "localAssertionCounts": {
+    "emitted_quotient_semantics": 136,
+    "point_chart_equivalence": 135,
+    "emitted_polynomial_circuits": 659,
+    "anchor_equivalence": 957
+  }
+}

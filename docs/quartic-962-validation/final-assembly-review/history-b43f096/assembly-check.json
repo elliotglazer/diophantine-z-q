@@ -1,0 +1,682 @@
+{
+  "status": "passed",
+  "checks": [
+    {
+      "check": "target requested hash",
+      "passed": true
+    },
+    {
+      "check": "frozen V5 source hash",
+      "passed": true
+    },
+    {
+      "check": "read-only script replay: quartic_962-preparation.tex",
+      "passed": true
+    },
+    {
+      "check": "read-only script replay: quartic_962-analytic-candidate.tex",
+      "passed": true
+    },
+    {
+      "check": "read-only script replay: gaussian-analytic.tex",
+      "passed": true
+    },
+    {
+      "check": "read-only script replay: source962.tex",
+      "passed": true
+    },
+    {
+      "check": "read-only script replay: sun-completed.tex",
+      "passed": true
+    },
+    {
+      "check": "original construction and arithmetic foundations",
+      "passed": true
+    },
+    {
+      "check": "4973 construction",
+      "passed": true
+    },
+    {
+      "check": "smaller-quartic arithmetic interfaces",
+      "passed": true
+    },
+    {
+      "check": "retained shared-point source",
+      "passed": true
+    },
+    {
+      "check": "downstream old arithmetic appendices",
+      "passed": true
+    },
+    {
+      "check": "exact transformed insertion: quotient-audit/norm_transfer.tex",
+      "passed": true
+    },
+    {
+      "check": "exact transformed insertion: type-i-ii/type_i_ii.tex",
+      "passed": true
+    },
+    {
+      "check": "exact transformed insertion: factorization/affine_pullback.tex",
+      "passed": true
+    },
+    {
+      "check": "exact transformed insertion: factorization/factorization.tex",
+      "passed": true
+    },
+    {
+      "check": "exact transformed insertion: gowers-bridge/bridge.tex",
+      "passed": true
+    },
+    {
+      "check": "exact transformed insertion: published-input-audit/gaussian_hecke_sw.tex",
+      "passed": true
+    },
+    {
+      "check": "exact insertion: quartic-962/construction.tex",
+      "passed": true
+    },
+    {
+      "check": "exact insertion: lower-bound/degree_lower_bound.tex",
+      "passed": true
+    },
+    {
+      "check": "input hash: work\\quartic-version6-preparation\\manuscript\\quartic_962-preparation.tex",
+      "passed": true
+    },
+    {
+      "check": "input hash: work\\frei-tinkova-removal-001\\progression_mainterms.tex",
+      "passed": true
+    },
+    {
+      "check": "input hash: work\\frei-tinkova-removal-001\\published-input-audit\\gaussian_hecke_sw.tex",
+      "passed": true
+    },
+    {
+      "check": "input hash: work\\frei-tinkova-removal-001\\quotient-audit\\norm_transfer.tex",
+      "passed": true
+    },
+    {
+      "check": "input hash: work\\frei-tinkova-removal-001\\type-i-ii\\type_i_ii.tex",
+      "passed": true
+    },
+    {
+      "check": "input hash: work\\frei-tinkova-removal-001\\factorization\\affine_pullback.tex",
+      "passed": true
+    },
+    {
+      "check": "input hash: work\\frei-tinkova-removal-001\\factorization\\factorization.tex",
+      "passed": true
+    },
+    {
+      "check": "input hash: work\\frei-tinkova-removal-001\\gowers-bridge\\bridge.tex",
+      "passed": true
+    },
+    {
+      "check": "input hash: work\\frei-tinkova-removal-001\\published-input-audit\\bibliography.tex",
+      "passed": true
+    },
+    {
+      "check": "frozen manifest pin",
+      "passed": true
+    },
+    {
+      "check": "all frozen manifest file hashes",
+      "passed": true
+    },
+    {
+      "check": "baseline builder equals V5 builder",
+      "passed": true
+    },
+    {
+      "check": "final counts",
+      "passed": true
+    },
+    {
+      "check": "input fixed and all 962 compact coordinates present",
+      "passed": true
+    },
+    {
+      "check": "lower-bound reviewed fragment hash",
+      "passed": true
+    }
+  ],
+  "changed_ranges": [
+    {
+      "kind": "replace",
+      "V5_lines": [
+        39,
+        39
+      ],
+      "candidate_lines": [
+        39,
+        39
+      ]
+    },
+    {
+      "kind": "replace",
+      "V5_lines": [
+        53,
+        54
+      ],
+      "candidate_lines": [
+        53,
+        54
+      ]
+    },
+    {
+      "kind": "replace",
+      "V5_lines": [
+        113,
+        114
+      ],
+      "candidate_lines": [
+        113,
+        114
+      ]
+    },
+    {
+      "kind": "insert",
+      "V5_lines": [
+        117,
+        116
+      ],
+      "candidate_lines": [
+        117,
+        119
+      ]
+    },
+    {
+      "kind": "replace",
+      "V5_lines": [
+        10524,
+        10525
+      ],
+      "candidate_lines": [
+        10527,
+        10528
+      ]
+    },
+    {
+      "kind": "replace",
+      "V5_lines": [
+        10534,
+        10535
+      ],
+      "candidate_lines": [
+        10537,
+        10539
+      ]
+    },
+    {
+      "kind": "replace",
+      "V5_lines": [
+        10556,
+        10574
+      ],
+      "candidate_lines": [
+        10560,
+        10562
+      ]
+    },
+    {
+      "kind": "replace",
+      "V5_lines": [
+        11210,
+        11211
+      ],
+      "candidate_lines": [
+        11198,
+        11202
+      ]
+    },
+    {
+      "kind": "replace",
+      "V5_lines": [
+        11213,
+        11214
+      ],
+      "candidate_lines": [
+        11204,
+        11207
+      ]
+    },
+    {
+      "kind": "replace",
+      "V5_lines": [
+        11216,
+        11216
+      ],
+      "candidate_lines": [
+        11209,
+        11210
+      ]
+    },
+    {
+      "kind": "replace",
+      "V5_lines": [
+        11218,
+        11223
+      ],
+      "candidate_lines": [
+        11212,
+        11219
+      ]
+    },
+    {
+      "kind": "replace",
+      "V5_lines": [
+        11225,
+        11225
+      ],
+      "candidate_lines": [
+        11221,
+        11221
+      ]
+    },
+    {
+      "kind": "replace",
+      "V5_lines": [
+        11227,
+        11231
+      ],
+      "candidate_lines": [
+        11223,
+        11238
+      ]
+    },
+    {
+      "kind": "replace",
+      "V5_lines": [
+        11233,
+        11235
+      ],
+      "candidate_lines": [
+        11240,
+        11260
+      ]
+    },
+    {
+      "kind": "replace",
+      "V5_lines": [
+        11237,
+        11237
+      ],
+      "candidate_lines": [
+        11262,
+        11262
+      ]
+    },
+    {
+      "kind": "replace",
+      "V5_lines": [
+        11239,
+        11240
+      ],
+      "candidate_lines": [
+        11264,
+        11268
+      ]
+    },
+    {
+      "kind": "replace",
+      "V5_lines": [
+        11242,
+        11245
+      ],
+      "candidate_lines": [
+        11270,
+        11270
+      ]
+    },
+    {
+      "kind": "replace",
+      "V5_lines": [
+        11247,
+        11252
+      ],
+      "candidate_lines": [
+        11272,
+        11273
+      ]
+    },
+    {
+      "kind": "replace",
+      "V5_lines": [
+        11254,
+        11254
+      ],
+      "candidate_lines": [
+        11275,
+        11276
+      ]
+    },
+    {
+      "kind": "replace",
+      "V5_lines": [
+        11256,
+        11257
+      ],
+      "candidate_lines": [
+        11278,
+        11281
+      ]
+    },
+    {
+      "kind": "replace",
+      "V5_lines": [
+        11259,
+        11259
+      ],
+      "candidate_lines": [
+        11283,
+        11463
+      ]
+    },
+    {
+      "kind": "replace",
+      "V5_lines": [
+        11264,
+        11264
+      ],
+      "candidate_lines": [
+        11468,
+        11468
+      ]
+    },
+    {
+      "kind": "replace",
+      "V5_lines": [
+        11269,
+        11269
+      ],
+      "candidate_lines": [
+        11473,
+        11473
+      ]
+    },
+    {
+      "kind": "replace",
+      "V5_lines": [
+        11273,
+        11276
+      ],
+      "candidate_lines": [
+        11477,
+        11479
+      ]
+    },
+    {
+      "kind": "replace",
+      "V5_lines": [
+        11278,
+        11282
+      ],
+      "candidate_lines": [
+        11481,
+        11506
+      ]
+    },
+    {
+      "kind": "replace",
+      "V5_lines": [
+        11284,
+        11297
+      ],
+      "candidate_lines": [
+        11508,
+        11516
+      ]
+    },
+    {
+      "kind": "replace",
+      "V5_lines": [
+        11299,
+        11312
+      ],
+      "candidate_lines": [
+        11518,
+        11531
+      ]
+    },
+    {
+      "kind": "replace",
+      "V5_lines": [
+        11314,
+        11329
+      ],
+      "candidate_lines": [
+        11533,
+        11541
+      ]
+    },
+    {
+      "kind": "replace",
+      "V5_lines": [
+        11332,
+        11340
+      ],
+      "candidate_lines": [
+        11544,
+        11570
+      ]
+    },
+    {
+      "kind": "replace",
+      "V5_lines": [
+        11342,
+        11342
+      ],
+      "candidate_lines": [
+        11572,
+        11572
+      ]
+    },
+    {
+      "kind": "replace",
+      "V5_lines": [
+        11344,
+        11351
+      ],
+      "candidate_lines": [
+        11574,
+        11574
+      ]
+    },
+    {
+      "kind": "replace",
+      "V5_lines": [
+        11353,
+        11356
+      ],
+      "candidate_lines": [
+        11576,
+        11603
+      ]
+    },
+    {
+      "kind": "replace",
+      "V5_lines": [
+        11358,
+        11379
+      ],
+      "candidate_lines": [
+        11605,
+        11611
+      ]
+    },
+    {
+      "kind": "replace",
+      "V5_lines": [
+        11382,
+        11390
+      ],
+      "candidate_lines": [
+        11614,
+        11619
+      ]
+    },
+    {
+      "kind": "replace",
+      "V5_lines": [
+        11392,
+        11397
+      ],
+      "candidate_lines": [
+        11621,
+        11629
+      ]
+    },
+    {
+      "kind": "replace",
+      "V5_lines": [
+        11399,
+        11405
+      ],
+      "candidate_lines": [
+        11631,
+        11648
+      ]
+    },
+    {
+      "kind": "replace",
+      "V5_lines": [
+        11408,
+        11408
+      ],
+      "candidate_lines": [
+        11651,
+        11736
+      ]
+    },
+    {
+      "kind": "replace",
+      "V5_lines": [
+        15837,
+        15844
+      ],
+      "candidate_lines": [
+        16165,
+        16173
+      ]
+    },
+    {
+      "kind": "insert",
+      "V5_lines": [
+        16204,
+        16203
+      ],
+      "candidate_lines": [
+        16533,
+        18275
+      ]
+    },
+    {
+      "kind": "delete",
+      "V5_lines": [
+        16207,
+        16221
+      ],
+      "candidate_lines": [
+        18279,
+        18278
+      ]
+    },
+    {
+      "kind": "delete",
+      "V5_lines": [
+        16223,
+        16234
+      ],
+      "candidate_lines": [
+        18280,
+        18279
+      ]
+    },
+    {
+      "kind": "replace",
+      "V5_lines": [
+        16236,
+        16238
+      ],
+      "candidate_lines": [
+        18281,
+        18285
+      ]
+    },
+    {
+      "kind": "replace",
+      "V5_lines": [
+        16271,
+        16278
+      ],
+      "candidate_lines": [
+        18318,
+        18321
+      ]
+    },
+    {
+      "kind": "replace",
+      "V5_lines": [
+        16291,
+        16292
+      ],
+      "candidate_lines": [
+        18334,
+        18335
+      ]
+    },
+    {
+      "kind": "replace",
+      "V5_lines": [
+        16299,
+        16316
+      ],
+      "candidate_lines": [
+        18342,
+        18345
+      ]
+    },
+    {
+      "kind": "replace",
+      "V5_lines": [
+        16370,
+        16370
+      ],
+      "candidate_lines": [
+        18399,
+        18400
+      ]
+    },
+    {
+      "kind": "insert",
+      "V5_lines": [
+        16580,
+        16579
+      ],
+      "candidate_lines": [
+        18610,
+        18634
+      ]
+    }
+  ],
+  "files": [
+    {
+      "path": "work\\quartic-version5-release\\repository\\quartic_1272.tex",
+      "sha256": "16033e0471df605093b28210a9f81718c2486b147016ec8afc75d166dff0b90f"
+    },
+    {
+      "path": "work\\quartic-version6-preparation\\manuscript\\quartic_962-analytic-candidate.tex",
+      "sha256": "b43f096ba3a4b1a979778ae1593ce3ad89048a2d28016e5ee9f35b124238dce7"
+    },
+    {
+      "path": "work\\quartic-version6-preparation\\assemble_preparation.py",
+      "sha256": "a7c72c39d6c885b76ec15a76f8ceeed5acebf90d2a4a1eb15636ac523d57fa0f"
+    },
+    {
+      "path": "work\\quartic-version6-preparation\\assemble_analytic_candidate.py",
+      "sha256": "e648e4817f7e43afb853083a89d57ff99ac543f8e9c5aa0c545825f781ff894b"
+    }
+  ]
+}

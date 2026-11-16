@@ -1,0 +1,183 @@
+{
+  "status": "PASS",
+  "cases": 44,
+  "malformed_packets_rejected": [
+    "empty packet",
+    "missing case",
+    "duplicate case",
+    "unknown filename",
+    "wrong digest",
+    "wrong target count",
+    "changed bytes"
+  ],
+  "best_with_generic_product": {
+    "12": {
+      "status": "EXACT IDENTITY VERIFIED",
+      "precision": 12,
+      "scheme": "direct",
+      "normalization": "unit",
+      "hscale": 1,
+      "bound_output": false,
+      "rational_targets": 2,
+      "isolated_rows": 2,
+      "internal": {
+        "monomials": 13,
+        "max_abs_coefficient": "1688",
+        "coefficient_bits": 11,
+        "below_2_80": true
+      },
+      "with_generic_field_product": {
+        "monomials": 37,
+        "max_abs_coefficient": "1688",
+        "coefficient_bits": 11,
+        "below_2_80": true
+      },
+      "scope": "Isolated G circuit and generic product equality only; no source or arithmetic acceptance",
+      "file": "g12-direct-unit-s1-direct.json",
+      "sha256": "89165ebeb9fbc7ff3cfac2a9dda0b70615950864aa409f9221cdbebf9b0b84e8",
+      "malformed_circuits_rejected": [
+        "wrong precision",
+        "wrong coefficient",
+        "overwrite input",
+        "missing definition",
+        "changed defining coefficient",
+        "duplicate monomial",
+        "cubic definition",
+        "future dependency",
+        "wrong output",
+        "negative denominator",
+        "negative coordinate",
+        "swap components",
+        "wrong fusion variable",
+        "missing fusion row",
+        "changed fusion row"
+      ]
+    },
+    "40": {
+      "status": "EXACT IDENTITY VERIFIED",
+      "precision": 40,
+      "scheme": "block3",
+      "normalization": "a6",
+      "hscale": 1,
+      "bound_output": false,
+      "rational_targets": 8,
+      "isolated_rows": 8,
+      "internal": {
+        "monomials": 103,
+        "max_abs_coefficient": "639489018630",
+        "coefficient_bits": 40,
+        "below_2_80": true
+      },
+      "with_generic_field_product": {
+        "monomials": 131,
+        "max_abs_coefficient": "639489018630",
+        "coefficient_bits": 40,
+        "below_2_80": true
+      },
+      "scope": "Isolated G circuit and generic product equality only; no source or arithmetic acceptance",
+      "file": "g40-block3-a6-s1-direct.json",
+      "sha256": "4695b618fecb6556e1daceca238a1e80e2c5511b97e335c8230b35df2b44bf80",
+      "malformed_circuits_rejected": [
+        "wrong precision",
+        "wrong coefficient",
+        "overwrite input",
+        "missing definition",
+        "changed defining coefficient",
+        "duplicate monomial",
+        "cubic definition",
+        "future dependency",
+        "wrong output",
+        "negative denominator",
+        "negative coordinate",
+        "swap components",
+        "wrong fusion variable",
+        "missing fusion row",
+        "changed fusion row"
+      ]
+    },
+    "44": {
+      "status": "EXACT IDENTITY VERIFIED",
+      "precision": 44,
+      "scheme": "powers45",
+      "normalization": "unit",
+      "hscale": 1,
+      "bound_output": false,
+      "rational_targets": 8,
+      "isolated_rows": 8,
+      "internal": {
+        "monomials": 40,
+        "max_abs_coefficient": "1688",
+        "coefficient_bits": 11,
+        "below_2_80": true
+      },
+      "with_generic_field_product": {
+        "monomials": 256,
+        "max_abs_coefficient": "3190255616380803750",
+        "coefficient_bits": 62,
+        "below_2_80": true
+      },
+      "scope": "Isolated G circuit and generic product equality only; no source or arithmetic acceptance",
+      "file": "g44-powers45-unit-s1-direct.json",
+      "sha256": "34c9cadd8cde33af3fac54f205cb492dbe8170195951a61dfa7b5d91359b862e",
+      "malformed_circuits_rejected": [
+        "wrong precision",
+        "wrong coefficient",
+        "overwrite input",
+        "missing definition",
+        "changed defining coefficient",
+        "duplicate monomial",
+        "cubic definition",
+        "future dependency",
+        "wrong output",
+        "negative denominator",
+        "negative coordinate",
+        "swap components",
+        "wrong fusion variable",
+        "missing fusion row",
+        "changed fusion row"
+      ]
+    },
+    "48": {
+      "status": "EXACT IDENTITY VERIFIED",
+      "precision": 48,
+      "scheme": "block3",
+      "normalization": "a6",
+      "hscale": 1,
+      "bound_output": false,
+      "rational_targets": 10,
+      "isolated_rows": 10,
+      "internal": {
+        "monomials": 172,
+        "max_abs_coefficient": "1074981040317030",
+        "coefficient_bits": 50,
+        "below_2_80": true
+      },
+      "with_generic_field_product": {
+        "monomials": 200,
+        "max_abs_coefficient": "1074981040317030",
+        "coefficient_bits": 50,
+        "below_2_80": true
+      },
+      "scope": "Isolated G circuit and generic product equality only; no source or arithmetic acceptance",
+      "file": "g48-block3-a6-s1-direct.json",
+      "sha256": "17de8f37778a8e0b3a861da5e80e9b661e8941b7578e8bb62a2a61eeb109a0e6",
+      "malformed_circuits_rejected": [
+        "wrong precision",
+        "wrong coefficient",
+        "overwrite input",
+        "missing definition",
+        "changed defining coefficient",
+        "duplicate monomial",
+        "cubic definition",
+        "future dependency",
+        "wrong output",
+        "negative denominator",
+        "negative coordinate",
+        "swap components",
+        "wrong fusion variable",
+        "missing fusion row",
+        "changed fusion row"
+      ]
+    }
+  }
+}

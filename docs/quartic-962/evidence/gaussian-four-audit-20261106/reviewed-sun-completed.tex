@@ -1,0 +1,2629 @@
+\section{Simultaneous primes with coprime adjacent norms}
+\label{sec:v5-sun-proof}
+
+This appendix gives the prime-pattern argument needed for the construction.
+Its strategy is due to Sun~\cite{v5sun}. We supply the local calculations,
+the two ranges of the sieve, the normalization of the ray-class densities,
+and the order in which the parameters are chosen. For the analytic input
+we prove the special case for fixed ray class fields of $\Q(i)$ directly.
+The ideal-norm method follows Frei and Tinkov\'a~\cite{v5ft}; no theorem
+from that work is assumed. The proof uses the published fixed-field prime
+estimate of Mitsui, the one-parameter equidistribution and factorization
+results of Green--Tao, and published ordinary-prime transference results.
+The field and its ray modulus are fixed before every asymptotic limit.
+The exact source versions checked are identified in the bibliography
+and the accompanying theorem-application inventory.
+
+Write $\mathrm N(z)=z\bar z$ for $z\in\mathbb Z[i]$, and put
+$d_-(z)=\mathrm N(z-1)$ and $d_+(z)=\mathrm N(z+1)$.
+An Artin or Frobenius element in this appendix is arithmetic Frobenius:
+on residue fields it sends $x$ to $x^{\mathrm N\mathfrak p}$.
+
+\begin{theorem}[The simultaneous prime input]\label{thm:v5-simultaneous-primes}
+Let $c_1,\ldots,c_k$ be distinct integers, where $k\geq2$.
+Let $q\geq1$, let $M$ be an odd squarefree positive integer with $7\nmid M$,
+and let $H,Y>0$. There are positive integers $u,w$ such that
+\[
+ q\mid w,\qquad u/w^2>H,\qquad p_j=u+c_jw^2>Y
+ \quad(1\leq j\leq k),
+\]
+where every $p_j$ is prime. Each $p_j$ has a Gaussian prime generator
+$\pi_j$ of norm $p_j$ such that
+\[
+ \pi_j\equiv9\pmod {16},\qquad
+ \pi_j\equiv1+3i\pmod7,\qquad
+ \pi_j\equiv i\pmod M.
+\]
+No odd prime divides both $d_-(\pi_j)$ and $d_+(\pi_j)$.
+For $j\ne h$, no odd prime divides both $d_\epsilon(\pi_j)$ and
+$d_\eta(\pi_h)$, for any $\epsilon,\eta\in\{-,+\}$.
+Moreover,
+\[
+ v_2(d_-(\pi_j))=6,\quad v_2(d_+(\pi_j))=2,\quad
+ \gcd(d_-(\pi_j),d_+(\pi_h))=4\quad\hbox{for all }j,h,
+\]
+and all these norms are coprime to $7M$.
+\end{theorem}
+
+The quantifiers concern fixed data. No estimate uniform in $q,M,k$ or the
+$c_j$ is asserted. We first prove the result for $q=1$. Replacing the
+coefficients by $q^2c_j$ and then replacing the parameter $v$ by $w=qv$
+proves the general case, since the ratio before this substitution can be
+made greater than $q^2H$.
+
+\subsection{Local counts and the medium primes}\label{subsec:v5-local-sieve}
+
+Fix a nonzero integer $\kappa$ and write
+\[
+ Q_\kappa=a^2+b^2-c^2-d^2-\kappa w^2,\quad
+ G_\epsilon=(a+\epsilon)^2+b^2,\quad
+ H_\eta=(c+\eta)^2+d^2,
+ \qquad \epsilon,\eta\in\{1,-1\}.
+\]
+We use $\chi(\ell)=(-1/\ell)$ for odd primes $\ell$.
+
+\begin{lemma}[Finite-field counts]\label{lem:v5-local-counts}
+If $\ell\nmid2\kappa$, then $Q_\kappa=0$ has $\ell^4-1$ nonzero
+solutions over $\mathbb F_\ell$. At most $4\ell^2$ of its solutions satisfy
+$G_\epsilon=H_\eta=0$. If $\chi(\ell)=-1$, the latter set has exactly one
+element.
+
+Let $\gamma_1,\ldots,\gamma_k$ be distinct integers, including $0$ and
+$-\kappa$, and put $L_j=a^2+b^2+\gamma_jw^2$. Outside a fixed set of primes
+containing the divisors of $2\kappa\prod_{j<h}(\gamma_j-\gamma_h)$, the
+proportion $g(\ell)$ of nonzero zeros of $Q_\kappa$ on which some $L_j$
+vanishes is
+\begin{equation}\label{eq:v5-local-g}
+ g(\ell)=
+ \frac{(\ell-1)(\ell-\chi(\ell))
+ [2\nu_0+(k-2)(\ell-\chi(\ell))]+\nu_0^2-1}{\ell^4-1},
+ \qquad \nu_0=\ell+(\ell-1)\chi(\ell).
+\end{equation}
+Consequently $g(\ell)=(k+2\chi(\ell))/\ell+O_k(\ell^{-2})$.
+\end{lemma}
+\begin{proof}
+The norm $x^2+y^2$ has $\nu_0$ representations of zero and
+$\ell-\chi(\ell)$ representations of every nonzero element. This follows
+either by factoring over $\mathbb F_\ell$ when $\chi=1$, or by the norm map
+from $\mathbb F_{\ell^2}$ when $\chi=-1$. Summing these fibres for
+$Q_\kappa$ gives $\ell^4$ solutions including the origin.
+In the split case, each of the equations $G_\epsilon=0$ and $H_\eta=0$
+is a union of two lines. On each of the four pairs of lines the remaining
+equation is
+$-2\epsilon a+2\eta c-\kappa w^2=0$, leaving at most $\ell^2$ choices.
+In the inert case these equations force
+$(a,b,c,d)=(-\epsilon,0,-\eta,0)$, and then $w=0$.
+
+For $w\ne0$, the conditions $L_j=0$ are disjoint. For the two distinguished
+coefficients one norm is zero and the other is nonzero, giving
+$2\nu_0(\ell-\chi)$ choices. Each other coefficient gives
+$(\ell-\chi)^2$ choices. There are $\ell-1$ possible nonzero $w$.
+For $w=0$, both norms are zero, giving $\nu_0^2-1$ nonzero vectors.
+This proves \eqref{eq:v5-local-g}. In particular, when $k=2$ and
+$\chi=-1$, its value is $2/(\ell^2+1)$, not zero.
+\end{proof}
+
+\begin{lemma}[Primitive congruence count]\label{lem:v5-primitive-count}
+Let $\psi$ be a smooth nonnegative compactly supported function away from
+the origin, and let $m$ be squarefree and prime to $2\kappa$.
+For each $\ell\mid m$ prescribe an arbitrary subset $\Omega_\ell$ of the
+nonzero zeros of $Q_\kappa$ over $\mathbb F_\ell$. The weighted number of
+primitive integral vectors on $Q_\kappa=0$ with these reductions equals
+\begin{equation}\label{eq:v5-primitive-count}
+ C_\kappa\sigma_\infty(\psi)B^3
+ \prod_{\ell\mid m}\frac{|\Omega_\ell|}{\ell^4-1}
+ +O_{\kappa,\psi,\varepsilon}
+       (B^{5/2+\varepsilon}m^{5/2+\varepsilon}).
+\end{equation}
+The constant $C_\kappa$ is positive and independent of $m$ and the subsets.
+\end{lemma}
+\begin{proof}
+Apply Browning--Loughran~\cite{v5bl}, Theorem~4.1, to $Q_\kappa$ in five
+variables. It is isotropic, since $(1,0,1,0,0)$ is a zero, and nonsingular,
+since $\kappa\ne0$. Its discriminant has no prime divisor outside
+$2\kappa$. The theorem permits $n=5$ and arbitrary nonzero residue subsets;
+its error is uniform in the modulus and in these subsets.
+Impose primitivity by $\sum_{h\mid(a,b,c,d,w)}\mu(h)$.
+If $(h,m)>1$ there are no permitted vectors. Otherwise the subsets become
+$h^{-1}\Omega_\ell$, of the same cardinalities, and the scale becomes $B/h$.
+The sum of the error terms is convergent. Extending the main-term sum to
+infinity costs $O(B)$.
+At a good prime the unrestricted local density is
+\[
+ \sigma_\ell=\frac{1-\ell^{-4}}{1-\ell^{-3}}.
+\]
+Indeed, nonsingular primitive zeros lift with four free coordinates, and
+the vectors divisible by $\ell$ contribute the geometric factor
+$\ell^{-3}$. The primitive density is therefore $1-\ell^{-4}$.
+This turns the factor $|\Omega_\ell|/\ell^4$ of the unprimitive count into
+$|\Omega_\ell|/(\ell^4-1)$ in \eqref{eq:v5-primitive-count}.
+The remaining finitely many local factors are positive because the form
+has a nonsingular rational zero. Empty subsets give the assertion directly.
+\end{proof}
+
+In using this count, the two norms lie between fixed positive multiples of
+$B^2$, and $|w|\leq\tau B$, where $0<\tau\leq\tau_0$.
+A smooth majorant can be chosen with
+$\sigma_\infty(\psi)\ll\tau$ uniformly in $\tau$: integrate first in the
+two radial norm variables, on which the derivative of their difference is
+bounded away from zero. The constants in error terms may depend on
+derivatives of this majorant, and hence on $\tau$.
+
+\begin{lemma}[Medium-prime bound]\label{lem:v5-medium-sieve}
+For fixed coefficients and sufficiently large fixed $L$, the contribution
+of prime patterns with a common adjacent-norm divisor
+$L<\ell\leq B^{1/100}$ is at most
+\begin{equation}\label{eq:v5-medium-sieve}
+ \frac{C\tau B^3}{(\log B)^k L\log L}+O_\tau(B^{27/10}).
+\end{equation}
+The count is unweighted by logarithms, and $C$ is independent of $L,\tau$.
+The bound covers both distinct positions and the two signs at one position.
+\end{lemma}
+\begin{proof}
+For two positions, use $Q_\kappa$ with their fixed nonzero coefficient
+difference and impose $G_\epsilon=H_\eta=0\pmod\ell$.
+For squarefree $d$ supported on good primes other than $\ell$, impose also
+that some $L_j$ vanishes at every prime dividing $d$. The preceding lemmas
+give a sieve sequence
+\[
+ A_{\ell,d}=X_\ell g(d)+r_{\ell,d},\qquad
+ X_\ell\ll\tau B^3/\ell^2,\qquad
+ |r_{\ell,d}|\ll_{\tau,\varepsilon}
+ B^{5/2+\varepsilon}(\ell d)^{5/2+\varepsilon}.
+\]
+Enlarge the fixed exceptional set so that $0<g(p)<1$ outside it.
+Set $h(p)=g(p)/(1-g(p))$ and extend $h$ multiplicatively to squarefree
+integers. The elementary Selberg upper sieve has denominator
+\[
+ \mathcal G_\ell(z)=\sum_{\substack{d<z\ \text{squarefree}\\
+                         (d,\ell\prod_{p\in S}p)=1}}h(d)
+ \gg (\log z)^k.
+\]
+Here is the dimension calculation. Williams~\cite{v5williams}, Theorem~1
+with fixed modulus $4$ and residues $1,3$, gives Mertens' estimates in the
+two reduced classes. Taking logarithms gives
+$\sum_{p\leq y}g(p)=k\log\log y+O(1)$ and
+$\sum_{p\leq y}g(p)\log p\ll\log y$.
+For the latter bound only the elementary Chebyshev estimate is needed:
+$\prod_{n<p\leq2n}p\mid\binom{2n}{n}<4^n$ gives
+$\vartheta(x)\ll x$ by dyadic summation, and partial summation gives
+$\sum_{p\leq y}(\log p)/p\ll\log y$.
+In the Euler product $\prod_{p\leq y}(1+h(p))$, normalize the weights
+$h(d)$ to a probability distribution. Its expected value of $\log d$ is
+$\sum_{p\leq y}g(p)\log p$. Taking $y$ to be a sufficiently small fixed
+power of $z$ leaves at least half of the mass on $d<z$, by Markov's
+inequality. Removing one prime $\ell$ changes the estimate by a bounded
+factor.
+
+For completeness the sieve weights may be taken as
+\[
+ \lambda_d=\frac{\mu(d)}{\mathcal G_\ell(z)}
+ \prod_{p\mid d}(1-g(p))^{-1}
+ \sum_{\substack{r<z/d\ (r,d)=1\ r\ \text{squarefree}\\
+                      (r,\ell\prod_{p\in S}p)=1}}h(r).
+\]
+They have $\lambda_1=1$, $|\lambda_d|\ll_\varepsilon d^\varepsilon$,
+and direct expansion gives
+$\sum_{d,e}\lambda_d\lambda_e g([d,e])=1/\mathcal G_\ell(z)$.
+Thus the number with no prime divisor below $z$ in any $L_j$ is at most
+\[
+ \frac{C\tau B^3}{\ell^2(\log z)^k}
+ +O_{\tau,\varepsilon}
+  (B^{5/2+\varepsilon}\ell^{5/2+\varepsilon}z^{7+4\varepsilon}).
+\]
+All the prime values under consideration exceed $z$. Put $z=B^{1/100}$
+and sum over $L<\ell\leq B^{1/100}$. The main term uses
+$\sum_{\ell>L}\ell^{-2}\ll1/(L\log L)$, another consequence of the
+same Chebyshev bound; for example
+$\varepsilon=1/1000$ makes the error smaller than $B^{27/10}$.
+
+At one position, an odd common divisor of $(a-1)^2+b^2$ and
+$(a+1)^2+b^2$ forces $a=0$ and $b^2=-1\pmod\ell$.
+There are at most $2\ell$ such triples $(a,b,w)$ over $\mathbb F_\ell$.
+For $w\ne0$ the zero sets of the $k$ prime forms are disjoint, and the
+ordinary three-dimensional local sieve density is
+$(k+\chi(\ell))/\ell+O_k(\ell^{-2})$.
+Counting residue classes in a smooth box gives the corresponding
+three-dimensional congruence estimate. The same Selberg weights and the
+same, weaker error in \eqref{eq:v5-medium-sieve} apply.
+\end{proof}
+
+\subsection{The large-prime tail}\label{subsec:v5-large-sieve}
+
+We use Lemmas~2.1 and 4.1 of Browning--Heath-Brown~\cite{v5bhb}.
+The adjacent-norm polynomials are inhomogeneous, so we give the
+fixed-coordinate argument rather than invoke their homogeneous
+quadric-sieve theorem directly.
+Their Lemma~2.1 says that coprime polynomials in $\mathbb Z[X_1,\ldots,X_m]$
+of bounded degree and coefficient height at most $H$ have at most
+\begin{equation}\label{eq:v5-box-sieve}
+ O\left(\frac{V\log(VH)}{L\log L}
+           +\frac{V\log(VH)}{B_{\min}}\right)
+\end{equation}
+integer points in a box of side parameters $B_i\geq2$ at which a prime
+greater than $L\geq2$ divides every polynomial; $V=\prod B_i$.
+``Coprime'' here excludes a common constant prime factor as well as a
+common nonconstant factor. Their Lemma~4.1 covers the zeros modulo a
+squarefree $q$ of a rank-$m$ quadratic form, with $m\geq3$, by at most
+$(3m)^{\omega(q)}q^{m-2}$ lattices of determinant $q^{m-1}$.
+The number with largest Euclidean successive minimum exceeding $T$ is
+\begin{equation}\label{eq:v5-lattice-tail}
+ O_m((3m)^{\omega(q)}q^{2m-3}T^{-m}).
+\end{equation}
+Every prime dividing $q$ must be odd and preserve the rank of the form.
+The lattices in that lemma contain $q\mathbb Z^m$; in particular their
+largest successive minima are at most $q$.
+
+\begin{lemma}[Large common divisors on the quadric]\label{lem:v5-large-sieve}
+Fix the implied constant in the box of size $O(B)$.
+For fixed $\kappa\ne0$ and $\epsilon,\eta\in\{1,-1\}$, uniformly for
+$B,L\geq2$, the number of integral vectors in this box satisfying
+$Q_\kappa=0$ and
+$\ell\mid G_\epsilon,H_\eta$ for some prime $\ell>L$ is
+\begin{equation}\label{eq:v5-large-sieve}
+ O_{\kappa,\alpha}\left(
+    \frac{B^{3+\alpha}}{L\log L}+B^{11/4+\alpha}\right)
+ \qquad(\alpha>0).
+\end{equation}
+\end{lemma}
+\begin{proof}
+Sign changes of $a,c$ reduce to $\epsilon=\eta=1$.
+Put $x_0=a+c$, $x_1=a-c$, $x=b-d$, $z=b+d$, and
+$R=\kappa w^2-xz$. Then $x_0x_1=R$.
+Parity restrictions can be discarded in an upper bound.
+For a fixed nonzero value of either $x_0$ or $x_1$, the triple $(x,z,w)$
+determines the other coordinate uniquely whenever it gives an integral
+solution. We shall use this injection when discarding divisibility
+conditions.
+
+First suppose that $\ell\mid x_0,x_1$. Then $\ell^2\mid R$.
+For each fixed integer $v=O(B^2)$, the equation $R=v$ has
+$O_{\kappa,\alpha}(B^{1+\alpha})$ triples: for each $w$, count the
+factorizations $xz=\kappa w^2-v$ by the divisor bound; the zero right-hand
+side occurs for at most two $w$ and contributes $O(B)$ each.
+If $R\ne0$, it has $O_\alpha(B^\alpha)$ factorizations $x_0x_1=R$.
+Since $0<|h|\ll B^2/\ell^2$ and $\ell\ll B$, summation gives
+\[
+ O_{\kappa,\alpha}\left(
+ B^{3+2\alpha}\sum_{\ell>L}\ell^{-2}\right)
+ =O_{\kappa,\alpha}(B^{3+2\alpha}/(L\log L)).
+\]
+The same bound for triples with $R=0$, followed by the $O(B)$ choices
+with $x_0x_1=0$, gives $O_{\kappa,\alpha}(B^{2+\alpha})$.
+We may discard all these $R=0$ solutions before proceeding.
+
+In the remaining cases choose $t=x_1$ or $t=x_0$ such that $\ell\nmid2t$.
+Take $t=x_1$ first. Here
+$G_1-H_1=\kappa w^2+2t$ and $4t^2G_1=K$.
+Thus the two norm congruences are equivalent to divisibility of
+\[
+ P=\kappa w^2+2t,\qquad
+ K=(\kappa w^2-xz+t^2+2t)^2+t^2(x+z)^2.
+\]
+The identity
+\[
+ K-(t^2+x^2)(t^2+z^2)=P(P+2t^2-2xz)
+\]
+shows that it suffices to sieve the coprime pair
+$P,(t^2+x^2)(t^2+z^2)$. They have no common nonconstant factor over
+$\mathbb Q$, because the first depends nontrivially only on $w$, whereas
+the second is independent of $w$. Their contents have no common prime,
+since the second has coefficient $1$ on $x^2z^2$.
+For $t=x_0$ we still have $4t^2G_1=K$, whereas
+$t(G_1-H_1)=\kappa(t+2)w^2-2xz$. The pair is therefore
+\[
+ P'=\kappa(t+2)w^2-2xz,\qquad K.
+\]
+If $t\ne-2$, $P'$ is an irreducible ternary quadratic form of rank three
+and $K$ has nonzero constant term $t^2(t+2)^2$; homogeneity rules out
+divisibility. If $t=-2$, neither $x$ nor $z$ divides $K$.
+The coefficient $1$ of $x^2z^2$ in $K$ excludes every common content
+prime. In both charts the fixed value $t$ is nonzero.
+
+In either chart, $t\mid R$. Put
+\[
+ S_R=\{p:p\mid2\kappa\},\qquad
+ q=\prod_{\substack{p\mid t\ p\notin S_R}}p.
+\]
+The matrix of $R$ has determinant $-\kappa/4$, so $R$ has rank three
+at every prime in this product, and those primes are odd. Also $q\ll B$.
+For a fixed $q$, every eligible nonzero $t=O(B)$ is supported on
+$S_R\cup\{p:p\mid q\}$. For every $\delta>0$, Rankin's bound gives
+\[
+ \#\{t:q(t)=q,\ 0<|t|\ll B\}
+ \ll B^\delta
+   \prod_{p\in S_R\ \text{or}\ p\mid q}(1-p^{-\delta})^{-1}
+ \ll_{\kappa,\delta} B^\delta q^\delta
+ \ll_{\kappa,\delta} B^{2\delta}.
+\]
+For the middle inequality, remove the finitely many primes with
+$p^{-\delta}>1/2$ and bound the remaining factors by $2^{\omega(q)}
+\ll_\delta q^\delta$. Renaming the small exponent gives
+$O_{\kappa,\alpha}(B^\alpha)$ choices of $t$.
+
+Apply \eqref{eq:v5-lattice-tail} with $m=3$ to $q\mid R$.
+If $\lambda_1\leq\lambda_2\leq\lambda_3$ are the successive minima,
+then $\lambda_3\leq q\ll B$ and
+$\lambda_1\lambda_2\lambda_3\asymp q^2$.
+A basis comparable to these minima therefore gives
+$O(\prod_i(1+B/\lambda_i))=O(B^3/q^2)$ points in the box.
+The lattices with $\lambda_3>T$ contribute at most
+\[
+ B^\alpha\sum_{q\ll B}
+ O\left(9^{\omega(q)}q^3T^{-3}\frac{B^3}{q^2}\right)
+ \ll_{\kappa,\alpha} B^{5+2\alpha}T^{-3}.
+\]
+For the other lattices choose a basis with lengths comparable to the
+successive minima. The inverse basis matrix bounds the new coordinates by
+$O(B/\lambda_i)$, so the resulting rectangular box has volume
+$O(B^3/q^2)$ and minimum side parameter $\gg B/T$.
+Enlarge its side parameters to at least $2$, as required in
+\eqref{eq:v5-box-sieve}; since $\lambda_i\ll B$, this changes volume
+only by a fixed factor.
+The substitution into the polynomial pair is invertible over $\mathbb Q$.
+For $\ell\nmid2t$ its determinant, of absolute value $q^2$, is invertible
+modulo $\ell$ too. Thus no new common content prime outside $2t$ appears.
+Remove common content supported on $2t$, which cannot affect the primes
+being counted. Coefficient heights are powers of $B$ with fixed exponents.
+Formula \eqref{eq:v5-box-sieve} bounds this lattice's contribution by
+\[
+ O\left(\frac{B^3\log B}{q^2L\log L}
+                 +\frac{B^2T\log B}{q^2}\right).
+\]
+There are at most $9^{\omega(q)}q$ lattices. Since
+$9^{\omega(q)}\ll_\alpha q^\alpha$, summing over $q\ll B$ and the
+$O_{\kappa,\alpha}(B^\alpha)$ values of $t$ gives
+$O_{\kappa,\alpha}(B^{3+3\alpha}/(L\log L)+B^{2+3\alpha}T)$.
+Choose $T=B^{3/4}$ and rename the small exponent to obtain
+\eqref{eq:v5-large-sieve}.
+\end{proof}
+
+\begin{proposition}[Weighted obstruction tail]\label{prop:v5-obstruction-tail}
+For fixed distinct $c_j$ there are $L_*\geq2$ and $\tau_0,C>0$
+such that, for every fixed $0<\tau\leq\tau_0$, uniformly for $L\geq L_*$,
+the logarithmically weighted number of pairs
+\[
+ N/2\leq u\leq N,\qquad 1\leq w\leq\tau\sqrt N,
+ \qquad p_j=u+c_jw^2\text{ all prime},
+\]
+having any of the odd common divisors forbidden in
+Theorem~\ref{thm:v5-simultaneous-primes} greater than $L$, is at most
+\begin{equation}\label{eq:v5-obstruction-tail}
+ \frac{C\tau N^{3/2}}{L\log L}
+       +O_\tau(N^{3/2-1/800}).
+\end{equation}
+The weight is $\prod_j\log p_j$, and the bound allows every Gaussian
+generator, so it also holds for any prescribed choice of generators.
+\end{proposition}
+\begin{proof}
+Take $B=\sqrt N$ and $L_0=B^{1/100}$, and choose $\tau_0$ so that
+every prime value in the displayed region is between fixed positive
+multiples of $B^2$. Thus $\prod_j\log p_j\ll (\log B)^k$.
+Choose $L_*$ above the fixed exceptional primes in the medium-prime bound.
+When $L\leq L_0$, that bound gives
+\[
+ \frac{C\tau B^3}{L\log L}+O_\tau(B^{27/10}(\log B)^k)
+\]
+for $L<\ell\leq L_0$. Its proof is uniform in this interval of $L$:
+the remainder sum is bounded by the sum over all $\ell\leq L_0$.
+When $L>L_0$ this part is empty.
+
+For distinct positions, apply Lemma~\ref{lem:v5-large-sieve} at $L_0$
+with $\alpha=1/1000$. After multiplication by the weight, the bound is
+\[
+ O\left(\left(
+   \frac{B^{3+1/1000}}{B^{1/100}\log L_0}
+       +B^{11/4+1/1000}\right)(\log B)^k\right)
+ =O(B^{3-1/200}).
+\]
+This bounds all the remaining primes, also when $L>L_0$.
+At one position, an odd divisor of both adjacent norms divides
+$a$ and $b^2+1$. The coprime pair $a,b^2+1$ in variables $(a,b,w)$,
+inserted in \eqref{eq:v5-box-sieve} at $L_0$, gives
+\[
+ O\left(\left(
+ \frac{B^3\log B}{L_0\log L_0}+B^2\log B\right)(\log B)^k\right)
+ =O(B^{3-1/200}).
+\]
+No factor $\tau$ is needed in these power-saving errors.
+
+For a fixed pair of positions, the vector $(a,b,c,d,w)$ determines
+$u=a^2+b^2-c_jw^2$; at one position $(a,b,w)$ does so.
+Thus the vector counts bound the pattern counts. There are finitely many
+pairs of positions and signs. Each split rational prime has eight
+Gaussian elements of that norm, so counting all generator choices
+changes the bound by at most a fixed factor. Every vector used in the
+medium-prime count is primitive, since a common integer divisor greater
+than one would have its square divide a prime norm.
+All logarithmic factors in the remainders are absorbed for sufficiently
+large $B$, with thresholds depending only on the fixed data and $\tau$.
+Weakening the error to $B^{3-1/400}=N^{3/2-1/800}$ proves the claim.
+\end{proof}
+
+\subsection{Gaussian ray weights and their progression main terms}
+\label{subsec:gaussian-progression-mainterms}
+
+Let $E=\Q(i)$ and let $H$ be a fixed positive integer divisible by $16$.
+Let $K/E$ be the ray class field for $H\Z[i]$.  This field is Galois over
+$\Q$, since complex conjugation preserves both the modulus and its
+principal ray subgroup.  Put
+\[
+ A=\operatorname{Gal}(K/E)
+   \simeq (\Z[i]/H\Z[i])^\times/\{1,-1,i,-i\},
+ \qquad G=\operatorname{Gal}(K/\Q).
+\]
+We use arithmetic Frobenius throughout.  Let $C\subseteq A$ be invariant
+under complex conjugation, so that $C$ is a union of conjugacy classes in
+$G$.  Define $\Lambda'_C(p)=\log p$ for unramified rational primes whose
+Frobenius lies in $C$, and put $\Lambda'_C(n)=0$ otherwise.  In particular
+this function is supported on rational primes which split in $E$.
+
+For ideals coprime to $H$ let $[\mathfrak a]\in A$ denote their ray class,
+and set
+\[
+ T_C(n)=\sum_{\substack{\mathrm N\mathfrak a=n\\(\mathfrak a,H)=1}}
+       \Lambda_E(\mathfrak a)1_C([\mathfrak a]).
+\]
+Here $\Lambda_E(\mathfrak p^j)=\log\mathrm N\mathfrak p$ and it is zero
+on all other ideals.  Every unramified split rational prime has two
+conjugate prime ideals of norm $p$, so
+\begin{equation}\label{eq:gaussian-ray-prime-factor}
+ T_C(p)=2\Lambda'_C(p)\qquad(p\nmid2H).
+\end{equation}
+The remaining difference between $T_C$ and $2\Lambda'_C$ is supported on
+rational prime powers of exponent at least two and the finitely many
+excluded primes.  Its total absolute value up to $X$ is
+$O_H(\sqrt X\log^2(2X))$.  This bound follows by summing the at most two
+prime ideals above each rational prime and their powers; no density
+theorem is used in this comparison.
+
+For $\chi\in\widehat A$ put
+\[
+ c_C(\chi)=|A|^{-1}\sum_{a\in C}\overline{\chi(a)},\qquad
+ T_\chi(n)=\sum_{\mathrm N\mathfrak a=n}
+                  \Lambda_E(\mathfrak a)\chi(\mathfrak a),
+\]
+where each character is extended by zero on ideals not coprime to $H$.
+Finite Fourier inversion gives the exact identity
+\begin{equation}\label{eq:gaussian-ray-fourier}
+                 T_C(n)=\sum_{\chi\in\widehat A}c_C(\chi)T_\chi(n).
+\end{equation}
+The field and all these characters are fixed before $X$ tends to infinity.
+
+\begin{lemma}[Fixed-field Hecke Siegel--Walfisz estimate]
+\label{lem:gaussian-hecke-sw}
+Let $E=\Q(i)$, let $\chi$ be a fixed finite-order ray character of $E$
+with finite modulus $\mathfrak m$, and let $B>0$.
+There is $c=c(\chi,B)>0$ such that, uniformly for $X\geq3$,
+$1\leq Y\leq X$, positive integers $q\leq(\log X)^B$, and Dirichlet
+characters $\rho$ modulo $q$,
+\begin{equation}\label{eq:gaussian-hecke-sw-estimate}
+ \sum_{\mathrm N\mathfrak a\leq Y}
+   \Lambda_E(\mathfrak a)\chi(\mathfrak a)\rho(\mathrm N\mathfrak a)
+ =r_{\chi,\rho}Y+
+ O_{\chi,B}\bigl(X\exp(-c\sqrt{\log X})\bigr).
+\end{equation}
+Here $\Lambda_E(\mathfrak p^j)=\log\mathrm N\mathfrak p$ for a prime
+ideal $\mathfrak p$ and $j\geq1$, and it is zero otherwise; characters
+are extended by zero on ideals not coprime to their moduli.
+The number $r_{\chi,\rho}$ is one if the primitive Hecke character
+inducing $\chi(\rho\circ\mathrm N)$ is trivial, and zero otherwise.
+There is also $c_B>0$ such that, with the same ranges of $X,Y,q,\rho$,
+\begin{equation}\label{eq:rational-sw-estimate}
+ \sum_{n\leq Y}\Lambda(n)\rho(n)
+ =1_{\rho\ \mathrm{principal}}Y+
+ O_B\bigl(X\exp(-c_B\sqrt{\log X})\bigr).
+\end{equation}
+In particular, either error is $O(X(\log X)^{-D})$ for every fixed
+$D>0$, with the corresponding dependence on $D$ allowed.
+\end{lemma}
+
+\begin{proof}
+We use the published fixed-field estimate of Mitsui
+\cite[\S1, Lemma~15, p.~12]{Mitsui1956}.
+In his notation, for a fixed number field $K$, a fixed $A>0$, and any
+ray character $\vartheta$ whose finite modulus has norm at most
+$(\log x)^A$, it states
+\begin{equation}\label{eq:mitsui-weighted-primes}
+ \sum_{\mathrm N\mathfrak p\leq x}
+       \vartheta(\mathfrak p)\log\mathrm N\mathfrak p
+ =E(\vartheta)x+
+ O_{K,A}\bigl(x\exp(-c_{K,A}\sqrt{\log x})\bigr),
+\end{equation}
+where $E(\vartheta)=1$ for the principal character and is zero otherwise.
+The sum is over prime ideals of every residue degree.
+Mitsui defines these characters and $E(\vartheta)$ on p.~2, includes
+imprimitive characters, and states the uniformity in the character
+and its modulus immediately before Lemma~14 on p.~11.
+Infinite primes may occur in the ray modulus; only its finite part
+enters the norm bound.
+
+For completeness, the elementary passage from Mitsui's proved
+smoothed estimate (Lemma~14, pp.~11--12) to
+\eqref{eq:mitsui-weighted-primes} also applies to complex characters.
+Put
+\[
+ P(x,\vartheta)=\sum_{\mathrm N\mathfrak p\leq x}
+  \vartheta(\mathfrak p)\log\mathrm N\mathfrak p
+                         \log\frac{x}{\mathrm N\mathfrak p}.
+\]
+Lemma~14 gives $P(x,\vartheta)=E(\vartheta)x+
+O_{K,A}(xe^{-c_1\sqrt{\log x}})$.
+Subtract its values at $xe^h$ and $x$, where
+$h=e^{-c_1\sqrt{\log x}/2}$, and divide by $h$.
+The resulting left side is the prime sum in
+\eqref{eq:mitsui-weighted-primes} plus boundary terms of absolute
+value at most
+\[
+ \sum_{x<\mathrm N\mathfrak p\leq xe^h}\log\mathrm N\mathfrak p
+       \ll_K(xh+1)\log x.
+\]
+Indeed, for each integer norm there are at most $[K:\Q]$ prime ideals.
+The main term is $E(\vartheta)x(e^h-1)/h=E(\vartheta)x+O(xh)$,
+and the error divided by $h$ is
+$O_{K,A}(xe^{-c_1\sqrt{\log x}/2})$.
+Reducing the positive exponent constant proves
+\eqref{eq:mitsui-weighted-primes}.
+
+Prime powers of exponent at least two contribute
+$O_K(\sqrt x\log^2(2x))$: sum over exponents $j\geq2$ and use the
+elementary bound $O_K(x^{1/j})$ for the number of prime ideals of norm
+at most $x^{1/j}$.
+Consequently \eqref{eq:mitsui-weighted-primes} holds with the prime
+sum replaced by
+$\sum_{\mathrm N\mathfrak a\leq x}
+\Lambda_K(\mathfrak a)\vartheta(\mathfrak a)$.
+
+The character $\rho\circ\mathrm N$ on $E$ has ray modulus $(q)$:
+if $\alpha\equiv1\pmod{q\Z[i]}$, then
+$\mathrm N\alpha\equiv1\pmod q$.
+Thus $\chi(\rho\circ\mathrm N)$ has a modulus dividing
+$\mathfrak m(q)$, whose norm is $\mathrm N\mathfrak m\,q^2$.
+For $\sqrt X\leq Y\leq X$, the bounds
+$q\leq(\log X)^B$ and $\log Y\geq\frac12\log X$ imply
+\[
+ \mathrm N\mathfrak m\,q^2\leq(\log Y)^{2B+1}
+\]
+for all sufficiently large $X$, with the threshold depending only
+on $\mathfrak m$ and $B$.
+Apply the preceding estimate with $K=E$, $x=Y$, and $A=2B+1$.
+Its error is at most the error in
+\eqref{eq:gaussian-hecke-sw-estimate}, after reducing $c$.
+For $1\leq Y<\sqrt X$, the elementary bound
+$\sum_{\mathrm N\mathfrak a\leq Y}\Lambda_E(\mathfrak a)
+\ll_E Y\log^2(2Y)$ suffices, and the remaining bounded values of
+$X$ are absorbed in the implied constant.
+
+The principal character at the chosen modulus is exactly the
+character induced by the trivial primitive character, giving the
+stated $r_{\chi,\rho}$.
+Equivalently one can work at the primitive conductor and remove
+the extra Euler factors: the corresponding prime-power towers
+contribute only
+$O_\chi(\log(q+2)\log(Y+2))$, which is absorbed in the error.
+
+For \eqref{eq:rational-sw-estimate}, take $K=\Q$ and use the ray
+character attached to $\rho$, allowing the real infinite place
+for odd characters.  Its finite modulus norm is $q$.
+The same proof uses $A=B+1$ for $Y\geq\sqrt X$ and the elementary
+bound for smaller $Y$.  Finally,
+$e^{-c\sqrt{\log X}}\ll_{c,D}(\log X)^{-D}$ for every fixed $D>0$.
+\end{proof}
+
+
+The preceding lemma gives the following consequence, including $Y=0$ by the empty-sum convention.
+  For every $B,D>0$, every fixed finite-order
+ray character $\chi$ of $E$, and every Dirichlet character $\rho$ of
+modulus $q\leq(\log X)^B$,
+\begin{equation}\label{eq:gaussian-hecke-sw-input}
+ \sum_{\mathrm N\mathfrak a\leq Y}
+       \Lambda_E(\mathfrak a)\chi(\mathfrak a)
+                         \rho(\mathrm N\mathfrak a)
+  = r_{\chi,\rho}Y+O_{H,B,D}(X(\log X)^{-D})
+ \quad(0\leq Y\leq X),
+\end{equation}
+where $r_{\chi,\rho}=1$ if the induced Hecke character
+$\chi(\rho\circ\mathrm N)$ is trivial and is zero otherwise.
+The omitted Euler factors only change the sum by a polylogarithmic
+quantity.  The constant may be ineffective.  We require uniformity in
+$\rho,q,Y$, but not in $H$.
+
+\begin{lemma}[Progression density from the fixed-field input]
+\label{lem:gaussian-ray-progression}
+For $(a,q)=1$ define
+$J_q=K\cap\Q(\zeta_q)$ and let $\sigma_a(\zeta_q)=\zeta_q^a$.
+For fixed $B,D>0$, uniformly for $q\leq(\log X)^B$ and $0\leq Y\leq X$,
+\[
+ \sum_{\substack{n\leq Y\\ n\equiv a\pmod q}}\Lambda'_C(n)
+ =\frac{\#\{g\in C:g|_{J_q}=\sigma_a|_{J_q}\}}
+             {[K\Q(\zeta_q):\Q]}Y
+       +O_{H,B,D}(X(\log X)^{-D}).
+\]
+\end{lemma}
+\begin{proof}
+Orthogonality of Dirichlet characters and
+\eqref{eq:gaussian-ray-fourier} show that the coefficient of $Y$ for
+$T_C$ is
+\[
+ \frac1{\varphi(q)}\sum_{\chi\in\widehat A}c_C(\chi)
+       \sum_{\rho\bmod q}\overline{\rho(a)}r_{\chi,\rho}.
+\]
+The finite sum over $\chi$ has size depending only on $H$, while the
+average over $\rho$ cancels its own factor $\varphi(q)$ in the error.
+
+To evaluate this coefficient without a convention about inverse Artin
+symbols, put $L=K\Q(\zeta_q)$ and $B_q=\operatorname{Gal}(L/E)$.
+Restriction identifies $B_q$ with
+\[
+ \{(g,s)\in A\times\operatorname{Gal}(\Q(\zeta_q)/\Q):
+                       g|_{J_q}=s|_{J_q}\}.
+\]
+The characters $\chi(g)\rho(s)$ restrict to characters of $B_q$.
+Their average on $B_q$ is one precisely when their pullback by Artin
+reciprocity is the trivial Hecke character; otherwise it is zero.
+This is exactly $r_{\chi,\rho}$.  Expanding $1_C(g)$ and
+$1_{s=\sigma_a}$ by Fourier inversion therefore identifies the displayed
+coefficient with the proportion of elements of $B_q$ satisfying
+$g\in C$ and $s=\sigma_a$.  Its numerator is the numerator in the
+lemma and its denominator is $|B_q|=[L:E]$.
+Dividing by two using \eqref{eq:gaussian-ray-prime-factor} changes the
+denominator to $[L:\Q]$.  The prime-power error is smaller than the stated
+error.  This proves the formula.
+\end{proof}
+
+Choose a fixed integer $W$ divisible by the conductor of $K^{\mathrm{ab}}$.
+It is in particular divisible by $4$.
+For a unit $b\pmod W$ put
+\[
+\begin{aligned}
+ \mu_C(b)&=
+ \frac{\#\{g\in C:g|_{K^{\mathrm{ab}}}=\sigma_b|_{K^{\mathrm{ab}}}\}}
+      {[K:K^{\mathrm{ab}}]},\\
+ f_{C,b,W}(n)&=\frac{\varphi(W)}W\Lambda'_C(Wn+b),\\
+ \lambda_{b,W}(n)&=\frac{\varphi(W)}W\Lambda'(Wn+b).
+\end{aligned}
+\]
+The prime-supported ordinary von Mangoldt function is denoted by
+$\Lambda'$.  Replacing it by the usual $\Lambda$ costs only the same
+negligible prime-power error.
+The centered weight is
+\begin{equation}\label{eq:gaussian-centered-weight}
+       h_{C,b,W}=f_{C,b,W}-\mu_C(b)\lambda_{b,W}.
+\end{equation}
+Here $0\leq\mu_C(b)\leq1$, so
+$|h_{C,b,W}(n)|\leq\lambda_{b,W}(n)=O_W(\log(2N))$ on $[N]$.
+
+\begin{corollary}[Centered sums on progressions]
+\label{cor:gaussian-centered-progressions}
+For every $D>0$,
+\[
+       \sum_{n\in P}h_{C,b,W}(n)=O_{H,W,D}(N(\log N)^{-D})
+\]
+uniformly over arithmetic progressions $P$ contained in $[N]$.
+\end{corollary}
+\begin{proof}
+Write $P$ as a residue class modulo $q$ intersected with an interval.
+If $q>(\log N)^{D+3}$, its cardinality is at most
+$N/(\log N)^{D+3}+1$, and the pointwise logarithmic bound proves the
+claim directly.  Otherwise the condition $n\in P$ becomes one residue
+class $a\pmod{Wq}$ and an interval for $Wn+b$.
+
+If $(a,Wq)>1$, every prime in this residue class divides $Wq$.  There
+are at most $O(\log(Wq))$ such primes, with total logarithmic weight
+polylogarithmic in $N$, which is negligible here.  Suppose instead that
+$(a,Wq)=1$.
+Since $\Q(\zeta_{Wq})$ is abelian and already contains
+$K^{\mathrm{ab}}$, one has
+$K\cap\Q(\zeta_{Wq})=K^{\mathrm{ab}}$.
+Also $a\equiv b\pmod W$, so the lemma's main coefficient is
+\[
+   \frac{\mu_C(b)}{\varphi(Wq)}.
+\]
+For the ordinary prime weight, the Siegel--Walfisz main coefficient
+is $1/\varphi(Wq)$.  The two terms of
+\eqref{eq:gaussian-centered-weight} therefore have equal main terms.
+Apply the progression lemma at both interval endpoints, with an error
+exponent larger than $D$ and with $X=O_W(N)$, and subtract.  This proves
+the claimed bound.  All moduli used are at most a fixed power of
+$\log N$, and $W$ is fixed throughout this argument.
+\end{proof}
+
+
+% Standalone section fragment; needs amsmath, amssymb, amsthm.
+% Bibliography keys: GTOrbits2012 and GTMobius2012.
+\subsection{Transfer from Gaussian ideal norms to polynomial nilsequences}
+\label{sec:gn-transfer}
+
+Throughout this subsection $E=\mathbb Q(i)$, $\mathcal O_E=\mathbb Z[i]$,
+and $H_0$ is a fixed positive integer. A ray character $\chi$ modulo
+$H_0\mathcal O_E$ is extended by zero to ideals not coprime to
+$H_0\mathcal O_E$. The trivial character on all ideals is included by
+taking $H_0=1$. We use the conventions of \cite{GTOrbits2012}: $G$ is
+connected, simply connected and nilpotent, $\Gamma$ is a discrete cocompact
+subgroup, and the filtration consists of closed connected rational
+subgroups. Lipschitz norms include the supremum norm.
+
+\begin{lemma}[Gaussian norm transfer]\label{lem:gn-norm-transfer}
+Fix positive integers $m,d$. There are $\kappa,\sigma>0$, depending only
+on $m,d$, and constants $C,X_0,\delta_0>0$, depending on $H_0,m,d$, with
+the following property. Suppose
+\[
+ X\geq X_0,\qquad X^{-\sigma}\leq\delta\leq\delta_0,
+ \qquad 1\leq Q\leq\delta^{-\kappa},\qquad
+ 1\leq q\leq\delta^{-\kappa},\quad q\in\mathbb Z.
+\]
+Let $G/\Gamma$ have dimension $m$, a filtration $G_\bullet$ of degree at
+most $d$, and a $Q$-rational adapted Mal'cev basis. Suppose
+$g\in\operatorname{poly}(\mathbb Z,G_\bullet)$ is totally
+$\delta$-equidistributed on $[X]$. If $F:G/\Gamma\to\mathbb C$ is
+Lipschitz and $\int F=0$, then for every $0\leq A<B\leq X$ and every
+$b\in\mathbb Z$,
+\begin{equation}\label{eq:gn-transfer}
+ \left|\sum_{\substack{A<\mathrm N\mathfrak a\leq B\\
+                 \mathrm N\mathfrak a\equiv b\pmod q}}
+       \chi(\mathfrak a)F(g(\mathrm N\mathfrak a)\Gamma)\right|
+ \leq C X\delta^\kappa\|F\|_{\mathrm{Lip}}.
+\end{equation}
+There is no lower bound on $B-A$ or on the number of progression terms.
+Inserting $\log\mathrm N\mathfrak a$ on the left costs at most an
+additional factor $O(\log(2X))$.
+\end{lemma}
+
+We prove the lemma using only the one-parameter quantitative Leibman
+theorem \cite[Theorem 2.9]{GTOrbits2012}, together with elementary
+polynomial and lattice arguments. No multiparameter equidistribution
+theorem is used.
+
+\begin{lemma}[Quadratic coefficient extrapolation]\label{lem:gn-quadratic-coefficients}
+Let $X\geq1$, $P(t)=a_0+a_1t+a_2t^2\in\mathbb Z[t]$, $a_2\ne0$, and suppose
+\[
+ |a_i|\leq B_0X^{1-i/2},\qquad
+ L\geq X^{1/2}/B_0,\qquad B_0\geq2.
+\]
+For every scalar polynomial $p:\mathbb Z\to\mathbb R/\mathbb Z$ of
+degree at most $d$, there is an integer $1\leq k\leq C_dB_0^{C_d}$ such
+that
+\[
+ \|kp\|_{C^\infty[X]}
+   \leq C_dB_0^{C_d}\|p\circ P\|_{C^\infty[L]}.
+\]
+Here, for $p(n)=\sum_j\alpha_j\binom nj$, we use
+$\|p\|_{C^\infty[X]}=\max_{1\leq j\leq d}X^j
+\|\alpha_j\|_{\mathbb R/\mathbb Z}$.
+\end{lemma}
+\begin{proof}
+Write $\binom{P(t)}j=\sum_\ell s_{j,\ell}\binom t\ell$. These
+coefficients are integers since the left side is integer-valued. Its
+degree is $2j$, and comparison of leading coefficients gives
+\[
+ s_{j,2j}=\frac{(2j)!}{j!}a_2^j\ne0,
+ \qquad |s_{j,\ell}|\ll_d B_0^jX^{j-\ell/2}.
+\]
+For the bound, expand powers of $P$ and change between the monomial and
+binomial bases. The change-of-basis matrices have fixed rational
+coefficients. Descending induction in $\ell$ shows that every term
+contributing to $s_{j,\ell}$ has weighted input degree at least $\ell$,
+which gives the displayed estimate.
+
+If $p=\sum_j\alpha_j\binom nj$ and
+$p\circ P=\sum_\ell\beta_\ell\binom t\ell$, then
+\[
+ \beta_{2j}=\sum_{h=j}^d s_{h,2j}\alpha_h.
+\]
+Put $k_j=\prod_{h=j}^d s_{h,2h}$. Descending induction in $j$ gives
+\[
+ X^j\|k_j\alpha_j\|_{\mathbb R/\mathbb Z}
+   \ll_d B_0^{O_d(1)}\|p\circ P\|_{C^\infty[L]}.
+\]
+Indeed the $\beta_{2j}$ term is bounded using
+$X^jL^{-2j}\leq B_0^{2j}$, and a higher coefficient is multiplied by
+$s_{h,2j}=O_d(B_0^hX^{h-j})$, canceling its $X^{-h}$ error.
+All multipliers used to clear higher rows are integers of size
+$B_0^{O_d(1)}$. Multiplying to the common nonzero integer $|k_1|$ proves
+the assertion. The constant coefficient $\alpha_0$ is not used.
+\end{proof}
+
+\begin{lemma}[Small horizontal character obstruction]\label{lem:gn-horizontal-obstruction}
+There are $c_0,\sigma_0>0$, depending only on $m,d$, such that the
+following holds for sufficiently large $X$ and sufficiently small
+$\delta\geq X^{-\sigma_0}$. Suppose the basis is $T$-rational and
+a nontrivial horizontal character $\eta$ satisfies
+\[
+ |\eta|\leq T,\qquad \|\eta\circ g\|_{C^\infty[X]}\leq T,
+ \qquad T\leq\delta^{-c_0}.
+\]
+Then $g$ is not totally $\delta$-equidistributed on $[X]$.
+\end{lemma}
+\begin{proof}
+Choose representatives of the nonconstant binomial coefficients of
+$\eta\circ g$ satisfying $|\alpha_j|\leq TX^{-j}$. On the initial
+interval of length $\lfloor X/(100dT)\rfloor$ its values lie in an arc
+of length less than $1/10$, translated by its constant coefficient.
+Choose a Lipschitz function on $\mathbb R/\mathbb Z$ which equals one on
+that arc, has mean zero and bounded Lipschitz norm. Its composition with
+$\eta$ has Lipschitz norm at most $T^{C(m,d)}$, by the Mal'cev metric
+estimates in \cite[Appendix A]{GTOrbits2012}. Its Haar mean is zero:
+a nontrivial horizontal character maps Haar measure onto Haar measure
+on the circle. Choose $c_0$ with $C(m,d)c_0<1/4$ and $c_0<1/4$.
+The initial interval is longer than $\delta X$, while the discrepancy
+one exceeds $\delta T^{C(m,d)}$. Taking $\sigma_0$ sufficiently small
+absorbs the floors. This contradicts total equidistribution.
+\end{proof}
+
+\begin{proof}[Proof of Lemma~\ref{lem:gn-norm-transfer}]
+Fix a constant $C_*$ which dominates the exponents in
+Lemma~\ref{lem:gn-quadratic-coefficients}, the degree-$2d$ case of
+\cite[Theorem 2.9]{GTOrbits2012}, and the preceding obstruction.
+Choose
+\[
+ 0<\kappa<\min\{(1000C_*^2)^{-1},c_0/(12C_*)\},\qquad
+ 0<\sigma<\min\{(1000C_*^2)^{-1},\sigma_0\},
+ \qquad 2\kappa\sigma<1/4.
+\]
+These choices depend only on $m,d$. Decrease $\delta_0$, depending on
+$H_0,m,d$, whenever a fixed multiplicative constant must be absorbed.
+
+We first record a pullback consequence. Suppose $P$ and $L$ satisfy
+Lemma~\ref{lem:gn-quadratic-coefficients} with
+$B_0\leq\delta^{-5\kappa}$. Then
+$(g(P(t))\Gamma)_{t\in[L]}$ is $\delta^\kappa$-equidistributed.
+Otherwise the quantitative Leibman theorem gives a nontrivial $\eta$
+with
+\[
+ |\eta|,\ \|\eta\circ g\circ P\|_{C^\infty[L]}
+     \ll\delta^{-C_*\kappa}.
+\]
+The basis is $\delta^{-\kappa}$-rational as required. The composed
+sequence has degree at most $2d$ for the stretched filtration
+$\widetilde G_j=G_{\lceil j/2\rceil}$, with the same adapted basis.
+This follows from the elementary one-parameter coordinate
+characterization in \cite[Lemma 6.7]{GTOrbits2012}.
+Extrapolation gives a nonzero integer multiple $k\eta$ with
+\[
+ |k\eta|,\ \|k\eta\circ g\|_{C^\infty[X]}
+       \ll\delta^{-6C_*\kappa},
+\]
+with $C_*$ chosen sufficiently large initially. It remains nontrivial. The choice
+$6C_*\kappa<c_0/2$ and a reduction of $\delta_0$ make this contradict
+Lemma~\ref{lem:gn-horizontal-obstruction}. Only ordinary
+equidistribution of this pullback is needed.
+
+Every nonzero Gaussian ideal has exactly four generators. The function
+$z\mapsto\chi((z))$, extended by zero when $z$ is not coprime to $H_0$,
+is periodic modulo $H_0\mathbb Z[i]$ and invariant under units. Thus the
+sum in \eqref{eq:gn-transfer} is exactly
+\[
+ \frac14\sum_{\substack{z=x+iy\ne0\\A<x^2+y^2\leq B\\
+                         x^2+y^2\equiv b\pmod q}}
+       \chi((z))F(g(x^2+y^2)\Gamma).
+\]
+The factor $1/4$ also applies to ideals with generators on an axis;
+we have introduced no angular fundamental domain.
+
+Set $\rho=\delta^\kappa$ and
+$M=\lfloor\rho\sqrt X/H_0\rfloor$. On each horizontal row $y\in
+\mathbb Z$, and in each residue class of $x$ modulo $H_0$, partition
+the points into consecutive blocks of $M$ points with step $H_0$.
+The character is constant on a block. The intersection of the annulus
+with a horizontal row consists of at most two intervals, so at most
+four blocks per residue class meet an endpoint. There are $O(\sqrt X)$
+relevant rows. Consequently the boundary blocks contain
+\[
+ O(H_0\sqrt X\,M)=O(\rho X)
+\]
+points. Estimate their contribution trivially. Excluding $z=0$, if
+necessary, costs one more bounded summand, absorbed by $\rho X$.
+
+Every remaining contributing block lies wholly in the annulus. Split
+its index modulo $q$. The norm congruence is constant on each resulting
+class. Such a class has the form
+\[
+ x=x_0+H_0qn,\quad 1\leq n\leq L,\qquad
+ P(n)=(x_0+H_0qn)^2+y^2,
+ \qquad L\geq\frac{\rho\sqrt X}{4H_0q}.
+\]
+The hypotheses on $\delta$ and $\sigma$ ensure $M\geq2q$ and absorb
+the floors for large $X$. A harmless endpoint adjustment gives
+$|x_0|\leq2\sqrt X$. The coefficients of $P$ satisfy
+\[
+ |a_0|\ll X,\qquad |a_1|\ll H_0q\sqrt X,\qquad a_2=H_0^2q^2.
+\]
+Since $H_0$ is fixed and $q\leq\delta^{-\kappa}$, these bounds and the
+lower bound for $L$ fit the pullback consequence with
+$B_0\leq\delta^{-5\kappa}$ after decreasing $\delta_0$.
+Hence the sum on the class is
+$O(L\delta^\kappa\|F\|_{\mathrm{Lip}})$. The classes partition the
+interior points, of which there are $O(X)$; this elementary bound follows
+from the enclosing square. Summing and adding the boundary contribution
+proves \eqref{eq:gn-transfer}.
+
+The number of row endpoints is independent of $B-A$, explaining why no
+lower interval length is required. Finally apply Abel summation to the
+uniform bound with variable upper endpoint to insert $\log\mathrm N
+\mathfrak a$ at cost $O(\log(2X))$.
+\end{proof}
+
+\begin{remark}\label{rem:gn-product-and-progression}
+For Type II, apply the lemma in dimension $2m$ to
+$(g_1(n),g_2(n))$ and $F_1\otimes\overline{F_2}$, when this entire
+product orbit is totally equidistributed. Mean-zero factors ensure that
+the product test function has mean zero; they do not imply
+equidistribution of the product orbit. Use the smaller exponents for
+dimensions $m$ and $2m$. In dimension zero mean-zero test functions
+vanish, so the assertion is immediate.
+
+The constraints $rn\equiv b\pmod q$ and $r'n\equiv b\pmod q$ either
+are inconsistent or specify one residue class modulo a divisor of $q$.
+Intersecting their interval restrictions only changes $A,B$. Thus all
+Type I and Type II truncations are covered by the lemma. If
+$\delta=(\log X)^{-B_1}$ and $Q,q\leq(\log X)^{C_1}$, any desired
+saving $X(\log X)^{-A_1}$ follows once
+$B_1\kappa>\max\{C_1,A_1\}$, with $H_0$ fixed.
+\end{remark}
+
+
+% Depends on the separately proved Lemma lem:gn-norm-transfer.
+% No Frei--Tinkova theorem is assumed in this fragment.
+% Their ideal-norm Type I/II strategy is retained as methodological attribution.
+\subsection{Gaussian ideal Vaughan decomposition and Type I/II estimates}
+\label{gi-section}
+
+We give the ideal decomposition and the subsequent integer-parameter
+recombination in full.  The architecture is that of
+\cite[Section~3]{moebius}, with the Gaussian ideal-norm adaptation
+attributed to Frei--Tinkova.  The analytic inputs used here are the
+separately proved Lemma~\ref{lem:gn-norm-transfer} and the published
+one-parameter results \cite[Theorem~2.9 and Lemma~4.5]{GTOrbits2012}.
+In particular, no theorem of Frei--Tinkova is an assumed input.
+
+Fix the Gaussian ray modulus $H_0$.  All ideals in this subsection are
+nonzero integral ideals of $\mathbb Z[i]$.  Write $\mathrm N\mathfrak a$
+for the absolute ideal norm, $\mu_E$ for ideal Mobius, and
+$\Lambda_E(\mathfrak p^j)=\log\mathrm N\mathfrak p$ for $j\geq1$, with
+$\Lambda_E$ zero on other ideals.  A ray character $\chi$ is extended by
+zero on ideals not coprime to $H_0$.  It is completely multiplicative
+and satisfies $|\chi|\leq1$.  We use a Lipschitz norm that includes the
+supremum norm.  All nilmanifolds have connected, simply connected
+nilpotent covering group, a cocompact lattice, and an adapted rational
+Mal'cev basis, with the filtration and polynomial-sequence conventions
+of \cite{GTOrbits2012}.
+
+\begin{lemma}[Ideal multiplicities and moments]\label{gi-moments}
+Let $a_E(n)=\#\{\mathfrak a:\mathrm N\mathfrak a=n\}$.  For $X\geq1$,
+\begin{align}
+ a_E(n)&\leq\tau(n),\label{gi-multiplicity}\\
+ \sum_{n\leq X}a_E(n)^2&\leq X(1+\log X)^3,&
+ \sum_{n\leq X}\frac{a_E(n)^2}{n}&\leq(1+\log X)^4.\label{gi-two-moments}
+\end{align}
+Moreover
+\begin{equation}\label{gi-ideal-count}
+ A_E(X):=\#\{\mathfrak a:\mathrm N\mathfrak a\leq X\}
+       =\frac{\pi}{4}X+O(\sqrt X+1).
+\end{equation}
+In particular $A_E(X)\ll X$, and the number of ideals of norm in
+$(B/2,B]$ is comparable to $B$ for all sufficiently large $B$.
+\end{lemma}
+\begin{proof}
+At a split rational prime $p$ one has $a_E(p^k)=k+1$; at an inert prime
+it is one for even $k$ and zero for odd $k$; and $a_E(2^k)=1$.
+Multiplicativity proves \eqref{gi-multiplicity}.  Prime by prime,
+$(k+1)^2\leq\binom{k+3}{3}$, so $\tau(n)^2\leq d_4(n)$.
+Summing over ordered quadruples with product at most $X$, and summing
+the last coordinate first, bounds $\sum_{n\leq X}d_4(n)$ by
+$X(1+\log X)^3$.  Bounding each of the four harmonic sums separately
+gives $\sum_{n\leq X}d_4(n)/n\leq(1+\log X)^4$.
+Every ideal has exactly four Gaussian generators.  Counting lattice
+points in the disk of radius $\sqrt X$, and dividing by four, proves
+\eqref{gi-ideal-count}: the unit squares meeting its boundary lie
+between circles of radii $\sqrt X-\sqrt2$ and $\sqrt X+\sqrt2$ and
+number $O(\sqrt X+1)$.
+\end{proof}
+
+\begin{lemma}[Exact ideal Vaughan identity]\label{gi-vaughan}
+Let $N\geq8$, $U=V=N^{1/3}$, $L=\log(2N)$, and let
+$f:\mathbb N\longrightarrow\mathbb C$ satisfy $|f|\leq1$ and vanish
+outside $(N/2,N]$.  Then
+\begin{equation}\label{gi-vaughan-sum}
+ \sum_{\mathfrak a}\Lambda_E(\mathfrak a)\chi(\mathfrak a)
+                       f(\mathrm N\mathfrak a)=T_0-T_1+T_2,
+\end{equation}
+where
+\begin{align*}
+ T_0&=\sum_{\mathrm N\mathfrak d\leq U}\mu_E(\mathfrak d)\chi(\mathfrak d)
+       \sum_{\mathfrak b}\log(\mathrm N\mathfrak b)\chi(\mathfrak b)
+                  f(\mathrm N\mathfrak d\,\mathrm N\mathfrak b),\\
+ T_1&=\sum_{\mathrm N\mathfrak d\leq UV}\alpha_{\mathfrak d}\chi(\mathfrak d)
+       \sum_{\mathfrak b}\chi(\mathfrak b)
+                  f(\mathrm N\mathfrak d\,\mathrm N\mathfrak b),\\
+ T_2&=\sum_{V<\mathrm N\mathfrak d\leq N/U}\beta_{\mathfrak d}\chi(\mathfrak d)
+       \sum_{\mathrm N\mathfrak b>U}\mu_E(\mathfrak b)\chi(\mathfrak b)
+                  f(\mathrm N\mathfrak d\,\mathrm N\mathfrak b),
+\end{align*}
+with
+\begin{align*}
+ \alpha_{\mathfrak d}
+   &=\sum_{\substack{\mathfrak b\mathfrak c=\mathfrak d\\
+              \mathrm N\mathfrak b\leq U,\ \mathrm N\mathfrak c\leq V}}
+                        \mu_E(\mathfrak b)\Lambda_E(\mathfrak c),&
+ \beta_{\mathfrak d}
+   &=\sum_{\substack{\mathfrak c\mid\mathfrak d\\\mathrm N\mathfrak c>V}}
+                        \Lambda_E(\mathfrak c).
+\end{align*}
+Both coefficients have absolute value at most $L$.
+\end{lemma}
+\begin{proof}
+Convolution on ideals satisfies
+$\mu_E*1=\mathbf1_{\mathfrak a=(1)}$, $1*\Lambda_E=\log\mathrm N$,
+and $\mu_E*\log\mathrm N=\Lambda_E$, as one checks on prime powers.
+Splitting $\mu_E$ at $U$ and $\Lambda_E$ at $V$ gives the exact identity
+\begin{equation}\label{gi-convolution-identity}
+ \Lambda_E=\mu_{\leq U}*\log\mathrm N+\Lambda_{\leq V}
+       -\mu_{\leq U}*1*\Lambda_{\leq V}
+       +\mu_{>U}*1*\Lambda_{>V}.
+\end{equation}
+The second term vanishes on the support of $f$.  Complete multiplicativity
+of $\chi$, including its zero extension, permits separation of each
+convolution factor and yields \eqref{gi-vaughan-sum} with exactly the
+stated cutoffs.  Finally
+$\sum_{\mathfrak c\mid\mathfrak d}\Lambda_E(\mathfrak c)
+=\log\mathrm N\mathfrak d$ and every summand is nonnegative.  This
+proves the coefficient bounds, with no discarded endpoint or error term.
+\end{proof}
+
+\begin{proposition}[Quantitative extraction]\label{gi-extraction}
+There are absolute constants $c_0>0$ and $N_0$ such that the following
+holds.  Under Lemma~\ref{gi-vaughan}, suppose $N\geq N_0$,
+$0<\epsilon\leq1$, and
+\begin{equation}\label{gi-large-correlation}
+ \left|\sum_{\mathfrak a}\Lambda_E(\mathfrak a)\chi(\mathfrak a)
+                         f(\mathrm N\mathfrak a)\right|\geq\epsilon NL.
+\end{equation}
+Put $\theta=c_0\epsilon^4/L^{24}$.  At least one of the following holds.
+\begin{enumerate}
+\item Some dyadic $R\leq2N^{1/3}$ has at least $\theta R$ integers
+$r\in(R/2,R]$ satisfying
+\[
+ \left|\sum_{\mathfrak b}\log(\mathrm N\mathfrak b)\chi(\mathfrak b)
+                   f(r\mathrm N\mathfrak b)\right|\geq\theta N/r.
+\]
+\item Some dyadic $R\leq2N^{2/3}$ has at least $\theta R$ integers
+$r\in(R/2,R]$ satisfying the same inequality without the logarithm.
+\item There are dyadic $R,B$ with
+\begin{equation}\label{gi-dyadic-ranges}
+ N^{1/3}<R\leq2N^{2/3},\qquad N/2<RB<4N,
+\end{equation}
+and at least $\theta R^2$ pairs $r,r'\in(R/2,R]$ satisfying
+\begin{equation}\label{gi-type-two-correlation}
+ \left|\sum_{B/2<\mathrm N\mathfrak b\leq B}
+       f(r\mathrm N\mathfrak b)\overline{f(r'\mathrm N\mathfrak b)}
+       \right|\geq\theta B.
+\end{equation}
+\end{enumerate}
+\end{proposition}
+\begin{proof}
+One of $|T_i|$ is at least $\epsilon NL/3$.  For $T_0$ put
+\[
+ G(r)=\frac{r}{NL}\left|\sum_{\mathfrak b}\log(\mathrm N\mathfrak b)
+                   \chi(\mathfrak b)f(r\mathrm N\mathfrak b)\right|;
+\]
+for $T_1$ use $r/N$ times the absolute unweighted inner sum.  In either
+case Lemma~\ref{gi-moments} gives $G\ll1$ and
+\[
+ \epsilon\ll\sum_{r\leq N^e}\frac{a_E(r)G(r)}r,
+ \qquad e=1/3\text{ or }2/3.
+\]
+Cauchy--Schwarz and \eqref{gi-two-moments} imply
+$\sum_{r\leq N^e}G(r)^2/r\gg\epsilon^2/L^4$.
+There are $O(L)$ dyadic cells, so one satisfies
+\[
+ \sum_{R/2<r\leq R}G(r)^2\gg R\epsilon^2/L^5.
+\]
+Since $G\ll1$, at least $cR\epsilon^2/L^5$ terms have
+$G(r)\geq c\epsilon/L^{5/2}$.  Both the count and the claimed amplitudes
+follow after decreasing $c_0$.
+
+For $T_2$, split both ideal norms into dyadic cells.  There are $O(L^2)$
+rectangles, and a nonzero cell satisfies \eqref{gi-dyadic-ranges} and
+$B\geq N^{1/3}/4$.  A rectangle contributes at least $c\epsilon N/L$;
+we use the weaker bound $c\epsilon N/L^2$.  Grouping $\mathfrak d$ by
+$r=\mathrm N\mathfrak d$ writes this contribution as
+\[
+ T=\sum_{R/2<r\leq R}A_r\sum_{\mathfrak b\in\mathcal B}c_{\mathfrak b}
+                   f(r\mathrm N\mathfrak b),\qquad
+ \mathcal B=\{\mathfrak b:B/2<\mathrm N\mathfrak b\leq B\}.
+\]
+Here $|A_r|\leq L a_E(r)$ and $|c_{\mathfrak b}|\leq1$; the restriction
+$\mathrm N\mathfrak b>U$ belongs to $c_{\mathfrak b}$.  All product
+cutoffs remain in $f$, so the domain is rectangular.  By
+\eqref{gi-two-moments}, $\sum_r|A_r|^2\ll RL^5$.  Thus, with
+$F_{r,\mathfrak b}=f(r\mathrm N\mathfrak b)$,
+\begin{equation}\label{gi-first-cauchy}
+ T_*:=\sum_r\left|\sum_{\mathfrak b\in\mathcal B}
+                          c_{\mathfrak b}F_{r,\mathfrak b}\right|^2
+          \gg \epsilon^2 RB^2/L^9.
+\end{equation}
+Put $M=|\mathcal B|\asymp B$.  Expansion and Cauchy--Schwarz in the
+ordered pair $(\mathfrak b,\mathfrak b')$ give
+\begin{align}
+ T_*^2
+ &=\left|\sum_{\mathfrak b,\mathfrak b'}
+ c_{\mathfrak b}\overline{c_{\mathfrak b'}}
+ \sum_r F_{r,\mathfrak b}\overline{F_{r,\mathfrak b'}}\right|^2\notag\\
+ &\leq M^2\sum_{\mathfrak b,\mathfrak b'}
+       \left|\sum_rF_{r,\mathfrak b}\overline{F_{r,\mathfrak b'}}\right|^2
+ =M^2\sum_{r,r'}\left|\sum_{\mathfrak b}
+                  F_{r,\mathfrak b}\overline{F_{r',\mathfrak b}}\right|^2.
+ \label{gi-second-cauchy}
+\end{align}
+Consequently
+\[
+ \mathbb E_{r,r'}\left|\mathbb E_{\mathfrak b\in\mathcal B}
+              F_{r,\mathfrak b}\overline{F_{r',\mathfrak b}}\right|^2
+       \gg\epsilon^4/L^{18}.
+\]
+Every summand is at most one.  Thresholding gives
+\eqref{gi-type-two-correlation} and its stated count, with the weaker
+common parameter $\theta=c_0\epsilon^4/L^{24}$.  The character and Mobius
+coefficients have disappeared.  All conjugates in
+\eqref{gi-second-cauchy} are necessary.
+\end{proof}
+
+\paragraph{Progressions and interval restrictions.}\label{gi-progressions}
+In the application,
+\[
+ f(n)=1_{N/2<n\leq N}\,1_{u<n\leq v}\,1_{n\equiv b\pmod q}
+                              F(g(n)\Gamma).
+\]
+For Type I the congruence $rn\equiv b\pmod q$ is either insoluble or
+one class modulo $q/\gcd(r,q)$.  In Type II its intersection with
+$r'n\equiv b\pmod q$ is either empty or one class modulo
+\[
+ \operatorname{lcm}\bigl(q/\gcd(r,q),q/\gcd(r',q)\bigr),
+\]
+which divides $q$.  The remaining restrictions are interval intersections.
+Lemma~\ref{lem:gn-norm-transfer} covers them without a lower bound on
+their lengths.  On the product nilmanifold the function is
+$F(x)\overline{F(y)}$, whose Haar integral is
+$|\int F|^2=0$.  After normalizing $\|F\|_{\mathrm{Lip}}=1$, its
+Lipschitz norm for the sum metric is at most two.  Thus all mean-zero,
+modulus and interval hypotheses for product norm transfer are satisfied.
+
+\begin{lemma}[Integer-parameter recombination]\label{gi-recombination}
+For each $m,d$ there are $C_{\rm rec},K_{\rm rec}\geq2$ with the following
+property.  Let $0<\eta<\eta_0$, $N\geq\eta^{-K_{\rm rec}}$, and let $g$
+have degree at most $d$ on an $m$-dimensional nilmanifold with an
+$\eta^{-1}$-rational adapted basis.  Each of the following implies that
+$(g(n)\Gamma)_{n\leq N}$ is not totally $\eta^{C_{\rm rec}}$-equidistributed.
+\begin{enumerate}
+\item For at least $\eta R$ values $r\in(R/2,R]$, where
+$R\leq2N^{2/3}$, the orbit $(g(rn)\Gamma)_{n\leq\lceil N/r\rceil}$
+is not totally $\eta$-equidistributed.
+\item For at least $\eta R^2$ pairs $r,r'\in(R/2,R]$, where
+$N^{1/3}/4\leq R\leq2N^{2/3}$ and $N/2<RB<4N$, the product orbit
+$(g(rn),g(r'n))_{n\leq B}$ is not totally $\eta$-equidistributed.
+\end{enumerate}
+\end{lemma}
+\begin{proof}
+All constants in this proof depend only on $m,d$.  Failure of total
+equidistribution gives a progression $a+q[\ell]\subseteq[M]$ with
+$\ell\geq\eta M$, $q\leq2/\eta$, and $|a|\leq2M$ on which ordinary
+$\eta$-equidistribution fails.  Apply
+\cite[Theorem~2.9]{GTOrbits2012}, in dimension $m$ or $2m$.  A nonzero
+horizontal character has magnitude and restricted smoothness norm at
+most $\eta^{-C_1}$, after shrinking $\eta_0$ to absorb fixed factors.
+
+Here is the required removal of a possibly large shift.  Write the scalar
+phase $p(a+qt)$ in monomials.  Multiplication by $d!$ clears conversion
+from its binomial coefficients.  Inverting $t=(n-a)/q$ and multiplying
+by $q^d$ clears every remaining denominator.  The error in the coefficient
+of $n^i$ is bounded by
+\begin{equation}\label{gi-shift-removal}
+ C_d\eta^{-C_1}\sum_{j=i}^d q^{d-j}|a|^{j-i}\ell^{-j}
+       \leq\eta^{-C_2}M^{-i},\qquad i\geq1.
+\end{equation}
+The integer parts disappear modulo one.  Thus a nonzero integer multiple
+of the character has magnitude and $C^\infty[M]$ norm at most
+$\eta^{-C_2}$.  This argument does not treat $a=O(M)$ as a bounded-height
+rational parameter.  There are at most $\eta^{-C_3}$ possible resulting
+characters, since their lattice has rank at most $2m$.  Pigeonholing
+therefore fixes one character on a set of density at least $\eta^{C_4}$.
+
+In Type I write
+$\psi(g(n))=\sum_{j=0}^d\beta_jn^j$ modulo one.  For the selected set
+$S\subseteq(R/2,R]$, coefficient conversion gives
+\begin{equation}\label{gi-one-coefficients}
+ \|d!\beta_jr^j\|_{\mathbb R/\mathbb Z}
+       \leq\eta^{-C_5}(R/N)^j,\qquad 1\leq j\leq d.
+\end{equation}
+If $R\leq\eta^{-C_6}$ for a sufficiently large fixed $C_6$, choose one
+$r\in S$ and multiply the character by $d!r^d$.  Multiplication of the
+$j$th bound by $r^{d-j}$ gives magnitude and $C^\infty[N]$ norm bounded
+by a fixed power of $\eta^{-1}$.  This treats every small dyadic scale,
+including $R=1$.
+
+Otherwise apply \cite[Lemma~4.5]{GTOrbits2012} to
+$r\mapsto d!\beta_jr^j$ on $[\lceil R\rceil]$.  The selected set has
+density at least a fixed power of $\eta$, and its values lie in an arc
+of length at most $2\eta^{-C_5}(R/N)^j$.  Taking $K_{\rm rec}$ large,
+the bound $R\leq2N^{2/3}$ makes this length at most half the density.
+The choice of $C_6$ also places the recurrence length beyond the fixed
+inverse density powers.  The published recurrence lemma supplies
+nonzero integers $t_j$, $|t_j|\leq\eta^{-C_7}$, such that
+\begin{equation}\label{gi-recurrent-coefficients}
+ \|t_j(d!)^2\beta_j\|_{\mathbb R/\mathbb Z}
+                    \leq\eta^{-C_8}N^{-j}.
+\end{equation}
+The extra factorial clears the leading-coefficient conversion.  Taking
+the product of the $t_j$ and the fixed factorials gives a single nonzero
+horizontal character of magnitude and $C^\infty[N]$ norm at most
+$\eta^{-C_9}$.
+
+For Type II the pigeonholed character is $\psi_1\oplus\psi_2$, not both
+zero.  Write the two scalar phases with coefficients $\beta_j,\beta'_j$.
+The information replacing \eqref{gi-one-coefficients} is
+\begin{equation}\label{gi-two-coefficients}
+ \|d!(\beta_jr^j+\beta'_jr'^j)\|_{\mathbb R/\mathbb Z}
+                        \leq\eta^{-C_5}(R/N)^j.
+\end{equation}
+Interchange the two coordinates if necessary so that $\psi_1\ne0$.
+Fix an $r'$ with at least $\eta^{C_4}R$ partners.  Equation
+\eqref{gi-two-coefficients} puts $d!\beta_jr^j$ in an arc centered at
+$-d!\beta'_jr'^j$.  The same published recurrence lemma permits this
+arbitrary center and gives \eqref{gi-recurrent-coefficients} for
+$\psi_1$.  Its large-length requirement follows from
+$R\geq N^{1/3}/4$ and a sufficiently large $K_{\rm rec}$.  There is no
+substitution of $(r-r_0)^j$ for $r^j-r_0^j$.
+
+Finally let $\Psi$ denote the nonzero character just obtained.  Its
+binomial expansion shows that for
+$1\leq n\leq c\eta^{2C_9+4}N$ the phase $\Psi(g(n))$ stays within
+$1/10$ of $\Psi(g(0))$.  Choose a mean-zero Lipschitz circle function
+equal to one on that arc and compose it with $\Psi$.  Its mean is zero
+because a nonzero horizontal character pushes Haar measure to circle
+Haar measure.  Its Lipschitz norm is bounded by a fixed power of
+$\eta^{-1}$ by \cite[Appendix~A]{GTOrbits2012}.  Choose $C_{\rm rec}$
+larger than the length and Lipschitz exponents, and then enlarge
+$K_{\rm rec}$ so the initial interval is nonempty.  Its average one
+contradicts total $\eta^{C_{\rm rec}}$-equidistribution.  This proves
+both assertions.  All exponent constants are finite combinations of
+the published one-parameter constants and degree-$d$ polynomial algebra.
+\end{proof}
+
+\begin{proposition}[Power-form Gaussian ideal minor-arc bound]
+\label{gi-minor-arc}
+For each $m,d$ there is $c_{\rm G}>0$ with the following property.
+Fix $H_0$ and a finite-order Gaussian ray character $\chi$ of modulus
+$H_0$, extended by zero.  Let $G/\Gamma$ have dimension $m$, filtration
+degree $d$, and a $Q$-rational adapted basis, with $Q\geq2$.  Suppose
+$(g(n)\Gamma)_{n\leq N}$ is totally $\delta$-equidistributed, where
+$0<\delta<1$.  If $F$ is Lipschitz and $\int F=0$, then for every
+interval progression $P\subseteq[N]$ of common difference at most $Q$,
+\begin{equation}\label{gi-power-bound}
+ \left|\sum_{\mathrm N\mathfrak a\leq N}\Lambda_E(\mathfrak a)
+       \chi(\mathfrak a)1_P(\mathrm N\mathfrak a)
+       F(g(\mathrm N\mathfrak a)\Gamma)\right|
+ \ll_{H_0,m,d} QN\log(2N)^7\delta^{c_{\rm G}}\|F\|_{\mathrm{Lip}}.
+\end{equation}
+No lower bound on the length of $P$ or on $\delta$ is required.
+\end{proposition}
+\begin{proof}
+Normalize $\|F\|_{\mathrm{Lip}}=1$.  Take the smaller positive exponents
+$\kappa,\sigma$ in Lemma~\ref{lem:gn-norm-transfer} for dimensions $m$
+and $2m$, and decrease $\kappa$ to at most one.  Partial summation gives
+the same transfer bound with an extra factor $\log(2M)$ for a
+$\log\mathrm N\mathfrak b$ weight: the unweighted lemma holds for
+every partial interval, and $\int_1^Mdt/t\leq\log(2M)$.
+Let $C_{\rm rec},K_{\rm rec}$ be as in Lemma~\ref{gi-recombination},
+and choose
+\begin{equation}\label{gi-exponent-choice}
+ a_*=\frac1{4C_{\rm rec}},\qquad
+ c_* =\frac{a_*\kappa}{32},\qquad
+ s_* =\min\left\{\frac1{100},\frac1{4a_*K_{\rm rec}},
+                             \frac{\sigma}{12a_*}\right\}.
+\end{equation}
+First assume $N^{-s_*}\leq\delta\leq\delta_0$, with the fixed cutoff
+$\delta_0$ sufficiently small, and restrict the sum to $(N/2,N]$.
+We claim that its absolute value is
+\begin{equation}\label{gi-shell-bound}
+                  \ll QNL^7\delta^{c_*},\qquad L=\log(2N).
+\end{equation}
+The elementary bound is $O(NL)$.  Thus the claim is immediate when
+$QL^6\delta^{c_*}\geq1$, and in the other case
+$Q\leq\delta^{-c_*}$ and $L\leq\delta^{-c_*/6}$.
+If \eqref{gi-shell-bound} fails with a sufficiently large implied
+constant, Proposition~\ref{gi-extraction} applies with
+$\epsilon$ a fixed large multiple of $QL^6\delta^{c_*}$; if this
+exceeds the permitted range, the elementary bound already proves the
+claim.  The extracted density and normalized amplitude are at least
+a fixed positive constant times $\delta^{4c_*}$, hence at least
+$\delta^{5c_*}$ after decreasing $\delta_0$.
+
+Set $\eta=\delta^{a_*}$.  If an extracted orbit were totally
+$\eta$-equidistributed, Lemma~\ref{lem:gn-norm-transfer}, with the
+progression analysis above, would bound the extracted sum by
+\[
+ O(M\delta^{a_*\kappa}L^e),\qquad e=0\text{ or }1.
+\]
+Here $M=\lceil N/r\rceil\geq N^{1/3}/2$ in Type I and
+$M=B\geq N^{1/3}/4$ in Type II.  The rationality and modulus hypotheses
+hold because $c_*<a_*\kappa$.  The lower-parameter hypothesis holds
+because $a_*s_*\leq\sigma/12$; increasing the fixed threshold for $N$
+absorbs the constants two and four.  Since $a_*\kappa=32c_*$, the
+displayed bound is smaller than $M\delta^{5c_*}$, even for $e=1$.
+This is a contradiction.  Thus every extracted orbit fails total
+$\eta$-equidistribution.  Its density is at least $\eta$, since
+$a_*>5c_*$.  Also $N\geq\eta^{-K_{\rm rec}}$ by
+$a_*s_*K_{\rm rec}\leq1/4$, and $Q\leq\eta^{-1}$.
+Lemma~\ref{gi-recombination} now contradicts total
+$\delta$-equidistribution, because
+$\eta^{C_{\rm rec}}=\delta^{1/4}>\delta$.  This proves
+\eqref{gi-shell-bound}.  Fixed values $\delta\geq\delta_0$ are covered
+by the elementary bound with a larger constant.
+
+We spell out the passage through all scales.  Use exact real endpoints
+$M_j=2^{-j}N$ and retain shells with $M_j\geq2\sqrt\delta N$.
+The discarded norms are at most $2\sqrt\delta N$ and their total
+absolute weight is $O(\sqrt\delta NL)$ by Lemma~\ref{gi-moments}.
+There is no rounding of ideal-norm cutoffs.  On $[\lfloor M_j\rfloor]$
+the orbit is totally $2\sqrt\delta$-equidistributed: every progression
+of the requisite length has at least $\delta N$ terms for sufficiently
+large $N$, and the original discrepancy bound is stronger.
+For $\delta\geq N^{-s_*/4}$ the lower-parameter condition for the shell
+bound holds on every retained scale, since
+$M_j\geq N^{1-s_*/8}$ up to fixed constants.  The progression is merely
+intersected with the shell; its common difference remains at most $Q$.
+Summing the shell estimates and using $\sum_jM_j\leq2N$ gives
+\begin{equation}\label{gi-full-intermediate}
+                  O(QNL^7\delta^{c_*/2}).
+\end{equation}
+For $1/N<\delta<N^{-s_*/4}$ replace $\delta$ by
+$\delta^{s_*/8}\geq N^{-s_*/8}$.  Total equidistribution at the
+original parameter implies it at this larger one.  The exponent in
+\eqref{gi-full-intermediate} becomes $c_*s_*/16$.
+For $\delta\leq1/N$, singleton progressions imply
+$|F(g(n)\Gamma)|\leq\delta$ at each integer $n$, so the elementary
+$O(NL)$ weight bound suffices.  All remaining bounded $N$ are absorbed
+by the fixed constant.  Thus one may take
+\begin{equation}\label{gi-final-exponent}
+                         c_{\rm G}=c_*s_*/16>0.
+\end{equation}
+Its dependence is only on $m,d$ and the corresponding norm-transfer
+exponents; $H_0$ enters constants and thresholds, not this exponent.
+\end{proof}
+
+\begin{corollary}[Ordinary prime term]\label{gi-ordinary-primes}
+Under the nilmanifold hypotheses of Proposition~\ref{gi-minor-arc},
+there is $c_{\mathbb Q}>0$, depending only on $m,d$, such that
+\begin{equation}\label{gi-ordinary-bound}
+ \left|\sum_{n\leq N}\Lambda'(n)1_P(n)F(g(n)\Gamma)\right|
+ \ll_{m,d} QN\log(2N)^7\delta^{c_{\mathbb Q}}\|F\|_{\mathrm{Lip}},
+\end{equation}
+where $\Lambda'(p)=\log p$ on rational primes and is zero otherwise.
+The same bound holds for ordinary von Mangoldt $\Lambda$.
+\end{corollary}
+\begin{proof}
+For positive integers the convolution identities
+$\mu*1=1_{n=1}$, $1*\Lambda=\log$, and $\mu*\log=\Lambda$ give
+\eqref{gi-convolution-identity} with exactly the displayed norm cutoffs
+replaced by integer cutoffs.  Its coefficients are bounded by
+$\sum_{c\mid d}\Lambda(c)=\log d$.  Integer multiplicity is one,
+so both moment bounds in Lemma~\ref{gi-moments} remain valid.  The
+two Cauchy--Schwarz calculations \eqref{gi-first-cauchy} and
+\eqref{gi-second-cauchy} apply to the resulting finite integer sums
+and give Proposition~\ref{gi-extraction} with the same conservative
+parameter $c_0\epsilon^4/L^{24}$.  Lemma~\ref{gi-recombination} concerns
+only integer dilation parameters and is unchanged.
+
+The unweighted replacement for norm transfer follows directly from
+total equidistribution.  If an interval progression $J\subseteq[X]$
+has $|J|\geq\zeta X$, then
+\[
+ \left|\sum_{n\in J}F(g(n)\Gamma)\right|
+       \leq |J|\zeta\|F\|_{\mathrm{Lip}}
+       \leq X\zeta\|F\|_{\mathrm{Lip}}.
+\]
+If $|J|<\zeta X$, its cardinality and the supremum norm give the same
+bound.  This treats every modulus and every truncated interval.
+Partial summation supplies the logarithmic weight; the identical
+long-progression/short-progression dichotomy treats the mean-zero
+product function $F\otimes\overline F$ on the product nilmanifold.
+Thus the exponent choices and all shell steps in the proof of
+Proposition~\ref{gi-minor-arc} apply, with any sufficiently small
+fixed positive transfer exponents, to give \eqref{gi-ordinary-bound}
+for $\Lambda$.  No extension of a Mobius theorem to $\Lambda$ is assumed.
+
+Finally proper prime powers contribute at most
+$O(\sqrt N\log(2N)^2\|F\|_{\mathrm{Lip}})$, by counting at most
+$N^{1/k}$ possible bases for each $2\leq k\leq\log_2N$.
+Shrink $c_{\mathbb Q}$ below $1/4$.  If $\delta>1/N$, this error is
+absorbed because $N\delta^{c_{\mathbb Q}}\geq N^{1-c_{\mathbb Q}}$.
+If $\delta\leq1/N$, singleton equidistribution and
+$\sum_{n\leq N}\Lambda'(n)\leq N\log(2N)$ prove the bound directly.
+This gives the assertion for $\Lambda'$ as well.
+\end{proof}
+
+
+
+% Section fragment. Requires the gn-* lemmas from norm_transfer.tex.
+\subsection{Fixed-modulus affine interpolation}
+\label{sec:ga-affine}
+
+Fix integers $W\geq1$ and $0\leq b<W$. The modulus $W$ remains fixed
+as the size parameter tends to infinity. We first justify the affine
+interpolation needed to apply ideal-norm estimates to a $W$-tricked
+sequence.
+
+\begin{lemma}[Linear coefficient extrapolation]\label{lem:ga-linear-coefficients}
+Let $X\geq1$ and let $p:\mathbb Z\to\mathbb R/\mathbb Z$ have degree at most $d$.
+Suppose $P(t)=u+vt$ with $u,v\in\mathbb Z$, $v\ne0$,
+$|u|\leq C X$, $|v|\leq E$, and $L\geq X/E$, where $E\geq2$.
+There is an integer $1\leq k\leq C_dE^{C_d}$ such that
+\[
+ \|kp\|_{C^\infty[X]}
+ \leq C_d(C+E)^{C_d}\|p\circ P\|_{C^\infty[L]}.
+\]
+\end{lemma}
+\begin{proof}
+Expand $\binom{u+vt}j$ in the binomial basis in $t$. All coefficients
+are integers, the diagonal coefficient is $v^j$, and the coefficient in
+row $\ell$ is $O_d((C+E)^jX^{j-\ell})$. Starting in degree $d$, clear
+the nonzero diagonal entries successively. Their product is a nonzero
+integer bounded by $E^{O_d(1)}$. At degree $j$ use
+$X^j/L^j\leq E^j$; a higher-row error is multiplied by
+$O_d((C+E)^hX^{h-j})$, canceling its $X^{-h}$ factor. Multiplication
+to the common product of diagonal entries proves the claim, exactly
+as in Lemma~\ref{lem:gn-quadratic-coefficients}.
+\end{proof}
+
+\begin{lemma}[Affine interpolation preserves quantitative distribution]
+\label{lem:ga-affine-interpolation}
+Fix dimension and degree bounds $m,d$. There are $a,\sigma>0$, depending
+only on $m,d$, and thresholds depending on $W,m,d$, with the following
+property. Suppose a nilmanifold and its rational filtration satisfy the
+Green--Tao conventions, its adapted basis is $Q$-rational, and
+$g\in\operatorname{poly}(\mathbb Z,G_\bullet)$. Suppose also that
+\[
+ N^{-\sigma}\leq\delta\leq\delta_0(W,m,d),\qquad
+ Q\leq\delta^{-a},
+\]
+and that $g$ is totally $\delta$-equidistributed on $[N]$. There is
+$\widetilde g\in\operatorname{poly}(\mathbb Z,G_\bullet)$ satisfying
+\[
+ \widetilde g(Wn+b)=g(n)\quad(n\in\mathbb Z)
+\]
+which is totally $\delta^a$-equidistributed on $[WN+b]$.
+\end{lemma}
+\begin{proof}
+Use the one-parameter coordinate characterization in
+\cite[Lemma 6.7]{GTOrbits2012}. Each second-kind Mal'cev coordinate of
+$g(n)$ is a polynomial, with the prescribed degree bound from the
+filtration. Evaluate those same polynomials at real arguments and apply
+the inverse coordinate map, obtaining $g_{\mathbb R}(t)$. Set
+\[
+ \widetilde g(t)=g_{\mathbb R}((t-b)/W).
+\]
+Affine composition preserves the coordinate degree bounds, so the same
+characterization shows that this is a polynomial sequence for the
+original filtration. It gives the stated identity on integer $n$.
+Equivalently, one may use the Taylor product with real powers; those
+powers exist in a connected simply connected nilpotent group.
+
+Put $X=WN+b$ and $\epsilon=\delta^a$. Suppose the asserted total
+$\epsilon$-equidistribution fails. Then on a progression
+\[
+ u+v[L]\subseteq[X],\qquad L\geq\epsilon X,
+ \quad u,v\in\mathbb Z,\quad
+ 1\leq v\leq2/\epsilon,\quad |u|\leq2X,
+\]
+the sequence is not $\epsilon$-equidistributed. By the one-parameter
+quantitative Leibman theorem \cite[Theorem 2.9]{GTOrbits2012}, there is
+a nontrivial horizontal character $\eta$ satisfying
+\[
+ |\eta|\ll\epsilon^{-C},\qquad
+ \|\eta\circ\widetilde g\circ(u+vt)\|_{C^\infty[L]}
+       \ll\epsilon^{-C}.
+\]
+The rationality hypothesis holds since $Q\leq\epsilon^{-1}$.
+Lemma~\ref{lem:ga-linear-coefficients} gives a positive integer
+$k\ll\epsilon^{-C}$ such that
+\[
+ \|k\eta\circ\widetilde g\|_{C^\infty[X]}
+      \ll\epsilon^{-C}.
+\]
+Forward composition with the fixed integer polynomial $Wn+b$ gives
+\[
+ \|k\eta\circ g\|_{C^\infty[N]}
+      \ll_{W,d}\epsilon^{-C}.
+\]
+For this last bound expand $\binom{Wn+b}j$ in the binomial basis; its
+matrix is integral, and $X$ is comparable to $WN$. The character
+$k\eta$ remains nontrivial.
+
+Let $C_{\mathrm{aff}}$ bound all exponents in these estimates, including
+the character size. Fix explicitly
+\[
+ 0<a<\min\{1,c_0/(2C_{\mathrm{aff}})\},\qquad
+ 0<\sigma<\min\{\sigma_0,1/(2a)\},
+\]
+where $c_0,\sigma_0$ are from
+Lemma~\ref{lem:gn-horizontal-obstruction}. Decrease $\delta_0$ to
+absorb fixed $W$-dependent constants. The resulting character bounds
+contradict that lemma and total $\delta$-equidistribution of $g$.
+The inequality $a\sigma<1/2$ ensures $\epsilon X\gg N^{1/2}$, so all
+progression parametrizations and floor estimates used above hold for
+large $N$. This proves the assertion on the entire interval $[WN+b]$,
+including progressions outside the residue class $b$ modulo $W$.
+\end{proof}
+
+The Gaussian input in the following lemma is furnished by
+Proposition~\ref{gi-minor-arc}; its rational counterpart is
+Corollary~\ref{gi-ordinary-primes}.
+
+\begin{lemma}[$W$-tricked minor-arc interface]\label{lem:ga-wtrick-ma}
+For $E=\mathbb Q(i)$ and a fixed ray character $\chi$, put
+\[
+ T_\chi(t)=\sum_{\mathrm N\mathfrak a=t}
+             \Lambda_E(\mathfrak a)\chi(\mathfrak a).
+\]
+Assume the mean-zero ideal estimate
+\begin{equation}\label{eq:ga-ideal-input}
+ \left|\sum_{\substack{\mathrm N\mathfrak a\leq X\\
+                          \mathrm N\mathfrak a\in R}}
+  \Lambda_E(\mathfrak a)\chi(\mathfrak a)
+             F_0(h(\mathrm N\mathfrak a)\Gamma)\right|
+ \ll Q_1X\log(2X)^7\eta^{c_E}\|F_0\|_{\mathrm{Lip}}
+\end{equation}
+for a positive $c_E$, whenever $h$ is totally $\eta$-equidistributed,
+the basis is $Q_1$-rational, and $R$ is any interval progression of
+modulus at most $Q_1$. Then, under the hypotheses of
+Lemma~\ref{lem:ga-affine-interpolation}, for every Lipschitz $F_0$
+with Haar mean zero and every interval progression
+$P\subseteq[N]$ of modulus $q\leq Q$,
+\begin{equation}\label{eq:ga-wtrick-ideal}
+ \left|\sum_{n\in P}T_\chi(Wn+b)F_0(g(n)\Gamma)\right|
+ \ll_{H_0,W,m,d}QN\log(2N)^7\delta^{ac_E}
+                     \|F_0\|_{\mathrm{Lip}}.
+\end{equation}
+The same implication holds for $E=\mathbb Q$ and the corresponding
+ordinary von Mangoldt estimate.
+\end{lemma}
+\begin{proof}
+Take $X=WN+b$ and the sequence $\widetilde g$ constructed above. The
+conditions $t=Wn+b$ and $n\in P$ specify an interval progression $R$
+of modulus $Wq$. Apply \eqref{eq:ga-ideal-input} with
+$Q_1=\max\{Q,Wq,2\}\ll_WQ$ and $\eta=\delta^a$. The ideal sum
+then equals the left side of \eqref{eq:ga-wtrick-ideal} exactly, while
+$X\ll_WN$ and $\log(2X)\ll_W\log(2N)$. No assertion about
+fractional-argument distribution has been assumed: it was proved in
+Lemma~\ref{lem:ga-affine-interpolation}.
+\end{proof}
+
+\begin{corollary}[Centered ray-prime weights]\label{cor:ga-centered-primes}
+Suppose a conjugation-invariant fixed Gaussian ray condition has the
+checked finite-character expansion
+\[
+ \Lambda'_C(t)=\frac12\sum_\chi c_\chi T_\chi(t)+e(t),
+ \qquad \sum_{t\leq X}|e(t)|\ll_{H_0}\sqrt X\log(2X)^2.
+\]
+Assume both the Gaussian estimate \eqref{eq:ga-ideal-input} and its
+ordinary rational counterpart, with positive exponents $c_E,c_{\mathbb Q}$.
+Let $G/\Gamma$ and $g$ satisfy the hypotheses of
+Lemma~\ref{lem:ga-affine-interpolation}, and let $F_0$ be Lipschitz with
+Haar mean zero.
+Then any fixed linear combination of the $W$-tricked ray-prime weight
+and the $W$-tricked ordinary-prime weight obeys, for every interval
+progression $P\subseteq[N]$ of modulus at most $Q$,
+\[
+ \left|\sum_{n\in P}w_N(n)F_0(g(n)\Gamma)\right|
+ \ll QN\log(2N)^7\delta^{c_W}\|F_0\|_{\mathrm{Lip}},
+ \qquad c_W=a\min\{c_E,c_{\mathbb Q}\}>0,
+\]
+for mean-zero $F_0$, in a regime
+$\delta\geq N^{-\sigma_1}$ and $Q\leq\delta^{-a}$ with fixed
+$\sigma_1>0$. Constants may depend on $H_0,W$ and the fixed linear
+combination. In particular this applies to the proposed centering
+\[
+ w_N(n)=\frac{\varphi(W)}W\Lambda'_C(Wn+b)
+             -\mu_C(b)\lambda_{b,W}(n),
+\]
+once the normalization of $\lambda_{b,W}$, the scalar $\mu_C(b)$ and
+the displayed character expansion have been fixed and checked.
+\end{corollary}
+\begin{proof}
+Apply Lemma~\ref{lem:ga-wtrick-ma} to the finitely many characters and
+to the rational von Mangoldt function. The Gaussian factor $1/2$
+accounts for the two conjugate prime ideals above an eligible split
+rational prime. Replacing ordinary von Mangoldt by its prime-only
+version also has a proper-prime-power error
+$O_W(\sqrt N\log(2N)^2)$. Thus the stated estimate holds with the
+additional error
+$O_{H_0,W}(\sqrt N\log(2N)^2\|F_0\|_\infty)$.
+Choose $\sigma_1\leq\sigma$ so small that $\sigma_1c_W<1/4$.
+Then $N\delta^{c_W}\geq N^{3/4}$ throughout the claimed regime, and
+the square-root errors are absorbed. All normalization factors are
+fixed constants because $W$ is fixed. This proves the minor-arc
+estimate but does not assert the centered progression estimate
+\eqref{eq:gf-sw}, which must be proved separately from the arithmetic
+main terms.
+\end{proof}
+
+\begin{remark}\label{rem:ga-choice-order}
+Fix the arithmetic moduli first, then the positive exponents in this
+subsection. They do not depend on the later factorization exponent
+$B$. Proposition~\ref{prop:gf-factorization} chooses $B$ large enough
+to satisfy the resulting upper complexity condition. Its output
+$M$ is polylogarithmic in $N$, so its equidistribution parameter also
+obeys $\delta\geq N^{-\sigma_1}$ for sufficiently large $N$.
+The affine interpolation argument is motivated by the corresponding
+step of Frei--Tinkova, but uses no theorem from that work as an input.
+\end{remark}
+
+
+% Section fragment. Bibliography: GTOrbits2012, GTMobius2012.
+\subsection{Quantitative factorization for centered weights}
+\label{sec:gf-factorization}
+
+We isolate the analytic implication needed after the arithmetic
+progression main terms have been established. Throughout,
+$L=\log(2N)$, all nilpotent groups are connected and simply connected,
+and all filtrations are by closed connected rational subgroups. Constants
+may depend on fixed arithmetic moduli and on the fixed dimension and
+degree bounds.
+
+\begin{proposition}[Factorization implication]\label{prop:gf-factorization}
+Fix dimension and degree bounds $m,d$. Let $w_N:[N]\to\mathbb C$ satisfy
+the following three hypotheses.
+\begin{enumerate}
+\item For a fixed $K_w\geq0$, $|w_N(n)|\ll L^{K_w}$.
+\item For every $A_0,C_0>0$, uniformly over all interval progressions
+$P\subseteq[N]$ of common difference at most $L^{C_0}$,
+\begin{equation}\label{eq:gf-sw}
+ \left|\sum_{n\in P}w_N(n)\right|
+       \ll_{A_0,C_0}N L^{-A_0}.
+\end{equation}
+No lower bound on $|P|$ is imposed here.
+\item There are fixed $c>0$, $C_1,K_1\geq0$ such that if a nilmanifold
+of dimension at most $m$ and filtration degree at most $d$ has a
+$Q$-rational adapted Mal'cev basis, $h$ is a polynomial sequence totally
+$\delta$-equidistributed on $[N]$, and $F_0$ is Lipschitz with Haar mean
+zero, then
+\begin{equation}\label{eq:gf-ma}
+ \left|\sum_{n\in P}w_N(n)F_0(h(n)\Gamma)\right|
+ \ll N\delta^c Q^{C_1}L^{K_1}\|F_0\|_{\mathrm{Lip}}
+\end{equation}
+for every interval progression $P\subseteq[N]$ of modulus at most $Q$
+and length at least $N/Q$. It is sufficient for this hypothesis to hold
+only when
+\begin{equation}\label{eq:gf-ma-regime}
+ \delta\geq N^{-\sigma},\qquad Q\leq\delta^{-\kappa}
+\end{equation}
+for fixed positive $\sigma,\kappa$. An estimate allowing arbitrary
+progression lengths is stronger than required.
+\end{enumerate}
+Then, for every $A,C_{\mathrm{init}}>0$, uniformly over initial
+nilmanifolds of dimension at most $m$ and degree at most $d$ with an
+$L^{C_{\mathrm{init}}}$-rational adapted basis, all polynomial sequences
+$g$, and all Lipschitz $F$,
+\begin{equation}\label{eq:gf-conclusion}
+ \left|\sum_{n\leq N}w_N(n)F(g(n)\Gamma)\right|
+     \ll_{A,C_{\mathrm{init}}}N L^{-A}\|F\|_{\mathrm{Lip}}.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Normalize $\|F\|_{\mathrm{Lip}}=1$ and put
+\[
+ D=A+K_w+3,\qquad M_0=L^{\max\{1,C_{\mathrm{init}}\}}.
+\]
+Leave a factorization exponent $B$ unspecified for the moment. By
+\cite[Theorem 1.19]{GTOrbits2012}, there is an integer $M$ with
+\[
+ M_0\leq M\ll_{B,m,d}M_0^{E(B,m,d)}
+\]
+and a factorization $g=\varepsilon g'\gamma$ into polynomial sequences.
+Here $\varepsilon$ is $(M,N)$-smooth, $\gamma(n)\Gamma$ has period
+$q\leq M$, and $g'$ is totally $M^{-B}$-equidistributed in a rational
+subgroup quotient. The new adapted basis consists of $M$-rational
+combinations of the initial one.
+
+For each residue $j$ modulo $q$, choose a reduced rational representative
+$\gamma_j$ of $\gamma(j)\Gamma$. Split that residue class into
+$\lceil ML^D\rceil$ consecutive blocks of nearly equal cardinality.
+For sufficiently large $N$ after $B$ is fixed, the resulting progressions
+$P_{j,k}$ satisfy
+\begin{equation}\label{eq:gf-cells}
+ \#\{P_{j,k}\}\ll M^2L^D,\qquad
+ |P_{j,k}|\gg\frac{N}{M^2L^D},\qquad
+ \operatorname{diam}(P_{j,k})\ll\frac{N}{ML^D}.
+\end{equation}
+Their common difference is $q$. Indeed each original residue class has
+cardinality comparable to $N/q$, and rounding the balanced block sizes
+changes these estimates only by an absolute factor, since all powers of
+$M$ are polylogarithmic in $N$ once $B$ is fixed.
+
+Choose $n_{j,k}\in P_{j,k}$ and put $a_{j,k}=\varepsilon(n_{j,k})$.
+The right-invariant ambient metric and smoothness imply
+\begin{align*}
+ &|F(\varepsilon(n)g'(n)\gamma_j\Gamma)
+       -F(a_{j,k}g'(n)\gamma_j\Gamma)|\\
+ &\hspace{1cm}\leq d(\varepsilon(n),\varepsilon(n_{j,k}))
+       \ll L^{-D}\qquad(n\in P_{j,k}).
+\end{align*}
+There is no factor depending on the coordinates of $g'(n)$ in this
+estimate: right invariance removes it. The total weighted freezing
+error is therefore $O(NL^{K_w-D})=O(NL^{-A-3})$.
+
+We use the quantitative conjugation claim proved in
+\cite[p.~547]{moebius}, whose inputs are the rational-subgroup,
+rational-element and metric comparisons of
+\cite[Appendix A]{GTOrbits2012}. There are fixed $a>0$, $C_2\geq1$,
+depending only on $m,d$, such that, with
+\[
+ H_j=\gamma_j^{-1}G'\gamma_j,\quad
+ \Lambda_j=H_j\cap\Gamma,\quad
+ h_j(n)=\gamma_j^{-1}g'(n)\gamma_j,
+\]
+the quotient $H_j/\Lambda_j$ has an adapted basis of rationality at most
+$M^{C_2}$, $h_j$ is totally $M^{-aB+C_2}$-equidistributed, and
+\[
+ F_{j,k}(x\Lambda_j)=F(a_{j,k}\gamma_jx\Gamma)
+ \quad\hbox{satisfies}\quad
+ \|F_{j,k}\|_{\mathrm{Lip}}\leq M^{C_2},\qquad
+ \|F_{j,k}\|_\infty\leq1.
+\]
+We have enlarged $C_2$ to absorb fixed multiplicative constants. These
+exponents do not depend on $B$. In applying this published claim, one
+must account for the commensurable lattice resulting from rational
+conjugation; conjugation is not asserted to be an isometry of the
+original quotients. Its finite-index and metric losses are included in
+$a,C_2$.
+
+Write $F_{j,k}=m_{j,k}+F_{j,k}^0$ by subtracting its Haar mean on
+$H_j/\Lambda_j$. Then $|m_{j,k}|\leq1$,
+$\int F_{j,k}^0=0$, and
+$\|F_{j,k}^0\|_{\mathrm{Lip}}\leq2M^{C_2}$. This subtraction is needed
+even if the initial function $F$ happened to have Haar mean zero.
+For a dimension-zero factor the centered function simply vanishes.
+
+Put
+\[
+ U=C_2+D+5,\qquad Q_*=M^U,\qquad b_*=aB-C_2.
+\]
+Since $M\geq L$, $Q_*$ dominates the rationality, cell modulus and
+$N/|P_{j,k}|$. Applying \eqref{eq:gf-ma} to all centered cell functions
+and using \eqref{eq:gf-cells} gives a total of at most
+\begin{equation}\label{eq:gf-total-ma}
+ C N L^{K_1}M^{-b_*c+C_1U+C_2+2+D}.
+\end{equation}
+Every cell is counted here. In particular, the bound $N$ in the
+minor-arc hypothesis has not been replaced by an unsupported cell
+cardinality.
+
+We now fix $B$ sufficiently large that
+\begin{equation}\label{eq:gf-choice-B}
+ b_*>1,\qquad
+ b_*c\geq C_1U+C_2+2+D+A+K_1+4,
+ \qquad b_*\kappa\geq U+1
+\end{equation}
+when the restricted regime \eqref{eq:gf-ma-regime} is used. The last
+condition is omitted for an unrestricted minor-arc estimate. These
+inequalities involve only fixed exponents and not $E(B,m,d)$.
+They make \eqref{eq:gf-total-ma} $O(NL^{-A-4})$. They also ensure
+$Q_*\leq(M^{-b_*})^{-\kappa}$. The other regime condition,
+$M^{-b_*}\geq N^{-\sigma}$, holds for all sufficiently large $N$:
+after fixing $B$ the upper bound on $M$ is a fixed power of $\log N$.
+
+Only at this point use that upper bound, writing $M\leq L^{E_*}$ after
+enlarging the fixed exponent $E_*$. There are at most
+$O(L^{2E_*+D})$ cells of modulus at most $L^{E_*}$. Apply
+\eqref{eq:gf-sw} with
+\[
+ C_0=E_*+1,\qquad A_0=A+2E_*+D+4.
+\]
+Summing the constant terms $m_{j,k}\sum_{n\in P_{j,k}}w_N(n)$ gives
+$O(NL^{-A-4})$. Combined with the centered estimates and freezing error,
+this proves \eqref{eq:gf-conclusion}.
+\end{proof}
+
+\begin{remark}[Order of parameter choices]\label{rem:gf-order}
+The order in the proof is
+\[
+ (A,K_w,C_{\mathrm{init}},c,C_1,K_1,a,C_2,\kappa,\sigma)
+ \longrightarrow (D,U)\longrightarrow B\longrightarrow E_*
+ \longrightarrow(A_0,C_0)\longrightarrow N_0.
+\]
+Thus there is no requirement that $B$ dominate the factorization upper
+exponent $E(B,m,d)$. The centered progression estimate allows every
+logarithmic saving, so its exponent can be chosen after $E_*$ is known.
+The minor-arc input must have a fixed power form such as
+\eqref{eq:gf-ma}; unspecified polylogarithmic specializations alone
+would not justify this argument.
+\end{remark}
+
+
+\begin{corollary}[Fixed-modulus centered nilsequence estimate]
+\label{cor:ga-fixed-centered-nilsequence}
+Fix the Gaussian ray field and a conjugation-invariant union $C$ of ray
+classes as above. Let $W$ be a fixed multiple of the conductor of
+$K^{\mathrm{ab}}/\Q$, and let $b$ be a unit residue modulo $W$.
+For every $A,C_{\mathrm{init}}>0$ and fixed dimension and degree bounds,
+uniformly over the nilmanifolds and polynomial sequences in
+Proposition~\ref{prop:gf-factorization} with an
+$(\log(2N))^{C_{\mathrm{init}}}$-rational adapted basis,
+\[
+ \left|\sum_{n\leq N}h_{C,b,W}(n)F(g(n)\Gamma)\right|
+ \ll_{H,W,A,C_{\mathrm{init}},m,d}
+ N(\log(2N))^{-A}\|F\|_{\mathrm{Lip}}.
+\]
+The constants are uniform in $b$ and in the polynomial orbit. No
+uniformity as $W$ varies is asserted.
+\end{corollary}
+\begin{proof}
+We check the three hypotheses of
+Proposition~\ref{prop:gf-factorization}. The pointwise inequality
+$|h_{C,b,W}|\leq\lambda_{b,W}$ gives its first hypothesis with $K_w=1$.
+Corollary~\ref{cor:gaussian-centered-progressions} gives its second
+hypothesis for every $A_0,C_0$, in fact for every interval progression.
+
+For the third hypothesis, take $H_0=H$ in
+Corollary~\ref{cor:ga-centered-primes}. Its character expansion is
+\eqref{eq:gaussian-ray-fourier}, with the factor $1/2$ and the
+prime-power error supplied by \eqref{eq:gaussian-ray-prime-factor}
+and the bound following that equation. Its two assumed minor-arc
+estimates are Proposition~\ref{gi-minor-arc} and
+Corollary~\ref{gi-ordinary-primes}. Apply that corollary to the fixed
+linear combination defining $h_{C,b,W}$ in
+\eqref{eq:gaussian-centered-weight}. It gives \eqref{eq:gf-ma} with
+$c=c_W$, $C_1=1$ and $K_1=7$ in the regime
+$\delta\geq N^{-\sigma_1}$, $Q\leq\delta^{-a}$.
+The affine-interpolation result initially restricts $\delta$ to a
+fixed sufficiently small interval. For larger $\delta$, the bound
+$|h_{C,b,W}|\ll_W\log(2N)$ gives \eqref{eq:gf-ma} directly after
+enlarging its fixed constant. For a dimension-zero quotient the
+mean-zero test function vanishes. For all other dimensions and degrees
+within the fixed bounds, take the minimum of the finitely many positive
+exponents $c_W,a,\sigma_1$ and the maximum of the fixed constants.
+Thus the restricted regime \eqref{eq:gf-ma-regime} holds with fixed
+positive $\kappa,\sigma$, uniformly throughout the required class.
+
+Proposition~\ref{prop:gf-factorization} now proves the displayed
+estimate. There are only finitely many unit residues modulo the fixed
+$W$, so their constants can be bounded by a single constant. In
+particular, division by $N$ and the relabeling $W=V$, $N=L$ give the
+fixed-complexity estimate \eqref{eq:gaussian-centered-nil-input}.
+\end{proof}
+
+
+% The analytic bridge below uses the fixed-modulus centered nilsequence
+% estimate just proved for the Gaussian ray fields under consideration.
+\subsection{From Gaussian nilsequence estimates to the polynomial count}
+\label{subsec:gaussian-gowers-bridge}
+
+Fix the Gaussian ray field $K/\Q(i)$ and the conjugation-invariant ray
+classes used in the preceding argument. Let $D$ be divisible by the
+conductor of $K^{\rm ab}/\Q$. For each relevant union $C$ of classes,
+let $\Lambda'_C$ be its rational prime weight and let $\mu_C(b)$ be the
+conditional density in \eqref{eq:v5-mu}. In particular
+$0\leq\mu_C(b)\leq1$. We use the following conclusion of the preceding
+Gaussian norm, progression and factorization arguments, as assembled in
+Corollary~\ref{cor:ga-fixed-centered-nilsequence}: for every fixed
+multiple $V$ of $D$, every unit $b\pmod V$, every fixed bounded-complexity
+nilsequence $F(g(n)\Gamma)$, and every $B>0$,
+\begin{equation}\label{eq:gaussian-centered-nil-input}
+\begin{aligned}
+ \left|\mathbb E_{n\leq L}h_{C,V,b}(n)F(g(n)\Gamma)\right|
+ &\ll_{V,B,\mathrm{complexity}}(\log L)^{-B},\\
+ h_{C,V,b}(n)&=\frac{\varphi(V)}V
+ \bigl(\Lambda'_C(Vn+b)-\mu_C(b)\Lambda'(Vn+b)\bigr).
+\end{aligned}
+\end{equation}
+The bound is uniform in the polynomial orbit and functions with the stated
+complexity bound. The field, its ray modulus and $V$ are fixed in this
+statement. We do not assume any uniform rate as $V$ varies.
+
+\paragraph{Published transference inputs.}
+We use Green--Tao, \emph{Linear equations in primes}~\cite{greentao},
+Proposition~6.4 and Appendix~D for the ordinary prime majorant,
+Proposition~7.1 and Appendix~C for its generalized von Neumann bound,
+and Lemma~4.4 with its subsequent normal-form reduction.
+These are statements about the ordinary prime majorant and arbitrary
+functions dominated by it; they do not assert an Artin-prime theorem.
+We also use Dodos--Kanellopoulos~\cite{v5dk}, Theorem~5.1, in the
+following form, checked in arXiv:1610.00487v4, pp.~12--13. The final
+typeset statement has not been compared. For target interval norm $U^s[L]$, $s\geq2$, its hypothesis on a
+nonnegative majorant on a prime cyclic group of size
+$L'\in[CL,2CL]$, $C\geq20$, is
+\begin{equation}\label{eq:gaussian-dk-correct-exponent}
+ \|\nu-1\|_{U^{2s}(\Z/L'\Z)}\leq\eta.
+\end{equation}
+For a real function $|f|\leq\nu$ with $\|f\|_{U^s[L]}\geq\delta$,
+the conclusion is a correlation bounded below with a bounded Lipschitz
+linear nilsequence on an $(s-1)$-step nilmanifold. Its nilmanifold,
+Lipschitz bound and positive correlation threshold depend only on
+$s,C,\delta$. The interval norm is the normalized zero-extension norm.
+In particular a target $U^{u+1}$ requires majorant norm $U^{2u+2}$.
+
+\paragraph{An auxiliary cutoff, distinct from the polynomial cutoff.}
+Put
+\[
+ V_z=D\prod_{\substack{p\leq z\\p\nmid D}}p.
+\]
+Here $z$ is an auxiliary cutoff used only to prove the next linear
+replacement statement. It is not the cutoff $v$ defining $W,A$ in
+\eqref{eq:v5-global-gowers}.
+For every fixed integer $s\geq2$, one can choose $z=z(L)\to\infty$
+sufficiently slowly that
+\begin{equation}\label{eq:gaussian-refined-gowers}
+ \max_{C,\ (b,V_z)=1}\|h_{C,V_z,b}\|_{U^s[L]}=o(1).
+\end{equation}
+The maximum is over the fixed finite list of ray-class unions and the
+finitely many unit residues for the current $V_z$.
+
+Here are all normalization and limit details. First choose the complexity
+of the ordinary prime majorant larger than both the requirements of the
+intended generalized von Neumann bound and
+$\max(4^s,4s)$. Choose its ambient constant $C\geq20$ large enough for
+both published majorant and generalized von Neumann statements. If
+$\lambda_{V,b}(n)=(\varphi(V)/V)\Lambda'(Vn+b)$, then
+$|h_{C,V,b}|\leq\lambda_{V,b}$. The majorant simultaneously dominates
+a fixed number of such ordinary weights on $[L^{3/5},L]$, with a
+multiplicative constant depending only on the chosen complexities.
+Consequently there is $\alpha>0$, depending only on the fixed
+complexities and the fixed factor in the modulus, such that
+$\alpha 1_{[L^{3/5},L]}h_{C,V_z,b}$ is dominated in absolute value by
+$\nu$ on $[L]$. The same $\alpha$ works for all cutoffs and unit residues.
+In applying the inverse theorem to a lower bound $\delta$ for the
+unscaled norm, use the lower bound $\alpha\delta/2$ for this truncated,
+scaled function, once the truncation error is at most $\delta/2$.
+
+For sufficiently large $z$, $V_z=E\prod_{p\leq z}p$ with $E$ fixed.
+The ordinary divisor-sum construction works with this $V_z$: at primes
+dividing $E$, the unit residue excludes every divisor term containing
+that prime, and at all other primes its local factors are unchanged.
+The same observation applies to the correlation upper bounds in
+Appendix~D. Thus the stated pseudorandomness conditions remain valid,
+uniformly in unit residues, with constants allowed to depend on $E$.
+Expand the centered $(2s)$-cube of $\nu-1$. It contains at most $4^s$
+distinct forms, in $2s+1$ variables, with coefficients zero or one.
+Every subproduct has mean $1+o(1)$ by the linear-forms condition;
+inclusion--exclusion gives \eqref{eq:gaussian-dk-correct-exponent} with
+a left side tending to zero. This estimate is on the full cyclic group.
+
+The removed initial interval contributes $o(1)$ to the interval $U^s$
+norm. Indeed the weights are $O(\log L)$ if $V_z=L^{o(1)}$, and a cube
+with its initial vertex in this interval has relative count
+$O(L^{-2/5})$. The $2^s$th power of the norm of the removed function is
+at most $O((\log L)^{2^s}L^{-2/5})$. Its correlation with a bounded
+nilsequence is also $o(1)$.
+
+If \eqref{eq:gaussian-refined-gowers} fails by some fixed $\delta>0$,
+Theorem~5.1 gives a fixed-complexity nilsequence correlation bounded
+away from zero, contradicting \eqref{eq:gaussian-centered-nil-input}.
+There is no illicit varying-modulus use of that input. For each integer
+$z$ and each of the finitely many residues modulo $V_z$, first take a
+size threshold for the required nilsequence estimates. Diagonalize
+these thresholds also over $\delta=1,1/2,1/3,\ldots$ and over the finite
+list of norm orders needed. Impose in addition
+$z(L)\leq\log\log\log L$ and all size thresholds of the majorant.
+At stage $j$, choose the cutoff $z_j$ large enough for the limiting
+majorant errors to be below half the inverse-theorem tolerances needed
+for the first $j$ tests; only then choose their size threshold $L_j$.
+The resulting increasing step function tends to infinity and proves
+the assertion for all sufficiently large $L$. The fixed smooth metric
+in the inverse theorem is comparable to a fixed Mal'cev metric, and a
+linear orbit with arbitrary base point is a polynomial orbit, so the
+nilsequence input applies to exactly the supplied correlations.
+When this construction is used at the refined scale $L\asymp N/V_{z_j}$
+below, choose the physical threshold $N_j$ so large that every constant
+multiple of $N/V_{z_j}$ used by the normal-form reduction is at least
+$L_j$ for $N\geq N_j$. Impose the same growth constraints there.
+Thus the cutoff is constant on each physical-scale stage; no implicit
+equation $z=z(N/V_z)$ is being assumed.
+
+\begin{lemma}[Fixed-system linear replacement]
+\label{lem:gaussian-linear-replacement}
+Let $\Psi=(\psi_1,\ldots,\psi_t):\Z^d\to\Z^t$ have fixed nonzero integer
+linear parts of finite complexity. Allow its constant terms to vary
+with $N$, subject to $\|\Psi\|_N\leq L_0$ for a fixed $L_0$.
+Uniformly over convex regions $\mathcal K\subseteq[-N,N]^d$ with
+$\Psi(\mathcal K)\subseteq[1,L_0N]^t$,
+\begin{equation}\label{eq:gaussian-linear-replacement}
+ \sum_{\mathbf n\in\mathcal K\cap\Z^d}
+ \left(\prod_{i=1}^t\Lambda'_{C_i}(\psi_i(\mathbf n))
+ -\prod_{i=1}^t\mu_{C_i}(\psi_i(\mathbf n)\bmod D)
+                         \Lambda'(\psi_i(\mathbf n))\right)=o(N^d).
+\end{equation}
+The same conclusion holds for a mixed product in which any selected
+factors have already been replaced by their ordinary-prime models.
+\end{lemma}
+\begin{proof}
+We can discard points where some $\psi_i\leq N^{9/10}$.
+For a nonconstant fixed linear form their number is
+$O_{\Psi,L_0}(N^{d-1}(N^{9/10}+1))$; the product of weights is
+$O((\log N)^t)$. This is $o(N^d)$, uniformly in the constant terms.
+Apply the auxiliary $V_z$-trick to the variables:
+$\mathbf n=V_z\mathbf m+\mathbf r$.
+If one output residue is not a unit modulo $V_z$, its prime weight
+vanishes on the remaining range, since the output is larger than
+every prime dividing $V_z$. For an admissible residue vector write
+\[
+ \psi_i(V_z\mathbf m+\mathbf r)
+       =V_z\widetilde\psi_{i,\mathbf r}(\mathbf m)+b_{i,\mathbf r},
+       \qquad1\leq b_{i,\mathbf r}\leq V_z.
+\]
+The new linear coefficients are the original ones. Its normalized
+constant terms remain bounded at scale $N/V_z$. Because $D\mid V_z$,
+the factor $\mu_{C_i}$ is constant on this residue vector.
+
+Telescope the difference of the two products. After normalization by
+$(\varphi(V_z)/V_z)^t$, each term has one factor $h_{C_i,V_z,b_i}$;
+all other factors are nonnegative and at most
+$\lambda_{V_z,b_j}$. Introduce a common ordinary-prime majorant for
+these at most $t$ weights and truncate as above. Multiply every
+factor by a common fixed $\alpha_0>0$ so that each has absolute value
+at most that majorant, and apply the normal-form extension of
+Green--Tao Lemma~4.4 and Proposition~7.1. Here $\alpha_0$ depends
+only on the fixed system, the chosen complexities and the fixed
+conductor, not on $z$ or the residue vector. The small factor has
+the required norm by \eqref{eq:gaussian-refined-gowers}. Dividing
+the resulting estimate by $\alpha_0^t$ changes only a fixed constant.
+The normal-form extension adds only a fixed number of variables with
+fixed coefficients; its convex-region reduction is the one following
+Lemma~4.4, and divides out their box volume. The error on each residue
+vector is therefore $o((N/V_z)^d)$, uniformly in the vector and convex
+region. The discarded initial segment stays outside the retained
+output range since $V_z=N^{o(1)}$.
+
+One can make this reduction explicit. For each pair $i\ne j$ choose
+an integer vector $v_{ij}$ with $\dot\psi_j(v_{ij})=0$ and
+$\dot\psi_i(v_{ij})\ne0$; fixed nonproportional linear parts ensure
+such vectors exist with fixed size. Replace $\mathbf m$ by
+$\mathbf x+\sum_{i\ne j}y_{ij}v_{ij}$ and allow each new $y_{ij}$
+to range over an integer interval of length comparable to $N/V_z$.
+The block $y_{ij}$ for fixed $i$ certifies normal form. The region
+defined by the original convex constraint on this sum and the new box
+is convex. The integer change $(\mathbf x,\mathbf y)\mapsto
+(\mathbf x+\sum y_{ij}v_{ij},\mathbf y)$ is bijective, so its sum
+is exactly the original sum times the number of points in the new box.
+Division by that number gives the asserted error. If there is only one
+form, choose an integer vector $v$ with $\dot\psi_1(v)\ne0$ and replace
+$\mathbf m$ by $\mathbf x+yv$. The same box and bijection argument
+gives the reduction in this case.
+
+No growing factor is lost when summing residue vectors. If
+$\mathcal R_z$ is the set of admissible vectors, then
+\begin{equation}\label{eq:gaussian-admissibility-mass}
+ \frac{|\mathcal R_z|}{V_z^d}
+       \left(\frac{V_z}{\varphi(V_z)}\right)^t
+   =\prod_{p\mid V_z}\beta_p(\Psi)=O_{\Psi,L_0}(1).
+\end{equation}
+Exclude the finitely many primes dividing a chosen nonzero
+coefficient of each linear part, and a chosen nonzero two-by-two
+minor for each pair of linear parts. At every remaining prime each
+output hyperplane has probability $p^{-1}$, and any two meet with
+probability $p^{-2}$. Hence $\beta_p=1+O_t(p^{-2})$, uniformly in
+the constant terms. This also covers $t=1$, when there are no pair
+minors and the good-prime factor is exactly one.
+The finitely many remaining factors are bounded by $(p/(p-1))^t$.
+The Chinese remainder theorem proves the equality, also for the fixed
+prime powers dividing $D$. Multiplying the per-residue error by this
+bounded mass gives $o(N^d)$. The proof works unchanged for the mixed
+products. All auxiliary thresholds can be chosen uniformly over bounded
+constant terms and convex regions, because the published majorant and
+generalized von Neumann conclusions have this uniformity.
+\end{proof}
+
+\paragraph{The exact local cube needed in the appendix.}
+Now fix the appendix cutoff $v$, and put $W,A,n,R$ as in its proof.
+This is a new limiting argument; the auxiliary cutoff in the proof of
+Lemma~\ref{lem:gaussian-linear-replacement} has already been eliminated
+from that lemma's statement. Let
+\[
+ f_{C,b}(x)=\frac{\varphi(W)}W\Lambda'_C(Wx+b)1_{R\leq x\leq n},
+ \qquad g_{C,b}=f_{C,b}-\mu_C(b).
+\]
+For fixed $a\geq2$ and $C_1<C_2<C_3$, uniformly over
+$q\leq A^{C_1}$ and $nA^{-C_3}\leq J\leq nA^{-C_2}$,
+\begin{equation}\label{eq:gaussian-global-gowers}
+ \|g_{C,b}\|_{U^a_{q[J]}}^{2^a}
+       \ll_{a,C_1,C_2,C_3,\rho,D}\frac1{\log v}+o_v(1).
+\end{equation}
+The norm uses the difference multiset $q(h-h')$, $h,h'\in[J]$, on
+$\Z/n\Z$.
+
+To prove this, remove the cutoff $x<R$ at cost
+$O((\log n)^{2^a}R/n)=o_v(1)$. Expand the centered cube and partition
+its domain according to every wrap-around integer $m_\omega$.
+The relevant affine forms are precisely
+\[
+ W\left(x+q\sum_{r=1}^a\omega_r(h_r-h'_r)-m_\omega n\right)+b,
+ \qquad\omega\in\{0,1\}^a.
+\]
+They have pairwise nonproportional linear parts. Each region is convex;
+there are $O_a(1)$ regions because $qJ/n<1$. For fixed $v$, the number
+of possible $q$ is finite and $J/n$ stays in a fixed positive compact
+interval. Apply Lemma~\ref{lem:gaussian-linear-replacement} to every
+subproduct and region. Its error is $o_v(n^{2a+1})$ uniformly in $J$,
+and division by $nJ^{2a}$ gives $o_v(1)$. Since every output is $b$
+modulo $D$, all its conditional densities are the same $\mu_C(b)$.
+Thus the centered Artin cube equals $\mu_C(b)^{2^a}$ times the
+centered ordinary-prime cube, plus $o_v(1)$.
+
+The ordinary cube is evaluated exactly as in Tao--Ziegler~\cite{v5tz},
+Proposition~6, published pages 39--40, using the ordinary-prime linear
+correlation theorem, for example the published formulation in
+Bienvenu~\cite{v6bienvenu}, Theorem~1.1, pages 79--80.
+The factors at $p\mid W$ cancel the normalization.
+For $p\nmid Wq$, pairwise independent gradients give local factor
+$1+O_a(p^{-2})$, uniformly in the wrap constants. For $p\mid q$,
+$p>v$, the factor is $1+O_a(p^{-1})$. Since
+$\log q=O_{C_1,\rho,D}(v)$, there are $O(v/\log v)$ such prime divisors.
+Their product is $1+O(1/\log v)$, and the other large-prime factors
+give $1+O(1/v)$. Centering cancels the common main term. Prime powers,
+if the ordinary theorem is stated for $\Lambda$, contribute $o_v(1)$
+by their $O(\sqrt n\log^2 n)$ total weight and the fixed linear-fiber
+bound. This proves \eqref{eq:gaussian-global-gowers}, and hence supplies
+\eqref{eq:v5-global-gowers} without an Artin linear-correlations theorem.
+
+\paragraph{Completion by the published polynomial transfer.}
+The remainder of the proof of Proposition~\ref{prop:v5-artin-patterns},
+starting with its arbitrary-function dense-model step, now applies
+unchanged to these fixed Gaussian ray fields. Specifically use the
+published Tao--Ziegler~\cite{v5tz} Theorem~11 and Corollary~3, then Theorem~9 and
+Theorem~13. The model for an arbitrary $f\leq\lambda_{W,b}$ is used;
+one does not assert that an Artin weight has model one. Equation
+\eqref{eq:gaussian-global-gowers} shows that its bounded model, minus
+$\mu_C(b)$, has small global norms. The model is bounded by a fixed
+constant depending on the chosen sieve exponent. Divide its difference
+from $\mu_C(b)$ by a fixed bound for that difference before applying
+Theorem~9, whose hypothesis is a bound by one. After restoring this
+fixed factor, concatenation and model approximation give the required
+local norm bounds. None of these scaling constants depends on $v$.
+
+Keep the original parameter order: local box order and coefficient
+bound first, then $B_0>C+2$, then the global order $a$, and finally
+small $\rho$. Only then let $v$ increase. The quantities
+$M_0=\lfloor T/W\rfloor$, $M_1=\lfloor M_0/A\rfloor$ and
+$J=\lfloor A^{-2B_0a}M_1^2\rfloor$ satisfy the size hypotheses recorded
+in the appendix when $T/\sqrt N\geq4\sqrt W/A$.
+For each fixed $v$ the estimates are uniform for $T$ in that allowed
+range. The final assertion $T=o(\sqrt N)$ is imposed only along the
+subsequent diagonal $v=v(N)\to\infty$, not while $v$ is frozen.
+
+After $u=Wx+b$, $w=Wm+c$, the polynomials are
+$c_jWm^2+2c_jcm+(b+c_jc^2-b_j)/W$, with distinct leading coefficients.
+The bounded-model transfer kills every term containing a centered
+factor. Output-boundary strips have width $O(T^2)=o(N)$.
+For completeness, dominate them first by strips of width $\epsilon N$.
+Here is the needed localization of the ordinary majorant estimate.
+This argument also covers negative coefficients $c_j$. For the true
+integer count use an enlarged period $n_* = \lceil B N/W\rceil$, where
+$B>2+\max_j|c_j|$ is fixed. We may assume $T\leq\sqrt N$.
+Nonpositive outputs have prime weight zero, and every positive output
+is at most $(1+\max_j|c_j|)N$. Discard also tuples for which some
+positive output is at most $W\lceil n_*^\rho\rceil+W$. For each $w$
+there are $O_k(W n_*^\rho+W)$ such $u$, so their total weight is
+$O_k((W n_*^\rho+W)T(\log N)^k)=o_v(NT)$, uniformly in the
+allowed $T$ range. All remaining true outputs have their ordinary
+prime majorants on $[n_*]$ without wrap-around. Use the same
+localization calculation on the original period $n$ to bound the
+artificial wrapped terms of the cyclic count. The parameters $n_*$
+and $n$ differ by a fixed factor, so both applications satisfy the
+same polynomial-forms hypotheses. In the following calculation $n$
+denotes either chosen ambient period.
+Write $\nu_0(x)$ for the majorant factor with constant shift if there
+is one, and set $\nu_0=1$ otherwise. There is at most one such factor.
+Put $F(x)=\mathbb E_m\prod_i\nu_i(x+P_i(m))$, omitting that factor.
+Tao--Ziegler, Theorem~15 in Appendix~A (published page~57), applied to
+$\nu_0F$, $\nu_0F^2$ and $\nu_0$, gives
+\[
+ \mathbb E_x\nu_0(x)(F(x)-1)^2=o_{v\to\infty}(1)+o_v(1).
+\]
+In the square use independent variables $m,m'$; the differences
+between all its nonconstant shift polynomials are nonconstant,
+including those from distinct copies. Weighted Cauchy--Schwarz now
+shows, for every interval $I$ in the $x$ variable,
+\[
+ \mathbb E_x1_I(x)\nu_0(x)F(x)
+ =\mathbb E_x1_I(x)\nu_0(x)+o_{v\to\infty}(1)+o_v(1).
+\]
+For fixed relative interval length the one-dimensional divisor-sum
+mean estimate gives
+$\mathbb E_x1_I\nu_0=|I|/n+o_{v\to\infty}(1)+o_v(1)$;
+it follows either directly from the ordinary majorant construction
+or from its linear-forms estimate on that fixed interval.
+The normalized prime weights are bounded by fixed multiples of
+their sieve majorants, with constants depending on the fixed sieve
+exponent. Thus a strip of width $\epsilon N$ has total weight
+$[O(\epsilon)+o_{v\to\infty}(1)+o_{v,\epsilon}(1)]NT$, with that
+fixed domination factor included in the implied constants.
+The errors here have the same iterated order as the rest of the
+polynomial transfer. Then take $\epsilon\downarrow0$ as described
+below. This avoids a spurious factor $(\log N)^k$ from a pointwise
+bound. The same positive majorant treats interval endpoints.
+
+Choose increasing cutoffs $v_j$ for which the global/local errors and
+$4\sqrt{W(v_j)}/A(v_j)$ tend to zero, and then choose size thresholds
+valid for all the finitely many residues, step values and transfer
+parameters at that cutoff.
+At stage $j$ impose the boundary estimates for every
+$\epsilon\in\{1,1/2,\ldots,1/j\}$, preserving all earlier tests.
+Let $v(N)=v_j$ between successive thresholds and take
+$\omega(N)\geq4\sqrt{W(v(N))}/A(v(N))$, tending to zero sufficiently
+slowly. This gives the uniform assertion for
+$\omega(N)\sqrt N\leq T=o(\sqrt N)$.
+Indeed, for an arbitrary such $T$, first fix $k$; eventually
+$T^2/N<1/k$ and the estimate for the strip of width $N/k$ applies.
+Take the upper limit as $N\to\infty$ and then $k\to\infty$.
+There is no requirement that $T^2/N<1/j(N)$ along the chosen stages.
+The main term is precisely \eqref{eq:v5-artin-series}; the admissible
+residue mass is bounded, so summation does not amplify errors.
+The $u\in[N/2,N]$ version follows by using that convex interval directly,
+or by subtraction with thresholds enlarged for $N/2$.
+
+This bridge uses the separately established Gaussian nilsequence input
+and published ordinary-prime transference. It uses no statement or
+estimate from Frei--Tinkov\'a as a theorem.
+
+
+\subsection{Fixed Artin conditions in quadratic patterns}
+\label{subsec:v5-artin-transfer}
+
+
+
+Here the field is fixed throughout the limiting argument. Let $K$ be the
+ray class field of $\Q(i)$ for $H\Z[i]$, where $16\mid H$. Put
+$G=\operatorname{Gal}(K/\Q)$, and let $C_1,\ldots,C_k$ be
+conjugation-invariant subsets of $\operatorname{Gal}(K/\Q(i))$,
+regarded as conjugacy-invariant subsets of $G$.
+Let $D$ be divisible by the conductor of $K^{\rm ab}$.
+For a unit $b\pmod D$, define
+\begin{equation}\label{eq:v5-mu}
+ \mu_j(b)=\frac{\#\{g\in C_j:g|_{K^{\rm ab}}=\sigma_b|_{K^{\rm ab}}\}}
+                  {[K:K^{\rm ab}]},
+ \qquad \sigma_b(\zeta_D)=\zeta_D^b,
+\end{equation}
+and set $\mu_j(b)=0$ for nonunits. Define $\Lambda'_j(p)=\log p$ for
+unramified primes with arithmetic Frobenius in $C_j$, and zero otherwise.
+
+\begin{proposition}[Fixed-field polynomial count]\label{prop:v5-artin-patterns}
+There is a function $\omega(N)\to0$, depending on the fixed data, such that
+whenever $\omega(N)\sqrt N\leq T=o(\sqrt N)$,
+\begin{equation}\label{eq:v5-artin-patterns}
+ \sum_{u\leq N}\sum_{1\leq w\leq T}
+       \prod_{j=1}^k\Lambda'_j(u+c_jw^2)
+       =\mathfrak S\,NT+o(NT),
+\end{equation}
+where
+\begin{equation}\label{eq:v5-artin-series}
+ \mathfrak S=
+ \left(\frac D{\varphi(D)}\right)^k
+ \mathbb E_{u,w\bmod D}\prod_j\mu_j(u+c_jw^2)
+ \prod_{p\nmid D}\beta_p,
+ \quad
+ \beta_p=\mathbb E_{u,w\bmod p}
+       \prod_j\frac p{p-1}1_{p\nmid u+c_jw^2}.
+\end{equation}
+The same statement on $N/2\leq u\leq N$ has main term
+$\mathfrak SNT/2$.
+\end{proposition}
+\begin{proof}
+The Gaussian linear replacement of
+Lemma~\ref{lem:gaussian-linear-replacement} and its local-cube consequence
+\eqref{eq:gaussian-global-gowers} supply the analytic input. We record
+the normalization and polynomial-transfer parameters here.
+
+Choose a small positive $\rho$ and first keep $v$ fixed. Put
+\[
+ W=D\prod_{\substack{p\leq v\\p\nmid D}}p,\quad
+ A=W^{1/\rho},\quad n=\lfloor N/W\rfloor,\quad R=n^\rho,
+\]
+and, for unit $b\pmod W$, put
+\[
+ f_{j,b}(x)=\frac{\varphi(W)}W\Lambda'_j(Wx+b)1_{R\leq x\leq n},
+ \qquad g_{j,b}=f_{j,b}-\mu_j(b).
+\]
+View these functions on $\mathbb Z/n\mathbb Z$, with representatives
+$1,\ldots,n$. If $a\geq2$ and $C_1<C_2<C_3$ are fixed,
+\eqref{eq:gaussian-global-gowers} gives
+\begin{equation}\label{eq:v5-global-gowers}
+ \|g_{j,b}\|_{U^a_{q[J]}}^{2^a}
+       \ll_a(\log v)^{-1}+o_v(1),
+ \quad q\leq A^{C_1},\quad
+ nA^{-C_3}\leq J\leq nA^{-C_2}.
+\end{equation}
+The implicit constant may also depend on the other fixed complexities
+and the fixed ray field. The norm, wrap-around regions, conditional
+densities, and order of the auxiliary cutoff are all treated explicitly
+in Section~\ref{subsec:gaussian-gowers-bridge}.
+
+We now use the arbitrary-function dense-model theorem of
+Tao--Ziegler~\cite{v5tz}. Their published Theorem~11 and Corollary~3
+give a single bounded model accurate in both global Gowers norms and the
+local polynomial box norms. Their Theorem~9 is the bounded-function
+concatenation statement, and their Theorem~13 bounds the polynomial
+average by one of those local norms. All majorants here are the ordinary
+prime majorants, since $0\leq\Lambda'_j\leq\Lambda'$.
+The fixed factor $D$ in $W$ is allowed in their divisor-sum construction:
+for sufficiently large $v$, $W=E\prod_{p\leq v}p$ with a fixed $E$ whose
+prime factors are at most $v$. A unit residue makes every small-prime
+divisibility condition identically false, including at the extra prime
+powers. At the remaining primes the divisor-sum local factors are
+unchanged. Polynomial coefficient bounds absorb the fixed factor $E$.
+Thus the polynomial-forms estimates for the majorant have the same
+$1+o(1)$ conclusion.
+
+The following choice records the size hypotheses of these results.
+First choose their local box order $d'$ and a coefficient exponent $C$;
+choose an integer $B_0>C+2$, then a sufficiently large global order $a$,
+and finally a sufficiently small $\rho$. Set $\rho_* =\rho/B_0$ and
+$\mathcal A=A^{B_0}$. Put
+$M_0=\lfloor T/W\rfloor$, $M_1=\lfloor M_0/A\rfloor$.
+For $T/\sqrt N\geq4\sqrt W/A$ one has
+\[
+ A^{-1}\sqrt n\leq M_0\leq\sqrt n,
+ \qquad A^{-3}\sqrt n\leq M_1\leq\sqrt n.
+\]
+The model at cutoff $n^{\rho_*}$ dominates the function already truncated
+at $n^\rho$. Corollary~3 supplies approximation for the degree-one local
+step polynomials, whose coefficients are $O(A^C)$, and simultaneously for
+$q\leq A^{B_0a}$ with
+$J=\lfloor A^{-2B_0a}M_1^2\rfloor$.
+In particular
+\[
+ nA^{-2B_0a-7}\leq J\leq nA^{-2B_0a}.
+\]
+This is within \eqref{eq:v5-global-gowers}. Let $f'_{j,b}$ be the
+model supplied by Corollary~3 at cutoff $n^{\rho_*}$. Its bound is
+$0\leq f'_{j,b}\leq B_*-1$, where $B_*\geq2$ depends on the fixed
+ray field, complexities and on $\rho_*$, but not on $v,n,b$ or the polynomials
+within the stated coefficient bounds. This is the bounded model of
+Tao--Ziegler's Proposition~4: its construction first rescales the
+prime weight by a fixed positive constant and then divides the model
+by that constant. In particular, it need not be bounded by one.
+Since $0\leq\mu_j(b)\leq1$, the function
+\[
+ F_{j,b}=\frac{f'_{j,b}-\mu_j(b)}{B_*}
+\]
+is bounded in magnitude by one. The triangle inequality, the global
+part of Corollary~3, and \eqref{eq:v5-global-gowers} show that its
+required global norms tend to zero under the diagonal limit below.
+Apply Theorem~9 to $F_{j,b}$
+with parameters $d=d_0=2$, $M=M_1$, $A=\mathcal A$, and global
+order $a$. Its smallness threshold is independent of $\mathcal A$;
+$B_*$ has already been fixed before $v$ is chosen. Multiplication
+by $B_*$ and the local part of Corollary~3 therefore show that the
+local norm of $g_{j,b}$ tends to zero. Theorem~13, with the original
+parameter $A$ and coarse scale $M_0$, makes every polynomial average
+containing a centered factor $o(1)$. These are the reasons for choosing
+the complexities before $v$.
+
+For the final $W$-trick write $u=Wx+b$ and $w=Wm+c$.
+If $b_j$ is the residue of $b+c_jc^2$ modulo $W$, the resulting integer
+polynomial is
+\[
+ c_jWm^2+2c_jcm+(b+c_jc^2-b_j)/W.
+\]
+Its leading coefficient differences are nonzero, and its coefficients
+are $O(W)$. Expand the product into its means and centered factors and
+apply the preceding conclusion. End intervals of length $O(T^2)=o(N)$
+are controlled by the weighted second-moment localization and the
+fixed-strip argument in Section~\ref{subsec:gaussian-gowers-bridge}. Summing residue classes does not
+amplify the error: their normalized admissible mass is
+$\prod_{p\mid W}\beta_p=O(1)$.
+Indeed, outside the fixed coefficient-difference primes,
+\[
+ \beta_p=\left(\frac p{p-1}\right)^k
+                \frac{(p-1)(p-k+1)}{p^2}=1+O_k(p^{-2}).
+\]
+This also proves convergence of the product in
+\eqref{eq:v5-artin-series}.
+Let $N$ tend to infinity for each fixed $v$ and then let $v$ tend to
+infinity sufficiently slowly. A diagonal choice supplies $\omega(N)$
+and yields \eqref{eq:v5-artin-patterns}. Subtract the corresponding
+formula with upper limit $N/2$, enlarging $\omega$ if necessary, to
+obtain the last assertion.
+\end{proof}
+
+\begin{remark}[Published numbering]\label{rem:v5-tz-numbering}
+The labels in the published 2018 paper differ from those in arXiv
+1603.07817v1. The relevant dictionary is
+\[
+\begin{array}{c|ccccc}
+ \text{arXiv} &\text{Theorem 1.4}&\text{Theorem 2.5}&\text{Theorem 3.1}
+               &\text{Corollary 3.9}&\text{Theorem 4.1}\\
+ \text{published}&\text{Theorem 4}&\text{Theorem 9}&\text{Theorem 11}
+               &\text{Corollary 3}&\text{Theorem 13}
+\end{array}
+\]
+The published locations are respectively pages $4,21,28,38,41$.
+The preprint's equations (3.5) and (4.1) are published equations (36)
+and (57). The dense model used above is the theorem's assertion for an
+arbitrary function bounded by the prime weight. The special model $1$
+for the ordinary prime weight is not an assertion about Artin weights.
+\end{remark}
+
+\subsection{The ray-class lower bound}\label{subsec:v5-ray-density}
+
+For ray class fields we use the published existence and reciprocity
+statements in Kopp--Lagarias~\cite{v5kl}, Theorems~1.1, 1.3 and 7.2,
+and the modulus exact sequence of Theorem~6.5, specialized to the maximal
+order $\mathbb Z[i]$. There are no real places. This replaces an appeal
+to unpublished course notes. In this principal ideal domain the ray group
+for the finite modulus $H\mathbb Z[i]$ is
+\begin{equation}\label{eq:v5-ray-group}
+ (\mathbb Z[i]/H\mathbb Z[i])^\times/\{1,-1,i,-i\}.
+\end{equation}
+It also follows directly by sending a residue $r$ to the ideal class of
+$(r)$: surjectivity is principality, and the kernel consists exactly of
+unit residues. The Artin map sends this ideal class to arithmetic
+Frobenius. Conjugation acts by $r\mapsto\bar r$.
+
+Choose a fixed $L_1$ larger than all coefficient-difference primes and
+larger than $11$. Let $H_0$ be divisible by $16\cdot7M$ and by all odd
+primes at most $L_1$. Prescribe a unit residue $r\pmod{H_0}$ which is
+$9$ modulo $16$, $1+3i$ modulo $7$, and $i$ modulo every other odd
+prime dividing $H_0$. Compatible higher powers can be chosen arbitrarily.
+The associated rational-prime Frobenius condition is the two-element
+conjugacy class $C_0=\{h_r,h_{\bar r}\}$ in the Galois group $G_0$ of
+the ray field $K_0$ over $\mathbb Q$.
+The two elements are distinct: an equality of their ray classes would
+require $r=\epsilon\bar r\pmod{H_0}$ for a Gaussian unit $\epsilon$;
+modulo $16$ this forces $\epsilon=1$, contradicted modulo $7$.
+The field is Galois over $\mathbb Q$, because conjugation preserves the
+modulus and the defining ray subgroup.
+
+Let $D_0$ be the conductor of $K_0^{\rm ab}$ and choose a unit
+$b_0\pmod{D_0}$ inducing the restriction of $h_r$.
+The value in \eqref{eq:v5-mu} is then
+$\mu_0=|C_0|/|G_0'|>0$.
+For $L\geq L_1$ let
+$T_L=\prod_{L_1<\ell\leq L,\,\ell\nmid H_0}\ell$ and let $K_L$ be the
+ray field for $H_0T_L\mathbb Z[i]$. For each new prime write
+\[
+ B_\ell=(\mathbb Z[i]/\ell\mathbb Z[i])^\times,
+ \qquad N_\ell=\ker(B_\ell\xrightarrow{\mathrm N}\mathbb F_\ell^\times).
+\]
+The norm map is onto and $|N_\ell|=\ell-\chi(\ell)$.
+
+\begin{lemma}[Abelian fibres and their surviving proportion]
+\label{lem:v5-ray-fibres}
+Put $N_L=\prod_{\ell\mid T_L}N_\ell$ and
+$G_L=\operatorname{Gal}(K_L/\mathbb Q)$.
+Then
+\[
+ N_L\subseteq G_L',\qquad
+ G_L'/N_L\simeq G_0',\qquad
+ K_L^{\rm ab}=K_0^{\rm ab}\mathbb Q(\zeta_{T_L}).
+\]
+Let $C_L$ consist of those elements above $C_0$ whose normalized Gaussian
+residue $z$ satisfies $\mathrm N(z-1)\mathrm N(z+1)\not\equiv0\pmod\ell$
+at every $\ell\mid T_L$. For the density $\mu_L$ of this set,
+\begin{equation}\label{eq:v5-ray-density}
+ \mu_L(b)\geq\mu_0
+       \prod_{\ell\mid T_L}\left(1-\frac4{\ell-1}\right)
+ \qquad (b\equiv b_0\pmod{D_0},\ (b,D_0T_L)=1).
+\end{equation}
+\end{lemma}
+\begin{proof}
+In the CRT presentation of \eqref{eq:v5-ray-group}, the unit group
+embeds in the $H_0$ factor, because it already embeds modulo $16$.
+Once the representative above $r$ or $\bar r$ is normalized, the kernel
+of reduction to the base ray group is exactly $\prod B_\ell$.
+There is no further quotient by the four units.
+
+The map $z\mapsto z/\bar z$ from $B_\ell$ onto $N_\ell$ is surjective.
+For split primes this is $(x,y)\mapsto(x/y,y/x)$.
+For inert primes it is $z\mapsto z^{1-\ell}$ in the cyclic group
+$\mathbb F_{\ell^2}^\times$.
+These maps are commutators with complex conjugation, so $N_L\subseteq G_L'$.
+The norm on each new residue factor gives the cyclotomic action
+$\zeta_\ell\mapsto\zeta_\ell^{\mathrm N(z)}$.
+This is also seen by applying arithmetic Frobenius to $\zeta_\ell$;
+it is compatible with the ray map by reciprocity.
+The reduction map gives $K_0\subseteq K_L^{N_L}$. The cyclotomic
+action just computed is trivial on $N_L$, so also
+$\mathbb Q(\zeta_{T_L})\subseteq K_L^{N_L}$.
+The fields $K_0$ and $\mathbb Q(\zeta_{T_L})$ are disjoint over
+$\mathbb Q$. Indeed, $K_0$ is unramified at every prime dividing
+$T_L$, whereas the inertia groups at these primes generate the
+Galois group of $\mathbb Q(\zeta_{T_L})/\mathbb Q$. Thus their
+intersection is trivial. Moreover, the kernel computation above gives
+\[
+ [K_L^{N_L}:\mathbb Q]
+ =[K_0:\mathbb Q]\prod_{\ell\mid T_L}\frac{|B_\ell|}{|N_\ell|}
+ =[K_0:\mathbb Q]\varphi(T_L).
+\]
+This is the degree of $K_0\mathbb Q(\zeta_{T_L})$, proving
+\[
+ K_L^{N_L}=K_0\mathbb Q(\zeta_{T_L}),\qquad
+ G_L/N_L\simeq G_0\times\prod_{\ell\mid T_L}\mathbb F_\ell^\times.
+\]
+Since $N_L\subseteq G_L'$, taking commutators in this quotient gives
+$G_L'/N_L\simeq G_0'$ and
+$K_L^{\rm ab}=K_0^{\rm ab}\mathbb Q(\zeta_{T_L})$.
+
+Fix a nonzero norm $s\in\mathbb F_\ell^\times$.
+For $z=a+bi$ in that norm fibre,
+$\mathrm N(z\pm1)=s+1\pm2a$.
+For each sign, vanishing fixes $a$ and leaves at most two values of $b$.
+Thus at most four of the $\ell-\chi(\ell)$ elements are excluded.
+The conditions are invariant under conjugation, so $C_L$ is a union of
+rational conjugacy classes.
+In every compatible abelian fibre its numerator in \eqref{eq:v5-mu} is
+at least $|C_0|\prod(\ell-\chi(\ell)-4)$, and its denominator is
+$|G_0'|\prod(\ell-\chi(\ell))$.
+Their quotient proves \eqref{eq:v5-ray-density}.
+\end{proof}
+
+\begin{proposition}[Finite-cutoff lower bound]\label{prop:v5-cutoff-lower}
+There is a constant $c>0$ independent of $L$ such that the singular series
+in Proposition~\ref{prop:v5-artin-patterns} for the fixed field $K_L$ and
+the set $C_L$ at every position satisfies
+\[
+ \mathfrak S_L\geq c(\log L)^{-4k}.
+\]
+\end{proposition}
+\begin{proof}
+At the base modulus retain just $u=b_0$, $w=0\pmod{D_0}$.
+At each new prime retain all pairs on which the $k$ norm values are units.
+Apply \eqref{eq:v5-ray-density} separately to each position.
+The norm-fibre denominators cancel as shown in the previous lemma; a
+factor inverse to the degree of $K_L$ is not left in the bound.
+The normalized proportion of the retained pairs at each new prime is
+$\beta_\ell=1+O_k(\ell^{-2})$. Each is positive, since $w=0$, $u\ne0$
+is allowed. Their product, together with the tail Euler product, is
+bounded below by a fixed positive number. Williams' theorem with modulus
+$1$, or its product for the two reduced classes modulo $4$, gives
+\[
+ \prod_{\ell\mid T_L}(1-4/(\ell-1))^k
+       \gg(\log L)^{-4k}.
+\]
+The base modulus contributes another fixed positive factor.
+\end{proof}
+
+\subsection{The final order of limits}\label{subsec:v5-diagonal}
+
+\begin{proof}[Proof of Theorem~\ref{thm:v5-simultaneous-primes}]
+Fix the coefficients, $M$, and the base modulus first. Choose one fixed
+$L\geq\max(L_1,L_*)$ so large that
+\[
+ \frac C{L\log L}<\frac c{32(\log L)^{4k}},
+\]
+where $C,c$ are from the obstruction and lower-bound propositions.
+Now fix $K_L,C_L$. Only after this choice do we use the asymptotic
+polynomial theorem or let its small-prime cutoff tend to infinity.
+
+Choose numbers $\tau_j\downarrow0$, all at most $\tau_0$.
+Choose successively $N_j$ so large that for $N\geq N_j$
+$\omega(N)\leq\tau_j/2$,
+that $\tau_j\sqrt N\geq2$, and that the error term in
+\eqref{eq:v5-obstruction-tail} is less than
+$c\tau_jN^{3/2}/(32(\log L)^{4k})$.
+This is possible for each fixed $\tau_j$.
+For $N_j\leq N<N_{j+1}$ use $\tau(N)=\tau_j$ and define
+$T=\lfloor\tau(N)\sqrt N\rfloor$.
+Then $T=o(\sqrt N)$ and $T\geq\tau\sqrt N/2$.
+Apply Proposition~\ref{prop:v5-artin-patterns} to this piecewise choice
+of $T$. For all sufficiently large $N$ its lower count is at least
+$cNT/(4(\log L)^{4k})$ and exceeds the full obstruction tail.
+Hence a pattern remains with no forbidden odd
+common divisor greater than $L$.
+The ray conditions exclude every odd divisor at most $L$ from each
+individual adjacent norm. At $7$ the adjacent norms of $1+3i$ are $2$
+and $6$; at every other odd base prime the adjacent norms of $i$ are $2$.
+Thus no forbidden odd common divisor remains at all.
+
+The residue modulo $16$ gives, on writing $a=9+16A$ and $b=16B$,
+\[
+ (a+1)^2+b^2\equiv4\pmod8,\qquad
+ (a-1)^2+b^2\equiv64\pmod{128}.
+\]
+These yield the exact two-adic valuations and hence the cross-sign gcd
+$4$. The residue modulo $M$ gives coprimality with $M$.
+Finally $u\geq N/2$ and $w\leq\tau\sqrt N$ imply
+$u/w^2\geq1/(2\tau^2)\to\infty$.
+For sufficiently small $\tau_0$, all $u+c_jw^2$ are between fixed positive
+multiples of $N$, so they exceed $Y$ when $N$ is large.
+The dilation at the start imposes $q\mid w$.
+\end{proof}

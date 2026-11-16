@@ -1,0 +1,705 @@
+[
+  {
+    "label": "lem:gn-norm-transfer",
+    "id": "lem:gn-norm-transfer",
+    "labels": [
+      "lem:gn-norm-transfer",
+      "eq:gn-transfer"
+    ],
+    "environment": "lemma",
+    "reviewed_fragment": "gaussian-analytic",
+    "statement_and_map": "Gaussian ideal norm sum on every norm interval and residue class is <=C*X*delta^kappa*Lip(F), with optional logarithmic weight.",
+    "hypotheses_conventions_translation": "Fixed Gaussian ray modulus, character extended by zero; four generators per nonzero ideal; total delta on [X]; X^(-sigma)<=delta<=delta0 and Q,q<=delta^(-kappa). Product version requires total distribution of the entire product orbit.",
+    "declared_dependencies": [
+      "V6-GN-LEIBMAN",
+      "V6-GN-COORDINATES",
+      "lem:gn-quadratic-coefficients",
+      "lem:gn-horizontal-obstruction"
+    ],
+    "status": "independent_application_review_accepted_relative_to_listed_inputs",
+    "review_limit": "Human review of the stated derivation; inventory is not a truth oracle, formal proof, or acceptance of unlisted arithmetic inputs.",
+    "source_bounds": "Exact current statement and all attached proof spans below; source fragments separately byte-pinned.",
+    "statement": {
+      "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+      "start_character": 796657,
+      "end_character": 797849,
+      "first_line": 16834,
+      "last_line": 16858,
+      "text_sha256": "48668cc576b88259401207eaf544b5bd3f419dc95c6115786321e4497efa1aab"
+    },
+    "proof_spans": [
+      {
+        "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+        "start_character": 801390,
+        "end_character": 805415,
+        "first_line": 16941,
+        "last_line": 17032,
+        "text_sha256": "14ef7749159b4469dcc96327b96d691493e8f08602a0a5c61d54335523e7bfc4"
+      }
+    ],
+    "explicit_citation_keys": [
+      "GTOrbits2012"
+    ],
+    "explicit_internal_dependencies": [
+      "eq:gn-transfer",
+      "lem:gn-horizontal-obstruction",
+      "lem:gn-norm-transfer",
+      "lem:gn-quadratic-coefficients"
+    ]
+  },
+  {
+    "label": "lem:gn-quadratic-coefficients",
+    "id": "lem:gn-quadratic-coefficients",
+    "labels": [
+      "lem:gn-quadratic-coefficients"
+    ],
+    "environment": "lemma",
+    "reviewed_fragment": "gaussian-analytic",
+    "statement_and_map": "Integer quadratic pullback smoothness extrapolates to original coefficients after a nonzero integer multiplier of B0-power size.",
+    "hypotheses_conventions_translation": "X>=1; integer quadratic with positive leading coefficient; coefficient scale B0*X^(1-i/2); L>=sqrt(X)/B0. Integer-valued binomial expansion, triangular descent and integer clearing preserve modulo-one estimates.",
+    "declared_dependencies": [],
+    "status": "independent_application_review_accepted_relative_to_listed_inputs",
+    "review_limit": "Human review of the stated derivation; inventory is not a truth oracle, formal proof, or acceptance of unlisted arithmetic inputs.",
+    "source_bounds": "Exact current statement and all attached proof spans below; source fragments separately byte-pinned.",
+    "statement": {
+      "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+      "start_character": 798074,
+      "end_character": 798673,
+      "first_line": 16865,
+      "last_line": 16881,
+      "text_sha256": "fd3cbe006069e953efda02442102cc7add50dd0b6a184125ecf97cfb82aa0982"
+    },
+    "proof_spans": [
+      {
+        "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+        "start_character": 798674,
+        "end_character": 799965,
+        "first_line": 16882,
+        "last_line": 16912,
+        "text_sha256": "248fb662f11fde24c2a29b733d233a505e5bc577affde5e530aac063f0ff523a"
+      }
+    ],
+    "explicit_citation_keys": [],
+    "explicit_internal_dependencies": []
+  },
+  {
+    "label": "lem:gn-horizontal-obstruction",
+    "id": "lem:gn-horizontal-obstruction",
+    "labels": [
+      "lem:gn-horizontal-obstruction"
+    ],
+    "environment": "lemma",
+    "reviewed_fragment": "gaussian-analytic",
+    "statement_and_map": "A nonzero character with small magnitude and C-infinity norm obstructs total distribution.",
+    "hypotheses_conventions_translation": "T-rational basis, T<=delta^(-c0), delta>=X^(-sigma0); initial interval and Haar-mean-zero bump.",
+    "declared_dependencies": [
+      "V6-GN-HORIZONTAL-METRIC"
+    ],
+    "status": "independent_application_review_accepted_relative_to_listed_inputs",
+    "review_limit": "Human review of the stated derivation; inventory is not a truth oracle, formal proof, or acceptance of unlisted arithmetic inputs.",
+    "source_bounds": "Exact current statement and all attached proof spans below; source fragments separately byte-pinned.",
+    "statement": {
+      "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+      "start_character": 799967,
+      "end_character": 800470,
+      "first_line": 16914,
+      "last_line": 16924,
+      "text_sha256": "4cbfcc47ae114a2e2893c72181c4c1282c39283c12c8820762184459bd36d0d9"
+    },
+    "proof_spans": [
+      {
+        "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+        "start_character": 800471,
+        "end_character": 801388,
+        "first_line": 16925,
+        "last_line": 16939,
+        "text_sha256": "1fb1b6879d65c79b5acd2a6266ba3cbc64be3181d404ae65b5571ff498661f2b"
+      }
+    ],
+    "explicit_citation_keys": [
+      "GTOrbits2012"
+    ],
+    "explicit_internal_dependencies": []
+  },
+  {
+    "label": "rem:gn-product-and-progression",
+    "id": "rem:gn-product-and-progression",
+    "labels": [
+      "rem:gn-product-and-progression"
+    ],
+    "environment": "remark",
+    "reviewed_fragment": "gaussian-analytic",
+    "statement_and_map": "Product-orbit and progression uses of norm transfer; logarithmic specialization.",
+    "hypotheses_conventions_translation": "Mean-zero factors do not imply product-orbit distribution. Solve simultaneous residue conditions modulo a divisor of q; arbitrary interval endpoints allowed.",
+    "declared_dependencies": [
+      "lem:gn-norm-transfer"
+    ],
+    "status": "independent_application_review_accepted_relative_to_listed_inputs",
+    "review_limit": "Human review of the stated derivation; inventory is not a truth oracle, formal proof, or acceptance of unlisted arithmetic inputs.",
+    "source_bounds": "Exact current statement and all attached proof spans below; source fragments separately byte-pinned.",
+    "statement": {
+      "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+      "start_character": 805417,
+      "end_character": 806328,
+      "first_line": 17034,
+      "last_line": 17050,
+      "text_sha256": "90b357bd6ba62278f976159fdc45136d1fe27a83899ad86fcb7d53a9223243c6"
+    },
+    "proof_spans": [],
+    "explicit_citation_keys": [],
+    "explicit_internal_dependencies": []
+  },
+  {
+    "label": "gi-moments",
+    "id": "gi-moments",
+    "labels": [
+      "gi-moments",
+      "gi-multiplicity",
+      "gi-two-moments",
+      "gi-ideal-count"
+    ],
+    "environment": "lemma",
+    "reviewed_fragment": "gaussian-analytic",
+    "statement_and_map": "Gaussian ideal multiplicity and first/second moment bounds.",
+    "hypotheses_conventions_translation": "a_E<=tau, tau^2<=d4, harmonic sums, and four-to-one generator disk count.",
+    "declared_dependencies": [],
+    "status": "independent_application_review_accepted_relative_to_listed_inputs",
+    "review_limit": "Human review of the stated derivation; inventory is not a truth oracle, formal proof, or acceptance of unlisted arithmetic inputs.",
+    "source_bounds": "Exact current statement and all attached proof spans below; source fragments separately byte-pinned.",
+    "statement": {
+      "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+      "start_character": 807864,
+      "end_character": 808484,
+      "first_line": 17080,
+      "last_line": 17094,
+      "text_sha256": "7f1102a6f009038f6cecab2cf94cf75c41d2947f5e5fcc720f4d53c94146d994"
+    },
+    "proof_spans": [
+      {
+        "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+        "start_character": 808485,
+        "end_character": 809307,
+        "first_line": 17095,
+        "last_line": 17109,
+        "text_sha256": "a0787d0a2f4d98eda32e2d92d52c5c7d34ad6fc63e90242f8b01b311c9082583"
+      }
+    ],
+    "explicit_citation_keys": [],
+    "explicit_internal_dependencies": [
+      "gi-ideal-count",
+      "gi-multiplicity"
+    ]
+  },
+  {
+    "label": "gi-vaughan",
+    "id": "gi-vaughan",
+    "labels": [
+      "gi-vaughan",
+      "gi-vaughan-sum"
+    ],
+    "environment": "lemma",
+    "reviewed_fragment": "gaussian-analytic",
+    "statement_and_map": "Exact three-term Gaussian ideal Vaughan identity on a dyadic shell.",
+    "hypotheses_conventions_translation": "U=V=N^(1/3); ideal convolution and completely multiplicative character extended by zero; small-Lambda term vanishes and coefficients bounded by log(2N).",
+    "declared_dependencies": [],
+    "status": "independent_application_review_accepted_relative_to_listed_inputs",
+    "review_limit": "Human review of the stated derivation; inventory is not a truth oracle, formal proof, or acceptance of unlisted arithmetic inputs.",
+    "source_bounds": "Exact current statement and all attached proof spans below; source fragments separately byte-pinned.",
+    "statement": {
+      "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+      "start_character": 809309,
+      "end_character": 810795,
+      "first_line": 17111,
+      "last_line": 17142,
+      "text_sha256": "5392892fca98a9fefd5a9ebb7363ac98cda3d15cef862bad20645d1caf1d99f8"
+    },
+    "proof_spans": [
+      {
+        "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+        "start_character": 810796,
+        "end_character": 811687,
+        "first_line": 17143,
+        "last_line": 17160,
+        "text_sha256": "47ef1922777d9a5a228697b4b558fc752366d42c89b20cda45b49cad2278b281"
+      }
+    ],
+    "explicit_citation_keys": [],
+    "explicit_internal_dependencies": [
+      "gi-vaughan-sum"
+    ]
+  },
+  {
+    "label": "gi-extraction",
+    "id": "gi-extraction",
+    "labels": [
+      "gi-extraction",
+      "gi-large-correlation",
+      "gi-dyadic-ranges",
+      "gi-type-two-correlation"
+    ],
+    "environment": "proposition",
+    "reviewed_fragment": "gaussian-analytic",
+    "statement_and_map": "Large weighted shell correlation yields many large Type I or Type II correlations with explicit power density.",
+    "hypotheses_conventions_translation": "Dyadic splitting, partial summation and two Cauchy–Schwarz steps retain ideal multiplicities; all interval/progression indicators remain in f.",
+    "declared_dependencies": [
+      "gi-moments",
+      "gi-vaughan"
+    ],
+    "status": "independent_application_review_accepted_relative_to_listed_inputs",
+    "review_limit": "Human review of the stated derivation; inventory is not a truth oracle, formal proof, or acceptance of unlisted arithmetic inputs.",
+    "source_bounds": "Exact current statement and all attached proof spans below; source fragments separately byte-pinned.",
+    "statement": {
+      "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+      "start_character": 811689,
+      "end_character": 812992,
+      "first_line": 17162,
+      "last_line": 17191,
+      "text_sha256": "9d69b859cc54005e2bf4cf8123b2bd620e46dae48c1c20cfce82e8154d960b97"
+    },
+    "proof_spans": [
+      {
+        "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+        "start_character": 812993,
+        "end_character": 815837,
+        "first_line": 17192,
+        "last_line": 17258,
+        "text_sha256": "0a9b771d141e1cdf4fcf86c0d95bf71318d892d88511b0d8509f0e27937af90c"
+      }
+    ],
+    "explicit_citation_keys": [],
+    "explicit_internal_dependencies": [
+      "gi-dyadic-ranges",
+      "gi-moments",
+      "gi-second-cauchy",
+      "gi-two-moments",
+      "gi-type-two-correlation",
+      "gi-vaughan"
+    ]
+  },
+  {
+    "label": "gi-recombination",
+    "id": "gi-recombination",
+    "labels": [
+      "gi-recombination"
+    ],
+    "environment": "lemma",
+    "reviewed_fragment": "gaussian-analytic",
+    "statement_and_map": "Many badly distributed integer dilations or dilation pairs force failure of total distribution of the original orbit.",
+    "hypotheses_conventions_translation": "Integer parameters, correct shift removal, arbitrary-centre strong recurrence, nonzero product character coordinate; small R treated separately.",
+    "declared_dependencies": [
+      "V6-GI-LEIBMAN-I",
+      "V6-GI-LEIBMAN-II",
+      "V6-GI-RECURRENCE-I",
+      "V6-GI-RECURRENCE-II",
+      "V6-GI-HORIZONTAL-METRIC"
+    ],
+    "status": "independent_application_review_accepted_relative_to_listed_inputs",
+    "review_limit": "Human review of the stated derivation; inventory is not a truth oracle, formal proof, or acceptance of unlisted arithmetic inputs.",
+    "source_bounds": "Exact current statement and all attached proof spans below; source fragments separately byte-pinned.",
+    "statement": {
+      "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+      "start_character": 816759,
+      "end_character": 817591,
+      "first_line": 17280,
+      "last_line": 17294,
+      "text_sha256": "5840004fd14def983619168deccdbfb55fd3e500b9e2e2f462f692d89e9528e7"
+    },
+    "proof_spans": [
+      {
+        "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+        "start_character": 817592,
+        "end_character": 822174,
+        "first_line": 17295,
+        "last_line": 17379,
+        "text_sha256": "8e0f86bce794deca8fdfa4e4b87749361e189e9d783db932155ffe2fcfc618f8"
+      }
+    ],
+    "explicit_citation_keys": [
+      "GTOrbits2012"
+    ],
+    "explicit_internal_dependencies": [
+      "gi-one-coefficients",
+      "gi-recurrent-coefficients",
+      "gi-two-coefficients"
+    ]
+  },
+  {
+    "label": "gi-minor-arc",
+    "id": "gi-minor-arc",
+    "labels": [
+      "gi-minor-arc",
+      "gi-power-bound"
+    ],
+    "environment": "proposition",
+    "reviewed_fragment": "gaussian-analytic",
+    "statement_and_map": "Gaussian ideal von Mangoldt minor-arc estimate Q*N*log(2N)^7*delta^c_G*Lip(F).",
+    "hypotheses_conventions_translation": "Every delta in (0,1), Q>=2 and every interval progression of modulus <=Q, with no lower length bound. Intermediate delta/complexity restrictions are removed by shell and small-delta arguments.",
+    "declared_dependencies": [
+      "gi-extraction",
+      "gi-recombination",
+      "lem:gn-norm-transfer"
+    ],
+    "status": "independent_application_review_accepted_relative_to_listed_inputs",
+    "review_limit": "Human review of the stated derivation; inventory is not a truth oracle, formal proof, or acceptance of unlisted arithmetic inputs.",
+    "source_bounds": "Exact current statement and all attached proof spans below; source fragments separately byte-pinned.",
+    "statement": {
+      "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+      "start_character": 822176,
+      "end_character": 823106,
+      "first_line": 17381,
+      "last_line": 17397,
+      "text_sha256": "bc07933d7f43121e37ecf52f9f83351c4655533d935d22fb7b3fe108e82140b8"
+    },
+    "proof_spans": [
+      {
+        "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+        "start_character": 823107,
+        "end_character": 827520,
+        "first_line": 17398,
+        "last_line": 17481,
+        "text_sha256": "f8780fae0e72b4ffb93d92c955594a83d1162587bce49dd78b640f219a375787"
+      }
+    ],
+    "explicit_citation_keys": [],
+    "explicit_internal_dependencies": [
+      "gi-extraction",
+      "gi-full-intermediate",
+      "gi-moments",
+      "gi-recombination",
+      "gi-shell-bound",
+      "lem:gn-norm-transfer"
+    ]
+  },
+  {
+    "label": "gi-ordinary-primes",
+    "id": "gi-ordinary-primes",
+    "labels": [
+      "gi-ordinary-primes",
+      "gi-ordinary-bound"
+    ],
+    "environment": "corollary",
+    "reviewed_fragment": "gaussian-analytic",
+    "statement_and_map": "Analogous ordinary-integer von Mangoldt and prime-only minor-arc estimate.",
+    "hypotheses_conventions_translation": "Repeat convolution with multiplicity one and direct unweighted total-distribution bound; prime powers handled explicitly. No Möbius-to-von-Mangoldt black box.",
+    "declared_dependencies": [
+      "gi-minor-arc",
+      "gi-recombination"
+    ],
+    "status": "independent_application_review_accepted_relative_to_listed_inputs",
+    "review_limit": "Human review of the stated derivation; inventory is not a truth oracle, formal proof, or acceptance of unlisted arithmetic inputs.",
+    "source_bounds": "Exact current statement and all attached proof spans below; source fragments separately byte-pinned.",
+    "statement": {
+      "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+      "start_character": 827522,
+      "end_character": 828043,
+      "first_line": 17483,
+      "last_line": 17492,
+      "text_sha256": "4662235de4ccc77317175a0cce576ac56dfb520c12a6c8dc11e228cd15675940"
+    },
+    "proof_spans": [
+      {
+        "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+        "start_character": 828044,
+        "end_character": 830134,
+        "first_line": 17493,
+        "last_line": 17532,
+        "text_sha256": "52dbc5d014edf11db179339b2df065ce830a632c4ad9c38a05a098e43056c6b7"
+      }
+    ],
+    "explicit_citation_keys": [],
+    "explicit_internal_dependencies": [
+      "gi-convolution-identity",
+      "gi-extraction",
+      "gi-first-cauchy",
+      "gi-minor-arc",
+      "gi-moments",
+      "gi-ordinary-bound",
+      "gi-recombination",
+      "gi-second-cauchy"
+    ]
+  },
+  {
+    "label": "lem:ga-linear-coefficients",
+    "id": "lem:ga-linear-coefficients",
+    "labels": [
+      "lem:ga-linear-coefficients"
+    ],
+    "environment": "lemma",
+    "reviewed_fragment": "gaussian-analytic",
+    "statement_and_map": "Integer affine coefficient extrapolation with integer multiplier bounded by an E-power.",
+    "hypotheses_conventions_translation": "X>=1, u,v integers, v nonzero, |u|<=CX, |v|<=E, L>=X/E; integral triangular binomial coefficient matrix.",
+    "declared_dependencies": [
+      "lem:gn-quadratic-coefficients"
+    ],
+    "status": "independent_application_review_accepted_relative_to_listed_inputs",
+    "review_limit": "Human review of the stated derivation; inventory is not a truth oracle, formal proof, or acceptance of unlisted arithmetic inputs.",
+    "source_bounds": "Exact current statement and all attached proof spans below; source fragments separately byte-pinned.",
+    "statement": {
+      "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+      "start_character": 830726,
+      "end_character": 831146,
+      "first_line": 17548,
+      "last_line": 17557,
+      "text_sha256": "be18c9541e649e604d0bb6f61c0104d8832ff968bf3fe3019d758f280e5cfa30"
+    },
+    "proof_spans": [
+      {
+        "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+        "start_character": 831147,
+        "end_character": 831746,
+        "first_line": 17558,
+        "last_line": 17568,
+        "text_sha256": "38dfc6d76aab4df83a0869c26581053fbc6f936a4af4becf2f5d932ad861089d"
+      }
+    ],
+    "explicit_citation_keys": [],
+    "explicit_internal_dependencies": [
+      "lem:gn-quadratic-coefficients"
+    ]
+  },
+  {
+    "label": "lem:ga-affine-interpolation",
+    "id": "lem:ga-affine-interpolation",
+    "labels": [
+      "lem:ga-affine-interpolation"
+    ],
+    "environment": "lemma",
+    "reviewed_fragment": "gaussian-analytic",
+    "statement_and_map": "Fixed-W real-coordinate interpolation preserves quantitative total distribution on [WN+b].",
+    "hypotheses_conventions_translation": "Fixed integer W,b; same filtration and quotient; delta>=N^(-sigma), Q<=delta^(-a); parameters chosen before factorization exponent.",
+    "declared_dependencies": [
+      "V6-GA-COORDINATES",
+      "V6-GA-LEIBMAN",
+      "lem:ga-linear-coefficients",
+      "lem:gn-horizontal-obstruction"
+    ],
+    "status": "independent_application_review_accepted_relative_to_listed_inputs",
+    "review_limit": "Human review of the stated derivation; inventory is not a truth oracle, formal proof, or acceptance of unlisted arithmetic inputs.",
+    "source_bounds": "Exact current statement and all attached proof spans below; source fragments separately byte-pinned.",
+    "statement": {
+      "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+      "start_character": 831748,
+      "end_character": 832531,
+      "first_line": 17570,
+      "last_line": 17587,
+      "text_sha256": "ad3ec2ab9eaf1a4d9b45ddc6c3fc42a636ea44f4d48ce09e3abc7ebe5f12b536"
+    },
+    "proof_spans": [
+      {
+        "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+        "start_character": 832532,
+        "end_character": 835036,
+        "first_line": 17588,
+        "last_line": 17648,
+        "text_sha256": "3b2ac2e9a7fef5b7b92f7a17c6d843d4ecb128486db61e8133a953db04fdf6e5"
+      }
+    ],
+    "explicit_citation_keys": [
+      "GTOrbits2012"
+    ],
+    "explicit_internal_dependencies": [
+      "lem:ga-linear-coefficients",
+      "lem:gn-horizontal-obstruction"
+    ]
+  },
+  {
+    "label": "lem:ga-wtrick-ma",
+    "id": "lem:ga-wtrick-ma",
+    "labels": [
+      "lem:ga-wtrick-ma",
+      "eq:ga-ideal-input",
+      "eq:ga-wtrick-ideal"
+    ],
+    "environment": "lemma",
+    "reviewed_fragment": "gaussian-analytic",
+    "statement_and_map": "Transfer ideal minor-arc sum to the fixed-W arithmetic subsequence.",
+    "hypotheses_conventions_translation": "N(a)=Wn+b is exact; progression modulus becomes Wq and endpoints become O_W(N); W fixed; F0 Lipschitz and Haar mean zero.",
+    "declared_dependencies": [
+      "lem:ga-affine-interpolation",
+      "gi-minor-arc"
+    ],
+    "status": "independent_application_review_accepted_relative_to_listed_inputs",
+    "review_limit": "Human review of the stated derivation; inventory is not a truth oracle, formal proof, or acceptance of unlisted arithmetic inputs.",
+    "source_bounds": "Exact current statement and all attached proof spans below; source fragments separately byte-pinned.",
+    "statement": {
+      "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+      "start_character": 835193,
+      "end_character": 836429,
+      "first_line": 17654,
+      "last_line": 17681,
+      "text_sha256": "08f11113d24a112037faa5d83bbbaf76fe64657863bf94b42540390f988ffd9a"
+    },
+    "proof_spans": [
+      {
+        "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+        "start_character": 836430,
+        "end_character": 836947,
+        "first_line": 17682,
+        "last_line": 17691,
+        "text_sha256": "54a05cefd707fd53dac3164ab8720317744c863b9ef74b9309d11cf490429ab4"
+      }
+    ],
+    "explicit_citation_keys": [],
+    "explicit_internal_dependencies": [
+      "eq:ga-ideal-input",
+      "eq:ga-wtrick-ideal",
+      "lem:ga-affine-interpolation"
+    ]
+  },
+  {
+    "label": "cor:ga-centered-primes",
+    "id": "cor:ga-centered-primes",
+    "labels": [
+      "cor:ga-centered-primes"
+    ],
+    "environment": "corollary",
+    "reviewed_fragment": "gaussian-analytic",
+    "statement_and_map": "Finite linear combinations of fixed-W ray and ordinary prime weights satisfy the mean-zero minor-arc bound.",
+    "hypotheses_conventions_translation": "Conditional on checked finite-character expansion and both minor-arc inputs; Gaussian factor 1/2, prime-power O(sqrt(N)log^2 N), sigma1*cW<1/4; every progression P of modulus <=Q. Ordinary weight symbol is lambda_{b,W} after integration.",
+    "declared_dependencies": [
+      "lem:ga-wtrick-ma",
+      "gi-ordinary-primes"
+    ],
+    "status": "independent_application_review_accepted_relative_to_listed_inputs",
+    "review_limit": "Human review of the stated derivation; inventory is not a truth oracle, formal proof, or acceptance of unlisted arithmetic inputs.",
+    "source_bounds": "Exact current statement and all attached proof spans below; source fragments separately byte-pinned.",
+    "statement": {
+      "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+      "start_character": 836949,
+      "end_character": 838331,
+      "first_line": 17693,
+      "last_line": 17723,
+      "text_sha256": "93d233f42f07d337f4e005255baed0655a46a34dea46f787b186fa30dde9cf0d"
+    },
+    "proof_spans": [
+      {
+        "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+        "start_character": 838332,
+        "end_character": 839205,
+        "first_line": 17724,
+        "last_line": 17740,
+        "text_sha256": "c4af3e8f229c2d3a7d51bbce77c53c4f26626dfbeab97891ee03b81887311c7d"
+      }
+    ],
+    "explicit_citation_keys": [],
+    "explicit_internal_dependencies": [
+      "eq:ga-ideal-input",
+      "eq:gf-sw",
+      "lem:ga-affine-interpolation",
+      "lem:ga-wtrick-ma"
+    ]
+  },
+  {
+    "label": "rem:ga-choice-order",
+    "id": "rem:ga-choice-order",
+    "labels": [
+      "rem:ga-choice-order"
+    ],
+    "environment": "remark",
+    "reviewed_fragment": "gaussian-analytic",
+    "statement_and_map": "Arithmetic moduli and affine/minor-arc exponents precede the factorization exponent.",
+    "hypotheses_conventions_translation": "Output complexity polylogarithmic; does not invoke Frei–Tinkova as a theorem.",
+    "declared_dependencies": [
+      "prop:gf-factorization"
+    ],
+    "status": "independent_application_review_accepted_relative_to_listed_inputs",
+    "review_limit": "Human review of the stated derivation; inventory is not a truth oracle, formal proof, or acceptance of unlisted arithmetic inputs.",
+    "source_bounds": "Exact current statement and all attached proof spans below; source fragments separately byte-pinned.",
+    "statement": {
+      "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+      "start_character": 839207,
+      "end_character": 839801,
+      "first_line": 17742,
+      "last_line": 17751,
+      "text_sha256": "1789f23defa240e34a6bcd11cc45094cefc70a3de5a43d455a2ed28b520bd1bf"
+    },
+    "proof_spans": [],
+    "explicit_citation_keys": [],
+    "explicit_internal_dependencies": [
+      "prop:gf-factorization"
+    ]
+  },
+  {
+    "label": "prop:gf-factorization",
+    "id": "prop:gf-factorization",
+    "labels": [
+      "prop:gf-factorization",
+      "eq:gf-sw",
+      "eq:gf-ma",
+      "eq:gf-ma-regime",
+      "eq:gf-conclusion"
+    ],
+    "environment": "proposition",
+    "reviewed_fragment": "gaussian-analytic",
+    "statement_and_map": "Generic log-power nilsequence orthogonality from growth, all-progression centered means and power-form mean-zero minor arcs.",
+    "hypotheses_conventions_translation": "Hypotheses eq:gf-sw and eq:gf-ma remain genuine inputs; cell count M^2 log^D, cellwise Haar means, rational quotient changes, B before E(B). Applies to general weights satisfying these conditions.",
+    "declared_dependencies": [
+      "V6-GF-FACTORIZATION",
+      "V6-GF-CONJUGATED-QUOTIENT",
+      "V6-GF-RATIONAL-METRIC-SUPPORT"
+    ],
+    "status": "independent_application_review_accepted_relative_to_listed_inputs",
+    "review_limit": "Human review of the stated derivation; inventory is not a truth oracle, formal proof, or acceptance of unlisted arithmetic inputs.",
+    "source_bounds": "Exact current statement and all attached proof spans below; source fragments separately byte-pinned.",
+    "statement": {
+      "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+      "start_character": 840309,
+      "end_character": 842089,
+      "first_line": 17765,
+      "last_line": 17803,
+      "text_sha256": "4f2deac5dcdf12e5694cb348fe05b595425d1fc658770e1d0a4bca7a1b735470"
+    },
+    "proof_spans": [
+      {
+        "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+        "start_character": 842091,
+        "end_character": 846833,
+        "first_line": 17805,
+        "last_line": 17918,
+        "text_sha256": "d8b70c9efb93aa5d85d26bf980a39acd2af781f64884750f47b03c6a5d5905bf"
+      }
+    ],
+    "explicit_citation_keys": [
+      "GTOrbits2012",
+      "moebius"
+    ],
+    "explicit_internal_dependencies": [
+      "eq:gf-cells",
+      "eq:gf-conclusion",
+      "eq:gf-ma",
+      "eq:gf-ma-regime",
+      "eq:gf-sw",
+      "eq:gf-total-ma"
+    ]
+  },
+  {
+    "label": "rem:gf-order",
+    "id": "rem:gf-order",
+    "labels": [
+      "rem:gf-order"
+    ],
+    "environment": "remark",
+    "reviewed_fragment": "gaussian-analytic",
+    "statement_and_map": "Noncircular order for factorization exponent and progression thresholds.",
+    "hypotheses_conventions_translation": "B chosen from fixed minor-arc exponents using lower M>=log; upper exponent E(B) only later fixes SW precision and modulus threshold.",
+    "declared_dependencies": [
+      "prop:gf-factorization"
+    ],
+    "status": "independent_application_review_accepted_relative_to_listed_inputs",
+    "review_limit": "Human review of the stated derivation; inventory is not a truth oracle, formal proof, or acceptance of unlisted arithmetic inputs.",
+    "source_bounds": "Exact current statement and all attached proof spans below; source fragments separately byte-pinned.",
+    "statement": {
+      "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+      "start_character": 846835,
+      "end_character": 847473,
+      "first_line": 17920,
+      "last_line": 17933,
+      "text_sha256": "e24086592095ee20f482f891d13966e4a2e27c518cb5ab4603b2d43d2ebd9004"
+    },
+    "proof_spans": [],
+    "explicit_citation_keys": [],
+    "explicit_internal_dependencies": [
+      "eq:gf-ma"
+    ]
+  }
+]

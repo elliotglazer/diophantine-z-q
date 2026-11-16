@@ -1,0 +1,15 @@
+[
+  {
+    "file": "kollar-published.pdf",
+    "url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/057467F70BBCC44C91A42896700A1353/S1474748002000117a.pdf/unirationality_of_cubic_hypersurfaces.pdf",
+    "error": "b'<!DOCTYPE html>\\n<!--[if IE 8 ]>    <html'"
+  },
+  {
+    "file": "muller-published.pdf",
+    "url": "https://www.numdam.org/article/AIF_2002__52_4_983_0.pdf",
+    "resolved_url": "https://www.numdam.org/article/AIF_2002__52_4_983_0.pdf",
+    "sha256": "23d0dc8ee51bf9dca3186ab2782e39a610f8d1515640cf0b0ca8d640195972bf",
+    "bytes": 2908239,
+    "pages": 34
+  }
+]

@@ -1,0 +1,53 @@
+{
+  "schema": "original-15671-geometry-Q/v1",
+  "status": "Q_closed_by_published_identification_and_exact_arithmetic",
+  "source": {
+    "authors": "Josep Gonzalez and Victor Rotger",
+    "title": "Non-elliptic Shimura curves of genus one",
+    "journal": "Journal of the Mathematical Society of Japan 58(4) (2006), 927-948",
+    "doi": "10.2969/jmsj/1179759530",
+    "publisher_page": "https://www.jstage.jst.go.jp/article/jmath/58/4/58_4_927/_article",
+    "publisher_pdf": "https://www.jstage.jst.go.jp/article/jmath/58/4/58_4_927/_pdf",
+    "local_research_copy": "primary/gonzalez-rotger-2006.pdf",
+    "sha256": "e595d1a428f20e1c6b3695bc37be658ca12c517fb6600171f531fe931b796c3a",
+    "locators": {
+      "notation": "Section 4, p937 (PDF page 11): X_D=X_0(D,1), X_D^(m)=X_D/<omega_m>",
+      "genus_one_list": "Lemma 4.1, p938 (PDF page 12)",
+      "modular_identification": "Theorem 4.2, p938 (PDF page 12)",
+      "explicit_models": "Table 2, p939 (PDF page 13), four rows D=210, m=30,42,70,105",
+      "jacobians": "Table 3, p939 (PDF page 13)",
+      "canonical_model_convention": "Theorem 5.1 and following paragraph, p940 (PDF page 14)",
+      "genus_formula": "Proposition 5.2, pp940-941"
+    }
+  },
+  "applications": [
+    {
+      "id": "Q-01",
+      "result": "Exact four rational quotient curves, not merely isogenous Jacobians",
+      "hypotheses": "D=210 is a product of four distinct primes; N=1; each m=30,42,70,105 is a positive divisor of D listed in Lemma 4.1",
+      "status": "published theorem directly matched"
+    },
+    {
+      "id": "Q-02",
+      "result": "The labeled quotient Jacobians have the four required j invariants",
+      "method": "Exact arithmetic using Table 2 binary quartic invariants, cross-checked against Table 3 short-Weierstrass equations",
+      "checker": "check_published_quotients.py",
+      "report": "published-quotient-check.json"
+    },
+    {
+      "id": "Q-03",
+      "result": "X/W has five rational branch points with inertia labels 30,42,70,105,210",
+      "method": "Genus formula, characteristic-zero cyclic stabilizers, Riemann-Hurwitz, and abelian inertia product relation",
+      "proof": "published-identification.tex"
+    },
+    {
+      "id": "Q-04",
+      "result": "Normalization b210=infinity,b105=0,b70=1 gives b42=2401,b30=-343/32",
+      "method": "Full two-torsion translation quotient preserves the elliptic j invariant; exact 36-pair cross-ratio enumeration",
+      "checker": "check_published_quotients.py"
+    }
+  ],
+  "scope": "Closes only the quotient-identification input Q and its exact branch configuration. Does not certify the separate field-degree, integral-model, Hodge-comparison, or non-CM height arguments.",
+  "unpublished_dependencies": [],
+  "replaced_source": "Padurariu-Saia arXiv:2509.25368 and quotient-models.m are no longer needed for Q. No isomorphism between their large quartics and the 2006 models is asserted or needed."
+}

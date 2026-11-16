@@ -1,6 +1,6 @@
-# Polynomial construction and checks
+# Original large construction and checks
 
-This directory contains a portable snapshot of the finite polynomial specification used in the 11/5 manuscript. The saved expression has one free rational input and 292,890,231,904 rational witness variables. The large integer constants and finite products are represented by explicit finite constructors; their monomial expansions are not materialized.
+This directory preserves the original large polynomial construction from the earlier November 5 manuscript. Its saved expression has one free rational input and 292,890,231,904 rational witness variables. The current [Version 2 manuscript](../quartic_12504.pdf) also gives an [explicit quartic in 12,504 total variables](../quartics/quartic-12504/README.md). The commands below check this original construction, not the quartic package. The large constants and finite products are represented by explicit finite constructors; their monomial expansions are not materialized.
 
 ## Run the checks
 
@@ -25,12 +25,14 @@ The first local run took 8.5 seconds with Node.js 24.22.1 and Python 3.12.14 on 
 | [finite-polynomial-expressions.js](finite-polynomial-expressions.js) and [variable-shift-polynomial-library.js](variable-shift-polynomial-library.js) | Finite constructors, fixed constants, and ordinary-value coordinate templates. |
 | [ordinary-integer-polynomial-size-bounds.json](ordinary-integer-polynomial-size-bounds.json) | Recomputed expression heights, variable count, and symbolic size bounds. |
 | [bound-ordinary-integer-polynomial.py](bound-ordinary-integer-polynomial.py) | Computes those syntactic bounds without expanding the large constants. |
-| [integer-compiler-spec.txt](integer-compiler-spec.txt), [integer-halting-correctness-proof.txt](integer-halting-correctness-proof.txt), and [z-in-q-polynomial-size-bound-proof.txt](z-in-q-polynomial-size-bound-proof.txt) | Preserved explanatory notes. Read their historical scope statements and the corresponding sections of the revised [11/5 manuscript](../diophantine_zq.pdf). |
+| [integer-compiler-spec.txt](integer-compiler-spec.txt), [integer-halting-correctness-proof.txt](integer-halting-correctness-proof.txt), and [z-in-q-polynomial-size-bound-proof.txt](z-in-q-polynomial-size-bound-proof.txt) | Preserved explanatory notes. Read their historical scope statements and the corresponding original-construction sections of the [Version 2 manuscript](../quartic_12504.pdf). |
 | [SOURCE_MANIFEST.json](SOURCE_MANIFEST.json) | Original archive paths, original and release hashes, and the exact changes made for portability. |
 
 Other JavaScript files are the local module dependencies of these entry points or the finite checkers listed below. Some reusable modules also export functions for older universal-equation workflows. Only the command documented above is supported by this curated input set; the full historical archive contains those other inputs.
 
 ## What each check establishes
+
+The [Issue 3 reproducibility note](../docs/audit-history/issue3/README.md) gives every finite case range, the division-polynomial evaluation points, and the exact expression-hash serialization. It also documents the Version 4 quartic's terminal-row digest.
 
 | Check | Checked scope |
 | --- | --- |

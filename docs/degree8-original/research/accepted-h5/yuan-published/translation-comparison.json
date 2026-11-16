@@ -1,0 +1,164 @@
+{
+  "schema": "yuan-translation-comparison/v1",
+  "arxiv_sha256": "660f05465fd04f23c0458f6ed182c843341a0a4cfa69d4caa1812d0eb3920f14",
+  "translation_sha256": "ad751f65ac5730b437adbabba78cc6bc1fe1f2249367c74566fe0a495100740e",
+  "pages": 32,
+  "normalization": "Unicode NFKC and whitespace removal, using pypdf extraction",
+  "different_pages": [
+    1,
+    2,
+    8,
+    13,
+    14,
+    20,
+    27
+  ],
+  "character_changes": [
+    {
+      "page": 1,
+      "changes": [
+        [
+          "delete",
+          "arXiv:2205.11334v2[math.NT]30Apr2024",
+          ""
+        ],
+        [
+          "replace",
+          "May1",
+          "April30"
+        ]
+      ]
+    },
+    {
+      "page": 2,
+      "changes": [
+        [
+          "replace",
+          "\u01eb",
+          "\u03b5"
+        ],
+        [
+          "replace",
+          "\u01eb",
+          "\u03b5"
+        ],
+        [
+          "replace",
+          "\u01eb",
+          "\u03b5"
+        ],
+        [
+          "replace",
+          "\u01eb",
+          "\u03b5"
+        ],
+        [
+          "replace",
+          "\u01eb",
+          "\u03b5"
+        ]
+      ]
+    },
+    {
+      "page": 8,
+      "changes": [
+        [
+          "replace",
+          "\u0592",
+          "\u21aa"
+        ]
+      ]
+    },
+    {
+      "page": 13,
+      "changes": [
+        [
+          "replace",
+          "\u01eb",
+          "\u03b5"
+        ],
+        [
+          "replace",
+          "\u01eb",
+          "\u03b5"
+        ]
+      ]
+    },
+    {
+      "page": 14,
+      "changes": [
+        [
+          "delete",
+          "\u02c6E",
+          ""
+        ]
+      ]
+    },
+    {
+      "page": 20,
+      "changes": [
+        [
+          "replace",
+          "\u01eb",
+          "\u03b5"
+        ],
+        [
+          "replace",
+          "\u01eb",
+          "\u03b5"
+        ],
+        [
+          "replace",
+          "\u01eb",
+          "\u03b5"
+        ],
+        [
+          "replace",
+          "\u01eb",
+          "\u03b5"
+        ],
+        [
+          "replace",
+          "\u01eb",
+          "\u03b5"
+        ],
+        [
+          "replace",
+          "\u01eb",
+          "\u03b5"
+        ],
+        [
+          "replace",
+          "\u01eb",
+          "\u03b5"
+        ]
+      ]
+    },
+    {
+      "page": 27,
+      "changes": [
+        [
+          "replace",
+          "\u01eb",
+          "\u03b5"
+        ],
+        [
+          "replace",
+          "\u01eb",
+          "\u03b5"
+        ],
+        [
+          "replace",
+          "\u01eb",
+          "\u03b5"
+        ],
+        [
+          "replace",
+          "\u01eb",
+          "\u03b5"
+        ]
+      ]
+    }
+  ],
+  "scope": "Text extraction comparison only; not a comparison to the Chinese journal PDF."
+}

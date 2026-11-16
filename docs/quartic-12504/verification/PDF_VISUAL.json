@@ -1,0 +1,27 @@
+{
+  "pages": 186,
+  "changed_quartic_pages": [
+    114,
+    124
+  ],
+  "pdf_sha256": "e747dcb58c541e5106ac6289cab660d624a7c1209b0e488aecc51ee8f54014b0",
+  "rendered_pages": [
+    1,
+    2,
+    3,
+    114,
+    115,
+    116,
+    117,
+    118,
+    119,
+    120,
+    121,
+    122,
+    123,
+    124,
+    171,
+    186
+  ],
+  "visual_inspection": "PASS: reviewed all rendered pages; no clipping or overlap. The new source-ID overflow was fixed. Inherited 14.9669pt theta display overrun remains inside the page and readable."
+}

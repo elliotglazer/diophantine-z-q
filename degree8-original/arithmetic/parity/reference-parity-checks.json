@@ -1,0 +1,85 @@
+{
+  "status": "pass",
+  "squareclass_matrix": [
+    [
+      1,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      1,
+      0,
+      1,
+      1,
+      0,
+      0
+    ],
+    [
+      0,
+      1,
+      1,
+      0,
+      1,
+      1,
+      0
+    ],
+    [
+      0,
+      1,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      1,
+      0,
+      1,
+      0,
+      1,
+      0,
+      1
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      1
+    ],
+    [
+      0,
+      1,
+      1,
+      1,
+      1,
+      0,
+      0
+    ]
+  ],
+  "local_signatures": 128,
+  "signed_boolean_products": 256,
+  "all_local_classes_correctable_with_each_real_sign": true,
+  "psi_sum_of_squares_monomials": 30,
+  "psi_total_degree": 8,
+  "exact_source_rescaling": "old R2 = B^2 new R2; old R3 = B new R4 after h=e(B-U^2)",
+  "source_sha256": {
+    "work/freitag-adaptation-20261105/source-records/degree8/short-polynomial-source/article/short-polynomial-synthesis.tex": "dd06b240065edd9cab823c38008bd6f200b97033e7818c480b2e543084ea00c7",
+    "work/freitag-adaptation-20261105/source-records/degree8/short-polynomial-source/article/short-scalar-parity.tex": "00a8add816c2660667866da3e04649d7b7927848ed429b5d7f2d89b6bf24d1f7",
+    "work/freitag-adaptation-20261105/source-records/degree8/short-polynomial-source/article/short-polynomial-proof-sections.tex": "2185b5031f986ecc24260bb7f963c746dee22d2fa887e58d1a67e688867b7b5f",
+    "work/freitag-adaptation-20261105/source-records/degree8/short-polynomial-source/build.py": "c7ef798894a106e3c6b02816583be2b6e966e4e701f73ee670c9a0de52a70912",
+    "work/freitag-adaptation-20261105/source-records/degree8/short-polynomial-source/source-inputs/focused_diophantine.tex": "2b986ebe8dadbc7579a4390a2d0268c87170f0c4753e3ffba0fafd1eadf463a4",
+    "work/comparison-freitag-20261105/documents/balanced-natural-formula-source_archive/balanced-natural-formula/balanced-natural-formula.tex": "de7d6719af98da99eac94d53d4b0f77782bd8d84862e1f41799c54cd00e85dea",
+    "formalization/z-in-q/ProofSources/work/parity-frozen-4eaee875.tex": "d986fd78ba814d6783165ab3fcc9da89c2b983d43d1e737a4bf798d1d753ac58",
+    "formalization/z-in-q/ProofSources/outputs/z-in-q-pole-completeness-audit.txt": "a84b05161d4ab25dccc74ebfd31dc39ad34866461a24d23b32d00ade02538bf7",
+    "work/github-research-upload-20261104/repository/diophantine_zq.tex": "cb1148cd6c7769d2af3f1636b60ff0ada4b40431978d1e98d0c339274b3d792b"
+  }
+}

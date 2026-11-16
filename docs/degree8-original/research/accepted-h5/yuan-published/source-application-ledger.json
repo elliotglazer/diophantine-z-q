@@ -1,0 +1,62 @@
+{
+  "schema": "yuan-published-source-audit/v1",
+  "status": "author_attested_translation_verified_direct_chinese_text_not_obtained",
+  "publication": {
+    "author": "Xinyi Yuan",
+    "title": "Explicit Kodaira-Spencer Maps over Shimura Curves",
+    "journal": "Acta Mathematica Sinica, Chinese Series",
+    "year": 2024,
+    "volume": 67,
+    "issue": 2,
+    "pages": "227-249",
+    "doi": "10.12386/A20220154",
+    "url": "https://actamath.cjoe.ac.cn/Jwk_sxxb_cn/CN/10.12386/A20220154"
+  },
+  "translation": {
+    "date": "2024-04-30",
+    "url": "https://faculty.bicmr.pku.edu.cn/~yxy/preprints/explicit_KS.pdf",
+    "local_path": "primary/yuan-author-translation.pdf",
+    "sha256": "ad751f65ac5730b437adbabba78cc6bc1fe1f2249367c74566fe0a495100740e",
+    "attestation_url": "https://faculty.bicmr.pku.edu.cn/~yxy/publications.html",
+    "attestation_local_path": "primary/author-publications.html",
+    "attestation_sha256": "1353fa42f9436a51275726fd3f17c05670e1423328bcde501a4946879c28be5a",
+    "attestation_locator": "Automorphic forms, Shimura varieties and L-functions section; first entry",
+    "qualification": "The author calls the PDF a translation of the published Chinese article; the page also generally warns that linked files may differ slightly from published versions. No independent Chinese-English comparison is claimed."
+  },
+  "applications": [
+    {
+      "id": "YKS-INTEGRAL",
+      "locator": "Theorem 1.1, English translation p3; proof Section 3 pp10-17",
+      "hypotheses": "Indefinite quaternion algebra over Q, maximal order, open level U, determinant condition, compatible principal polarization, base Z[1/n(U)]",
+      "result": "The square-Hodge determinant Kodaira-Spencer injection has image d_B times the square relative dualizing bundle.",
+      "specialization": "d_B=210. Do not invert 210 in the integral statement or replace the image by a square-root multiplier."
+    },
+    {
+      "id": "YKS-METRIC",
+      "locator": "Definitions pp2-3, Theorem1.1 p3, Sections4.2-4.3 pp20-26",
+      "result": "Isometry with Hodge squared norm (2pi)^(-2) times the absolute integral and Petersson norm 2 Im(tau).",
+      "deduction": "Original Faltings normalization gives h_Y=h_F+log(pi) for dimension2; hence h_omega^2=2h_F+2log(pi)+log(210)."
+    },
+    {
+      "id": "YKS-MODEL",
+      "locator": "Section2.1 pp4-6",
+      "result": "Regular semistable moduli stack over Z[1/n(U)], smooth outside d_B and proper when B is division.",
+      "restriction": "Fine level U(3) is used over Z[1/3]. The printed 'contains U(N)' phrase is not used to infer fineness for larger levels."
+    },
+    {
+      "id": "YKS-COARSE",
+      "locator": "Coarse orbifold divisor p7; Lemma2.1 pp8-10; metric sentence p10",
+      "result": "The coarse Q-line bundle with horizontal coefficients1-1/e_P pulls back to the stack dualizing bundle and compatibly to normal finer scheme levels; these maps preserve Petersson metrics.",
+      "restriction": "Retain normality, integral base and ramification indices. The independent D210 normalizer quotient calculation is not replaced by this lemma."
+    }
+  ],
+  "comparison": {
+    "script": "compare_translation.py",
+    "report": "translation-comparison.json",
+    "report_sha256": "95b0f8b56e13cd5993da300de22a91f6a84a17b0045ecb89fd75bcdaba330604",
+    "arxiv_sha256": "660f05465fd04f23c0458f6ed182c843341a0a4cfa69d4caa1812d0eb3920f14",
+    "result": "Mathematical contents agree; extraction differences are recorded explicitly. This is not a comparison with the Chinese journal PDF."
+  },
+  "verification_note": "VERIFICATION.md",
+  "verification_note_sha256": "14015f8f44905eaabddadd32f1964eb714380a9fb6f4106f527a73d4c9e3e7ce"
+}

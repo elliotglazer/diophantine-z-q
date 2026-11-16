@@ -1,0 +1,11 @@
+{
+  "release_id": 436049848,
+  "current_archive_extraction": "PASS",
+  "all_archive_member_hashes_and_crc_verified": true,
+  "assets_checked": 7,
+  "status": "PASS",
+  "snapshot_commit": "39e49cc9a7bebdb0569920824aec332e9e533efa",
+  "plan_sha256": "8ade1c2b1579a555c42e81645ebc8aa7f8bad50c488bb8419be71d422f5f0c1b",
+  "build_run": "https://github.com/elliotglazer/diophantine-z-q/actions/runs/42153665225",
+  "exact_current_files": 442
+}

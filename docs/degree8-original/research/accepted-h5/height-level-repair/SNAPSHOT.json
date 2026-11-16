@@ -1,0 +1,111 @@
+{
+  "schema": "original15671-level-repair-snapshot/v2-final-accepted",
+  "status": "ACCEPTED: complete H5 mathematical and source argument in V4",
+  "files": {
+    "level-repair.tex": {
+      "bytes": 12378,
+      "sha256": "76244a20a0a3adb148bab97e2cdfe7824775a360f0a7b2c82787864340ca3f56"
+    },
+    "source-application-ledger.json": {
+      "bytes": 34453,
+      "sha256": "d7f365bc056fc49a31ca07a6cb1a33fa1a27141616076b632539e9c4ad7cac2c"
+    },
+    "bibliography-additions.tex": {
+      "bytes": 808,
+      "sha256": "4c878e290c24750dd0fc56eca8fcd8d79e5a4395e4adcb12aa38905d3a87aefa"
+    },
+    "check_bounds.py": {
+      "bytes": 1413,
+      "sha256": "d786719dfaa7330200ab1fd79c1840da6e49b3d562038fbda7fe9d2ef115369a"
+    },
+    "bound-computations.json": {
+      "bytes": 580,
+      "sha256": "2e105296107fdb60efc39d364d68a269e51f1e71d7b0a03f794219f8623048fb"
+    },
+    "STATUS.md": {
+      "bytes": 3134,
+      "sha256": "77199281d0e9fe8e9f7f9e8018c882d4a006bfeef34795e973172430ecd050c8"
+    }
+  },
+  "companion_evidence": {
+    "height-alternative/level-transfer.tex": {
+      "bytes": 3763,
+      "sha256": "4fdb83163d13bf792f38e7a26fc2b7f3e4aed1e147dddf8835faf7790a466950"
+    },
+    "height-descent/small-prime-conductor.tex": {
+      "bytes": 7001,
+      "sha256": "1447025bba850d9c33df41046c71357d03c6926b1b3800cbb87becb4bbc8ec9b"
+    },
+    "height-cocycle/SMALL_PRIME_CONDUCTOR_REVIEW.md": {
+      "bytes": 6623,
+      "sha256": "6a351cd2eec355fa4f609d68093aa3982ae88aa0c64568e75d8b10b1e0934413"
+    },
+    "height-cocycle/VOIGHT2021_SOURCE_VERIFICATION.md": {
+      "bytes": 1524,
+      "sha256": "3ab6520961f5ec40fc1e99432e6c1613891a0d0ff5a1384225425696a1bd2ac8"
+    },
+    "review/GLOBAL_LEVEL_REVIEW.md": {
+      "bytes": 7585,
+      "sha256": "4f1a0bccd5fdf6c5a7b314fc5ad542dcb2556d5fd734c42b7fe7938bb9082db9"
+    },
+    "height-alternative/conductor-level.tex": {
+      "bytes": 4033,
+      "sha256": "14e0136c6129e6a3ee5362c93493641b8c06cb0953570af1ecf1e850f35497f5"
+    },
+    "height-alternative/conductor-level-audit.md": {
+      "bytes": 4290,
+      "sha256": "0109d9e66d7d94c21fc418302ded4476e35d8359766d0e94395144cfe709733f"
+    },
+    "author/h5-integration/UNAPPLIED-candidate-v4.tex": {
+      "bytes": 692067,
+      "sha256": "655c0b26cabc12211e3214a1fba7bcfca4440baf77febec303f2b0e6802a7833"
+    },
+    "review/H5_FINAL_ACCEPTANCE.md": {
+      "bytes": 5906,
+      "sha256": "db62a7fa5fbcd2d4bc711436f2fb4f98c37de9122751ea7aeb097d96680905eb"
+    },
+    "review/Q_ACCEPTANCE.md": {
+      "bytes": 2128,
+      "sha256": "36ec05bd0f2a9c0bdc04eafaefc367393db1825074b0805d5356db62451935b8"
+    },
+    "review/COCYCLE_ACCEPTANCE.md": {
+      "bytes": 3845,
+      "sha256": "17d782ff9a4478ecef09c560fc8fa4791169cab87c4a42e4c0993a1daa1880f9"
+    },
+    "height-cm/review-receipt.json": {
+      "bytes": 845,
+      "sha256": "5428fe70a1e815b8e4ffddc418e2c98957e6d090daef19abd325d67cffcf962a"
+    },
+    "pan-published/source-application-ledger.json": {
+      "bytes": 3502,
+      "sha256": "8a6cb4f7a188aa48d3a56f17d2ee0ad488df516d494da784109d9408ec6dd3ea"
+    },
+    "pan-published/README.md": {
+      "bytes": 4925,
+      "sha256": "921396403e862a91e68a975be54050ba918d4150d2e3ab9cb3a3d77409997256"
+    },
+    "yuan-published/source-application-ledger.json": {
+      "bytes": 3693,
+      "sha256": "1251c3510cf14b184897d37a1236f7abc4a752e913e3ea00afd2db6b1236a2d3"
+    },
+    "yuan-published/VERIFICATION.md": {
+      "bytes": 6182,
+      "sha256": "14015f8f44905eaabdaddd32f1964eb714380a9fb6f4106f527a73d4c9e3e7ce"
+    }
+  },
+  "excluded": "No primary PDF, book pages, or images belong in this packet.",
+  "unchanged": "The exact original H, five contacts, exponent24, and polynomial coefficients are unchanged.",
+  "remaining_gates": [],
+  "accepted_source": {
+    "path": "../author/h5-integration/UNAPPLIED-candidate-v4.tex",
+    "sha256": "655c0b26cabc12211e3214a1fba7bcfca4440baf77febec303f2b0e6802a7833",
+    "authority": "Complete accepted assembly; supersedes proposal-stage wording and citations of the unchanged local arithmetic fragment."
+  },
+  "final_acceptance": {
+    "path": "../review/H5_FINAL_ACCEPTANCE.md",
+    "sha256": "db62a7fa5fbcd2d4bc711436f2fb4f98c37de9122751ea7aeb097d96680905eb",
+    "scope": "Complete exact H5 and its use in the original 15671-witness construction; no mathematical or source-provenance issue remains open in this addition. Mathematical/source review, not formal proof certification."
+  },
+  "proof_changes": "None. Local level-repair.tex remains SHA25676244a20a0a3adb148bab97e2cdfe7824775a360f0a7b2c82787864340ca3f56.",
+  "historical_route": "Earlier bounded-descent and conditional-height snapshots are historical and are not the accepted proof route."
+}

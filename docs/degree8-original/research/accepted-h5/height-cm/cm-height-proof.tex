@@ -1,0 +1,138 @@
+% Original 15671 architecture: independent CM branch, version 1.
+% This lemma is conditional on the separately audited field/ramification lemma.
+\subsection{The CM height estimate over the same field}
+Let $A/L$ be an abelian surface of CM type, let $B$ be a quaternion
+division algebra over $\mathbb Q$ embedded in
+$\operatorname{End}^0_{\overline L}(A)$, and suppose that all geometric
+endomorphisms of $A$ are defined over $L$. Assume
+\[
+ d=[L:\mathbb Q]\le576,\qquad
+ \operatorname{rad}(|D_L|)\le R,\qquad R\ge1.
+\]
+All heights below are stable Faltings heights in Faltings's original
+normalization. We prove
+\begin{equation}\label{eq:original-cm-bound}
+ h_{\rm F}(A)<854R<6^{100}R^{24}.
+\end{equation}
+No assertion about the existence or degree of $L$ is included in this lemma.
+
+First, $A_{\overline L}$ is isogenous to $E^2$ for a CM elliptic curve
+$E$. Here is a dimension argument which makes the alternative cases
+explicit. If $A$ were geometrically simple, its division endomorphism
+algebra would act faithfully on the four-dimensional rational homology.
+Its dimension therefore divides four. As it contains $B$, it would equal
+$B$; but $B$ has no commutative semisimple subalgebra of dimension four,
+contrary to CM type. If the two elliptic factors were not isogenous,
+their endomorphism algebra would be a product of commutative fields and
+could not contain $B$. Finally, if $E$ had no CM, the endomorphism algebra
+would be $M_2(\mathbb Q)$, and the embedding of the four-dimensional
+division algebra $B$ would be an impossible isomorphism.
+
+The elliptic factors and the isogeny may be taken over $L$. Indeed,
+the rational idempotents in $\operatorname{End}^0(A)$ are defined over
+$L$, and the image of an integral multiple of such an idempotent is an
+elliptic subvariety over $L$. Endomorphisms and homomorphisms of the
+resulting factors extend to rational endomorphisms of $A$ by the
+inclusions and rational projections; these are fixed by
+$\operatorname{Gal}(\overline L/L)$. Thus the factor isogenies, and all
+endomorphisms of $E$, are defined over $L$.
+
+Put $F=\operatorname{End}^0(E)$, an imaginary quadratic field, and
+$\mathcal O=\operatorname{End}(E)$. Differentiation gives an injective
+unital map $F\longrightarrow\operatorname{End}_L(\operatorname{Lie}E)=L$:
+it is nonzero, and every nonzero elliptic endomorphism in characteristic
+zero is separable. Consequently $F\subset L$.
+
+We next pass to the maximal order without extending $L$. Choose
+$f\ge1$ with $f\mathcal O_F\subset\mathcal O$, choose an integral
+basis $\alpha_1,\alpha_2$ of $\mathcal O_F$, and form the finite
+subgroup scheme
+\[
+ K=\sum_{i=1}^2(f\alpha_i)(E[f])\subset E.
+\]
+Each $f\alpha_i$ is defined over $L$, so $K$ and the quotient
+$E'=E/K$ are defined over $L$. Under a complex uniformization
+$E(\mathbb C)=\mathbb C/\Lambda$, this subgroup is
+$\mathcal O_F\Lambda/\Lambda$; thus $E'(\mathbb C)$ has lattice
+$\mathcal O_F\Lambda$ and endomorphism ring $\mathcal O_F$.
+The ring cannot be larger, since the rational endomorphism algebra
+remains $F$. This is also a direct special case of the same-field
+maximal-order theorem of R\'emond, but the construction just given is
+the proof used here. It follows that $A'=(E')^2$ is $L$-isogenous to $A$.
+
+Write $\Delta_F$ for the fundamental discriminant of $F$. The
+discriminant tower formula implies that every rational prime dividing
+$\Delta_F$ divides $D_L$. A quadratic fundamental discriminant has
+odd prime exponents one and exponent at two at most three. Therefore
+\[
+ |\Delta_F|\le4\operatorname{rad}(|D_L|)\le4R.
+\]
+The multiplier four includes the possible factor $2^3/2$.
+
+For completeness we give an elementary analytic bound on $h_{\rm F}(E')$.
+CM elliptic curves have potentially good reduction. After a finite
+extension with everywhere good reduction, the elliptic discriminant
+formula of Silverman, reproduced as equation (6.2) in
+\cite{BarqueroSanchezEtAl2017}, gives
+\[
+ h_{\rm F}(E')=\frac1{[L':\mathbb Q]}\sum_{\sigma:L'\hookrightarrow\mathbb C}
+ \left(-\log(2\pi)-\log|\eta(\tau_\sigma)|^2
+                     -\tfrac12\log\operatorname{Im}\tau_\sigma\right).
+\]
+Here $L'$ is used only to evaluate the stable height; it is not the
+field used in the isogeny estimate below. The discriminant term is zero
+because reduction is good. We use the individual-embedding formula
+(6.2), not the class-average assertion of Proposition 6.1, so no
+hypothesis on Weierstrass coefficients lying in $\mathbb Q(j)$ is needed.
+
+For each embedding choose a reduced quadratic parameter of discriminant
+$\Delta_F$. If $y=\operatorname{Im}\tau$, then
+\[
+ \frac{\sqrt3}{2}\le y=\frac{\sqrt{|\Delta_F|}}{2a}
+                   \le\frac{\sqrt{|\Delta_F|}}2,
+ \qquad a\in\mathbb Z_{\ge1}.
+\]
+Put $r=|e^{2\pi i\tau}|<1/16$. The product defining $\eta$ gives
+\[
+ -\log|\eta(\tau)|^2
+ \le\frac{\pi y}{6}+2\sum_{n\ge1}\frac{r^n}{1-r^n}
+ \le\frac{\pi y}{6}+\frac{2r}{(1-r)^2}
+ <\frac{\pi\sqrt{|\Delta_F|}}{12}+\frac{32}{225}.
+\]
+Also $-\tfrac12\log y\le\tfrac14\log(4/3)<1/12$.
+Discarding the negative term $-\log(2\pi)$ and using $\pi<4$ shows
+\[
+ h_{\rm F}(E')<\sqrt{|\Delta_F|}+1\le2\sqrt R+1\le3R.
+\]
+The height is additive on products, hence $h_{\rm F}(A')<6R$.
+
+Apply \cite[Theorem 1.9(1)]{GaudronRemond2023} over $L$, with source
+$A'$ and target $A$ and with no extension of the base field.
+For a surface, its quantity $\Xi(A')$ is
+\[
+ \Xi(A')=\left(14^{32}d\max(1,\log d,h_{\rm F}(A'))\right)^8.
+\]
+The general assertion supplies an isogeny $A'\to A$ of degree at most
+$\Xi(A')^2$; no identification of CM type with that paper's
+separate ``MM'' condition is made or needed. The isogeny-height
+inequality then gives
+\[
+ h_{\rm F}(A)\le6R+
+ 8\log\left(14^{32}\,576\max(1,\log576,6R)\right).
+\]
+One can see the last inequality directly from invariant differentials:
+after semistable base change, pullback on determinant differentials has
+integral cokernel, while its archimedean squared norm is multiplied by
+the isogeny degree. Thus the height difference is half the logarithm
+of that degree minus a nonnegative normalized cokernel length.
+
+Finally, $\log14<3$, $\log576<7$, and
+$\max(1,\log576,6R)\le7R$. Since $\log7<2$ and $\log R\le R$,
+\[
+ h_{\rm F}(A)<6R+8(96+7+2+\log R)
+             \le854R.
+\]
+As $6^4=1296>854$ and $R\ge1$, this proves
+\eqref{eq:original-cm-bound}. In particular the original
+$6^{100}R^{24}$ allowance absorbs this CM estimate with the field
+degree still exactly bounded by 576.

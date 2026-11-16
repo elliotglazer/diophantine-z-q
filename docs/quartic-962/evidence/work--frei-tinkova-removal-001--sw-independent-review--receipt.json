@@ -1,0 +1,42 @@
+{
+  "status": "accepted",
+  "reviewer": "/root/astra_sub1000_quotients",
+  "date": "2026-11-06",
+  "scope": "Fixed-field Gaussian and rational Siegel-Walfisz specialization plus exact progression normalization",
+  "files": [
+    {
+      "path": "published-input-audit/MITSUI_SW_DERIVATION.md",
+      "sha256": "b3a14e70ec20a0154642ad062f431e40262c009a0caf496e5afe610156d72b88"
+    },
+    {
+      "path": "progression_mainterms.tex",
+      "sha256": "8564d37de829edff8e0864362b6185f6b44f1ac4c1f053c0a34fe6b16444a35b"
+    },
+    {
+      "path": "published-input-audit/mitsui1956.pdf",
+      "sha256": "b71fbd5ae9443991479a73a4e7bde68165b0c0e90b290cd0bd94fd9da416f963"
+    },
+    {
+      "path": "published-input-audit/fogels1963.pdf",
+      "sha256": "16ad86d54689add23af0c0c54150e999c52c01bba851c97881a9a285dd8c8570"
+    },
+    {
+      "path": "published-input-audit/gaussian_hecke_sw.tex",
+      "sha256": "56c7d6a62678123d2fd89bfc473f6934e75bd1da04233b292bda4cc9be77262e"
+    },
+    {
+      "path": "published-input-audit/bibliography.tex",
+      "sha256": "73bb6ad148114ae79bc204ab18ddf4337658a1b35e392f45c090a2d06c43135b"
+    },
+    {
+      "path": "published-input-audit/applications.json",
+      "sha256": "f9bfb6fd3ba85e8079088ec2389bd72ee7a9e17514edf2a5280f0e3b69d71ab1"
+    }
+  ],
+  "reviewSha256": "b9e53d912c1f3ff359e4a4c2d19e17a8e1273d3c6656883a77ce266c9cd6e388",
+  "productionPublishedInput": "Mitsui1956 Section1 Lemma15 with uniformity paragraph preceding Lemma14",
+  "excludedClaims": [
+    "full end-to-end FT replacement",
+    "release modification"
+  ]
+}

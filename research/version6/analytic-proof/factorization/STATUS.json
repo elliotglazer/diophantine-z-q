@@ -1,0 +1,34 @@
+{
+  "date": "2026-11-06",
+  "reviewStatus": "accepted by independent mathematical review of both markdown proofs",
+  "reviewFile": "../factorization-independent-review/REVIEW.md",
+  "genericFactorization": {
+    "file": "FACTORIZATION.md",
+    "sha256": "93eaf841621c852ae89b0447051f9773a89f3a31e44bd75dcf0e2666878cf559",
+    "hypotheses": [
+      "pointwise weight growth bounded by a fixed power of log N",
+      "arbitrary centered progression sums have every logarithmic saving uniformly for moduli up to any fixed power of log N",
+      "mean-zero nilsequence estimate has a fixed delta-power saving with polynomial complexity and logarithmic losses"
+    ],
+    "conclusion": "arbitrary polynomial nilsequence correlation has every logarithmic saving at fixed dimension, degree, and polylogarithmic initial rationality",
+    "choiceOrder": "target exponent -> cell diameter exponent -> factorization exponent B -> resulting upper exponent E(B) -> progression-SW saving exponent -> size threshold"
+  },
+  "fixedModulusInterpolation": {
+    "file": "AFFINE_PULLBACK.md",
+    "sha256": "a7849af9a4c44af44e8bfecd4f4e94fdee58c36f5ccfef3b20dca032ee1126a1",
+    "construction": "polynomial Malcev interpolation gtilde(t)=g_R((t-b)/W)",
+    "conclusion": "total delta equidistribution of g on [N] implies total delta^a equidistribution of gtilde on [WN+b] in a stated complexity regime",
+    "application": "Gaussian and ordinary ideal-von-Mangoldt minorarc bounds imply the needed fixed-W-tricked centered prime-weight minorarc bound, subject to checked finite-character expansion"
+  },
+  "publishedInputs": [
+    "Green-Tao, Quantitative behaviour, Theorem 1.19",
+    "Green-Tao, Quantitative behaviour, Theorem 2.9",
+    "Green-Tao, Quantitative behaviour, one-parameter coordinate characterization in Lemma 6.7",
+    "Green-Tao, Mobius function, printed pages 544-547 including quantitative conjugation claim"
+  ],
+  "notClaimed": [
+    "the arithmetic centered progression hypothesis is discharged here",
+    "the complete FT replacement is independently accepted",
+    "the released manuscript has been changed"
+  ]
+}

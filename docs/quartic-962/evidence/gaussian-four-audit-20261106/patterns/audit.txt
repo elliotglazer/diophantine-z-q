@@ -1,0 +1,76 @@
+Independent polynomial-pattern application audit, 2026-11-06
+
+Scope and result
+
+Audited baseline.tex SHA256 06f98ff070139c3b6c60589c65867ceb4366b023f7960551abd52f85fa67e30c, principally lines 18280-18611, the exact theorem at 16180-16210, and its use at 11048-11195. The Gaussian nilsequence input and obstruction-tail estimates are interfaces owned by the neighboring audits. This report does not certify those inputs or the whole manuscript.
+
+No unrepairable mathematical gap was found inside this scope. Two passages should be expanded to expose necessary arguments: fixed rescaling of the dense model before bounded-function concatenation, and the degree/disjointness argument for the ray-field quotient. Ready replacement fragments and exact baseline ranges are in edit-specs.json. A genuine bibliographic error is also corrected there: Tao-Ziegler is 60 pages, not 73.
+
+Skills and evidence
+
+Applied the unslop writing skill. No Lean implementation or statement-audit skill applies to this source-level analytic argument. I read the published source texts directly, not prior model reviews. Browser lookup independently located the same Cambridge publisher PDF and the MSP published ray-class paper. The DOI redirect failed in the browser, but the direct Cambridge PDF was indexed.
+
+Published source pins
+
+1. Tao and Ziegler, Polynomial patterns in the primes, Forum of Mathematics, Pi 6 (2018), e1, 60 pp., DOI 10.1017/fmp.2017.3.
+Publisher PDF:
+https://www.cambridge.org/core/services/aop-cambridge-core/content/view/B46C46EEC613F34152B7904E83EA0E3F/S2050508617000038a.pdf/polynomial-patterns-in-the-primes.pdf
+Local PDF: work/quartic-version5-release/sun-proof/sources/TZ-published.pdf
+SHA256 ba1645db9857dd621e8ea6a280927c1e4b7cef5f6df04a4f19e7ac7782220f43
+Read Theorem 9 p21, Theorem 11 p28, Proposition 4 pp35-36, Corollary 3 p38, the explicit model rescaling at p40, Theorem 13 p41, and the W-trick pp52-54. The baseline's published numbering and quoted page locations agree with this edition. The title page and final page show 60 pp.
+
+2. Kopp and Lagarias, Ray class groups and ray class fields for orders of number fields, Essential Number Theory 4 (2025), no.1, 1-65, DOI 10.2140/ent.2025.4.1.
+Publisher PDF:
+https://msp.org/ent/2025/4-1/ent-v4-n1-p01-p.pdf
+Local PDF: work/quartic-version5-release/sun-proof/sources/Kopp-Lagarias-published.pdf
+SHA256 258738fef78b451390e78c019ea33adbeA9a6d45af7625136bbc84897b224667
+Read Theorems 1.1 and 1.3, Theorem 6.5, Theorem 7.2 and Remark 7.3. Theorem 1.3 and Theorem 7.2 explicitly use arithmetic Frobenius, as required here.
+
+3. Williams, Mertens' theorem for arithmetic progressions, Journal of Number Theory 6 (1974), 353-359, DOI 10.1016/0022-314X(74)90032-8.
+Local PDF: work/quartic-version5-release/sun-proof/sources/Williams-published.pdf
+SHA256 9e78492d928f8af5654388db11d9d253749fe7c1e1b627effd0f20d1baaFc8c0
+Read Theorem 1 on printed p356 and the Mertens formula (1.1) on p353. Applying the theorem to the two reduced classes modulo 4 suffices, regardless of how one reads the modulus-one endpoint. Comparing 1-4/(ell-1) with (1-1/ell)^4 gives a convergent positive ratio product for ell>11.
+
+Tao-Ziegler interface
+
+The polynomial functions after u=Wx+b, w=Wm+c have coefficients O(W), and their pairwise differences have degree exactly 2 since c_j are distinct. Thus they satisfy the top-degree hypothesis; there is no missing polynomial admissibility condition in the transfer step. Arithmetic admissibility is handled in the residue-class sum.
+
+Theorem 13 is applied with degree d=d0=2, one polynomial parameter, coarse scale M0=floor(T/W), and fine scale M1=floor(M0/A). It returns bounded-complexity degree-one step polynomials with coefficient size O(A^C), where C depends on fixed polynomial complexity. Choosing B0>C+2 makes these coefficients at most calA=A^B0 for sufficiently large v. The dense-model theorem and concatenation theorem use calA and rho*=rho/B0 while retaining the fine scale M1. These are separate applications; one must not incorrectly replace the Theorem-13 fine scale by M0/calA.
+
+Truncation at n^rho makes f_{j,b} pointwise no larger than the ordinary prime weight truncated at the smaller n^rho*. Theorem 11 therefore applies to f, not to the signed centered function directly. Corollary 3 supplies simultaneous global and local norm approximation for the same model. Its model is bounded by a fixed constant depending on rho*, rather than by one. Division of f'-mu by a fixed constant, as in the published proof on p40, allows Theorem 9. The replacement fragment makes this explicit. Theorem 13 accepts every centered factor since |f-mu| is bounded by the ordinary normalized prime weight plus one.
+
+The stated scale inequalities imply n*A^(-2B0*a-7) <= J <= n*A^(-2B0*a), while q<=A^(B0*a). Consequently the global input is used with C1=B0*a, C2=2B0*a, C3=2B0*a+7. Theorem 9's smallness threshold does not depend on calA, so the global error O(1/log v) can be made adequate after fixing rho*, the model bound, and complexities. All logarithmic lower bounds on M1 hold at each fixed v for sufficiently large n.
+
+The replacement of a squarefree W by fixed E times a primorial has the stated local justification: unit residues eliminate all divisor terms involving primes dividing E. E is fixed with the ray field; primes away from W have the same local factors. Nothing here asserts uniformity as the ray conductor varies.
+
+Residue-class normalization
+
+For p away from all coefficient differences, w=0 allows p-1 values of u; each of the p-1 nonzero w allows p-k values of u. Hence the exact number is (p-1)(p-k+1), giving beta_p=1+O_k(p^-2). At exceptional primes, w=0 and u nonzero still gives positivity. The admissible residue mass multiplied by (W/phi(W))^k is product_{p|W} beta_p, bounded uniformly in v. Thus uniform normalized residue errors are not multiplied by an unbounded logarithmic factor. The D-local conditional density factor in the displayed singular series is correct.
+
+This conclusion uses the neighboring audit's weighted boundary-localization input, especially when some c_j are negative. I have not replaced that input with a pointwise logarithmic estimate.
+
+Ray-class density
+
+The Gaussian unit quotient embeds faithfully at the base factor modulo16. Reduction to the base ray group has kernel product B_ell, without an extra factor of four. The map z/bar(z) has image exactly the norm-one subgroup for both split and inert primes, so N_L lies in the commutator subgroup.
+
+Trivial action of conjugation on the new norm factors alone would not prove a direct-product extension. The supplied replacement instead puts K0 and Q(zeta_T) inside K_L^{N_L}, proves disjointness using ramification, and compares degrees. This proves both the direct-product quotient and the asserted maximal abelian field.
+
+In a fixed nonzero norm fibre N(z)=s, each forbidden adjacent norm gives a fixed real coordinate and at most two imaginary coordinates. At most four elements are removed from ell-chi(ell). The denominator is |G0'|*product(ell-chi(ell)), and the numerator is at least |C0|*product(ell-chi(ell)-4). Both conjugates in C0 have the same restriction to the abelianization. This proves the claimed conditional lower density with no extra field-degree loss.
+
+Using u=b0,w=0 modulo D0 supplies a fixed positive base factor. At each new prime the remaining normalization is beta_ell. The positive convergent product of beta factors and the Mertens comparison yield S_L >= c(log L)^(-4k), with c independent of L.
+
+Final order of limits
+
+The polynomial theorem is used only after one fixed L is chosen. Since 1/(L log L)=o((log L)^(-4k)), the tail constant can be made smaller than the retained density. No growing-field Chebotarev or nilsequence estimate is being invoked.
+
+For each fixed tau_j, the tail error threshold can be enforced by N_j. The extra condition omega(N)<=tau_j/2 and floor(tau_j sqrt N)>=tau_j sqrt N/2 implies T>=omega(N)sqrt N. The lower count c*N*T/(4(log L)^(4k)) is at least c*tau_j*N^(3/2)/(8(log L)^(4k)); the two displayed tail contributions total less than c*tau_j*N^(3/2)/(16(log L)^(4k)). The constants leave a positive margin. The final u/w^2 lower bound and the q^2 coefficient dilation prove all growth and divisibility quantifiers.
+
+Actual completeness use
+
+At 11083-11097 the contact coefficients are fixed integers before invoking the prime theorem, repeated forms are deleted, and at least five remain because each detector has five distinct contacts. Thus k>=2 and distinctness hold. The odd squarefree avoidance modulus explicitly omits7 as required; the separate residue at7 gives the required avoidance there. The freely specified q supplies every later finite divisibility requirement on w. The freely specified H supplies the large lambda requirement, since D0 is fixed. The freely specified Y handles all fixed bad primes.
+
+The generator congruences give exact 2-adic valuations 6 and2, and all cross-sign gcds4, as required by the three congruences on h. With 64|L and64|h0, their gcds are indeed4,64,4. The selected primes are squares in Q2,Q3,Q17: their norms are1 modulo16,3,17. The use of the prime theorem therefore matches its proven quantifiers; no extra density theorem or uniform-in-h statement is silently demanded here.
+
+Status
+
+Ready for integration of the three edit specifications. No shared TeX file was changed. The conclusions above are conditional on the separately audited upstream Gaussian linear/nilsequence estimate and weighted obstruction tail.

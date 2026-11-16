@@ -1,0 +1,93 @@
+% Published replacement for the original H5 quotient-model input Q.
+\subsection{A published identification of the five-contact quotient}
+Let $X=X_0(210,1)$ be the canonical maximal-level Shimura curve of
+discriminant $210$, and let $W$ be its Atkin--Lehner group.
+Gonz\'alez--Rotger \cite[Theorem 4.2 and Table 2, pp.~938--939]{GonzalezRotger2006}
+identify the following curves over $\mathbb Q$ with
+$X/\langle w_m\rangle$, respectively:
+\[
+\begin{array}{c|l}
+m&y^2\\\hline
+30&-43x^4-686x^3-2915x^2-1372x-172\\
+42&-43x^4+600x^3-986x^2-600x-43\\
+70&-43x^4+256x^3-130x^2-768x-387\\
+105&-43x^4+2x^3+505x^2+12x-1548.
+\end{array}
+\]
+Their notation in Section 4, p.~937, is
+$X_D=X_0(D,1)$ and $X_D^{(m)}=X_D/\langle\omega_m\rangle$.
+Thus these are the required labeled quotients, not merely curves in
+the isogeny classes of their Jacobians. The cited result is a theorem
+in the 2006 journal article; no later unpublished quotient table is
+needed here.
+
+For a quartic with coefficients $(a,b,c,d,e)$ set
+$I=12ae-3bd+c^2$ and
+$J=72ace+9bcd-27ad^2-27b^2e-2c^3$.
+Its Jacobian has $j=6912I^3/(4I^3-J^2)$. Direct rational arithmetic
+on the four published models gives, in the displayed order,
+\[
+\frac{191342053882402567201}{129708022500},\quad
+\frac{2179252305146449}{66177562500},\quad
+\frac{128031684631201}{9922500},\quad
+\frac{1169975873419524361}{108425318400}.
+\]
+Writing $j_L(t)=256(1-t+t^2)^3/(t^2(1-t)^2)$, these equal
+\[
+ j_L(1/2401),\quad j_L(32/375),\quad
+ j_L(1/225),\quad j_L(5/1029).
+\]
+The accompanying exact checker also computes the same values from
+the independent short-Weierstrass coefficients of the Jacobians
+in Gonz\'alez--Rotger's Table 3, p.~939.
+
+Here is why these invariants determine the desired contact line.
+The genus formula in \cite[Proposition 5.2, pp.~940--941]{GonzalezRotger2006}
+gives $g(X)=1+\varphi(210)/12=5$: its two elliptic terms vanish
+because $5$ splits in $\mathbb Q(i)$ and $7$ splits in
+$\mathbb Q(\sqrt{-3})$. Moreover,
+$W\simeq(\mathbb Z/2\mathbb Z)^4$.
+Each displayed genus-one quotient gives eight fixed points of $w_m$
+on $X$. A stabilizer of a point of a characteristic-zero curve is
+cyclic, so nontrivial stabilizers here have order two and each
+nonempty fixed set is a union of eight-element $W$-orbits.
+Riemann--Hurwitz for $X\to X/W$ therefore reads
+\[
+ 8=16(2g(X/W)-2)+\sum_{1\ne w\in W}\#\operatorname{Fix}(w).
+\]
+The four known fixed sets contribute 32. Hence $g(X/W)=0$, the sum
+is 40, and there is exactly one further branch orbit. The product
+of the inertia generators in this abelian cover is one. The four
+known inertia labels have square-class product $210$; consequently
+the fifth label is $210$.
+
+All five labels are distinct and their involutions are rational, so
+each branch point is rational: Galois must preserve its unique inertia
+label. Normalize their coordinates by
+$b_{210}=\infty$, $b_{105}=0$, $b_{70}=1$ and write
+$b_{42}=\lambda$, $b_{30}=\mu$.
+For $E=X/\langle w_m\rangle$, the residual group has order eight
+and exponent two. Over $\overline{\mathbb Q}$ its translation subgroup
+is precisely $E[2]$, of order four. The quotient by translations is
+isomorphic to $E$ via multiplication by two. Its remaining double
+cover of $X/W$ branches at the four points other than $b_m$.
+It follows that
+\[
+\begin{split}
+j_L(\lambda)&=j_L(1/2401),\qquad
+j_L(\mu)=j_L(32/375),\\
+j_L(\mu/\lambda)&=j_L(1/225),\qquad
+j_L((\mu-1)/(\lambda-1))=j_L(5/1029).
+\end{split}
+\]
+The first two equations restrict each parameter to its six
+cross-ratio transforms. Testing their 36 pairs in the last two
+equations gives the unique solution
+\[
+\lambda=2401,\qquad\mu=-343/32.
+\]
+This finite computation is performed over $\mathbb Q$ in
+\texttt{check\_published\_quotients.py}. Thus the contact configuration
+is exactly $\{\infty,0,1,2401,-343/32\}$ from a published modular
+identification. This closes input Q only; the arithmetic height
+and integral-model arguments are separate obligations.

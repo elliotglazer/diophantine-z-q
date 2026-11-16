@@ -1,0 +1,560 @@
+{
+  "schema": "original15671-level-repair/v3-final-accepted",
+  "status": "ACCEPTED: complete H5 mathematical and source argument in V4",
+  "statement": "The original H5 constant and contacts are unchanged. Non-CM estimate follows through N<=210^300 R^2 and hF(A)<2^24*210^3600 R^24, R=B_*M.",
+  "source_policy": "No joint von Kanel-Kret, generic bounded Wu descent, or uniform scalar coefficient-field theorem is used. Conrad local-character preprint is not used: a determinant argument proves the modular twist finite.",
+  "source_metadata_provenance": "work\\github-research-upload-20261104\\repository\\docs\\theorem-application-audit\\sources.json",
+  "inherited_source_records": [
+    {
+      "id": "berger2002",
+      "bibliography": "L. Berger, \\emph{Repr\\'esentations $p$-adiques et\n\\'equations diff\\'erentielles}, Inventiones Mathematicae 148 (2002),\n219--284, $p$-adic monodromy theorem.\n\\url{https://doi.org/10.1007/s002220100202}.",
+      "urls": [
+        "https://doi.org/10.1007/s002220100202"
+      ],
+      "files": [
+        {
+          "workspace_relative_path": "work/theorem-application-audit-20261105/primary/berger2002.pdf",
+          "sha256": "aada448ae1e8536e370e743a2dd9ca96768ff9f3cf85e1816bb6f88e92f544df",
+          "bytes": 617453,
+          "retrieval_url": "https://perso.ens-lyon.fr/laurent.berger/articles/article02.pdf",
+          "retrieved_date": "2026-11-05"
+        },
+        {
+          "workspace_relative_path": "work/theorem-application-audit-20261105/primary/berger-arxiv-v3.pdf",
+          "sha256": "142e7948f3c2da0cba0e0e764c2543cb3f0cf039470711fae729c9c3d2f54f6c",
+          "bytes": 562200,
+          "retrieval_url": "https://arxiv.org/pdf/math/0102179v3",
+          "retrieved_date": "2026-11-05"
+        }
+      ],
+      "version_notes": "The author article has Theorem 0.7/Corollary 5.22; arXiv v3 has Theorems 0.6/5.19. Both files are separately pinned. Do not transfer numbering.",
+      "source_status": "bytes_pinned"
+    },
+    {
+      "id": "faltings1983",
+      "bibliography": "G. Faltings, \\emph{Endlichkeitss\\\"atze f\\\"ur\nabelsche Variet\\\"aten \\\"uber Zahlk\\\"orpern}, Inventiones Mathematicae\n73 (1983), 349--366; erratum, 75 (1984), 381.",
+      "urls": [],
+      "files": [
+        {
+          "workspace_relative_path": "work/theorem-application-audit-20261105/primary/faltings1983.pdf",
+          "sha256": "738d6b5f716e05b8180066f665e52170576061c1ba75802d1e4f3c4cc1d69614",
+          "bytes": 2488206,
+          "retrieval_url": "https://pazuki.perso.math.cnrs.fr/index_fichiers/Faltings83.pdf",
+          "retrieved_date": "2026-11-05"
+        }
+      ],
+      "version_notes": "Inventiones 73 (1983), pp.349–366. Read together with the separately pinned 1984 erratum: Satz 2 has eventual stationarity, not equality of all tower heights. The erratum states this suffices for subsequent results.",
+      "source_status": "bytes_pinned"
+    },
+    {
+      "id": "javanpeykar",
+      "bibliography": "A. Javanpeykar, with an appendix by P. Bruin,\n\\emph{Polynomial bounds for Arakelov invariants of Belyi curves},\nAlgebra \\& Number Theory 8 (2014), 89--140,\nTheorem 1.1.1 and Section 2.3.\n\\url{https://doi.org/10.2140/ant.2014.8.89}.",
+      "urls": [
+        "https://doi.org/10.2140/ant.2014.8.89"
+      ],
+      "files": [
+        {
+          "workspace_relative_path": "work/theorem-application-audit-20261105/primary/javanpeykar.pdf",
+          "sha256": "ec890fb41c58dee038ee2e06b530954f3aab85035238cd54a4c0ef081fcb8ea0",
+          "bytes": 1222544,
+          "retrieval_url": "https://msp.org/ant/2014/8-1/ant-v8-n1-p04-s.pdf",
+          "retrieved_date": "2026-11-05"
+        }
+      ],
+      "version_notes": "Exact bytes pinned below; publication/version equivalence is not inferred from the filename.",
+      "source_status": "bytes_pinned"
+    },
+    {
+      "id": "li-newforms",
+      "bibliography": "W.-C. W. Li,\n\\emph{Newforms and functional equations}, Mathematische Annalen\n212 (1975), 285--315, p.~296.",
+      "urls": [],
+      "files": [
+        {
+          "workspace_relative_path": "work/theorem-application-audit-20261105/parallel-009/geometry/li1975-scan-293.jpg",
+          "sha256": "15c3948aac6dae70b96348462d1d7b6492b0c14efac8906d40c2d16a7cf6334b",
+          "bytes": 268845,
+          "retrieval_url": "https://gdz.sub.uni-goettingen.de/content/PPN235181684_0212/1000/0/00000293.jpg"
+        },
+        {
+          "workspace_relative_path": "work/theorem-application-audit-20261105/parallel-009/geometry/li1975-scan-302.jpg",
+          "sha256": "a207581a157559fc1a5d3f59a3d4da6e6e194b1ef9bc6a73652cd393c6b0d760",
+          "bytes": 405131,
+          "retrieval_url": "https://gdz.sub.uni-goettingen.de/content/PPN235181684_0212/1000/0/00000302.jpg"
+        },
+        {
+          "workspace_relative_path": "work/theorem-application-audit-20261105/parallel-009/geometry/li1975-scan-304.jpg",
+          "sha256": "07530575e712b4ded14ce64f877ca4f9383bbc7a020cb7dbd70fe88e6ab3ccb2",
+          "bytes": 321274,
+          "retrieval_url": "https://gdz.sub.uni-goettingen.de/content/PPN235181684_0212/1000/0/00000304.jpg"
+        },
+        {
+          "workspace_relative_path": "work/theorem-application-audit-20261105/parallel-009/geometry/li1975-scan-306.jpg",
+          "sha256": "b85999bac4388c35355775dc9fa4f59da9f010ef284a7ab45d3e48b58f857aaf",
+          "bytes": 367936,
+          "retrieval_url": "https://gdz.sub.uni-goettingen.de/content/PPN235181684_0212/1000/0/00000306.jpg"
+        }
+      ],
+      "version_notes": "Published 1975 article, GDZ original page scans. OCR basenames are offset by one and are not printed-page locators.",
+      "source_status": "bytes_pinned"
+    },
+    {
+      "id": "milne",
+      "bibliography": "J. S. Milne, \\emph{Arithmetic duality theorems},\nsecond edition, 2006, Chapter I.\n\\url{https://www.jmilne.org/math/Books/ADTnot.pdf}.",
+      "urls": [
+        "https://www.jmilne.org/math/Books/ADTnot.pdf"
+      ],
+      "files": [
+        {
+          "workspace_relative_path": "work/astra-arithmetic-final-composition-001/milne-ADT-2006.pdf",
+          "sha256": "2c6195ec76a974f3f336c77cb71cc3845b018aad2d43136716b3477a3bc5fb31",
+          "bytes": 2136045
+        }
+      ],
+      "version_notes": "Exact bytes pinned below; publication/version equivalence is not inferred from the filename.",
+      "source_status": "bytes_pinned"
+    },
+    {
+      "id": "pan2022",
+      "bibliography": "L. Pan, \\emph{The Fontaine--Mazur conjecture in the\nresidually reducible case}, arXiv:1901.07166v2,\nTheorem 1.0.4, the version used here. Published in Journal of the\nAmerican Mathematical Society 35 (2022), 1031--1169.\n\\url{https://arxiv.org/abs/1901.07166v2}.",
+      "urls": [
+        "https://arxiv.org/abs/1901.07166v2"
+      ],
+      "files": [
+        {
+          "workspace_relative_path": "work/theorem-application-audit-20261105/primary/pan2022.pdf",
+          "sha256": "590171129d28a65749cf92b1f6099dbacaa90cc6698828f0a4dfd3da943f4824",
+          "bytes": 1552018,
+          "retrieval_url": "https://arxiv.org/pdf/1901.07166v2",
+          "retrieved_date": "2026-11-05"
+        },
+        {
+          "workspace_relative_path": "work/theorem-application-audit-20261105/primary/pan2022.pdf",
+          "sha256": "590171129d28a65749cf92b1f6099dbacaa90cc6698828f0a4dfd3da943f4824",
+          "bytes": 1552018,
+          "retrieval_url": "https://arxiv.org/pdf/1901.07166v2",
+          "retrieved_date": "2026-11-05"
+        }
+      ],
+      "version_notes": "The application uses the pinned arXiv:1901.07166v2, Theorem 1.0.4, as explicitly identified in the revised bibliography. The bibliography also records the later JAMS publication. Publisher bytes were not retrieved, and no publisher/preprint statement equivalence is asserted.",
+      "source_status": "bytes_pinned"
+    },
+    {
+      "id": "scholze-erratum",
+      "bibliography": "P. Scholze,\n\\emph{$p$-adic Hodge theory for rigid-analytic varieties---corrigendum},\nForum of Mathematics, Pi 4 (2016), e6, 1--4.\n\\url{https://doi.org/10.1017/fmp.2016.4}.",
+      "urls": [
+        "https://doi.org/10.1017/fmp.2016.4"
+      ],
+      "files": [
+        {
+          "workspace_relative_path": "work/theorem-application-audit-20261105/closure/primary/scholze-erratum-published.pdf",
+          "sha256": "3caea8d89df1e7d047d4edc89a679cd1deb2a19ec350effb450305a9c8eef3d1",
+          "bytes": 166017,
+          "retrieval_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/423022854D448D337C999BCD505D8F75/S2050508616000044a.pdf/div-class-title-span-class-inlineformula-span-class-alternatives-img-class-inline-graphic-mathjax-alternative-mathjax-alt-graphic-mathjax-off-data-mimesubtype-gif-data-type-simple-src-staticdomain-binary-version-id-urn-cambridge-org-id-binary-20160920235108143-0373-s2050508616000044-s2050508616000044-inline1-gif-span-class-mathjax-tex-wrapper-data-mathjax-type-texmath-span-class-tex-math-mathjax-tex-math-mathjax-on-p-span-span-span-span-adic-hodge-theory-for-rigid-analytic-varieties-corrigendum-div.pdf",
+          "retrieved_date": "2026-11-05"
+        },
+        {
+          "workspace_relative_path": "work/theorem-application-audit-20261105/primary/scholze-erratum.pdf",
+          "sha256": "3cfa56b9e3875c04240d97739dccd58091e41f714c101d5470b95172f73cb235",
+          "bytes": 178436,
+          "retrieval_url": "https://www.math.uni-bonn.de/people/scholze/pAdicHodgeErratum.pdf",
+          "retrieved_date": "2026-11-05"
+        }
+      ],
+      "version_notes": "Published Forum of Mathematics Pi 4 (2016), e6, four pages, DOI 10.1017/fmp.2016.4. Read with the 2013 article; the author version is retained separately. Published Forum of Mathematics Pi 4 (2016), e6, four pages, DOI 10.1017/fmp.2016.4. Read with the 2013 article; the author version is retained separately.",
+      "source_status": "bytes_pinned"
+    },
+    {
+      "id": "scholze2013",
+      "bibliography": "P. Scholze,\n\\emph{$p$-adic Hodge theory for rigid-analytic varieties},\nForum of Mathematics, Pi 1 (2013), e1, 1--77,\nCorollary 1.8 and Theorems 9.1, 9.3.\n\\url{https://doi.org/10.1017/fmp.2013.1}.",
+      "urls": [
+        "https://doi.org/10.1017/fmp.2013.1"
+      ],
+      "files": [
+        {
+          "workspace_relative_path": "work/theorem-application-audit-20261105/closure/primary/scholze-published.pdf",
+          "sha256": "f47a05bbcdd1ac69deb87ce4b6af5bbbc245cbbf0e99df74e8bf73b6d89227d7",
+          "bytes": 688182,
+          "retrieval_url": "https://www.cambridge.org/core/services/aop-cambridge-core/content/view/9C5E8381BE3CD320ECADDDEAD2616B55/S2050508613000012a.pdf/dollarpdollar-adic-hodge-theory-for-rigid-analytic-varieties.pdf",
+          "retrieved_date": "2026-11-05"
+        },
+        {
+          "workspace_relative_path": "work/theorem-application-audit-20261105/primary/scholze2013.pdf",
+          "sha256": "73dded06286031066e9d98b638e065d650688f1e36e877f4d711331a3508dee3",
+          "bytes": 577883,
+          "retrieval_url": "https://people.mpim-bonn.mpg.de/scholze/pAdicHodgeTheory.pdf",
+          "retrieved_date": "2026-11-05"
+        }
+      ],
+      "version_notes": "Published Forum of Mathematics Pi 1 (2013), e1, 77 pages. Corollary 1.8 is on pp.5-6; Theorems 9.1 and 9.3 are on pp.74-75. The author version is also retained separately. The applied repair uses the published article with its published corrigendum. Published Forum of Mathematics Pi 1 (2013), e1, 77 pages. Corollary 1.8 is on pp.5-6; Theorems 9.1 and 9.3 are on pp.74-75. The author version is also retained separately. The applied repair uses the published article with its published corrigendum.",
+      "source_status": "bytes_pinned"
+    },
+    {
+      "id": "serrelocal",
+      "bibliography": "J.-P. Serre, \\emph{Local class field theory},\nin J. W. S. Cassels and A. Fr\\\"ohlich (eds.), \\emph{Algebraic Number Theory},\nAcademic Press, 1967, Chapter VI, 128--161, Sections 4.1--4.3.",
+      "urls": [],
+      "files": [
+        {
+          "workspace_relative_path": "work/independent-height-review-20261104/conductor/primary/serre-local-cft.pdf",
+          "sha256": "e0367b25a022eb27ec220e3c15b474a94fb96d70a6bb89b77f4a02c2231950fe",
+          "bytes": 23921659
+        }
+      ],
+      "version_notes": "Inspected extract of Serre, Local class field theory, Chapter VI in Cassels-Frohlich, Algebraic Number Theory (1967), pp.128-161, followed by Tate Chapter VII. Sections 4.1-4.3, pp.155-159, supply the ramification and conductor statements. This is not Serre Local Fields (1979). Original retrieval URL of these exact extract bytes is unknown.",
+      "source_status": "bytes_pinned"
+    },
+    {
+      "id": "shimura-factors",
+      "bibliography": "G. Shimura,\n\\emph{On the factors of the jacobian variety of a modular function field},\nJournal of the Mathematical Society of Japan 25 (1973), 523--544,\nTheorem 1.\n\\url{https://doi.org/10.2969/jmsj/02530523}.",
+      "urls": [
+        "https://doi.org/10.2969/jmsj/02530523"
+      ],
+      "files": [
+        {
+          "workspace_relative_path": "work/theorem-application-audit-20261105/parallel-009/galois-height/shimura1973.pdf",
+          "sha256": "6a34cc46d06c0f5d4e7d380ddcbc45ec3143b19359bfebba5b1c8f00976f3308",
+          "bytes": 1646652
+        }
+      ],
+      "version_notes": "Original downloaded bytes; exact retrieval recorded in downloads.json.",
+      "source_status": "bytes_pinned"
+    },
+    {
+      "id": "silverbergzarhin",
+      "bibliography": "A. Silverberg and Yu. G. Zarhin,\n\\emph{Semistable reduction and torsion subgroups of abelian varieties},\nAnnales de l'Institut Fourier 45 (1995), 403--420, Theorem 3.5.\n\\url{https://www.numdam.org/article/AIF_1995__45_2_403_0.pdf}.",
+      "urls": [
+        "https://www.numdam.org/article/AIF_1995__45_2_403_0.pdf"
+      ],
+      "files": [
+        {
+          "workspace_relative_path": "work/independent-height-review-20261104/conductor/primary/silverberg-zarhin.pdf",
+          "sha256": "fc62ba1c9d1315a0c441a3dd7de46a254f379289e630c407a3336c0230d91052",
+          "bytes": 1826653
+        }
+      ],
+      "version_notes": "Exact bytes pinned below; publication/version equivalence is not inferred from the filename.",
+      "source_status": "bytes_pinned"
+    },
+    {
+      "id": "carayol",
+      "bibliography": "H. Carayol, \\emph{Sur les repr\\'esentations\n$\\ell$-adiques associ\\'ees aux formes modulaires de Hilbert},\nAnnales Scientifiques de l'\\'Ecole Normale Sup\\'erieure 19 (1986), 409--468,\nTheorem A. \\url{https://www.numdam.org/item/ASENS_1986_4_19_3_409_0/}.",
+      "urls": [
+        "https://www.numdam.org/item/ASENS_1986_4_19_3_409_0/"
+      ],
+      "files": [
+        {
+          "workspace_relative_path": "work/astra-t3-opus-reconciliation-001/primary/carayol-1986.pdf",
+          "sha256": "d4a5fb6b1cd76f944f8948e06df1c7ad5656ae5ee14b9189178ee1e8f2b0dab8",
+          "bytes": 5887969
+        }
+      ],
+      "version_notes": "Exact bytes pinned below; publication/version equivalence is not inferred from the filename.",
+      "source_status": "bytes_pinned"
+    },
+    {
+      "id": "casselman",
+      "bibliography": "W. Casselman, \\emph{On some results of Atkin and Lehner},\nMathematische Annalen 201 (1973), 301--314,\nTheorem~1 and its proof, pp.~302--306, and Theorem~4, p.~313.",
+      "urls": [],
+      "files": [
+        {
+          "workspace_relative_path": "work/astra-t3-opus-reconciliation-001/primary/casselman-1973.pdf",
+          "sha256": "7f91ebae1a8f5e695800f4afb9fc06d0e2ea0b3a476751a31a7c8c3f38ad537d",
+          "bytes": 1208216
+        }
+      ],
+      "version_notes": "Exact bytes pinned below; publication/version equivalence is not inferred from the filename.",
+      "source_status": "bytes_pinned"
+    }
+  ],
+  "new_or_refined_applications": [
+    {
+      "source": "Silverberg-Zarhin1995",
+      "locator": "Section3 pp405-406; Theorems3.4 and3.5",
+      "inspection": "Official Numdam PDF independently opened in this task. The Neron mapping property, definitions, semistable extension theorem and full prime-to-residue torsion criterion were checked.",
+      "hypotheses": "Dimension2; n=11>=3; p=2,3,5,7 is distinct from11; full A[11] rational overE.",
+      "new_proof": "Division quaternion action rules out positive toric rank by B->M_t(Q), t<=2. Thus semistable means good."
+    },
+    {
+      "source": "Voight2021",
+      "locator": "Published2021 chapter43: equations43.1.2 and43.1.3 p800; MainTheorem43.6.14 p819; proofpp822-823, formula43.6.29p822.",
+      "url": "https://doi.org/10.1007/978-3-030-56694-4_43",
+      "inspection": "Independent worker verified published Springer chapterPDF throughweb. No validlocalPDFbytehash: localdownload returnedHTMLchallenge. Exactweb-source evidence distinguished from2026correctedbook.",
+      "new_proof": "Normalizer map rescaled at11 and cleared elsewhere gives prime-to11 isogenies among all conjugates. Their torsion kernels coincide overL, soE/Q isGalois.",
+      "published_pdf": "https://link.springer.com/content/pdf/10.1007/978-3-030-56694-4_43.pdf?pdf=inline+link",
+      "receipt": "../height-cocycle/VOIGHT2021_SOURCE_VERIFICATION.md",
+      "receipt_sha256": "3ab6520961f5ec40fc1e99432e6c1613891a0d0ff5a1384225425696a1bd2ac8"
+    },
+    {
+      "source": "Serre-local-cft",
+      "locator": "ChapterVI, sections4.1-4.3, pp155-159",
+      "new_proof": "Eisenstein derivative gives delta/e<=1+v_p(e). Upper-numbering different formula gives last break<=2delta/e. After tame character and one quadratic extension,v_p(e)<=67, hence break<=136 and conductor<=274."
+    },
+    {
+      "source": "Pan2022",
+      "locator": "Pan author version Theorem1.0.4 p5 and Conjecture1.0.1 p2; accessible published formulation in Calegari pp611-612,624.",
+      "inspection": "Accepted published formulation: Calegari, ICM2022 vol2, published2023, pp611-612 and624, DOI10.4171/ICM2022/101; detailed author theorem/proof checked in arXiv1901.07166v2 p5. Newton2022 independently corroborates. Direct AMS version-of-record comparison was unavailable and is not claimed.",
+      "hypotheses": "Continuous odd absolutely irreducible2D representation overQ5, finite ramification, potentially semistable at5, weights0,-1. No residual proviso applies at5.",
+      "accepted_source_chain": "published_source_chains.pan-published; final acceptance reviews this precise provenance."
+    },
+    {
+      "source": "Gaudron-Remond2023",
+      "locator": "Section1.5 and Theorem1.9(1), pp7-8",
+      "url": "https://doi.org/10.24033/msmf.484",
+      "proof": "../height-alternative/level-transfer.tex",
+      "hypotheses": "SourceJ1(N) overLprime, g>=2, dprime<=2304R, original stableFaltings normalization; generalXi^2 assertion only."
+    },
+    {
+      "source": "vonKanel2021",
+      "locator": "Equation5.9 p13 for genus; equation2.2 p5 for Bost lowerbound",
+      "proof": "../height-alternative/level-transfer.tex",
+      "status": "Independent height-literature worker verified publishedPDF and application."
+    },
+    {
+      "source": "Carayol1986",
+      "locator": "Sections0.3-0.7, TheoremA, pp409-411",
+      "application": "For the primitive weight-two modular form, the conductor of the ell-adic realization at p!=ell equals the local level exponent. Apply ell3 atp5 andell5 elsewhere. The algebraic half-trace comparison explicitly identifies both realizations with the scalar lift.",
+      "inspection": "Official Numdam publishedPDF independently opened in this task, pp409-411. TheoremA and sections0.3-0.7 checked. Not merely the rational-coefficient corollary0.8.",
+      "url": "https://www.numdam.org/article/ASENS_1986_4_19_3_409_0.pdf",
+      "hypotheses": "F=Q has odd degree1, so no auxiliary discrete-series finiteplace condition; holomorphic cuspidal weight2, arbitrary nebentypus; p!=ell.",
+      "normalization": "Section0.5 preserves epsilon factors after an unramified norm twist and contragredient, neither changing conductor. Casselman newform theory identifies automorphic conductor with primitive level."
+    },
+    {
+      "source": "Casselman1973",
+      "locator": "Theorem1 p302; bottomp306-topp307 for conductor in epsilonfactor; Theorem4 and followingparagraph p313 for primitivelevel.",
+      "application": "Conductor/newvector exponent equals the local primitive newform level exponent. Already a baseline published input; used together with Carayol rather than Li/Shimura alone.",
+      "inspection": "Independent source worker reread publishedpp309-313 and confirmed arbitraryDirichletnebentypus, notonlytrivialcharacter. The source convention epsilon(a)^(-1)=epsilon(d) follows fromad=1modN."
+    },
+    {
+      "source": "Yuan2024-author-attested-translation",
+      "locator": "English translation: Theorem1.1 p3; model Section2.1 pp4-6; coarse Section2.2 pp7-10; metrics Sections4.2-4.3 pp20-26.",
+      "accepted_source_chain": "published_source_chains.yuan-published",
+      "inspection": "The author labels the linked English PDF a translation of the published Chinese article. Final independent review accepts this source chain. The translation and arXiv have matching mathematical contents; no Chinese-typesetting comparison or byte identity is claimed.",
+      "application": "Image is210 times the square dualizing line with induced metric; h_omega^2=2h_F+2log(pi)+log(210). Actual principal levelU(3) is used; no inference from the misleading general containsU(N) wording."
+    }
+  ],
+  "proof_dependencies": {
+    "geometry": "Accepted V4 full H5 assembly; earlier height/five-contact-height.tex remains a historical conditional research snapshot.",
+    "local_review": "../height-cocycle/SMALL_PRIME_CONDUCTOR_REVIEW.md",
+    "independent_local_proof": "../height-descent/small-prime-conductor.tex",
+    "height_transfer": "../height-alternative/level-transfer.tex",
+    "global_candidate": "level-repair.tex",
+    "conductor_level_source_audit": "../height-alternative/conductor-level-audit.md",
+    "conductor_level_full_application": "../height-alternative/conductor-level.tex"
+  },
+  "remaining_before_unconditional_integration": [],
+  "distribution": "No primary PDFs or book pages included.",
+  "frozen_proof": {
+    "file": "level-repair.tex",
+    "sha256": "76244a20a0a3adb148bab97e2cdfe7824775a360f0a7b2c82787864340ca3f56",
+    "role": "Unchanged reviewed arithmetic fragment before final source/citation assembly; authoritative accepted text is V4."
+  },
+  "global_review": {
+    "path": "../review/GLOBAL_LEVEL_REVIEW.md",
+    "sha256": "4f1a0bccd5fdf6c5a7b314fc5ad542dcb2556d5fd734c42b7fe7938bb9082db9",
+    "scope": "Complete global mathematical argument accepted, including finite-twist determinant proof, coefficient-prime5 comparison, conductor and height estimates. Excludes exact Pan/Yuan publication-version matching and final integrated source review.",
+    "superseded_reservations": "Its Pan/Yuan source-version reservations and integrated-review gate are closed by final_acceptance. Mathematical acceptance remains valid."
+  },
+  "accepted_source": {
+    "path": "../author/h5-integration/UNAPPLIED-candidate-v4.tex",
+    "sha256": "655c0b26cabc12211e3214a1fba7bcfca4440baf77febec303f2b0e6802a7833",
+    "authority": "Complete accepted assembly; supersedes proposal-stage wording and citations of the unchanged local arithmetic fragment."
+  },
+  "final_acceptance": {
+    "path": "../review/H5_FINAL_ACCEPTANCE.md",
+    "sha256": "db62a7fa5fbcd2d4bc711436f2fb4f98c37de9122751ea7aeb097d96680905eb",
+    "scope": "Complete exact H5 and its use in the original 15671-witness construction; no mathematical or source-provenance issue remains open in this addition. Mathematical/source review, not formal proof certification."
+  },
+  "remaining_mathematical_or_source_obligations": [],
+  "delivery_boundary": "This packet does not perform repository promotion, compilation, visual review or publication. It does not upgrade the baseline manuscript independent-audit status.",
+  "published_source_chains": {
+    "pan-published": {
+      "path": "../pan-published/source-application-ledger.json",
+      "sha256": "8a6cb4f7a188aa48d3a56f17d2ee0ad488df516d494da784109d9408ec6dd3ea",
+      "record": {
+        "format": "pan-published-formulation/v1",
+        "status": "Published formulation verified; Pan AMS version-of-record text not retrieved or compared",
+        "scope": {
+          "base_field": "Q",
+          "dimension": 2,
+          "prime": "p >= 5",
+          "hypotheses": [
+            "continuous",
+            "irreducible",
+            "odd",
+            "unramified outside finitely many primes",
+            "de Rham at p, equivalently potentially semistable",
+            "two distinct Hodge-Tate weights"
+          ],
+          "conclusion": "comes from a cuspidal eigenform up to twist",
+          "residual_image_hypothesis": false
+        },
+        "sources": [
+          {
+            "id": "calegari-icm2022",
+            "author": "Frank Calegari",
+            "doi": "10.4171/ICM2022/101",
+            "publication_year": 2023,
+            "event_and_copyright_year": 2022,
+            "publication_date": "2023-12-15",
+            "publication_date_source": "https://ems.press/books/standalone/274",
+            "landing_url": "https://ems.press/books/standalone/274/5411",
+            "pdf_url": "https://ems.press/content/book-chapter-files/33140",
+            "file": "calegari-icm-published.pdf",
+            "sha256": "d8e9a3ec3f2a4bedd674d95cf5f1e03fe26a67745c6f1cadf39b3fbf9e004cb5",
+            "printed_pages": "611-612,624",
+            "pdf_pages_one_based": [
+              2,
+              3,
+              15
+            ],
+            "role": "Published full regular theorem formulation and geometric hypothesis context",
+            "caveat": "Reference137 on printed649 cites Pan arXiv; this is not a comparison with Pan journal text."
+          },
+          {
+            "id": "newton-modularity2022",
+            "author": "James Newton",
+            "doi": "10.1007/s41745-022-00305-0",
+            "journal": "Journal of the Indian Institute of Science",
+            "volume": 102,
+            "pages": "861-884",
+            "publication_date": "2022-07-25",
+            "landing_url": "https://link.springer.com/article/10.1007/s41745-022-00305-0",
+            "pdf_url": "https://link.springer.com/content/pdf/10.1007/s41745-022-00305-0.pdf",
+            "file": "newton-2022-published.pdf",
+            "sha256": "534b5c3948a9b361baaa90c467f2b291303742b51301234525bfecf72fd7f6b1",
+            "printed_pages": "863-864,870",
+            "sections": [
+              "2.1",
+              "2.4",
+              "2.5",
+              "3.3"
+            ],
+            "role": "Independent published corroboration; definition of geometric, irreducibility context and weight>=2 interpretation",
+            "caveat": "Peer-reviewed review article, not a new proof of Pan; reference76 cites arXiv."
+          },
+          {
+            "id": "pan2022-author-v2",
+            "author": "Lue Pan",
+            "journal_doi": "10.1090/jams/991",
+            "inspected_url": "https://arxiv.org/pdf/1901.07166v2",
+            "inspected_version": "arXiv v2, 2021-09-03",
+            "existing_evidence_relative_to_workspace": "work/theorem-application-audit-20261105/primary/pan2022.pdf",
+            "sha256": "590171129d28a65749cf92b1f6099dbacaa90cc6698828f0a4dfd3da943f4824",
+            "locators": [
+              "Conjecture1.0.1 PDFp2",
+              "Theorem1.0.4 PDFp5",
+              "Hodge-Tate convention PDFp7"
+            ],
+            "role": "Author theorem and proof text inspected; p=3 caveat vacuous at p>=5",
+            "cyclotomic_Hodge_Tate_weight": -1,
+            "local_reciprocity": "uniformizers map to geometric Frobenius",
+            "VOR_compared": false
+          }
+        ],
+        "application": {
+          "chosen_prime": 5,
+          "Tate_module_weights": [
+            0,
+            -1
+          ],
+          "weight_two_finite_twist": "Derived in the level-repair proof by its weight and determinant comparison, not imported as a conductor or field bound from these sources",
+          "not_supplied": [
+            "uniform conductor bound",
+            "bounded coefficient field",
+            "bounded same-field GL2-type descent"
+          ]
+        },
+        "review": {
+          "calegari": "Independent reviewer inspected official publisher PDF and accepted exact scope; team message retained outside distributable packet",
+          "newton": "Source worker inspected official Springer PDF and HTML; independent review requested"
+        },
+        "excluded_claims": [
+          "AMS PDF obtained",
+          "arXiv and AMS text byte-identical",
+          "AMS Theorem1.0.4 directly inspected",
+          "survey gives an independent proof of Pan"
+        ]
+      }
+    },
+    "yuan-published": {
+      "path": "../yuan-published/source-application-ledger.json",
+      "sha256": "1251c3510cf14b184897d37a1236f7abc4a752e913e3ea00afd2db6b1236a2d3",
+      "record": {
+        "schema": "yuan-published-source-audit/v1",
+        "status": "author_attested_translation_verified_direct_chinese_text_not_obtained",
+        "publication": {
+          "author": "Xinyi Yuan",
+          "title": "Explicit Kodaira-Spencer Maps over Shimura Curves",
+          "journal": "Acta Mathematica Sinica, Chinese Series",
+          "year": 2024,
+          "volume": 67,
+          "issue": 2,
+          "pages": "227-249",
+          "doi": "10.12386/A20220154",
+          "url": "https://actamath.cjoe.ac.cn/Jwk_sxxb_cn/CN/10.12386/A20220154"
+        },
+        "translation": {
+          "date": "2024-04-30",
+          "url": "https://faculty.bicmr.pku.edu.cn/~yxy/preprints/explicit_KS.pdf",
+          "local_path": "primary/yuan-author-translation.pdf",
+          "sha256": "ad751f65ac5730b437adbabba78cc6bc1fe1f2249367c74566fe0a495100740e",
+          "attestation_url": "https://faculty.bicmr.pku.edu.cn/~yxy/publications.html",
+          "attestation_local_path": "primary/author-publications.html",
+          "attestation_sha256": "1353fa42f9436a51275726fd3f17c05670e1423328bcde501a4946879c28be5a",
+          "attestation_locator": "Automorphic forms, Shimura varieties and L-functions section; first entry",
+          "qualification": "The author calls the PDF a translation of the published Chinese article; the page also generally warns that linked files may differ slightly from published versions. No independent Chinese-English comparison is claimed."
+        },
+        "applications": [
+          {
+            "id": "YKS-INTEGRAL",
+            "locator": "Theorem 1.1, English translation p3; proof Section 3 pp10-17",
+            "hypotheses": "Indefinite quaternion algebra over Q, maximal order, open level U, determinant condition, compatible principal polarization, base Z[1/n(U)]",
+            "result": "The square-Hodge determinant Kodaira-Spencer injection has image d_B times the square relative dualizing bundle.",
+            "specialization": "d_B=210. Do not invert 210 in the integral statement or replace the image by a square-root multiplier."
+          },
+          {
+            "id": "YKS-METRIC",
+            "locator": "Definitions pp2-3, Theorem1.1 p3, Sections4.2-4.3 pp20-26",
+            "result": "Isometry with Hodge squared norm (2pi)^(-2) times the absolute integral and Petersson norm 2 Im(tau).",
+            "deduction": "Original Faltings normalization gives h_Y=h_F+log(pi) for dimension2; hence h_omega^2=2h_F+2log(pi)+log(210)."
+          },
+          {
+            "id": "YKS-MODEL",
+            "locator": "Section2.1 pp4-6",
+            "result": "Regular semistable moduli stack over Z[1/n(U)], smooth outside d_B and proper when B is division.",
+            "restriction": "Fine level U(3) is used over Z[1/3]. The printed 'contains U(N)' phrase is not used to infer fineness for larger levels."
+          },
+          {
+            "id": "YKS-COARSE",
+            "locator": "Coarse orbifold divisor p7; Lemma2.1 pp8-10; metric sentence p10",
+            "result": "The coarse Q-line bundle with horizontal coefficients1-1/e_P pulls back to the stack dualizing bundle and compatibly to normal finer scheme levels; these maps preserve Petersson metrics.",
+            "restriction": "Retain normality, integral base and ramification indices. The independent D210 normalizer quotient calculation is not replaced by this lemma."
+          }
+        ],
+        "comparison": {
+          "script": "compare_translation.py",
+          "report": "translation-comparison.json",
+          "report_sha256": "95b0f8b56e13cd5993da300de22a91f6a84a17b0045ecb89fd75bcdaba330604",
+          "arxiv_sha256": "660f05465fd04f23c0458f6ed182c843341a0a4cfa69d4caa1812d0eb3920f14",
+          "result": "Mathematical contents agree; extraction differences are recorded explicitly. This is not a comparison with the Chinese journal PDF."
+        },
+        "verification_note": "VERIFICATION.md",
+        "verification_note_sha256": "14015f8f44905eaabddadd32f1964eb714380a9fb6f4106f527a73d4c9e3e7ce"
+      }
+    }
+  },
+  "historical_routes": {
+    "bounded_same_field_descent": {
+      "status": "ABANDONED; not used by accepted H5 proof",
+      "records": [
+        "../height-descent/DESCENT_GAP.md",
+        "../height-descent/SPECIAL_COCYCLE.md",
+        "../review/COCYCLE_ACCEPTANCE.md"
+      ],
+      "reason": "Generic existence did not supply the needed bounds, and a uniform scalar coefficient field is obstructed. The accepted proof instead bounds modular level while allowing variable scalar character order."
+    },
+    "old_conditional_height_snapshot": {
+      "path": "../height/SNAPSHOT.json",
+      "status": "Historical; its open-A status is superseded by accepted V4, without changing its archived contents."
+    }
+  }
+}

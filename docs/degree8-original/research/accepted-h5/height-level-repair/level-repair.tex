@@ -1,0 +1,251 @@
+% Proposed repair of the original H5 arithmetic step. Independent review pending.
+% Uses the existing baseline bibliography keys, plus GaudronRemond2023 and
+% the published 2021 edition of Voight, chapter 43.
+\subsection{A level bound for the non-CM fibers}
+\label{sec:h5-level-repair}
+
+This argument allows the scalar character order and coefficient field to
+vary. It does not assert bounded same-field descent to a rational
+GL$_2$-type variety. Let $s$ be a rational point outside the five contacts,
+let $L/\mathbb Q$ be the normal fiber field constructed above, and let
+$A/L$ be a non-CM fiber surface. Thus $[L:\mathbb Q]\mid576$, all
+geometric homomorphisms between conjugate fibers are defined over $L$,
+and $\operatorname{End}^0(A_{\overline{\mathbb Q}})=B$, the quaternion
+division algebra of discriminant $210$. Put
+\[
+ R=B_*M(s),\qquad T=\{p:p\mid R\}.
+\]
+The geometric argument gives that $L$ is unramified outside $T$ and
+$A$ has good reduction outside the primes above $210$. All conjugate
+QM structures lie in the same normalizer orbit.
+
+\paragraph{Good reduction after full torsion.}
+First a QM surface with the indicated division action has potentially
+good reduction at every finite place. Indeed, pass to an extension with
+semistable reduction, using \cite[Theorem 3.4, p.~406]{silverbergzarhin}.
+Every endomorphism extends uniquely to the N\'eron model by its mapping
+property. On the identity component of the geometric special fiber it
+preserves the maximal torus $\mathcal T$: this torus is the maximal
+connected affine subgroup, and every homomorphism from a torus to an
+abelian variety is zero. If its rank $t$ is positive, restriction gives
+a unital homomorphism
+\[
+ B\longrightarrow\operatorname{End}^0(\mathcal T)=M_t(\mathbb Q),
+ \qquad 1\le t\le2.
+\]
+The kernel is a two-sided ideal of the simple algebra $B$, and the map
+is unital, so it is injective. For $t=1$ dimensions prohibit this;
+for $t=2$ it would be an isomorphism from a division algebra to
+$M_2(\mathbb Q)$, also impossible. Hence $t=0$. The semistable identity
+component is abelian, which is good reduction. These N\'eron-model and
+reduction conventions are those of \cite[\S3, pp.~405--406]{silverbergzarhin}.
+
+Set $E=L(A[11])$. We next justify that $E/\mathbb Q$ is Galois.
+For each $\sigma$, the normalizer relation supplies a compatible
+isogeny ${}^{\sigma}A\to A$ of degree prime to $11$. Here is the
+prime-to-$11$ detail. In the analytic description
+$A_z=\mathbb C^2/(\mathcal O(z,1)^t)$ of the published 2021 edition
+of Voight \cite[equations (43.1.2)--(43.1.3)]{voight-qm2021}, a positive normalizer element
+$b=\left(\begin{smallmatrix}a&b'\\c&d\end{smallmatrix}\right)$
+gives the scalar compatible map $(cz+d)I:A_{bz}\to A_z$.
+When $\mathcal O b\subset\mathcal O$, its degree is
+$[\mathcal O:\mathcal O b]=\operatorname{Nrd}(b)^2$.
+At $11$ the algebra is split and the maximal-order normalizer is
+$\mathbb Q_{11}^*\operatorname{GL}_2(\mathbb Z_{11})$.
+Rescale $b$ rationally to make it an $11$-adic unit, then clear the
+remaining denominators by an integer prime to $11$. This produces
+the claimed isogeny. Changes of level marking use isomorphisms.
+All these geometric homomorphisms are $L$-defined by construction.
+Consequently the $11$-torsion representations of $A$ and its conjugates
+over $L$ have the same kernel. Thus every conjugate of $E$ equals $E$.
+
+The faithful action on $A[11]$ now gives
+\[
+ [E:\mathbb Q]\le576|\operatorname{GL}_4(\mathbb F_{11})|
+ <2^{10}11^{16}<2^{66}.
+\tag{LR1}
+\]
+For residue characteristic different from $11$, full rational
+$11$-torsion gives semistable reduction over $E$ by
+\cite[Theorem 3.5, p.~406]{silverbergzarhin}. The preceding torus
+argument makes this good reduction. In particular it applies at
+each of $2,3,5,7$.
+
+\paragraph{The scalar lift with controlled support.}
+Choose $B$-compatible isogenies $\mu_\sigma:{}^\sigma A\to A$ over $L$,
+with $\mu_1=1$, and inflate this finite choice to $G_{\mathbb Q}$.
+Their discrepancies $c(\sigma,\tau)$ commute with $B$, so lie in
+$\mathbb Q^*$. Put $a_\sigma=(\deg\mu_\sigma)^{-1/4}>0$ and
+$\nu_\sigma=a_\sigma\mu_\sigma$, with trivial Galois action on the
+added algebraic coefficients. Since a scalar $c$ has degree $c^4$,
+the discrepancies of the $\nu_\sigma$ form a sign cocycle
+$\varepsilon\in Z^2(G_{\mathbb Q},\{\pm1\})$, inflated from
+$\operatorname{Gal}(L/\mathbb Q)$.
+
+The sign class is unramified, hence zero, locally outside $T$.
+At each odd prime where its Brauer invariant is $1/2$, choose an odd
+Dirichlet character modulo $p$; at $2$ use the odd character modulo
+$4$ if required. Their product $\chi$ is tame at every odd prime,
+has local conductor at most $4$ at $2$, and has order
+\[
+ m\le2\prod_{\substack{p\in T\\p\ne2}}(p-1)\le2R.
+\]
+For constant coefficient groups, the boundary in
+$1\to\{\pm1\}\to\mu_\infty\xrightarrow{2}\mu_\infty\to1$
+is the obstruction to a character square root. Local reciprocity
+identifies this obstruction with the value at $-1$: the cyclic
+torsion factor has precisely this obstruction, while the valuation
+and principal-unit factors admit character square roots.
+Thus the boundary of $\chi$ equals $[\varepsilon]$ at every finite
+place. Brauer reciprocity and the global-to-local injection give
+equality globally. A pointwise square root, corrected by a sign
+cochain, gives
+\[
+ b:G_{\mathbb Q}\longrightarrow\mu_{2m},\qquad
+ b^2=\chi,\qquad\delta b=\varepsilon.
+\tag{LR2}
+\]
+Only this \emph{sign} cochain is asserted to take root-of-unity values;
+the full scalar splitting also involves the $a_\sigma$.
+
+On $G_L$, $b$ is a conjugation-invariant character. Outside $T$ its
+inertia characters are quadratic. Only finitely many are nontrivial;
+twist by the quadratic character of the product of those odd primes
+to kill them. At each odd prime there is a unique nontrivial quadratic
+inertia character. This changes no square or coboundary in (LR2),
+and introduces possible ramification only at $2\in T$.
+The kernel field $L'$ of $b|G_L$ is normal over $\mathbb Q$ and
+\[
+ [L':\mathbb Q]\le2m[L:\mathbb Q]\le2304R.
+\tag{LR3}
+\]
+
+\paragraph{The compatible modular representations.}
+Choose a number field containing all normalization scalars, the values
+of $b$, and a splitting field of $B$. For each coefficient prime $\ell$
+and an embedding into $\overline{\mathbb Q}_\ell$, set
+\[
+ \rho_\ell(\sigma)=b(\sigma)^{-1}a_\sigma\mu_\sigma\circ\sigma.
+\]
+The cocycle identity makes this a representation commuting with $B$;
+after splitting $B$, matrix units give $\rho_\ell=r_\ell\oplus r_\ell$
+with $\dim r_\ell=2$. On $G_{L'}$, $\rho_\ell$ is the Tate action of
+$A$. Faltings' semisimplicity and endomorphism theorems and $\operatorname{End}^0(A)=B$
+show that the multiplicity representation is absolutely irreducible.
+Proper-smooth comparison and finite descent, as in
+Lemma~\ref{lem:de-rham-descent}, make $r_\ell$ de Rham with Tate
+Hodge--Tate weights $\{0,-1\}$; Berger's monodromy theorem makes it
+potentially semistable.
+
+It is odd. On Betti homology complex conjugation followed by the
+holomorphic isogeny $\mu_c$ exchanges the two Hodge summands, each
+a simple $B\otimes\mathbb C$-module. Its action on the multiplicity
+space is therefore nonscalar. After the scalar correction its square
+is one, so its eigenvalues are $1,-1$. The representation is unramified
+outside $T\cup\{\ell\}$, by (LR2) and the reduction and field properties.
+Pan's published Theorem 1.0.4 applies at $\ell=5$, with no additional
+residual-image restriction at that prime, and identifies $r_5$ with
+a cuspidal modular representation up to a character twist.
+
+The twist can be taken finite and the weight is two, without invoking
+a separate local-algebraicity theorem for characters. The twisting
+character is a de Rham subrepresentation of the relevant Hom
+representation. Comparing its integer weight with $\{0,-1\}$ and
+the modular weights $\{0,1-k\}$ forces $k=2$ and twist weight zero.
+On $G_{L'}$, the identity
+$(\det r_5)^2=\det V_5(A)=\chi_{\rm cyc}^2$ shows that
+$\det r_5/\chi_{\rm cyc}$ has finite image, since $G_{L'}$ has finite
+index in $G_{\mathbb Q}$. The modular determinant
+divided by $\chi_{\rm cyc}$ also has finite image. The square of the
+twisting character consequently has finite image, so the character
+itself has finite image. Absorb it in the modular form and take the
+primitive weight-two newform $f$ of level $N$.
+
+The conductor at $5$ is not omitted. For each prime
+$p\notin T\cup\{3,5\}$, reduction of $\mu_\sigma$ composed with
+relative $p$-Frobenius is a quasi-endomorphism of the good reduction
+of $A$ at a chosen place. After clearing denominators its characteristic
+polynomial is independent of the Tate prime. Half its trace, multiplied
+by $b(\sigma)^{-1}a_\sigma$, is therefore one algebraic number giving
+the trace of every $r_\ell$. Enlarge the coefficient field to contain
+the coefficients of $f$. The equality with the trace of $f$ at five
+is an equality of algebraic numbers; transporting it to an embedding
+at three and applying Chebotarev and semisimplicity identifies $r_3$
+with the three-adic realization of $f$. Thus use $r_3$ to compute the
+conductor at $5$ and $r_5$ at every other prime. The modular level is
+the conductor of these realizations by
+\cite[\S\S0.3--0.7, Theorem A, pp.~409--411]{carayol}
+and newform theory \cite[Theorems 1 and 4]{casselman}.
+Here the totally real field is $\mathbb Q$, of odd degree one, so
+Carayol's extra finite-place hypothesis for even degree does not apply.
+His unramified normalization twist and contragredient preserve the
+conductor; his theorem allows arbitrary nebentypus.
+Li's Fricke relation and Shimura's
+Jacobian construction, as in the baseline modularity argument, also
+place $r_5$ in the Tate module of $J_1(N)$.
+
+\paragraph{The conductor bound.}
+Let $F=E\mathbb Q(\chi)$, where $\mathbb Q(\chi)$ means the kernel
+field of the character, not its value field. On $G_F$, $b$ is a
+conjugation-invariant quadratic character. Its kernel gives a Galois
+extension $F'/\mathbb Q$ of degree at most two over $F$.
+For $p=2,3,5,7$, let $e_E,e_{F'}$ denote local ramification indices
+over $\mathbb Q_p$. From (LR1), $v_p(e_E)\le65$.
+At odd $p$ both added extensions are tame, whereas at $2$ each
+adds ramification index at most two. Consequently
+\[
+ v_p(e_{F'})\le65\ (p=3,5,7),\qquad v_2(e_{F'})\le67.
+\tag{LR4}
+\]
+The possibly unbounded tame ramification index causes no problem.
+For a finite Galois extension of $\mathbb Q_p$ with ramification
+index $e$ and different exponent $\delta$, an Eisenstein polynomial
+over the maximal unramified subfield gives
+\[
+ \delta\le e-1+ev_p(e).
+\]
+Indeed the derivative terms have distinct valuations modulo $e$,
+and its leading derivative term has the stated valuation. In upper
+numbering the different formula is
+\[
+ \delta/e=1-1/e+\int_0^\infty(1-|G^u|^{-1})\,du.
+\]
+Before the last positive break the integrand is at least $1/2$.
+Thus (LR4) bounds this break for $F'/\mathbb Q_p$ by $136$.
+These ramification and conductor conventions are those of
+\cite[\S\S4.1--4.3, pp.~155--159]{serrelocal}.
+Over $F'$ the scalar correction is trivial and $A$ has good reduction.
+Above that break, therefore, the two-dimensional representation is
+trivial on upper wild groups. Its Swan conductor is at most $272$,
+and its tame conductor is at most two. Hence
+\[
+ a_p(r)\le274<300\qquad(p=2,3,5,7).
+\]
+For $p>7$, $L/\mathbb Q$ is tame because its degree divides $576$,
+$A/L$ has good reduction, and $b$ is trivial on wild inertia:
+on that pro-$p$ group its square is tame and its remaining image has
+order at most two. Thus $a_p(r)\le2$ there; it is zero outside $T$.
+Using the coefficient-prime comparison above proves
+\[
+ N\le210^{300}R^2.
+\tag{LR5}
+\]
+
+\paragraph{The original constant is preserved.}
+Apply the accompanying modular-Jacobian transfer calculation with
+$C=210^{300}$ and (LR3)--(LR5). It gives
+\[
+ h_F(A)<2^{24}210^{3600}R^{24}
+ <2^{28824}R^{24}<4608^{165888}R^{24}.
+\tag{LR6}
+\]
+The last comparison uses $210<2^8$, $4608>2^{12}$, and
+$28824<1990656=12\cdot165888$. Together with the separately proved
+CM bound and geometric height comparison, (LR6) yields exactly
+\[
+ h(s)\le
+ \bigl(2(4608^{165888}+6^{100})B_*^{24}+128\bigr)M(s)^{24}.
+\]
+No contact, coefficient constant, or radical exponent has been changed.
+The proposed repair must be independently reviewed before replacing
+the conditional status of the frozen H5 snapshot.

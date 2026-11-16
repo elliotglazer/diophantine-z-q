@@ -1,0 +1,2189 @@
+{
+  "schema": "quartic-v5-reviewed-application-inputs-v1",
+  "scope": "Scoped authored application inputs for the four NEW Gaussian analytic fragments only. No whole-manuscript proof certification. SW, progression arithmetic and the Gowers bridge have separate inventories.",
+  "applications": [
+    {
+      "id": "V6-GN-LEIBMAN",
+      "kind": "new_external_application",
+      "reviewed_fragment": "gaussian-analytic",
+      "citation_keys": [
+        "GTOrbits2012"
+      ],
+      "current_labels": [
+        "lem:gn-norm-transfer",
+        "eq:gn-transfer"
+      ],
+      "exact_source_versions": [
+        {
+          "id": "GT-ORBITS-2012-PUBLISHED",
+          "bibliography": "B. Green and T. Tao, The quantitative behaviour of polynomial orbits on nilmanifolds, Annals of Mathematics 175 (2012), 465–540.",
+          "version": "Published journal PDF",
+          "url": "https://annals.math.princeton.edu/wp-content/uploads/annals-v175-n2-p02-p.pdf",
+          "files": [
+            {
+              "path": "work/quartic-version5-release/sun-proof/sources/GT-orbits-published.pdf",
+              "bytes": 861456,
+              "sha256": "8c7ea5eced84dc5da97508f4eda39fa84c958d3e659a797ab402645c1c207c8f"
+            }
+          ],
+          "inspection": "Published one-parameter Theorems 1.19 and 2.9, Lemmas 4.5 and 6.7, definitions and Appendix A checked in the cited review receipts. No multiparameter equidistribution theorem is used."
+        }
+      ],
+      "theorem_or_source_locator": "Theorem 2.9, printed p.480, one-parameter case",
+      "objects_and_maps": "Apply to t -> g(P(t)) Gamma on [L], with P an integer quadratic from a horizontal Gaussian-norm row. Target discrepancy epsilon=delta^kappa; dimension m and filtration degree at most 2d.",
+      "hypotheses_and_discharge": "Q<=delta^(-kappa)=epsilon^(-1); the stretched filtration and unchanged basis are supplied by V6-GN-COORDINATES. Failure of ordinary epsilon-equidistribution gives a nonzero horizontal character with epsilon-power size and smoothness bounds. L>=sqrt(X)/B0, B0<=delta^(-5kappa).",
+      "conventions": "G connected, simply connected and nilpotent; Gamma discrete cocompact; filtration by closed connected rational subgroups; adapted rational Malcev basis; C-infinity norm in the binomial basis modulo one; Lipschitz norm includes supremum norm. Nontrivial horizontal characters are integer-lattice characters annihilating commutators and Gamma.",
+      "translation": "Internal integer coefficient extrapolation returns k*eta on the original orbit. Choose C_* first, then 6*C_*kappa<c0/2, sigma<sigma0 and 2*kappa*sigma<1/4. The internal horizontal-character obstruction contradicts total delta-equidistribution. Only ordinary distribution is deduced for each row pullback.",
+      "status": "published_source_inspected_application_reviewed_relative_to_listed_inputs",
+      "review_limit": "Application inventory and cited human reviews; not a proof-assistant certificate or an independent truth decision for the complete manuscript.",
+      "exact_invocation_occurrences": [
+        {
+          "citation": {
+            "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+            "start_character": 797928,
+            "end_character": 797960,
+            "first_line": 16861,
+            "last_line": 16861,
+            "text_sha256": "8c76210647b4f936dfb7074deb2a9394ad3363de569a0e472f776735b9451c6d"
+          },
+          "paragraph": {
+            "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+            "start_character": 797851,
+            "end_character": 798072,
+            "first_line": 16860,
+            "last_line": 16863,
+            "text_sha256": "023710bbf2d864b045bc70e0a2906f9a329b83b1618f341b4db16986022e9878"
+          },
+          "locator": "Theorem 2.9"
+        },
+        {
+          "citation": {
+            "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+            "start_character": 801568,
+            "end_character": 801600,
+            "first_line": 16944,
+            "last_line": 16944,
+            "text_sha256": "8c76210647b4f936dfb7074deb2a9394ad3363de569a0e472f776735b9451c6d"
+          },
+          "paragraph": {
+            "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+            "start_character": 801390,
+            "end_character": 801911,
+            "first_line": 16941,
+            "last_line": 16952,
+            "text_sha256": "53eccd8f8836b1e8efeddf9b21e4aa41b7b3f31587151e38ac664b481167e6b1"
+          },
+          "locator": "Theorem 2.9"
+        }
+      ],
+      "citation_scope_rule": "Current result/equation labels bind mathematical context. Exact invocation occurrences, not every citation inside that context, bind this particular source application."
+    },
+    {
+      "id": "V6-GN-COORDINATES",
+      "kind": "new_external_application",
+      "reviewed_fragment": "gaussian-analytic",
+      "citation_keys": [
+        "GTOrbits2012"
+      ],
+      "current_labels": [
+        "lem:gn-norm-transfer"
+      ],
+      "exact_source_versions": [
+        {
+          "id": "GT-ORBITS-2012-PUBLISHED",
+          "bibliography": "B. Green and T. Tao, The quantitative behaviour of polynomial orbits on nilmanifolds, Annals of Mathematics 175 (2012), 465–540.",
+          "version": "Published journal PDF",
+          "url": "https://annals.math.princeton.edu/wp-content/uploads/annals-v175-n2-p02-p.pdf",
+          "files": [
+            {
+              "path": "work/quartic-version5-release/sun-proof/sources/GT-orbits-published.pdf",
+              "bytes": 861456,
+              "sha256": "8c7ea5eced84dc5da97508f4eda39fa84c958d3e659a797ab402645c1c207c8f"
+            }
+          ],
+          "inspection": "Published one-parameter Theorems 1.19 and 2.9, Lemmas 4.5 and 6.7, definitions and Appendix A checked in the cited review receipts. No multiparameter equidistribution theorem is used."
+        }
+      ],
+      "theorem_or_source_locator": "Lemma 6.7, printed pp.501–502, t=1",
+      "objects_and_maps": "Second-kind Malcev coordinates of g(P(t)); replace G_j by G_ceil(j/2).",
+      "hypotheses_and_discharge": "P has degree two. Each coordinate degree at most j becomes at most 2j; the stretched groups still form a closed connected rational filtration and retain the adapted basis.",
+      "conventions": "G connected, simply connected and nilpotent; Gamma discrete cocompact; filtration by closed connected rational subgroups; adapted rational Malcev basis; C-infinity norm in the binomial basis modulo one; Lipschitz norm includes supremum norm. Nontrivial horizontal characters are integer-lattice characters annihilating commutators and Gamma.",
+      "translation": "Provides polynomiality and degree 2d for the one-parameter Leibman invocation, without a multiparameter theorem or any inference from pointwise fractional arguments.",
+      "status": "published_source_inspected_application_reviewed_relative_to_listed_inputs",
+      "review_limit": "Application inventory and cited human reviews; not a proof-assistant certificate or an independent truth decision for the complete manuscript.",
+      "exact_invocation_occurrences": [
+        {
+          "citation": {
+            "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+            "start_character": 802556,
+            "end_character": 802586,
+            "first_line": 16968,
+            "last_line": 16968,
+            "text_sha256": "a08c690548378e1720d8f490715bc1f6382e70de9a661e2c4a24f97f3aa8d542"
+          },
+          "paragraph": {
+            "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+            "start_character": 801913,
+            "end_character": 802981,
+            "first_line": 16954,
+            "last_line": 16977,
+            "text_sha256": "553c95adc5075d11a8feb7cfc411046dc363b205c29205a4fc551b6210238579"
+          },
+          "locator": "Lemma 6.7"
+        }
+      ],
+      "citation_scope_rule": "Current result/equation labels bind mathematical context. Exact invocation occurrences, not every citation inside that context, bind this particular source application."
+    },
+    {
+      "id": "V6-GN-HORIZONTAL-METRIC",
+      "kind": "new_external_application",
+      "reviewed_fragment": "gaussian-analytic",
+      "citation_keys": [
+        "GTOrbits2012"
+      ],
+      "current_labels": [
+        "lem:gn-horizontal-obstruction"
+      ],
+      "exact_source_versions": [
+        {
+          "id": "GT-ORBITS-2012-PUBLISHED",
+          "bibliography": "B. Green and T. Tao, The quantitative behaviour of polynomial orbits on nilmanifolds, Annals of Mathematics 175 (2012), 465–540.",
+          "version": "Published journal PDF",
+          "url": "https://annals.math.princeton.edu/wp-content/uploads/annals-v175-n2-p02-p.pdf",
+          "files": [
+            {
+              "path": "work/quartic-version5-release/sun-proof/sources/GT-orbits-published.pdf",
+              "bytes": 861456,
+              "sha256": "8c7ea5eced84dc5da97508f4eda39fa84c958d3e659a797ab402645c1c207c8f"
+            }
+          ],
+          "inspection": "Published one-parameter Theorems 1.19 and 2.9, Lemmas 4.5 and 6.7, definitions and Appendix A checked in the cited review receipts. No multiparameter equidistribution theorem is used."
+        }
+      ],
+      "theorem_or_source_locator": "Definitions 2.2 and 2.6 and Appendix A metric comparisons",
+      "objects_and_maps": "Compose a fixed mean-zero circle bump with a nonzero horizontal character eta of magnitude at most T.",
+      "hypotheses_and_discharge": "T-rational adapted basis and character smoothness at most T. Character pushes Haar probability to circle Haar probability; the initial interval of length floor(X/(100dT)) is long when T<=delta^(-c0).",
+      "conventions": "G connected, simply connected and nilpotent; Gamma discrete cocompact; filtration by closed connected rational subgroups; adapted rational Malcev basis; C-infinity norm in the binomial basis modulo one; Lipschitz norm includes supremum norm. Nontrivial horizontal characters are integer-lattice characters annihilating commutators and Gamma.",
+      "translation": "Metric comparison bounds the test Lip norm by T^C. Choose C*c0<1/4 and c0<1/4, then small sigma0 handles floors. The obstruction itself is proved internally; no external converse-equidistribution theorem is assumed.",
+      "status": "published_source_inspected_application_reviewed_relative_to_listed_inputs",
+      "review_limit": "Application inventory and cited human reviews; not a proof-assistant certificate or an independent truth decision for the complete manuscript.",
+      "exact_invocation_occurrences": [
+        {
+          "citation": {
+            "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+            "start_character": 800986,
+            "end_character": 801017,
+            "first_line": 16933,
+            "last_line": 16933,
+            "text_sha256": "a4c46c9af0142a746cbddad02e6f53929109b57c023e058a604c1bbc68536159"
+          },
+          "paragraph": {
+            "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+            "start_character": 799967,
+            "end_character": 801388,
+            "first_line": 16914,
+            "last_line": 16939,
+            "text_sha256": "472a541ac74d0354f8f96f8904c6da7f969df387042c9eafda4f4516afe36600"
+          },
+          "locator": "Appendix A"
+        }
+      ],
+      "citation_scope_rule": "Current result/equation labels bind mathematical context. Exact invocation occurrences, not every citation inside that context, bind this particular source application."
+    },
+    {
+      "id": "V6-GI-LEIBMAN-I",
+      "kind": "new_external_application",
+      "reviewed_fragment": "gaussian-analytic",
+      "citation_keys": [
+        "GTOrbits2012"
+      ],
+      "current_labels": [
+        "gi-recombination",
+        "gi-shift-removal",
+        "gi-one-coefficients"
+      ],
+      "exact_source_versions": [
+        {
+          "id": "GT-ORBITS-2012-PUBLISHED",
+          "bibliography": "B. Green and T. Tao, The quantitative behaviour of polynomial orbits on nilmanifolds, Annals of Mathematics 175 (2012), 465–540.",
+          "version": "Published journal PDF",
+          "url": "https://annals.math.princeton.edu/wp-content/uploads/annals-v175-n2-p02-p.pdf",
+          "files": [
+            {
+              "path": "work/quartic-version5-release/sun-proof/sources/GT-orbits-published.pdf",
+              "bytes": 861456,
+              "sha256": "8c7ea5eced84dc5da97508f4eda39fa84c958d3e659a797ab402645c1c207c8f"
+            }
+          ],
+          "inspection": "Published one-parameter Theorems 1.19 and 2.9, Lemmas 4.5 and 6.7, definitions and Appendix A checked in the cited review receipts. No multiparameter equidistribution theorem is used."
+        }
+      ],
+      "theorem_or_source_locator": "Theorem 2.9, printed p.480, dimension m",
+      "objects_and_maps": "For many integer dilations r, restrict n -> g(rn) to a progression a+q[ell] witnessing failure of total eta-equidistribution.",
+      "hypotheses_and_discharge": "ell>=eta*M, q<=2/eta, |a|<=2M, eta^(-1)-rational basis; polynomial degree d. Fixed factors are absorbed by reducing eta0.",
+      "conventions": "G connected, simply connected and nilpotent; Gamma discrete cocompact; filtration by closed connected rational subgroups; adapted rational Malcev basis; C-infinity norm in the binomial basis modulo one; Lipschitz norm includes supremum norm. Nontrivial horizontal characters are integer-lattice characters annihilating commutators and Gamma.",
+      "translation": "Internal d! and q^d clearing removes the possibly O(M) shift; character-lattice pigeonholing fixes one nonzero character on eta-power density of r. No bounded-height assumption on the shift is made.",
+      "status": "published_source_inspected_application_reviewed_relative_to_listed_inputs",
+      "review_limit": "Application inventory and cited human reviews; not a proof-assistant certificate or an independent truth decision for the complete manuscript.",
+      "exact_invocation_occurrences": [
+        {
+          "citation": {
+            "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+            "start_character": 807029,
+            "end_character": 807075,
+            "first_line": 17065,
+            "last_line": 17065,
+            "text_sha256": "eba1d21df78b3ac7573c94c22f81f52a45e4e4b78117e8d07c419289cbb6abfc"
+          },
+          "paragraph": {
+            "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+            "start_character": 806682,
+            "end_character": 807140,
+            "first_line": 17060,
+            "last_line": 17066,
+            "text_sha256": "7888953e558af58d0aced863ea0ba5902b80d1eef81f7b71d4b4d44e811f2a64"
+          },
+          "locator": "Theorem~2.9 and Lemma~4.5"
+        },
+        {
+          "citation": {
+            "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+            "start_character": 817845,
+            "end_character": 817877,
+            "first_line": 17300,
+            "last_line": 17300,
+            "text_sha256": "386bce391e1022c403be3f0b4f8dc34d6c812c1f3a42555ebcf9f1bf95e88863"
+          },
+          "paragraph": {
+            "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+            "start_character": 816759,
+            "end_character": 818054,
+            "first_line": 17280,
+            "last_line": 17302,
+            "text_sha256": "d6fb12067497dde8f2a047482b76ff2fec4aa4687dae21d065a6dfbbd6002a83"
+          },
+          "locator": "Theorem~2.9"
+        }
+      ],
+      "citation_scope_rule": "Current result/equation labels bind mathematical context. Exact invocation occurrences, not every citation inside that context, bind this particular source application."
+    },
+    {
+      "id": "V6-GI-LEIBMAN-II",
+      "kind": "new_external_application",
+      "reviewed_fragment": "gaussian-analytic",
+      "citation_keys": [
+        "GTOrbits2012"
+      ],
+      "current_labels": [
+        "gi-recombination",
+        "gi-shift-removal",
+        "gi-two-coefficients"
+      ],
+      "exact_source_versions": [
+        {
+          "id": "GT-ORBITS-2012-PUBLISHED",
+          "bibliography": "B. Green and T. Tao, The quantitative behaviour of polynomial orbits on nilmanifolds, Annals of Mathematics 175 (2012), 465–540.",
+          "version": "Published journal PDF",
+          "url": "https://annals.math.princeton.edu/wp-content/uploads/annals-v175-n2-p02-p.pdf",
+          "files": [
+            {
+              "path": "work/quartic-version5-release/sun-proof/sources/GT-orbits-published.pdf",
+              "bytes": 861456,
+              "sha256": "8c7ea5eced84dc5da97508f4eda39fa84c958d3e659a797ab402645c1c207c8f"
+            }
+          ],
+          "inspection": "Published one-parameter Theorems 1.19 and 2.9, Lemmas 4.5 and 6.7, definitions and Appendix A checked in the cited review receipts. No multiparameter equidistribution theorem is used."
+        }
+      ],
+      "theorem_or_source_locator": "Theorem 2.9, printed p.480, dimension 2m",
+      "objects_and_maps": "For many pairs r,r-prime, restrict n -> (g(rn),g(r-prime*n)) in (G/Gamma)^2 to a bad progression.",
+      "hypotheses_and_discharge": "Use the product filtration, product lattice and concatenated adapted basis. Product orbit failure is obtained by contraposition of norm transfer; equidistribution of separate factors is never asserted to imply product equidistribution.",
+      "conventions": "G connected, simply connected and nilpotent; Gamma discrete cocompact; filtration by closed connected rational subgroups; adapted rational Malcev basis; C-infinity norm in the binomial basis modulo one; Lipschitz norm includes supremum norm. Nontrivial horizontal characters are integer-lattice characters annihilating commutators and Gamma.",
+      "translation": "Obtain a nonzero pair of horizontal characters, clear shift denominators and pigeonhole. Interchange coordinates if needed to ensure the first character is nonzero; fix one r-prime with many partners.",
+      "status": "published_source_inspected_application_reviewed_relative_to_listed_inputs",
+      "review_limit": "Application inventory and cited human reviews; not a proof-assistant certificate or an independent truth decision for the complete manuscript.",
+      "exact_invocation_occurrences": [
+        {
+          "citation": {
+            "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+            "start_character": 807029,
+            "end_character": 807075,
+            "first_line": 17065,
+            "last_line": 17065,
+            "text_sha256": "eba1d21df78b3ac7573c94c22f81f52a45e4e4b78117e8d07c419289cbb6abfc"
+          },
+          "paragraph": {
+            "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+            "start_character": 806682,
+            "end_character": 807140,
+            "first_line": 17060,
+            "last_line": 17066,
+            "text_sha256": "7888953e558af58d0aced863ea0ba5902b80d1eef81f7b71d4b4d44e811f2a64"
+          },
+          "locator": "Theorem~2.9 and Lemma~4.5"
+        },
+        {
+          "citation": {
+            "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+            "start_character": 817845,
+            "end_character": 817877,
+            "first_line": 17300,
+            "last_line": 17300,
+            "text_sha256": "386bce391e1022c403be3f0b4f8dc34d6c812c1f3a42555ebcf9f1bf95e88863"
+          },
+          "paragraph": {
+            "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+            "start_character": 816759,
+            "end_character": 818054,
+            "first_line": 17280,
+            "last_line": 17302,
+            "text_sha256": "d6fb12067497dde8f2a047482b76ff2fec4aa4687dae21d065a6dfbbd6002a83"
+          },
+          "locator": "Theorem~2.9"
+        }
+      ],
+      "citation_scope_rule": "Current result/equation labels bind mathematical context. Exact invocation occurrences, not every citation inside that context, bind this particular source application."
+    },
+    {
+      "id": "V6-GI-RECURRENCE-I",
+      "kind": "new_external_application",
+      "reviewed_fragment": "gaussian-analytic",
+      "citation_keys": [
+        "GTOrbits2012"
+      ],
+      "current_labels": [
+        "gi-recombination",
+        "gi-recurrent-coefficients"
+      ],
+      "exact_source_versions": [
+        {
+          "id": "GT-ORBITS-2012-PUBLISHED",
+          "bibliography": "B. Green and T. Tao, The quantitative behaviour of polynomial orbits on nilmanifolds, Annals of Mathematics 175 (2012), 465–540.",
+          "version": "Published journal PDF",
+          "url": "https://annals.math.princeton.edu/wp-content/uploads/annals-v175-n2-p02-p.pdf",
+          "files": [
+            {
+              "path": "work/quartic-version5-release/sun-proof/sources/GT-orbits-published.pdf",
+              "bytes": 861456,
+              "sha256": "8c7ea5eced84dc5da97508f4eda39fa84c958d3e659a797ab402645c1c207c8f"
+            }
+          ],
+          "inspection": "Published one-parameter Theorems 1.19 and 2.9, Lemmas 4.5 and 6.7, definitions and Appendix A checked in the cited review receipts. No multiparameter equidistribution theorem is used."
+        }
+      ],
+      "theorem_or_source_locator": "Lemma 4.5, printed p.490",
+      "objects_and_maps": "Polynomial r -> d!*beta_j*r^j modulo one on [ceil(R)] for each 1<=j<=d.",
+      "hypotheses_and_discharge": "Selected r have eta-power density. Values lie in an arc of length <=2*eta^(-C5)*(R/N)^j. R<=2*N^(2/3), sufficiently large K_rec, and the large-R branch ensure arc length at most half density. Small R is treated internally by multiplying by r^d.",
+      "conventions": "G connected, simply connected and nilpotent; Gamma discrete cocompact; filtration by closed connected rational subgroups; adapted rational Malcev basis; C-infinity norm in the binomial basis modulo one; Lipschitz norm includes supremum norm. Nontrivial horizontal characters are integer-lattice characters annihilating commutators and Gamma.",
+      "translation": "Retain the arc-length factor in the published smoothness conclusion; the leading coefficient then has N^(-j), not merely R^(-j), accuracy. Additional factorial and product of nonzero bounded integers yield one character.",
+      "status": "published_source_inspected_application_reviewed_relative_to_listed_inputs",
+      "review_limit": "Application inventory and cited human reviews; not a proof-assistant certificate or an independent truth decision for the complete manuscript.",
+      "exact_invocation_occurrences": [
+        {
+          "citation": {
+            "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+            "start_character": 807029,
+            "end_character": 807075,
+            "first_line": 17065,
+            "last_line": 17065,
+            "text_sha256": "eba1d21df78b3ac7573c94c22f81f52a45e4e4b78117e8d07c419289cbb6abfc"
+          },
+          "paragraph": {
+            "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+            "start_character": 806682,
+            "end_character": 807140,
+            "first_line": 17060,
+            "last_line": 17066,
+            "text_sha256": "7888953e558af58d0aced863ea0ba5902b80d1eef81f7b71d4b4d44e811f2a64"
+          },
+          "locator": "Theorem~2.9 and Lemma~4.5"
+        },
+        {
+          "citation": {
+            "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+            "start_character": 819556,
+            "end_character": 819586,
+            "first_line": 17333,
+            "last_line": 17333,
+            "text_sha256": "e9312cba5d80279f9763035cc808273ae801f49a94e28656520e5f5a45a505c4"
+          },
+          "paragraph": {
+            "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+            "start_character": 819540,
+            "end_character": 820439,
+            "first_line": 17333,
+            "last_line": 17348,
+            "text_sha256": "2ac416a202d184582596c7c1b75ee7f03ce64032c408006eab1e07054ea687e2"
+          },
+          "locator": "Lemma~4.5"
+        }
+      ],
+      "citation_scope_rule": "Current result/equation labels bind mathematical context. Exact invocation occurrences, not every citation inside that context, bind this particular source application."
+    },
+    {
+      "id": "V6-GI-RECURRENCE-II",
+      "kind": "new_external_application",
+      "reviewed_fragment": "gaussian-analytic",
+      "citation_keys": [
+        "GTOrbits2012"
+      ],
+      "current_labels": [
+        "gi-recombination",
+        "gi-two-coefficients",
+        "gi-recurrent-coefficients"
+      ],
+      "exact_source_versions": [
+        {
+          "id": "GT-ORBITS-2012-PUBLISHED",
+          "bibliography": "B. Green and T. Tao, The quantitative behaviour of polynomial orbits on nilmanifolds, Annals of Mathematics 175 (2012), 465–540.",
+          "version": "Published journal PDF",
+          "url": "https://annals.math.princeton.edu/wp-content/uploads/annals-v175-n2-p02-p.pdf",
+          "files": [
+            {
+              "path": "work/quartic-version5-release/sun-proof/sources/GT-orbits-published.pdf",
+              "bytes": 861456,
+              "sha256": "8c7ea5eced84dc5da97508f4eda39fa84c958d3e659a797ab402645c1c207c8f"
+            }
+          ],
+          "inspection": "Published one-parameter Theorems 1.19 and 2.9, Lemmas 4.5 and 6.7, definitions and Appendix A checked in the cited review receipts. No multiparameter equidistribution theorem is used."
+        }
+      ],
+      "theorem_or_source_locator": "Lemma 4.5, printed p.490, arbitrary interval centre",
+      "objects_and_maps": "After fixing r-prime, apply to r -> d!*beta_j*r^j in the arc centred at -d!*beta-prime_j*(r-prime)^j.",
+      "hypotheses_and_discharge": "N^(1/3)/4<=R<=2*N^(2/3); many partners supply eta-power density and the same short-arc inequality. The first horizontal character is nonzero.",
+      "conventions": "G connected, simply connected and nilpotent; Gamma discrete cocompact; filtration by closed connected rational subgroups; adapted rational Malcev basis; C-infinity norm in the binomial basis modulo one; Lipschitz norm includes supremum norm. Nontrivial horizontal characters are integer-lattice characters annihilating commutators and Gamma.",
+      "translation": "Gives the same N^(-j) coefficient control as Type I. Does not replace r^j-r0^j by (r-r0)^j, and does not require the arc to be centred at zero.",
+      "status": "published_source_inspected_application_reviewed_relative_to_listed_inputs",
+      "review_limit": "Application inventory and cited human reviews; not a proof-assistant certificate or an independent truth decision for the complete manuscript.",
+      "exact_invocation_occurrences": [
+        {
+          "citation": {
+            "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+            "start_character": 807029,
+            "end_character": 807075,
+            "first_line": 17065,
+            "last_line": 17065,
+            "text_sha256": "eba1d21df78b3ac7573c94c22f81f52a45e4e4b78117e8d07c419289cbb6abfc"
+          },
+          "paragraph": {
+            "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+            "start_character": 806682,
+            "end_character": 807140,
+            "first_line": 17060,
+            "last_line": 17066,
+            "text_sha256": "7888953e558af58d0aced863ea0ba5902b80d1eef81f7b71d4b4d44e811f2a64"
+          },
+          "locator": "Theorem~2.9 and Lemma~4.5"
+        },
+        {
+          "citation": {
+            "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+            "start_character": 819556,
+            "end_character": 819586,
+            "first_line": 17333,
+            "last_line": 17333,
+            "text_sha256": "e9312cba5d80279f9763035cc808273ae801f49a94e28656520e5f5a45a505c4"
+          },
+          "paragraph": {
+            "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+            "start_character": 819540,
+            "end_character": 820439,
+            "first_line": 17333,
+            "last_line": 17348,
+            "text_sha256": "2ac416a202d184582596c7c1b75ee7f03ce64032c408006eab1e07054ea687e2"
+          },
+          "locator": "Lemma~4.5"
+        }
+      ],
+      "citation_scope_rule": "Current result/equation labels bind mathematical context. Exact invocation occurrences, not every citation inside that context, bind this particular source application."
+    },
+    {
+      "id": "V6-GI-HORIZONTAL-METRIC",
+      "kind": "new_external_application",
+      "reviewed_fragment": "gaussian-analytic",
+      "citation_keys": [
+        "GTOrbits2012"
+      ],
+      "current_labels": [
+        "gi-recombination"
+      ],
+      "exact_source_versions": [
+        {
+          "id": "GT-ORBITS-2012-PUBLISHED",
+          "bibliography": "B. Green and T. Tao, The quantitative behaviour of polynomial orbits on nilmanifolds, Annals of Mathematics 175 (2012), 465–540.",
+          "version": "Published journal PDF",
+          "url": "https://annals.math.princeton.edu/wp-content/uploads/annals-v175-n2-p02-p.pdf",
+          "files": [
+            {
+              "path": "work/quartic-version5-release/sun-proof/sources/GT-orbits-published.pdf",
+              "bytes": 861456,
+              "sha256": "8c7ea5eced84dc5da97508f4eda39fa84c958d3e659a797ab402645c1c207c8f"
+            }
+          ],
+          "inspection": "Published one-parameter Theorems 1.19 and 2.9, Lemmas 4.5 and 6.7, definitions and Appendix A checked in the cited review receipts. No multiparameter equidistribution theorem is used."
+        }
+      ],
+      "theorem_or_source_locator": "Definitions 2.2 and 2.6; Appendix A metric comparisons",
+      "objects_and_maps": "Mean-zero circle bump composed with the recombined nonzero character Psi.",
+      "hypotheses_and_discharge": "Character magnitude and C-infinity[N] norm are bounded by eta^(-C9); on an initial interval c*eta^(2C9+4)*N its phase stays in a fixed short arc.",
+      "conventions": "G connected, simply connected and nilpotent; Gamma discrete cocompact; filtration by closed connected rational subgroups; adapted rational Malcev basis; C-infinity norm in the binomial basis modulo one; Lipschitz norm includes supremum norm. Nontrivial horizontal characters are integer-lattice characters annihilating commutators and Gamma.",
+      "translation": "Lip norm is an eta-power and Haar mean is zero. Choose C_rec beyond length and Lip losses, then K_rec for floors, to contradict total eta^C_rec-equidistribution.",
+      "status": "published_source_inspected_application_reviewed_relative_to_listed_inputs",
+      "review_limit": "Application inventory and cited human reviews; not a proof-assistant certificate or an independent truth decision for the complete manuscript.",
+      "exact_invocation_occurrences": [
+        {
+          "citation": {
+            "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+            "start_character": 821764,
+            "end_character": 821795,
+            "first_line": 17373,
+            "last_line": 17373,
+            "text_sha256": "4f4327b739be1992c908b209817ea29667f06dd92a107a06efa40388dc3413ad"
+          },
+          "paragraph": {
+            "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+            "start_character": 821306,
+            "end_character": 822174,
+            "first_line": 17366,
+            "last_line": 17379,
+            "text_sha256": "4114e7f1001a232f1254f9d6ffcf006bb4251555c3b1a63761d2b38002bf627c"
+          },
+          "locator": "Appendix~A"
+        }
+      ],
+      "citation_scope_rule": "Current result/equation labels bind mathematical context. Exact invocation occurrences, not every citation inside that context, bind this particular source application."
+    },
+    {
+      "id": "V6-GA-COORDINATES",
+      "kind": "new_external_application",
+      "reviewed_fragment": "gaussian-analytic",
+      "citation_keys": [
+        "GTOrbits2012"
+      ],
+      "current_labels": [
+        "lem:ga-affine-interpolation"
+      ],
+      "exact_source_versions": [
+        {
+          "id": "GT-ORBITS-2012-PUBLISHED",
+          "bibliography": "B. Green and T. Tao, The quantitative behaviour of polynomial orbits on nilmanifolds, Annals of Mathematics 175 (2012), 465–540.",
+          "version": "Published journal PDF",
+          "url": "https://annals.math.princeton.edu/wp-content/uploads/annals-v175-n2-p02-p.pdf",
+          "files": [
+            {
+              "path": "work/quartic-version5-release/sun-proof/sources/GT-orbits-published.pdf",
+              "bytes": 861456,
+              "sha256": "8c7ea5eced84dc5da97508f4eda39fa84c958d3e659a797ab402645c1c207c8f"
+            }
+          ],
+          "inspection": "Published one-parameter Theorems 1.19 and 2.9, Lemmas 4.5 and 6.7, definitions and Appendix A checked in the cited review receipts. No multiparameter equidistribution theorem is used."
+        }
+      ],
+      "theorem_or_source_locator": "Lemma 6.7, printed pp.501–502, t=1",
+      "objects_and_maps": "Extend the coordinate polynomials of g(n) to real t, form g_R(t), then tilde-g(t)=g_R((t-b)/W).",
+      "hypotheses_and_discharge": "W>=1 and b are fixed integers, 0<=b<W. Affine composition preserves every coordinate degree constraint for the original filtration; real exponential coordinates exist in connected simply connected nilpotent G.",
+      "conventions": "G connected, simply connected and nilpotent; Gamma discrete cocompact; filtration by closed connected rational subgroups; adapted rational Malcev basis; C-infinity norm in the binomial basis modulo one; Lipschitz norm includes supremum norm. Nontrivial horizontal characters are integer-lattice characters annihilating commutators and Gamma.",
+      "translation": "tilde-g is a polynomial sequence on the same nilmanifold and tilde-g(Wn+b)=g(n). This is an algebraic interpolation statement, not assumed fractional-argument equidistribution.",
+      "status": "published_source_inspected_application_reviewed_relative_to_listed_inputs",
+      "review_limit": "Application inventory and cited human reviews; not a proof-assistant certificate or an independent truth decision for the complete manuscript.",
+      "exact_invocation_occurrences": [
+        {
+          "citation": {
+            "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+            "start_character": 832599,
+            "end_character": 832629,
+            "first_line": 17590,
+            "last_line": 17590,
+            "text_sha256": "a08c690548378e1720d8f490715bc1f6382e70de9a661e2c4a24f97f3aa8d542"
+          },
+          "paragraph": {
+            "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+            "start_character": 831748,
+            "end_character": 833250,
+            "first_line": 17570,
+            "last_line": 17601,
+            "text_sha256": "018fc448b270f3038f198cb3676451f6193d1ce0352e6b1562ce489c175864b4"
+          },
+          "locator": "Lemma 6.7"
+        }
+      ],
+      "citation_scope_rule": "Current result/equation labels bind mathematical context. Exact invocation occurrences, not every citation inside that context, bind this particular source application."
+    },
+    {
+      "id": "V6-GA-LEIBMAN",
+      "kind": "new_external_application",
+      "reviewed_fragment": "gaussian-analytic",
+      "citation_keys": [
+        "GTOrbits2012"
+      ],
+      "current_labels": [
+        "lem:ga-affine-interpolation"
+      ],
+      "exact_source_versions": [
+        {
+          "id": "GT-ORBITS-2012-PUBLISHED",
+          "bibliography": "B. Green and T. Tao, The quantitative behaviour of polynomial orbits on nilmanifolds, Annals of Mathematics 175 (2012), 465–540.",
+          "version": "Published journal PDF",
+          "url": "https://annals.math.princeton.edu/wp-content/uploads/annals-v175-n2-p02-p.pdf",
+          "files": [
+            {
+              "path": "work/quartic-version5-release/sun-proof/sources/GT-orbits-published.pdf",
+              "bytes": 861456,
+              "sha256": "8c7ea5eced84dc5da97508f4eda39fa84c958d3e659a797ab402645c1c207c8f"
+            }
+          ],
+          "inspection": "Published one-parameter Theorems 1.19 and 2.9, Lemmas 4.5 and 6.7, definitions and Appendix A checked in the cited review receipts. No multiparameter equidistribution theorem is used."
+        }
+      ],
+      "theorem_or_source_locator": "Theorem 2.9, printed p.480, one-parameter case",
+      "objects_and_maps": "Restrict tilde-g to a bad progression u+v[L] in [X], X=WN+b, epsilon=delta^a.",
+      "hypotheses_and_discharge": "Q<=delta^(-a)=epsilon^(-1); u,v integers, 1<=v<=2/epsilon, |u|<=2X, L>=epsilon*X. Same rational filtration and dimension m.",
+      "conventions": "G connected, simply connected and nilpotent; Gamma discrete cocompact; filtration by closed connected rational subgroups; adapted rational Malcev basis; C-infinity norm in the binomial basis modulo one; Lipschitz norm includes supremum norm. Nontrivial horizontal characters are integer-lattice characters annihilating commutators and Gamma.",
+      "translation": "Internal linear extrapolation and forward composition with integer Wn+b give a small nonzero character on g. a<C0/(2*C_aff) with C0=c0 and sigma<min(sigma0,1/(2a)) permit the norm-section obstruction. Total delta on [N] implies total delta^a on the full expanded interval, for fixed W.",
+      "status": "published_source_inspected_application_reviewed_relative_to_listed_inputs",
+      "review_limit": "Application inventory and cited human reviews; not a proof-assistant certificate or an independent truth decision for the complete manuscript.",
+      "exact_invocation_occurrences": [
+        {
+          "citation": {
+            "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+            "start_character": 833591,
+            "end_character": 833623,
+            "first_line": 17611,
+            "last_line": 17611,
+            "text_sha256": "8c76210647b4f936dfb7074deb2a9394ad3363de569a0e472f776735b9451c6d"
+          },
+          "paragraph": {
+            "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+            "start_character": 833252,
+            "end_character": 834324,
+            "first_line": 17603,
+            "last_line": 17632,
+            "text_sha256": "a32917e91871f25dc296c36b6736e4dafc6af462eb0e5f7808b2bb3bfa63913b"
+          },
+          "locator": "Theorem 2.9"
+        }
+      ],
+      "citation_scope_rule": "Current result/equation labels bind mathematical context. Exact invocation occurrences, not every citation inside that context, bind this particular source application."
+    },
+    {
+      "id": "V6-GF-FACTORIZATION",
+      "kind": "new_external_application",
+      "reviewed_fragment": "gaussian-analytic",
+      "citation_keys": [
+        "GTOrbits2012"
+      ],
+      "current_labels": [
+        "prop:gf-factorization",
+        "eq:gf-cells"
+      ],
+      "exact_source_versions": [
+        {
+          "id": "GT-ORBITS-2012-PUBLISHED",
+          "bibliography": "B. Green and T. Tao, The quantitative behaviour of polynomial orbits on nilmanifolds, Annals of Mathematics 175 (2012), 465–540.",
+          "version": "Published journal PDF",
+          "url": "https://annals.math.princeton.edu/wp-content/uploads/annals-v175-n2-p02-p.pdf",
+          "files": [
+            {
+              "path": "work/quartic-version5-release/sun-proof/sources/GT-orbits-published.pdf",
+              "bytes": 861456,
+              "sha256": "8c7ea5eced84dc5da97508f4eda39fa84c958d3e659a797ab402645c1c207c8f"
+            }
+          ],
+          "inspection": "Published one-parameter Theorems 1.19 and 2.9, Lemmas 4.5 and 6.7, definitions and Appendix A checked in the cited review receipts. No multiparameter equidistribution theorem is used."
+        }
+      ],
+      "theorem_or_source_locator": "Theorem 1.19, printed p.476",
+      "objects_and_maps": "Initial polynomial g on G/Gamma, M0=log(2N)^max(1,C_init), external exponent A renamed B; g=epsilon*g-prime*gamma.",
+      "hypotheses_and_discharge": "Initial basis is log(2N)^C_init-rational, hence M0-rational; fixed dimension m, degree d. Output M0<=M<=C*M0^E(B), rational subgroup G-prime and Gamma-prime=G-prime intersect Gamma.",
+      "conventions": "G connected, simply connected and nilpotent; Gamma discrete cocompact; filtration by closed connected rational subgroups; adapted rational Malcev basis; C-infinity norm in the binomial basis modulo one; Lipschitz norm includes supremum norm. Nontrivial horizontal characters are integer-lattice characters annihilating commutators and Gamma.",
+      "translation": "epsilon is (M,N)-smooth, g-prime totally M^(-B)-equidistributed, gamma rational with coset period q<=M. B is chosen using lower M>=log(2N) before E(B) is used for the later progression threshold; no circular comparison B>E(B).",
+      "status": "published_source_inspected_application_reviewed_relative_to_listed_inputs",
+      "review_limit": "Application inventory and cited human reviews; not a proof-assistant certificate or an independent truth decision for the complete manuscript.",
+      "exact_invocation_occurrences": [
+        {
+          "citation": {
+            "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+            "start_character": 842275,
+            "end_character": 842308,
+            "first_line": 17811,
+            "last_line": 17811,
+            "text_sha256": "fa5d8c446dcd5e4af4db50f46c7dfcbf632f1abcb5551177c5f9b7f6cab972e0"
+          },
+          "paragraph": {
+            "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+            "start_character": 842091,
+            "end_character": 842688,
+            "first_line": 17805,
+            "last_line": 17819,
+            "text_sha256": "6d2b62e75faba9ddc3da271266fbcd58e1b354cbaa3b34011537288d98352a1b"
+          },
+          "locator": "Theorem 1.19"
+        }
+      ],
+      "citation_scope_rule": "Current result/equation labels bind mathematical context. Exact invocation occurrences, not every citation inside that context, bind this particular source application."
+    },
+    {
+      "id": "V6-GF-CONJUGATED-QUOTIENT",
+      "kind": "new_external_application",
+      "reviewed_fragment": "gaussian-analytic",
+      "citation_keys": [
+        "moebius"
+      ],
+      "current_labels": [
+        "prop:gf-factorization"
+      ],
+      "exact_source_versions": [
+        {
+          "id": "GT-MOBIUS-2012-PUBLISHED",
+          "bibliography": "B. Green and T. Tao, The Möbius function is strongly orthogonal to nilsequences, Annals of Mathematics 175 (2012), 541–566.",
+          "version": "Published journal PDF",
+          "url": "https://annals.math.princeton.edu/wp-content/uploads/annals-v175-n2-p03-p.pdf",
+          "files": [
+            {
+              "path": "work/quartic-version5-release/sun-proof/sources/GT-mobius-published.pdf",
+              "bytes": 502447,
+              "sha256": "5259dbc9ee73df46edd765ca27c8b3c0ec466f6b78abafa5f54237b11d44a314"
+            }
+          ],
+          "inspection": "The quantitative conjugation claim on printed p.547 is used; Section 3 is methodological attribution. The Möbius orthogonality theorem is not silently applied to Gaussian or ordinary von Mangoldt weights."
+        },
+        {
+          "id": "GT-ORBITS-2012-PUBLISHED",
+          "bibliography": "B. Green and T. Tao, The quantitative behaviour of polynomial orbits on nilmanifolds, Annals of Mathematics 175 (2012), 465–540.",
+          "version": "Published journal PDF",
+          "url": "https://annals.math.princeton.edu/wp-content/uploads/annals-v175-n2-p02-p.pdf",
+          "files": [
+            {
+              "path": "work/quartic-version5-release/sun-proof/sources/GT-orbits-published.pdf",
+              "bytes": 861456,
+              "sha256": "8c7ea5eced84dc5da97508f4eda39fa84c958d3e659a797ab402645c1c207c8f"
+            }
+          ],
+          "inspection": "Published one-parameter Theorems 1.19 and 2.9, Lemmas 4.5 and 6.7, definitions and Appendix A checked in the cited review receipts. No multiparameter equidistribution theorem is used."
+        }
+      ],
+      "theorem_or_source_locator": "Quantitative Claim and proof on printed p.547, within Section 2",
+      "objects_and_maps": "H_j=gamma_j^(-1)*G-prime*gamma_j; Lambda_j=H_j intersect Gamma; h_j=gamma_j^(-1)*g-prime*gamma_j. F_jk(x Lambda_j)=F(a_jk*gamma_j*x Gamma).",
+      "hypotheses_and_discharge": "Reduced gamma_j has rational coordinates of height M^O(1); a_jk=epsilon(n_jk) has bounded M-power coordinates. The output subgroup basis and lattice satisfy the published claim.",
+      "conventions": "G connected, simply connected and nilpotent; Gamma discrete cocompact; filtration by closed connected rational subgroups; adapted rational Malcev basis; C-infinity norm in the binomial basis modulo one; Lipschitz norm includes supremum norm. Nontrivial horizontal characters are integer-lattice characters annihilating commutators and Gamma.",
+      "translation": "Obtain basis rationality M^C2, total M^(-aB+C2)-equidistribution and Lip norm M^C2. Account for commensurable lattices and finite-index losses; conjugation is not an isometry of the original quotients. Subtract each new quotient Haar mean, including the dimension-zero case. The claim is used for a general weight through separate mean/minor-arc hypotheses, not by extending the Möbius theorem.",
+      "status": "published_source_inspected_application_reviewed_relative_to_listed_inputs",
+      "review_limit": "Application inventory and cited human reviews; not a proof-assistant certificate or an independent truth decision for the complete manuscript.",
+      "exact_invocation_occurrences": [
+        {
+          "citation": {
+            "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+            "start_character": 843986,
+            "end_character": 844008,
+            "first_line": 17849,
+            "last_line": 17849,
+            "text_sha256": "579c6db65f522e2dc757b707d215e8a999ed951e835b3c2116b624b2b18cca0c"
+          },
+          "paragraph": {
+            "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+            "start_character": 843934,
+            "end_character": 844953,
+            "first_line": 17848,
+            "last_line": 17871,
+            "text_sha256": "1530d6b2791889e68289648026f8e8d1b3dcc858c1934e473b8755a159d6deae"
+          },
+          "locator": "p.~547"
+        }
+      ],
+      "citation_scope_rule": "Current result/equation labels bind mathematical context. Exact invocation occurrences, not every citation inside that context, bind this particular source application."
+    },
+    {
+      "id": "V6-GF-RATIONAL-METRIC-SUPPORT",
+      "kind": "new_external_application",
+      "reviewed_fragment": "gaussian-analytic",
+      "citation_keys": [
+        "GTOrbits2012"
+      ],
+      "current_labels": [
+        "prop:gf-factorization"
+      ],
+      "exact_source_versions": [
+        {
+          "id": "GT-ORBITS-2012-PUBLISHED",
+          "bibliography": "B. Green and T. Tao, The quantitative behaviour of polynomial orbits on nilmanifolds, Annals of Mathematics 175 (2012), 465–540.",
+          "version": "Published journal PDF",
+          "url": "https://annals.math.princeton.edu/wp-content/uploads/annals-v175-n2-p02-p.pdf",
+          "files": [
+            {
+              "path": "work/quartic-version5-release/sun-proof/sources/GT-orbits-published.pdf",
+              "bytes": 861456,
+              "sha256": "8c7ea5eced84dc5da97508f4eda39fa84c958d3e659a797ab402645c1c207c8f"
+            }
+          ],
+          "inspection": "Published one-parameter Theorems 1.19 and 2.9, Lemmas 4.5 and 6.7, definitions and Appendix A checked in the cited review receipts. No multiparameter equidistribution theorem is used."
+        },
+        {
+          "id": "GT-MOBIUS-2012-PUBLISHED",
+          "bibliography": "B. Green and T. Tao, The Möbius function is strongly orthogonal to nilsequences, Annals of Mathematics 175 (2012), 541–566.",
+          "version": "Published journal PDF",
+          "url": "https://annals.math.princeton.edu/wp-content/uploads/annals-v175-n2-p03-p.pdf",
+          "files": [
+            {
+              "path": "work/quartic-version5-release/sun-proof/sources/GT-mobius-published.pdf",
+              "bytes": 502447,
+              "sha256": "5259dbc9ee73df46edd765ca27c8b3c0ec466f6b78abafa5f54237b11d44a314"
+            }
+          ],
+          "inspection": "The quantitative conjugation claim on printed p.547 is used; Section 3 is methodological attribution. The Möbius orthogonality theorem is not silently applied to Gaussian or ordinary von Mangoldt weights."
+        }
+      ],
+      "theorem_or_source_locator": "Appendix A: Proposition A.9, Lemmas A.13, A.5 and A.17, as explicitly used in the published p.547 Claim",
+      "objects_and_maps": "Rational conjugation of G-prime, an adapted basis on H_j/Lambda_j, and translated test functions F_jk.",
+      "hypotheses_and_discharge": "All rational coordinate heights and translation coordinates are M-power bounded. Use the changed lattice Lambda_j=H_j intersect Gamma rather than silently identifying quotients.",
+      "conventions": "G connected, simply connected and nilpotent; Gamma discrete cocompact; filtration by closed connected rational subgroups; adapted rational Malcev basis; C-infinity norm in the binomial basis modulo one; Lipschitz norm includes supremum norm. Nontrivial horizontal characters are integer-lattice characters annihilating commutators and Gamma.",
+      "translation": "Supports the p.547 Claim with exponents depending only on m,d and not B. Records the scoped support chain; does not declare every Appendix A result independently applied.",
+      "status": "published_source_inspected_application_reviewed_relative_to_listed_inputs",
+      "review_limit": "Application inventory and cited human reviews; not a proof-assistant certificate or an independent truth decision for the complete manuscript.",
+      "exact_invocation_occurrences": [
+        {
+          "citation": {
+            "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+            "start_character": 844093,
+            "end_character": 844124,
+            "first_line": 17851,
+            "last_line": 17851,
+            "text_sha256": "a4c46c9af0142a746cbddad02e6f53929109b57c023e058a604c1bbc68536159"
+          },
+          "paragraph": {
+            "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+            "start_character": 843934,
+            "end_character": 844953,
+            "first_line": 17848,
+            "last_line": 17871,
+            "text_sha256": "1530d6b2791889e68289648026f8e8d1b3dcc858c1934e473b8755a159d6deae"
+          },
+          "locator": "Appendix A"
+        }
+      ],
+      "citation_scope_rule": "Current result/equation labels bind mathematical context. Exact invocation occurrences, not every citation inside that context, bind this particular source application."
+    }
+  ],
+  "citation_classifications": [
+    {
+      "keys": [
+        "GTOrbits2012"
+      ],
+      "contains": "Throughout this subsection $E=\\mathbb Q(i)$, $\\mathcal O_E=\\mathbb Z[i]$,\nand $H_0$ is a fixed positive integer. A ray character $\\chi$ modulo\n$H_0\\mathcal O_E$ is extended by zero to ideals not coprime to\n$H_0\\mathcal O_E$. The trivial character on all ideals is included by\ntaking $H_0=1$. We use the conventions of \\cite{GTOrbits2012}: $G$ is\nconnected, simply connected and nilpotent, $\\Gamma$ is a discrete cocompact\nsubgroup, and the filtration consists of closed connected rational\nsubgroups. Lipschitz norms include the supremum norm.",
+      "role": "conventions",
+      "application_ids": [],
+      "scope": "Definitions of group, quotient, filtration and Lip norm only; no equidistribution conclusion at this occurrence.",
+      "occurrence": {
+        "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+        "start_character": 796431,
+        "end_character": 796450,
+        "first_line": 16829,
+        "last_line": 16829,
+        "text_sha256": "fb2f477683a9ba667e32d3a2085aa1979310c0f5f3c53b6463a689449d5cd64b"
+      },
+      "paragraph": {
+        "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+        "start_character": 796113,
+        "end_character": 796655,
+        "first_line": 16825,
+        "last_line": 16832,
+        "text_sha256": "58f185412ca18c8d11dda700c25af08e48421addf32640760beab001316ec29f"
+      },
+      "locator": null,
+      "outside_labeled_result_span": true
+    },
+    {
+      "keys": [
+        "GTOrbits2012"
+      ],
+      "contains": "We prove the lemma using only the one-parameter quantitative Leibman\ntheorem \\cite[Theorem 2.9]{GTOrbits2012}, together with elementary\npolynomial and lattice arguments. No multiparameter equidistribution\ntheorem is used.",
+      "role": "source_statement",
+      "application_ids": [
+        "V6-GN-LEIBMAN"
+      ],
+      "scope": "Scoped published input; see the application records.",
+      "occurrence": {
+        "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+        "start_character": 797928,
+        "end_character": 797960,
+        "first_line": 16861,
+        "last_line": 16861,
+        "text_sha256": "8c76210647b4f936dfb7074deb2a9394ad3363de569a0e472f776735b9451c6d"
+      },
+      "paragraph": {
+        "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+        "start_character": 797851,
+        "end_character": 798072,
+        "first_line": 16860,
+        "last_line": 16863,
+        "text_sha256": "023710bbf2d864b045bc70e0a2906f9a329b83b1618f341b4db16986022e9878"
+      },
+      "locator": "Theorem 2.9",
+      "outside_labeled_result_span": true
+    },
+    {
+      "keys": [
+        "GTOrbits2012"
+      ],
+      "contains": "\\begin{lemma}[Small horizontal character obstruction]\\label{lem:gn-horizontal-obstruction}\nThere are $c_0,\\sigma_0>0$, depending only on $m,d$, such that the\nfollowing holds for sufficiently large $X$ and sufficiently small\n$\\delta\\geq X^{-\\sigma_0}$. Suppose the basis is $T$-rational and\na nontrivial horizontal character $\\eta$ satisfies\n\\[\n |\\eta|\\leq T,\\qquad \\|\\eta\\circ g\\|_{C^\\infty[X]}\\leq T,\n \\qquad T\\leq\\delta^{-c_0}.\n\\]\nThen $g$ is not totally $\\delta$-equidistributed on $[X]$.\n\\end{lemma}\n\\begin{proof}\nChoose representatives of the nonconstant binomial coefficients of\n$\\eta\\circ g$ satisfying $|\\alpha_j|\\leq TX^{-j}$. On the initial\ninterval of length $\\lfloor X/(100dT)\\rfloor$ its values lie in an arc\nof length less than $1/10$, translated by its constant coefficient.\nChoose a Lipschitz function on $\\mathbb R/\\mathbb Z$ which equals one on\nthat arc, has mean zero and bounded Lipschitz norm. Its composition with\n$\\eta$ has Lipschitz norm at most $T^{C(m,d)}$, by the Mal'cev metric\nestimates in \\cite[Appendix A]{GTOrbits2012}. Its Haar mean is zero:\na nontrivial horizontal character maps Haar measure onto Haar measure\non the circle. Choose $c_0$ with $C(m,d)c_0<1/4$ and $c_0<1/4$.\nThe initial interval is longer than $\\delta X$, while the discrepancy\none exceeds $\\delta T^{C(m,d)}$. Taking $\\sigma_0$ sufficiently small\nabsorbs the floors. This contradicts total equidistribution.\n\\end{proof}",
+      "role": "source_statement",
+      "application_ids": [
+        "V6-GN-HORIZONTAL-METRIC"
+      ],
+      "scope": "Scoped published input; see the application records.",
+      "occurrence": {
+        "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+        "start_character": 800986,
+        "end_character": 801017,
+        "first_line": 16933,
+        "last_line": 16933,
+        "text_sha256": "a4c46c9af0142a746cbddad02e6f53929109b57c023e058a604c1bbc68536159"
+      },
+      "paragraph": {
+        "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+        "start_character": 799967,
+        "end_character": 801388,
+        "first_line": 16914,
+        "last_line": 16939,
+        "text_sha256": "472a541ac74d0354f8f96f8904c6da7f969df387042c9eafda4f4516afe36600"
+      },
+      "locator": "Appendix A",
+      "outside_labeled_result_span": false
+    },
+    {
+      "keys": [
+        "GTOrbits2012"
+      ],
+      "contains": "\\begin{proof}[Proof of Lemma~\\ref{lem:gn-norm-transfer}]\nFix a constant $C_*$ which dominates the exponents in\nLemma~\\ref{lem:gn-quadratic-coefficients}, the degree-$2d$ case of\n\\cite[Theorem 2.9]{GTOrbits2012}, and the preceding obstruction.\nChoose\n\\[\n 0<\\kappa<\\min\\{(1000C_*^2)^{-1},c_0/(12C_*)\\},\\qquad\n 0<\\sigma<\\min\\{(1000C_*^2)^{-1},\\sigma_0\\},\n \\qquad 2\\kappa\\sigma<1/4.\n\\]\nThese choices depend only on $m,d$. Decrease $\\delta_0$, depending on\n$H_0,m,d$, whenever a fixed multiplicative constant must be absorbed.",
+      "role": "source_statement",
+      "application_ids": [
+        "V6-GN-LEIBMAN"
+      ],
+      "scope": "Scoped published input; see the application records.",
+      "occurrence": {
+        "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+        "start_character": 801568,
+        "end_character": 801600,
+        "first_line": 16944,
+        "last_line": 16944,
+        "text_sha256": "8c76210647b4f936dfb7074deb2a9394ad3363de569a0e472f776735b9451c6d"
+      },
+      "paragraph": {
+        "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+        "start_character": 801390,
+        "end_character": 801911,
+        "first_line": 16941,
+        "last_line": 16952,
+        "text_sha256": "53eccd8f8836b1e8efeddf9b21e4aa41b7b3f31587151e38ac664b481167e6b1"
+      },
+      "locator": "Theorem 2.9",
+      "outside_labeled_result_span": false
+    },
+    {
+      "keys": [
+        "GTOrbits2012"
+      ],
+      "contains": "We first record a pullback consequence. Suppose $P$ and $L$ satisfy\nLemma~\\ref{lem:gn-quadratic-coefficients} with\n$B_0\\leq\\delta^{-5\\kappa}$. Then\n$(g(P(t))\\Gamma)_{t\\in[L]}$ is $\\delta^\\kappa$-equidistributed.\nOtherwise the quantitative Leibman theorem gives a nontrivial $\\eta$\nwith\n\\[\n |\\eta|,\\ \\|\\eta\\circ g\\circ P\\|_{C^\\infty[L]}\n     \\ll\\delta^{-C_*\\kappa}.\n\\]\nThe basis is $\\delta^{-\\kappa}$-rational as required. The composed\nsequence has degree at most $2d$ for the stretched filtration\n$\\widetilde G_j=G_{\\lceil j/2\\rceil}$, with the same adapted basis.\nThis follows from the elementary one-parameter coordinate\ncharacterization in \\cite[Lemma 6.7]{GTOrbits2012}.\nExtrapolation gives a nonzero integer multiple $k\\eta$ with\n\\[\n |k\\eta|,\\ \\|k\\eta\\circ g\\|_{C^\\infty[X]}\n       \\ll\\delta^{-6C_*\\kappa},\n\\]\nwith $C_*$ chosen sufficiently large initially. It remains nontrivial. The choice\n$6C_*\\kappa<c_0/2$ and a reduction of $\\delta_0$ make this contradict\nLemma~\\ref{lem:gn-horizontal-obstruction}. Only ordinary\nequidistribution of this pullback is needed.",
+      "role": "source_statement",
+      "application_ids": [
+        "V6-GN-COORDINATES"
+      ],
+      "scope": "Scoped published input; see the application records.",
+      "occurrence": {
+        "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+        "start_character": 802556,
+        "end_character": 802586,
+        "first_line": 16968,
+        "last_line": 16968,
+        "text_sha256": "a08c690548378e1720d8f490715bc1f6382e70de9a661e2c4a24f97f3aa8d542"
+      },
+      "paragraph": {
+        "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+        "start_character": 801913,
+        "end_character": 802981,
+        "first_line": 16954,
+        "last_line": 16977,
+        "text_sha256": "553c95adc5075d11a8feb7cfc411046dc363b205c29205a4fc551b6210238579"
+      },
+      "locator": "Lemma 6.7",
+      "outside_labeled_result_span": false
+    },
+    {
+      "keys": [
+        "moebius"
+      ],
+      "contains": "We give the ideal decomposition and the subsequent integer-parameter\nrecombination in full.  The architecture is that of\n\\cite[Section~3]{moebius}, with the Gaussian ideal-norm adaptation\nattributed to Frei--Tinkova.  The analytic inputs used here are the\nseparately proved Lemma~\\ref{lem:gn-norm-transfer} and the published\none-parameter results \\cite[Theorem~2.9 and Lemma~4.5]{GTOrbits2012}.\nIn particular, no theorem of Frei--Tinkova is an assumed input.",
+      "role": "provenance",
+      "application_ids": [],
+      "scope": "Section 3 supplies method attribution. Exact Gaussian Vaughan identity and estimates are proved here; no theorem transferred by analogy.",
+      "occurrence": {
+        "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+        "start_character": 806803,
+        "end_character": 806828,
+        "first_line": 17062,
+        "last_line": 17062,
+        "text_sha256": "46b47322d2d7a01a3d6a06d51d2a30abd57e78a6d010b15a4e4dcff5d5aa9c19"
+      },
+      "paragraph": {
+        "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+        "start_character": 806682,
+        "end_character": 807140,
+        "first_line": 17060,
+        "last_line": 17066,
+        "text_sha256": "7888953e558af58d0aced863ea0ba5902b80d1eef81f7b71d4b4d44e811f2a64"
+      },
+      "locator": "Section~3",
+      "outside_labeled_result_span": true
+    },
+    {
+      "keys": [
+        "GTOrbits2012"
+      ],
+      "contains": "We give the ideal decomposition and the subsequent integer-parameter\nrecombination in full.  The architecture is that of\n\\cite[Section~3]{moebius}, with the Gaussian ideal-norm adaptation\nattributed to Frei--Tinkova.  The analytic inputs used here are the\nseparately proved Lemma~\\ref{lem:gn-norm-transfer} and the published\none-parameter results \\cite[Theorem~2.9 and Lemma~4.5]{GTOrbits2012}.\nIn particular, no theorem of Frei--Tinkova is an assumed input.",
+      "role": "source_statement",
+      "application_ids": [
+        "V6-GI-LEIBMAN-I",
+        "V6-GI-LEIBMAN-II",
+        "V6-GI-RECURRENCE-I",
+        "V6-GI-RECURRENCE-II"
+      ],
+      "scope": "Opening declaration of the exact one-parameter inputs used later.",
+      "occurrence": {
+        "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+        "start_character": 807029,
+        "end_character": 807075,
+        "first_line": 17065,
+        "last_line": 17065,
+        "text_sha256": "eba1d21df78b3ac7573c94c22f81f52a45e4e4b78117e8d07c419289cbb6abfc"
+      },
+      "paragraph": {
+        "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+        "start_character": 806682,
+        "end_character": 807140,
+        "first_line": 17060,
+        "last_line": 17066,
+        "text_sha256": "7888953e558af58d0aced863ea0ba5902b80d1eef81f7b71d4b4d44e811f2a64"
+      },
+      "locator": "Theorem~2.9 and Lemma~4.5",
+      "outside_labeled_result_span": true
+    },
+    {
+      "keys": [
+        "GTOrbits2012"
+      ],
+      "contains": "Fix the Gaussian ray modulus $H_0$.  All ideals in this subsection are\nnonzero integral ideals of $\\mathbb Z[i]$.  Write $\\mathrm N\\mathfrak a$\nfor the absolute ideal norm, $\\mu_E$ for ideal Mobius, and\n$\\Lambda_E(\\mathfrak p^j)=\\log\\mathrm N\\mathfrak p$ for $j\\geq1$, with\n$\\Lambda_E$ zero on other ideals.  A ray character $\\chi$ is extended by\nzero on ideals not coprime to $H_0$.  It is completely multiplicative\nand satisfies $|\\chi|\\leq1$.  We use a Lipschitz norm that includes the\nsupremum norm.  All nilmanifolds have connected, simply connected\nnilpotent covering group, a cocompact lattice, and an adapted rational\nMal'cev basis, with the filtration and polynomial-sequence conventions\nof \\cite{GTOrbits2012}.",
+      "role": "conventions",
+      "application_ids": [],
+      "scope": "Polynomial sequence, lattice and adapted basis conventions only.",
+      "occurrence": {
+        "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+        "start_character": 807842,
+        "end_character": 807861,
+        "first_line": 17078,
+        "last_line": 17078,
+        "text_sha256": "fb2f477683a9ba667e32d3a2085aa1979310c0f5f3c53b6463a689449d5cd64b"
+      },
+      "paragraph": {
+        "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+        "start_character": 807142,
+        "end_character": 807862,
+        "first_line": 17068,
+        "last_line": 17078,
+        "text_sha256": "8014020169c5a9e95ddbfddb989f4345f5b766a3405614bb6ff6abf84c862ec3"
+      },
+      "locator": null,
+      "outside_labeled_result_span": true
+    },
+    {
+      "keys": [
+        "GTOrbits2012"
+      ],
+      "contains": "\\begin{lemma}[Integer-parameter recombination]\\label{gi-recombination}\nFor each $m,d$ there are $C_{\\rm rec},K_{\\rm rec}\\geq2$ with the following\nproperty.  Let $0<\\eta<\\eta_0$, $N\\geq\\eta^{-K_{\\rm rec}}$, and let $g$\nhave degree at most $d$ on an $m$-dimensional nilmanifold with an\n$\\eta^{-1}$-rational adapted basis.  Each of the following implies that\n$(g(n)\\Gamma)_{n\\leq N}$ is not totally $\\eta^{C_{\\rm rec}}$-equidistributed.\n\\begin{enumerate}\n\\item For at least $\\eta R$ values $r\\in(R/2,R]$, where\n$R\\leq2N^{2/3}$, the orbit $(g(rn)\\Gamma)_{n\\leq\\lceil N/r\\rceil}$\nis not totally $\\eta$-equidistributed.\n\\item For at least $\\eta R^2$ pairs $r,r'\\in(R/2,R]$, where\n$N^{1/3}/4\\leq R\\leq2N^{2/3}$ and $N/2<RB<4N$, the product orbit\n$(g(rn),g(r'n))_{n\\leq B}$ is not totally $\\eta$-equidistributed.\n\\end{enumerate}\n\\end{lemma}\n\\begin{proof}\nAll constants in this proof depend only on $m,d$.  Failure of total\nequidistribution gives a progression $a+q[\\ell]\\subseteq[M]$ with\n$\\ell\\geq\\eta M$, $q\\leq2/\\eta$, and $|a|\\leq2M$ on which ordinary\n$\\eta$-equidistribution fails.  Apply\n\\cite[Theorem~2.9]{GTOrbits2012}, in dimension $m$ or $2m$.  A nonzero\nhorizontal character has magnitude and restricted smoothness norm at\nmost $\\eta^{-C_1}$, after shrinking $\\eta_0$ to absorb fixed factors.",
+      "role": "source_statement",
+      "application_ids": [
+        "V6-GI-LEIBMAN-I",
+        "V6-GI-LEIBMAN-II"
+      ],
+      "scope": "Scoped published input; see the application records.",
+      "occurrence": {
+        "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+        "start_character": 817845,
+        "end_character": 817877,
+        "first_line": 17300,
+        "last_line": 17300,
+        "text_sha256": "386bce391e1022c403be3f0b4f8dc34d6c812c1f3a42555ebcf9f1bf95e88863"
+      },
+      "paragraph": {
+        "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+        "start_character": 816759,
+        "end_character": 818054,
+        "first_line": 17280,
+        "last_line": 17302,
+        "text_sha256": "d6fb12067497dde8f2a047482b76ff2fec4aa4687dae21d065a6dfbbd6002a83"
+      },
+      "locator": "Theorem~2.9",
+      "outside_labeled_result_span": false
+    },
+    {
+      "keys": [
+        "GTOrbits2012"
+      ],
+      "contains": "Otherwise apply \\cite[Lemma~4.5]{GTOrbits2012} to\n$r\\mapsto d!\\beta_jr^j$ on $[\\lceil R\\rceil]$.  The selected set has\ndensity at least a fixed power of $\\eta$, and its values lie in an arc\nof length at most $2\\eta^{-C_5}(R/N)^j$.  Taking $K_{\\rm rec}$ large,\nthe bound $R\\leq2N^{2/3}$ makes this length at most half the density.\nThe choice of $C_6$ also places the recurrence length beyond the fixed\ninverse density powers.  The published recurrence lemma supplies\nnonzero integers $t_j$, $|t_j|\\leq\\eta^{-C_7}$, such that\n\\begin{equation}\\label{gi-recurrent-coefficients}\n \\|t_j(d!)^2\\beta_j\\|_{\\mathbb R/\\mathbb Z}\n                    \\leq\\eta^{-C_8}N^{-j}.\n\\end{equation}\nThe extra factorial clears the leading-coefficient conversion.  Taking\nthe product of the $t_j$ and the fixed factorials gives a single nonzero\nhorizontal character of magnitude and $C^\\infty[N]$ norm at most\n$\\eta^{-C_9}$.",
+      "role": "source_statement",
+      "application_ids": [
+        "V6-GI-RECURRENCE-I",
+        "V6-GI-RECURRENCE-II"
+      ],
+      "scope": "Scoped published input; see the application records.",
+      "occurrence": {
+        "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+        "start_character": 819556,
+        "end_character": 819586,
+        "first_line": 17333,
+        "last_line": 17333,
+        "text_sha256": "e9312cba5d80279f9763035cc808273ae801f49a94e28656520e5f5a45a505c4"
+      },
+      "paragraph": {
+        "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+        "start_character": 819540,
+        "end_character": 820439,
+        "first_line": 17333,
+        "last_line": 17348,
+        "text_sha256": "2ac416a202d184582596c7c1b75ee7f03ce64032c408006eab1e07054ea687e2"
+      },
+      "locator": "Lemma~4.5",
+      "outside_labeled_result_span": false
+    },
+    {
+      "keys": [
+        "GTOrbits2012"
+      ],
+      "contains": "Finally let $\\Psi$ denote the nonzero character just obtained.  Its\nbinomial expansion shows that for\n$1\\leq n\\leq c\\eta^{2C_9+4}N$ the phase $\\Psi(g(n))$ stays within\n$1/10$ of $\\Psi(g(0))$.  Choose a mean-zero Lipschitz circle function\nequal to one on that arc and compose it with $\\Psi$.  Its mean is zero\nbecause a nonzero horizontal character pushes Haar measure to circle\nHaar measure.  Its Lipschitz norm is bounded by a fixed power of\n$\\eta^{-1}$ by \\cite[Appendix~A]{GTOrbits2012}.  Choose $C_{\\rm rec}$\nlarger than the length and Lipschitz exponents, and then enlarge\n$K_{\\rm rec}$ so the initial interval is nonempty.  Its average one\ncontradicts total $\\eta^{C_{\\rm rec}}$-equidistribution.  This proves\nboth assertions.  All exponent constants are finite combinations of\nthe published one-parameter constants and degree-$d$ polynomial algebra.\n\\end{proof}",
+      "role": "source_statement",
+      "application_ids": [
+        "V6-GI-HORIZONTAL-METRIC"
+      ],
+      "scope": "Scoped published input; see the application records.",
+      "occurrence": {
+        "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+        "start_character": 821764,
+        "end_character": 821795,
+        "first_line": 17373,
+        "last_line": 17373,
+        "text_sha256": "4f4327b739be1992c908b209817ea29667f06dd92a107a06efa40388dc3413ad"
+      },
+      "paragraph": {
+        "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+        "start_character": 821306,
+        "end_character": 822174,
+        "first_line": 17366,
+        "last_line": 17379,
+        "text_sha256": "4114e7f1001a232f1254f9d6ffcf006bb4251555c3b1a63761d2b38002bf627c"
+      },
+      "locator": "Appendix~A",
+      "outside_labeled_result_span": false
+    },
+    {
+      "keys": [
+        "GTOrbits2012"
+      ],
+      "contains": "\\begin{lemma}[Affine interpolation preserves quantitative distribution]\n\\label{lem:ga-affine-interpolation}\nFix dimension and degree bounds $m,d$. There are $a,\\sigma>0$, depending\nonly on $m,d$, and thresholds depending on $W,m,d$, with the following\nproperty. Suppose a nilmanifold and its rational filtration satisfy the\nGreen--Tao conventions, its adapted basis is $Q$-rational, and\n$g\\in\\operatorname{poly}(\\mathbb Z,G_\\bullet)$. Suppose also that\n\\[\n N^{-\\sigma}\\leq\\delta\\leq\\delta_0(W,m,d),\\qquad\n Q\\leq\\delta^{-a},\n\\]\nand that $g$ is totally $\\delta$-equidistributed on $[N]$. There is\n$\\widetilde g\\in\\operatorname{poly}(\\mathbb Z,G_\\bullet)$ satisfying\n\\[\n \\widetilde g(Wn+b)=g(n)\\quad(n\\in\\mathbb Z)\n\\]\nwhich is totally $\\delta^a$-equidistributed on $[WN+b]$.\n\\end{lemma}\n\\begin{proof}\nUse the one-parameter coordinate characterization in\n\\cite[Lemma 6.7]{GTOrbits2012}. Each second-kind Mal'cev coordinate of\n$g(n)$ is a polynomial, with the prescribed degree bound from the\nfiltration. Evaluate those same polynomials at real arguments and apply\nthe inverse coordinate map, obtaining $g_{\\mathbb R}(t)$. Set\n\\[\n \\widetilde g(t)=g_{\\mathbb R}((t-b)/W).\n\\]\nAffine composition preserves the coordinate degree bounds, so the same\ncharacterization shows that this is a polynomial sequence for the\noriginal filtration. It gives the stated identity on integer $n$.\nEquivalently, one may use the Taylor product with real powers; those\npowers exist in a connected simply connected nilpotent group.",
+      "role": "source_statement",
+      "application_ids": [
+        "V6-GA-COORDINATES"
+      ],
+      "scope": "Scoped published input; see the application records.",
+      "occurrence": {
+        "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+        "start_character": 832599,
+        "end_character": 832629,
+        "first_line": 17590,
+        "last_line": 17590,
+        "text_sha256": "a08c690548378e1720d8f490715bc1f6382e70de9a661e2c4a24f97f3aa8d542"
+      },
+      "paragraph": {
+        "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+        "start_character": 831748,
+        "end_character": 833250,
+        "first_line": 17570,
+        "last_line": 17601,
+        "text_sha256": "018fc448b270f3038f198cb3676451f6193d1ce0352e6b1562ce489c175864b4"
+      },
+      "locator": "Lemma 6.7",
+      "outside_labeled_result_span": false
+    },
+    {
+      "keys": [
+        "GTOrbits2012"
+      ],
+      "contains": "Put $X=WN+b$ and $\\epsilon=\\delta^a$. Suppose the asserted total\n$\\epsilon$-equidistribution fails. Then on a progression\n\\[\n u+v[L]\\subseteq[X],\\qquad L\\geq\\epsilon X,\n \\quad u,v\\in\\mathbb Z,\\quad\n 1\\leq v\\leq2/\\epsilon,\\quad |u|\\leq2X,\n\\]\nthe sequence is not $\\epsilon$-equidistributed. By the one-parameter\nquantitative Leibman theorem \\cite[Theorem 2.9]{GTOrbits2012}, there is\na nontrivial horizontal character $\\eta$ satisfying\n\\[\n |\\eta|\\ll\\epsilon^{-C},\\qquad\n \\|\\eta\\circ\\widetilde g\\circ(u+vt)\\|_{C^\\infty[L]}\n       \\ll\\epsilon^{-C}.\n\\]\nThe rationality hypothesis holds since $Q\\leq\\epsilon^{-1}$.\nLemma~\\ref{lem:ga-linear-coefficients} gives a positive integer\n$k\\ll\\epsilon^{-C}$ such that\n\\[\n \\|k\\eta\\circ\\widetilde g\\|_{C^\\infty[X]}\n      \\ll\\epsilon^{-C}.\n\\]\nForward composition with the fixed integer polynomial $Wn+b$ gives\n\\[\n \\|k\\eta\\circ g\\|_{C^\\infty[N]}\n      \\ll_{W,d}\\epsilon^{-C}.\n\\]\nFor this last bound expand $\\binom{Wn+b}j$ in the binomial basis; its\nmatrix is integral, and $X$ is comparable to $WN$. The character\n$k\\eta$ remains nontrivial.",
+      "role": "source_statement",
+      "application_ids": [
+        "V6-GA-LEIBMAN"
+      ],
+      "scope": "Scoped published input; see the application records.",
+      "occurrence": {
+        "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+        "start_character": 833591,
+        "end_character": 833623,
+        "first_line": 17611,
+        "last_line": 17611,
+        "text_sha256": "8c76210647b4f936dfb7074deb2a9394ad3363de569a0e472f776735b9451c6d"
+      },
+      "paragraph": {
+        "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+        "start_character": 833252,
+        "end_character": 834324,
+        "first_line": 17603,
+        "last_line": 17632,
+        "text_sha256": "a32917e91871f25dc296c36b6736e4dafc6af462eb0e5f7808b2bb3bfa63913b"
+      },
+      "locator": "Theorem 2.9",
+      "outside_labeled_result_span": false
+    },
+    {
+      "keys": [
+        "GTOrbits2012"
+      ],
+      "contains": "\\begin{proof}\nNormalize $\\|F\\|_{\\mathrm{Lip}}=1$ and put\n\\[\n D=A+K_w+3,\\qquad M_0=L^{\\max\\{1,C_{\\mathrm{init}}\\}}.\n\\]\nLeave a factorization exponent $B$ unspecified for the moment. By\n\\cite[Theorem 1.19]{GTOrbits2012}, there is an integer $M$ with\n\\[\n M_0\\leq M\\ll_{B,m,d}M_0^{E(B,m,d)}\n\\]\nand a factorization $g=\\varepsilon g'\\gamma$ into polynomial sequences.\nHere $\\varepsilon$ is $(M,N)$-smooth, $\\gamma(n)\\Gamma$ has period\n$q\\leq M$, and $g'$ is totally $M^{-B}$-equidistributed in a rational\nsubgroup quotient. The new adapted basis consists of $M$-rational\ncombinations of the initial one.",
+      "role": "source_statement",
+      "application_ids": [
+        "V6-GF-FACTORIZATION"
+      ],
+      "scope": "Scoped published input; see the application records.",
+      "occurrence": {
+        "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+        "start_character": 842275,
+        "end_character": 842308,
+        "first_line": 17811,
+        "last_line": 17811,
+        "text_sha256": "fa5d8c446dcd5e4af4db50f46c7dfcbf632f1abcb5551177c5f9b7f6cab972e0"
+      },
+      "paragraph": {
+        "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+        "start_character": 842091,
+        "end_character": 842688,
+        "first_line": 17805,
+        "last_line": 17819,
+        "text_sha256": "6d2b62e75faba9ddc3da271266fbcd58e1b354cbaa3b34011537288d98352a1b"
+      },
+      "locator": "Theorem 1.19",
+      "outside_labeled_result_span": false
+    },
+    {
+      "keys": [
+        "moebius"
+      ],
+      "contains": "We use the quantitative conjugation claim proved in\n\\cite[p.~547]{moebius}, whose inputs are the rational-subgroup,\nrational-element and metric comparisons of\n\\cite[Appendix A]{GTOrbits2012}. There are fixed $a>0$, $C_2\\geq1$,\ndepending only on $m,d$, such that, with\n\\[\n H_j=\\gamma_j^{-1}G'\\gamma_j,\\quad\n \\Lambda_j=H_j\\cap\\Gamma,\\quad\n h_j(n)=\\gamma_j^{-1}g'(n)\\gamma_j,\n\\]\nthe quotient $H_j/\\Lambda_j$ has an adapted basis of rationality at most\n$M^{C_2}$, $h_j$ is totally $M^{-aB+C_2}$-equidistributed, and\n\\[\n F_{j,k}(x\\Lambda_j)=F(a_{j,k}\\gamma_jx\\Gamma)\n \\quad\\hbox{satisfies}\\quad\n \\|F_{j,k}\\|_{\\mathrm{Lip}}\\leq M^{C_2},\\qquad\n \\|F_{j,k}\\|_\\infty\\leq1.\n\\]\nWe have enlarged $C_2$ to absorb fixed multiplicative constants. These\nexponents do not depend on $B$. In applying this published claim, one\nmust account for the commensurable lattice resulting from rational\nconjugation; conjugation is not asserted to be an isometry of the\noriginal quotients. Its finite-index and metric losses are included in\n$a,C_2$.",
+      "role": "source_statement",
+      "application_ids": [
+        "V6-GF-CONJUGATED-QUOTIENT"
+      ],
+      "scope": "Scoped published input; see the application records.",
+      "occurrence": {
+        "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+        "start_character": 843986,
+        "end_character": 844008,
+        "first_line": 17849,
+        "last_line": 17849,
+        "text_sha256": "579c6db65f522e2dc757b707d215e8a999ed951e835b3c2116b624b2b18cca0c"
+      },
+      "paragraph": {
+        "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+        "start_character": 843934,
+        "end_character": 844953,
+        "first_line": 17848,
+        "last_line": 17871,
+        "text_sha256": "1530d6b2791889e68289648026f8e8d1b3dcc858c1934e473b8755a159d6deae"
+      },
+      "locator": "p.~547",
+      "outside_labeled_result_span": false
+    },
+    {
+      "keys": [
+        "GTOrbits2012"
+      ],
+      "contains": "We use the quantitative conjugation claim proved in\n\\cite[p.~547]{moebius}, whose inputs are the rational-subgroup,\nrational-element and metric comparisons of\n\\cite[Appendix A]{GTOrbits2012}. There are fixed $a>0$, $C_2\\geq1$,\ndepending only on $m,d$, such that, with\n\\[\n H_j=\\gamma_j^{-1}G'\\gamma_j,\\quad\n \\Lambda_j=H_j\\cap\\Gamma,\\quad\n h_j(n)=\\gamma_j^{-1}g'(n)\\gamma_j,\n\\]\nthe quotient $H_j/\\Lambda_j$ has an adapted basis of rationality at most\n$M^{C_2}$, $h_j$ is totally $M^{-aB+C_2}$-equidistributed, and\n\\[\n F_{j,k}(x\\Lambda_j)=F(a_{j,k}\\gamma_jx\\Gamma)\n \\quad\\hbox{satisfies}\\quad\n \\|F_{j,k}\\|_{\\mathrm{Lip}}\\leq M^{C_2},\\qquad\n \\|F_{j,k}\\|_\\infty\\leq1.\n\\]\nWe have enlarged $C_2$ to absorb fixed multiplicative constants. These\nexponents do not depend on $B$. In applying this published claim, one\nmust account for the commensurable lattice resulting from rational\nconjugation; conjugation is not asserted to be an isometry of the\noriginal quotients. Its finite-index and metric losses are included in\n$a,C_2$.",
+      "role": "source_statement",
+      "application_ids": [
+        "V6-GF-RATIONAL-METRIC-SUPPORT"
+      ],
+      "scope": "Scoped published input; see the application records.",
+      "occurrence": {
+        "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+        "start_character": 844093,
+        "end_character": 844124,
+        "first_line": 17851,
+        "last_line": 17851,
+        "text_sha256": "a4c46c9af0142a746cbddad02e6f53929109b57c023e058a604c1bbc68536159"
+      },
+      "paragraph": {
+        "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+        "start_character": 843934,
+        "end_character": 844953,
+        "first_line": 17848,
+        "last_line": 17871,
+        "text_sha256": "1530d6b2791889e68289648026f8e8d1b3dcc858c1934e473b8755a159d6deae"
+      },
+      "locator": "Appendix A",
+      "outside_labeled_result_span": false
+    }
+  ],
+  "internal_results": [
+    {
+      "label": "lem:gn-norm-transfer",
+      "id": "lem:gn-norm-transfer",
+      "labels": [
+        "lem:gn-norm-transfer",
+        "eq:gn-transfer"
+      ],
+      "environment": "lemma",
+      "reviewed_fragment": "gaussian-analytic",
+      "statement_and_map": "Gaussian ideal norm sum on every norm interval and residue class is <=C*X*delta^kappa*Lip(F), with optional logarithmic weight.",
+      "hypotheses_conventions_translation": "Fixed Gaussian ray modulus, character extended by zero; four generators per nonzero ideal; total delta on [X]; X^(-sigma)<=delta<=delta0 and Q,q<=delta^(-kappa). Product version requires total distribution of the entire product orbit.",
+      "declared_dependencies": [
+        "V6-GN-LEIBMAN",
+        "V6-GN-COORDINATES",
+        "lem:gn-quadratic-coefficients",
+        "lem:gn-horizontal-obstruction"
+      ],
+      "status": "independent_application_review_accepted_relative_to_listed_inputs",
+      "review_limit": "Human review of the stated derivation; inventory is not a truth oracle, formal proof, or acceptance of unlisted arithmetic inputs.",
+      "source_bounds": "Exact current statement and all attached proof spans below; source fragments separately byte-pinned.",
+      "statement": {
+        "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+        "start_character": 796657,
+        "end_character": 797849,
+        "first_line": 16834,
+        "last_line": 16858,
+        "text_sha256": "48668cc576b88259401207eaf544b5bd3f419dc95c6115786321e4497efa1aab"
+      },
+      "proof_spans": [
+        {
+          "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+          "start_character": 801390,
+          "end_character": 805415,
+          "first_line": 16941,
+          "last_line": 17032,
+          "text_sha256": "14ef7749159b4469dcc96327b96d691493e8f08602a0a5c61d54335523e7bfc4"
+        }
+      ],
+      "explicit_citation_keys": [
+        "GTOrbits2012"
+      ],
+      "explicit_internal_dependencies": [
+        "eq:gn-transfer",
+        "lem:gn-horizontal-obstruction",
+        "lem:gn-norm-transfer",
+        "lem:gn-quadratic-coefficients"
+      ]
+    },
+    {
+      "label": "lem:gn-quadratic-coefficients",
+      "id": "lem:gn-quadratic-coefficients",
+      "labels": [
+        "lem:gn-quadratic-coefficients"
+      ],
+      "environment": "lemma",
+      "reviewed_fragment": "gaussian-analytic",
+      "statement_and_map": "Integer quadratic pullback smoothness extrapolates to original coefficients after a nonzero integer multiplier of B0-power size.",
+      "hypotheses_conventions_translation": "X>=1; integer quadratic with positive leading coefficient; coefficient scale B0*X^(1-i/2); L>=sqrt(X)/B0. Integer-valued binomial expansion, triangular descent and integer clearing preserve modulo-one estimates.",
+      "declared_dependencies": [],
+      "status": "independent_application_review_accepted_relative_to_listed_inputs",
+      "review_limit": "Human review of the stated derivation; inventory is not a truth oracle, formal proof, or acceptance of unlisted arithmetic inputs.",
+      "source_bounds": "Exact current statement and all attached proof spans below; source fragments separately byte-pinned.",
+      "statement": {
+        "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+        "start_character": 798074,
+        "end_character": 798673,
+        "first_line": 16865,
+        "last_line": 16881,
+        "text_sha256": "fd3cbe006069e953efda02442102cc7add50dd0b6a184125ecf97cfb82aa0982"
+      },
+      "proof_spans": [
+        {
+          "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+          "start_character": 798674,
+          "end_character": 799965,
+          "first_line": 16882,
+          "last_line": 16912,
+          "text_sha256": "248fb662f11fde24c2a29b733d233a505e5bc577affde5e530aac063f0ff523a"
+        }
+      ],
+      "explicit_citation_keys": [],
+      "explicit_internal_dependencies": []
+    },
+    {
+      "label": "lem:gn-horizontal-obstruction",
+      "id": "lem:gn-horizontal-obstruction",
+      "labels": [
+        "lem:gn-horizontal-obstruction"
+      ],
+      "environment": "lemma",
+      "reviewed_fragment": "gaussian-analytic",
+      "statement_and_map": "A nonzero character with small magnitude and C-infinity norm obstructs total distribution.",
+      "hypotheses_conventions_translation": "T-rational basis, T<=delta^(-c0), delta>=X^(-sigma0); initial interval and Haar-mean-zero bump.",
+      "declared_dependencies": [
+        "V6-GN-HORIZONTAL-METRIC"
+      ],
+      "status": "independent_application_review_accepted_relative_to_listed_inputs",
+      "review_limit": "Human review of the stated derivation; inventory is not a truth oracle, formal proof, or acceptance of unlisted arithmetic inputs.",
+      "source_bounds": "Exact current statement and all attached proof spans below; source fragments separately byte-pinned.",
+      "statement": {
+        "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+        "start_character": 799967,
+        "end_character": 800470,
+        "first_line": 16914,
+        "last_line": 16924,
+        "text_sha256": "4cbfcc47ae114a2e2893c72181c4c1282c39283c12c8820762184459bd36d0d9"
+      },
+      "proof_spans": [
+        {
+          "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+          "start_character": 800471,
+          "end_character": 801388,
+          "first_line": 16925,
+          "last_line": 16939,
+          "text_sha256": "1fb1b6879d65c79b5acd2a6266ba3cbc64be3181d404ae65b5571ff498661f2b"
+        }
+      ],
+      "explicit_citation_keys": [
+        "GTOrbits2012"
+      ],
+      "explicit_internal_dependencies": []
+    },
+    {
+      "label": "rem:gn-product-and-progression",
+      "id": "rem:gn-product-and-progression",
+      "labels": [
+        "rem:gn-product-and-progression"
+      ],
+      "environment": "remark",
+      "reviewed_fragment": "gaussian-analytic",
+      "statement_and_map": "Product-orbit and progression uses of norm transfer; logarithmic specialization.",
+      "hypotheses_conventions_translation": "Mean-zero factors do not imply product-orbit distribution. Solve simultaneous residue conditions modulo a divisor of q; arbitrary interval endpoints allowed.",
+      "declared_dependencies": [
+        "lem:gn-norm-transfer"
+      ],
+      "status": "independent_application_review_accepted_relative_to_listed_inputs",
+      "review_limit": "Human review of the stated derivation; inventory is not a truth oracle, formal proof, or acceptance of unlisted arithmetic inputs.",
+      "source_bounds": "Exact current statement and all attached proof spans below; source fragments separately byte-pinned.",
+      "statement": {
+        "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+        "start_character": 805417,
+        "end_character": 806328,
+        "first_line": 17034,
+        "last_line": 17050,
+        "text_sha256": "90b357bd6ba62278f976159fdc45136d1fe27a83899ad86fcb7d53a9223243c6"
+      },
+      "proof_spans": [],
+      "explicit_citation_keys": [],
+      "explicit_internal_dependencies": []
+    },
+    {
+      "label": "gi-moments",
+      "id": "gi-moments",
+      "labels": [
+        "gi-moments",
+        "gi-multiplicity",
+        "gi-two-moments",
+        "gi-ideal-count"
+      ],
+      "environment": "lemma",
+      "reviewed_fragment": "gaussian-analytic",
+      "statement_and_map": "Gaussian ideal multiplicity and first/second moment bounds.",
+      "hypotheses_conventions_translation": "a_E<=tau, tau^2<=d4, harmonic sums, and four-to-one generator disk count.",
+      "declared_dependencies": [],
+      "status": "independent_application_review_accepted_relative_to_listed_inputs",
+      "review_limit": "Human review of the stated derivation; inventory is not a truth oracle, formal proof, or acceptance of unlisted arithmetic inputs.",
+      "source_bounds": "Exact current statement and all attached proof spans below; source fragments separately byte-pinned.",
+      "statement": {
+        "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+        "start_character": 807864,
+        "end_character": 808484,
+        "first_line": 17080,
+        "last_line": 17094,
+        "text_sha256": "7f1102a6f009038f6cecab2cf94cf75c41d2947f5e5fcc720f4d53c94146d994"
+      },
+      "proof_spans": [
+        {
+          "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+          "start_character": 808485,
+          "end_character": 809307,
+          "first_line": 17095,
+          "last_line": 17109,
+          "text_sha256": "a0787d0a2f4d98eda32e2d92d52c5c7d34ad6fc63e90242f8b01b311c9082583"
+        }
+      ],
+      "explicit_citation_keys": [],
+      "explicit_internal_dependencies": [
+        "gi-ideal-count",
+        "gi-multiplicity"
+      ]
+    },
+    {
+      "label": "gi-vaughan",
+      "id": "gi-vaughan",
+      "labels": [
+        "gi-vaughan",
+        "gi-vaughan-sum"
+      ],
+      "environment": "lemma",
+      "reviewed_fragment": "gaussian-analytic",
+      "statement_and_map": "Exact three-term Gaussian ideal Vaughan identity on a dyadic shell.",
+      "hypotheses_conventions_translation": "U=V=N^(1/3); ideal convolution and completely multiplicative character extended by zero; small-Lambda term vanishes and coefficients bounded by log(2N).",
+      "declared_dependencies": [],
+      "status": "independent_application_review_accepted_relative_to_listed_inputs",
+      "review_limit": "Human review of the stated derivation; inventory is not a truth oracle, formal proof, or acceptance of unlisted arithmetic inputs.",
+      "source_bounds": "Exact current statement and all attached proof spans below; source fragments separately byte-pinned.",
+      "statement": {
+        "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+        "start_character": 809309,
+        "end_character": 810795,
+        "first_line": 17111,
+        "last_line": 17142,
+        "text_sha256": "5392892fca98a9fefd5a9ebb7363ac98cda3d15cef862bad20645d1caf1d99f8"
+      },
+      "proof_spans": [
+        {
+          "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+          "start_character": 810796,
+          "end_character": 811687,
+          "first_line": 17143,
+          "last_line": 17160,
+          "text_sha256": "47ef1922777d9a5a228697b4b558fc752366d42c89b20cda45b49cad2278b281"
+        }
+      ],
+      "explicit_citation_keys": [],
+      "explicit_internal_dependencies": [
+        "gi-vaughan-sum"
+      ]
+    },
+    {
+      "label": "gi-extraction",
+      "id": "gi-extraction",
+      "labels": [
+        "gi-extraction",
+        "gi-large-correlation",
+        "gi-dyadic-ranges",
+        "gi-type-two-correlation"
+      ],
+      "environment": "proposition",
+      "reviewed_fragment": "gaussian-analytic",
+      "statement_and_map": "Large weighted shell correlation yields many large Type I or Type II correlations with explicit power density.",
+      "hypotheses_conventions_translation": "Dyadic splitting, partial summation and two Cauchy–Schwarz steps retain ideal multiplicities; all interval/progression indicators remain in f.",
+      "declared_dependencies": [
+        "gi-moments",
+        "gi-vaughan"
+      ],
+      "status": "independent_application_review_accepted_relative_to_listed_inputs",
+      "review_limit": "Human review of the stated derivation; inventory is not a truth oracle, formal proof, or acceptance of unlisted arithmetic inputs.",
+      "source_bounds": "Exact current statement and all attached proof spans below; source fragments separately byte-pinned.",
+      "statement": {
+        "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+        "start_character": 811689,
+        "end_character": 812992,
+        "first_line": 17162,
+        "last_line": 17191,
+        "text_sha256": "9d69b859cc54005e2bf4cf8123b2bd620e46dae48c1c20cfce82e8154d960b97"
+      },
+      "proof_spans": [
+        {
+          "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+          "start_character": 812993,
+          "end_character": 815837,
+          "first_line": 17192,
+          "last_line": 17258,
+          "text_sha256": "0a9b771d141e1cdf4fcf86c0d95bf71318d892d88511b0d8509f0e27937af90c"
+        }
+      ],
+      "explicit_citation_keys": [],
+      "explicit_internal_dependencies": [
+        "gi-dyadic-ranges",
+        "gi-moments",
+        "gi-second-cauchy",
+        "gi-two-moments",
+        "gi-type-two-correlation",
+        "gi-vaughan"
+      ]
+    },
+    {
+      "label": "gi-recombination",
+      "id": "gi-recombination",
+      "labels": [
+        "gi-recombination"
+      ],
+      "environment": "lemma",
+      "reviewed_fragment": "gaussian-analytic",
+      "statement_and_map": "Many badly distributed integer dilations or dilation pairs force failure of total distribution of the original orbit.",
+      "hypotheses_conventions_translation": "Integer parameters, correct shift removal, arbitrary-centre strong recurrence, nonzero product character coordinate; small R treated separately.",
+      "declared_dependencies": [
+        "V6-GI-LEIBMAN-I",
+        "V6-GI-LEIBMAN-II",
+        "V6-GI-RECURRENCE-I",
+        "V6-GI-RECURRENCE-II",
+        "V6-GI-HORIZONTAL-METRIC"
+      ],
+      "status": "independent_application_review_accepted_relative_to_listed_inputs",
+      "review_limit": "Human review of the stated derivation; inventory is not a truth oracle, formal proof, or acceptance of unlisted arithmetic inputs.",
+      "source_bounds": "Exact current statement and all attached proof spans below; source fragments separately byte-pinned.",
+      "statement": {
+        "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+        "start_character": 816759,
+        "end_character": 817591,
+        "first_line": 17280,
+        "last_line": 17294,
+        "text_sha256": "5840004fd14def983619168deccdbfb55fd3e500b9e2e2f462f692d89e9528e7"
+      },
+      "proof_spans": [
+        {
+          "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+          "start_character": 817592,
+          "end_character": 822174,
+          "first_line": 17295,
+          "last_line": 17379,
+          "text_sha256": "8e0f86bce794deca8fdfa4e4b87749361e189e9d783db932155ffe2fcfc618f8"
+        }
+      ],
+      "explicit_citation_keys": [
+        "GTOrbits2012"
+      ],
+      "explicit_internal_dependencies": [
+        "gi-one-coefficients",
+        "gi-recurrent-coefficients",
+        "gi-two-coefficients"
+      ]
+    },
+    {
+      "label": "gi-minor-arc",
+      "id": "gi-minor-arc",
+      "labels": [
+        "gi-minor-arc",
+        "gi-power-bound"
+      ],
+      "environment": "proposition",
+      "reviewed_fragment": "gaussian-analytic",
+      "statement_and_map": "Gaussian ideal von Mangoldt minor-arc estimate Q*N*log(2N)^7*delta^c_G*Lip(F).",
+      "hypotheses_conventions_translation": "Every delta in (0,1), Q>=2 and every interval progression of modulus <=Q, with no lower length bound. Intermediate delta/complexity restrictions are removed by shell and small-delta arguments.",
+      "declared_dependencies": [
+        "gi-extraction",
+        "gi-recombination",
+        "lem:gn-norm-transfer"
+      ],
+      "status": "independent_application_review_accepted_relative_to_listed_inputs",
+      "review_limit": "Human review of the stated derivation; inventory is not a truth oracle, formal proof, or acceptance of unlisted arithmetic inputs.",
+      "source_bounds": "Exact current statement and all attached proof spans below; source fragments separately byte-pinned.",
+      "statement": {
+        "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+        "start_character": 822176,
+        "end_character": 823106,
+        "first_line": 17381,
+        "last_line": 17397,
+        "text_sha256": "bc07933d7f43121e37ecf52f9f83351c4655533d935d22fb7b3fe108e82140b8"
+      },
+      "proof_spans": [
+        {
+          "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+          "start_character": 823107,
+          "end_character": 827520,
+          "first_line": 17398,
+          "last_line": 17481,
+          "text_sha256": "f8780fae0e72b4ffb93d92c955594a83d1162587bce49dd78b640f219a375787"
+        }
+      ],
+      "explicit_citation_keys": [],
+      "explicit_internal_dependencies": [
+        "gi-extraction",
+        "gi-full-intermediate",
+        "gi-moments",
+        "gi-recombination",
+        "gi-shell-bound",
+        "lem:gn-norm-transfer"
+      ]
+    },
+    {
+      "label": "gi-ordinary-primes",
+      "id": "gi-ordinary-primes",
+      "labels": [
+        "gi-ordinary-primes",
+        "gi-ordinary-bound"
+      ],
+      "environment": "corollary",
+      "reviewed_fragment": "gaussian-analytic",
+      "statement_and_map": "Analogous ordinary-integer von Mangoldt and prime-only minor-arc estimate.",
+      "hypotheses_conventions_translation": "Repeat convolution with multiplicity one and direct unweighted total-distribution bound; prime powers handled explicitly. No Möbius-to-von-Mangoldt black box.",
+      "declared_dependencies": [
+        "gi-minor-arc",
+        "gi-recombination"
+      ],
+      "status": "independent_application_review_accepted_relative_to_listed_inputs",
+      "review_limit": "Human review of the stated derivation; inventory is not a truth oracle, formal proof, or acceptance of unlisted arithmetic inputs.",
+      "source_bounds": "Exact current statement and all attached proof spans below; source fragments separately byte-pinned.",
+      "statement": {
+        "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+        "start_character": 827522,
+        "end_character": 828043,
+        "first_line": 17483,
+        "last_line": 17492,
+        "text_sha256": "4662235de4ccc77317175a0cce576ac56dfb520c12a6c8dc11e228cd15675940"
+      },
+      "proof_spans": [
+        {
+          "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+          "start_character": 828044,
+          "end_character": 830134,
+          "first_line": 17493,
+          "last_line": 17532,
+          "text_sha256": "52dbc5d014edf11db179339b2df065ce830a632c4ad9c38a05a098e43056c6b7"
+        }
+      ],
+      "explicit_citation_keys": [],
+      "explicit_internal_dependencies": [
+        "gi-convolution-identity",
+        "gi-extraction",
+        "gi-first-cauchy",
+        "gi-minor-arc",
+        "gi-moments",
+        "gi-ordinary-bound",
+        "gi-recombination",
+        "gi-second-cauchy"
+      ]
+    },
+    {
+      "label": "lem:ga-linear-coefficients",
+      "id": "lem:ga-linear-coefficients",
+      "labels": [
+        "lem:ga-linear-coefficients"
+      ],
+      "environment": "lemma",
+      "reviewed_fragment": "gaussian-analytic",
+      "statement_and_map": "Integer affine coefficient extrapolation with integer multiplier bounded by an E-power.",
+      "hypotheses_conventions_translation": "X>=1, u,v integers, v nonzero, |u|<=CX, |v|<=E, L>=X/E; integral triangular binomial coefficient matrix.",
+      "declared_dependencies": [
+        "lem:gn-quadratic-coefficients"
+      ],
+      "status": "independent_application_review_accepted_relative_to_listed_inputs",
+      "review_limit": "Human review of the stated derivation; inventory is not a truth oracle, formal proof, or acceptance of unlisted arithmetic inputs.",
+      "source_bounds": "Exact current statement and all attached proof spans below; source fragments separately byte-pinned.",
+      "statement": {
+        "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+        "start_character": 830726,
+        "end_character": 831146,
+        "first_line": 17548,
+        "last_line": 17557,
+        "text_sha256": "be18c9541e649e604d0bb6f61c0104d8832ff968bf3fe3019d758f280e5cfa30"
+      },
+      "proof_spans": [
+        {
+          "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+          "start_character": 831147,
+          "end_character": 831746,
+          "first_line": 17558,
+          "last_line": 17568,
+          "text_sha256": "38dfc6d76aab4df83a0869c26581053fbc6f936a4af4becf2f5d932ad861089d"
+        }
+      ],
+      "explicit_citation_keys": [],
+      "explicit_internal_dependencies": [
+        "lem:gn-quadratic-coefficients"
+      ]
+    },
+    {
+      "label": "lem:ga-affine-interpolation",
+      "id": "lem:ga-affine-interpolation",
+      "labels": [
+        "lem:ga-affine-interpolation"
+      ],
+      "environment": "lemma",
+      "reviewed_fragment": "gaussian-analytic",
+      "statement_and_map": "Fixed-W real-coordinate interpolation preserves quantitative total distribution on [WN+b].",
+      "hypotheses_conventions_translation": "Fixed integer W,b; same filtration and quotient; delta>=N^(-sigma), Q<=delta^(-a); parameters chosen before factorization exponent.",
+      "declared_dependencies": [
+        "V6-GA-COORDINATES",
+        "V6-GA-LEIBMAN",
+        "lem:ga-linear-coefficients",
+        "lem:gn-horizontal-obstruction"
+      ],
+      "status": "independent_application_review_accepted_relative_to_listed_inputs",
+      "review_limit": "Human review of the stated derivation; inventory is not a truth oracle, formal proof, or acceptance of unlisted arithmetic inputs.",
+      "source_bounds": "Exact current statement and all attached proof spans below; source fragments separately byte-pinned.",
+      "statement": {
+        "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+        "start_character": 831748,
+        "end_character": 832531,
+        "first_line": 17570,
+        "last_line": 17587,
+        "text_sha256": "ad3ec2ab9eaf1a4d9b45ddc6c3fc42a636ea44f4d48ce09e3abc7ebe5f12b536"
+      },
+      "proof_spans": [
+        {
+          "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+          "start_character": 832532,
+          "end_character": 835036,
+          "first_line": 17588,
+          "last_line": 17648,
+          "text_sha256": "3b2ac2e9a7fef5b7b92f7a17c6d843d4ecb128486db61e8133a953db04fdf6e5"
+        }
+      ],
+      "explicit_citation_keys": [
+        "GTOrbits2012"
+      ],
+      "explicit_internal_dependencies": [
+        "lem:ga-linear-coefficients",
+        "lem:gn-horizontal-obstruction"
+      ]
+    },
+    {
+      "label": "lem:ga-wtrick-ma",
+      "id": "lem:ga-wtrick-ma",
+      "labels": [
+        "lem:ga-wtrick-ma",
+        "eq:ga-ideal-input",
+        "eq:ga-wtrick-ideal"
+      ],
+      "environment": "lemma",
+      "reviewed_fragment": "gaussian-analytic",
+      "statement_and_map": "Transfer ideal minor-arc sum to the fixed-W arithmetic subsequence.",
+      "hypotheses_conventions_translation": "N(a)=Wn+b is exact; progression modulus becomes Wq and endpoints become O_W(N); W fixed; F0 Lipschitz and Haar mean zero.",
+      "declared_dependencies": [
+        "lem:ga-affine-interpolation",
+        "gi-minor-arc"
+      ],
+      "status": "independent_application_review_accepted_relative_to_listed_inputs",
+      "review_limit": "Human review of the stated derivation; inventory is not a truth oracle, formal proof, or acceptance of unlisted arithmetic inputs.",
+      "source_bounds": "Exact current statement and all attached proof spans below; source fragments separately byte-pinned.",
+      "statement": {
+        "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+        "start_character": 835193,
+        "end_character": 836429,
+        "first_line": 17654,
+        "last_line": 17681,
+        "text_sha256": "08f11113d24a112037faa5d83bbbaf76fe64657863bf94b42540390f988ffd9a"
+      },
+      "proof_spans": [
+        {
+          "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+          "start_character": 836430,
+          "end_character": 836947,
+          "first_line": 17682,
+          "last_line": 17691,
+          "text_sha256": "54a05cefd707fd53dac3164ab8720317744c863b9ef74b9309d11cf490429ab4"
+        }
+      ],
+      "explicit_citation_keys": [],
+      "explicit_internal_dependencies": [
+        "eq:ga-ideal-input",
+        "eq:ga-wtrick-ideal",
+        "lem:ga-affine-interpolation"
+      ]
+    },
+    {
+      "label": "cor:ga-centered-primes",
+      "id": "cor:ga-centered-primes",
+      "labels": [
+        "cor:ga-centered-primes"
+      ],
+      "environment": "corollary",
+      "reviewed_fragment": "gaussian-analytic",
+      "statement_and_map": "Finite linear combinations of fixed-W ray and ordinary prime weights satisfy the mean-zero minor-arc bound.",
+      "hypotheses_conventions_translation": "Conditional on checked finite-character expansion and both minor-arc inputs; Gaussian factor 1/2, prime-power O(sqrt(N)log^2 N), sigma1*cW<1/4; every progression P of modulus <=Q. Ordinary weight symbol is lambda_{b,W} after integration.",
+      "declared_dependencies": [
+        "lem:ga-wtrick-ma",
+        "gi-ordinary-primes"
+      ],
+      "status": "independent_application_review_accepted_relative_to_listed_inputs",
+      "review_limit": "Human review of the stated derivation; inventory is not a truth oracle, formal proof, or acceptance of unlisted arithmetic inputs.",
+      "source_bounds": "Exact current statement and all attached proof spans below; source fragments separately byte-pinned.",
+      "statement": {
+        "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+        "start_character": 836949,
+        "end_character": 838331,
+        "first_line": 17693,
+        "last_line": 17723,
+        "text_sha256": "93d233f42f07d337f4e005255baed0655a46a34dea46f787b186fa30dde9cf0d"
+      },
+      "proof_spans": [
+        {
+          "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+          "start_character": 838332,
+          "end_character": 839205,
+          "first_line": 17724,
+          "last_line": 17740,
+          "text_sha256": "c4af3e8f229c2d3a7d51bbce77c53c4f26626dfbeab97891ee03b81887311c7d"
+        }
+      ],
+      "explicit_citation_keys": [],
+      "explicit_internal_dependencies": [
+        "eq:ga-ideal-input",
+        "eq:gf-sw",
+        "lem:ga-affine-interpolation",
+        "lem:ga-wtrick-ma"
+      ]
+    },
+    {
+      "label": "rem:ga-choice-order",
+      "id": "rem:ga-choice-order",
+      "labels": [
+        "rem:ga-choice-order"
+      ],
+      "environment": "remark",
+      "reviewed_fragment": "gaussian-analytic",
+      "statement_and_map": "Arithmetic moduli and affine/minor-arc exponents precede the factorization exponent.",
+      "hypotheses_conventions_translation": "Output complexity polylogarithmic; does not invoke Frei–Tinkova as a theorem.",
+      "declared_dependencies": [
+        "prop:gf-factorization"
+      ],
+      "status": "independent_application_review_accepted_relative_to_listed_inputs",
+      "review_limit": "Human review of the stated derivation; inventory is not a truth oracle, formal proof, or acceptance of unlisted arithmetic inputs.",
+      "source_bounds": "Exact current statement and all attached proof spans below; source fragments separately byte-pinned.",
+      "statement": {
+        "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+        "start_character": 839207,
+        "end_character": 839801,
+        "first_line": 17742,
+        "last_line": 17751,
+        "text_sha256": "1789f23defa240e34a6bcd11cc45094cefc70a3de5a43d455a2ed28b520bd1bf"
+      },
+      "proof_spans": [],
+      "explicit_citation_keys": [],
+      "explicit_internal_dependencies": [
+        "prop:gf-factorization"
+      ]
+    },
+    {
+      "label": "prop:gf-factorization",
+      "id": "prop:gf-factorization",
+      "labels": [
+        "prop:gf-factorization",
+        "eq:gf-sw",
+        "eq:gf-ma",
+        "eq:gf-ma-regime",
+        "eq:gf-conclusion"
+      ],
+      "environment": "proposition",
+      "reviewed_fragment": "gaussian-analytic",
+      "statement_and_map": "Generic log-power nilsequence orthogonality from growth, all-progression centered means and power-form mean-zero minor arcs.",
+      "hypotheses_conventions_translation": "Hypotheses eq:gf-sw and eq:gf-ma remain genuine inputs; cell count M^2 log^D, cellwise Haar means, rational quotient changes, B before E(B). Applies to general weights satisfying these conditions.",
+      "declared_dependencies": [
+        "V6-GF-FACTORIZATION",
+        "V6-GF-CONJUGATED-QUOTIENT",
+        "V6-GF-RATIONAL-METRIC-SUPPORT"
+      ],
+      "status": "independent_application_review_accepted_relative_to_listed_inputs",
+      "review_limit": "Human review of the stated derivation; inventory is not a truth oracle, formal proof, or acceptance of unlisted arithmetic inputs.",
+      "source_bounds": "Exact current statement and all attached proof spans below; source fragments separately byte-pinned.",
+      "statement": {
+        "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+        "start_character": 840309,
+        "end_character": 842089,
+        "first_line": 17765,
+        "last_line": 17803,
+        "text_sha256": "4f2deac5dcdf12e5694cb348fe05b595425d1fc658770e1d0a4bca7a1b735470"
+      },
+      "proof_spans": [
+        {
+          "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+          "start_character": 842091,
+          "end_character": 846833,
+          "first_line": 17805,
+          "last_line": 17918,
+          "text_sha256": "d8b70c9efb93aa5d85d26bf980a39acd2af781f64884750f47b03c6a5d5905bf"
+        }
+      ],
+      "explicit_citation_keys": [
+        "GTOrbits2012",
+        "moebius"
+      ],
+      "explicit_internal_dependencies": [
+        "eq:gf-cells",
+        "eq:gf-conclusion",
+        "eq:gf-ma",
+        "eq:gf-ma-regime",
+        "eq:gf-sw",
+        "eq:gf-total-ma"
+      ]
+    },
+    {
+      "label": "rem:gf-order",
+      "id": "rem:gf-order",
+      "labels": [
+        "rem:gf-order"
+      ],
+      "environment": "remark",
+      "reviewed_fragment": "gaussian-analytic",
+      "statement_and_map": "Noncircular order for factorization exponent and progression thresholds.",
+      "hypotheses_conventions_translation": "B chosen from fixed minor-arc exponents using lower M>=log; upper exponent E(B) only later fixes SW precision and modulus threshold.",
+      "declared_dependencies": [
+        "prop:gf-factorization"
+      ],
+      "status": "independent_application_review_accepted_relative_to_listed_inputs",
+      "review_limit": "Human review of the stated derivation; inventory is not a truth oracle, formal proof, or acceptance of unlisted arithmetic inputs.",
+      "source_bounds": "Exact current statement and all attached proof spans below; source fragments separately byte-pinned.",
+      "statement": {
+        "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+        "start_character": 846835,
+        "end_character": 847473,
+        "first_line": 17920,
+        "last_line": 17933,
+        "text_sha256": "e24086592095ee20f482f891d13966e4a2e27c518cb5ab4603b2d43d2ebd9004"
+      },
+      "proof_spans": [],
+      "explicit_citation_keys": [],
+      "explicit_internal_dependencies": [
+        "eq:gf-ma"
+      ]
+    }
+  ],
+  "current_consumption": [],
+  "external_proof_subaudits": [],
+  "inherited_ledgers": [],
+  "evidence_pins": [
+    {
+      "path": "work/frei-tinkova-removal-001/norm-independent-review/REVIEW.md",
+      "bytes": 9852,
+      "sha256": "63994c05fa51002fc75119ab52a59096d14df7cdbb9e194a46bfbdd17940f420"
+    },
+    {
+      "path": "work/frei-tinkova-removal-001/norm-independent-review/receipt.json",
+      "bytes": 1087,
+      "sha256": "705e5b86645356ff220f4e6dcd715133364a9d60cd8bd076a3484abd8e344ba6"
+    },
+    {
+      "path": "work/frei-tinkova-removal-001/type-i-ii/ROOT_REVIEW.md",
+      "bytes": 5710,
+      "sha256": "6ae3a2ce6705860b93039268740740238be78d6e2e1852372e9cd1dfada34323"
+    },
+    {
+      "path": "work/frei-tinkova-removal-001/factorization-independent-review/REVIEW.md",
+      "bytes": 9775,
+      "sha256": "633356640fd2ec8de9ad628d36d8de4c2444b266f5e8dde1d69a521fc8191a22"
+    },
+    {
+      "path": "work/frei-tinkova-removal-001/factorization-independent-review/receipt.json",
+      "bytes": 1219,
+      "sha256": "a2173219a10643207b4a7b511ebd08d251092433dd260bd510d457b3e2d435b7"
+    },
+    {
+      "path": "work/frei-tinkova-removal-001/factorization-independent-review/TEX_FIDELITY.md",
+      "bytes": 2418,
+      "sha256": "56eb65351504bd3d07c0fff2a45bdec6eef0ca843691446f1b6801b03105fa24"
+    },
+    {
+      "path": "work/frei-tinkova-removal-001/factorization-independent-review/tex-fidelity-static.json",
+      "bytes": 1362,
+      "sha256": "6eb762d78eca1ac9cf56323d26fa3d3775fe1b7f4fe50fe50a14ca2ae8885236"
+    }
+  ],
+  "new_source_qualifications": [
+    {
+      "id": "V6-GAUSSIAN-ANALYTIC-SCOPE",
+      "text": "Only the one-parameter published GT results and specified rational/metric claim are used. Gaussian ideal convolution, coefficient extrapolation, norm transfer and general-weight recombination are newly proved steps, not quotations of an external theorem. No unrestricted general-number-field result is claimed."
+    },
+    {
+      "id": "V6-GT-MOBIUS-KEY",
+      "text": "The reviewed fragments used GTMobius2012; integrated citation key moebius denotes the same published paper. Its Section 3 is provenance and its p.547 Claim is a scoped theorem input. The paper’s Möbius orthogonality theorem is not invoked for the new von Mangoldt estimates."
+    }
+  ],
+  "reviewed_fragments": [
+    {
+      "id": "gaussian-analytic",
+      "path": "work/frei-tinkova-removal-001/analytic-reviewed-fragment.tex",
+      "sha256": "2acfcd8fdda45f14de36b703b31292053aafce951af1aa7d5e54e074d12ae218",
+      "current": {
+        "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+        "start_character": 796013,
+        "end_character": 847473,
+        "first_line": 16822,
+        "last_line": 17933,
+        "text_sha256": "2acfcd8fdda45f14de36b703b31292053aafce951af1aa7d5e54e074d12ae218"
+      },
+      "component_pins_and_bindings": [
+        {
+          "source": {
+            "path": "work/frei-tinkova-removal-001/quotient-audit/norm_transfer.tex",
+            "bytes": 10431,
+            "sha256": "d2d8fa98291def5007fdd76ee4226acf7f4d77d0dd086d8ce3bc984785b13c16"
+          },
+          "current": {
+            "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+            "start_character": 796013,
+            "end_character": 806328,
+            "first_line": 16822,
+            "last_line": 17050,
+            "text_sha256": "90d9ab259194c62c78a96bfaa3df1e231ef4530b13b42cc19526e68456259e61"
+          },
+          "integration_changes": [
+            "GTMobius2012 citation key renamed moebius",
+            "Header comments excluded from body binding"
+          ]
+        },
+        {
+          "source": {
+            "path": "work/frei-tinkova-removal-001/type-i-ii/type_i_ii.tex",
+            "bytes": 24041,
+            "sha256": "8af77dc5439c82ec79c223b0fead55b6b5fb4987f159525794d82190ed439136"
+          },
+          "current": {
+            "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+            "start_character": 806588,
+            "end_character": 830366,
+            "first_line": 17057,
+            "last_line": 17536,
+            "text_sha256": "f4b0eb35892a449942db5540c85c06e90f7c3a1b07ea1ab863294f8ee5633fe0"
+          },
+          "integration_changes": [
+            "GTMobius2012 citation key renamed moebius",
+            "Header comments excluded from body binding"
+          ]
+        },
+        {
+          "source": {
+            "path": "work/frei-tinkova-removal-001/factorization/affine_pullback.tex",
+            "bytes": 9433,
+            "sha256": "10edb90817918605156a7f1193e42fa2777336b063406776129d4233021f2778"
+          },
+          "current": {
+            "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+            "start_character": 830438,
+            "end_character": 839801,
+            "first_line": 17540,
+            "last_line": 17751,
+            "text_sha256": "cf98e8c04b64df2e6ed7e8e876ffc1ca3f40ba31e50609d3e36e2c859427515f"
+          },
+          "integration_changes": [
+            "GTMobius2012 citation key renamed moebius",
+            "Header comments excluded from body binding",
+            "Ordinary-prime symbol Lambda_{b,W} renamed lambda_{b,W} to match progression definition"
+          ]
+        },
+        {
+          "source": {
+            "path": "work/frei-tinkova-removal-001/factorization/factorization.tex",
+            "bytes": 7675,
+            "sha256": "53c1e8b15c0460c5eb4fdcac92f800605fdb846e5b04d13ea847dd7063fa7649"
+          },
+          "current": {
+            "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+            "start_character": 839866,
+            "end_character": 847473,
+            "first_line": 17755,
+            "last_line": 17933,
+            "text_sha256": "920bcc3c775a14708f9cff78de58c128c49fd2338935bc9e06c39628bdf782f9"
+          },
+          "integration_changes": [
+            "GTMobius2012 citation key renamed moebius",
+            "Header comments excluded from body binding"
+          ]
+        }
+      ],
+      "review": "Norm/affine/factorization independent reviews and root Type I/II review; final TeX fidelity receipt. Intervening comments are not mathematical changes.",
+      "status": "component_derivations_reviewed_relative_to_listed_inputs",
+      "integration_note": "Exact contiguous frozen fragment supplied for the V5 full-fragment matcher; all component source/body pins are also supplied."
+    }
+  ],
+  "candidate_pin": {
+    "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+    "bytes": 903216,
+    "sha256": "b43f096ba3a4b1a979778ae1593ce3ad89048a2d28016e5ee9f35b124238dce7"
+  },
+  "classification_policy": "Exact paragraph and exact source key set per occurrence. No global GTOrbits2012 or moebius blanket classification; unrelated retained manuscript citations remain outside this inventory."
+}

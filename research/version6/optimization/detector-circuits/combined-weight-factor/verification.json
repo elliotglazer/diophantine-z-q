@@ -1,0 +1,17 @@
+{
+  "status": "pass",
+  "actual_emitted_component_identities": 18,
+  "actual_emitted_gate_residuals": 27,
+  "raw_coordinates": 1021,
+  "compiled_coordinates": 989,
+  "compiled_residuals": 946,
+  "maximum_residual_degree": 2,
+  "reduction": {
+    "eliminations": 32,
+    "rowAdditions": 0,
+    "rounds": 33,
+    "heuristicMaxGrowth": 400
+  },
+  "raw_sha256": "81c78502b4b61fa7ceb65e3ab71330181cd8be64fc798aeca8b94cc369d2868d",
+  "patch_sha256": "8278cc267a26a36a590a2b38d050b45bed35e0c45e554e8493f722538ab01978"
+}

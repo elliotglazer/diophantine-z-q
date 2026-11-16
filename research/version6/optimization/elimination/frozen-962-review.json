@@ -1,0 +1,16 @@
+{
+  "verified": true,
+  "rawCoordinates": 994,
+  "coordinates": 962,
+  "residuals": 919,
+  "monomials": 55409,
+  "quarticDegree": 4,
+  "operations": {
+    "eliminate": 32,
+    "normalize": 862
+  },
+  "inputPreserved": true,
+  "unusedCoordinates": 0,
+  "rawSha256": "cb1295d789c5bb40bd98842b1bd2a51a05c6ff2058a526e7d1d9b177d20da3ae",
+  "scope": "Exact compiler replay and sum-of-squares table, including every removal. Does not independently prove source-level analytic equivalence."
+}

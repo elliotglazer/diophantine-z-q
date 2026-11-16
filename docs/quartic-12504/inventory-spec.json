@@ -1,0 +1,247 @@
+{
+  "format": "quartic-12504-inventory-spec/v1",
+  "manuscript": "quartic_12504.tex",
+  "package": "quartics/quartic-12504",
+  "source_contract": {
+    "source_id": "reciprocal64-beta16-compressed-s1-b5e836d77643",
+    "source_sha256": "ce9eeac7c4730aced8cfb70a1ab3b1b6a7fb2110c597afad1f56ddc92aeea73f",
+    "source_uncompressed_sha256": "b5e836d7764363fcbfdafbacefe80a5f53e0979eba73af990827942b0fa9351d",
+    "source_variables": 12064,
+    "source_rows": 11499,
+    "high": 64,
+    "beta": 16,
+    "anchor_squarings": 24,
+    "scalar_orders": [
+      1,
+      1,
+      1,
+      1,
+      48,
+      48
+    ],
+    "contact_count": 41,
+    "field_orders": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      16,
+      64,
+      64,
+      64,
+      64,
+      16,
+      64,
+      64,
+      64
+    ],
+    "rational_orders": [
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      1,
+      16,
+      16,
+      64,
+      64,
+      64,
+      64,
+      64,
+      64,
+      64,
+      64,
+      16,
+      16,
+      64,
+      64,
+      64,
+      64,
+      64,
+      64
+    ],
+    "height": "h(a)<=H_*M_5(a)^24; log2(H_*)<4783227",
+    "height_changed": false,
+    "primary_compressed": true,
+    "coefficient_scale": 1
+  },
+  "expected_final": {
+    "variables": 12504,
+    "witnesses": 12503,
+    "rows": 11939,
+    "monomials": 135721,
+    "degree": 4,
+    "max_abs_coefficient": "685783949153203534233601",
+    "expanded_sha256": "7f5aa3117af82a0b323f0a4e74a18599204f5540408106d3ce99612b5ed830ca",
+    "certificate_sha256": "9f7979c1e786bebad624b9ea4631b7eccd879f4bebb5b9ab69250b945973b268",
+    "checker_sha256": "d2079177a4960740c5b7d42fbd0756dfc4ce8953cc947cee91c8786ba26fa8ba",
+    "total_operations": 1467,
+    "operations": {
+      "norm_inverse": 205,
+      "redundant_inverse": 41,
+      "gpoint_chart": 6,
+      "field_ordinate": 2,
+      "parity_conic": 42,
+      "batch_absorb": 1,
+      "linear": 366,
+      "eliminate": 800,
+      "shear": 4
+    }
+  },
+  "retain_baseline_lemmas": [
+    "quadratic_field_and_rational_inverse",
+    "constant_definition_equivalence",
+    "invertible_row_equivalence",
+    "acyclic_circuit_equivalence",
+    "scalar_norm_inverse_equivalence",
+    "root_error_and_contact_nonvanishing",
+    "private_contact_inverse_removal",
+    "point_chart_equivalence",
+    "ordinate_elimination_equivalence",
+    "parity_block_existential_equivalence",
+    "bottom_norm_absorption_equivalence",
+    "normalization_and_sum_of_squares"
+  ],
+  "new_lemmas": [
+    {
+      "id": "reciprocal_curve_and_logarithm_identity",
+      "latex_label": "lem:quartic-reciprocal-log",
+      "statement": "On E:y²=x³-Dx, f=1/x and z=-x/y give z²=f/(1-Df²). For w=Df², log_E(z)=zG(w), where a0=1,a1=-2/5,a_j=(4j-5)a_(j-1)/(4j+1).",
+      "elementary_dependencies": [
+        "quadratic_field_and_rational_inverse"
+      ],
+      "inherited_dependencies": [
+        "formal_group"
+      ],
+      "proof": "The recurrence gives 4w(1-w)G'+(1+w)G=1-w. Differentiating the curve identity gives z dw/dz=4w(1-w)/(1+w). Thus d(zG)/dz=(1-w)/(1+w)=(1+4Dz⁴)^(-1/2), with the normalized constant term and zero value at zero.",
+      "conventions": "Formal series identity on the curve, not equality of old and new finite polynomials in independent variables. D=11-6sqrt(2), with norm49. Normalized invariant differential and z=-x/y are fixed."
+    },
+    {
+      "id": "reciprocal_logarithm_tail",
+      "latex_label": "lem:quartic-reciprocal-log",
+      "statement": "For e=16 or64, m=e/4, J=m-1 and L_e=z sum_(j=0)^J a_j(Df²)^j, a formal point at any selected p>76176 satisfies L_e/log_E(z) in1+p^e Z_p.",
+      "elementary_dependencies": [
+        "reciprocal_curve_and_logarithm_identity"
+      ],
+      "inherited_dependencies": [
+        "formal_group"
+      ],
+      "proof": "For r=v_p(z)>=1, v_p(f)=2r and v_p(w)=4r. Denominator(a_j) divides (4j+1)!; when4j+1<p the coefficient is integral. Otherwise j>=19044 and v_p(a_j)>=-(4j+1)/(p-1)>=-j, whence v_p(a_jw^j)>=4mr for every j>=m. These bounds tend to infinity. The full log divided by z is a unit.",
+      "conventions": "Controls the whole infinite tail, including nonunit denominators. Selected p splits in Q(sqrt(2)); D is a p-unit. The denominator uses64, not16."
+    },
+    {
+      "id": "reciprocal_global_nonvanishing",
+      "latex_label": "lem:quartic-reciprocal-nonzero",
+      "statement": "For J>=2 and f in Q(sqrt(2)), G_J(Df²) is nonzero. Thus zG_J(Df²) is nonzero exactly when z is nonzero.",
+      "elementary_dependencies": [
+        "quadratic_field_and_rational_inverse"
+      ],
+      "inherited_dependencies": [],
+      "proof": "Use v(a+b sqrt(2))=1/2 v2(a²-2b²)=min(v2(a),v2(b)+1/2). We have v(D)=0 and v(a_j)=1 for j>=1. If v(f)>=0 the constant term is uniquely least; if v(f)<=-1/2 the last term is uniquely least and has valuation<=1-J<0. Handle f=0 directly.",
+      "conventions": "Global rational-domain argument, independent of good reduction. Actual J values are3 and15. Applies to the exact new reciprocal polynomial, not the old z-polynomial."
+    },
+    {
+      "id": "compressed_primary_equivalence",
+      "latex_label": "lem:quartic-compressed-primary",
+      "statement": "The five primary charts with z_i and logarithm-ratio inverses are equivalent in rational existential projection to the four-equation charts and Lambda p0=G0, A_i=C_i p_i, A_i Lambda=G_i.",
+      "elementary_dependencies": [
+        "reciprocal_global_nonvanishing",
+        "quadratic_field_and_rational_inverse"
+      ],
+      "inherited_dependencies": [],
+      "proof": "Forward set p_i=y_if_i, Lambda=-L0=G0/p0 and A_i=C_ip_i. Reverse nonzero G_i force Lambda and every p_i nonzero. Set z_i=-1/p_i, y_i=x_ip_i, L_i=z_iG_i. Then C_i=L_i/L0. From f_ip_i²=v_i²(1+df_i), infer v_i nonzero and recover old h_i=u_ip_i,w_i=u_ip_i/v_i.",
+      "conventions": "Retain f=u²,v²+df=1,p²=x-Df,xf=1. Only private primary z coordinates are removed; all difference-point z and common J coordinates remain. Source audit checks all incidences. No rank theorem needed for this algebraic step."
+    },
+    {
+      "id": "reciprocal_circuit_evaluation",
+      "latex_label": null,
+      "statement": "The source's acyclic quadratic G circuits compute G15 and G3 exactly and their final output expressions are used in the corresponding ratio rows.",
+      "elementary_dependencies": [
+        "acyclic_circuit_equivalence",
+        "reciprocal_curve_and_logarithm_identity"
+      ],
+      "inherited_dependencies": [],
+      "proof": "Independent source checker derives coefficients by binomial convolution, expands each candidate circuit in its boundary variables, and compares every output and fused row. It also reconstructs all unchanged modules and flattening; a producer assertion alone is not evidence.",
+      "conventions": "This is a finite identity obligation within source construction, not a mathematical approximation theorem. The long circuit's fixed nonzero rational normalizations and hscale1 are pinned. No circuit events occur in the final1467-operation replay."
+    },
+    {
+      "id": "mixed_precision_proxy_congruences",
+      "latex_label": "thm:quartic-source-arithmetic",
+      "statement": "At each selected contact prime, proxies are integral and beta=n mod p16, while (xi,tau,zeta)=(s,t,z) mod p64.",
+      "elementary_dependencies": [
+        "reciprocal_logarithm_tail",
+        "compressed_primary_equivalence"
+      ],
+      "inherited_dependencies": [
+        "common_auxiliary",
+        "norm_tests",
+        "root_approximation",
+        "prime_pattern"
+      ],
+      "proof": "Alternate tests give h=4 mod p64 and m_i=4n_i mod p^(e_i), e1=16 and others64. Thus h is a unit. Both full log ratio m_i/h and the finite ratio have the same residue because the denominator error has order64. The two rational tests transfer through the same common theta.",
+      "conventions": "Exactly both beta primary and beta alternate tests use16; shared H alternate and three Lucas comparisons use64. One common theta is chosen last with coefficient-dependent precisions."
+    },
+    {
+      "id": "reciprocal_source_integer_projection",
+      "latex_label": "thm:quartic-source-arithmetic",
+      "statement": "For every rational input X, the pinned reciprocal64/beta16 compressed source has rational witnesses exactly when X is an integer.",
+      "elementary_dependencies": [
+        "mixed_precision_proxy_congruences",
+        "reciprocal_global_nonvanishing",
+        "compressed_primary_equivalence",
+        "reciprocal_circuit_evaluation"
+      ],
+      "inherited_dependencies": [
+        "five_contact_height",
+        "generator_index_height",
+        "anchor",
+        "scalar_height",
+        "lucas_growth",
+        "prime_pattern",
+        "pole_parity",
+        "norm_tests",
+        "common_auxiliary",
+        "root_approximation"
+      ],
+      "proof": "Keep H_*,41 contacts,anchor24 and scalar48. For a=|s|>(20H_*)² and B=max(|n|,|s|,|t|,|z|), nonzero Lucas defect gives B²-6<14H_*B^(3/2), contradiction. Hence log B>a-3. If beta!=n, p16 divisibilities give B²<7H_*N^(3/2)+6 and N<=2exp(h(beta))B, so log B<2log(32H_*)+3h(beta)<a/4, contradiction. Completeness retains original j and h_p=4 mod p^(64+v_p(j)), all guards and theta-last construction, then evaluates the new polynomials.",
+      "conventions": "A new arithmetic-source theorem, not an algebraic equal-output rewrite of F8. The older F8 arithmetic theorem alone does not prove this source. Retains all inherited proof-version qualifications."
+    },
+    {
+      "id": "rational_coordinate_shear",
+      "latex_label": null,
+      "statement": "Replacing an auxiliary coordinate v_old by v_new+c w everywhere, for rational c and w distinct from v, is an invertible rational change fixing the input.",
+      "elementary_dependencies": [],
+      "inherited_dependencies": [],
+      "proof": "The inverse is v_new=v_old-cw. Substitute simultaneously in every current incident row. The value of every other coordinate is unchanged.",
+      "conventions": "v is not input0; w may be input0. Full occurrence set must be covered and rows remain quadratic. Four actual shear events are used.",
+      "certificate_rules": [
+        "shear"
+      ]
+    }
+  ]
+}

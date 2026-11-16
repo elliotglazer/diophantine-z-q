@@ -1,0 +1,69 @@
+{
+  "status": "accepted_source_interface_review",
+  "date": "2026-11-06",
+  "review": "REVIEW.md",
+  "bridge": {
+    "path": "frei-tinkova-removal-001\\gowers-bridge\\bridge.tex",
+    "sha256": "b9284d40889c3d4308fd0c3d532b7d59c792f22894acc6db21c19a2422c307cd"
+  },
+  "contexts": [
+    {
+      "path": "frei-tinkova-removal-001\\factorization\\factorization.tex",
+      "sha256": "53c1e8b15c0460c5eb4fdcac92f800605fdb846e5b04d13ea847dd7063fa7649"
+    },
+    {
+      "path": "frei-tinkova-removal-001\\factorization\\affine_pullback.tex",
+      "sha256": "10edb90817918605156a7f1193e42fa2777336b063406776129d4233021f2778"
+    },
+    {
+      "path": "frei-tinkova-removal-001\\progression_mainterms.tex",
+      "sha256": "8564d37de829edff8e0864362b6185f6b44f1ac4c1f053c0a34fe6b16444a35b"
+    },
+    {
+      "path": "quartic-version5-release\\sun-proof\\sun_appendix.tex",
+      "sha256": "620e2e5652048c827efd8a1d9dae78462679e65992beeb20c3f089b3115fb77b"
+    }
+  ],
+  "localSources": [
+    {
+      "path": "quartic-version5-release\\sun-proof\\sources\\DK-v4.pdf",
+      "sha256": "1d71ecfcb7a1970ce3d7a10ac426f8c94e9d1d6a88886cb378ca19a099963508"
+    },
+    {
+      "path": "quartic-version5-release\\sun-proof\\sources\\TZ-published.pdf",
+      "sha256": "ba1645db9857dd621e8ea6a280927c1e4b7cef5f6df04a4f19e7ac7782220f43"
+    },
+    {
+      "path": "quartic-version5-release\\sun-proof\\sources\\Bienvenu-published.pdf",
+      "sha256": "9634fad788ff65298c361d0d0b596eb89fc097bda1eaa2031ee9ea13cd4c6130"
+    }
+  ],
+  "remoteSource": {
+    "url": "https://annals.math.princeton.edu/wp-content/uploads/annals-v171-n3-p08-p.pdf",
+    "version": "published PDF, directly inspected via web",
+    "locators": [
+      "Proposition 6.4, pp.1780-1781",
+      "Proposition 7.1, pp.1781-1782",
+      "Appendix D construction, pp.1839-1842"
+    ],
+    "binaryHash": null
+  },
+  "bridgeReferences": [
+    "cor:ga-centered-primes",
+    "cor:gaussian-centered-progressions",
+    "eq:gaussian-centered-nil-input",
+    "eq:gaussian-dk-correct-exponent",
+    "eq:gaussian-global-gowers",
+    "eq:gaussian-refined-gowers",
+    "eq:v5-artin-series",
+    "eq:v5-global-gowers",
+    "eq:v5-mu",
+    "lem:gaussian-linear-replacement",
+    "prop:gf-factorization",
+    "prop:v5-artin-patterns"
+  ],
+  "unresolvedBridgeReferences": [],
+  "sourceQualification": "DK checked against arXiv v4 pp.12-13; no publisher-typeset comparison. GT source was viewed remotely, not cached or binary-hashed.",
+  "compilation": "not claimed",
+  "upstreamArithmeticAudit": "separate receipts; this review checks exact consumption interface, not a fresh proof of those inputs"
+}

@@ -1,0 +1,571 @@
+{
+  "coordinates": 1272,
+  "stackedHessianRows": 6998,
+  "stackedHessianRankOverQ": 1252,
+  "commonRadicalDimension": 20,
+  "nonpivotCoordinates": [
+    1203,
+    1204,
+    1205,
+    1206,
+    1207,
+    1208,
+    1209,
+    1210,
+    1211,
+    1212,
+    1213,
+    1214,
+    1215,
+    1216,
+    1217,
+    1218,
+    1229,
+    1230,
+    1231,
+    1232
+  ],
+  "interpretation": "A nonzero common radical direction is necessary for eliminating a coordinate after any invertible affine coordinate change by direct constant-pivot substitution without using other equations.",
+  "kernelBasis": [
+    {
+      "free": 1203,
+      "direction": {
+        "1203": "1",
+        "1129": "-1",
+        "1055": "1",
+        "981": "1",
+        "907": "1",
+        "833": "1",
+        "759": "1",
+        "685": "1/1024",
+        "611": "1",
+        "545": "1"
+      },
+      "names": {
+        "1203": "detector8.E1.horner9.0.quadratic",
+        "1129": "detector7.E1.horner9.0.quadratic",
+        "1055": "detector6.E1.horner9.0.quadratic",
+        "981": "detector5.E1.horner9.0.quadratic",
+        "907": "detector4.E1.horner9.0.quadratic",
+        "833": "detector3.E1.horner9.0.quadratic",
+        "759": "detector2.E1.horner9.0.quadratic",
+        "685": "detector1.E1.horner9.0.quadratic",
+        "611": "detector0.E1.horner9.0.quadratic",
+        "545": "symmetric.1.9.9.0.quadratic"
+      }
+    },
+    {
+      "free": 1204,
+      "direction": {
+        "1204": "1",
+        "1130": "-1",
+        "1056": "1",
+        "982": "1",
+        "908": "1",
+        "834": "1",
+        "760": "1",
+        "686": "1/1024",
+        "612": "1",
+        "546": "1"
+      },
+      "names": {
+        "1204": "detector8.E1.horner9.1.quadratic",
+        "1130": "detector7.E1.horner9.1.quadratic",
+        "1056": "detector6.E1.horner9.1.quadratic",
+        "982": "detector5.E1.horner9.1.quadratic",
+        "908": "detector4.E1.horner9.1.quadratic",
+        "834": "detector3.E1.horner9.1.quadratic",
+        "760": "detector2.E1.horner9.1.quadratic",
+        "686": "detector1.E1.horner9.1.quadratic",
+        "612": "detector0.E1.horner9.1.quadratic",
+        "546": "symmetric.1.9.9.1.quadratic"
+      }
+    },
+    {
+      "free": 1205,
+      "direction": {
+        "1205": "1",
+        "1131": "1",
+        "1057": "1",
+        "983": "-1",
+        "909": "-1",
+        "835": "-1",
+        "761": "-1",
+        "687": "-1/1024",
+        "613": "-1",
+        "543": "-1"
+      },
+      "names": {
+        "1205": "detector8.E1.horner8.0.quadratic",
+        "1131": "detector7.E1.horner8.0.quadratic",
+        "1057": "detector6.E1.horner8.0.quadratic",
+        "983": "detector5.E1.horner8.0.quadratic",
+        "909": "detector4.E1.horner8.0.quadratic",
+        "835": "detector3.E1.horner8.0.quadratic",
+        "761": "detector2.E1.horner8.0.quadratic",
+        "687": "detector1.E1.horner8.0.quadratic",
+        "613": "detector0.E1.horner8.0.quadratic",
+        "543": "symmetric.1.9.8.0.quadratic"
+      }
+    },
+    {
+      "free": 1206,
+      "direction": {
+        "1206": "1",
+        "1132": "1",
+        "1058": "1",
+        "984": "-1",
+        "910": "-1",
+        "836": "-1",
+        "762": "-1",
+        "688": "-1/1024",
+        "614": "-1",
+        "544": "-1"
+      },
+      "names": {
+        "1206": "detector8.E1.horner8.1.quadratic",
+        "1132": "detector7.E1.horner8.1.quadratic",
+        "1058": "detector6.E1.horner8.1.quadratic",
+        "984": "detector5.E1.horner8.1.quadratic",
+        "910": "detector4.E1.horner8.1.quadratic",
+        "836": "detector3.E1.horner8.1.quadratic",
+        "762": "detector2.E1.horner8.1.quadratic",
+        "688": "detector1.E1.horner8.1.quadratic",
+        "614": "detector0.E1.horner8.1.quadratic",
+        "544": "symmetric.1.9.8.1.quadratic"
+      }
+    },
+    {
+      "free": 1207,
+      "direction": {
+        "1207": "1",
+        "1133": "-1",
+        "1059": "1",
+        "985": "1",
+        "911": "1",
+        "837": "1",
+        "763": "1",
+        "689": "1/1024",
+        "615": "1",
+        "541": "1"
+      },
+      "names": {
+        "1207": "detector8.E1.horner7.0.quadratic",
+        "1133": "detector7.E1.horner7.0.quadratic",
+        "1059": "detector6.E1.horner7.0.quadratic",
+        "985": "detector5.E1.horner7.0.quadratic",
+        "911": "detector4.E1.horner7.0.quadratic",
+        "837": "detector3.E1.horner7.0.quadratic",
+        "763": "detector2.E1.horner7.0.quadratic",
+        "689": "detector1.E1.horner7.0.quadratic",
+        "615": "detector0.E1.horner7.0.quadratic",
+        "541": "symmetric.1.9.7.0.quadratic"
+      }
+    },
+    {
+      "free": 1208,
+      "direction": {
+        "1208": "1",
+        "1134": "-1",
+        "1060": "1",
+        "986": "1",
+        "912": "1",
+        "838": "1",
+        "764": "1",
+        "690": "1/1024",
+        "616": "1",
+        "542": "1"
+      },
+      "names": {
+        "1208": "detector8.E1.horner7.1.quadratic",
+        "1134": "detector7.E1.horner7.1.quadratic",
+        "1060": "detector6.E1.horner7.1.quadratic",
+        "986": "detector5.E1.horner7.1.quadratic",
+        "912": "detector4.E1.horner7.1.quadratic",
+        "838": "detector3.E1.horner7.1.quadratic",
+        "764": "detector2.E1.horner7.1.quadratic",
+        "690": "detector1.E1.horner7.1.quadratic",
+        "616": "detector0.E1.horner7.1.quadratic",
+        "542": "symmetric.1.9.7.1.quadratic"
+      }
+    },
+    {
+      "free": 1209,
+      "direction": {
+        "1209": "1",
+        "1135": "1",
+        "1061": "1",
+        "987": "-1",
+        "913": "-1",
+        "839": "-1",
+        "765": "-1",
+        "691": "-1/1024",
+        "617": "-1",
+        "539": "-1"
+      },
+      "names": {
+        "1209": "detector8.E1.horner6.0.quadratic",
+        "1135": "detector7.E1.horner6.0.quadratic",
+        "1061": "detector6.E1.horner6.0.quadratic",
+        "987": "detector5.E1.horner6.0.quadratic",
+        "913": "detector4.E1.horner6.0.quadratic",
+        "839": "detector3.E1.horner6.0.quadratic",
+        "765": "detector2.E1.horner6.0.quadratic",
+        "691": "detector1.E1.horner6.0.quadratic",
+        "617": "detector0.E1.horner6.0.quadratic",
+        "539": "symmetric.1.9.6.0.quadratic"
+      }
+    },
+    {
+      "free": 1210,
+      "direction": {
+        "1210": "1",
+        "1136": "1",
+        "1062": "1",
+        "988": "-1",
+        "914": "-1",
+        "840": "-1",
+        "766": "-1",
+        "692": "-1/1024",
+        "618": "-1",
+        "540": "-1"
+      },
+      "names": {
+        "1210": "detector8.E1.horner6.1.quadratic",
+        "1136": "detector7.E1.horner6.1.quadratic",
+        "1062": "detector6.E1.horner6.1.quadratic",
+        "988": "detector5.E1.horner6.1.quadratic",
+        "914": "detector4.E1.horner6.1.quadratic",
+        "840": "detector3.E1.horner6.1.quadratic",
+        "766": "detector2.E1.horner6.1.quadratic",
+        "692": "detector1.E1.horner6.1.quadratic",
+        "618": "detector0.E1.horner6.1.quadratic",
+        "540": "symmetric.1.9.6.1.quadratic"
+      }
+    },
+    {
+      "free": 1211,
+      "direction": {
+        "1211": "1",
+        "1137": "-1",
+        "1063": "1",
+        "989": "1",
+        "915": "1",
+        "841": "1",
+        "767": "1",
+        "693": "1/1024",
+        "619": "1",
+        "537": "1"
+      },
+      "names": {
+        "1211": "detector8.E1.horner5.0.quadratic",
+        "1137": "detector7.E1.horner5.0.quadratic",
+        "1063": "detector6.E1.horner5.0.quadratic",
+        "989": "detector5.E1.horner5.0.quadratic",
+        "915": "detector4.E1.horner5.0.quadratic",
+        "841": "detector3.E1.horner5.0.quadratic",
+        "767": "detector2.E1.horner5.0.quadratic",
+        "693": "detector1.E1.horner5.0.quadratic",
+        "619": "detector0.E1.horner5.0.quadratic",
+        "537": "symmetric.1.9.5.0.quadratic"
+      }
+    },
+    {
+      "free": 1212,
+      "direction": {
+        "1212": "1",
+        "1138": "-1",
+        "1064": "1",
+        "990": "1",
+        "916": "1",
+        "842": "1",
+        "768": "1",
+        "694": "1/1024",
+        "620": "1",
+        "538": "1"
+      },
+      "names": {
+        "1212": "detector8.E1.horner5.1.quadratic",
+        "1138": "detector7.E1.horner5.1.quadratic",
+        "1064": "detector6.E1.horner5.1.quadratic",
+        "990": "detector5.E1.horner5.1.quadratic",
+        "916": "detector4.E1.horner5.1.quadratic",
+        "842": "detector3.E1.horner5.1.quadratic",
+        "768": "detector2.E1.horner5.1.quadratic",
+        "694": "detector1.E1.horner5.1.quadratic",
+        "620": "detector0.E1.horner5.1.quadratic",
+        "538": "symmetric.1.9.5.1.quadratic"
+      }
+    },
+    {
+      "free": 1213,
+      "direction": {
+        "1213": "1",
+        "1139": "1",
+        "1065": "1",
+        "991": "-1",
+        "917": "-1",
+        "843": "-1",
+        "769": "-1",
+        "695": "-1/1024",
+        "621": "-1",
+        "535": "-1"
+      },
+      "names": {
+        "1213": "detector8.E1.horner4.0.quadratic",
+        "1139": "detector7.E1.horner4.0.quadratic",
+        "1065": "detector6.E1.horner4.0.quadratic",
+        "991": "detector5.E1.horner4.0.quadratic",
+        "917": "detector4.E1.horner4.0.quadratic",
+        "843": "detector3.E1.horner4.0.quadratic",
+        "769": "detector2.E1.horner4.0.quadratic",
+        "695": "detector1.E1.horner4.0.quadratic",
+        "621": "detector0.E1.horner4.0.quadratic",
+        "535": "symmetric.1.9.4.0.quadratic"
+      }
+    },
+    {
+      "free": 1214,
+      "direction": {
+        "1214": "1",
+        "1140": "1",
+        "1066": "1",
+        "992": "-1",
+        "918": "-1",
+        "844": "-1",
+        "770": "-1",
+        "696": "-1/1024",
+        "622": "-1",
+        "536": "-1"
+      },
+      "names": {
+        "1214": "detector8.E1.horner4.1.quadratic",
+        "1140": "detector7.E1.horner4.1.quadratic",
+        "1066": "detector6.E1.horner4.1.quadratic",
+        "992": "detector5.E1.horner4.1.quadratic",
+        "918": "detector4.E1.horner4.1.quadratic",
+        "844": "detector3.E1.horner4.1.quadratic",
+        "770": "detector2.E1.horner4.1.quadratic",
+        "696": "detector1.E1.horner4.1.quadratic",
+        "622": "detector0.E1.horner4.1.quadratic",
+        "536": "symmetric.1.9.4.1.quadratic"
+      }
+    },
+    {
+      "free": 1215,
+      "direction": {
+        "1215": "1",
+        "1141": "-1",
+        "1067": "1",
+        "993": "1",
+        "919": "1",
+        "845": "1",
+        "771": "1",
+        "697": "1/1024",
+        "623": "1",
+        "533": "1"
+      },
+      "names": {
+        "1215": "detector8.E1.horner3.0.quadratic",
+        "1141": "detector7.E1.horner3.0.quadratic",
+        "1067": "detector6.E1.horner3.0.quadratic",
+        "993": "detector5.E1.horner3.0.quadratic",
+        "919": "detector4.E1.horner3.0.quadratic",
+        "845": "detector3.E1.horner3.0.quadratic",
+        "771": "detector2.E1.horner3.0.quadratic",
+        "697": "detector1.E1.horner3.0.quadratic",
+        "623": "detector0.E1.horner3.0.quadratic",
+        "533": "symmetric.1.9.3.0.quadratic"
+      }
+    },
+    {
+      "free": 1216,
+      "direction": {
+        "1216": "1",
+        "1142": "-1",
+        "1068": "1",
+        "994": "1",
+        "920": "1",
+        "846": "1",
+        "772": "1",
+        "698": "1/1024",
+        "624": "1",
+        "534": "1"
+      },
+      "names": {
+        "1216": "detector8.E1.horner3.1.quadratic",
+        "1142": "detector7.E1.horner3.1.quadratic",
+        "1068": "detector6.E1.horner3.1.quadratic",
+        "994": "detector5.E1.horner3.1.quadratic",
+        "920": "detector4.E1.horner3.1.quadratic",
+        "846": "detector3.E1.horner3.1.quadratic",
+        "772": "detector2.E1.horner3.1.quadratic",
+        "698": "detector1.E1.horner3.1.quadratic",
+        "624": "detector0.E1.horner3.1.quadratic",
+        "534": "symmetric.1.9.3.1.quadratic"
+      }
+    },
+    {
+      "free": 1217,
+      "direction": {
+        "1217": "1",
+        "1143": "1",
+        "1069": "1",
+        "995": "-1",
+        "921": "-1",
+        "847": "-1",
+        "773": "-1",
+        "699": "-1/1024",
+        "625": "-1",
+        "531": "-1"
+      },
+      "names": {
+        "1217": "detector8.E1.horner2.0.quadratic",
+        "1143": "detector7.E1.horner2.0.quadratic",
+        "1069": "detector6.E1.horner2.0.quadratic",
+        "995": "detector5.E1.horner2.0.quadratic",
+        "921": "detector4.E1.horner2.0.quadratic",
+        "847": "detector3.E1.horner2.0.quadratic",
+        "773": "detector2.E1.horner2.0.quadratic",
+        "699": "detector1.E1.horner2.0.quadratic",
+        "625": "detector0.E1.horner2.0.quadratic",
+        "531": "symmetric.1.9.2.0.quadratic"
+      }
+    },
+    {
+      "free": 1218,
+      "direction": {
+        "1218": "1",
+        "1144": "1",
+        "1070": "1",
+        "996": "-1",
+        "922": "-1",
+        "848": "-1",
+        "774": "-1",
+        "700": "-1/1024",
+        "626": "-1",
+        "532": "1"
+      },
+      "names": {
+        "1218": "detector8.E1.horner2.1.quadratic",
+        "1144": "detector7.E1.horner2.1.quadratic",
+        "1070": "detector6.E1.horner2.1.quadratic",
+        "996": "detector5.E1.horner2.1.quadratic",
+        "922": "detector4.E1.horner2.1.quadratic",
+        "848": "detector3.E1.horner2.1.quadratic",
+        "774": "detector2.E1.horner2.1.quadratic",
+        "700": "detector1.E1.horner2.1.quadratic",
+        "626": "detector0.E1.horner2.1.quadratic",
+        "532": "symmetric.1.9.2.1.quadratic"
+      }
+    },
+    {
+      "free": 1229,
+      "direction": {
+        "1229": "1",
+        "1155": "-1",
+        "1081": "1",
+        "1007": "1",
+        "933": "1",
+        "859": "1",
+        "785": "1",
+        "711": "1/11505236063118821809467553221049758295155052665230762065499525194094891251552061640493342548634082305351687288311769174890162545204122663839542235560926343960177145179191391057683342054479750023644997308933440369205641643669917624414330439074612943178454432683813523087356623740062701843509462805095950344781824",
+        "637": "1",
+        "571": "-1/4"
+      },
+      "names": {
+        "1229": "detector8.E52.horner3.0.quadratic",
+        "1155": "detector7.E52.horner3.0.quadratic",
+        "1081": "detector6.E52.horner3.0.quadratic",
+        "1007": "detector5.E52.horner3.0.quadratic",
+        "933": "detector4.E52.horner3.0.quadratic",
+        "859": "detector3.E52.horner3.0.quadratic",
+        "785": "detector2.E52.horner3.0.quadratic",
+        "711": "detector1.E52.horner3.0.quadratic",
+        "637": "detector0.E52.horner3.0.quadratic",
+        "571": "symmetric.52.3.3.0.quadratic"
+      }
+    },
+    {
+      "free": 1230,
+      "direction": {
+        "1230": "1",
+        "1156": "-1",
+        "1082": "1",
+        "1008": "1",
+        "934": "1",
+        "860": "1",
+        "786": "1",
+        "712": "1/11505236063118821809467553221049758295155052665230762065499525194094891251552061640493342548634082305351687288311769174890162545204122663839542235560926343960177145179191391057683342054479750023644997308933440369205641643669917624414330439074612943178454432683813523087356623740062701843509462805095950344781824",
+        "638": "1",
+        "572": "-1/4"
+      },
+      "names": {
+        "1230": "detector8.E52.horner3.1.quadratic",
+        "1156": "detector7.E52.horner3.1.quadratic",
+        "1082": "detector6.E52.horner3.1.quadratic",
+        "1008": "detector5.E52.horner3.1.quadratic",
+        "934": "detector4.E52.horner3.1.quadratic",
+        "860": "detector3.E52.horner3.1.quadratic",
+        "786": "detector2.E52.horner3.1.quadratic",
+        "712": "detector1.E52.horner3.1.quadratic",
+        "638": "detector0.E52.horner3.1.quadratic",
+        "572": "symmetric.52.3.3.1.quadratic"
+      }
+    },
+    {
+      "free": 1231,
+      "direction": {
+        "1231": "1",
+        "1157": "1",
+        "1083": "1",
+        "1009": "-1",
+        "935": "-1",
+        "861": "-1",
+        "787": "-1",
+        "713": "-1/11505236063118821809467553221049758295155052665230762065499525194094891251552061640493342548634082305351687288311769174890162545204122663839542235560926343960177145179191391057683342054479750023644997308933440369205641643669917624414330439074612943178454432683813523087356623740062701843509462805095950344781824",
+        "639": "-1",
+        "569": "1/4"
+      },
+      "names": {
+        "1231": "detector8.E52.horner2.0.quadratic",
+        "1157": "detector7.E52.horner2.0.quadratic",
+        "1083": "detector6.E52.horner2.0.quadratic",
+        "1009": "detector5.E52.horner2.0.quadratic",
+        "935": "detector4.E52.horner2.0.quadratic",
+        "861": "detector3.E52.horner2.0.quadratic",
+        "787": "detector2.E52.horner2.0.quadratic",
+        "713": "detector1.E52.horner2.0.quadratic",
+        "639": "detector0.E52.horner2.0.quadratic",
+        "569": "symmetric.52.3.2.0.quadratic"
+      }
+    },
+    {
+      "free": 1232,
+      "direction": {
+        "1232": "1",
+        "1158": "1",
+        "1084": "1",
+        "1010": "-1",
+        "936": "-1",
+        "862": "-1",
+        "788": "-1",
+        "714": "-1/11505236063118821809467553221049758295155052665230762065499525194094891251552061640493342548634082305351687288311769174890162545204122663839542235560926343960177145179191391057683342054479750023644997308933440369205641643669917624414330439074612943178454432683813523087356623740062701843509462805095950344781824",
+        "640": "-1",
+        "570": "1/4"
+      },
+      "names": {
+        "1232": "detector8.E52.horner2.1.quadratic",
+        "1158": "detector7.E52.horner2.1.quadratic",
+        "1084": "detector6.E52.horner2.1.quadratic",
+        "1010": "detector5.E52.horner2.1.quadratic",
+        "936": "detector4.E52.horner2.1.quadratic",
+        "862": "detector3.E52.horner2.1.quadratic",
+        "788": "detector2.E52.horner2.1.quadratic",
+        "714": "detector1.E52.horner2.1.quadratic",
+        "640": "detector0.E52.horner2.1.quadratic",
+        "570": "symmetric.52.3.2.1.quadratic"
+      }
+    }
+  ]
+}

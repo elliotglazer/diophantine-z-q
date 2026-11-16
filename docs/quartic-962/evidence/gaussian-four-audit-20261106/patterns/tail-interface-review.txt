@@ -1,0 +1,40 @@
+Tail-interface cross-review, 2026-11-06
+
+Reviewed tail/replacement-tail.tex independently against the baseline medium-prime statement and proof at lines 16302-16386, the polynomial lower bound, and the final diagonal. Then read tail/REPORT.md. This is an interface review of the weighted estimate and its quantifiers, not a new independent audit of every BHB lattice lemma.
+
+Verdict: the replacement preserves exactly the estimate needed by the final theorem. Adding the explicit fixed threshold L_* repairs the statement's previously unstated lower-cutoff range. It does not weaken the existence theorem, which already chooses L arbitrarily large.
+
+Uniformity in L
+
+The medium-prime proof has leading bound C*tau*B^3/(ell^2*(log B)^k), with C independent of ell, the lower cutoff, and tau. Its error at each ell is bounded before summation, and summing over the full range ell<=B^(1/100) gives the stated O_tau(B^(27/10)). Thus for L>=L_* the error is uniform in L. L_* can be chosen above all fixed exceptional primes.
+
+For L<=L0=B^(1/100), summing the leading term uses sum_(ell>L) ell^-2 <= C/(L log L). For L>L0 the medium range is empty. In either case, the large-prime part can be bounded by counting every prime above L0, a superset of the required remaining primes. That latter estimate has no L dependence. Consequently the claimed weighted bound is uniform in all L>=L_*, even if L varies with N. Only the later polynomial lower bound requires fixing L.
+
+Weight and tau dependence
+
+Choose tau0 once, small enough that every p_j in the prescribed box lies between fixed positive multiples of B^2 for all 0<tau<=tau0. The bound product log(p_j)<=C_k(log B)^k then has a constant independent of tau. Multiplying the medium estimate by it cancels the factor (log B)^-k in the leading term. The resulting leading C is independent of both L and tau.
+
+The power-saving terms need no factor tau. The smooth medium-prime majorant can have derivatives depending on each fixed tau, so the permitted O_tau remainder is the correct quantifier. The large-prime estimates may discard the restriction w<=tau B and use a fixed box, so they cause no additional requirement of uniformity as tau tends to zero.
+
+Exponent check
+
+With alpha=1/1000, the large-prime first exponent before logarithms is 3+1/1000-1/100=2.991, and the second is 11/4+1/1000=2.751. Both remain below 3-1/200=2.995 after absorbing any fixed power of log B for sufficiently large B. The one-position bound has first exponent 2.99 before logarithms and second exponent 2. Its weight is absorbed in the same way. The weighted medium error has exponent 2.7 before logarithms. All therefore fit B^(3-1/400)=N^(3/2-1/800). Their thresholds depend on fixed coefficients and, where needed, fixed tau, but not on L.
+
+Compatibility with the final diagonal
+
+After one fixed L is selected, the polynomial singular-series lower bound is c/(log L)^(4k), with c independent of L. Choose L large enough that
+C/(L log L)<c/(32(log L)^(4k)).
+This remains possible after imposing L>=max(L1,L_*).
+
+For each fixed tau_j, increase N_j until the O_tau_j remainder is less than c*tau_j*N^(3/2)/(32(log L)^(4k)), and until the existing omega and floor conditions hold. The weighted tail is then less than c*tau_j*N^(3/2)/(16(log L)^(4k)), whereas the polynomial lower count is at least c*N*T/(4(log L)^(4k))>=c*tau_j*N^(3/2)/(8(log L)^(4k)). Thus a positive margin survives. No rate uniform in tau_j is needed.
+
+Recommended final-proof edit
+
+Replace the opening choice with:
+
+Fix the coefficients, $M$, and the base modulus first. Choose one fixed
+$L\geq\max(L_1,L_*)$ so large that
+
+and retain the existing displayed comparison. This directly records the hypotheses of both the ray-density construction and the revised tail proposition. Alternatively, L1 could have been enlarged to exceed L_* earlier, but the direct final-proof edit is clearer.
+
+No shared TeX was edited in this cross-review.

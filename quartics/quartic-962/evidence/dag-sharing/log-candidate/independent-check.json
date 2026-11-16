@@ -1,0 +1,59 @@
+{
+  "status": "passed",
+  "scope": "All ten emitted log circuits equal z*sum(a_j*(D*f^2)^j) as exact four-variable polynomials over Q(sqrt(2)); all raw gates and compiler reductions independently checked.",
+  "gateIdentities": 1198,
+  "compilerOperations": 1171,
+  "logs": [
+    {
+      "name": "logU0",
+      "degree": 12,
+      "gateCoordinates": 12
+    },
+    {
+      "name": "logU1",
+      "degree": 3,
+      "gateCoordinates": 8
+    },
+    {
+      "name": "logU2",
+      "degree": 12,
+      "gateCoordinates": 12
+    },
+    {
+      "name": "logU3",
+      "degree": 12,
+      "gateCoordinates": 12
+    },
+    {
+      "name": "logU4",
+      "degree": 12,
+      "gateCoordinates": 12
+    },
+    {
+      "name": "logV0",
+      "degree": 12,
+      "gateCoordinates": 12
+    },
+    {
+      "name": "logV1",
+      "degree": 3,
+      "gateCoordinates": 8
+    },
+    {
+      "name": "logV2",
+      "degree": 12,
+      "gateCoordinates": 12
+    },
+    {
+      "name": "logV3",
+      "degree": 12,
+      "gateCoordinates": 12
+    },
+    {
+      "name": "logV4",
+      "degree": 12,
+      "gateCoordinates": 12
+    }
+  ],
+  "rawSha256": "58545a67e2f39b1282dde536f97ffe770580ca52a454575cc35677d633878418"
+}

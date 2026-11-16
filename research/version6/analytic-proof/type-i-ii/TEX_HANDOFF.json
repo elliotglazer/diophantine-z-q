@@ -1,0 +1,48 @@
+{
+  "status": "Proof fragment prepared; static checks pass; TeX engine unavailable in sandbox configuration",
+  "proof": {
+    "path": "C:\\Users\\glaze\\Documents\\Codex\\2026-11-02\\lo\\work\\frei-tinkova-removal-001\\type-i-ii\\type_i_ii.tex",
+    "sha256": "8af77dc5439c82ec79c223b0fead55b6b5fb4987f159525794d82190ed439136"
+  },
+  "normTransfer": {
+    "path": "C:\\Users\\glaze\\Documents\\Codex\\2026-11-02\\lo\\work\\frei-tinkova-removal-001\\quotient-audit\\norm_transfer.tex",
+    "sha256": "27928d99b495c0c7d3280d157ba5cd069c40b8150d1e61efd516f8fc1029bf99",
+    "label": "lem:gn-norm-transfer"
+  },
+  "argumentReview": {
+    "path": "C:\\Users\\glaze\\Documents\\Codex\\2026-11-02\\lo\\work\\frei-tinkova-removal-001\\type-i-ii\\ROOT_REVIEW.md",
+    "sha256": "6ae3a2ce6705860b93039268740740238be78d6e2e1852372e9cd1dfada34323",
+    "scope": "Independent review of TYPE_I_II.md argument before TeX transcription"
+  },
+  "reviewedArgument": {
+    "path": "C:\\Users\\glaze\\Documents\\Codex\\2026-11-02\\lo\\work\\frei-tinkova-removal-001\\type-i-ii\\TYPE_I_II.md",
+    "sha256": "c56999d354ed206d1006e98c2373b28fbdfbbf4f3a4cd826e82d5b5af1765539"
+  },
+  "publishedSources": [
+    {
+      "path": "C:\\Users\\glaze\\Documents\\Codex\\2026-11-02\\lo\\work\\quartic-version5-release\\sun-proof\\sources\\GT-orbits-published.pdf",
+      "sha256": "8c7ea5eced84dc5da97508f4eda39fa84c958d3e659a797ab402645c1c207c8f"
+    },
+    {
+      "path": "C:\\Users\\glaze\\Documents\\Codex\\2026-11-02\\lo\\work\\quartic-version5-release\\sun-proof\\sources\\GT-mobius-published.pdf",
+      "sha256": "5259dbc9ee73df46edd765ca27c8b3c0ec466f6b78abafa5f54237b11d44a314"
+    }
+  ],
+  "staticChecks": {
+    "balancedBraces": true,
+    "balancedEnvironments": true,
+    "uniqueLabels": true,
+    "resolvedCrossReferencesIncludingNormTransfer": true,
+    "ownLabels": 28,
+    "citationKeys": [
+      "GTMobius2012",
+      "GTOrbits2012"
+    ]
+  },
+  "latexCompile": {
+    "attempted": true,
+    "passed": false,
+    "reason": "MiKTeX fresh setup attempts forbidden creation of C:/Users/glaze/AppData/Roaming/MiKTeX/2.9 before reading the document. No TeX syntax diagnostic was produced."
+  },
+  "mathematicalScope": "Gaussian and ordinary-prime mean-zero minor-arc estimates. Hecke Siegel-Walfisz, progression main terms, factorization and final counting remain separately audited. No integration or publication."
+}

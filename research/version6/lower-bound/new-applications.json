@@ -1,0 +1,56 @@
+{
+  "status": "component_inventory_reviewed_not_yet_bound_to_final_manuscript",
+  "proof_sha256": "6db65ff9d69dfd1e3c5186cc3bec0ee84d2cb4120bf0a2a875469cc3a07cd71f",
+  "applications": [
+    {
+      "id": "V6-LOWER-KOLLAR",
+      "kind": "new_external_application",
+      "citation_keys": ["Kollar2002Cubic"],
+      "current_labels": ["thm:degree-four-necessary"],
+      "status": "mathematical_application_independently_reviewed_source_version_qualified",
+      "theorem_or_source_locator": "Theorem 2, author arXiv math/0005146v1 page 1",
+      "exact_source_versions": [{
+        "publication": "Janos Kollar, Unirationality of cubic hypersurfaces, J. Inst. Math. Jussieu 1 (2002), no.3, 467-476",
+        "doi": "10.1017/S1474748002000117",
+        "url": "https://arxiv.org/pdf/math/0005146v1",
+        "sha256": "e01b6f6f4f753c7feef65de4b3538d73f771db5390d6f6ef38822ff2325c82a1",
+        "local_file": "work/frei-tinkova-removal-001/sources/kollar-author.pdf",
+        "version_notes": "Exact statement checked in author preprint. Published metadata confirmed at Cambridge. Final journal wording/numbering not compared; no asserted byte identity."
+      }],
+      "objects_and_maps": "E is the homogenized affine coordinate vector space. W is the kernel of v -> directional derivative D_v H. H descends to E/W. The input is X1/X0 on the quotient chart X0=1.",
+      "hypotheses_and_discharge": "Q is perfect. Geometric reducibility is excluded separately by the three-conjugate-hyperplane argument. The quotient remains geometrically integral. Maximality of W and base change of its linear kernel remove every geometric vertex direction. This application is only in dimension at least two. A rational point exists at input zero.",
+      "conventions": "Unirationality is over Q, not only over its algebraic closure. No smoothness of the given rational point is assumed. The theorem's cone exclusion is enforced before application. Total degree includes input.",
+      "translation": "A dominant rational parametrization makes the nonconstant input function a nonconstant rational function on projective parameter space. Restricting to a suitable affine open and using density of Q in R shows its rational values cannot all be integers.",
+      "independent_review": "work/quartic-version6-preparation/lower-bound/independent-review/REVIEW.md"
+    },
+    {
+      "id": "V6-LOWER-INTEGRAL-HIT",
+      "kind": "new_external_application",
+      "citation_keys": ["Muller2002HIT"],
+      "current_labels": ["thm:degree-four-necessary"],
+      "status": "published_source_and_mathematical_application_independently_reviewed",
+      "theorem_or_source_locator": "Integral Hilbert irreducibility recalled in the introduction, printed page 984; also published abstract",
+      "exact_source_versions": [{
+        "publication": "Peter Muller, Finiteness results for Hilbert's irreducibility theorem, Ann. Inst. Fourier 52 (2002), no.4, 983-1015",
+        "doi": "10.5802/aif.1907",
+        "url": "https://www.numdam.org/article/AIF_2002__52_4_983_0.pdf",
+        "sha256": "23d0dc8ee51bf9dca3186ab2782e39a610f8d1515640cf0b0ca8d640195972bf",
+        "local_file": "work/quartic-version6-preparation/lower-bound/sources/muller-published.pdf",
+        "version_notes": "Published PDF and archive abstract inspected. This is the classical theorem recalled by Muller, not a claim that Muller originated Hilbert irreducibility."
+      }],
+      "objects_and_maps": "The nonconical quotient has dimension one. Its affine equation G(T,Y) is irreducible over Q[T,Y] and has degree at least two in Y; Gauss's lemma makes it irreducible over Q(T)[Y].",
+      "hypotheses_and_discharge": "Apply the single-polynomial integral specialization statement with number field Q and ring of integers Z. Exclude finitely many poles and zeros of the leading coefficient. At a remaining integer t the specialization stays irreducible of degree at least two and hence has no rational root.",
+      "conventions": "The specializations must be integers; Hilbertianity of Q alone is not the stated input. Only one irreducible polynomial is specialized, so simultaneous irreducibility of a finite family is not inferred from a single-polynomial result.",
+      "translation": "A missing rational point above an integer contradicts equality of the input projection with Z. This handles the dimension-one quotient, without a rational-point finiteness theorem for curves.",
+      "independent_review": "work/quartic-version6-preparation/lower-bound/independent-review/REVIEW.md"
+    }
+  ],
+  "attribution": {
+    "citation_key": "Brox2026",
+    "role": "Source of the lower-bound argument; not an additional theorem assumed without proof",
+    "repository_commit": "f4d1b5e6c23d4adeb3ae1f986ab0bf87884bdff6",
+    "source_sha256": "fc8bc7b8fae727e24f934ddd7de0a7cff8a005e89c3d0cac1ea14e5191b910ca",
+    "source_lines": "5422-5682",
+    "novelty_claim": "No historical priority claim made"
+  }
+}

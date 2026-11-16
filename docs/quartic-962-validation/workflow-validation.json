@@ -1,0 +1,181 @@
+{
+  "schema": "quartic-v6-workflow-local-validation-v1",
+  "status": "PASS_LOCAL_CHECKS",
+  "scope": "Workflow integration and PDF review selection; not a new mathematical verification.",
+  "platform": "Windows",
+  "files": [
+    {
+      "path": ".github/workflows/manuscript-integration.yml",
+      "sha256": "b31ee164414fc3a9a1c38e68d891a778813962ab6c94bb74abef17fd68e9a95c"
+    },
+    {
+      "path": ".github/workflows/research-checks.yml",
+      "sha256": "29efdec746bf272119b6600bfdedea3937aa9bd737ea08010f7f5a4ba58607a9"
+    },
+    {
+      "path": "scripts/render_quartic_review.py",
+      "sha256": "f56165094b7441b113c83e192b925d68c3e534ba57fca306f0113f873b3d2bdc"
+    }
+  ],
+  "authored_inventory_sha256": "b7a42a50809c85ef14a9380a15576ef0170bad571ef713c329e31f594f8c12cf",
+  "checks": [
+    {
+      "name": "v6_inventory_validate",
+      "status": "PASS",
+      "command": "python -E -B docs/quartic-962/inventory.py validate --repo . --manuscript quartic_962.tex --expected-input-sha256 b7a42a50809c85ef14a9380a15576ef0170bad571ef713c329e31f594f8c12cf"
+    },
+    {
+      "name": "v6_inventory_mutation_tests",
+      "status": "PASS",
+      "tests": 25,
+      "command": "python -E -B -m unittest discover -s docs/quartic-962 -p test_inventory.py -v"
+    },
+    {
+      "name": "historical_jobs_preserved",
+      "status": "PASS",
+      "detail": "Manuscript historical_reconstruction matches former reconstruction; reproduction unchanged; every old research-checks job unchanged against Git HEAD."
+    },
+    {
+      "name": "checker_and_inventory_commands",
+      "status": "PASS",
+      "detail": "Both workflows retain actual check_quartic962.py and pin the accepted authored inventory hash."
+    },
+    {
+      "name": "build_paper_filename_alignment",
+      "status": "PASS",
+      "detail": "Existing build_paper.py names quartic_962.tex, quartic_962.log and quartic_962.pdf, with manuscript_version 6."
+    },
+    {
+      "name": "renderer_syntax_and_page_bounds",
+      "status": "PASS",
+      "detail": "AST parse, valid explicit page range, and six malformed/out-of-bounds rejection cases."
+    },
+    {
+      "name": "v6_full_selected_render",
+      "status": "PASS",
+      "command": "python -E -B scripts/render_quartic_review.py --pdf quartic_962.pdf --edition v6 --expected-pages 249 --pypdf --out ../workflow-review/rendered",
+      "selected_pages": 84,
+      "rendered_pages": 84
+    },
+    {
+      "name": "v5_selection_regression",
+      "status": "PASS",
+      "pdf_pages": 223,
+      "command": "python -E -B scripts/render_quartic_review.py --edition v5 --pypdf --select-only --out ../workflow-review/v5-regression"
+    },
+    {
+      "name": "git_diff_check",
+      "status": "PASS"
+    }
+  ],
+  "pdf": {
+    "path": "quartic_962.pdf",
+    "sha256": "80d9a1700f5be93bbaa8c01fa9fdf9c89aae413da6fefb8cef2810e6077e02e3",
+    "pages": 249,
+    "selected_pages": [
+      1,
+      2,
+      3,
+      4,
+      115,
+      116,
+      117,
+      118,
+      119,
+      120,
+      121,
+      122,
+      123,
+      124,
+      125,
+      126,
+      127,
+      128,
+      129,
+      130,
+      131,
+      132,
+      133,
+      134,
+      135,
+      136,
+      137,
+      138,
+      139,
+      140,
+      141,
+      142,
+      143,
+      144,
+      145,
+      146,
+      147,
+      148,
+      149,
+      150,
+      151,
+      152,
+      153,
+      154,
+      155,
+      203,
+      212,
+      213,
+      214,
+      215,
+      216,
+      217,
+      218,
+      219,
+      220,
+      221,
+      222,
+      223,
+      224,
+      225,
+      226,
+      227,
+      228,
+      229,
+      230,
+      231,
+      232,
+      233,
+      234,
+      235,
+      236,
+      237,
+      238,
+      239,
+      240,
+      241,
+      242,
+      243,
+      244,
+      245,
+      246,
+      247,
+      248,
+      249
+    ],
+    "rendered_report": "workflow-review/rendered/rendered.json",
+    "rendered_report_sha256": "0a074ce086b038631114129904a55ab923d17f2ff4c2dd52a9e82390a5490fc1"
+  },
+  "visual_spot_check": {
+    "pages": [
+      1,
+      140,
+      153,
+      216,
+      249
+    ],
+    "status": "PASS",
+    "detail": "Viewed rendered PNGs; no visible clipping, overlap or missing glyphs on these pages. Other rendered pages were not individually inspected in this integration check."
+  },
+  "remaining_validation": {
+    "linux_ci": "PENDING_ROOT_RUN",
+    "default_pdftotext_path": "Not exercised locally: Windows PATH resolves unconfigured MiKTeX. Local render used pypdf text extraction and Poppler pdftoppm. CI installs poppler-utils.",
+    "yaml_parser": "No standalone YAML parser or actionlint run; edited workflow structure and retained job bodies checked directly."
+  },
+  "committed_or_pushed": false
+}

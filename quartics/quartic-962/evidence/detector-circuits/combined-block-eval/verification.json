@@ -1,0 +1,63 @@
+{
+  "status": "pass",
+  "scope": "All18 actual emitted E1 output components equal sum(c_k*q^k) as exact polynomials with upstream symbols independent; all72 local residuals vanish identically.",
+  "evaluations": [
+    {
+      "detector": 0,
+      "gates": 8,
+      "components_verified": 2
+    },
+    {
+      "detector": 1,
+      "gates": 8,
+      "components_verified": 2
+    },
+    {
+      "detector": 2,
+      "gates": 8,
+      "components_verified": 2
+    },
+    {
+      "detector": 3,
+      "gates": 8,
+      "components_verified": 2
+    },
+    {
+      "detector": 4,
+      "gates": 8,
+      "components_verified": 2
+    },
+    {
+      "detector": 5,
+      "gates": 8,
+      "components_verified": 2
+    },
+    {
+      "detector": 6,
+      "gates": 8,
+      "components_verified": 2
+    },
+    {
+      "detector": 7,
+      "gates": 8,
+      "components_verified": 2
+    },
+    {
+      "detector": 8,
+      "gates": 8,
+      "components_verified": 2
+    }
+  ],
+  "raw_coordinates": 1030,
+  "compiled_coordinates": 998,
+  "compiled_residuals": 955,
+  "maximum_residual_degree": 2,
+  "reduction": {
+    "eliminations": 32,
+    "rowAdditions": 0,
+    "rounds": 33,
+    "heuristicMaxGrowth": 400
+  },
+  "raw_sha256": "3ff81a238ff0dfe1cfbf09c538321b54d72d762d8422516abf1356da37b1bcbf",
+  "patch_sha256": "415e67bdf3ca4cbe351fdd85fb7dbcbef030c83c666c0e07a723dc9bedfc4e79"
+}

@@ -1,0 +1,11 @@
+{
+  "verified": true,
+  "baselineCoordinates": 1272,
+  "coordinates": 1251,
+  "residuals": 1208,
+  "eliminated": 21,
+  "maxResidualDegree": 2,
+  "sumOfSquaresDegree": 4,
+  "certificateSha256": "1066ec93346895d037b972f1eb8886c497f9ea5d805156b9217d6f700e9d2058",
+  "proof": "Exact polynomial identities; projection deletes eliminated coordinates; reverse reconstruction applies stored replacements in reverse order."
+}

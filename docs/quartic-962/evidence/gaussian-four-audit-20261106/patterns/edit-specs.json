@@ -1,0 +1,25 @@
+{
+  "baseline": "work/gaussian-four-audit-20261106/baseline.tex",
+  "baseline_sha256": "06f98ff070139c3b6c60589c65867ceb4366b023f7960551abd52f85fa67e30c",
+  "edits": [
+    {
+      "baseline_start_line": 18387,
+      "baseline_end_line": 18392,
+      "replacement_file": "repair-dense-model.tex",
+      "classification": "Make implicit fixed normalization and parameter assignments explicit; no new assumption"
+    },
+    {
+      "baseline_start_line": 18517,
+      "baseline_end_line": 18526,
+      "replacement_file": "repair-ray-fixed-field.tex",
+      "classification": "Supply degree argument for product quotient instead of inferring splitting solely from trivial conjugation action"
+    },
+    {
+      "baseline_start_line": 18686,
+      "baseline_end_line": 18686,
+      "old_text": "Forum Math. Pi \\textbf{6} (2018), e1, 73 pp.",
+      "new_text": "Forum Math. Pi \\textbf{6} (2018), e1, 60 pp.",
+      "classification": "Correct published page count from source title page"
+    }
+  ]
+}

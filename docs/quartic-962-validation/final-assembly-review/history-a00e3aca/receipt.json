@@ -1,0 +1,79 @@
+{
+  "status": "accepted_assembly_fidelity",
+  "reviewer": "/root/astra_sub1000_quotients",
+  "date": "2026-11-06",
+  "scope": "Exact assembly fidelity, with authorized collective-attribution editorial update; complete analytic audit separate",
+  "files": [
+    {
+      "path": "work\\quartic-version6-preparation\\manuscript\\quartic_962-analytic-candidate.tex",
+      "sha256": "a00e3aca8bb55987bce8548ab9e5ce4392c89d1d76459a7c7ac33fca303a287b"
+    },
+    {
+      "path": "work\\quartic-version6-preparation\\assemble_preparation.py",
+      "sha256": "a7c72c39d6c885b76ec15a76f8ceeed5acebf90d2a4a1eb15636ac523d57fa0f"
+    },
+    {
+      "path": "work\\quartic-version6-preparation\\assemble_analytic_candidate.py",
+      "sha256": "d2e7903de7513f65606bf66633200accec15567aecdc9985119ed4164b864661"
+    },
+    {
+      "path": "work\\quartic-version6-preparation\\quartic-962\\construction.tex",
+      "sha256": "529e821f776ae230d860e5efe01dfd55c05af9d2cdbb8c42bf907f9d42167769"
+    },
+    {
+      "path": "work\\quartic-version6-preparation\\lower-bound\\degree_lower_bound.tex",
+      "sha256": "6db65ff9d69dfd1e3c5186cc3bec0ee84d2cb4120bf0a2a875469cc3a07cd71f"
+    },
+    {
+      "path": "work\\quartic-version6-preparation\\final-assembly-review\\check_assembly.py",
+      "sha256": "bd83c5e6ba6f2478384d1480b7bfb5642e4f4224254a29a7ae4870d48241907d"
+    },
+    {
+      "path": "work\\quartic-version6-preparation\\final-assembly-review\\assembly-check.json",
+      "sha256": "434752a6786c139477db6ff0165987f2e972b694355e94970242c0c12fde4d61"
+    },
+    {
+      "path": "work\\quartic-version6-preparation\\final-assembly-review\\REVIEW.md",
+      "sha256": "faf3554aa6d43087fd6532a9bab94a335cbf0b2a38eae1276cd6ec8b764dfa3c"
+    },
+    {
+      "path": "work\\quartic-version6-preparation\\final-assembly-review\\check_editorial.py",
+      "sha256": "c9a95dc49297ced9a8bada99520efc593364ccb0843c71f5933fb37cc597bc4d"
+    },
+    {
+      "path": "work\\quartic-version6-preparation\\final-assembly-review\\editorial-check.json",
+      "sha256": "1aafc72cbd23d0a7e0bf7f463c31883347b57225578b9dcdcc30c13cbbdca515"
+    }
+  ],
+  "checks": 35,
+  "published": false,
+  "sourceQualification": "Existing lower-bound receipt checks Kollar author-version statement and published metadata, not full published text.",
+  "assembled_fragments": {
+    "gaussian-analytic": {
+      "path": "work\\quartic-version6-preparation\\assembled-components\\gaussian-analytic.tex",
+      "sha256": "bb9ea5e6cc12700e7c19f78a35e69d7838f7e4bb600539554c23007d7fdc2c2d",
+      "acceptance_scope": "exact assembled span with authorized attribution edits; prior mathematical reviews preserved"
+    },
+    "source962": {
+      "path": "work\\quartic-version6-preparation\\assembled-components\\source962.tex",
+      "sha256": "b45243a1f4c1ce5d635afbcc1d2bb7b7b47e9ee50b0e97dcff3cd031857183e5",
+      "acceptance_scope": "exact assembled span with authorized attribution edits; prior mathematical reviews preserved"
+    },
+    "sun-completed": {
+      "path": "work\\quartic-version6-preparation\\assembled-components\\sun-completed.tex",
+      "sha256": "080e99f4830a61d4c275b36b580c82ce905145d3f8bd93437aed6f5d8ee5445a",
+      "acceptance_scope": "exact assembled span with authorized attribution edits; prior mathematical reviews preserved"
+    },
+    "degree-lower-bound": {
+      "path": "work\\quartic-version6-preparation\\assembled-components\\degree-lower-bound.tex",
+      "sha256": "f0df47dc7c7a0de1f9c34f16ad2decc3c2684d87ec09911d45293c08c804a55c",
+      "acceptance_scope": "exact assembled span with authorized attribution edits; prior mathematical reviews preserved"
+    }
+  },
+  "previous_receipt": {
+    "path": "work\\quartic-version6-preparation\\final-assembly-review\\history-b43f096\\receipt.json",
+    "sha256": "a67a1fbde6abf13f01eb33c2a04458bb8177ce5f0d3e9eb9d661fba33547b32e"
+  },
+  "checks_note": "35 prior assembly checks plus exact reconstruction of the prior candidate without the eight editorial replacements, exact replay of the current candidate and four exports, blank-author check, visible-attribution check, and URL preservation.",
+  "candidate_sha256": "a00e3aca8bb55987bce8548ab9e5ce4392c89d1d76459a7c7ac33fca303a287b"
+}

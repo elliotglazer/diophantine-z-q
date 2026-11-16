@@ -1,0 +1,27 @@
+{
+  "coordinates": 1272,
+  "rows": 1229,
+  "blocks": {
+    "base": 90,
+    "point_modules": 72,
+    "fourfold_roots": 48,
+    "five_differences": 40,
+    "parameters_and_logarithms": 168,
+    "direct_tests_and_shared_symmetric_coefficients": 125,
+    "fixed_height_scales": 12,
+    "detector_0": 71,
+    "detector_1": 74,
+    "detector_2": 74,
+    "detector_3": 74,
+    "detector_4": 74,
+    "detector_5": 74,
+    "detector_6": 74,
+    "detector_7": 74,
+    "detector_8": 74,
+    "scalar_block": 53,
+    "anchor": 1
+  },
+  "quadratic_part_rank_over_Q": 1229,
+  "constant_linear_combination_dependencies": [],
+  "direct_degree_preserving_pivots": []
+}

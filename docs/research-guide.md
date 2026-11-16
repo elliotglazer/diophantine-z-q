@@ -1,24 +1,46 @@
 # Research guide
 
-This guide describes the [November 4, 2026 research handoff](https://github.com/elliotglazer/diophantine-z-q/releases/tag/research-handoff-2026-11-04-r2). It is a map of the saved evidence, not a replacement for the 11/5 manuscript's proofs. For current browsable sources, start with [construction](../construction/README.md), [Lean helpers](../lean/README.md), and [build instructions](building.md).
+The current manuscript is [*Z is Diophantine in Q*, Version 18](../manuscripts/quartic_v18.pdf), dated November 15, 2026, with [TeX source](../manuscripts/quartic_v18.tex). Start with the [196-variable result and its complete proof](../CURRENT_VERSION18.md), [reproduction instructions](../research/version18/REPRODUCTION.md) and [source and review index](../research/version18/ARTIFACT-INDEX.md). The 314-variable decimal quartic and original construction remain in the manuscript. The material below describes earlier editions; its historical scope is preserved.
 
-## Suggested reading order
+Version 14 is [*Z is Diophantine in Q*, Version 14](../manuscripts/quartic_v14.pdf), dated November 9, 2026, with [TeX source](../manuscripts/quartic_v14.tex). Start with the [299/314-variable constructions and review scopes](manuscript-revisions/version14/GUIDE.md), [application inventory](manuscript-revisions/version14/APPLICATIONS.json) and [cumulative supplement](../research/version14/README.md). The original construction and earlier proof baselines remain in the manuscript.
 
-1. Read **The main theorem and proof structure** in the 11/5 manuscript for the statement and the roles of the component arguments.
+The [Version 13 guide](manuscript-revisions/version13/GUIDE.md) and [supplement](../research/version13/README.md) preserve the 394/411-variable edition. Continue with the [Version 12 reductions, inventory and reviews](manuscript-revisions/version12/README.md) and [supplement](../research/version12/README.md), followed by the [Version 11 repair and reviews](manuscript-revisions/version11/README.md) and [supplement](../research/version11/README.md), followed by the [Version 10 review response](manuscript-revisions/version10/README.md) and [supplement](../research/version10/README.md), followed by the [Version 9 inventory extension](quartic-523-540/README.md), then its [inherited inventory](quartic-962/README.md). It records exact source versions, hypotheses, conventions and manuscript bindings, including the new prime-pattern argument and its publication-status qualifications. The [Version 9 revision record](quartic-523-540/revision.json) binds the new section and every other edit to the exact Version 8 baseline. The finite polynomial checks and the arithmetic proof have separate scopes. The [build instructions](building.md) explain how to reproduce the artifacts.
+
+The [research handoff guide](../handoff/README.md) identifies the Version 7 full and current-only archives. Both contain the public snapshot and selected research notes, with no conversational transcript. The full archive also embeds the unchanged Version 6 full archive, with its earlier historical baseline.
+
+## Version 7 audits
+
+The [Version 7 research guide](../research/version7/README.md) links the four Gaussian component audits, exact patches, source pins and integration checks. Their scope is separate from the retained arithmetic proof and formalization.
+
+## Version 6 research
+
+The [new research collection](../research/version6/README.md) preserves the quartic optimization, degree-four lower bound, Gaussian analytic replacement, independent reviews, and source inventories. The current manuscript reproduces the required Gaussian special case rather than invoking Frei–Tinková as a theorem. The degree obstruction is attributed to the agentic notes; the README supplies the collective contributor credit. The proof, finite certificates and incomplete formalization have distinct review scopes.
+
+## November 6 research update
+
+The [organized collaborator collection](../research/2026-11-06-collaborator-notes/README.md) includes the supplied equivalence and arithmetic-input notes, selected articles from the November 5 handoff, a comparison, and an exact replacement of the von Känel–Kret height input by the existing five-contact proof. Its source pins and check script distinguish a verified substitution from the still separate parity/point-existence question.
+
+## Historical materials
+
+The [Version 2 release](https://github.com/elliotglazer/diophantine-z-q/releases/tag/quartic-12504-version-2) and its [12,504-variable package](../quartics/quartic-12504/README.md) remain separate historical records. The remainder of this guide describes the [November 4, 2026 research handoff](https://github.com/elliotglazer/diophantine-z-q/releases/tag/research-handoff-2026-11-04-r2). It preserves earlier research history and does not contain either the Version 2 or Version 3 quartic package or all subsequent audits. Its `current/` directory means current at the archive date. The [original large construction](../construction/README.md) and [accepted Lean helpers](../lean/README.md) remain available in this checkout.
+
+## Reading the archived manuscript
+
+1. Read **The main theorem and proof structure** in the archived November 5 manuscript for the statement and the roles of the component arguments.
 2. Read **A finite specification of the polynomial**, **A variable-shift relation for ordinary values**, and **The cutoff and polynomial size** to see what is constructed and how it defines ordinary integer values.
 3. Follow the technical argument through the elliptic model, height estimate, pole predicate, multiplication, and restricted converse. The arithmetic and limit sections and source-application appendices supply the dependencies.
 4. Read **Consequences of the integer definition** for the three corollaries and their scope.
 5. Use the archive to inspect literal specifications, calculations, source checks, historical alternatives, or formalization work.
 
-The 11/5 TeX source has stable descriptive labels such as `thm:target`, `sec:syntax`, `sec:height`, `sec:rc`, `sec:limits`, `sec:compiler`, `sec:bridge`, and `sec:size`. Refer to those labels when page numbers differ between builds.
+The archived November 5 TeX source has descriptive labels such as `thm:target`, `sec:syntax`, `sec:height`, `sec:rc`, `sec:limits`, `sec:compiler`, `sec:bridge`, and `sec:size`. Refer to those labels when page numbers differ between builds.
 
 ## Map of the argument
 
-Revision 2 of the November 4 research handoff adds the later audit campaigns and the reviewed height replacement. Start with `current/diophantine_zq.tex`, its matching PDF, and `current/height-review.md`. The old height routes do not supply extra premises for Section 4 of the revised 11/5 manuscript.
+Revision 2 of the November 4 research handoff added the later audit campaigns and the reviewed height replacement. Start with `current/diophantine_zq.tex`, its matching PDF, and `current/height-review.md`. The old height routes do not supply extra premises for Section 4 of that archived manuscript. The archive's revision number is distinct from the current manuscript's title, Version 14.
 
-The paths below are **original project-relative paths recorded in the archive manifest**. Search for them in `INDEX.html`, or restore them with `restore_history.py`. They are not paths in this small Git checkout. Some files predate the revised 11/5 manuscript; compare their scope with that revision and later audits.
+The paths below are **original project-relative paths recorded in the archive manifest**. Search for them in `INDEX.html`, or restore them with `restore_history.py`. They are not paths in this Git checkout. Some files predate the archived November 5 manuscript; compare their scope with that revision and later audits.
 
-| Topic | 11/5 manuscript section | Archive starting points |
+| Topic | Archived November 5 manuscript section | Archive starting points |
 | --- | --- | --- |
 | Literal polynomial specification | A finite specification of the polynomial; Literal finite-constructor specification | `outputs/ordinary-integer-definition.json`; `outputs/ordinary-integer-polynomial.js` |
 | Elliptic model and generator | The elliptic model of integer indices | `outputs/elliptic-generator-proof.txt`; `outputs/z-in-q-generator-audit.txt`; `outputs/verify-z-in-q-generator.py` |
@@ -32,11 +54,11 @@ The paths below are **original project-relative paths recorded in the archive ma
 | Sources and dependency graphs | Bibliography and source-application appendices | `formalization/z-in-q/ProofSources/`; `work/main-proof-graph/` |
 | Earlier versions and discarded routes | Historical record | `drafts/z-in-q-candidate-preprint/`; `outputs/z-in-q-research-status.json`; archive-root `DISCARDED_APPROACHES.md` |
 
-The archive's K215 and ZFC-related files record additional research. The revised 11/5 manuscript describes the general specialization argument; it does not specify an additional explicit ZFC polynomial there. Check each historical construction's dependencies before treating it as a consequence of the 11/5 manuscript.
+The archive's K215 and ZFC-related files record additional research. The archived November 5 manuscript describes the general specialization argument; it does not specify an additional explicit ZFC polynomial there. Check each historical construction's dependencies before treating it as a consequence of the manuscript.
 
 ## Verify and restore the archive
 
-Download the handoff zip from the release. Its SHA-256 is:
+This section applies to the historical November 4 archive. For the current research archives, use the [handoff guide](../handoff/README.md). Download the historical ZIP from its release. Its SHA-256 is:
 
 ```text
 827765f17087e1794c15770221a3a2d0fefed25839566a4a9bfb3b5aaa1ed42b
@@ -60,7 +82,7 @@ On macOS:
 shasum -a 256 z-in-q-research-handoff-2026-11-04-r2.zip
 ```
 
-The repository's [SHA256SUMS](../SHA256SUMS) also records the 11/5 TeX and PDF hashes and the 10/11 PDF hash. Matching a hash establishes file identity, not mathematical correctness.
+The repository's [SHA256SUMS](../SHA256SUMS) identifies the files in the current release and the historical archive separately. Matching a hash establishes file identity, not mathematical correctness.
 
 Extract the zip, then open `START_HERE.md`, `CURRENT_STATE.json`, and `INDEX.html`. The HTML index works locally without a server. Original file paths map to their stored copies through `MANIFEST.json` and `FILE_INDEX.csv`.
 
@@ -97,8 +119,8 @@ The complete elliptic model, height, restricted-converse, pole-completeness, mul
 
 The archive omits dependency caches and compiled Lean binaries. The current repository now includes the accepted helper snapshot and [a procedure that compiles it into fresh project artifacts](building.md#lean-helpers). The saved historical compiler receipts describe their particular checked inputs, not every file in the archive.
 
-## Preparing the public research package
+## Archive scope
 
-The curated source trees, build commands, CI workflow, anonymous BibTeX citation entries, and third-party notices are now included in this repository. Remaining public-release work includes the original-work license selection, a per-source redistribution review of the historical archive, and an archival deposit when authorized. See [archiving](archiving.md) and [third-party notices](../THIRD_PARTY_NOTICES.md).
+The historical archive preserves superseded approaches and unfinished work as well as accepted results. Its inventories establish file identity and provenance; they are not a complete per-source license review or a new review of every mathematical claim. See the [archival notes](archiving.md) and [third-party notices](../THIRD_PARTY_NOTICES.md). The Version 3 source and evidence are supplied separately in this repository.
 
 Independent external mathematical review and completion of the main Lean proof are separate from these packaging checks. Record substantive findings and their resolution by version, and continue using release tags and file hashes to identify the materials under discussion.

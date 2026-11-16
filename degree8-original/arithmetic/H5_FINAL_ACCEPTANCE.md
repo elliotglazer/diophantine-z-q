@@ -1,0 +1,29 @@
+# Independent acceptance of the complete H5 integration
+
+Current accepted version: V4, `UNAPPLIED-candidate-v4.tex`, SHA256 `655c0b26cabc12211e3214a1fba7bcfca4440baf77febec303f2b0e6802a7833`. An exact replay confirms its sole difference from the accepted V3 below: the Calegari volume publication year changes from 2022 to 2023. I checked the [publisher's volume record](https://ems.press/books/standalone/274), which gives 15 December 2023. The ICM event/title remains 2022. The mathematical and source acceptance below therefore applies to V4 unchanged.
+
+Accepted source: `author/h5-integration/UNAPPLIED-candidate-v3.tex`, SHA256 `19d134d63935abb0e8fa54e139cc116944cdfd5e6f543851b0c7a021d8cfce16`. This receipt accepts its complete H5 argument and its resulting use in the original 15,671-witness construction. No mathematical or source-provenance issue remains open in that addition. Promotion into the private repository, package-status updates, compilation and visual review remain delivery steps. This is a human-style mathematical/source review, not a formal proof certification.
+
+This acceptance supersedes the open-H5 status in my earlier `H5_REVIEW.md`, `INTEGRATED_ACCEPTANCE.md`, and the source-version reservations in `GLOBAL_LEVEL_REVIEW.md`. Those records remain historical snapshots. The new argument proves the needed estimate by a modular-level bound; it does not assert the false uniform scalar-coefficient-field bound ruled out in `COCYCLE_ACCEPTANCE.md`.
+
+## Mathematical scope
+
+The published quotient identification, degree-576 normal fiber field, integral model, metric comparison, non-CM level bound and height transfer, and same-field CM estimate are all present. The geometric construction supplies good reduction outside 210 and ramification support in the specified contact radical. The non-CM construction permits the scalar character and coefficient field to vary. Its finite kernel field has degree at most 2304R, and its two-dimensional modular realization has level at most 210^300 R^2. The general isogeny theorem is applied with the modular Jacobian as source; its dimension and complement are accounted for. The resulting coefficient is inside 4608^165888. Together with the CM estimate and the additive metric budget this proves the exact original H5, not a weaker substitute with another constant or contact set.
+
+The detailed checks of irreducibility, oddness, finite twist, Frobenius quasi-endomorphism traces, transport from five to three, arbitrary-nebentypus conductor/primitive-level equality, the Li/Shimura Jacobian realization and the numerical inequalities are recorded in `GLOBAL_LEVEL_REVIEW.md`. The full Carayol/Casselman application is now included in the assembled proof. The local conductor argument and the obstruction to the abandoned scalar-field route have independent receipts in the campaign.
+
+## Publication provenance
+
+I independently opened [Calegari's published ICM article](https://ems.press/content/book-chapter-files/33140), pp.611–612 and 624. It supplies the geometric-representation hypotheses and explicitly attributes the required p>=5 modularity-up-to-twist result to Pan without residual irreducibility. The precise author-version Theorem 1.0.4 was also inspected. The V3 text accurately distinguishes the published formulation from the detailed author proof; it does not claim to have compared the inaccessible Pan journal text. The publisher PDF has SHA256 `d8e9a3ec3f2a4bedd674d95cf5f1e03fe26a67745c6f1cadf39b3fbf9e004cb5`.
+
+I independently opened [Yuan's publication list](https://faculty.bicmr.pku.edu.cn/~yxy/publications.html) and its [English translation](https://faculty.bicmr.pku.edu.cn/~yxy/preprints/explicit_KS.pdf). The author explicitly identifies this as a translation of the published Chinese article. The relevant integral-model, metric and image statements are inspected in that translation. Its SHA256 is `ad751f65ac5730b437adbabba78cc6bc1fe1f2249367c74566fe0a495100740e`. V3 names this provenance and uses English-page locators. Direct comparison with Chinese typesetting is not claimed. The metric conversion gives +2log(pi)+log(210); the source's misleading general level-containment wording is not used, because the construction takes the actual principal level U(3).
+
+These are adequate published-source links with explicitly stated inspection limits. No unpublished additional theorem is being silently substituted for either result.
+
+## Exact assembly and the two polynomials
+
+`check_h5_assembly.py` independently verifies all seven V2 input hashes, replays every declared source replacement, and checks that the full geometry, level, conductor, transfer, CM and numerical fragments are included. It then verifies all four V3 source pins and exactly replays the three citation-only replacements. `h5-assembly-review.json` and `h5-v3-assembly-review.json` record the successful checks. No author generator was imported or executed by this checker, and no polynomial rebuild was required.
+
+The accepted V3 candidate differs from the previously checked complete manuscript only by those declared H5 proof, interpretation/status and citation changes. It preserves the 20,371-witness construction and its size addendum, and the original construction's full parity, anchor and prime-pattern proofs. Their previously established finite outputs remain: respectively degree eight with 180,978 terms and maximum coefficient 24C^4, and degree eight with 129,497 terms and maximum coefficient 685783949153203534233601. This H5 review closes the new height obligation for the latter interpretation; it does not derive those finite counts from the height proof.
+
+The baseline manuscript and its restricted-converse theorem retain their previously stated proof status. Nothing in this receipt upgrades the baseline's independent audit status. No public publication or push is authorized or performed by this review.

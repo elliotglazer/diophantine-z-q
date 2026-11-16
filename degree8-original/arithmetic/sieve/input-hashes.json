@@ -1,0 +1,22 @@
+{
+  "schema": "original41-input-manifest/v1",
+  "scope": "Unchanged original41-prime pattern and common-J comparison",
+  "inputs": [
+    {
+      "file": "work\\freitag-adaptation-20261105\\source-records\\degree8\\short-polynomial-source\\article\\short-polynomial-proof-sections.tex",
+      "sha256": "2185b5031f986ecc24260bb7f963c746dee22d2fa887e58d1a67e688867b7b5f"
+    },
+    {
+      "file": "work\\freitag-adaptation-20261105\\source-records\\degree8\\short-polynomial-source\\article\\short-polynomial-synthesis.tex",
+      "sha256": "dd06b240065edd9cab823c38008bd6f200b97033e7818c480b2e543084ea00c7"
+    },
+    {
+      "file": "work\\freitag-adaptation-20261105\\source-records\\degree8\\short-polynomial-source\\article\\short-scalar-parity.tex",
+      "sha256": "00a8add816c2660667866da3e04649d7b7927848ed429b5d7f2d89b6bf24d1f7"
+    },
+    {
+      "file": "work\\freitag-adaptation-20261105\\source-records\\degree8\\short-polynomial-source\\build.py",
+      "sha256": "c7ef798894a106e3c6b02816583be2b6e966e4e701f73ee670c9a0de52a70912"
+    }
+  ]
+}

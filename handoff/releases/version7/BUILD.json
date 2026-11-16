@@ -1,0 +1,17 @@
+{
+  "bundle_sha256": "6ffe055852f8faf66c0acbe1a7fb27f87b869a90bad1204f3bf4d9683f597c7c",
+  "engine": "Tectonic 0.17.0",
+  "pages": 252,
+  "pdf": {
+    "bytes": 1462288,
+    "sha256": "6f1dd7cbd9a735c4237bd6a123855571e15b2057f0a539eb6bc07e8e1dba43cd"
+  },
+  "source": {
+    "bytes": 912132,
+    "sha256": "5399d2fb3c3beea388ccdb5719934772f222b49d02482a05ac3abc515321419a"
+  },
+  "status": "PASS",
+  "tex_errors": 0,
+  "unresolved_references": 0,
+  "visual_review": "Version 7 title page inspected; proof pages preserve the prior reviewed assembly."
+}

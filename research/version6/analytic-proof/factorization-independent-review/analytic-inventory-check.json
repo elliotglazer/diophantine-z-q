@@ -1,0 +1,32 @@
+{
+  "status": "passed_scoped_inventory_checks",
+  "counts": {
+    "applications": 13,
+    "internal_results": 17,
+    "citation_occurrences": 16
+  },
+  "files": [
+    {
+      "path": "work/frei-tinkova-removal-001/analytic-applications.json",
+      "sha256": "f91e58891cc7329e4ca8b428365fe43f25282fdd6c731eb2fbbc5624ac644c07"
+    },
+    {
+      "path": "work/frei-tinkova-removal-001/analytic-internal-results.json",
+      "sha256": "af6c45b3abad4f69cbd3fbd8e5e8424caf11a5463b99a1fdff0d3e9ff95667af"
+    },
+    {
+      "path": "work/frei-tinkova-removal-001/analytic-reviewed-fragment.tex",
+      "sha256": "2acfcd8fdda45f14de36b703b31292053aafce951af1aa7d5e54e074d12ae218"
+    }
+  ],
+  "candidate_sha256": "b43f096ba3a4b1a979778ae1593ce3ad89048a2d28016e5ee9f35b124238dce7",
+  "checks": [
+    "Source span hashes",
+    "All declared dependencies resolve",
+    "All application labels resolve",
+    "Exact frozen fragment occurs once",
+    "Every application has scoped citation occurrences",
+    "Delayed proof attached only to its explicit target"
+  ],
+  "limitation": "Metadata consistency only; mathematical status remains that of cited component reviews."
+}

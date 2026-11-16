@@ -1,0 +1,211 @@
+\subsection{The large-prime tail}\label{subsec:v5-large-sieve}
+
+We use Lemmas~2.1 and 4.1 of Browning--Heath-Brown~\cite{v5bhb}.
+The adjacent-norm polynomials are inhomogeneous, so we give the
+fixed-coordinate argument rather than invoke their homogeneous
+quadric-sieve theorem directly.
+Their Lemma~2.1 says that coprime polynomials in $\mathbb Z[X_1,\ldots,X_m]$
+of bounded degree and coefficient height at most $H$ have at most
+\begin{equation}\label{eq:v5-box-sieve}
+ O\left(\frac{V\log(VH)}{L\log L}
+           +\frac{V\log(VH)}{B_{\min}}\right)
+\end{equation}
+integer points in a box of side parameters $B_i\geq2$ at which a prime
+greater than $L\geq2$ divides every polynomial; $V=\prod B_i$.
+``Coprime'' here excludes a common constant prime factor as well as a
+common nonconstant factor. Their Lemma~4.1 covers the zeros modulo a
+squarefree $q$ of a rank-$m$ quadratic form, with $m\geq3$, by at most
+$(3m)^{\omega(q)}q^{m-2}$ lattices of determinant $q^{m-1}$.
+The number with largest Euclidean successive minimum exceeding $T$ is
+\begin{equation}\label{eq:v5-lattice-tail}
+ O_m((3m)^{\omega(q)}q^{2m-3}T^{-m}).
+\end{equation}
+Every prime dividing $q$ must be odd and preserve the rank of the form.
+The lattices in that lemma contain $q\mathbb Z^m$; in particular their
+largest successive minima are at most $q$.
+
+\begin{lemma}[Large common divisors on the quadric]\label{lem:v5-large-sieve}
+Fix the implied constant in the box of size $O(B)$.
+For fixed $\kappa\ne0$ and $\epsilon,\eta\in\{1,-1\}$, uniformly for
+$B,L\geq2$, the number of integral vectors in this box satisfying
+$Q_\kappa=0$ and
+$\ell\mid G_\epsilon,H_\eta$ for some prime $\ell>L$ is
+\begin{equation}\label{eq:v5-large-sieve}
+ O_{\kappa,\alpha}\left(
+    \frac{B^{3+\alpha}}{L\log L}+B^{11/4+\alpha}\right)
+ \qquad(\alpha>0).
+\end{equation}
+\end{lemma}
+\begin{proof}
+Sign changes of $a,c$ reduce to $\epsilon=\eta=1$.
+Put $x_0=a+c$, $x_1=a-c$, $x=b-d$, $z=b+d$, and
+$R=\kappa w^2-xz$. Then $x_0x_1=R$.
+Parity restrictions can be discarded in an upper bound.
+For a fixed nonzero value of either $x_0$ or $x_1$, the triple $(x,z,w)$
+determines the other coordinate uniquely whenever it gives an integral
+solution. We shall use this injection when discarding divisibility
+conditions.
+
+First suppose that $\ell\mid x_0,x_1$. Then $\ell^2\mid R$.
+For each fixed integer $v=O(B^2)$, the equation $R=v$ has
+$O_{\kappa,\alpha}(B^{1+\alpha})$ triples: for each $w$, count the
+factorizations $xz=\kappa w^2-v$ by the divisor bound; the zero right-hand
+side occurs for at most two $w$ and contributes $O(B)$ each.
+If $R\ne0$, it has $O_\alpha(B^\alpha)$ factorizations $x_0x_1=R$.
+Since $0<|h|\ll B^2/\ell^2$ and $\ell\ll B$, summation gives
+\[
+ O_{\kappa,\alpha}\left(
+ B^{3+2\alpha}\sum_{\ell>L}\ell^{-2}\right)
+ =O_{\kappa,\alpha}(B^{3+2\alpha}/(L\log L)).
+\]
+The same bound for triples with $R=0$, followed by the $O(B)$ choices
+with $x_0x_1=0$, gives $O_{\kappa,\alpha}(B^{2+\alpha})$.
+We may discard all these $R=0$ solutions before proceeding.
+
+In the remaining cases choose $t=x_1$ or $t=x_0$ such that $\ell\nmid2t$.
+Take $t=x_1$ first. Here
+$G_1-H_1=\kappa w^2+2t$ and $4t^2G_1=K$.
+Thus the two norm congruences are equivalent to divisibility of
+\[
+ P=\kappa w^2+2t,\qquad
+ K=(\kappa w^2-xz+t^2+2t)^2+t^2(x+z)^2.
+\]
+The identity
+\[
+ K-(t^2+x^2)(t^2+z^2)=P(P+2t^2-2xz)
+\]
+shows that it suffices to sieve the coprime pair
+$P,(t^2+x^2)(t^2+z^2)$. They have no common nonconstant factor over
+$\mathbb Q$, because the first depends nontrivially only on $w$, whereas
+the second is independent of $w$. Their contents have no common prime,
+since the second has coefficient $1$ on $x^2z^2$.
+For $t=x_0$ we still have $4t^2G_1=K$, whereas
+$t(G_1-H_1)=\kappa(t+2)w^2-2xz$. The pair is therefore
+\[
+ P'=\kappa(t+2)w^2-2xz,\qquad K.
+\]
+If $t\ne-2$, $P'$ is an irreducible ternary quadratic form of rank three
+and $K$ has nonzero constant term $t^2(t+2)^2$; homogeneity rules out
+divisibility. If $t=-2$, neither $x$ nor $z$ divides $K$.
+The coefficient $1$ of $x^2z^2$ in $K$ excludes every common content
+prime. In both charts the fixed value $t$ is nonzero.
+
+In either chart, $t\mid R$. Put
+\[
+ S_R=\{p:p\mid2\kappa\},\qquad
+ q=\prod_{\substack{p\mid t\ p\notin S_R}}p.
+\]
+The matrix of $R$ has determinant $-\kappa/4$, so $R$ has rank three
+at every prime in this product, and those primes are odd. Also $q\ll B$.
+For a fixed $q$, every eligible nonzero $t=O(B)$ is supported on
+$S_R\cup\{p:p\mid q\}$. For every $\delta>0$, Rankin's bound gives
+\[
+ \#\{t:q(t)=q,\ 0<|t|\ll B\}
+ \ll B^\delta
+   \prod_{p\in S_R\ \text{or}\ p\mid q}(1-p^{-\delta})^{-1}
+ \ll_{\kappa,\delta} B^\delta q^\delta
+ \ll_{\kappa,\delta} B^{2\delta}.
+\]
+For the middle inequality, remove the finitely many primes with
+$p^{-\delta}>1/2$ and bound the remaining factors by $2^{\omega(q)}
+\ll_\delta q^\delta$. Renaming the small exponent gives
+$O_{\kappa,\alpha}(B^\alpha)$ choices of $t$.
+
+Apply \eqref{eq:v5-lattice-tail} with $m=3$ to $q\mid R$.
+If $\lambda_1\leq\lambda_2\leq\lambda_3$ are the successive minima,
+then $\lambda_3\leq q\ll B$ and
+$\lambda_1\lambda_2\lambda_3\asymp q^2$.
+A basis comparable to these minima therefore gives
+$O(\prod_i(1+B/\lambda_i))=O(B^3/q^2)$ points in the box.
+The lattices with $\lambda_3>T$ contribute at most
+\[
+ B^\alpha\sum_{q\ll B}
+ O\left(9^{\omega(q)}q^3T^{-3}\frac{B^3}{q^2}\right)
+ \ll_{\kappa,\alpha} B^{5+2\alpha}T^{-3}.
+\]
+For the other lattices choose a basis with lengths comparable to the
+successive minima. The inverse basis matrix bounds the new coordinates by
+$O(B/\lambda_i)$, so the resulting rectangular box has volume
+$O(B^3/q^2)$ and minimum side parameter $\gg B/T$.
+Enlarge its side parameters to at least $2$, as required in
+\eqref{eq:v5-box-sieve}; since $\lambda_i\ll B$, this changes volume
+only by a fixed factor.
+The substitution into the polynomial pair is invertible over $\mathbb Q$.
+For $\ell\nmid2t$ its determinant, of absolute value $q^2$, is invertible
+modulo $\ell$ too. Thus no new common content prime outside $2t$ appears.
+Remove common content supported on $2t$, which cannot affect the primes
+being counted. Coefficient heights are powers of $B$ with fixed exponents.
+Formula \eqref{eq:v5-box-sieve} bounds this lattice's contribution by
+\[
+ O\left(\frac{B^3\log B}{q^2L\log L}
+                 +\frac{B^2T\log B}{q^2}\right).
+\]
+There are at most $9^{\omega(q)}q$ lattices. Since
+$9^{\omega(q)}\ll_\alpha q^\alpha$, summing over $q\ll B$ and the
+$O_{\kappa,\alpha}(B^\alpha)$ values of $t$ gives
+$O_{\kappa,\alpha}(B^{3+3\alpha}/(L\log L)+B^{2+3\alpha}T)$.
+Choose $T=B^{3/4}$ and rename the small exponent to obtain
+\eqref{eq:v5-large-sieve}.
+\end{proof}
+
+\begin{proposition}[Weighted obstruction tail]\label{prop:v5-obstruction-tail}
+For fixed distinct $c_j$ there are $L_*\geq2$ and $\tau_0,C>0$
+such that, for every fixed $0<\tau\leq\tau_0$, uniformly for $L\geq L_*$,
+the logarithmically weighted number of pairs
+\[
+ N/2\leq u\leq N,\qquad 1\leq w\leq\tau\sqrt N,
+ \qquad p_j=u+c_jw^2\text{ all prime},
+\]
+having any of the odd common divisors forbidden in
+Theorem~\ref{thm:v5-simultaneous-primes} greater than $L$, is at most
+\begin{equation}\label{eq:v5-obstruction-tail}
+ \frac{C\tau N^{3/2}}{L\log L}
+       +O_\tau(N^{3/2-1/800}).
+\end{equation}
+The weight is $\prod_j\log p_j$, and the bound allows every Gaussian
+generator, so it also holds for any prescribed choice of generators.
+\end{proposition}
+\begin{proof}
+Take $B=\sqrt N$ and $L_0=B^{1/100}$, and choose $\tau_0$ so that
+every prime value in the displayed region is between fixed positive
+multiples of $B^2$. Thus $\prod_j\log p_j\ll (\log B)^k$.
+Choose $L_*$ above the fixed exceptional primes in the medium-prime bound.
+When $L\leq L_0$, that bound gives
+\[
+ \frac{C\tau B^3}{L\log L}+O_\tau(B^{27/10}(\log B)^k)
+\]
+for $L<\ell\leq L_0$. Its proof is uniform in this interval of $L$:
+the remainder sum is bounded by the sum over all $\ell\leq L_0$.
+When $L>L_0$ this part is empty.
+
+For distinct positions, apply Lemma~\ref{lem:v5-large-sieve} at $L_0$
+with $\alpha=1/1000$. After multiplication by the weight, the bound is
+\[
+ O\left(\left(
+   \frac{B^{3+1/1000}}{B^{1/100}\log L_0}
+       +B^{11/4+1/1000}\right)(\log B)^k\right)
+ =O(B^{3-1/200}).
+\]
+This bounds all the remaining primes, also when $L>L_0$.
+At one position, an odd divisor of both adjacent norms divides
+$a$ and $b^2+1$. The coprime pair $a,b^2+1$ in variables $(a,b,w)$,
+inserted in \eqref{eq:v5-box-sieve} at $L_0$, gives
+\[
+ O\left(\left(
+ \frac{B^3\log B}{L_0\log L_0}+B^2\log B\right)(\log B)^k\right)
+ =O(B^{3-1/200}).
+\]
+No factor $\tau$ is needed in these power-saving errors.
+
+For a fixed pair of positions, the vector $(a,b,c,d,w)$ determines
+$u=a^2+b^2-c_jw^2$; at one position $(a,b,w)$ does so.
+Thus the vector counts bound the pattern counts. There are finitely many
+pairs of positions and signs. Each split rational prime has eight
+Gaussian elements of that norm, so counting all generator choices
+changes the bound by at most a fixed factor. Every vector used in the
+medium-prime count is primitive, since a common integer divisor greater
+than one would have its square divide a prime norm.
+All logarithmic factors in the remainders are absorbed for sufficiently
+large $B$, with thresholds depending only on the fixed data and $\tau$.
+Weakening the error to $B^{3-1/400}=N^{3/2-1/800}$ proves the claim.
+\end{proof}

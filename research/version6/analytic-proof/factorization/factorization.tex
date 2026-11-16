@@ -1,0 +1,180 @@
+% Section fragment. Bibliography: GTOrbits2012, GTMobius2012.
+\subsection{Quantitative factorization for centered weights}
+\label{sec:gf-factorization}
+
+We isolate the analytic implication needed after the arithmetic
+progression main terms have been established. Throughout,
+$L=\log(2N)$, all nilpotent groups are connected and simply connected,
+and all filtrations are by closed connected rational subgroups. Constants
+may depend on fixed arithmetic moduli and on the fixed dimension and
+degree bounds.
+
+\begin{proposition}[Factorization implication]\label{prop:gf-factorization}
+Fix dimension and degree bounds $m,d$. Let $w_N:[N]\to\mathbb C$ satisfy
+the following three hypotheses.
+\begin{enumerate}
+\item For a fixed $K_w\geq0$, $|w_N(n)|\ll L^{K_w}$.
+\item For every $A_0,C_0>0$, uniformly over all interval progressions
+$P\subseteq[N]$ of common difference at most $L^{C_0}$,
+\begin{equation}\label{eq:gf-sw}
+ \left|\sum_{n\in P}w_N(n)\right|
+       \ll_{A_0,C_0}N L^{-A_0}.
+\end{equation}
+No lower bound on $|P|$ is imposed here.
+\item There are fixed $c>0$, $C_1,K_1\geq0$ such that if a nilmanifold
+of dimension at most $m$ and filtration degree at most $d$ has a
+$Q$-rational adapted Mal'cev basis, $h$ is a polynomial sequence totally
+$\delta$-equidistributed on $[N]$, and $F_0$ is Lipschitz with Haar mean
+zero, then
+\begin{equation}\label{eq:gf-ma}
+ \left|\sum_{n\in P}w_N(n)F_0(h(n)\Gamma)\right|
+ \ll N\delta^c Q^{C_1}L^{K_1}\|F_0\|_{\mathrm{Lip}}
+\end{equation}
+for every interval progression $P\subseteq[N]$ of modulus at most $Q$
+and length at least $N/Q$. It is sufficient for this hypothesis to hold
+only when
+\begin{equation}\label{eq:gf-ma-regime}
+ \delta\geq N^{-\sigma},\qquad Q\leq\delta^{-\kappa}
+\end{equation}
+for fixed positive $\sigma,\kappa$. An estimate allowing arbitrary
+progression lengths is stronger than required.
+\end{enumerate}
+Then, for every $A,C_{\mathrm{init}}>0$, uniformly over initial
+nilmanifolds of dimension at most $m$ and degree at most $d$ with an
+$L^{C_{\mathrm{init}}}$-rational adapted basis, all polynomial sequences
+$g$, and all Lipschitz $F$,
+\begin{equation}\label{eq:gf-conclusion}
+ \left|\sum_{n\leq N}w_N(n)F(g(n)\Gamma)\right|
+     \ll_{A,C_{\mathrm{init}}}N L^{-A}\|F\|_{\mathrm{Lip}}.
+\end{equation}
+\end{proposition}
+
+\begin{proof}
+Normalize $\|F\|_{\mathrm{Lip}}=1$ and put
+\[
+ D=A+K_w+3,\qquad M_0=L^{\max\{1,C_{\mathrm{init}}\}}.
+\]
+Leave a factorization exponent $B$ unspecified for the moment. By
+\cite[Theorem 1.19]{GTOrbits2012}, there is an integer $M$ with
+\[
+ M_0\leq M\ll_{B,m,d}M_0^{E(B,m,d)}
+\]
+and a factorization $g=\varepsilon g'\gamma$ into polynomial sequences.
+Here $\varepsilon$ is $(M,N)$-smooth, $\gamma(n)\Gamma$ has period
+$q\leq M$, and $g'$ is totally $M^{-B}$-equidistributed in a rational
+subgroup quotient. The new adapted basis consists of $M$-rational
+combinations of the initial one.
+
+For each residue $j$ modulo $q$, choose a reduced rational representative
+$\gamma_j$ of $\gamma(j)\Gamma$. Split that residue class into
+$\lceil ML^D\rceil$ consecutive blocks of nearly equal cardinality.
+For sufficiently large $N$ after $B$ is fixed, the resulting progressions
+$P_{j,k}$ satisfy
+\begin{equation}\label{eq:gf-cells}
+ \#\{P_{j,k}\}\ll M^2L^D,\qquad
+ |P_{j,k}|\gg\frac{N}{M^2L^D},\qquad
+ \operatorname{diam}(P_{j,k})\ll\frac{N}{ML^D}.
+\end{equation}
+Their common difference is $q$. Indeed each original residue class has
+cardinality comparable to $N/q$, and rounding the balanced block sizes
+changes these estimates only by an absolute factor, since all powers of
+$M$ are polylogarithmic in $N$ once $B$ is fixed.
+
+Choose $n_{j,k}\in P_{j,k}$ and put $a_{j,k}=\varepsilon(n_{j,k})$.
+The right-invariant ambient metric and smoothness imply
+\begin{align*}
+ &|F(\varepsilon(n)g'(n)\gamma_j\Gamma)
+       -F(a_{j,k}g'(n)\gamma_j\Gamma)|\\
+ &\hspace{1cm}\leq d(\varepsilon(n),\varepsilon(n_{j,k}))
+       \ll L^{-D}\qquad(n\in P_{j,k}).
+\end{align*}
+There is no factor depending on the coordinates of $g'(n)$ in this
+estimate: right invariance removes it. The total weighted freezing
+error is therefore $O(NL^{K_w-D})=O(NL^{-A-3})$.
+
+We use the quantitative conjugation claim proved in
+\cite[p.~547]{GTMobius2012}, whose inputs are the rational-subgroup,
+rational-element and metric comparisons of
+\cite[Appendix A]{GTOrbits2012}. There are fixed $a>0$, $C_2\geq1$,
+depending only on $m,d$, such that, with
+\[
+ H_j=\gamma_j^{-1}G'\gamma_j,\quad
+ \Lambda_j=H_j\cap\Gamma,\quad
+ h_j(n)=\gamma_j^{-1}g'(n)\gamma_j,
+\]
+the quotient $H_j/\Lambda_j$ has an adapted basis of rationality at most
+$M^{C_2}$, $h_j$ is totally $M^{-aB+C_2}$-equidistributed, and
+\[
+ F_{j,k}(x\Lambda_j)=F(a_{j,k}\gamma_jx\Gamma)
+ \quad\hbox{satisfies}\quad
+ \|F_{j,k}\|_{\mathrm{Lip}}\leq M^{C_2},\qquad
+ \|F_{j,k}\|_\infty\leq1.
+\]
+We have enlarged $C_2$ to absorb fixed multiplicative constants. These
+exponents do not depend on $B$. In applying this published claim, one
+must account for the commensurable lattice resulting from rational
+conjugation; conjugation is not asserted to be an isometry of the
+original quotients. Its finite-index and metric losses are included in
+$a,C_2$.
+
+Write $F_{j,k}=m_{j,k}+F_{j,k}^0$ by subtracting its Haar mean on
+$H_j/\Lambda_j$. Then $|m_{j,k}|\leq1$,
+$\int F_{j,k}^0=0$, and
+$\|F_{j,k}^0\|_{\mathrm{Lip}}\leq2M^{C_2}$. This subtraction is needed
+even if the initial function $F$ happened to have Haar mean zero.
+For a dimension-zero factor the centered function simply vanishes.
+
+Put
+\[
+ U=C_2+D+5,\qquad Q_*=M^U,\qquad b_*=aB-C_2.
+\]
+Since $M\geq L$, $Q_*$ dominates the rationality, cell modulus and
+$N/|P_{j,k}|$. Applying \eqref{eq:gf-ma} to all centered cell functions
+and using \eqref{eq:gf-cells} gives a total of at most
+\begin{equation}\label{eq:gf-total-ma}
+ C N L^{K_1}M^{-b_*c+C_1U+C_2+2+D}.
+\end{equation}
+Every cell is counted here. In particular, the bound $N$ in the
+minor-arc hypothesis has not been replaced by an unsupported cell
+cardinality.
+
+We now fix $B$ sufficiently large that
+\begin{equation}\label{eq:gf-choice-B}
+ b_*>1,\qquad
+ b_*c\geq C_1U+C_2+2+D+A+K_1+4,
+ \qquad b_*\kappa\geq U+1
+\end{equation}
+when the restricted regime \eqref{eq:gf-ma-regime} is used. The last
+condition is omitted for an unrestricted minor-arc estimate. These
+inequalities involve only fixed exponents and not $E(B,m,d)$.
+They make \eqref{eq:gf-total-ma} $O(NL^{-A-4})$. They also ensure
+$Q_*\leq(M^{-b_*})^{-\kappa}$. The other regime condition,
+$M^{-b_*}\geq N^{-\sigma}$, holds for all sufficiently large $N$:
+after fixing $B$ the upper bound on $M$ is a fixed power of $\log N$.
+
+Only at this point use that upper bound, writing $M\leq L^{E_*}$ after
+enlarging the fixed exponent $E_*$. There are at most
+$O(L^{2E_*+D})$ cells of modulus at most $L^{E_*}$. Apply
+\eqref{eq:gf-sw} with
+\[
+ C_0=E_*+1,\qquad A_0=A+2E_*+D+4.
+\]
+Summing the constant terms $m_{j,k}\sum_{n\in P_{j,k}}w_N(n)$ gives
+$O(NL^{-A-4})$. Combined with the centered estimates and freezing error,
+this proves \eqref{eq:gf-conclusion}.
+\end{proof}
+
+\begin{remark}[Order of parameter choices]\label{rem:gf-order}
+The order in the proof is
+\[
+ (A,K_w,C_{\mathrm{init}},c,C_1,K_1,a,C_2,\kappa,\sigma)
+ \longrightarrow (D,U)\longrightarrow B\longrightarrow E_*
+ \longrightarrow(A_0,C_0)\longrightarrow N_0.
+\]
+Thus there is no requirement that $B$ dominate the factorization upper
+exponent $E(B,m,d)$. The centered progression estimate allows every
+logarithmic saving, so its exponent can be chosen after $E_*$ is known.
+The minor-arc input must have a fixed power form such as
+\eqref{eq:gf-ma}; unspecified polylogarithmic specializations alone
+would not justify this argument.
+\end{remark}

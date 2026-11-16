@@ -1,0 +1,25 @@
+{
+  "baseline_sha256": "06f98ff070139c3b6c60589c65867ceb4366b023f7960551abd52f85fa67e30c",
+  "replacement_sha256": "9ab9822f36f14d7bd88ab6db19c151352fd792d676981b6d988c44d5c2415084",
+  "replacement_lines": 370,
+  "brace_balance": true,
+  "environment_pairing": true,
+  "unique_labels": 8,
+  "references_resolved": [
+    "cor:ga-fixed-centered-nilsequence",
+    "eq:gaussian-centered-nil-input",
+    "eq:gaussian-dk-correct-exponent",
+    "eq:gaussian-global-gowers",
+    "eq:gaussian-refined-gowers",
+    "eq:v5-artin-series",
+    "eq:v5-global-gowers",
+    "eq:v5-mu",
+    "lem:gaussian-linear-replacement",
+    "prop:v5-artin-patterns"
+  ],
+  "unresolved_references": [],
+  "weights_handoff_checked": true,
+  "patterns_handoff_checked": true,
+  "full_document_typesetting": "not performed in scoped audit",
+  "no_changes_outside_owned_directory": true
+}

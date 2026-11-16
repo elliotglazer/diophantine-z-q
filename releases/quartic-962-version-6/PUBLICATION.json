@@ -1,0 +1,55 @@
+{
+  "repository": "elliotglazer/diophantine-z-q",
+  "release": "https://github.com/elliotglazer/diophantine-z-q/releases/tag/quartic-962-version-6",
+  "id": 436819060,
+  "draft": false,
+  "source_snapshot_commit": "a9e834bac43b17e3f8415791f4adbd904f686b9d",
+  "verified_at": "2026-11-06T18:01:10.300998+00:00",
+  "assets": [
+    {
+      "name": "quartic_962.tex",
+      "bytes": 903386,
+      "sha256": "06f98ff070139c3b6c60589c65867ceb4366b023f7960551abd52f85fa67e30c"
+    },
+    {
+      "name": "quartic_962.pdf",
+      "bytes": 1448545,
+      "sha256": "80d9a1700f5be93bbaa8c01fa9fdf9c89aae413da6fefb8cef2810e6077e02e3"
+    },
+    {
+      "name": "z-in-q-version6-current-handoff.zip",
+      "bytes": 57899295,
+      "sha256": "677ed62f74f9331202ae8612877dd32090c4933d6b1bbbf13f613970bc94081e"
+    },
+    {
+      "name": "z-in-q-version6-full-handoff.zip",
+      "bytes": 440334958,
+      "sha256": "93b53944ea93de08dc653beb70202797c1cbbdf19602ae583940bbf137dd43bc"
+    },
+    {
+      "name": "BUILD_RECEIPT.json",
+      "bytes": 1982,
+      "sha256": "316ee459e95c26900756e7803fc2328057109089ec7bc30758063c8a1f2048ef"
+    },
+    {
+      "name": "handoff-plan.json",
+      "bytes": 946669,
+      "sha256": "ebcfc46a93c709ce1d015c319f95af2777e2ec0e34d461b681559ccad51c43c8"
+    },
+    {
+      "name": "manuscript-build-report.json",
+      "bytes": 524,
+      "sha256": "3f173fd4ca029d6f8cd797fd4c2b4b44cc867f5ffa7139bebdef97fe78bd0e9b"
+    },
+    {
+      "name": "inventory-review.json",
+      "bytes": 4003,
+      "sha256": "28eed73de0d2af7a123cf41dd29b05054b8e0367cd00d893cbb7457409d02da4"
+    },
+    {
+      "name": "SHA256SUMS",
+      "bytes": 717,
+      "sha256": "f39c8d3e878d92cefb082c788dc6fc1256d33e693bf529b5cb1b292974e50464"
+    }
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "status": "passed",
+  "scope": "Exact arithmetic only; modularity, geometry and ramification are proved in the associated text.",
+  "GL4_F11_order": 41393302251840000,
+  "Galois_torsion_degree_strict_upper_power_of_two": 66,
+  "worst_wild_ramification_valuation_bound": 67,
+  "upper_break_bound": 136,
+  "conductor_bound": 274,
+  "safe_small_prime_level_factor": "210^300",
+  "isogeny_field_bound": "2304 R",
+  "height_bound": "2^24 210^3600 R^24",
+  "height_constant_strict_upper_power_of_two": 28824,
+  "original_constant_strict_lower_power_of_two": 1990656
+}

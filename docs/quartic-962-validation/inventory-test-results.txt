@@ -1,0 +1,30 @@
+test_authored_candidate_pin_is_enforced_when_supplied (test_inventory.InventoryBindingTests.test_authored_candidate_pin_is_enforced_when_supplied) ... ok
+test_broken_reference_is_reported (test_inventory.InventoryBindingTests.test_broken_reference_is_reported) ... ok
+test_current_inventory_closes_document_checks (test_inventory.InventoryBindingTests.test_current_inventory_closes_document_checks) ... ok
+test_delayed_named_proof_does_not_attach_to_intervening_lemma (test_inventory.InventoryBindingTests.test_delayed_named_proof_does_not_attach_to_intervening_lemma) ... ok
+test_detached_proof_cannot_escape_reviewed_fragment (test_inventory.InventoryBindingTests.test_detached_proof_cannot_escape_reviewed_fragment) ... ok
+test_exact_predecessor_fragment_provenance (test_inventory.InventoryBindingTests.test_exact_predecessor_fragment_provenance) ... ok
+test_exact_source_statement_overrides_broad_new_application_scope (test_inventory.InventoryBindingTests.test_exact_source_statement_overrides_broad_new_application_scope) ... ok
+test_explicit_definition_conventions_are_not_theorem_applications (test_inventory.InventoryBindingTests.test_explicit_definition_conventions_are_not_theorem_applications) ... ok
+test_ft_attribution_must_be_explicit (test_inventory.InventoryBindingTests.test_ft_attribution_must_be_explicit) ... ok
+test_ft_cannot_remain_an_assumed_application (test_inventory.InventoryBindingTests.test_ft_cannot_remain_an_assumed_application) ... ok
+test_new_citation_needs_application_record (test_inventory.InventoryBindingTests.test_new_citation_needs_application_record) ... ok
+test_new_lemma_needs_review (test_inventory.InventoryBindingTests.test_new_lemma_needs_review) ... ok
+test_no_claim_all_final_typeset_versions_checked (test_inventory.InventoryBindingTests.test_no_claim_all_final_typeset_versions_checked) ... ok
+test_old_source_excerpt_change_breaks_bridge (test_inventory.InventoryBindingTests.test_old_source_excerpt_change_breaks_bridge) ... ok
+test_pinned_review_evidence_cannot_change_silently (test_inventory.InventoryBindingTests.test_pinned_review_evidence_cannot_change_silently) ... ok
+test_repository_path_escape_rejected (test_inventory.InventoryBindingTests.test_repository_path_escape_rejected) ... ok
+test_review_receipt_must_accept_exact_fragment_hash (test_inventory.InventoryBindingTests.test_review_receipt_must_accept_exact_fragment_hash) ... ok
+test_reviewed_mathematics_cannot_be_rebuilt_without_review (test_inventory.InventoryBindingTests.test_reviewed_mathematics_cannot_be_rebuilt_without_review) ... ok
+test_unaccepted_review_decision_fails (test_inventory.InventoryBindingTests.test_unaccepted_review_decision_fails) ... ok
+test_undeclared_dependency_is_reported (test_inventory.InventoryBindingTests.test_undeclared_dependency_is_reported) ... ok
+test_unlabeled_result_requires_exact_unique_statement_and_span (test_inventory.InventoryBindingTests.test_unlabeled_result_requires_exact_unique_statement_and_span) ... ok
+test_v5_application_cannot_disappear_without_disposition (test_inventory.InventoryBindingTests.test_v5_application_cannot_disappear_without_disposition) ... ok
+test_v5_arithmetic_change_loses_inherited_review (test_inventory.InventoryBindingTests.test_v5_arithmetic_change_loses_inherited_review) ... ok
+test_v5_original_evidence_is_still_pinned (test_inventory.InventoryBindingTests.test_v5_original_evidence_is_still_pinned) ... ok
+test_v5_predecessor_bytes_are_pinned (test_inventory.InventoryBindingTests.test_v5_predecessor_bytes_are_pinned) ... ok
+
+----------------------------------------------------------------------
+Ran 25 tests in 1.507s
+
+OK

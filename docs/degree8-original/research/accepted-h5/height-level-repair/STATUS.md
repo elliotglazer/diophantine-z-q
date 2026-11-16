@@ -1,0 +1,15 @@
+# Accepted level-based repair of H5
+
+The complete H5 argument and its use in the original 15,671-witness construction have passed independent mathematical and source review. The authoritative accepted source is `../author/h5-integration/UNAPPLIED-candidate-v4.tex`, SHA256 `655c0b26cabc12211e3214a1fba7bcfca4440baf77febec303f2b0e6802a7833`. The final receipt is `../review/H5_FINAL_ACCEPTANCE.md`, SHA256 `db62a7fa5fbcd2d4bc711436f2fb4f98c37de9122751ea7aeb097d96680905eb`. No mathematical or source-provenance obligation remains open for this addition. Repository promotion and other delivery steps belong to the root integration task.
+
+`level-repair.tex` remains the unchanged, previously reviewed arithmetic fragment. Its proposal-stage wording and the partial bibliography file are historical; the accepted V4 source contains the complete assembly and current citations. This metadata update changes no proof, contact, constant, polynomial coefficient, or finite computation.
+
+The Pan source requirement is met by Calegari's published ICM formulation, pages 611–612 and 624, together with the inspected detailed author version of Pan's theorem. The volume was published in 2023; ICM 2022 is the event/title. Newton's published article corroborates the formulation. No comparison with Pan's inaccessible AMS typeset text is claimed. Yuan's author-attested English translation supplies the published integral and metric statements with English-page locators; direct comparison with the Chinese typesetting is not claimed. The final independent review accepts these precise source chains. Full records and hashes are in `source-application-ledger.json`.
+
+The argument bounds conductor rather than coefficient-field degree. The 11-torsion field is Galois of degree less than `2^66`. After adjoining the character field and a quadratic kernel extension, its wild ramification exponent is at most 67. The different formula bounds the last upper break by 136 and the conductor by 274 at 2, 3, 5 and 7. At other primes the conductor exponent is at most two. Thus `N <= 210^300 (B_* M)^2`.
+
+The separate proof in `../height-alternative/level-transfer.tex` gives `h_F(A) < 2^24 C^12 R^24` from `N <= C R^2` and `[L':Q] <= 2304 R`. With `C=210^300` this is below `4608^165888 R^24`. The local conductor core has been independently accepted in `../height-cocycle/SMALL_PRIME_CONDUCTOR_REVIEW.md`.
+
+The accepted argument explicitly treats potential good reduction, the normality of the torsion field, finite modular twisting, and the modularity prime 5 by comparison with the three-adic representation. It uses no bounded scalar coefficient-field assertion, joint von Känel–Kret theorem, or Conrad character theorem. The failed earlier bounded-descent route and its obstruction remain historical research, not dependencies of this proof. The conditional status in older H5 snapshots is superseded by the final V4 acceptance.
+
+`python check_bounds.py` verifies the small exact inequalities. These computations do not certify the arithmetic theorems. No heavy jobs were run and no baseline or accepted manuscript was changed.

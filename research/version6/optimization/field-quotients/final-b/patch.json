@@ -1,0 +1,10 @@
+[
+  {
+    "old": ",Rv=rquot('detector'+r+'.R',di,ep,'nonzero_numerator_di_enforces_denominator')",
+    "new": ""
+  },
+  {
+    "old": "bv=rm('detector'+r+'.B',Rv,rsq('detector'+r+'.normOver2w0Square',nw))",
+    "new": "bv=rm('detector'+r+'.B',nw,rquot('detector'+r+'.Rnorm',mul(di,nw),ep,'positive_scale_weight_enforces_nonzero_ep'))"
+  }
+]

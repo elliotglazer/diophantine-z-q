@@ -1,0 +1,11 @@
+{
+  "status": "pass",
+  "checks": [
+    "18 emitted E1 components and72 local residuals",
+    "18 emitted q16/q52 identities and27 local residuals",
+    "20 emitted pole structural identities and8 exact correction factorizations",
+    "All10 frozen emitted log identities, including both denominator-fused residual pairs"
+  ],
+  "raw_sha256": "4c39433b0d7e73a6fda1946a24b0cd705a706d2c688dea15abaeee910da3f468",
+  "translated_sha256": "cb1295d789c5bb40bd98842b1bd2a51a05c6ff2058a526e7d1d9b177d20da3ae"
+}

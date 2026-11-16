@@ -1,0 +1,22 @@
+{
+  "status": "accepted_after_precision_repairs",
+  "reviewer": "dag-sharing worker independent of norm-transfer author",
+  "proofPath": "work\\frei-tinkova-removal-001\\quotient-audit\\NORM_TRANSFER.md",
+  "proofSha256": "2fda5cb7119a00dbd8815a108e9ba4cdfc06a6ab1fe10ad2d1f657522c059380",
+  "publishedSourceSha256": "8c7ea5eced84dc5da97508f4eda39fa84c958d3e659a797ab402645c1c207c8f",
+  "scope": "Unweighted Gaussian norm-transfer estimate NT; product version conditional on total equidistribution of entire product orbit",
+  "gapsRemainingInThisLemma": [],
+  "repairsInAcceptedVersion": [
+    "GT ambient group, filtration and Lipschitz hypotheses explicit",
+    "Product-orbit total equidistribution expressly required",
+    "6*Cstar*kappa<c0/2, sigma<sigma0, and 2*kappa*sigma<1/4 explicit",
+    "One-parameter coordinate characterization cited"
+  ],
+  "notEstablished": [
+    "Type I/II analytic argument",
+    "Product orbit equidistribution",
+    "Progression main terms",
+    "Quantitative factorization",
+    "Removal of full Frei-Tinkova dependency"
+  ]
+}

@@ -1,0 +1,11 @@
+# Review of the conditional alternative height route
+
+The numerical argument in `height-alternative/alternative-budget.tex` passes. I checked the published [von Känel 2021 article](https://doi.org/10.1017/fms.2021.29), equation (6.7) and its definition of GL2-type, and the published [Guitart 2012 article](https://ems.press/content/serial-article-files/38384), Propositions 2.10–2.11 and Corollary 2.12. The Gaudron–Rémond isogeny formula is the same published formula already checked for the CM transfer.
+
+The residue-class estimate gives rho at most 2116 for dimension at most 4608. The coefficient bound has logarithm less than 1,391,000, while the original coefficient has logarithm greater than 1,398,435.84. The stated isogeny variation is smaller than exp(42) R^24. The claimed margin therefore holds. These calculations do not assert that a suitable descended variety exists.
+
+Given the specified continuous splitting map beta, Guitart supplies X/Q with dimension 2e and rational endomorphism algebra E tensor B. On the kernel of beta restricted to G_L, the transformation formula makes the isogeny defined. Its extension degree is bounded by the number of roots of unity in E, at most 2e^2. Inertia outside R acts trivially on both original Tate modules and the twisting data. Thus the field-degree and good-reduction conclusions follow from the explicit conditional hypotheses.
+
+There is a useful strengthening in this particular surface case. No separate assumption that E splits B is required. The algebra E tensor B acts faithfully on Lie(X), which has dimension 2 over E. It therefore embeds in M_2(E), and equality of dimensions forces E tensor B to be split. A rational matrix idempotent gives C/Q with X isogenous to C^2 and dim(C)=e. Consequently e at most 4608 suffices without an extra splitting condition. I sent this argument to the author and root reviewer.
+
+The missing mathematical work is still constructing beta with the required coefficient-field degree and inertia control for the actual discriminant-210 family. Neither continuity, Tate's splitting theorem, nor the finite field defining the original isogenies gives these bounds by itself. This review does not establish H5.

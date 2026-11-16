@@ -1,0 +1,38 @@
+{
+  "status": "unpublished_preparation_FT_dependency_still_present",
+  "source": "C:\\Users\\glaze\\Documents\\Codex\\2026-11-02\\lo\\work\\quartic-version5-release\\repository\\quartic_1272.tex",
+  "source_sha256": "16033e0471df605093b28210a9f81718c2486b147016ec8afc75d166dff0b90f",
+  "output": "C:\\Users\\glaze\\Documents\\Codex\\2026-11-02\\lo\\work\\quartic-version6-preparation\\manuscript\\quartic_962-preparation.tex",
+  "output_sha256": "c2d24a8be893e7fb137370434352a6d54f0e3ca50bcd640bf3f9ce8f51c546e8",
+  "edits": [
+    "Version number",
+    "Third abstract polynomial only",
+    "Third introductory polynomial",
+    "Introductory degree lower bound",
+    "Third construction section",
+    "Circuit attribution",
+    "Remove superseded 1272 theorem, preserve semantic source",
+    "Replace full compilation subsection with reviewed 962 fragment",
+    "Insert independently reviewed degree lower bound",
+    "Add published lower-bound bibliography"
+  ],
+  "inputs": [
+    {
+      "path": "C:\\Users\\glaze\\Documents\\Codex\\2026-11-02\\lo\\work\\quartic-version6-preparation\\quartic-962\\construction.tex",
+      "sha256": "529e821f776ae230d860e5efe01dfd55c05af9d2cdbb8c42bf907f9d42167769"
+    },
+    {
+      "path": "C:\\Users\\glaze\\Documents\\Codex\\2026-11-02\\lo\\work\\quartic-version6-preparation\\lower-bound\\degree_lower_bound.tex",
+      "sha256": "6db65ff9d69dfd1e3c5186cc3bec0ee84d2cb4120bf0a2a875469cc3a07cd71f"
+    },
+    {
+      "path": "C:\\Users\\glaze\\Documents\\Codex\\2026-11-02\\lo\\work\\quartic-version6-preparation\\lower-bound\\bibliography.tex",
+      "sha256": "a528e8788f91a448541f526c67870ca9b50b31f184bea94f9396a0de003aa0fa"
+    }
+  ],
+  "labels": 249,
+  "references": 416,
+  "missing_references": [],
+  "duplicate_labels": [],
+  "publication_authorized_after_full_goal_verified": true
+}

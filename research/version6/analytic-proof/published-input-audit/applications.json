@@ -1,0 +1,73 @@
+[
+  {
+    "citation_keys": [
+      "Mitsui1956"
+    ],
+    "exact_source_versions": [
+      {
+        "id": "Mitsui1956",
+        "bibliography": "T. Mitsui, Generalized Prime Number Theorem, Japanese Journal of Mathematics 26 (1956), 1–42. DOI 10.4099/jjm1924.26.0_1.",
+        "source_status": "published_bytes_pinned_and_statement_visually_checked",
+        "files": [
+          {
+            "workspace_relative_path": "work/frei-tinkova-removal-001/published-input-audit/mitsui1956.pdf",
+            "bytes": 2823723,
+            "sha256": "b71fbd5ae9443991479a73a4e7bde68165b0c0e90b290cd0bd94fd9da416f963"
+          }
+        ],
+        "urls": [
+          "https://www.jstage.jst.go.jp/article/jjm1924/26/0/26_0_1/_pdf",
+          "https://doi.org/10.4099/jjm1924.26.0_1"
+        ],
+        "version_notes": "Actual published J-STAGE scan. Journal year 1956; printed received date 31 January 1957. Pages 2,11,12 visually inspected. Not an author preprint."
+      }
+    ],
+    "theorem_or_source_locator": "Section 1, Lemma 15, p.12 (weighted prime-ideal sum); Lemma 14 and proof, pp.11–12 (smoothed sum). Character conventions and principal indicator p.2; explicit uniformity paragraph immediately before Lemma14 p.11.",
+    "conventions": "Normalized ideal norm; Lambda_K(p^j)=log Np for j>=1; finite-order ray characters extended by zero at excluded primes; all residue degrees included; principal means induced by the trivial primitive character. Fixed field and logarithmic exponent. Constants ineffective.",
+    "status": "independently_reviewed_source_application_accepted_with_internal_specialization",
+    "current_labels": [
+      "lem:gaussian-hecke-sw",
+      "eq:gaussian-hecke-sw-estimate",
+      "eq:mitsui-weighted-primes"
+    ],
+    "id": "FT-REPLACEMENT-MITSUI-GAUSSIAN",
+    "objects_and_maps": "E=Q(i); fixed finite-order ray character chi of modulus m; rational Dirichlet rho modulo q; theta(a)=chi(a)rho(Na), a ray character modulo m(q), whose finite modulus norm is at most Nm*q^2.",
+    "hypotheses_and_discharge": "For q<=(log X)^B and sqrtX<=Y<=X, Nm*q^2<=(log Y)^(2B+1) for sufficiently large X depending only on m,B. Mitsui applies with fixed K=E and A=2B+1, uniformly over rho,q. SmallY<sqrtX handled by elementary ideal von Mangoldt sum bound. Fixed bounded X absorbed. Principal indicator checked by inducing character.",
+    "translation": "Subtract the smoothed prime sums at x*exp(h) and x to prove unsmoothing for complex characters; bound prime powers of exponent>=2 by O_E(sqrtY log^2(2Y)); replace error atY by Xexp(-c sqrtlogX). Optional primitive-to-imprimitive restoration costs O_chi(log(q+2)log(Y+2)). Any fixed log-power saving follows. No extra Fogels external application is consumed by this proof."
+  },
+  {
+    "citation_keys": [
+      "Mitsui1956"
+    ],
+    "exact_source_versions": [
+      {
+        "id": "Mitsui1956",
+        "bibliography": "T. Mitsui, Generalized Prime Number Theorem, Japanese Journal of Mathematics 26 (1956), 1–42. DOI 10.4099/jjm1924.26.0_1.",
+        "source_status": "published_bytes_pinned_and_statement_visually_checked",
+        "files": [
+          {
+            "workspace_relative_path": "work/frei-tinkova-removal-001/published-input-audit/mitsui1956.pdf",
+            "bytes": 2823723,
+            "sha256": "b71fbd5ae9443991479a73a4e7bde68165b0c0e90b290cd0bd94fd9da416f963"
+          }
+        ],
+        "urls": [
+          "https://www.jstage.jst.go.jp/article/jjm1924/26/0/26_0_1/_pdf",
+          "https://doi.org/10.4099/jjm1924.26.0_1"
+        ],
+        "version_notes": "Actual published J-STAGE scan. Journal year 1956; printed received date 31 January 1957. Pages 2,11,12 visually inspected. Not an author preprint."
+      }
+    ],
+    "theorem_or_source_locator": "Section 1, Lemma 15, p.12 (weighted prime-ideal sum); Lemma 14 and proof, pp.11–12 (smoothed sum). Character conventions and principal indicator p.2; explicit uniformity paragraph immediately before Lemma14 p.11.",
+    "conventions": "Normalized ideal norm; Lambda_K(p^j)=log Np for j>=1; finite-order ray characters extended by zero at excluded primes; all residue degrees included; principal means induced by the trivial primitive character. Fixed field and logarithmic exponent. Constants ineffective.",
+    "status": "independently_reviewed_source_application_accepted_with_internal_specialization",
+    "current_labels": [
+      "lem:gaussian-hecke-sw",
+      "eq:rational-sw-estimate"
+    ],
+    "id": "FT-REPLACEMENT-MITSUI-RATIONAL",
+    "objects_and_maps": "K=Q; Dirichlet character rho modulo q viewed as a ray character with finite modulus q and, for odd parity, the real infinite place.",
+    "hypotheses_and_discharge": "Mitsui allows arbitrary fixed number field including Q and ray moduli containing infinite places. For q<=(log X)^B and sqrtX<=Y<=X use A=B+1; finite modulus norm is q. SmallY and boundedX handled elementarily. Principal character is exactly rho principal moduloq.",
+    "translation": "Apply the same weighted-prime estimate over Q; restore rational prime powers with O(sqrtY log^2(2Y)); obtain uniform allY<=X and q<=log^B X with Xexp(-c_B sqrtlogX) error and its fixed log-power consequences."
+  }
+]

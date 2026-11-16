@@ -1,0 +1,7 @@
+{
+  "status": "passed",
+  "reviewer": "dag-sharing worker independent of final-B author",
+  "inputSha256": "5dfeb3db5a87d950e4d621d48d53c1cc36fb9e126c32d47a681f86789fa0f5c5",
+  "rawGateIdentities": 958,
+  "semanticAssertions": 27
+}

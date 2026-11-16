@@ -1,0 +1,110 @@
+{
+  "R": 47027,
+  "W": 25878772920,
+  "c": 18484837801,
+  "V0": 828120733440,
+  "W_prime_factors": [
+    2,
+    3,
+    5,
+    7,
+    11,
+    13,
+    17,
+    19,
+    23,
+    29
+  ],
+  "c_mod_8": 1,
+  "c_mod_odd_primes": {
+    "3": 1,
+    "5": 1,
+    "7": 3,
+    "11": 1,
+    "13": 1,
+    "17": 1,
+    "19": 1,
+    "23": 1,
+    "29": 1
+  },
+  "integral_contact_differences": [
+    -2401,
+    -2400,
+    -1,
+    1,
+    2400,
+    2401
+  ],
+  "integral_contact_sums": [
+    0,
+    1,
+    2,
+    2401,
+    2402,
+    4802
+  ],
+  "sum_residues_mod31": [
+    0,
+    1,
+    2,
+    14,
+    15,
+    28
+  ],
+  "local_witnesses": [
+    {
+      "q": 31,
+      "slope_residues": [
+        0,
+        1,
+        2,
+        3,
+        5,
+        14,
+        20,
+        29
+      ],
+      "b": 4,
+      "e": 6,
+      "u": 2,
+      "v": 16,
+      "all_values_and_successors_nonzero": true
+    },
+    {
+      "q": 37,
+      "slope_residues": [
+        0,
+        1,
+        2,
+        3,
+        7,
+        33
+      ],
+      "b": 4,
+      "e": 5,
+      "u": 4,
+      "v": 1,
+      "all_values_and_successors_nonzero": true
+    },
+    {
+      "q": 41,
+      "slope_residues": [
+        0,
+        1,
+        2,
+        3,
+        15,
+        21,
+        23,
+        29
+      ],
+      "b": 4,
+      "e": 5,
+      "u": 4,
+      "v": 1,
+      "all_values_and_successors_nonzero": true
+    }
+  ],
+  "max_prime_positions": 41,
+  "max_GT_complexity": 39
+}

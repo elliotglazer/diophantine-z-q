@@ -1,0 +1,29 @@
+{
+  "status": "static checks passed",
+  "files": [
+    {
+      "path": "C:\\Users\\glaze\\Documents\\Codex\\2026-11-02\\lo\\work\\frei-tinkova-removal-001\\quotient-audit\\norm_transfer.tex",
+      "sha256": "d2d8fa98291def5007fdd76ee4226acf7f4d77d0dd086d8ce3bc984785b13c16",
+      "braceAndEnvironmentCheck": "passed"
+    },
+    {
+      "path": "C:\\Users\\glaze\\Documents\\Codex\\2026-11-02\\lo\\work\\frei-tinkova-removal-001\\factorization\\affine_pullback.tex",
+      "sha256": "10edb90817918605156a7f1193e42fa2777336b063406776129d4233021f2778",
+      "braceAndEnvironmentCheck": "passed"
+    },
+    {
+      "path": "C:\\Users\\glaze\\Documents\\Codex\\2026-11-02\\lo\\work\\frei-tinkova-removal-001\\factorization\\factorization.tex",
+      "sha256": "53c1e8b15c0460c5eb4fdcac92f800605fdb846e5b04d13ea847dd7063fa7649",
+      "braceAndEnvironmentCheck": "passed"
+    },
+    {
+      "path": "C:\\Users\\glaze\\Documents\\Codex\\2026-11-02\\lo\\work\\frei-tinkova-removal-001\\type-i-ii\\type_i_ii.tex",
+      "sha256": "8af77dc5439c82ec79c223b0fead55b6b5fb4987f159525794d82190ed439136",
+      "braceAndEnvironmentCheck": "passed"
+    }
+  ],
+  "labelCount": 52,
+  "referenceCount": 60,
+  "unresolvedReferences": [],
+  "texCompilation": "not completed: installed MiKTeX needs first-run setup in nonwritable AppData/Roaming/MiKTeX/2.9; no system setup changed"
+}

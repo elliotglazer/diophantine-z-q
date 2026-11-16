@@ -1,0 +1,50 @@
+{
+  "baselineBuilderSha256": "68c553f987f88780d28fbd21d625278701ecc38d8cc92160215e5bf44a270c78",
+  "changes": [
+    {
+      "name": "omit two shared-denominator z pairs",
+      "old": "function parameters(name,p){return{f:finv(name+'.f',p.x),z:fquot(name+'.z',fscale(p.x,-1),p.y,'finite_double_or_difference_nonzero_y_Brox4311_4348')};}",
+      "new": "function parameters(name,p){return{point:p,f:finv(name+'.f',p.x),z:(name==='U0'||name==='V0')?null:fquot(name+'.z',fscale(p.x,-1),p.y,'finite_double_or_difference_nonzero_y_Brox4311_4348')};}"
+    },
+    {
+      "name": "fuse logs into local-parameter quotient",
+      "old": "return fmul(name,p.z,out);",
+      "new": "return p.z?fmul(name,p.z,out):fquot(name,[scale(add(mul(p.point.x[0],out[0]),scale(mul(p.point.x[1],out[1]),2)),-1),scale(add(mul(p.point.x[0],out[1]),mul(p.point.x[1],out[0])),-1)],p.point.y,'finite_double_or_difference_nonzero_y_Brox4311_4348');"
+    },
+    {
+      "name": "fuse scalar ratio without U0 local parameter",
+      "old": "zRatio=fquot('scalar.zRatio',PS.z,PU[0].z,'finite_double_nonzero_z_Brox4350_4352')",
+      "new": "zRatio=fquot('scalar.zRatio',[scale(add(mul(PS.z[0],PU[0].point.y[0]),scale(mul(PS.z[1],PU[0].point.y[1]),2)),-1),scale(add(mul(PS.z[0],PU[0].point.y[1]),mul(PS.z[1],PU[0].point.y[0])),-1)],PU[0].point.x,'retained_U0_f_inverse')"
+    },
+    {
+      "name": "fuse weight and reciprocal R",
+      "old": "let ep=rm('detector'+r+'.eWeight',rp('detector'+r+'.Adelta5',Ad,5),fi),ei=inv('detector'+r+'.eWeightInverse',ep),Rv=rm('detector'+r+'.R',ei,di);",
+      "new": "let ep=rquot('detector'+r+'.eWeight',mul(rp('detector'+r+'.Adelta4',Ad,4),Ad),Fv,'retained_FInverse'),Rv=rquot('detector'+r+'.R',di,ep,'nonzero_numerator_di_enforces_denominator');"
+    },
+    {
+      "name": "remove F inverse using strictly positive fixed scale",
+      "old": "let fi=inv('detector'+r+'.FInverse',Fv),di=inv('detector'+r+'.deltaInverse',delta),Ad=rm('detector'+r+'.Adelta',A,delta);",
+      "new": "let di=inv('detector'+r+'.deltaInverse',delta),Ad=rm('detector'+r+'.Adelta',A,delta);"
+    },
+    {
+      "name": "record F domain proof",
+      "old": "'retained_FInverse'",
+      "new": "'positive_scale_and_deltaInverse_make_numerator_nonzero'"
+    },
+    {
+      "name": "fuse inverse-cube product",
+      "old": "let q1=rm('detector'+r+'.q1',ep,rp('detector'+r+'.deltaInverse3',di,3));",
+      "new": "let q1=rquot('detector'+r+'.q1',mul(ep,rsq('detector'+r+'.deltaInverse2',di)),delta,'retained_deltaInverse');"
+    },
+    {
+      "name": "fuse norm quotient retaining trace guard",
+      "old": "let wi=inv('detector'+r+'.w0Inverse',w[0]),norm=assign('detector'+r+'.norm',sub(sq(w[0]),scale(sq(w[1]),2))),nw=rm('detector'+r+'.normOver2w0',scale(norm,Q(1,2)),wi),bv=rm('detector'+r+'.B',Rv,rsq('detector'+r+'.normOver2w0Square',nw));",
+      "new": "let wi=inv('detector'+r+'.w0Inverse',w[0]),nw=rquot('detector'+r+'.normOver2w0',scale(sub(sq(w[0]),scale(sq(w[1]),2)),Q(1,2)),w[0],'retained_w0Inverse'),bv=rm('detector'+r+'.B',Rv,rsq('detector'+r+'.normOver2w0Square',nw));"
+    },
+    {
+      "name": "resolve immutable mathematical source",
+      "old": "const inputSource=path.resolve(__dirname,'..',sourceName);",
+      "new": "const inputSource=\"C:\\\\Users\\\\glaze\\\\Documents\\\\Codex\\\\2026-11-02\\\\lo\\\\work\\\\quartic-version5-release\\\\repository\\\\quartics\\\\quartic-1272\\\\sources\\\\diophantine_optimization_20261106_v3.tex\";"
+    }
+  ]
+}

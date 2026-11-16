@@ -1,0 +1,231 @@
+% Standalone section fragment; needs amsmath, amssymb, amsthm.
+% Bibliography keys: GTOrbits2012 and GTMobius2012.
+\subsection{Transfer from Gaussian ideal norms to polynomial nilsequences}
+\label{sec:gn-transfer}
+
+Throughout this subsection $E=\mathbb Q(i)$, $\mathcal O_E=\mathbb Z[i]$,
+and $H_0$ is a fixed positive integer. A ray character $\chi$ modulo
+$H_0\mathcal O_E$ is extended by zero to ideals not coprime to
+$H_0\mathcal O_E$. The trivial character on all ideals is included by
+taking $H_0=1$. We use the conventions of \cite{GTOrbits2012}: $G$ is
+connected, simply connected and nilpotent, $\Gamma$ is a discrete cocompact
+subgroup, and the filtration consists of closed connected rational
+subgroups. Lipschitz norms include the supremum norm.
+
+\begin{lemma}[Gaussian norm transfer]\label{lem:gn-norm-transfer}
+Fix positive integers $m,d$. There are $\kappa,\sigma>0$, depending only
+on $m,d$, and constants $C,X_0,\delta_0>0$, depending on $H_0,m,d$, with
+the following property. Suppose
+\[
+ X\geq X_0,\qquad X^{-\sigma}\leq\delta\leq\delta_0,
+ \qquad 1\leq Q\leq\delta^{-\kappa},\qquad
+ 1\leq q\leq\delta^{-\kappa},\quad q\in\mathbb Z.
+\]
+Let $G/\Gamma$ have dimension $m$, a filtration $G_\bullet$ of degree at
+most $d$, and a $Q$-rational adapted Mal'cev basis. Suppose
+$g\in\operatorname{poly}(\mathbb Z,G_\bullet)$ is totally
+$\delta$-equidistributed on $[X]$. If $F:G/\Gamma\to\mathbb C$ is
+Lipschitz and $\int F=0$, then for every $0\leq A<B\leq X$ and every
+$b\in\mathbb Z$,
+\begin{equation}\label{eq:gn-transfer}
+ \left|\sum_{\substack{A<\mathrm N\mathfrak a\leq B\\
+                 \mathrm N\mathfrak a\equiv b\pmod q}}
+       \chi(\mathfrak a)F(g(\mathrm N\mathfrak a)\Gamma)\right|
+ \leq C X\delta^\kappa\|F\|_{\mathrm{Lip}}.
+\end{equation}
+There is no lower bound on $B-A$ or on the number of progression terms.
+Inserting $\log\mathrm N\mathfrak a$ on the left costs at most an
+additional factor $O(\log(2X))$.
+\end{lemma}
+
+We prove the lemma using only the one-parameter quantitative Leibman
+theorem \cite[Theorem 2.9]{GTOrbits2012}, together with elementary
+polynomial and lattice arguments. No multiparameter equidistribution
+theorem is used.
+
+\begin{lemma}[Quadratic coefficient extrapolation]\label{lem:gn-quadratic-coefficients}
+Let $X\geq1$, $P(t)=a_0+a_1t+a_2t^2\in\mathbb Z[t]$, $a_2\ne0$, and suppose
+\[
+ |a_i|\leq B_0X^{1-i/2},\qquad
+ L\geq X^{1/2}/B_0,\qquad B_0\geq2.
+\]
+For every scalar polynomial $p:\mathbb Z\to\mathbb R/\mathbb Z$ of
+degree at most $d$, there is an integer $1\leq k\leq C_dB_0^{C_d}$ such
+that
+\[
+ \|kp\|_{C^\infty[X]}
+   \leq C_dB_0^{C_d}\|p\circ P\|_{C^\infty[L]}.
+\]
+Here, for $p(n)=\sum_j\alpha_j\binom nj$, we use
+$\|p\|_{C^\infty[X]}=\max_{1\leq j\leq d}X^j
+\|\alpha_j\|_{\mathbb R/\mathbb Z}$.
+\end{lemma}
+\begin{proof}
+Write $\binom{P(t)}j=\sum_\ell s_{j,\ell}\binom t\ell$. These
+coefficients are integers since the left side is integer-valued. Its
+degree is $2j$, and comparison of leading coefficients gives
+\[
+ s_{j,2j}=\frac{(2j)!}{j!}a_2^j\ne0,
+ \qquad |s_{j,\ell}|\ll_d B_0^jX^{j-\ell/2}.
+\]
+For the bound, expand powers of $P$ and change between the monomial and
+binomial bases. The change-of-basis matrices have fixed rational
+coefficients. Descending induction in $\ell$ shows that every term
+contributing to $s_{j,\ell}$ has weighted input degree at least $\ell$,
+which gives the displayed estimate.
+
+If $p=\sum_j\alpha_j\binom nj$ and
+$p\circ P=\sum_\ell\beta_\ell\binom t\ell$, then
+\[
+ \beta_{2j}=\sum_{h=j}^d s_{h,2j}\alpha_h.
+\]
+Put $k_j=\prod_{h=j}^d s_{h,2h}$. Descending induction in $j$ gives
+\[
+ X^j\|k_j\alpha_j\|_{\mathbb R/\mathbb Z}
+   \ll_d B_0^{O_d(1)}\|p\circ P\|_{C^\infty[L]}.
+\]
+Indeed the $\beta_{2j}$ term is bounded using
+$X^jL^{-2j}\leq B_0^{2j}$, and a higher coefficient is multiplied by
+$s_{h,2j}=O_d(B_0^hX^{h-j})$, canceling its $X^{-h}$ error.
+All multipliers used to clear higher rows are integers of size
+$B_0^{O_d(1)}$. Multiplying to the common nonzero integer $|k_1|$ proves
+the assertion. The constant coefficient $\alpha_0$ is not used.
+\end{proof}
+
+\begin{lemma}[Small horizontal character obstruction]\label{lem:gn-horizontal-obstruction}
+There are $c_0,\sigma_0>0$, depending only on $m,d$, such that the
+following holds for sufficiently large $X$ and sufficiently small
+$\delta\geq X^{-\sigma_0}$. Suppose the basis is $T$-rational and
+a nontrivial horizontal character $\eta$ satisfies
+\[
+ |\eta|\leq T,\qquad \|\eta\circ g\|_{C^\infty[X]}\leq T,
+ \qquad T\leq\delta^{-c_0}.
+\]
+Then $g$ is not totally $\delta$-equidistributed on $[X]$.
+\end{lemma}
+\begin{proof}
+Choose representatives of the nonconstant binomial coefficients of
+$\eta\circ g$ satisfying $|\alpha_j|\leq TX^{-j}$. On the initial
+interval of length $\lfloor X/(100dT)\rfloor$ its values lie in an arc
+of length less than $1/10$, translated by its constant coefficient.
+Choose a Lipschitz function on $\mathbb R/\mathbb Z$ which equals one on
+that arc, has mean zero and bounded Lipschitz norm. Its composition with
+$\eta$ has Lipschitz norm at most $T^{C(m,d)}$, by the Mal'cev metric
+estimates in \cite[Appendix A]{GTOrbits2012}. Its Haar mean is zero:
+a nontrivial horizontal character maps Haar measure onto Haar measure
+on the circle. Choose $c_0$ with $C(m,d)c_0<1/4$ and $c_0<1/4$.
+The initial interval is longer than $\delta X$, while the discrepancy
+one exceeds $\delta T^{C(m,d)}$. Taking $\sigma_0$ sufficiently small
+absorbs the floors. This contradicts total equidistribution.
+\end{proof}
+
+\begin{proof}[Proof of Lemma~\ref{lem:gn-norm-transfer}]
+Fix a constant $C_*$ which dominates the exponents in
+Lemma~\ref{lem:gn-quadratic-coefficients}, the degree-$2d$ case of
+\cite[Theorem 2.9]{GTOrbits2012}, and the preceding obstruction.
+Choose
+\[
+ 0<\kappa<\min\{(1000C_*^2)^{-1},c_0/(12C_*)\},\qquad
+ 0<\sigma<\min\{(1000C_*^2)^{-1},\sigma_0\},
+ \qquad 2\kappa\sigma<1/4.
+\]
+These choices depend only on $m,d$. Decrease $\delta_0$, depending on
+$H_0,m,d$, whenever a fixed multiplicative constant must be absorbed.
+
+We first record a pullback consequence. Suppose $P$ and $L$ satisfy
+Lemma~\ref{lem:gn-quadratic-coefficients} with
+$B_0\leq\delta^{-5\kappa}$. Then
+$(g(P(t))\Gamma)_{t\in[L]}$ is $\delta^\kappa$-equidistributed.
+Otherwise the quantitative Leibman theorem gives a nontrivial $\eta$
+with
+\[
+ |\eta|,\ \|\eta\circ g\circ P\|_{C^\infty[L]}
+     \ll\delta^{-C_*\kappa}.
+\]
+The basis is $\delta^{-\kappa}$-rational as required. The composed
+sequence has degree at most $2d$ for the stretched filtration
+$\widetilde G_j=G_{\lceil j/2\rceil}$, with the same adapted basis.
+This follows from the elementary one-parameter coordinate
+characterization in \cite[Lemma 6.7]{GTOrbits2012}.
+Extrapolation gives a nonzero integer multiple $k\eta$ with
+\[
+ |k\eta|,\ \|k\eta\circ g\|_{C^\infty[X]}
+       \ll\delta^{-6C_*\kappa},
+\]
+with $C_*$ chosen sufficiently large initially. It remains nontrivial. The choice
+$6C_*\kappa<c_0/2$ and a reduction of $\delta_0$ make this contradict
+Lemma~\ref{lem:gn-horizontal-obstruction}. Only ordinary
+equidistribution of this pullback is needed.
+
+Every nonzero Gaussian ideal has exactly four generators. The function
+$z\mapsto\chi((z))$, extended by zero when $z$ is not coprime to $H_0$,
+is periodic modulo $H_0\mathbb Z[i]$ and invariant under units. Thus the
+sum in \eqref{eq:gn-transfer} is exactly
+\[
+ \frac14\sum_{\substack{z=x+iy\ne0\\A<x^2+y^2\leq B\\
+                         x^2+y^2\equiv b\pmod q}}
+       \chi((z))F(g(x^2+y^2)\Gamma).
+\]
+The factor $1/4$ also applies to ideals with generators on an axis;
+we have introduced no angular fundamental domain.
+
+Set $\rho=\delta^\kappa$ and
+$M=\lfloor\rho\sqrt X/H_0\rfloor$. On each horizontal row $y\in
+\mathbb Z$, and in each residue class of $x$ modulo $H_0$, partition
+the points into consecutive blocks of $M$ points with step $H_0$.
+The character is constant on a block. The intersection of the annulus
+with a horizontal row consists of at most two intervals, so at most
+four blocks per residue class meet an endpoint. There are $O(\sqrt X)$
+relevant rows. Consequently the boundary blocks contain
+\[
+ O(H_0\sqrt X\,M)=O(\rho X)
+\]
+points. Estimate their contribution trivially. Excluding $z=0$, if
+necessary, costs one more bounded summand, absorbed by $\rho X$.
+
+Every remaining contributing block lies wholly in the annulus. Split
+its index modulo $q$. The norm congruence is constant on each resulting
+class. Such a class has the form
+\[
+ x=x_0+H_0qn,\quad 1\leq n\leq L,\qquad
+ P(n)=(x_0+H_0qn)^2+y^2,
+ \qquad L\geq\frac{\rho\sqrt X}{4H_0q}.
+\]
+The hypotheses on $\delta$ and $\sigma$ ensure $M\geq2q$ and absorb
+the floors for large $X$. A harmless endpoint adjustment gives
+$|x_0|\leq2\sqrt X$. The coefficients of $P$ satisfy
+\[
+ |a_0|\ll X,\qquad |a_1|\ll H_0q\sqrt X,\qquad a_2=H_0^2q^2.
+\]
+Since $H_0$ is fixed and $q\leq\delta^{-\kappa}$, these bounds and the
+lower bound for $L$ fit the pullback consequence with
+$B_0\leq\delta^{-5\kappa}$ after decreasing $\delta_0$.
+Hence the sum on the class is
+$O(L\delta^\kappa\|F\|_{\mathrm{Lip}})$. The classes partition the
+interior points, of which there are $O(X)$; this elementary bound follows
+from the enclosing square. Summing and adding the boundary contribution
+proves \eqref{eq:gn-transfer}.
+
+The number of row endpoints is independent of $B-A$, explaining why no
+lower interval length is required. Finally apply Abel summation to the
+uniform bound with variable upper endpoint to insert $\log\mathrm N
+\mathfrak a$ at cost $O(\log(2X))$.
+\end{proof}
+
+\begin{remark}\label{rem:gn-product-and-progression}
+For Type II, apply the lemma in dimension $2m$ to
+$(g_1(n),g_2(n))$ and $F_1\otimes\overline{F_2}$, when this entire
+product orbit is totally equidistributed. Mean-zero factors ensure that
+the product test function has mean zero; they do not imply
+equidistribution of the product orbit. Use the smaller exponents for
+dimensions $m$ and $2m$. In dimension zero mean-zero test functions
+vanish, so the assertion is immediate.
+
+The constraints $rn\equiv b\pmod q$ and $r'n\equiv b\pmod q$ either
+are inconsistent or specify one residue class modulo a divisor of $q$.
+Intersecting their interval restrictions only changes $A,B$. Thus all
+Type I and Type II truncations are covered by the lemma. If
+$\delta=(\log X)^{-B_1}$ and $Q,q\leq(\log X)^{C_1}$, any desired
+saving $X(\log X)^{-A_1}$ follows once
+$B_1\kappa>\max\{C_1,A_1\}$, with $H_0$ fixed.
+\end{remark}

@@ -1,0 +1,500 @@
+[
+  {
+    "repository": "elliotglazer/diophantine-z-q",
+    "commit": "052a32e329a589b305b1df5319d9ebb9f3efe308",
+    "id": 42282489204,
+    "name": "Version 7 manuscript and quartic verification",
+    "status": "completed",
+    "conclusion": "success",
+    "html_url": "https://github.com/elliotglazer/diophantine-z-q/actions/runs/42282489204",
+    "jobs": [
+      {
+        "name": "reconstruction",
+        "status": "completed",
+        "conclusion": "success",
+        "failed_steps": []
+      },
+      {
+        "name": "paper",
+        "status": "completed",
+        "conclusion": "success",
+        "failed_steps": []
+      },
+      {
+        "name": "reproduction",
+        "status": "completed",
+        "conclusion": "success",
+        "failed_steps": []
+      },
+      {
+        "name": "metadata",
+        "status": "completed",
+        "conclusion": "success",
+        "failed_steps": []
+      },
+      {
+        "name": "historical_reconstruction",
+        "status": "completed",
+        "conclusion": "success",
+        "failed_steps": []
+      }
+    ]
+  },
+  {
+    "repository": "elliotglazer/diophantine-z-q",
+    "commit": "052a32e329a589b305b1df5319d9ebb9f3efe308",
+    "id": 42282397968,
+    "name": "Research checks",
+    "status": "completed",
+    "conclusion": "success",
+    "html_url": "https://github.com/elliotglazer/diophantine-z-q/actions/runs/42282397968",
+    "jobs": [
+      {
+        "name": "Reconstructed quartic and Version 5 inventory",
+        "status": "completed",
+        "conclusion": "success",
+        "failed_steps": []
+      },
+      {
+        "name": "Version 6 quartic reproduction and inventory",
+        "status": "completed",
+        "conclusion": "success",
+        "failed_steps": []
+      },
+      {
+        "name": "Paper build",
+        "status": "completed",
+        "conclusion": "success",
+        "failed_steps": []
+      },
+      {
+        "name": "Accepted Lean helpers and axiom audit",
+        "status": "completed",
+        "conclusion": "success",
+        "failed_steps": []
+      },
+      {
+        "name": "Construction regeneration and finite checks",
+        "status": "completed",
+        "conclusion": "success",
+        "failed_steps": []
+      }
+    ]
+  },
+  {
+    "repository": "elliotglazer/diophantine-z-q",
+    "commit": "fc7e629d973b63dc305717fa483a64c12bd58d05",
+    "id": 42284730978,
+    "name": "Version 7 manuscript and quartic verification",
+    "status": "completed",
+    "conclusion": "success",
+    "html_url": "https://github.com/elliotglazer/diophantine-z-q/actions/runs/42284730978",
+    "jobs": [
+      {
+        "name": "paper",
+        "status": "completed",
+        "conclusion": "success",
+        "failed_steps": []
+      },
+      {
+        "name": "metadata",
+        "status": "completed",
+        "conclusion": "skipped",
+        "failed_steps": []
+      },
+      {
+        "name": "reproduction",
+        "status": "completed",
+        "conclusion": "skipped",
+        "failed_steps": []
+      },
+      {
+        "name": "historical_reconstruction",
+        "status": "completed",
+        "conclusion": "skipped",
+        "failed_steps": []
+      },
+      {
+        "name": "reconstruction",
+        "status": "completed",
+        "conclusion": "skipped",
+        "failed_steps": []
+      }
+    ]
+  },
+  {
+    "repository": "elliotglazer/diophantine-z-q",
+    "commit": "fc7e629d973b63dc305717fa483a64c12bd58d05",
+    "id": 42284636268,
+    "name": "Research checks",
+    "status": "completed",
+    "conclusion": "failure",
+    "html_url": "https://github.com/elliotglazer/diophantine-z-q/actions/runs/42284636268",
+    "jobs": [
+      {
+        "name": "Reconstructed quartic and Version 5 inventory",
+        "status": "completed",
+        "conclusion": "failure",
+        "failed_steps": [
+          "Run python -E -B docs/quartic-1272/test_inventory.py"
+        ]
+      },
+      {
+        "name": "Paper build",
+        "status": "completed",
+        "conclusion": "success",
+        "failed_steps": []
+      },
+      {
+        "name": "Accepted Lean helpers and axiom audit",
+        "status": "completed",
+        "conclusion": "success",
+        "failed_steps": []
+      },
+      {
+        "name": "Version 6 quartic reproduction and inventory",
+        "status": "completed",
+        "conclusion": "success",
+        "failed_steps": []
+      },
+      {
+        "name": "Construction regeneration and finite checks",
+        "status": "completed",
+        "conclusion": "success",
+        "failed_steps": []
+      }
+    ]
+  },
+  {
+    "repository": "elliotglazer/diophantine-z-q",
+    "commit": "00fee0fea917bda1140215624f2276db9a410ed4",
+    "id": 42285966453,
+    "name": "Research checks",
+    "status": "in_progress",
+    "conclusion": null,
+    "html_url": "https://github.com/elliotglazer/diophantine-z-q/actions/runs/42285966453",
+    "jobs": [
+      {
+        "name": "Paper build",
+        "status": "completed",
+        "conclusion": "success",
+        "failed_steps": []
+      },
+      {
+        "name": "Reconstructed quartic and Version 5 inventory",
+        "status": "completed",
+        "conclusion": "success",
+        "failed_steps": []
+      },
+      {
+        "name": "Construction regeneration and finite checks",
+        "status": "completed",
+        "conclusion": "success",
+        "failed_steps": []
+      },
+      {
+        "name": "Version 6 quartic reproduction and inventory",
+        "status": "completed",
+        "conclusion": "success",
+        "failed_steps": []
+      },
+      {
+        "name": "Accepted Lean helpers and axiom audit",
+        "status": "in_progress",
+        "conclusion": null,
+        "failed_steps": []
+      }
+    ]
+  },
+  {
+    "repository": "elliotglazer/diophantine-z-q",
+    "commit": "00fee0fea917bda1140215624f2276db9a410ed4",
+    "id": 42285355845,
+    "name": "Research checks",
+    "status": "completed",
+    "conclusion": "success",
+    "html_url": "https://github.com/elliotglazer/diophantine-z-q/actions/runs/42285355845",
+    "jobs": [
+      {
+        "name": "Accepted Lean helpers and axiom audit",
+        "status": "completed",
+        "conclusion": "success",
+        "failed_steps": []
+      },
+      {
+        "name": "Construction regeneration and finite checks",
+        "status": "completed",
+        "conclusion": "success",
+        "failed_steps": []
+      },
+      {
+        "name": "Reconstructed quartic and Version 5 inventory",
+        "status": "completed",
+        "conclusion": "success",
+        "failed_steps": []
+      },
+      {
+        "name": "Version 6 quartic reproduction and inventory",
+        "status": "completed",
+        "conclusion": "success",
+        "failed_steps": []
+      },
+      {
+        "name": "Paper build",
+        "status": "completed",
+        "conclusion": "success",
+        "failed_steps": []
+      }
+    ]
+  },
+  {
+    "repository": "elliotglazer/private-diophantine",
+    "commit": "1a0402890db4c757cdb71dbca1762e88c664b7b0",
+    "id": 42282494789,
+    "name": "Version 7 manuscript and quartic verification",
+    "status": "completed",
+    "conclusion": "failure",
+    "html_url": "https://github.com/elliotglazer/private-diophantine/actions/runs/42282494789",
+    "jobs": [
+      {
+        "name": "reproduction",
+        "status": "completed",
+        "conclusion": "failure",
+        "failed_steps": [
+          "Rebuild source and replay the complete selected certificate"
+        ]
+      },
+      {
+        "name": "metadata",
+        "status": "completed",
+        "conclusion": "success",
+        "failed_steps": []
+      },
+      {
+        "name": "paper",
+        "status": "completed",
+        "conclusion": "success",
+        "failed_steps": []
+      },
+      {
+        "name": "reconstruction",
+        "status": "completed",
+        "conclusion": "success",
+        "failed_steps": []
+      },
+      {
+        "name": "historical_reconstruction",
+        "status": "completed",
+        "conclusion": "success",
+        "failed_steps": []
+      }
+    ]
+  },
+  {
+    "repository": "elliotglazer/private-diophantine",
+    "commit": "1a0402890db4c757cdb71dbca1762e88c664b7b0",
+    "id": 42282437331,
+    "name": "Research checks",
+    "status": "completed",
+    "conclusion": "cancelled",
+    "html_url": "https://github.com/elliotglazer/private-diophantine/actions/runs/42282437331",
+    "jobs": [
+      {
+        "name": "Reconstructed quartic and Version 5 inventory",
+        "status": "completed",
+        "conclusion": "success",
+        "failed_steps": []
+      },
+      {
+        "name": "Accepted Lean helpers and axiom audit",
+        "status": "completed",
+        "conclusion": "cancelled",
+        "failed_steps": []
+      },
+      {
+        "name": "Paper build",
+        "status": "completed",
+        "conclusion": "success",
+        "failed_steps": []
+      },
+      {
+        "name": "Version 6 quartic reproduction and inventory",
+        "status": "completed",
+        "conclusion": "success",
+        "failed_steps": []
+      },
+      {
+        "name": "Construction regeneration and finite checks",
+        "status": "completed",
+        "conclusion": "success",
+        "failed_steps": []
+      }
+    ]
+  },
+  {
+    "repository": "elliotglazer/private-diophantine",
+    "commit": "c9784d8d4fde26fe3c8af625eabaabca70fa5acc",
+    "id": 42284735344,
+    "name": "Version 7 manuscript and quartic verification",
+    "status": "completed",
+    "conclusion": "success",
+    "html_url": "https://github.com/elliotglazer/private-diophantine/actions/runs/42284735344",
+    "jobs": [
+      {
+        "name": "paper",
+        "status": "completed",
+        "conclusion": "success",
+        "failed_steps": []
+      },
+      {
+        "name": "metadata",
+        "status": "completed",
+        "conclusion": "skipped",
+        "failed_steps": []
+      },
+      {
+        "name": "reconstruction",
+        "status": "completed",
+        "conclusion": "skipped",
+        "failed_steps": []
+      },
+      {
+        "name": "historical_reconstruction",
+        "status": "completed",
+        "conclusion": "skipped",
+        "failed_steps": []
+      },
+      {
+        "name": "reproduction",
+        "status": "completed",
+        "conclusion": "skipped",
+        "failed_steps": []
+      }
+    ]
+  },
+  {
+    "repository": "elliotglazer/private-diophantine",
+    "commit": "c9784d8d4fde26fe3c8af625eabaabca70fa5acc",
+    "id": 42284665625,
+    "name": "Research checks",
+    "status": "completed",
+    "conclusion": "failure",
+    "html_url": "https://github.com/elliotglazer/private-diophantine/actions/runs/42284665625",
+    "jobs": [
+      {
+        "name": "Reconstructed quartic and Version 5 inventory",
+        "status": "completed",
+        "conclusion": "failure",
+        "failed_steps": [
+          "Run python -E -B docs/quartic-1272/test_inventory.py"
+        ]
+      },
+      {
+        "name": "Version 6 quartic reproduction and inventory",
+        "status": "completed",
+        "conclusion": "success",
+        "failed_steps": []
+      },
+      {
+        "name": "Construction regeneration and finite checks",
+        "status": "completed",
+        "conclusion": "success",
+        "failed_steps": []
+      },
+      {
+        "name": "Paper build",
+        "status": "completed",
+        "conclusion": "success",
+        "failed_steps": []
+      },
+      {
+        "name": "Accepted Lean helpers and axiom audit",
+        "status": "completed",
+        "conclusion": "success",
+        "failed_steps": []
+      }
+    ]
+  },
+  {
+    "repository": "elliotglazer/private-diophantine",
+    "commit": "f815d11e6ddf1443cfc9c9517dc44191085b0e5b",
+    "id": 42286080931,
+    "name": "Research checks",
+    "status": "in_progress",
+    "conclusion": null,
+    "html_url": "https://github.com/elliotglazer/private-diophantine/actions/runs/42286080931",
+    "jobs": [
+      {
+        "name": "Accepted Lean helpers and axiom audit",
+        "status": "in_progress",
+        "conclusion": null,
+        "failed_steps": []
+      },
+      {
+        "name": "Reconstructed quartic and Version 5 inventory",
+        "status": "in_progress",
+        "conclusion": null,
+        "failed_steps": []
+      },
+      {
+        "name": "Paper build",
+        "status": "in_progress",
+        "conclusion": null,
+        "failed_steps": []
+      },
+      {
+        "name": "Construction regeneration and finite checks",
+        "status": "in_progress",
+        "conclusion": null,
+        "failed_steps": []
+      },
+      {
+        "name": "Version 6 quartic reproduction and inventory",
+        "status": "in_progress",
+        "conclusion": null,
+        "failed_steps": []
+      }
+    ]
+  },
+  {
+    "repository": "elliotglazer/private-diophantine",
+    "commit": "f815d11e6ddf1443cfc9c9517dc44191085b0e5b",
+    "id": 42285361787,
+    "name": "Research checks",
+    "status": "completed",
+    "conclusion": "success",
+    "html_url": "https://github.com/elliotglazer/private-diophantine/actions/runs/42285361787",
+    "jobs": [
+      {
+        "name": "Paper build",
+        "status": "completed",
+        "conclusion": "success",
+        "failed_steps": []
+      },
+      {
+        "name": "Construction regeneration and finite checks",
+        "status": "completed",
+        "conclusion": "success",
+        "failed_steps": []
+      },
+      {
+        "name": "Version 6 quartic reproduction and inventory",
+        "status": "completed",
+        "conclusion": "success",
+        "failed_steps": []
+      },
+      {
+        "name": "Accepted Lean helpers and axiom audit",
+        "status": "completed",
+        "conclusion": "success",
+        "failed_steps": []
+      },
+      {
+        "name": "Reconstructed quartic and Version 5 inventory",
+        "status": "completed",
+        "conclusion": "success",
+        "failed_steps": []
+      }
+    ]
+  }
+]

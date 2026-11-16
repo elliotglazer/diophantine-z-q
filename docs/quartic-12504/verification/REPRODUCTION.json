@@ -1,0 +1,395 @@
+{
+  "status": "PASS: FROZEN REPLAY AND CLEAN REPRODUCTION",
+  "expected": {
+    "variables": 12504,
+    "witnesses": 12503,
+    "rows": 11939,
+    "monomials": 135721,
+    "degree": 4,
+    "max_abs_coefficient": 685783949153203534233601,
+    "expanded_bytes": 3239486,
+    "expanded_sha256": "7f5aa3117af82a0b323f0a4e74a18599204f5540408106d3ce99612b5ed830ca"
+  },
+  "source_id": "reciprocal64-beta16-compressed-s1-b5e836d77643",
+  "source_sha256": "ce9eeac7c4730aced8cfb70a1ab3b1b6a7fb2110c597afad1f56ddc92aeea73f",
+  "checker_sha256": "d2079177a4960740c5b7d42fbd0756dfc4ce8953cc947cee91c8786ba26fa8ba",
+  "regenerated_certificate_sha256": "1bdcc1d575551912deab9b7bfcc857a9a013b814861a8a90c361cdcc1b76a3c0",
+  "certificate_comparison": "All records identical after removing only final.report.seconds",
+  "source_mutations": 38,
+  "source_resource_abort_regressions": 5,
+  "certificate_mutations": {
+    "status": "PASS",
+    "valid_exact_artifact": "PASS",
+    "malformed_cases": 30,
+    "cases": [
+      {
+        "status": "REJECTED",
+        "case": "unknown_source_id",
+        "checkpoint": "assert source_id in SOURCE_ENTRIES",
+        "exception": "AssertionError"
+      },
+      {
+        "status": "REJECTED",
+        "case": "wrong_source_entry_digest",
+        "checkpoint": "first['source_entry_sha256']",
+        "exception": "AssertionError"
+      },
+      {
+        "status": "REJECTED",
+        "case": "changed_source_header",
+        "checkpoint": "==entry['source_header']",
+        "exception": "AssertionError"
+      },
+      {
+        "status": "REJECTED",
+        "case": "changed_source_body",
+        "checkpoint": "==entry['uncompressed_sha256']",
+        "exception": "AssertionError"
+      },
+      {
+        "status": "REJECTED",
+        "case": "changed_source_gzip_bytes",
+        "checkpoint": "==SOURCE_SHA",
+        "exception": "AssertionError"
+      },
+      {
+        "status": "REJECTED",
+        "case": "wrong_initial_row_count",
+        "checkpoint": "initial['source_rows']==SOURCE_ROWS",
+        "exception": "AssertionError"
+      },
+      {
+        "status": "REJECTED",
+        "case": "wrong_reuse_scale",
+        "checkpoint": "normal(source[index])==normal",
+        "exception": "AssertionError"
+      },
+      {
+        "status": "REJECTED",
+        "case": "missing_product_gate",
+        "checkpoint": "len(rows)==SOURCE_ROWS+len(gates)",
+        "exception": "AssertionError"
+      },
+      {
+        "status": "REJECTED",
+        "case": "forward_product_dependency",
+        "checkpoint": "all(w in expanded_vars for w in pair)",
+        "exception": "AssertionError"
+      },
+      {
+        "status": "REJECTED",
+        "case": "wrong_product_definition",
+        "checkpoint": "rows[SOURCE_ROWS+position]==",
+        "exception": "AssertionError"
+      },
+      {
+        "status": "REJECTED",
+        "case": "changed_retained_anchor",
+        "checkpoint": "('anchor',i)",
+        "exception": "AssertionError"
+      },
+      {
+        "status": "REJECTED",
+        "case": "changed_lifted_source_row",
+        "checkpoint": "('source',i)",
+        "exception": "AssertionError"
+      },
+      {
+        "status": "REJECTED",
+        "case": "free_input_elimination",
+        "checkpoint": "assert v!=0",
+        "exception": "AssertionError"
+      },
+      {
+        "status": "REJECTED",
+        "case": "missed_elimination_consumer",
+        "checkpoint": "set(affected)==incidence[v]-{i}",
+        "exception": "AssertionError"
+      },
+      {
+        "status": "REJECTED",
+        "case": "zero_elimination_denominator",
+        "checkpoint": "denominator>0",
+        "exception": "AssertionError"
+      },
+      {
+        "status": "REJECTED",
+        "case": "singular_linear_operation",
+        "checkpoint": "a!=0",
+        "exception": "AssertionError"
+      },
+      {
+        "status": "REJECTED",
+        "case": "wrong_operation_patch",
+        "checkpoint": "('incorrect row',i)",
+        "exception": "AssertionError"
+      },
+      {
+        "status": "REJECTED",
+        "case": "wrong_final_allocation_count",
+        "checkpoint": "final['allocated_variables']==nextvar",
+        "exception": "AssertionError"
+      },
+      {
+        "status": "REJECTED",
+        "case": "wrong_final_rows_digest",
+        "checkpoint": "==final['rows_sha256']",
+        "exception": "AssertionError"
+      },
+      {
+        "status": "REJECTED",
+        "case": "data_after_final_record",
+        "checkpoint": "Data after final record",
+        "exception": "AssertionError"
+      },
+      {
+        "status": "REJECTED",
+        "case": "changed_saved_candidate",
+        "checkpoint": "assert saved==rows",
+        "exception": "AssertionError"
+      },
+      {
+        "status": "REJECTED",
+        "case": "moved_free_input",
+        "checkpoint": "assert active[0]==0",
+        "exception": "AssertionError"
+      },
+      {
+        "status": "REJECTED",
+        "case": "omitted_active_coordinate",
+        "checkpoint": "assert set(active)==",
+        "exception": "AssertionError"
+      },
+      {
+        "status": "REJECTED",
+        "case": "changed_compact_residual",
+        "checkpoint": "assert compact==",
+        "exception": "AssertionError"
+      },
+      {
+        "status": "REJECTED",
+        "case": "changed_expanded_coefficient",
+        "checkpoint": "assert polynomial==supplied",
+        "exception": "AssertionError"
+      },
+      {
+        "status": "REJECTED",
+        "case": "omitted_expanded_term",
+        "checkpoint": "assert polynomial==supplied",
+        "exception": "AssertionError"
+      },
+      {
+        "status": "REJECTED",
+        "case": "duplicate_expanded_term",
+        "checkpoint": "m not in supplied",
+        "exception": "AssertionError"
+      },
+      {
+        "status": "REJECTED",
+        "case": "changed_gzip_twin",
+        "checkpoint": "gzip.decompress",
+        "exception": "AssertionError"
+      },
+      {
+        "status": "REJECTED",
+        "case": "wrong_reported_variable_count",
+        "checkpoint": "stats[key]==final['report'][key]",
+        "exception": "AssertionError"
+      },
+      {
+        "status": "REJECTED",
+        "case": "oversized_exact_quartic",
+        "checkpoint": "maximum<2**80",
+        "exception": "AssertionError"
+      }
+    ],
+    "release_claim": {
+      "variables": 12504,
+      "witnesses": 12503,
+      "rows": 11939,
+      "monomials": 135721,
+      "degree": 4,
+      "max_abs_coefficient": 685783949153203534233601,
+      "source_id": "reciprocal64-beta16-compressed-s1-b5e836d77643",
+      "source_sha256": "ce9eeac7c4730aced8cfb70a1ab3b1b6a7fb2110c597afad1f56ddc92aeea73f",
+      "expanded_sha256": "7f5aa3117af82a0b323f0a4e74a18599204f5540408106d3ce99612b5ed830ca",
+      "certificate_sha256": "9f7979c1e786bebad624b9ea4631b7eccd879f4bebb5b9ab69250b945973b268",
+      "checker_sha256": "d2079177a4960740c5b7d42fbd0756dfc4ce8953cc947cee91c8786ba26fa8ba",
+      "total_operations": 1467,
+      "weights_greater_than_one": 0
+    },
+    "test_sha256": "0d8cca89f045bc38089eddcf8b22aeedb1db08779bbf6fcfcd9d16dbe0a4856e",
+    "seconds": 55.759,
+    "scope": "Named-source lift, certificate, compaction and exact quartic bounds; not arithmetic theorem proof"
+  },
+  "python": "3.12.14 (main, Aug 13 2026, 02:47:42) [GCC 13.3.0]",
+  "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+  "zlib_compile_version": "1.3",
+  "zlib_runtime_version": "1.3",
+  "seconds": 101.033,
+  "steps": [
+    {
+      "step": "original-parity",
+      "exit_code": 0,
+      "seconds": 0.064,
+      "log": "original-parity.log"
+    },
+    {
+      "step": "original-anchor",
+      "exit_code": 0,
+      "seconds": 0.065,
+      "log": "original-anchor.log"
+    },
+    {
+      "step": "original-sieve",
+      "exit_code": 0,
+      "seconds": 0.033,
+      "log": "original-sieve.log"
+    },
+    {
+      "step": "original-geometry",
+      "exit_code": 0,
+      "seconds": 0.064,
+      "log": "original-geometry.log"
+    },
+    {
+      "step": "reciprocal-arithmetic",
+      "exit_code": 0,
+      "seconds": 0.065,
+      "log": "reciprocal-arithmetic.log"
+    },
+    {
+      "step": "source-audit",
+      "exit_code": 0,
+      "seconds": 0.967,
+      "log": "source-audit.log"
+    },
+    {
+      "step": "source-mutations",
+      "exit_code": 0,
+      "seconds": 10.382,
+      "log": "source-mutations.log"
+    },
+    {
+      "step": "frozen-certificate",
+      "exit_code": 0,
+      "seconds": 2.569,
+      "log": "frozen-certificate.log"
+    },
+    {
+      "step": "certificate-mutations",
+      "exit_code": 0,
+      "seconds": 55.818,
+      "log": "certificate-mutations.log"
+    },
+    {
+      "step": "source-regeneration",
+      "exit_code": 0,
+      "seconds": 0.215,
+      "log": "source-regeneration.log"
+    },
+    {
+      "step": "rebuilt-source-audit",
+      "exit_code": 0,
+      "seconds": 0.966,
+      "log": "rebuilt-source-audit.log"
+    },
+    {
+      "step": "fresh-lift",
+      "exit_code": 0,
+      "seconds": 1.067,
+      "log": "fresh-lift.log"
+    },
+    {
+      "step": "verify-fresh-lift",
+      "exit_code": 0,
+      "seconds": 1.718,
+      "log": "verify-fresh-lift.log"
+    },
+    {
+      "step": "norms",
+      "exit_code": 0,
+      "seconds": 1.067,
+      "log": "norms.log"
+    },
+    {
+      "step": "verify-norms",
+      "exit_code": 0,
+      "seconds": 1.818,
+      "log": "verify-norms.log"
+    },
+    {
+      "step": "charts",
+      "exit_code": 0,
+      "seconds": 1.067,
+      "log": "charts.log"
+    },
+    {
+      "step": "verify-charts",
+      "exit_code": 0,
+      "seconds": 1.869,
+      "log": "verify-charts.log"
+    },
+    {
+      "step": "ordinates",
+      "exit_code": 0,
+      "seconds": 1.016,
+      "log": "ordinates.log"
+    },
+    {
+      "step": "verify-ordinates",
+      "exit_code": 0,
+      "seconds": 1.868,
+      "log": "verify-ordinates.log"
+    },
+    {
+      "step": "parity",
+      "exit_code": 0,
+      "seconds": 1.067,
+      "log": "parity.log"
+    },
+    {
+      "step": "verify-parity",
+      "exit_code": 0,
+      "seconds": 1.919,
+      "log": "verify-parity.log"
+    },
+    {
+      "step": "batch",
+      "exit_code": 0,
+      "seconds": 1.419,
+      "log": "batch.log"
+    },
+    {
+      "step": "verify-batch",
+      "exit_code": 0,
+      "seconds": 2.168,
+      "log": "verify-batch.log"
+    },
+    {
+      "step": "optimize",
+      "exit_code": 0,
+      "seconds": 4.275,
+      "log": "optimize.log"
+    },
+    {
+      "step": "verify-optimized",
+      "exit_code": 0,
+      "seconds": 2.619,
+      "log": "verify-optimized.log"
+    },
+    {
+      "step": "merge-coordinates",
+      "exit_code": 0,
+      "seconds": 1.92,
+      "log": "merge-coordinates.log"
+    },
+    {
+      "step": "verify-regenerated-endpoint",
+      "exit_code": 0,
+      "seconds": 2.72,
+      "log": "verify-regenerated-endpoint.log"
+    }
+  ],
+  "scope": "Exact finite construction, projection-preserving certificate replay, full integer expansion, and reproducibility. Arithmetic theorem review remains separate."
+}

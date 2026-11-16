@@ -1,0 +1,387 @@
+{
+  "schema": "ft-replacement-integration-dependencies-v1",
+  "date": "2026-11-06",
+  "decision": "accepted_scoped_replacement_no_unresolved_interface_gap_found",
+  "candidate": {
+    "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+    "sha256": "b43f096ba3a4b1a979778ae1593ce3ad89048a2d28016e5ee9f35b124238dce7",
+    "bytes": 903216
+  },
+  "baseline": {
+    "path": "work/quartic-version6-preparation/manuscript/quartic_962-preparation.tex",
+    "sha256": "c2d24a8be893e7fb137370434352a6d54f0e3ca50bcd640bf3f9ce8f51c546e8",
+    "bytes": 822876
+  },
+  "fragments": [
+    {
+      "path": "work/frei-tinkova-removal-001/quotient-audit/norm_transfer.tex",
+      "sha256": "d2d8fa98291def5007fdd76ee4226acf7f4d77d0dd086d8ce3bc984785b13c16",
+      "bytes": 10431
+    },
+    {
+      "path": "work/frei-tinkova-removal-001/type-i-ii/type_i_ii.tex",
+      "sha256": "8af77dc5439c82ec79c223b0fead55b6b5fb4987f159525794d82190ed439136",
+      "bytes": 24041
+    },
+    {
+      "path": "work/frei-tinkova-removal-001/factorization/affine_pullback.tex",
+      "sha256": "10edb90817918605156a7f1193e42fa2777336b063406776129d4233021f2778",
+      "bytes": 9433
+    },
+    {
+      "path": "work/frei-tinkova-removal-001/factorization/factorization.tex",
+      "sha256": "53c1e8b15c0460c5eb4fdcac92f800605fdb846e5b04d13ea847dd7063fa7649",
+      "bytes": 7675
+    },
+    {
+      "path": "work/frei-tinkova-removal-001/progression_mainterms.tex",
+      "sha256": "8564d37de829edff8e0864362b6185f6b44f1ac4c1f053c0a34fe6b16444a35b",
+      "bytes": 7477
+    },
+    {
+      "path": "work/frei-tinkova-removal-001/gowers-bridge/bridge.tex",
+      "sha256": "b9284d40889c3d4308fd0c3d532b7d59c792f22894acc6db21c19a2422c307cd",
+      "bytes": 18440
+    },
+    {
+      "path": "work/frei-tinkova-removal-001/published-input-audit/gaussian_hecke_sw.tex",
+      "sha256": "56c7d6a62678123d2fd89bfc473f6934e75bd1da04233b292bda4cc9be77262e",
+      "bytes": 5177
+    }
+  ],
+  "review": {
+    "path": "work/frei-tinkova-removal-001/published-input-audit/INTEGRATION_REVIEW.md",
+    "sha256": "da734643973984eb58ae8e0f40feaca714b82503e32989efbde832d8b1444c42",
+    "bytes": 16851
+  },
+  "nodes": [
+    {
+      "id": "sw",
+      "current_labels": [
+        "lem:gaussian-hecke-sw"
+      ],
+      "locations": [
+        {
+          "label": "lem:gaussian-hecke-sw",
+          "line": 16584
+        }
+      ],
+      "dependencies": [],
+      "critical_hypotheses": "Fixed Gaussian ray character and fixed B; varying rational Dirichlet character q<=log(X)^B; 1<=Y<=X. Also K=Q.",
+      "supplied_conclusion": "Uniform ideal/rational von Mangoldt sums with primitive-principal main term and every logarithmic saving.",
+      "review_scope": "Self-authored component excluded from this independent proof review. Accepted through sw-independent-review, corrected TeX hash 56c7d6a62678123d2fd89bfc473f6934e75bd1da04233b292bda4cc9be77262e; only consumption audited here.",
+      "status": "accepted_for_stated_consumer"
+    },
+    {
+      "id": "progression",
+      "current_labels": [
+        "lem:gaussian-ray-progression",
+        "cor:gaussian-centered-progressions"
+      ],
+      "locations": [
+        {
+          "label": "lem:gaussian-ray-progression",
+          "line": 16722
+        },
+        {
+          "label": "cor:gaussian-centered-progressions",
+          "line": 16785
+        }
+      ],
+      "dependencies": [
+        "sw"
+      ],
+      "critical_hypotheses": "K/Q(i) fixed ray field, 16|H, C subset Gal(K/Q(i)) invariant under conjugation; W fixed and contains conductor(K^ab).",
+      "supplied_conclusion": "Exact conditional density mu_C; centered h has arbitrary logarithmic cancellation on every interval progression.",
+      "review_scope": "Internal proof and interface inspected in the pinned candidate.",
+      "status": "accepted_for_stated_consumer"
+    },
+    {
+      "id": "norm",
+      "current_labels": [
+        "lem:gn-norm-transfer"
+      ],
+      "locations": [
+        {
+          "label": "lem:gn-norm-transfer",
+          "line": 16834
+        }
+      ],
+      "dependencies": [],
+      "critical_hypotheses": "Fixed ray modulus; mean-zero Lipschitz test; total delta equidistribution; restricted power regime for delta, basis and progression modulus.",
+      "supplied_conclusion": "Gaussian ideal norm sums O(X delta^kappa), arbitrary interval endpoints; logarithmic weights and mean-zero product tests covered.",
+      "review_scope": "Internal proof and interface inspected in the pinned candidate.",
+      "status": "accepted_for_stated_consumer"
+    },
+    {
+      "id": "minor",
+      "current_labels": [
+        "gi-vaughan",
+        "gi-extraction",
+        "gi-recombination",
+        "gi-minor-arc",
+        "gi-ordinary-primes"
+      ],
+      "locations": [
+        {
+          "label": "gi-vaughan",
+          "line": 17111
+        },
+        {
+          "label": "gi-extraction",
+          "line": 17162
+        },
+        {
+          "label": "gi-recombination",
+          "line": 17280
+        },
+        {
+          "label": "gi-minor-arc",
+          "line": 17382
+        },
+        {
+          "label": "gi-ordinary-primes",
+          "line": 17483
+        }
+      ],
+      "dependencies": [
+        "norm"
+      ],
+      "critical_hypotheses": "Fixed dimensions, filtration and ray modulus; total delta equidistribution; mean-zero Lipschitz test.",
+      "supplied_conclusion": "All-delta/all-Q Gaussian and rational von Mangoldt minor-arc bounds QN log(2N)^7 delta^c, arbitrary interval progressions.",
+      "review_scope": "Internal proof and interface inspected in the pinned candidate.",
+      "status": "accepted_for_stated_consumer"
+    },
+    {
+      "id": "affine",
+      "current_labels": [
+        "lem:ga-affine-interpolation",
+        "lem:ga-wtrick-ma",
+        "cor:ga-centered-primes"
+      ],
+      "locations": [
+        {
+          "label": "lem:ga-affine-interpolation",
+          "line": 17571
+        },
+        {
+          "label": "lem:ga-wtrick-ma",
+          "line": 17654
+        },
+        {
+          "label": "cor:ga-centered-primes",
+          "line": 17693
+        }
+      ],
+      "dependencies": [
+        "minor",
+        "norm"
+      ],
+      "critical_hypotheses": "Fixed W,b; mean-zero test; small delta in a lower power regime; bounded basis rationality; finite ray Fourier expansion with factor one-half.",
+      "supplied_conclusion": "Centered W-tricked ray/ordinary prime weight satisfies fixed-power minor-arc hypothesis, with proper-prime-power errors absorbed.",
+      "review_scope": "Internal proof and interface inspected in the pinned candidate.",
+      "status": "accepted_for_stated_consumer"
+    },
+    {
+      "id": "factorization",
+      "current_labels": [
+        "prop:gf-factorization"
+      ],
+      "locations": [
+        {
+          "label": "prop:gf-factorization",
+          "line": 17765
+        }
+      ],
+      "dependencies": [
+        "progression",
+        "affine"
+      ],
+      "critical_hypotheses": "Pointwise log bound, all-progression mean cancellation, fixed-power mean-zero estimate; fixed W; B chosen before E(B).",
+      "supplied_conclusion": "Uniform correlation cancellation with all polynomial nilsequences of bounded complexity for each fixed W.",
+      "review_scope": "Internal proof and interface inspected in the pinned candidate.",
+      "status": "accepted_for_stated_consumer"
+    },
+    {
+      "id": "refined_gowers",
+      "current_labels": [
+        "eq:gaussian-centered-nil-input",
+        "eq:gaussian-refined-gowers"
+      ],
+      "locations": [
+        {
+          "label": "eq:gaussian-centered-nil-input",
+          "line": 17954
+        },
+        {
+          "label": "eq:gaussian-refined-gowers",
+          "line": 17995
+        }
+      ],
+      "dependencies": [
+        "factorization"
+      ],
+      "critical_hypotheses": "Real centered weight dominated after fixed rescaling by common ordinary-prime majorant; full cyclic U^(2s) uniformity; prime ambient size; fixed-V thresholds before diagonal.",
+      "supplied_conclusion": "Interval U^s uniformity on a sufficiently slow auxiliary modulus V_z, with physical-scale stage thresholds.",
+      "review_scope": "Internal proof and interface inspected in the pinned candidate.",
+      "status": "accepted_for_stated_consumer"
+    },
+    {
+      "id": "linear",
+      "current_labels": [
+        "lem:gaussian-linear-replacement"
+      ],
+      "locations": [
+        {
+          "label": "lem:gaussian-linear-replacement",
+          "line": 18058
+        }
+      ],
+      "dependencies": [
+        "refined_gowers"
+      ],
+      "critical_hypotheses": "Fixed nonzero pairwise nonproportional linear parts, bounded normalized constant terms, convex region; full normal-form auxiliary box.",
+      "supplied_conclusion": "Replace ray-prime factors by mu_C times ordinary-prime factors with o(N^d), including mixed products; no auxiliary cutoff in conclusion.",
+      "review_scope": "Internal proof and interface inspected in the pinned candidate.",
+      "status": "accepted_for_stated_consumer"
+    },
+    {
+      "id": "cube",
+      "current_labels": [
+        "eq:gaussian-global-gowers"
+      ],
+      "locations": [
+        {
+          "label": "eq:gaussian-global-gowers",
+          "line": 18152
+        }
+      ],
+      "dependencies": [
+        "linear"
+      ],
+      "critical_hypotheses": "New polynomial cutoff v fixed; wrap-around cube forms, q<=A^C1, nA^-C3<=J<=nA^-C2 with C1<C2<C3.",
+      "supplied_conclusion": "Centered local-step global cube bounded by O(1/log v)+o_v(1).",
+      "review_scope": "Internal proof and interface inspected in the pinned candidate.",
+      "status": "accepted_for_stated_consumer"
+    },
+    {
+      "id": "polynomial",
+      "current_labels": [
+        "prop:v5-artin-patterns"
+      ],
+      "locations": [
+        {
+          "label": "prop:v5-artin-patterns",
+          "line": 18296
+        }
+      ],
+      "dependencies": [
+        "cube"
+      ],
+      "critical_hypotheses": "Same fixed Gaussian ray field and conjugation-invariant split classes; distinct fixed coefficients; external arbitrary-function model, concatenation and polynomial von Neumann results.",
+      "supplied_conclusion": "Uniform polynomial count for omega(N)sqrtN<=T=o(sqrtN), singular series with conditional densities, and half-interval version; boundary via anchored second moment and fixed-epsilon diagonal.",
+      "review_scope": "Internal proof and interface inspected in the pinned candidate.",
+      "status": "accepted_for_stated_consumer"
+    },
+    {
+      "id": "ray_lower",
+      "current_labels": [
+        "lem:v5-ray-fibres",
+        "prop:v5-cutoff-lower"
+      ],
+      "locations": [
+        {
+          "label": "lem:v5-ray-fibres",
+          "line": 18479
+        },
+        {
+          "label": "prop:v5-cutoff-lower",
+          "line": 18537
+        }
+      ],
+      "dependencies": [
+        "polynomial"
+      ],
+      "critical_hypotheses": "Fix base modulus and coefficients; K_L is ray field for H0*T_L; C_L lies above C0 in split subgroup; L fixed before asymptotics.",
+      "supplied_conclusion": "Singular series lower bound c(log L)^(-4k) with c independent of L; no leftover reciprocal field degree.",
+      "review_scope": "Retained proof read for interface and source-domain compatibility; exact text unchanged from preparation source. External ray-class and Mertens inputs remain.",
+      "status": "accepted_for_stated_consumer"
+    },
+    {
+      "id": "obstruction",
+      "current_labels": [
+        "prop:v5-obstruction-tail"
+      ],
+      "locations": [
+        {
+          "label": "prop:v5-obstruction-tail",
+          "line": 16503
+        }
+      ],
+      "dependencies": [],
+      "critical_hypotheses": "Fixed coefficient data; leading constant uniform in L,tau; each tau fixed when taking its error threshold.",
+      "supplied_conclusion": "Weighted forbidden-tail upper bound C*tau*N^(3/2)/(L log L)+O_tau(N^(3/2-1/800)).",
+      "review_scope": "Retained local/sieve proof read for consumer interface; exact text unchanged. This is not a new independent source audit of the two external sieve theorems.",
+      "status": "accepted_for_stated_consumer"
+    },
+    {
+      "id": "final",
+      "current_labels": [
+        "thm:v5-simultaneous-primes",
+        "subsec:v5-diagonal"
+      ],
+      "locations": [
+        {
+          "label": "thm:v5-simultaneous-primes",
+          "line": 16180
+        },
+        {
+          "label": "subsec:v5-diagonal",
+          "line": 18563
+        }
+      ],
+      "dependencies": [
+        "polynomial",
+        "ray_lower",
+        "obstruction"
+      ],
+      "critical_hypotheses": "Choose L once to beat tail, then fixed K_L,C_L, then tau thresholds; omega condition and rounded T maintained; coefficient dilation first.",
+      "supplied_conclusion": "Required simultaneous split primes with Gaussian residues, adjacent-norm coprimality, exact two-adic valuations, divisibility of w and arbitrarily large u/w^2.",
+      "review_scope": "Internal proof and interface inspected in the pinned candidate.",
+      "status": "accepted_for_stated_consumer"
+    }
+  ],
+  "acyclic": true,
+  "unresolved_mathematical_interface_gaps": [],
+  "retained_text_checks": {
+    "local_and_obstruction_exact": true,
+    "ray_lower_and_final_diagonal_exact": true,
+    "local_obstruction_sha256": "16056ce425c15e0fbd603a41a8e7cc848949166a02de27448f9867ab04be5835",
+    "ray_final_sha256": "4b1fcb78f3cc4945e58b0a68ce922a6a75754dd1907714a7e2867b91cd901a9d"
+  },
+  "external_inputs_retained": [
+    "Mitsui1956: independently reviewed SW interface",
+    "GTOrbits2012: one-parameter quantitative Leibman, polynomial coordinates, recurrence, factorization, rational-subgroup metric comparisons",
+    "moebius: rational conjugation claim with lattice/metric losses",
+    "greentao: common ordinary-prime majorant, generalized von Neumann, normal form",
+    "v5dk: relative inverse Theorem5.1, checked in arxivv4; finaltypeset not compared",
+    "v6bienvenu: ordinary linear prime correlations with normalized constants and convex regions",
+    "v5tz: arbitrary-function dense model, concatenation, polynomial von Neumann, polynomial-forms majorant",
+    "v5kl: ray-class existence/reciprocity and modulus exact sequence",
+    "v5williams: fixed-modulus Mertens theorem",
+    "v5bl and v5bhb: unchanged sieve inputs with retained version qualifications"
+  ],
+  "FT_status": "provenance_and_methodological_attribution_only_no_assumed_theorem",
+  "limitations": [
+    "No self-certification of SW component",
+    "No new source-level proof of all external inputs",
+    "No assertion for arbitrary Galois fields or non-split cosets",
+    "No blanket certificate for unrelated quartic construction",
+    "No publication authorization; current candidate only"
+  ],
+  "editorial_maps": {
+    "GTMobius2012": "moebius",
+    "v6gtlinear": "greentao",
+    "\\Lambda_{b,W}": "\\lambda_{b,W}"
+  }
+}

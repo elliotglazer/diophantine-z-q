@@ -1,0 +1,26 @@
+{
+  "status": "accepted_mathematical_proof",
+  "reviewer": "dag-sharing worker independent of draft author",
+  "scope": "Q single-polynomial total-degree obstruction, with source comparison",
+  "gapsFound": [],
+  "sourceQualification": "Kollar Theorem 2 checked in arXiv math/0005146v1; published metadata verified; published full text not compared. Muller published PDF and archive record checked.",
+  "noveltyAssessed": false,
+  "files": [
+    {
+      "path": "work\\quartic-version6-preparation\\lower-bound\\degree_lower_bound.tex",
+      "sha256": "6db65ff9d69dfd1e3c5186cc3bec0ee84d2cb4120bf0a2a875469cc3a07cd71f"
+    },
+    {
+      "path": "work\\quartic-version6-preparation\\lower-bound\\bibliography.tex",
+      "sha256": "a528e8788f91a448541f526c67870ca9b50b31f184bea94f9396a0de003aa0fa"
+    },
+    {
+      "path": "work\\quartic-version6-preparation\\lower-bound\\sources\\muller-published.pdf",
+      "sha256": "23d0dc8ee51bf9dca3186ab2782e39a610f8d1515640cf0b0ca8d640195972bf"
+    },
+    {
+      "path": "work\\josebrox-claims-audit-20261106\\diophantine_optimization_20261106_v3.tex",
+      "sha256": "fc8bc7b8fae727e24f934ddd7de0a7cff8a005e89c3d0cac1ea14e5191b910ca"
+    }
+  ]
+}

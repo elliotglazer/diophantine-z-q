@@ -1,0 +1,169 @@
+% Working replacement fragment.  Not integrated or claimed closed.
+% The external Gaussian Hecke Siegel--Walfisz input below remains subject
+% to the independent source/proof review in published-input-audit/.
+\subsection{Gaussian ray weights and their progression main terms}
+\label{subsec:gaussian-progression-mainterms}
+
+Let $E=\Q(i)$ and let $H$ be a fixed positive integer divisible by $16$.
+Let $K/E$ be the ray class field for $H\Z[i]$.  This field is Galois over
+$\Q$, since complex conjugation preserves both the modulus and its
+principal ray subgroup.  Put
+\[
+ A=\operatorname{Gal}(K/E)
+   \simeq (\Z[i]/H\Z[i])^\times/\{1,-1,i,-i\},
+ \qquad G=\operatorname{Gal}(K/\Q).
+\]
+We use arithmetic Frobenius throughout.  Let $C\subseteq A$ be invariant
+under complex conjugation, so that $C$ is a union of conjugacy classes in
+$G$.  Define $\Lambda'_C(p)=\log p$ for unramified rational primes whose
+Frobenius lies in $C$, and put $\Lambda'_C(n)=0$ otherwise.  In particular
+this function is supported on rational primes which split in $E$.
+
+For ideals coprime to $H$ let $[\mathfrak a]\in A$ denote their ray class,
+and set
+\[
+ T_C(n)=\sum_{\substack{\mathrm N\mathfrak a=n\\(\mathfrak a,H)=1}}
+       \Lambda_E(\mathfrak a)1_C([\mathfrak a]).
+\]
+Here $\Lambda_E(\mathfrak p^j)=\log\mathrm N\mathfrak p$ and it is zero
+on all other ideals.  Every unramified split rational prime has two
+conjugate prime ideals of norm $p$, so
+\begin{equation}\label{eq:gaussian-ray-prime-factor}
+ T_C(p)=2\Lambda'_C(p)\qquad(p\nmid2H).
+\end{equation}
+The remaining difference between $T_C$ and $2\Lambda'_C$ is supported on
+rational prime powers of exponent at least two and the finitely many
+excluded primes.  Its total absolute value up to $X$ is
+$O_H(\sqrt X\log^2(2X))$.  This bound follows by summing the at most two
+prime ideals above each rational prime and their powers; no density
+theorem is used in this comparison.
+
+For $\chi\in\widehat A$ put
+\[
+ c_C(\chi)=|A|^{-1}\sum_{a\in C}\overline{\chi(a)},\qquad
+ T_\chi(n)=\sum_{\mathrm N\mathfrak a=n}
+                  \Lambda_E(\mathfrak a)\chi(\mathfrak a),
+\]
+where each character is extended by zero on ideals not coprime to $H$.
+Finite Fourier inversion gives the exact identity
+\begin{equation}\label{eq:gaussian-ray-fourier}
+                 T_C(n)=\sum_{\chi\in\widehat A}c_C(\chi)T_\chi(n).
+\end{equation}
+The field and all these characters are fixed before $X$ tends to infinity.
+
+The progression input needed below is the following fixed-field Hecke
+Siegel--Walfisz assertion.  For every $B,D>0$, every fixed finite-order
+ray character $\chi$ of $E$, and every Dirichlet character $\rho$ of
+modulus $q\leq(\log X)^B$,
+\begin{equation}\label{eq:gaussian-hecke-sw-input}
+ \sum_{\mathrm N\mathfrak a\leq Y}
+       \Lambda_E(\mathfrak a)\chi(\mathfrak a)
+                         \rho(\mathrm N\mathfrak a)
+  = r_{\chi,\rho}Y+O_{H,B,D}(X(\log X)^{-D})
+ \quad(0\leq Y\leq X),
+\end{equation}
+where $r_{\chi,\rho}=1$ if the induced Hecke character
+$\chi(\rho\circ\mathrm N)$ is trivial and is zero otherwise.
+The omitted Euler factors only change the sum by a polylogarithmic
+quantity.  The constant may be ineffective.  We require uniformity in
+$\rho,q,Y$, but not in $H$.
+% SOURCE GATE: insert the independently checked published source and
+% explicit correction proof before integrating this fragment.
+
+\begin{lemma}[Progression density from the fixed-field input]
+\label{lem:gaussian-ray-progression}
+Assume \eqref{eq:gaussian-hecke-sw-input}.  For $(a,q)=1$ define
+$J_q=K\cap\Q(\zeta_q)$ and let $\sigma_a(\zeta_q)=\zeta_q^a$.
+For fixed $B,D>0$, uniformly for $q\leq(\log X)^B$ and $0\leq Y\leq X$,
+\[
+ \sum_{\substack{n\leq Y\\ n\equiv a\pmod q}}\Lambda'_C(n)
+ =\frac{\#\{g\in C:g|_{J_q}=\sigma_a|_{J_q}\}}
+             {[K\Q(\zeta_q):\Q]}Y
+       +O_{H,B,D}(X(\log X)^{-D}).
+\]
+\end{lemma}
+\begin{proof}
+Orthogonality of Dirichlet characters and
+\eqref{eq:gaussian-ray-fourier} show that the coefficient of $Y$ for
+$T_C$ is
+\[
+ \frac1{\varphi(q)}\sum_{\chi\in\widehat A}c_C(\chi)
+       \sum_{\rho\bmod q}\overline{\rho(a)}r_{\chi,\rho}.
+\]
+The finite sum over $\chi$ has size depending only on $H$, while the
+average over $\rho$ cancels its own factor $\varphi(q)$ in the error.
+
+To evaluate this coefficient without a convention about inverse Artin
+symbols, put $L=K\Q(\zeta_q)$ and $B_q=\operatorname{Gal}(L/E)$.
+Restriction identifies $B_q$ with
+\[
+ \{(g,s)\in A\times\operatorname{Gal}(\Q(\zeta_q)/\Q):
+                       g|_{J_q}=s|_{J_q}\}.
+\]
+The characters $\chi(g)\rho(s)$ restrict to characters of $B_q$.
+Their average on $B_q$ is one precisely when their pullback by Artin
+reciprocity is the trivial Hecke character; otherwise it is zero.
+This is exactly $r_{\chi,\rho}$.  Expanding $1_C(g)$ and
+$1_{s=\sigma_a}$ by Fourier inversion therefore identifies the displayed
+coefficient with the proportion of elements of $B_q$ satisfying
+$g\in C$ and $s=\sigma_a$.  Its numerator is the numerator in the
+lemma and its denominator is $|B_q|=[L:E]$.
+Dividing by two using \eqref{eq:gaussian-ray-prime-factor} changes the
+denominator to $[L:\Q]$.  The prime-power error is smaller than the stated
+error.  This proves the formula.
+\end{proof}
+
+Choose a fixed integer $W$ divisible by the conductor of $K^{\mathrm{ab}}$.
+It is in particular divisible by $4$.
+For a unit $b\pmod W$ put
+\[
+ \mu_C(b)=
+ \frac{\#\{g\in C:g|_{K^{\mathrm{ab}}}=\sigma_b|_{K^{\mathrm{ab}}}\}}
+      {[K:K^{\mathrm{ab}}]},\quad
+ f_{C,b,W}(n)=\frac{\varphi(W)}W\Lambda'_C(Wn+b),\quad
+ \lambda_{b,W}(n)=\frac{\varphi(W)}W\Lambda'(Wn+b).
+\]
+The prime-supported ordinary von Mangoldt function is denoted by
+$\Lambda'$.  Replacing it by the usual $\Lambda$ costs only the same
+negligible prime-power error.
+The centered weight is
+\begin{equation}\label{eq:gaussian-centered-weight}
+       h_{C,b,W}=f_{C,b,W}-\mu_C(b)\lambda_{b,W}.
+\end{equation}
+Here $0\leq\mu_C(b)\leq1$, so
+$|h_{C,b,W}(n)|\leq\lambda_{b,W}(n)=O_W(\log(2N))$ on $[N]$.
+
+\begin{corollary}[Centered sums on progressions]
+\label{cor:gaussian-centered-progressions}
+Assume \eqref{eq:gaussian-hecke-sw-input}.  For every $D>0$,
+\[
+       \sum_{n\in P}h_{C,b,W}(n)=O_{H,W,D}(N(\log N)^{-D})
+\]
+uniformly over arithmetic progressions $P$ contained in $[N]$.
+\end{corollary}
+\begin{proof}
+Write $P$ as a residue class modulo $q$ intersected with an interval.
+If $q>(\log N)^{D+3}$, its cardinality is at most
+$N/(\log N)^{D+3}+1$, and the pointwise logarithmic bound proves the
+claim directly.  Otherwise the condition $n\in P$ becomes one residue
+class $a\pmod{Wq}$ and an interval for $Wn+b$.
+
+If $(a,Wq)>1$, every prime in this residue class divides $Wq$.  There
+are at most $O(\log(Wq))$ such primes, with total logarithmic weight
+polylogarithmic in $N$, which is negligible here.  Suppose instead that
+$(a,Wq)=1$.
+Since $\Q(\zeta_{Wq})$ is abelian and already contains
+$K^{\mathrm{ab}}$, one has
+$K\cap\Q(\zeta_{Wq})=K^{\mathrm{ab}}$.
+Also $a\equiv b\pmod W$, so the lemma's main coefficient is
+\[
+   \frac{\mu_C(b)}{\varphi(Wq)}.
+\]
+For the ordinary prime weight, the Siegel--Walfisz main coefficient
+is $1/\varphi(Wq)$.  The two terms of
+\eqref{eq:gaussian-centered-weight} therefore have equal main terms.
+Apply the progression lemma at both interval endpoints, with an error
+exponent larger than $D$ and with $X=O_W(N)$, and subtract.  This proves
+the claimed bound.  All moduli used are at most a fixed power of
+$\log N$, and $W$ is fixed throughout this argument.
+\end{proof}

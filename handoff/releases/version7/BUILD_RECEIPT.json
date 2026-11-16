@@ -1,0 +1,42 @@
+{
+  "archives": [
+    {
+      "all_member_hashes_and_crc_verified": true,
+      "archive_files": 1918,
+      "baseline_included": true,
+      "baseline_sha256": "93b53944ea93de08dc653beb70202797c1cbbdf19602ae583940bbf137dd43bc",
+      "bytes": 502942588,
+      "current_files": 1908,
+      "externally_bound_archive": false,
+      "externally_bound_plan": true,
+      "filename": "z-in-q-version7-full-handoff.zip",
+      "plan_sha256": "3249ba34dc7dac1eca8e9371556003bfa07ce4fd11a8fa182dbae93573e78f24",
+      "scope": "Payload integrity and exact current proof-package closure. Authenticate the snapshot using the published archive or plan SHA256.",
+      "sha256": "0f0374d7faff85a0bc62db1b61a44340ce3fa1171377b20a190fcea8eff5b2d8",
+      "snapshot_commit": "00fee0fea917bda1140215624f2276db9a410ed4",
+      "status": "PASS"
+    },
+    {
+      "all_member_hashes_and_crc_verified": true,
+      "archive_files": 1917,
+      "baseline_included": false,
+      "baseline_sha256": "93b53944ea93de08dc653beb70202797c1cbbdf19602ae583940bbf137dd43bc",
+      "bytes": 62607372,
+      "current_files": 1908,
+      "externally_bound_archive": false,
+      "externally_bound_plan": true,
+      "filename": "z-in-q-version7-current-handoff.zip",
+      "plan_sha256": "3249ba34dc7dac1eca8e9371556003bfa07ce4fd11a8fa182dbae93573e78f24",
+      "scope": "Payload integrity and exact current proof-package closure. Authenticate the snapshot using the published archive or plan SHA256.",
+      "sha256": "18387d52201abffa456049922198b87c02d2df888738877e175df3e6596c858d",
+      "snapshot_commit": "00fee0fea917bda1140215624f2276db9a410ed4",
+      "status": "PASS"
+    }
+  ],
+  "builder_sha256": "3b21ee52d0a6d71d78360b3020cd451035d4f1e7d11196c558287b8c3ea86e51",
+  "date": "2026-11-06",
+  "plan_sha256": "3249ba34dc7dac1eca8e9371556003bfa07ce4fd11a8fa182dbae93573e78f24",
+  "status": "PASS",
+  "verifier_sha256": "6c9256b8eb279f71d01b44f7ac1bd41f58f4b4b013dee15d0290f887d64a6d81",
+  "version": 7
+}

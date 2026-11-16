@@ -1,0 +1,8 @@
+{
+  "pole_first_residual": "new(Ce)=C*old",
+  "pole_second_residual": "new(Ce)=old",
+  "required_domain": "C != 0, retained from baseline",
+  "correction_chains_checked": 256,
+  "correction_values": 256,
+  "status": "exact polynomial identities and all forward correction choices checked; converse proved in PROOF.md"
+}

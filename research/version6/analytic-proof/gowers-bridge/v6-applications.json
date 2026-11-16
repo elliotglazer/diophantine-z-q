@@ -1,0 +1,1455 @@
+{
+  "schema": "quartic-v5-reviewed-application-inputs-v1",
+  "scope": "V6 Gaussian bridge application records for the current candidate. Authored inventory, not independent mathematical acceptance or review of unrelated current-manuscript material. No Frei-Tinkova theorem is an input.",
+  "applications": [
+    {
+      "id": "V6-GA-GT-MAJORANT",
+      "kind": "new_external_application",
+      "citation_keys": [
+        "greentao"
+      ],
+      "reviewed_fragment": "gaussian-analytic",
+      "current_labels": [
+        "eq:gaussian-refined-gowers"
+      ],
+      "current_anchors": [
+        {
+          "file": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+          "label": "eq:gaussian-refined-gowers",
+          "contains": null,
+          "lines": [
+            17995
+          ]
+        },
+        {
+          "file": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+          "label": null,
+          "contains": "Proposition~6.4 and Appendix~D for the ordinary prime majorant,",
+          "lines": [
+            17966
+          ]
+        }
+      ],
+      "exact_source_versions": [
+        {
+          "id": "GT2010",
+          "citation_key": "greentao",
+          "title": "Linear equations in primes",
+          "bibliography": "B. Green and T. Tao, Ann. of Math. (2) 171 (2010), no.3, 1753-1850.",
+          "sourceversion": "Published May 2010 PDF",
+          "url": "https://annals.math.princeton.edu/wp-content/uploads/annals-v171-n3-p08-p.pdf",
+          "access": "Published PDF directly inspected, including Theorem D.3 and p1840 convex-body estimate on 2026-11-06. No unpublished Artin theorem is imported.",
+          "file": null,
+          "sha256": null,
+          "hash_limitation": "Published PDF inspected through web extraction; no byte-identical local copy was pinned."
+        }
+      ],
+      "theorem_or_source_locator": "Proposition6.4, pp1780-1781; Definition6.2; AppendixD construction pp1839-1842.",
+      "objects_and_maps": "V_z=D*product(p<=z,p not dividing D)=E*primorial(z) for fixed E. Common ordinary-prime majorant nu on prime cyclic group Z/Lprime Z, Lprime in[C L,2C L].",
+      "hypotheses_and_discharge": [
+        "Fix a finite number of unit residues and norm/GN complexity before construction; request at least max(4^s,4s,D_GN) complexity.",
+        "Take C>=20 and the source construction threshold. On [L^(3/5),L] a fixed positive rescaling of each real centered weight is dominated by nu.",
+        "Added prime powers in fixed E do not affect any divisor condition because residues are units. This is an explicitly justified adaptation, not a literal additional clause in Proposition6.4."
+      ],
+      "conventions": [
+        "Nu is nonnegative on the whole cyclic group, not a zero extension.",
+        "The fixed-z limiting error is made small by choosing z first; it is not asserted to vanish with L for each fixed z."
+      ],
+      "translation": "Expand the centered 2s-cube of nu-1 into at most 4^s subfamilies. The linear-forms condition yields the U^(2s) smallness required by DK; choose z stage before the size threshold.",
+      "status": "component_application_reviewed_current_anchors_checked",
+      "qualification": null,
+      "review_evidence": [
+        {
+          "path": "work/frei-tinkova-removal-001/type-i-ii/BRIDGE_REVIEW_RECEIPT.json",
+          "sha256": "a731e38f4cdeafb0270691905820ce314bb43d5707a8f9a6f62bac1f4f180a08",
+          "scope": "Review of the standalone bridge at b9284d40889c3d4308fd0c3d532b7d59c792f22894acc6db21c19a2422c307cd, conditional on listed inputs; not blanket acceptance of current manuscript."
+        },
+        {
+          "path": "work/frei-tinkova-removal-001/bridge-source-independent-review/receipt.json",
+          "sha256": "6b88a22061509f07810cde93f799cebd8bba25834a6d665e0225fa6546cb7d1a",
+          "scope": "Review of the standalone bridge at b9284d40889c3d4308fd0c3d532b7d59c792f22894acc6db21c19a2422c307cd, conditional on listed inputs; not blanket acceptance of current manuscript."
+        }
+      ]
+    },
+    {
+      "id": "V6-GA-DK-INVERSE",
+      "kind": "new_external_application",
+      "citation_keys": [
+        "v5dk"
+      ],
+      "reviewed_fragment": "gaussian-analytic",
+      "current_labels": [
+        "eq:gaussian-dk-correct-exponent",
+        "eq:gaussian-refined-gowers"
+      ],
+      "current_anchors": [
+        {
+          "file": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+          "label": "eq:gaussian-dk-correct-exponent",
+          "contains": null,
+          "lines": [
+            17975
+          ]
+        },
+        {
+          "file": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+          "label": "eq:gaussian-refined-gowers",
+          "contains": null,
+          "lines": [
+            17995
+          ]
+        },
+        {
+          "file": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+          "label": null,
+          "contains": "We also use Dodos--Kanellopoulos",
+          "lines": [
+            17971
+          ]
+        }
+      ],
+      "exact_source_versions": [
+        {
+          "id": "DK2022-v4",
+          "citation_key": "v5dk",
+          "title": "Uniformity norms, their weaker versions, and applications",
+          "bibliography": "P. Dodos and V. Kanellopoulos, Acta Arith. 203 (2022), no.3, 251-270.",
+          "sourceversion": "arXiv:1610.00487v4, 2022-06-09; published work verified separately",
+          "url": "https://doi.org/10.4064/aa210728-27-2",
+          "access": "Theorem5.1 checked at author-v4 pp12-13. Publisher final typeset bytes unavailable in parallel audit; equality to the final typeset statement is not asserted.",
+          "file": "work/quartic-version5-release/sun-proof/sources/DK-v4.pdf",
+          "sha256": "1d71ecfcb7a1970ce3d7a10ac426f8c94e9d1d6a88886cb378ca19a099963508",
+          "bytes": 307223
+        }
+      ],
+      "theorem_or_source_locator": "Theorem5.1, checked arXiv-v4 pp12-13.",
+      "objects_and_maps": "Apply with target order s>=2, real f=c*1_[L^(3/5),L]*h_(C,V_z,b), nu as in V6-GA-GT-MAJORANT and a fixed norm threshold delta.",
+      "hypotheses_and_discharge": [
+        "c>0 is fixed so |f|<=nu.",
+        "Full-cyclic norm ||nu-1||U^(2s)<=eta, not U^(2s-2).",
+        "Prime ambient size lies in[C L,2C L], C>=20.",
+        "A positive U^s[L] lower bound would yield a correlation with one fixed-complexity (s-1)-step nilsequence. The centered nilsequence theorem is applied only at fixed modulus V_z and then diagonalized."
+      ],
+      "conventions": [
+        "Interval norm is the normalized zero-extension norm.",
+        "The smooth metric from DK is comparable with a fixed Malcev metric. A linear orbit with base point is a polynomial orbit.",
+        "Target U^(u+1) requires majorant U^(2u+2)."
+      ],
+      "translation": "Contradiction with eq:gaussian-centered-nil-input proves refined Gowers decay after removing an initial interval of density O(L^-2/5).",
+      "status": "component_application_reviewed_current_anchors_checked",
+      "qualification": "Theorem5.1 checked at author-v4 pp12-13. Publisher final typeset bytes unavailable in parallel audit; equality to the final typeset statement is not asserted.",
+      "review_evidence": [
+        {
+          "path": "work/frei-tinkova-removal-001/type-i-ii/BRIDGE_REVIEW_RECEIPT.json",
+          "sha256": "a731e38f4cdeafb0270691905820ce314bb43d5707a8f9a6f62bac1f4f180a08",
+          "scope": "Review of the standalone bridge at b9284d40889c3d4308fd0c3d532b7d59c792f22894acc6db21c19a2422c307cd, conditional on listed inputs; not blanket acceptance of current manuscript."
+        },
+        {
+          "path": "work/frei-tinkova-removal-001/bridge-source-independent-review/receipt.json",
+          "sha256": "6b88a22061509f07810cde93f799cebd8bba25834a6d665e0225fa6546cb7d1a",
+          "scope": "Review of the standalone bridge at b9284d40889c3d4308fd0c3d532b7d59c792f22894acc6db21c19a2422c307cd, conditional on listed inputs; not blanket acceptance of current manuscript."
+        }
+      ]
+    },
+    {
+      "id": "V6-GA-GT-NORMALFORM",
+      "kind": "new_external_application",
+      "citation_keys": [
+        "greentao"
+      ],
+      "reviewed_fragment": "gaussian-analytic",
+      "current_labels": [
+        "lem:gaussian-linear-replacement"
+      ],
+      "current_anchors": [
+        {
+          "file": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+          "label": "lem:gaussian-linear-replacement",
+          "contains": null,
+          "lines": [
+            18058
+          ]
+        },
+        {
+          "file": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+          "label": null,
+          "contains": "One can make this reduction explicit.",
+          "lines": [
+            18106
+          ]
+        }
+      ],
+      "exact_source_versions": [
+        {
+          "id": "GT2010",
+          "citation_key": "greentao",
+          "title": "Linear equations in primes",
+          "bibliography": "B. Green and T. Tao, Ann. of Math. (2) 171 (2010), no.3, 1753-1850.",
+          "sourceversion": "Published May 2010 PDF",
+          "url": "https://annals.math.princeton.edu/wp-content/uploads/annals-v171-n3-p08-p.pdf",
+          "access": "Published PDF directly inspected, including Theorem D.3 and p1840 convex-body estimate on 2026-11-06. No unpublished Artin theorem is imported.",
+          "file": null,
+          "sha256": null,
+          "hash_limitation": "Published PDF inspected through web extraction; no byte-identical local copy was pinned."
+        }
+      ],
+      "theorem_or_source_locator": "Lemma4.4 p1773 and normal-form reduction pp1774-1775.",
+      "objects_and_maps": "For each i!=j select fixed integer v_ij with dot(psi_j)(v_ij)=0 and dot(psi_i)(v_ij)!=0; substitute m=x+sum y_ij*v_ij.",
+      "hypotheses_and_discharge": [
+        "All linear parts are nonzero, fixed, and pairwise nonproportional.",
+        "New y variables range over a full box of side comparable to N/V_z.",
+        "For t=1 choose v with dot(psi_1)(v)!=0.",
+        "The extended convex region is defined by original constraints on x+Vy together with the full y box."
+      ],
+      "conventions": [
+        "The integer map (x,y)->(x+Vy,y) is bijective; the sum is multiplied by the exact box cardinality.",
+        "No restriction to a zero section is used."
+      ],
+      "translation": "Each i has a block of active variables absent from each competing form. Apply normal-form GN, then divide by the added box cardinality.",
+      "status": "component_application_reviewed_current_anchors_checked",
+      "qualification": null,
+      "review_evidence": [
+        {
+          "path": "work/frei-tinkova-removal-001/type-i-ii/BRIDGE_REVIEW_RECEIPT.json",
+          "sha256": "a731e38f4cdeafb0270691905820ce314bb43d5707a8f9a6f62bac1f4f180a08",
+          "scope": "Review of the standalone bridge at b9284d40889c3d4308fd0c3d532b7d59c792f22894acc6db21c19a2422c307cd, conditional on listed inputs; not blanket acceptance of current manuscript."
+        },
+        {
+          "path": "work/frei-tinkova-removal-001/bridge-source-independent-review/receipt.json",
+          "sha256": "6b88a22061509f07810cde93f799cebd8bba25834a6d665e0225fa6546cb7d1a",
+          "scope": "Review of the standalone bridge at b9284d40889c3d4308fd0c3d532b7d59c792f22894acc6db21c19a2422c307cd, conditional on listed inputs; not blanket acceptance of current manuscript."
+        }
+      ]
+    },
+    {
+      "id": "V6-GA-GT-RELATIVE-GN",
+      "kind": "new_external_application",
+      "citation_keys": [
+        "greentao"
+      ],
+      "reviewed_fragment": "gaussian-analytic",
+      "current_labels": [
+        "lem:gaussian-linear-replacement",
+        "eq:gaussian-admissibility-mass"
+      ],
+      "current_anchors": [
+        {
+          "file": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+          "label": "lem:gaussian-linear-replacement",
+          "contains": null,
+          "lines": [
+            18058
+          ]
+        },
+        {
+          "file": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+          "label": "eq:gaussian-admissibility-mass",
+          "contains": null,
+          "lines": [
+            18124
+          ]
+        },
+        {
+          "file": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+          "label": null,
+          "contains": "extension of Green--Tao Lemma~4.4 and Proposition~7.1.",
+          "lines": [
+            18097
+          ]
+        }
+      ],
+      "exact_source_versions": [
+        {
+          "id": "GT2010",
+          "citation_key": "greentao",
+          "title": "Linear equations in primes",
+          "bibliography": "B. Green and T. Tao, Ann. of Math. (2) 171 (2010), no.3, 1753-1850.",
+          "sourceversion": "Published May 2010 PDF",
+          "url": "https://annals.math.princeton.edu/wp-content/uploads/annals-v171-n3-p08-p.pdf",
+          "access": "Published PDF directly inspected, including Theorem D.3 and p1840 convex-body estimate on 2026-11-06. No unpublished Artin theorem is imported.",
+          "file": null,
+          "sha256": null,
+          "hash_limitation": "Published PDF inspected through web extraction; no byte-identical local copy was pinned."
+        }
+      ],
+      "theorem_or_source_locator": "Proposition7.1 pp1781-1782; AppendixC pp1818-1827.",
+      "objects_and_maps": "Telescope the product after V_z refinement; each term has one centered h and the other factors bounded by ordinary lambda_(V_z,b).",
+      "hypotheses_and_discharge": [
+        "One common D-pseudorandom majorant dominates fixed rescalings of all t weights.",
+        "The extended system is in normal form with fixed coefficients and bounded normalized offsets.",
+        "The centered factor has small Gowers norm at inner scale L comparable to N/V_z, including all fixed enlargement constants.",
+        "Choose physical stage thresholds N_j so all inner scales exceed the required L_j."
+      ],
+      "conventions": [
+        "Errors are uniform in residue vectors and convex domains.",
+        "The positive normalization (phi(V_z)/V_z)^t must be undone."
+      ],
+      "translation": "An o((N/V_z)^d) normalized error per residue becomes o(N^d), because normalized admissible mass is product beta_p=O_Psi(1).",
+      "status": "component_application_reviewed_current_anchors_checked",
+      "qualification": null,
+      "review_evidence": [
+        {
+          "path": "work/frei-tinkova-removal-001/type-i-ii/BRIDGE_REVIEW_RECEIPT.json",
+          "sha256": "a731e38f4cdeafb0270691905820ce314bb43d5707a8f9a6f62bac1f4f180a08",
+          "scope": "Review of the standalone bridge at b9284d40889c3d4308fd0c3d532b7d59c792f22894acc6db21c19a2422c307cd, conditional on listed inputs; not blanket acceptance of current manuscript."
+        },
+        {
+          "path": "work/frei-tinkova-removal-001/bridge-source-independent-review/receipt.json",
+          "sha256": "6b88a22061509f07810cde93f799cebd8bba25834a6d665e0225fa6546cb7d1a",
+          "scope": "Review of the standalone bridge at b9284d40889c3d4308fd0c3d532b7d59c792f22894acc6db21c19a2422c307cd, conditional on listed inputs; not blanket acceptance of current manuscript."
+        }
+      ]
+    },
+    {
+      "id": "V6-GA-BIENVENU-CUBE",
+      "kind": "new_external_application",
+      "citation_keys": [
+        "v6bienvenu"
+      ],
+      "reviewed_fragment": "gaussian-analytic",
+      "current_labels": [
+        "eq:gaussian-global-gowers"
+      ],
+      "current_anchors": [
+        {
+          "file": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+          "label": "eq:gaussian-global-gowers",
+          "contains": null,
+          "lines": [
+            18152
+          ]
+        },
+        {
+          "file": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+          "label": null,
+          "contains": "Bienvenu~\\cite{v6bienvenu}, Theorem~1.1, pages 79--80.",
+          "lines": [
+            18180
+          ]
+        }
+      ],
+      "exact_source_versions": [
+        {
+          "id": "Bienvenu2017",
+          "citation_key": "v6bienvenu",
+          "title": "A higher-dimensional Siegel-Walfisz theorem",
+          "bibliography": "P.-Y. Bienvenu, Acta Arith. 179 (2017), no.1, 79-100.",
+          "sourceversion": "Published 2017 PDF",
+          "url": "https://doi.org/10.4064/aa8600-10-2016",
+          "access": "Cached publisher PDF inspected. Uses Theorem1.1 only, not the stronger Theorem1.3.",
+          "file": "work/quartic-version5-release/sun-proof/sources/Bienvenu-published.pdf",
+          "sha256": "9634fad788ff65298c361d0d0b596eb89fc097bda1eaa2031ee9ea13cd4c6130",
+          "bytes": 387687
+        }
+      ],
+      "theorem_or_source_locator": "Theorem1.1, published pp79-80.",
+      "objects_and_maps": "For each centered-cube subproduct and each wrap region, use affine forms W*(x+q*sum omega_r*(h_r-hprime_r)-m_omega*n)+b.",
+      "hypotheses_and_discharge": [
+        "Freeze v and therefore W,A and finitely many q first.",
+        "Forms are nonconstant with pairwise nonproportional gradients, and coefficients are fixed at that v.",
+        "Offsets are O_v(n); all wrap regions are convex, and the source theorem is uniform over those regions and bounded normalized constants.",
+        "J/n lies in a fixed positive interval at frozen v."
+      ],
+      "conventions": [
+        "Source uses ordinary von Mangoldt; prime-power weight is O_v(sqrt(n)*log(n)^2), negligible by fixed linear-fiber bounds.",
+        "This application concerns ordinary primes only."
+      ],
+      "translation": "The linear asymptotic supplies each ordinary subproduct; normalization by n*J^(2a) gives o_v(1), without multiplying a persistent cutoff error by q.",
+      "status": "component_application_reviewed_current_anchors_checked",
+      "qualification": null,
+      "review_evidence": [
+        {
+          "path": "work/frei-tinkova-removal-001/type-i-ii/BRIDGE_REVIEW_RECEIPT.json",
+          "sha256": "a731e38f4cdeafb0270691905820ce314bb43d5707a8f9a6f62bac1f4f180a08",
+          "scope": "Review of the standalone bridge at b9284d40889c3d4308fd0c3d532b7d59c792f22894acc6db21c19a2422c307cd, conditional on listed inputs; not blanket acceptance of current manuscript."
+        },
+        {
+          "path": "work/frei-tinkova-removal-001/bridge-source-independent-review/receipt.json",
+          "sha256": "6b88a22061509f07810cde93f799cebd8bba25834a6d665e0225fa6546cb7d1a",
+          "scope": "Review of the standalone bridge at b9284d40889c3d4308fd0c3d532b7d59c792f22894acc6db21c19a2422c307cd, conditional on listed inputs; not blanket acceptance of current manuscript."
+        }
+      ]
+    },
+    {
+      "id": "V6-GA-TZ-LOCAL-CUBE",
+      "kind": "new_external_application",
+      "citation_keys": [
+        "v5tz"
+      ],
+      "reviewed_fragment": "gaussian-analytic",
+      "current_labels": [
+        "eq:gaussian-global-gowers"
+      ],
+      "current_anchors": [
+        {
+          "file": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+          "label": "eq:gaussian-global-gowers",
+          "contains": null,
+          "lines": [
+            18152
+          ]
+        },
+        {
+          "file": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+          "label": null,
+          "contains": "The ordinary cube is evaluated exactly as in Tao--Ziegler",
+          "lines": [
+            18177
+          ]
+        }
+      ],
+      "exact_source_versions": [
+        {
+          "id": "TZ2018",
+          "citation_key": "v5tz",
+          "title": "Polynomial patterns in the primes",
+          "bibliography": "T. Tao and T. Ziegler, Forum Math. Pi 6 (2018), e1, 60 pages.",
+          "sourceversion": "Published 2018-02-12 PDF",
+          "url": "https://doi.org/10.1017/fmp.2017.3",
+          "access": "Cached published PDF inspected. Published theorem numbering used throughout. The 73-page metadata inherited from V5 is not the length of this pinned PDF.",
+          "file": "work/quartic-version5-release/sun-proof/sources/TZ-published.pdf",
+          "sha256": "ba1645db9857dd621e8ea6a280927c1e4b7cef5f6df04a4f19e7ac7782220f43",
+          "bytes": 559406
+        }
+      ],
+      "theorem_or_source_locator": "Proposition6 and its proof, published pp39-40.",
+      "objects_and_maps": "Centered ordinary-prime cube on Z/nZ with increments q*(h-hprime), 1<=h,hprime<=J; then multiply by mu_C(b)^(2^a).",
+      "hypotheses_and_discharge": [
+        "Fixed a>=2, C1<C2<C3 and q<=A^C1, n*A^-C3<=J<=n*A^-C2.",
+        "For p not dividing W*q the cube gradients give 1+O_a(p^-2).",
+        "For p>v dividing q use 1+O_a(p^-1); log q=O(v) gives O(v/log v) such primes."
+      ],
+      "conventions": [
+        "Difference-multiset local norm convention.",
+        "First n tends to infinity at fixed v, then v increases."
+      ],
+      "translation": "Reproduce the source local-factor calculation explicitly: centered common term cancels and the remaining cutoff error is O(1/log v); this is a proof adaptation, not an Artin conclusion quoted from Proposition6.",
+      "status": "component_application_reviewed_current_anchors_checked",
+      "qualification": null,
+      "review_evidence": [
+        {
+          "path": "work/frei-tinkova-removal-001/type-i-ii/BRIDGE_REVIEW_RECEIPT.json",
+          "sha256": "a731e38f4cdeafb0270691905820ce314bb43d5707a8f9a6f62bac1f4f180a08",
+          "scope": "Review of the standalone bridge at b9284d40889c3d4308fd0c3d532b7d59c792f22894acc6db21c19a2422c307cd, conditional on listed inputs; not blanket acceptance of current manuscript."
+        },
+        {
+          "path": "work/frei-tinkova-removal-001/bridge-source-independent-review/receipt.json",
+          "sha256": "6b88a22061509f07810cde93f799cebd8bba25834a6d665e0225fa6546cb7d1a",
+          "scope": "Review of the standalone bridge at b9284d40889c3d4308fd0c3d532b7d59c792f22894acc6db21c19a2422c307cd, conditional on listed inputs; not blanket acceptance of current manuscript."
+        }
+      ]
+    },
+    {
+      "id": "V6-GA-TZ-MODEL",
+      "kind": "new_external_application",
+      "citation_keys": [
+        "v5tz"
+      ],
+      "reviewed_fragment": "gaussian-analytic",
+      "current_labels": [
+        "prop:v5-artin-patterns"
+      ],
+      "current_anchors": [
+        {
+          "file": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+          "label": "prop:v5-artin-patterns",
+          "contains": null,
+          "lines": [
+            18296
+          ]
+        },
+        {
+          "file": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+          "label": null,
+          "contains": "published Tao--Ziegler~\\cite{v5tz} Theorem~11 and Corollary~3",
+          "lines": [
+            18197
+          ]
+        }
+      ],
+      "exact_source_versions": [
+        {
+          "id": "TZ2018",
+          "citation_key": "v5tz",
+          "title": "Polynomial patterns in the primes",
+          "bibliography": "T. Tao and T. Ziegler, Forum Math. Pi 6 (2018), e1, 60 pages.",
+          "sourceversion": "Published 2018-02-12 PDF",
+          "url": "https://doi.org/10.1017/fmp.2017.3",
+          "access": "Cached published PDF inspected. Published theorem numbering used throughout. The 73-page metadata inherited from V5 is not the length of this pinned PDF.",
+          "file": "work/quartic-version5-release/sun-proof/sources/TZ-published.pdf",
+          "sha256": "ba1645db9857dd621e8ea6a280927c1e4b7cef5f6df04a4f19e7ac7782220f43",
+          "bytes": 559406
+        }
+      ],
+      "theorem_or_source_locator": "Theorem11, published p28.",
+      "objects_and_maps": "Bounded model of arbitrary f_(j,b) dominated by the normalized ordinary prime weight.",
+      "hypotheses_and_discharge": [
+        "0<=Lambda_jprime<=Lambda_prime.",
+        "Set rho_star=rho/B0 and Acal=A^B0; the model majorant cutoff n^rho_star is no larger than the input truncation n^rho.",
+        "Choose fixed complexities before rho and v."
+      ],
+      "conventions": [
+        "Use the arbitrary-function assertion, not the special model 1 for the ordinary prime weight.",
+        "A single model must be accurate for both global and local norm tests."
+      ],
+      "translation": "Transfer eq:gaussian-global-gowers to the bounded model minus mu_j(b). Published numbering replaces arXiv-v1 Theorem3.1.",
+      "status": "component_application_reviewed_current_anchors_checked",
+      "qualification": null,
+      "review_evidence": [
+        {
+          "path": "work/frei-tinkova-removal-001/type-i-ii/BRIDGE_REVIEW_RECEIPT.json",
+          "sha256": "a731e38f4cdeafb0270691905820ce314bb43d5707a8f9a6f62bac1f4f180a08",
+          "scope": "Review of the standalone bridge at b9284d40889c3d4308fd0c3d532b7d59c792f22894acc6db21c19a2422c307cd, conditional on listed inputs; not blanket acceptance of current manuscript."
+        },
+        {
+          "path": "work/frei-tinkova-removal-001/bridge-source-independent-review/receipt.json",
+          "sha256": "6b88a22061509f07810cde93f799cebd8bba25834a6d665e0225fa6546cb7d1a",
+          "scope": "Review of the standalone bridge at b9284d40889c3d4308fd0c3d532b7d59c792f22894acc6db21c19a2422c307cd, conditional on listed inputs; not blanket acceptance of current manuscript."
+        }
+      ]
+    },
+    {
+      "id": "V6-GA-TZ-MODEL-COROLLARY",
+      "kind": "new_external_application",
+      "citation_keys": [
+        "v5tz"
+      ],
+      "reviewed_fragment": "gaussian-analytic",
+      "current_labels": [
+        "prop:v5-artin-patterns",
+        "eq:v5-global-gowers"
+      ],
+      "current_anchors": [
+        {
+          "file": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+          "label": "prop:v5-artin-patterns",
+          "contains": null,
+          "lines": [
+            18296
+          ]
+        },
+        {
+          "file": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+          "label": "eq:v5-global-gowers",
+          "contains": null,
+          "lines": [
+            18336
+          ]
+        },
+        {
+          "file": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+          "label": null,
+          "contains": "Corollary~3 supplies approximation for the degree-one local",
+          "lines": [
+            18375
+          ]
+        }
+      ],
+      "exact_source_versions": [
+        {
+          "id": "TZ2018",
+          "citation_key": "v5tz",
+          "title": "Polynomial patterns in the primes",
+          "bibliography": "T. Tao and T. Ziegler, Forum Math. Pi 6 (2018), e1, 60 pages.",
+          "sourceversion": "Published 2018-02-12 PDF",
+          "url": "https://doi.org/10.1017/fmp.2017.3",
+          "access": "Cached published PDF inspected. Published theorem numbering used throughout. The 73-page metadata inherited from V5 is not the length of this pinned PDF.",
+          "file": "work/quartic-version5-release/sun-proof/sources/TZ-published.pdf",
+          "sha256": "ba1645db9857dd621e8ea6a280927c1e4b7cef5f6df04a4f19e7ac7782220f43",
+          "bytes": 559406
+        }
+      ],
+      "theorem_or_source_locator": "Corollary3, published p38.",
+      "objects_and_maps": "Apply simultaneous model approximation with M1=floor(floor(T/W)/A), q<=A^(B0*a), J=floor(A^(-2B0*a)*M1^2).",
+      "hypotheses_and_discharge": [
+        "A^-3*sqrt(n)<=M1<=sqrt(n); slow v ensures the required logarithmic lower bound.",
+        "Local step polynomials have degree1 and coefficients O(A^C), within the Acal allowance.",
+        "B0>C+2 is chosen before a and small rho."
+      ],
+      "conventions": [
+        "The same bounded model is used in all norm comparisons."
+      ],
+      "translation": "Approximation covers the global q[J] tests and polynomial local box norms together; after concatenation transfer smallness back to the unbounded centered weight.",
+      "status": "component_application_reviewed_current_anchors_checked",
+      "qualification": null,
+      "review_evidence": [
+        {
+          "path": "work/frei-tinkova-removal-001/type-i-ii/BRIDGE_REVIEW_RECEIPT.json",
+          "sha256": "a731e38f4cdeafb0270691905820ce314bb43d5707a8f9a6f62bac1f4f180a08",
+          "scope": "Review of the standalone bridge at b9284d40889c3d4308fd0c3d532b7d59c792f22894acc6db21c19a2422c307cd, conditional on listed inputs; not blanket acceptance of current manuscript."
+        },
+        {
+          "path": "work/frei-tinkova-removal-001/bridge-source-independent-review/receipt.json",
+          "sha256": "6b88a22061509f07810cde93f799cebd8bba25834a6d665e0225fa6546cb7d1a",
+          "scope": "Review of the standalone bridge at b9284d40889c3d4308fd0c3d532b7d59c792f22894acc6db21c19a2422c307cd, conditional on listed inputs; not blanket acceptance of current manuscript."
+        }
+      ]
+    },
+    {
+      "id": "V6-GA-TZ-CONCAT",
+      "kind": "new_external_application",
+      "citation_keys": [
+        "v5tz"
+      ],
+      "reviewed_fragment": "gaussian-analytic",
+      "current_labels": [
+        "prop:v5-artin-patterns",
+        "eq:v5-global-gowers"
+      ],
+      "current_anchors": [
+        {
+          "file": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+          "label": "prop:v5-artin-patterns",
+          "contains": null,
+          "lines": [
+            18296
+          ]
+        },
+        {
+          "file": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+          "label": "eq:v5-global-gowers",
+          "contains": null,
+          "lines": [
+            18336
+          ]
+        },
+        {
+          "file": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+          "label": null,
+          "contains": "Theorem~9 makes its local",
+          "lines": [
+            18384
+          ]
+        }
+      ],
+      "exact_source_versions": [
+        {
+          "id": "TZ2018",
+          "citation_key": "v5tz",
+          "title": "Polynomial patterns in the primes",
+          "bibliography": "T. Tao and T. Ziegler, Forum Math. Pi 6 (2018), e1, 60 pages.",
+          "sourceversion": "Published 2018-02-12 PDF",
+          "url": "https://doi.org/10.1017/fmp.2017.3",
+          "access": "Cached published PDF inspected. Published theorem numbering used throughout. The 73-page metadata inherited from V5 is not the length of this pinned PDF.",
+          "file": "work/quartic-version5-release/sun-proof/sources/TZ-published.pdf",
+          "sha256": "ba1645db9857dd621e8ea6a280927c1e4b7cef5f6df04a4f19e7ac7782220f43",
+          "bytes": 559406
+        }
+      ],
+      "theorem_or_source_locator": "Theorem9, published p21.",
+      "objects_and_maps": "Apply to the bounded model minus mu_j(b), using global order a chosen from the desired local order.",
+      "hypotheses_and_discharge": [
+        "Global q[J] norms are small at all required q,J.",
+        "n>Acal^-1*M1^2, with Acal=A^B0.",
+        "Parameter order fixes local complexity, B0, a and rho before v."
+      ],
+      "conventions": [
+        "The local smallness threshold is independent of Acal.",
+        "Bounded rescaling if needed is fixed."
+      ],
+      "translation": "Small global Gowers norms give small averaged local polynomial box norms. Published numbering replaces arXiv-v1 Theorem2.5.",
+      "status": "component_application_reviewed_current_anchors_checked",
+      "qualification": null,
+      "review_evidence": [
+        {
+          "path": "work/frei-tinkova-removal-001/type-i-ii/BRIDGE_REVIEW_RECEIPT.json",
+          "sha256": "a731e38f4cdeafb0270691905820ce314bb43d5707a8f9a6f62bac1f4f180a08",
+          "scope": "Review of the standalone bridge at b9284d40889c3d4308fd0c3d532b7d59c792f22894acc6db21c19a2422c307cd, conditional on listed inputs; not blanket acceptance of current manuscript."
+        },
+        {
+          "path": "work/frei-tinkova-removal-001/bridge-source-independent-review/receipt.json",
+          "sha256": "6b88a22061509f07810cde93f799cebd8bba25834a6d665e0225fa6546cb7d1a",
+          "scope": "Review of the standalone bridge at b9284d40889c3d4308fd0c3d532b7d59c792f22894acc6db21c19a2422c307cd, conditional on listed inputs; not blanket acceptance of current manuscript."
+        }
+      ]
+    },
+    {
+      "id": "V6-GA-TZ-POLYNOMIAL-GN",
+      "kind": "new_external_application",
+      "citation_keys": [
+        "v5tz"
+      ],
+      "reviewed_fragment": "gaussian-analytic",
+      "current_labels": [
+        "prop:v5-artin-patterns",
+        "eq:v5-artin-patterns"
+      ],
+      "current_anchors": [
+        {
+          "file": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+          "label": "prop:v5-artin-patterns",
+          "contains": null,
+          "lines": [
+            18296
+          ]
+        },
+        {
+          "file": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+          "label": "eq:v5-artin-patterns",
+          "contains": null,
+          "lines": [
+            18299
+          ]
+        },
+        {
+          "file": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+          "label": null,
+          "contains": "Theorem~13 makes every polynomial average containing a centered factor",
+          "lines": [
+            18387
+          ]
+        }
+      ],
+      "exact_source_versions": [
+        {
+          "id": "TZ2018",
+          "citation_key": "v5tz",
+          "title": "Polynomial patterns in the primes",
+          "bibliography": "T. Tao and T. Ziegler, Forum Math. Pi 6 (2018), e1, 60 pages.",
+          "sourceversion": "Published 2018-02-12 PDF",
+          "url": "https://doi.org/10.1017/fmp.2017.3",
+          "access": "Cached published PDF inspected. Published theorem numbering used throughout. The 73-page metadata inherited from V5 is not the length of this pinned PDF.",
+          "file": "work/quartic-version5-release/sun-proof/sources/TZ-published.pdf",
+          "sha256": "ba1645db9857dd621e8ea6a280927c1e4b7cef5f6df04a4f19e7ac7782220f43",
+          "bytes": 559406
+        }
+      ],
+      "theorem_or_source_locator": "Theorem13 and equation(57), published p41.",
+      "objects_and_maps": "After u=W*x+b,w=W*m+c, use integer shifts P_j(m)=c_j*W*m^2+2*c_j*c*m+(b+c_j*c^2-b_j)/W.",
+      "hypotheses_and_discharge": [
+        "Distinct c_j yield nonzero leading-coefficient differences.",
+        "Coefficients O(W) satisfy fixed chosen coefficient allowances.",
+        "Each non-main expansion term has one centered factor with vanishing local norm; all other factors satisfy the ordinary-majorant domination."
+      ],
+      "conventions": [
+        "Boundary localization is handled separately, not discarded using a pointwise logarithmic bound.",
+        "Admissible residue mass is bounded uniformly in v."
+      ],
+      "translation": "All centered polynomial products are negligible, leaving the explicit singular series. Published numbering replaces arXiv-v1 Theorem4.1.",
+      "status": "component_application_reviewed_current_anchors_checked",
+      "qualification": null,
+      "review_evidence": [
+        {
+          "path": "work/frei-tinkova-removal-001/type-i-ii/BRIDGE_REVIEW_RECEIPT.json",
+          "sha256": "a731e38f4cdeafb0270691905820ce314bb43d5707a8f9a6f62bac1f4f180a08",
+          "scope": "Review of the standalone bridge at b9284d40889c3d4308fd0c3d532b7d59c792f22894acc6db21c19a2422c307cd, conditional on listed inputs; not blanket acceptance of current manuscript."
+        },
+        {
+          "path": "work/frei-tinkova-removal-001/bridge-source-independent-review/receipt.json",
+          "sha256": "6b88a22061509f07810cde93f799cebd8bba25834a6d665e0225fa6546cb7d1a",
+          "scope": "Review of the standalone bridge at b9284d40889c3d4308fd0c3d532b7d59c792f22894acc6db21c19a2422c307cd, conditional on listed inputs; not blanket acceptance of current manuscript."
+        }
+      ]
+    },
+    {
+      "id": "V6-GA-TZ-MAJORANT",
+      "kind": "new_external_application",
+      "citation_keys": [
+        "v5tz"
+      ],
+      "reviewed_fragment": "gaussian-analytic",
+      "current_labels": [
+        "prop:v5-artin-patterns"
+      ],
+      "current_anchors": [
+        {
+          "file": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+          "label": "prop:v5-artin-patterns",
+          "contains": null,
+          "lines": [
+            18296
+          ]
+        },
+        {
+          "file": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+          "label": null,
+          "contains": "The fixed factor $D$ in $W$ is allowed in their divisor-sum construction:",
+          "lines": [
+            18354
+          ]
+        }
+      ],
+      "exact_source_versions": [
+        {
+          "id": "TZ2018",
+          "citation_key": "v5tz",
+          "title": "Polynomial patterns in the primes",
+          "bibliography": "T. Tao and T. Ziegler, Forum Math. Pi 6 (2018), e1, 60 pages.",
+          "sourceversion": "Published 2018-02-12 PDF",
+          "url": "https://doi.org/10.1017/fmp.2017.3",
+          "access": "Cached published PDF inspected. Published theorem numbering used throughout. The 73-page metadata inherited from V5 is not the length of this pinned PDF.",
+          "file": "work/quartic-version5-release/sun-proof/sources/TZ-published.pdf",
+          "sha256": "ba1645db9857dd621e8ea6a280927c1e4b7cef5f6df04a4f19e7ac7782220f43",
+          "bytes": 559406
+        }
+      ],
+      "theorem_or_source_locator": "Equation(36) p29, Proposition2 p30, and AppendixA polynomial-forms verification.",
+      "objects_and_maps": "Ordinary polynomial majorant nu_b for W=E*primorial(v), fixed E, and unit b modulo W.",
+      "hypotheses_and_discharge": [
+        "Unit residues exclude every divisor condition at primes dividing W, regardless of their exponents.",
+        "Remaining local factors are unchanged; fixed E is absorbed into coefficient bounds.",
+        "Choose small sieve exponent after all fixed polynomial complexities."
+      ],
+      "conventions": [
+        "This is an explicit fixed-E adaptation of the source construction.",
+        "Nu concerns ordinary primes and does not itself imply ray-prime equidistribution."
+      ],
+      "translation": "Provides the model/GN majorants and the polynomial moments used for the boundary argument.",
+      "status": "component_application_reviewed_current_anchors_checked",
+      "qualification": null,
+      "review_evidence": [
+        {
+          "path": "work/frei-tinkova-removal-001/type-i-ii/BRIDGE_REVIEW_RECEIPT.json",
+          "sha256": "a731e38f4cdeafb0270691905820ce314bb43d5707a8f9a6f62bac1f4f180a08",
+          "scope": "Review of the standalone bridge at b9284d40889c3d4308fd0c3d532b7d59c792f22894acc6db21c19a2422c307cd, conditional on listed inputs; not blanket acceptance of current manuscript."
+        },
+        {
+          "path": "work/frei-tinkova-removal-001/bridge-source-independent-review/receipt.json",
+          "sha256": "6b88a22061509f07810cde93f799cebd8bba25834a6d665e0225fa6546cb7d1a",
+          "scope": "Review of the standalone bridge at b9284d40889c3d4308fd0c3d532b7d59c792f22894acc6db21c19a2422c307cd, conditional on listed inputs; not blanket acceptance of current manuscript."
+        }
+      ]
+    },
+    {
+      "id": "V6-GA-TZ-BOUNDARY-MOMENTS",
+      "kind": "new_external_application",
+      "citation_keys": [
+        "v5tz"
+      ],
+      "reviewed_fragment": "gaussian-analytic",
+      "current_labels": [
+        "subsec:gaussian-gowers-bridge"
+      ],
+      "current_anchors": [
+        {
+          "file": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+          "label": "subsec:gaussian-gowers-bridge",
+          "contains": null,
+          "lines": [
+            17940
+          ]
+        },
+        {
+          "file": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+          "label": null,
+          "contains": "Tao--Ziegler, Theorem~15 in Appendix~A (published page~57), applied to",
+          "lines": [
+            18227
+          ]
+        }
+      ],
+      "exact_source_versions": [
+        {
+          "id": "TZ2018",
+          "citation_key": "v5tz",
+          "title": "Polynomial patterns in the primes",
+          "bibliography": "T. Tao and T. Ziegler, Forum Math. Pi 6 (2018), e1, 60 pages.",
+          "sourceversion": "Published 2018-02-12 PDF",
+          "url": "https://doi.org/10.1017/fmp.2017.3",
+          "access": "Cached published PDF inspected. Published theorem numbering used throughout. The 73-page metadata inherited from V5 is not the length of this pinned PDF.",
+          "file": "work/quartic-version5-release/sun-proof/sources/TZ-published.pdf",
+          "sha256": "ba1645db9857dd621e8ea6a280927c1e4b7cef5f6df04a4f19e7ac7782220f43",
+          "bytes": 559406
+        }
+      ],
+      "theorem_or_source_locator": "Theorem15, AppendixA, published p57.",
+      "objects_and_maps": "In a fixed enlarged ambient interval without wrap, isolate at most one constant-shift factor nu0. Set F(x)=E_m product_i nu_i(x+P_i(m)). Apply to nu0*F, nu0*F^2, nu0.",
+      "hypotheses_and_discharge": [
+        "In F^2 use independent m and mprime; every pairwise difference of the nonconstant shifts, including across the two copies, is nonconstant.",
+        "All degrees and counts are fixed, coefficients fall within A^C, and the parameter box lengths exceed the required logarithmic lower bound.",
+        "The sieve exponent is chosen small enough for this enlarged moment family."
+      ],
+      "conventions": [
+        "The source theorem averages x over the whole cyclic group; no x-subinterval conclusion is quoted.",
+        "Errors retain cutoff-then-size order, o_(v to infinity)(1)+o_v(1)."
+      ],
+      "translation": "The three moments give E nu0*(F-1)^2=o(1). Weighted Cauchy-Schwarz reduces any interval-strip mass to E1_I*nu0; V6-GA-GT-INTERVAL-MEAN supplies that mean.",
+      "status": "component_application_reviewed_current_anchors_checked",
+      "qualification": null,
+      "review_evidence": [
+        {
+          "path": "work/frei-tinkova-removal-001/type-i-ii/BRIDGE_REVIEW_RECEIPT.json",
+          "sha256": "a731e38f4cdeafb0270691905820ce314bb43d5707a8f9a6f62bac1f4f180a08",
+          "scope": "Review of the standalone bridge at b9284d40889c3d4308fd0c3d532b7d59c792f22894acc6db21c19a2422c307cd, conditional on listed inputs; not blanket acceptance of current manuscript."
+        },
+        {
+          "path": "work/frei-tinkova-removal-001/bridge-source-independent-review/receipt.json",
+          "sha256": "6b88a22061509f07810cde93f799cebd8bba25834a6d665e0225fa6546cb7d1a",
+          "scope": "Review of the standalone bridge at b9284d40889c3d4308fd0c3d532b7d59c792f22894acc6db21c19a2422c307cd, conditional on listed inputs; not blanket acceptance of current manuscript."
+        }
+      ]
+    },
+    {
+      "id": "V6-GA-GT-INTERVAL-MEAN",
+      "kind": "new_external_application",
+      "citation_keys": [
+        "greentao",
+        "v5tz"
+      ],
+      "reviewed_fragment": "gaussian-analytic",
+      "current_labels": [
+        "subsec:gaussian-gowers-bridge"
+      ],
+      "current_anchors": [
+        {
+          "file": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+          "label": "subsec:gaussian-gowers-bridge",
+          "contains": null,
+          "lines": [
+            17940
+          ]
+        },
+        {
+          "file": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+          "label": null,
+          "contains": "For fixed relative interval length the one-dimensional divisor-sum",
+          "lines": [
+            18240
+          ]
+        }
+      ],
+      "exact_source_versions": [
+        {
+          "id": "GT2010",
+          "citation_key": "greentao",
+          "title": "Linear equations in primes",
+          "bibliography": "B. Green and T. Tao, Ann. of Math. (2) 171 (2010), no.3, 1753-1850.",
+          "sourceversion": "Published May 2010 PDF",
+          "url": "https://annals.math.princeton.edu/wp-content/uploads/annals-v171-n3-p08-p.pdf",
+          "access": "Published PDF directly inspected, including Theorem D.3 and p1840 convex-body estimate on 2026-11-06. No unpublished Artin theorem is imported.",
+          "file": null,
+          "sha256": null,
+          "hash_limitation": "Published PDF inspected through web extraction; no byte-identical local copy was pinned."
+        },
+        {
+          "id": "TZ2018",
+          "citation_key": "v5tz",
+          "title": "Polynomial patterns in the primes",
+          "bibliography": "T. Tao and T. Ziegler, Forum Math. Pi 6 (2018), e1, 60 pages.",
+          "sourceversion": "Published 2018-02-12 PDF",
+          "url": "https://doi.org/10.1017/fmp.2017.3",
+          "access": "Cached published PDF inspected. Published theorem numbering used throughout. The 73-page metadata inherited from V5 is not the length of this pinned PDF.",
+          "file": "work/quartic-version5-release/sun-proof/sources/TZ-published.pdf",
+          "sha256": "ba1645db9857dd621e8ea6a280927c1e4b7cef5f6df04a4f19e7ac7782220f43",
+          "bytes": 559406
+        }
+      ],
+      "theorem_or_source_locator": "GT TheoremD.3 (Goldston-Yildirim), p1829, and normalized convex-body estimate preceding (D.24), p1840; TZ normalized divisor-sum definition (36), p29.",
+      "objects_and_maps": "Take one affine divisor-sum factor W*x+b and a fixed relative-length interval I in the enlarged ambient domain; nu0=1 is immediate if no anchor is present.",
+      "hypotheses_and_discharge": [
+        "Freeze v and epsilon before the size limit.",
+        "b is a unit modulo W, the smooth cutoff is fixed and the sieve exponent is sufficiently small.",
+        "Singleton convex-body specialization has no pairwise degeneracy condition to check.",
+        "Use the same cutoff normalization as in nu0; its total-mass normalization is one. At primes dividing W, normalization cancels the unit local factor."
+      ],
+      "conventions": [
+        "This is a specialization of a proved divisor-sum/convex-body estimate, not a separately named interval-prime theorem.",
+        "No claim that global L1 or global Gowers smallness alone implies the interval mean."
+      ],
+      "translation": "Obtain E1_I*nu0=|I|/n plus the stated iterated errors. Together with weighted L2 this gives O(epsilon)+cutoff error+size error for boundary strips.",
+      "status": "component_application_reviewed_current_anchors_checked",
+      "qualification": "Exact p1829/p1840 source locator checked during inventory conversion. The standalone bridge reviewers accepted the generic interval-mean specialization; this new locator annotation is not a new independent review of the source proof.",
+      "review_evidence": [
+        {
+          "path": "work/frei-tinkova-removal-001/type-i-ii/BRIDGE_REVIEW_RECEIPT.json",
+          "sha256": "a731e38f4cdeafb0270691905820ce314bb43d5707a8f9a6f62bac1f4f180a08",
+          "scope": "Review of the standalone bridge at b9284d40889c3d4308fd0c3d532b7d59c792f22894acc6db21c19a2422c307cd, conditional on listed inputs; not blanket acceptance of current manuscript."
+        },
+        {
+          "path": "work/frei-tinkova-removal-001/bridge-source-independent-review/receipt.json",
+          "sha256": "6b88a22061509f07810cde93f799cebd8bba25834a6d665e0225fa6546cb7d1a",
+          "scope": "Review of the standalone bridge at b9284d40889c3d4308fd0c3d532b7d59c792f22894acc6db21c19a2422c307cd, conditional on listed inputs; not blanket acceptance of current manuscript."
+        }
+      ]
+    }
+  ],
+  "internal_results": [
+    {
+      "label": "eq:gaussian-centered-nil-input",
+      "statement_and_map": "Fixed-modulus centered Gaussian nilsequence orthogonality.",
+      "hypotheses_conventions_translation": "Depends on prop:gf-factorization, cor:ga-centered-primes and cor:gaussian-centered-progressions; all moduli fixed and constants allowed to depend on them. This is an upstream interface, not re-proved by this bridge.",
+      "reviewed_fragment": "gaussian-analytic",
+      "current_anchor": {
+        "file": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+        "label": "eq:gaussian-centered-nil-input",
+        "contains": null,
+        "lines": [
+          17954
+        ]
+      },
+      "source_bounds": "Current anchor recorded; full statement/proof spans must be rebound by the final inventory generator. Paragraph-level results are not represented as fictitious theorem environments.",
+      "status": "standalone_component_review_evidence_available_current_anchor_checked",
+      "review_limit": "Human component reviews relative to cited external inputs; not a proof-assistant certificate or blanket final-candidate approval.",
+      "review_evidence": [
+        {
+          "path": "work/frei-tinkova-removal-001/type-i-ii/BRIDGE_REVIEW_RECEIPT.json",
+          "sha256": "a731e38f4cdeafb0270691905820ce314bb43d5707a8f9a6f62bac1f4f180a08",
+          "scope": "Review of the standalone bridge at b9284d40889c3d4308fd0c3d532b7d59c792f22894acc6db21c19a2422c307cd, conditional on listed inputs; not blanket acceptance of current manuscript."
+        },
+        {
+          "path": "work/frei-tinkova-removal-001/bridge-source-independent-review/receipt.json",
+          "sha256": "6b88a22061509f07810cde93f799cebd8bba25834a6d665e0225fa6546cb7d1a",
+          "scope": "Review of the standalone bridge at b9284d40889c3d4308fd0c3d532b7d59c792f22894acc6db21c19a2422c307cd, conditional on listed inputs; not blanket acceptance of current manuscript."
+        }
+      ]
+    },
+    {
+      "label": "eq:gaussian-dk-correct-exponent",
+      "statement_and_map": "Correct majorant exponent U^(2s) for target interval U^s.",
+      "hypotheses_conventions_translation": "Direct DK interface; 4^s cube vertices requested before majorant construction.",
+      "reviewed_fragment": "gaussian-analytic",
+      "current_anchor": {
+        "file": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+        "label": "eq:gaussian-dk-correct-exponent",
+        "contains": null,
+        "lines": [
+          17975
+        ]
+      },
+      "source_bounds": "Current anchor recorded; full statement/proof spans must be rebound by the final inventory generator. Paragraph-level results are not represented as fictitious theorem environments.",
+      "status": "standalone_component_review_evidence_available_current_anchor_checked",
+      "review_limit": "Human component reviews relative to cited external inputs; not a proof-assistant certificate or blanket final-candidate approval.",
+      "review_evidence": [
+        {
+          "path": "work/frei-tinkova-removal-001/type-i-ii/BRIDGE_REVIEW_RECEIPT.json",
+          "sha256": "a731e38f4cdeafb0270691905820ce314bb43d5707a8f9a6f62bac1f4f180a08",
+          "scope": "Review of the standalone bridge at b9284d40889c3d4308fd0c3d532b7d59c792f22894acc6db21c19a2422c307cd, conditional on listed inputs; not blanket acceptance of current manuscript."
+        },
+        {
+          "path": "work/frei-tinkova-removal-001/bridge-source-independent-review/receipt.json",
+          "sha256": "6b88a22061509f07810cde93f799cebd8bba25834a6d665e0225fa6546cb7d1a",
+          "scope": "Review of the standalone bridge at b9284d40889c3d4308fd0c3d532b7d59c792f22894acc6db21c19a2422c307cd, conditional on listed inputs; not blanket acceptance of current manuscript."
+        }
+      ]
+    },
+    {
+      "label": "eq:gaussian-refined-gowers",
+      "statement_and_map": "Auxiliary-refinement Gowers decay uniformly in current finite residue set.",
+      "hypotheses_conventions_translation": "Choose z_j for majorant tolerances first, then size thresholds for nilsequence tests. Physical N_j accommodates inner scale N/V_zj. Initial interval removed using log-power times L^-2/5 bound.",
+      "reviewed_fragment": "gaussian-analytic",
+      "current_anchor": {
+        "file": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+        "label": "eq:gaussian-refined-gowers",
+        "contains": null,
+        "lines": [
+          17995
+        ]
+      },
+      "source_bounds": "Current anchor recorded; full statement/proof spans must be rebound by the final inventory generator. Paragraph-level results are not represented as fictitious theorem environments.",
+      "status": "standalone_component_review_evidence_available_current_anchor_checked",
+      "review_limit": "Human component reviews relative to cited external inputs; not a proof-assistant certificate or blanket final-candidate approval.",
+      "review_evidence": [
+        {
+          "path": "work/frei-tinkova-removal-001/type-i-ii/BRIDGE_REVIEW_RECEIPT.json",
+          "sha256": "a731e38f4cdeafb0270691905820ce314bb43d5707a8f9a6f62bac1f4f180a08",
+          "scope": "Review of the standalone bridge at b9284d40889c3d4308fd0c3d532b7d59c792f22894acc6db21c19a2422c307cd, conditional on listed inputs; not blanket acceptance of current manuscript."
+        },
+        {
+          "path": "work/frei-tinkova-removal-001/bridge-source-independent-review/receipt.json",
+          "sha256": "6b88a22061509f07810cde93f799cebd8bba25834a6d665e0225fa6546cb7d1a",
+          "scope": "Review of the standalone bridge at b9284d40889c3d4308fd0c3d532b7d59c792f22894acc6db21c19a2422c307cd, conditional on listed inputs; not blanket acceptance of current manuscript."
+        }
+      ]
+    },
+    {
+      "label": "lem:gaussian-linear-replacement",
+      "statement_and_map": "Genuine o(N^d) mixed-product replacement of fixed-system ray-prime weights by mu(mod D) times ordinary-prime weights.",
+      "hypotheses_conventions_translation": "Nonzero fixed nonproportional gradients, bounded normalized offsets, convex regions; full-box integer-bijective normal form; auxiliary z is eliminated before appendix v is frozen.",
+      "reviewed_fragment": "gaussian-analytic",
+      "current_anchor": {
+        "file": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+        "label": "lem:gaussian-linear-replacement",
+        "contains": null,
+        "lines": [
+          18058
+        ]
+      },
+      "source_bounds": "Current anchor recorded; full statement/proof spans must be rebound by the final inventory generator. Paragraph-level results are not represented as fictitious theorem environments.",
+      "status": "standalone_component_review_evidence_available_current_anchor_checked",
+      "review_limit": "Human component reviews relative to cited external inputs; not a proof-assistant certificate or blanket final-candidate approval.",
+      "review_evidence": [
+        {
+          "path": "work/frei-tinkova-removal-001/type-i-ii/BRIDGE_REVIEW_RECEIPT.json",
+          "sha256": "a731e38f4cdeafb0270691905820ce314bb43d5707a8f9a6f62bac1f4f180a08",
+          "scope": "Review of the standalone bridge at b9284d40889c3d4308fd0c3d532b7d59c792f22894acc6db21c19a2422c307cd, conditional on listed inputs; not blanket acceptance of current manuscript."
+        },
+        {
+          "path": "work/frei-tinkova-removal-001/bridge-source-independent-review/receipt.json",
+          "sha256": "6b88a22061509f07810cde93f799cebd8bba25834a6d665e0225fa6546cb7d1a",
+          "scope": "Review of the standalone bridge at b9284d40889c3d4308fd0c3d532b7d59c792f22894acc6db21c19a2422c307cd, conditional on listed inputs; not blanket acceptance of current manuscript."
+        }
+      ]
+    },
+    {
+      "label": "eq:gaussian-admissibility-mass",
+      "statement_and_map": "Normalized admissible residue mass is product beta_p=O_Psi(1).",
+      "hypotheses_conventions_translation": "CRT and fixed minor-prime exclusions; good-prime factors 1+O(p^-2), finite bad-prime factors bounded uniformly in offsets. Prevents V_z^d error amplification.",
+      "reviewed_fragment": "gaussian-analytic",
+      "current_anchor": {
+        "file": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+        "label": "eq:gaussian-admissibility-mass",
+        "contains": null,
+        "lines": [
+          18124
+        ]
+      },
+      "source_bounds": "Current anchor recorded; full statement/proof spans must be rebound by the final inventory generator. Paragraph-level results are not represented as fictitious theorem environments.",
+      "status": "standalone_component_review_evidence_available_current_anchor_checked",
+      "review_limit": "Human component reviews relative to cited external inputs; not a proof-assistant certificate or blanket final-candidate approval.",
+      "review_evidence": [
+        {
+          "path": "work/frei-tinkova-removal-001/type-i-ii/BRIDGE_REVIEW_RECEIPT.json",
+          "sha256": "a731e38f4cdeafb0270691905820ce314bb43d5707a8f9a6f62bac1f4f180a08",
+          "scope": "Review of the standalone bridge at b9284d40889c3d4308fd0c3d532b7d59c792f22894acc6db21c19a2422c307cd, conditional on listed inputs; not blanket acceptance of current manuscript."
+        },
+        {
+          "path": "work/frei-tinkova-removal-001/bridge-source-independent-review/receipt.json",
+          "sha256": "6b88a22061509f07810cde93f799cebd8bba25834a6d665e0225fa6546cb7d1a",
+          "scope": "Review of the standalone bridge at b9284d40889c3d4308fd0c3d532b7d59c792f22894acc6db21c19a2422c307cd, conditional on listed inputs; not blanket acceptance of current manuscript."
+        }
+      ]
+    },
+    {
+      "label": "eq:gaussian-global-gowers",
+      "statement_and_map": "Centered local q[J] cube bound O(1/log v)+o_v(1).",
+      "hypotheses_conventions_translation": "Apply completed fixed-system replacement to all subproducts and convex wrap regions; then ordinary local factors and q-prime count. Fixed-v constants multiply only vanishing size errors.",
+      "reviewed_fragment": "gaussian-analytic",
+      "current_anchor": {
+        "file": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+        "label": "eq:gaussian-global-gowers",
+        "contains": null,
+        "lines": [
+          18152
+        ]
+      },
+      "source_bounds": "Current anchor recorded; full statement/proof spans must be rebound by the final inventory generator. Paragraph-level results are not represented as fictitious theorem environments.",
+      "status": "standalone_component_review_evidence_available_current_anchor_checked",
+      "review_limit": "Human component reviews relative to cited external inputs; not a proof-assistant certificate or blanket final-candidate approval.",
+      "review_evidence": [
+        {
+          "path": "work/frei-tinkova-removal-001/type-i-ii/BRIDGE_REVIEW_RECEIPT.json",
+          "sha256": "a731e38f4cdeafb0270691905820ce314bb43d5707a8f9a6f62bac1f4f180a08",
+          "scope": "Review of the standalone bridge at b9284d40889c3d4308fd0c3d532b7d59c792f22894acc6db21c19a2422c307cd, conditional on listed inputs; not blanket acceptance of current manuscript."
+        },
+        {
+          "path": "work/frei-tinkova-removal-001/bridge-source-independent-review/receipt.json",
+          "sha256": "6b88a22061509f07810cde93f799cebd8bba25834a6d665e0225fa6546cb7d1a",
+          "scope": "Review of the standalone bridge at b9284d40889c3d4308fd0c3d532b7d59c792f22894acc6db21c19a2422c307cd, conditional on listed inputs; not blanket acceptance of current manuscript."
+        }
+      ]
+    },
+    {
+      "label": "subsec:gaussian-gowers-bridge",
+      "statement_and_map": "Gaussian nilsequence to polynomial-transfer implication, including boundary localization.",
+      "hypotheses_conventions_translation": "Weighted L2 gives fixed-interval control. At stage j preserve epsilon in{1,1/2,...,1/j}; for arbitrary T=o(sqrt N), fix epsilon first, take limsup N, then epsilon down to zero.",
+      "reviewed_fragment": "gaussian-analytic",
+      "current_anchor": {
+        "file": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+        "label": "subsec:gaussian-gowers-bridge",
+        "contains": null,
+        "lines": [
+          17940
+        ]
+      },
+      "source_bounds": "Current anchor recorded; full statement/proof spans must be rebound by the final inventory generator. Paragraph-level results are not represented as fictitious theorem environments.",
+      "status": "standalone_component_review_evidence_available_current_anchor_checked",
+      "review_limit": "Human component reviews relative to cited external inputs; not a proof-assistant certificate or blanket final-candidate approval.",
+      "review_evidence": [
+        {
+          "path": "work/frei-tinkova-removal-001/type-i-ii/BRIDGE_REVIEW_RECEIPT.json",
+          "sha256": "a731e38f4cdeafb0270691905820ce314bb43d5707a8f9a6f62bac1f4f180a08",
+          "scope": "Review of the standalone bridge at b9284d40889c3d4308fd0c3d532b7d59c792f22894acc6db21c19a2422c307cd, conditional on listed inputs; not blanket acceptance of current manuscript."
+        },
+        {
+          "path": "work/frei-tinkova-removal-001/bridge-source-independent-review/receipt.json",
+          "sha256": "6b88a22061509f07810cde93f799cebd8bba25834a6d665e0225fa6546cb7d1a",
+          "scope": "Review of the standalone bridge at b9284d40889c3d4308fd0c3d532b7d59c792f22894acc6db21c19a2422c307cd, conditional on listed inputs; not blanket acceptance of current manuscript."
+        }
+      ]
+    },
+    {
+      "label": "prop:v5-artin-patterns",
+      "statement_and_map": "Fixed Gaussian ray-field polynomial count with explicit singular series and half-interval version.",
+      "hypotheses_conventions_translation": "Gaussian ray field and conjugation-invariant class unions only. Uses above bridge, arbitrary-function TZ model and the stated parameter hierarchy. Current integrated proof is anchored; component reviews do not certify unrelated manuscript hypotheses.",
+      "reviewed_fragment": "gaussian-analytic",
+      "current_anchor": {
+        "file": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+        "label": "prop:v5-artin-patterns",
+        "contains": null,
+        "lines": [
+          18296
+        ]
+      },
+      "source_bounds": "Current anchor recorded; full statement/proof spans must be rebound by the final inventory generator. Paragraph-level results are not represented as fictitious theorem environments.",
+      "status": "standalone_component_review_evidence_available_current_anchor_checked",
+      "review_limit": "Human component reviews relative to cited external inputs; not a proof-assistant certificate or blanket final-candidate approval.",
+      "review_evidence": [
+        {
+          "path": "work/frei-tinkova-removal-001/type-i-ii/BRIDGE_REVIEW_RECEIPT.json",
+          "sha256": "a731e38f4cdeafb0270691905820ce314bb43d5707a8f9a6f62bac1f4f180a08",
+          "scope": "Review of the standalone bridge at b9284d40889c3d4308fd0c3d532b7d59c792f22894acc6db21c19a2422c307cd, conditional on listed inputs; not blanket acceptance of current manuscript."
+        },
+        {
+          "path": "work/frei-tinkova-removal-001/bridge-source-independent-review/receipt.json",
+          "sha256": "6b88a22061509f07810cde93f799cebd8bba25834a6d665e0225fa6546cb7d1a",
+          "scope": "Review of the standalone bridge at b9284d40889c3d4308fd0c3d532b7d59c792f22894acc6db21c19a2422c307cd, conditional on listed inputs; not blanket acceptance of current manuscript."
+        }
+      ]
+    },
+    {
+      "label": "eq:v5-global-gowers",
+      "statement_and_map": "Current proposition consumes the bridge local-cube bound with its retained notation.",
+      "hypotheses_conventions_translation": "Same difference-multiset norm; n first at fixed v, then v grows slowly.",
+      "reviewed_fragment": "gaussian-analytic",
+      "current_anchor": {
+        "file": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+        "label": "eq:v5-global-gowers",
+        "contains": null,
+        "lines": [
+          18336
+        ]
+      },
+      "source_bounds": "Current anchor recorded; full statement/proof spans must be rebound by the final inventory generator. Paragraph-level results are not represented as fictitious theorem environments.",
+      "status": "standalone_component_review_evidence_available_current_anchor_checked",
+      "review_limit": "Human component reviews relative to cited external inputs; not a proof-assistant certificate or blanket final-candidate approval.",
+      "review_evidence": [
+        {
+          "path": "work/frei-tinkova-removal-001/type-i-ii/BRIDGE_REVIEW_RECEIPT.json",
+          "sha256": "a731e38f4cdeafb0270691905820ce314bb43d5707a8f9a6f62bac1f4f180a08",
+          "scope": "Review of the standalone bridge at b9284d40889c3d4308fd0c3d532b7d59c792f22894acc6db21c19a2422c307cd, conditional on listed inputs; not blanket acceptance of current manuscript."
+        },
+        {
+          "path": "work/frei-tinkova-removal-001/bridge-source-independent-review/receipt.json",
+          "sha256": "6b88a22061509f07810cde93f799cebd8bba25834a6d665e0225fa6546cb7d1a",
+          "scope": "Review of the standalone bridge at b9284d40889c3d4308fd0c3d532b7d59c792f22894acc6db21c19a2422c307cd, conditional on listed inputs; not blanket acceptance of current manuscript."
+        }
+      ]
+    }
+  ],
+  "citation_classifications": [
+    {
+      "contains": "We use Green--Tao",
+      "keys": [
+        "greentao"
+      ],
+      "application_ids": [
+        "V6-GA-GT-MAJORANT",
+        "V6-GA-GT-NORMALFORM",
+        "V6-GA-GT-RELATIVE-GN"
+      ],
+      "role": "source_statement",
+      "scope": "Published transference inputs paragraph inside bridge; distinguish from older greentao citations elsewhere.",
+      "fragment_id": "gaussian-analytic",
+      "current_file": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+      "current_lines": [
+        17965
+      ]
+    },
+    {
+      "contains": "We also use Dodos--Kanellopoulos",
+      "keys": [
+        "v5dk"
+      ],
+      "application_ids": [
+        "V6-GA-DK-INVERSE"
+      ],
+      "role": "source_statement",
+      "scope": "Paragraph introduces exact corrected relative inverse interface.",
+      "fragment_id": "gaussian-analytic",
+      "current_file": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+      "current_lines": [
+        17971
+      ]
+    },
+    {
+      "contains": "The ordinary cube is evaluated exactly as in Tao--Ziegler",
+      "keys": [
+        "v5tz"
+      ],
+      "application_ids": [
+        "V6-GA-TZ-LOCAL-CUBE"
+      ],
+      "role": "proof_adaptation",
+      "scope": "Ordinary-prime local-factor argument reproduced with fixed-v quantifiers.",
+      "fragment_id": "gaussian-analytic",
+      "current_file": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+      "current_lines": [
+        18177
+      ]
+    },
+    {
+      "contains": "Bienvenu~\\cite{v6bienvenu}",
+      "keys": [
+        "v6bienvenu"
+      ],
+      "application_ids": [
+        "V6-GA-BIENVENU-CUBE"
+      ],
+      "role": "external_application",
+      "scope": "Ordinary fixed-system asymptotic only.",
+      "fragment_id": "gaussian-analytic",
+      "current_file": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+      "current_lines": [
+        18180
+      ]
+    },
+    {
+      "contains": "published Tao--Ziegler~\\cite{v5tz} Theorem~11",
+      "keys": [
+        "v5tz"
+      ],
+      "application_ids": [
+        "V6-GA-TZ-MODEL",
+        "V6-GA-TZ-MODEL-COROLLARY",
+        "V6-GA-TZ-CONCAT",
+        "V6-GA-TZ-POLYNOMIAL-GN"
+      ],
+      "role": "external_application",
+      "scope": "Completion paragraph summarizes four distinct uses; exact application records separate them.",
+      "fragment_id": "gaussian-analytic",
+      "current_file": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+      "current_lines": [
+        18197
+      ]
+    },
+    {
+      "contains": "Tao--Ziegler~\\cite{v5tz}. Their published Theorem~11",
+      "keys": [
+        "v5tz"
+      ],
+      "application_ids": [
+        "V6-GA-TZ-MODEL",
+        "V6-GA-TZ-MODEL-COROLLARY",
+        "V6-GA-TZ-CONCAT",
+        "V6-GA-TZ-POLYNOMIAL-GN",
+        "V6-GA-TZ-MAJORANT"
+      ],
+      "role": "external_application",
+      "scope": "Retained parameterized proof of prop:v5-artin-patterns.",
+      "fragment_id": "gaussian-analytic",
+      "current_file": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+      "current_lines": [
+        18348
+      ]
+    },
+    {
+      "contains": "Tao--Ziegler, Theorem~15 in Appendix~A",
+      "keys": [
+        "v5tz"
+      ],
+      "application_ids": [
+        "V6-GA-TZ-BOUNDARY-MOMENTS"
+      ],
+      "role": "implicit_source_application",
+      "scope": "Named source without a local cite command, within the bridge completion paragraph; no separate theorem label.",
+      "fragment_id": "gaussian-analytic",
+      "current_file": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+      "current_lines": [
+        18227
+      ]
+    },
+    {
+      "contains": "For fixed relative interval length the one-dimensional divisor-sum",
+      "keys": [
+        "greentao",
+        "v5tz"
+      ],
+      "application_ids": [
+        "V6-GA-GT-INTERVAL-MEAN"
+      ],
+      "role": "implicit_source_application",
+      "scope": "Generic interval-mean wording resolved to GT D.3 and p1840 normalized convex-body calculation with the TZ cutoff normalization; no local cite command.",
+      "fragment_id": "gaussian-analytic",
+      "current_file": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+      "current_lines": [
+        18240
+      ]
+    },
+    {
+      "contains": "The fixed factor $D$ in $W$ is allowed",
+      "keys": [
+        "v5tz"
+      ],
+      "application_ids": [
+        "V6-GA-TZ-MAJORANT"
+      ],
+      "role": "proof_adaptation",
+      "scope": "Explicit fixed-E construction adaptation, not an unquoted theorem clause.",
+      "fragment_id": "gaussian-analytic",
+      "current_file": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+      "current_lines": [
+        18354
+      ]
+    }
+  ],
+  "current_source": {
+    "path": "work/quartic-version6-preparation/manuscript/quartic_962-analytic-candidate.tex",
+    "sha256": "b43f096ba3a4b1a979778ae1593ce3ad89048a2d28016e5ee9f35b124238dce7",
+    "status": "snapshot at inventory generation; rebind after manuscript edits"
+  },
+  "reviewed_fragments": [
+    {
+      "id": "gaussian-analytic",
+      "path": "work/frei-tinkova-removal-001/gowers-bridge/bridge.tex",
+      "sha256": "b9284d40889c3d4308fd0c3d532b7d59c792f22894acc6db21c19a2422c307cd",
+      "status": "standalone bridge implication independently reviewed, conditional on named upstream inputs",
+      "review": "Two hash-bound reviews; current bibliography mapping v6gtlinear->greentao is explicitly checked. This fragment record covers the bridge component only, not every Gaussian upstream component.",
+      "evidence": [
+        {
+          "path": "work/frei-tinkova-removal-001/type-i-ii/BRIDGE_REVIEW_RECEIPT.json",
+          "sha256": "a731e38f4cdeafb0270691905820ce314bb43d5707a8f9a6f62bac1f4f180a08",
+          "scope": "Review of the standalone bridge at b9284d40889c3d4308fd0c3d532b7d59c792f22894acc6db21c19a2422c307cd, conditional on listed inputs; not blanket acceptance of current manuscript."
+        },
+        {
+          "path": "work/frei-tinkova-removal-001/bridge-source-independent-review/receipt.json",
+          "sha256": "6b88a22061509f07810cde93f799cebd8bba25834a6d665e0225fa6546cb7d1a",
+          "scope": "Review of the standalone bridge at b9284d40889c3d4308fd0c3d532b7d59c792f22894acc6db21c19a2422c307cd, conditional on listed inputs; not blanket acceptance of current manuscript."
+        }
+      ]
+    }
+  ],
+  "new_source_qualifications": [
+    {
+      "id": "DK-final-typeset",
+      "citation_key": "v5dk",
+      "qualification": "Theorem5.1 checked at author-v4 pp12-13. Publisher final typeset bytes unavailable in parallel audit; equality to the final typeset statement is not asserted."
+    },
+    {
+      "id": "GT-no-local-byte-pin",
+      "citation_key": "greentao",
+      "qualification": "Published PDF inspected through web extraction; no byte-identical local copy was pinned."
+    }
+  ],
+  "evidence_pins": [
+    {
+      "path": "work/frei-tinkova-removal-001/type-i-ii/BRIDGE_REVIEW_RECEIPT.json",
+      "sha256": "a731e38f4cdeafb0270691905820ce314bb43d5707a8f9a6f62bac1f4f180a08",
+      "scope": "Review of the standalone bridge at b9284d40889c3d4308fd0c3d532b7d59c792f22894acc6db21c19a2422c307cd, conditional on listed inputs; not blanket acceptance of current manuscript."
+    },
+    {
+      "path": "work/frei-tinkova-removal-001/bridge-source-independent-review/receipt.json",
+      "sha256": "6b88a22061509f07810cde93f799cebd8bba25834a6d665e0225fa6546cb7d1a",
+      "scope": "Review of the standalone bridge at b9284d40889c3d4308fd0c3d532b7d59c792f22894acc6db21c19a2422c307cd, conditional on listed inputs; not blanket acceptance of current manuscript."
+    }
+  ],
+  "external_proof_subaudits": [],
+  "inherited_ledgers": [],
+  "current_consumption": [],
+  "component_binding": {
+    "original_sha256": "b9284d40889c3d4308fd0c3d532b7d59c792f22894acc6db21c19a2422c307cd",
+    "bibliography_key_map": {
+      "v6gtlinear": "greentao"
+    },
+    "mapped_component_occurs_verbatim": true,
+    "qualification": "The final manuscript is mutable; this is a snapshot binding, not acceptance of subsequent edits."
+  },
+  "validation": {
+    "applications": 13,
+    "internal_results": 9,
+    "citation_classifications": 9,
+    "labels_and_bibliography_keys": "all resolved in current candidate snapshot",
+    "local_source_hashes": "all recomputed and matched",
+    "classification_targets": "all application ids resolved and line strings matched",
+    "blanket_reviewed_boolean": false
+  }
+}

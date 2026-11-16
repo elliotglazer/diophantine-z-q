@@ -1,0 +1,5409 @@
+{
+  "schema": "brox-reduction-v1",
+  "inputSha256": "cb1295d789c5bb40bd98842b1bd2a51a05c6ff2058a526e7d1d9b177d20da3ae",
+  "fixedParameter": "S = 3^(2^27)",
+  "operations": [
+    {
+      "kind": "eliminate",
+      "coordinate": 193,
+      "pivot": 121,
+      "coefficient": "1",
+      "replacement": [
+        {
+          "monomial": [
+            110,
+            111
+          ],
+          "sPower": 0,
+          "coefficient": "1"
+        }
+      ],
+      "affected": [
+        123
+      ]
+    },
+    {
+      "kind": "eliminate",
+      "coordinate": 177,
+      "pivot": 105,
+      "coefficient": "1",
+      "replacement": [
+        {
+          "monomial": [
+            104,
+            105
+          ],
+          "sPower": 0,
+          "coefficient": "1"
+        }
+      ],
+      "affected": [
+        107
+      ]
+    },
+    {
+      "kind": "eliminate",
+      "coordinate": 161,
+      "pivot": 89,
+      "coefficient": "1",
+      "replacement": [
+        {
+          "monomial": [
+            98,
+            99
+          ],
+          "sPower": 0,
+          "coefficient": "1"
+        }
+      ],
+      "affected": [
+        91
+      ]
+    },
+    {
+      "kind": "eliminate",
+      "coordinate": 145,
+      "pivot": 73,
+      "coefficient": "1",
+      "replacement": [
+        {
+          "monomial": [
+            92,
+            93
+          ],
+          "sPower": 0,
+          "coefficient": "1"
+        }
+      ],
+      "affected": [
+        75
+      ]
+    },
+    {
+      "kind": "eliminate",
+      "coordinate": 192,
+      "pivot": 120,
+      "coefficient": "1",
+      "replacement": [
+        {
+          "monomial": [
+            110,
+            110
+          ],
+          "sPower": 0,
+          "coefficient": "1"
+        },
+        {
+          "monomial": [
+            111,
+            111
+          ],
+          "sPower": 0,
+          "coefficient": "8"
+        }
+      ],
+      "affected": [
+        122
+      ]
+    },
+    {
+      "kind": "eliminate",
+      "coordinate": 176,
+      "pivot": 104,
+      "coefficient": "1",
+      "replacement": [
+        {
+          "monomial": [
+            104,
+            104
+          ],
+          "sPower": 0,
+          "coefficient": "1"
+        },
+        {
+          "monomial": [
+            105,
+            105
+          ],
+          "sPower": 0,
+          "coefficient": "8"
+        }
+      ],
+      "affected": [
+        106
+      ]
+    },
+    {
+      "kind": "eliminate",
+      "coordinate": 160,
+      "pivot": 88,
+      "coefficient": "1",
+      "replacement": [
+        {
+          "monomial": [
+            98,
+            98
+          ],
+          "sPower": 0,
+          "coefficient": "1"
+        },
+        {
+          "monomial": [
+            99,
+            99
+          ],
+          "sPower": 0,
+          "coefficient": "8"
+        }
+      ],
+      "affected": [
+        90
+      ]
+    },
+    {
+      "kind": "eliminate",
+      "coordinate": 144,
+      "pivot": 72,
+      "coefficient": "1",
+      "replacement": [
+        {
+          "monomial": [
+            92,
+            92
+          ],
+          "sPower": 0,
+          "coefficient": "1"
+        },
+        {
+          "monomial": [
+            93,
+            93
+          ],
+          "sPower": 0,
+          "coefficient": "8"
+        }
+      ],
+      "affected": [
+        74
+      ]
+    },
+    {
+      "kind": "eliminate",
+      "coordinate": 395,
+      "pivot": 339,
+      "coefficient": "-12/5",
+      "replacement": [
+        {
+          "monomial": [
+            283
+          ],
+          "sPower": 0,
+          "coefficient": "-5/12"
+        },
+        {
+          "monomial": [
+            350,
+            411
+          ],
+          "sPower": 0,
+          "coefficient": "5/12"
+        },
+        {
+          "monomial": [
+            351,
+            410
+          ],
+          "sPower": 0,
+          "coefficient": "5/12"
+        }
+      ],
+      "affected": [
+        323
+      ]
+    },
+    {
+      "kind": "eliminate",
+      "coordinate": 394,
+      "pivot": 338,
+      "coefficient": "22/5",
+      "replacement": [
+        {
+          "monomial": [
+            282
+          ],
+          "sPower": 0,
+          "coefficient": "5/22"
+        },
+        {
+          "monomial": [
+            350,
+            410
+          ],
+          "sPower": 0,
+          "coefficient": "-5/22"
+        },
+        {
+          "monomial": [
+            351,
+            411
+          ],
+          "sPower": 0,
+          "coefficient": "-5/11"
+        }
+      ],
+      "affected": [
+        322
+      ]
+    },
+    {
+      "kind": "eliminate",
+      "coordinate": 383,
+      "pivot": 335,
+      "coefficient": "-12/5",
+      "replacement": [
+        {
+          "monomial": [
+            279
+          ],
+          "sPower": 0,
+          "coefficient": "-5/12"
+        },
+        {
+          "monomial": [
+            350,
+            407
+          ],
+          "sPower": 0,
+          "coefficient": "5/12"
+        },
+        {
+          "monomial": [
+            351,
+            406
+          ],
+          "sPower": 0,
+          "coefficient": "5/12"
+        }
+      ],
+      "affected": [
+        311
+      ]
+    },
+    {
+      "kind": "eliminate",
+      "coordinate": 382,
+      "pivot": 334,
+      "coefficient": "22/5",
+      "replacement": [
+        {
+          "monomial": [
+            278
+          ],
+          "sPower": 0,
+          "coefficient": "5/22"
+        },
+        {
+          "monomial": [
+            350,
+            406
+          ],
+          "sPower": 0,
+          "coefficient": "-5/22"
+        },
+        {
+          "monomial": [
+            351,
+            407
+          ],
+          "sPower": 0,
+          "coefficient": "-5/11"
+        }
+      ],
+      "affected": [
+        310
+      ]
+    },
+    {
+      "kind": "eliminate",
+      "coordinate": 371,
+      "pivot": 331,
+      "coefficient": "-12/5",
+      "replacement": [
+        {
+          "monomial": [
+            275
+          ],
+          "sPower": 0,
+          "coefficient": "-5/12"
+        },
+        {
+          "monomial": [
+            350,
+            403
+          ],
+          "sPower": 0,
+          "coefficient": "5/12"
+        },
+        {
+          "monomial": [
+            351,
+            402
+          ],
+          "sPower": 0,
+          "coefficient": "5/12"
+        }
+      ],
+      "affected": [
+        299
+      ]
+    },
+    {
+      "kind": "eliminate",
+      "coordinate": 370,
+      "pivot": 330,
+      "coefficient": "22/5",
+      "replacement": [
+        {
+          "monomial": [
+            274
+          ],
+          "sPower": 0,
+          "coefficient": "5/22"
+        },
+        {
+          "monomial": [
+            350,
+            402
+          ],
+          "sPower": 0,
+          "coefficient": "-5/22"
+        },
+        {
+          "monomial": [
+            351,
+            403
+          ],
+          "sPower": 0,
+          "coefficient": "-5/11"
+        }
+      ],
+      "affected": [
+        298
+      ]
+    },
+    {
+      "kind": "eliminate",
+      "coordinate": 359,
+      "pivot": 327,
+      "coefficient": "-12/5",
+      "replacement": [
+        {
+          "monomial": [
+            271
+          ],
+          "sPower": 0,
+          "coefficient": "-5/12"
+        },
+        {
+          "monomial": [
+            350,
+            399
+          ],
+          "sPower": 0,
+          "coefficient": "5/12"
+        },
+        {
+          "monomial": [
+            351,
+            398
+          ],
+          "sPower": 0,
+          "coefficient": "5/12"
+        }
+      ],
+      "affected": [
+        287
+      ]
+    },
+    {
+      "kind": "eliminate",
+      "coordinate": 358,
+      "pivot": 326,
+      "coefficient": "22/5",
+      "replacement": [
+        {
+          "monomial": [
+            270
+          ],
+          "sPower": 0,
+          "coefficient": "5/22"
+        },
+        {
+          "monomial": [
+            350,
+            398
+          ],
+          "sPower": 0,
+          "coefficient": "-5/22"
+        },
+        {
+          "monomial": [
+            351,
+            399
+          ],
+          "sPower": 0,
+          "coefficient": "-5/11"
+        }
+      ],
+      "affected": [
+        286
+      ]
+    },
+    {
+      "kind": "eliminate",
+      "coordinate": 339,
+      "pivot": 337,
+      "coefficient": "-12/5",
+      "replacement": [
+        {
+          "monomial": [
+            265
+          ],
+          "sPower": 0,
+          "coefficient": "-5/12"
+        },
+        {
+          "monomial": [
+            294,
+            409
+          ],
+          "sPower": 0,
+          "coefficient": "5/12"
+        },
+        {
+          "monomial": [
+            295,
+            408
+          ],
+          "sPower": 0,
+          "coefficient": "5/12"
+        }
+      ],
+      "affected": [
+        267
+      ]
+    },
+    {
+      "kind": "eliminate",
+      "coordinate": 338,
+      "pivot": 336,
+      "coefficient": "22/5",
+      "replacement": [
+        {
+          "monomial": [
+            264
+          ],
+          "sPower": 0,
+          "coefficient": "5/22"
+        },
+        {
+          "monomial": [
+            294,
+            408
+          ],
+          "sPower": 0,
+          "coefficient": "-5/22"
+        },
+        {
+          "monomial": [
+            295,
+            409
+          ],
+          "sPower": 0,
+          "coefficient": "-5/11"
+        }
+      ],
+      "affected": [
+        266
+      ]
+    },
+    {
+      "kind": "eliminate",
+      "coordinate": 327,
+      "pivot": 333,
+      "coefficient": "-12/5",
+      "replacement": [
+        {
+          "monomial": [
+            261
+          ],
+          "sPower": 0,
+          "coefficient": "-5/12"
+        },
+        {
+          "monomial": [
+            294,
+            405
+          ],
+          "sPower": 0,
+          "coefficient": "5/12"
+        },
+        {
+          "monomial": [
+            295,
+            404
+          ],
+          "sPower": 0,
+          "coefficient": "5/12"
+        }
+      ],
+      "affected": [
+        255
+      ]
+    },
+    {
+      "kind": "eliminate",
+      "coordinate": 326,
+      "pivot": 332,
+      "coefficient": "22/5",
+      "replacement": [
+        {
+          "monomial": [
+            260
+          ],
+          "sPower": 0,
+          "coefficient": "5/22"
+        },
+        {
+          "monomial": [
+            294,
+            404
+          ],
+          "sPower": 0,
+          "coefficient": "-5/22"
+        },
+        {
+          "monomial": [
+            295,
+            405
+          ],
+          "sPower": 0,
+          "coefficient": "-5/11"
+        }
+      ],
+      "affected": [
+        254
+      ]
+    },
+    {
+      "kind": "eliminate",
+      "coordinate": 315,
+      "pivot": 329,
+      "coefficient": "-12/5",
+      "replacement": [
+        {
+          "monomial": [
+            257
+          ],
+          "sPower": 0,
+          "coefficient": "-5/12"
+        },
+        {
+          "monomial": [
+            294,
+            401
+          ],
+          "sPower": 0,
+          "coefficient": "5/12"
+        },
+        {
+          "monomial": [
+            295,
+            400
+          ],
+          "sPower": 0,
+          "coefficient": "5/12"
+        }
+      ],
+      "affected": [
+        243
+      ]
+    },
+    {
+      "kind": "eliminate",
+      "coordinate": 314,
+      "pivot": 328,
+      "coefficient": "22/5",
+      "replacement": [
+        {
+          "monomial": [
+            256
+          ],
+          "sPower": 0,
+          "coefficient": "5/22"
+        },
+        {
+          "monomial": [
+            294,
+            400
+          ],
+          "sPower": 0,
+          "coefficient": "-5/22"
+        },
+        {
+          "monomial": [
+            295,
+            401
+          ],
+          "sPower": 0,
+          "coefficient": "-5/11"
+        }
+      ],
+      "affected": [
+        242
+      ]
+    },
+    {
+      "kind": "eliminate",
+      "coordinate": 303,
+      "pivot": 325,
+      "coefficient": "-12/5",
+      "replacement": [
+        {
+          "monomial": [
+            253
+          ],
+          "sPower": 0,
+          "coefficient": "-5/12"
+        },
+        {
+          "monomial": [
+            294,
+            397
+          ],
+          "sPower": 0,
+          "coefficient": "5/12"
+        },
+        {
+          "monomial": [
+            295,
+            396
+          ],
+          "sPower": 0,
+          "coefficient": "5/12"
+        }
+      ],
+      "affected": [
+        231
+      ]
+    },
+    {
+      "kind": "eliminate",
+      "coordinate": 302,
+      "pivot": 324,
+      "coefficient": "22/5",
+      "replacement": [
+        {
+          "monomial": [
+            252
+          ],
+          "sPower": 0,
+          "coefficient": "5/22"
+        },
+        {
+          "monomial": [
+            294,
+            396
+          ],
+          "sPower": 0,
+          "coefficient": "-5/22"
+        },
+        {
+          "monomial": [
+            295,
+            397
+          ],
+          "sPower": 0,
+          "coefficient": "-5/11"
+        }
+      ],
+      "affected": [
+        230
+      ]
+    },
+    {
+      "kind": "eliminate",
+      "coordinate": 201,
+      "pivot": 129,
+      "coefficient": "1",
+      "replacement": [
+        {
+          "monomial": [
+            110,
+            111
+          ],
+          "sPower": 0,
+          "coefficient": "1"
+        },
+        {
+          "monomial": [
+            110,
+            197
+          ],
+          "sPower": 0,
+          "coefficient": "-1/2"
+        },
+        {
+          "monomial": [
+            111,
+            196
+          ],
+          "sPower": 0,
+          "coefficient": "-1/2"
+        },
+        {
+          "monomial": [
+            196,
+            197
+          ],
+          "sPower": 0,
+          "coefficient": "1/4"
+        }
+      ],
+      "affected": [
+        131
+      ]
+    },
+    {
+      "kind": "eliminate",
+      "coordinate": 185,
+      "pivot": 113,
+      "coefficient": "1",
+      "replacement": [
+        {
+          "monomial": [
+            104,
+            105
+          ],
+          "sPower": 0,
+          "coefficient": "1"
+        },
+        {
+          "monomial": [
+            104,
+            181
+          ],
+          "sPower": 0,
+          "coefficient": "-1/2"
+        },
+        {
+          "monomial": [
+            105,
+            180
+          ],
+          "sPower": 0,
+          "coefficient": "-1/2"
+        },
+        {
+          "monomial": [
+            180,
+            181
+          ],
+          "sPower": 0,
+          "coefficient": "1/4"
+        }
+      ],
+      "affected": [
+        115
+      ]
+    },
+    {
+      "kind": "eliminate",
+      "coordinate": 169,
+      "pivot": 97,
+      "coefficient": "1",
+      "replacement": [
+        {
+          "monomial": [
+            98,
+            99
+          ],
+          "sPower": 0,
+          "coefficient": "4"
+        },
+        {
+          "monomial": [
+            98,
+            165
+          ],
+          "sPower": 0,
+          "coefficient": "-2"
+        },
+        {
+          "monomial": [
+            99,
+            164
+          ],
+          "sPower": 0,
+          "coefficient": "-2"
+        },
+        {
+          "monomial": [
+            164,
+            165
+          ],
+          "sPower": 0,
+          "coefficient": "1"
+        }
+      ],
+      "affected": [
+        99
+      ]
+    },
+    {
+      "kind": "eliminate",
+      "coordinate": 153,
+      "pivot": 81,
+      "coefficient": "1",
+      "replacement": [
+        {
+          "monomial": [
+            92,
+            93
+          ],
+          "sPower": 0,
+          "coefficient": "4"
+        },
+        {
+          "monomial": [
+            92,
+            149
+          ],
+          "sPower": 0,
+          "coefficient": "-2"
+        },
+        {
+          "monomial": [
+            93,
+            148
+          ],
+          "sPower": 0,
+          "coefficient": "-2"
+        },
+        {
+          "monomial": [
+            148,
+            149
+          ],
+          "sPower": 0,
+          "coefficient": "1"
+        }
+      ],
+      "affected": [
+        83
+      ]
+    },
+    {
+      "kind": "eliminate",
+      "coordinate": 200,
+      "pivot": 130,
+      "coefficient": "-12",
+      "replacement": [
+        {
+          "monomial": [],
+          "sPower": 0,
+          "coefficient": "11/12"
+        },
+        {
+          "monomial": [
+            112,
+            202
+          ],
+          "sPower": 0,
+          "coefficient": "-1/12"
+        },
+        {
+          "monomial": [
+            113,
+            203
+          ],
+          "sPower": 0,
+          "coefficient": "-1/3"
+        },
+        {
+          "monomial": [
+            198,
+            202
+          ],
+          "sPower": 0,
+          "coefficient": "1/2"
+        },
+        {
+          "monomial": [
+            199,
+            203
+          ],
+          "sPower": 0,
+          "coefficient": "1"
+        }
+      ],
+      "affected": [
+        128
+      ]
+    },
+    {
+      "kind": "eliminate",
+      "coordinate": 184,
+      "pivot": 114,
+      "coefficient": "-12",
+      "replacement": [
+        {
+          "monomial": [],
+          "sPower": 0,
+          "coefficient": "11/12"
+        },
+        {
+          "monomial": [
+            106,
+            186
+          ],
+          "sPower": 0,
+          "coefficient": "-1/6"
+        },
+        {
+          "monomial": [
+            107,
+            187
+          ],
+          "sPower": 0,
+          "coefficient": "-1/3"
+        },
+        {
+          "monomial": [
+            182,
+            186
+          ],
+          "sPower": 0,
+          "coefficient": "1/2"
+        },
+        {
+          "monomial": [
+            183,
+            187
+          ],
+          "sPower": 0,
+          "coefficient": "1"
+        }
+      ],
+      "affected": [
+        112
+      ]
+    },
+    {
+      "kind": "eliminate",
+      "coordinate": 168,
+      "pivot": 98,
+      "coefficient": "-3",
+      "replacement": [
+        {
+          "monomial": [],
+          "sPower": 0,
+          "coefficient": "11/3"
+        },
+        {
+          "monomial": [
+            100,
+            170
+          ],
+          "sPower": 0,
+          "coefficient": "-1/3"
+        },
+        {
+          "monomial": [
+            101,
+            171
+          ],
+          "sPower": 0,
+          "coefficient": "-4/3"
+        },
+        {
+          "monomial": [
+            166,
+            170
+          ],
+          "sPower": 0,
+          "coefficient": "-2/3"
+        },
+        {
+          "monomial": [
+            167,
+            171
+          ],
+          "sPower": 0,
+          "coefficient": "-8/3"
+        }
+      ],
+      "affected": [
+        96
+      ]
+    },
+    {
+      "kind": "eliminate",
+      "coordinate": 152,
+      "pivot": 82,
+      "coefficient": "-3",
+      "replacement": [
+        {
+          "monomial": [],
+          "sPower": 0,
+          "coefficient": "11/3"
+        },
+        {
+          "monomial": [
+            94,
+            154
+          ],
+          "sPower": 0,
+          "coefficient": "-1/3"
+        },
+        {
+          "monomial": [
+            95,
+            155
+          ],
+          "sPower": 0,
+          "coefficient": "-4/3"
+        },
+        {
+          "monomial": [
+            150,
+            154
+          ],
+          "sPower": 0,
+          "coefficient": "-2/3"
+        },
+        {
+          "monomial": [
+            151,
+            155
+          ],
+          "sPower": 0,
+          "coefficient": "-8/3"
+        }
+      ],
+      "affected": [
+        80
+      ]
+    },
+    {
+      "kind": "normalize",
+      "residual": 0,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 1,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 10,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 100,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 101,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 102,
+      "multiplier": "3"
+    },
+    {
+      "kind": "normalize",
+      "residual": 103,
+      "multiplier": "3"
+    },
+    {
+      "kind": "normalize",
+      "residual": 107,
+      "multiplier": "-1/2"
+    },
+    {
+      "kind": "normalize",
+      "residual": 108,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 109,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 11,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 110,
+      "multiplier": "-3"
+    },
+    {
+      "kind": "normalize",
+      "residual": 111,
+      "multiplier": "-3"
+    },
+    {
+      "kind": "normalize",
+      "residual": 112,
+      "multiplier": "12"
+    },
+    {
+      "kind": "normalize",
+      "residual": 115,
+      "multiplier": "-1/2"
+    },
+    {
+      "kind": "normalize",
+      "residual": 116,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 117,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 118,
+      "multiplier": "-6"
+    },
+    {
+      "kind": "normalize",
+      "residual": 119,
+      "multiplier": "-6"
+    },
+    {
+      "kind": "normalize",
+      "residual": 12,
+      "multiplier": "-4"
+    },
+    {
+      "kind": "normalize",
+      "residual": 123,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 124,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 125,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 126,
+      "multiplier": "-3"
+    },
+    {
+      "kind": "normalize",
+      "residual": 127,
+      "multiplier": "-3"
+    },
+    {
+      "kind": "normalize",
+      "residual": 128,
+      "multiplier": "12"
+    },
+    {
+      "kind": "normalize",
+      "residual": 131,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 132,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 133,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 134,
+      "multiplier": "-6"
+    },
+    {
+      "kind": "normalize",
+      "residual": 135,
+      "multiplier": "-6"
+    },
+    {
+      "kind": "normalize",
+      "residual": 136,
+      "multiplier": "-7134497730385106808131125575283754893206916486272"
+    },
+    {
+      "kind": "normalize",
+      "residual": 137,
+      "multiplier": "7134497730385106808131125575283754893206916486272"
+    },
+    {
+      "kind": "normalize",
+      "residual": 138,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 139,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 14,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 140,
+      "multiplier": "-663631848677656668687119697861656538271972278522150174331112737818862220650693435790646198154470700384049971262435967321152360069391969749365622582708481"
+    },
+    {
+      "kind": "normalize",
+      "residual": 141,
+      "multiplier": "-234629076639669264683981592877158501809992242442539913060275695022902777167125210214665057606860561243030554275323008473164565319654431672398905463180090"
+    },
+    {
+      "kind": "normalize",
+      "residual": 142,
+      "multiplier": "-9348902715642181435557667939943897597097537959368017509314034336736789154136995774282897131589848450385302882063385406763305057952686380071675651317085639474870513839730427517367847621231794014313112119760753129611633623040"
+    },
+    {
+      "kind": "normalize",
+      "residual": 143,
+      "multiplier": "-13239195857995896159085818421426985712064224254620499075201387722370329051714948184488783447110889145021858051988876786425255235517308708590951287148523721735950984685125166922698486415507799142117946441483339155310364327936"
+    },
+    {
+      "kind": "normalize",
+      "residual": 144,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 145,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 146,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 147,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 148,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 149,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 15,
+      "multiplier": "-2"
+    },
+    {
+      "kind": "normalize",
+      "residual": 150,
+      "multiplier": "-8"
+    },
+    {
+      "kind": "normalize",
+      "residual": 151,
+      "multiplier": "-8"
+    },
+    {
+      "kind": "normalize",
+      "residual": 152,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 153,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 154,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 155,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 156,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 157,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 158,
+      "multiplier": "-8"
+    },
+    {
+      "kind": "normalize",
+      "residual": 159,
+      "multiplier": "-8"
+    },
+    {
+      "kind": "normalize",
+      "residual": 16,
+      "multiplier": "-2"
+    },
+    {
+      "kind": "normalize",
+      "residual": 160,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 161,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 162,
+      "multiplier": "-2"
+    },
+    {
+      "kind": "normalize",
+      "residual": 163,
+      "multiplier": "-2"
+    },
+    {
+      "kind": "normalize",
+      "residual": 164,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 165,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 166,
+      "multiplier": "-4"
+    },
+    {
+      "kind": "normalize",
+      "residual": 167,
+      "multiplier": "-4"
+    },
+    {
+      "kind": "normalize",
+      "residual": 168,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 169,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 17,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 170,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 171,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 172,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 173,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 174,
+      "multiplier": "-16"
+    },
+    {
+      "kind": "normalize",
+      "residual": 175,
+      "multiplier": "-16"
+    },
+    {
+      "kind": "normalize",
+      "residual": 176,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 178,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 18,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 180,
+      "multiplier": "2"
+    },
+    {
+      "kind": "normalize",
+      "residual": 181,
+      "multiplier": "2"
+    },
+    {
+      "kind": "normalize",
+      "residual": 182,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 184,
+      "multiplier": "2"
+    },
+    {
+      "kind": "normalize",
+      "residual": 185,
+      "multiplier": "2"
+    },
+    {
+      "kind": "normalize",
+      "residual": 186,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 188,
+      "multiplier": "2"
+    },
+    {
+      "kind": "normalize",
+      "residual": 189,
+      "multiplier": "2"
+    },
+    {
+      "kind": "normalize",
+      "residual": 19,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 190,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 192,
+      "multiplier": "2"
+    },
+    {
+      "kind": "normalize",
+      "residual": 193,
+      "multiplier": "2"
+    },
+    {
+      "kind": "normalize",
+      "residual": 194,
+      "multiplier": "-363153481811117719354792335800567560799898896581403455682295156233135082246167328626711214511981068227373273020394157712344745729408188751856795648"
+    },
+    {
+      "kind": "normalize",
+      "residual": 195,
+      "multiplier": "-363153481811117719354792335800567560799898896581403455682295156233135082246167328626711214511981068227373273020394157712344745729408188751856795648"
+    },
+    {
+      "kind": "normalize",
+      "residual": 196,
+      "multiplier": "-4"
+    },
+    {
+      "kind": "normalize",
+      "residual": 197,
+      "multiplier": "-4"
+    },
+    {
+      "kind": "normalize",
+      "residual": 198,
+      "multiplier": "-4"
+    },
+    {
+      "kind": "normalize",
+      "residual": 199,
+      "multiplier": "-2"
+    },
+    {
+      "kind": "normalize",
+      "residual": 2,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 20,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 200,
+      "multiplier": "-4"
+    },
+    {
+      "kind": "normalize",
+      "residual": 201,
+      "multiplier": "-4"
+    },
+    {
+      "kind": "normalize",
+      "residual": 202,
+      "multiplier": "-4"
+    },
+    {
+      "kind": "normalize",
+      "residual": 203,
+      "multiplier": "-2"
+    },
+    {
+      "kind": "normalize",
+      "residual": 204,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 205,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 206,
+      "multiplier": "-2"
+    },
+    {
+      "kind": "normalize",
+      "residual": 207,
+      "multiplier": "-2"
+    },
+    {
+      "kind": "normalize",
+      "residual": 208,
+      "multiplier": "-4"
+    },
+    {
+      "kind": "normalize",
+      "residual": 209,
+      "multiplier": "-4"
+    },
+    {
+      "kind": "normalize",
+      "residual": 21,
+      "multiplier": "1/2"
+    },
+    {
+      "kind": "normalize",
+      "residual": 210,
+      "multiplier": "-4"
+    },
+    {
+      "kind": "normalize",
+      "residual": 211,
+      "multiplier": "-2"
+    },
+    {
+      "kind": "normalize",
+      "residual": 212,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 213,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 214,
+      "multiplier": "-193"
+    },
+    {
+      "kind": "normalize",
+      "residual": 215,
+      "multiplier": "-33"
+    },
+    {
+      "kind": "normalize",
+      "residual": 216,
+      "multiplier": "-2123"
+    },
+    {
+      "kind": "normalize",
+      "residual": 217,
+      "multiplier": "-579"
+    },
+    {
+      "kind": "normalize",
+      "residual": 218,
+      "multiplier": "-11520047"
+    },
+    {
+      "kind": "normalize",
+      "residual": 219,
+      "multiplier": "-3141831"
+    },
+    {
+      "kind": "normalize",
+      "residual": 22,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 220,
+      "multiplier": "-1449364490121445611954947787440843"
+    },
+    {
+      "kind": "normalize",
+      "residual": 221,
+      "multiplier": "-247818798829055467329084336712683"
+    },
+    {
+      "kind": "normalize",
+      "residual": 222,
+      "multiplier": "144333530544214427468619268915200"
+    },
+    {
+      "kind": "normalize",
+      "residual": 223,
+      "multiplier": "72166765272107213734309634457600"
+    },
+    {
+      "kind": "normalize",
+      "residual": 224,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 225,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 226,
+      "multiplier": "-193"
+    },
+    {
+      "kind": "normalize",
+      "residual": 227,
+      "multiplier": "-33"
+    },
+    {
+      "kind": "normalize",
+      "residual": 228,
+      "multiplier": "-2123"
+    },
+    {
+      "kind": "normalize",
+      "residual": 229,
+      "multiplier": "-579"
+    },
+    {
+      "kind": "normalize",
+      "residual": 23,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 230,
+      "multiplier": "858"
+    },
+    {
+      "kind": "normalize",
+      "residual": 231,
+      "multiplier": "-468"
+    },
+    {
+      "kind": "normalize",
+      "residual": 232,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 233,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 234,
+      "multiplier": "-193"
+    },
+    {
+      "kind": "normalize",
+      "residual": 235,
+      "multiplier": "-33"
+    },
+    {
+      "kind": "normalize",
+      "residual": 236,
+      "multiplier": "-2123"
+    },
+    {
+      "kind": "normalize",
+      "residual": 237,
+      "multiplier": "-579"
+    },
+    {
+      "kind": "normalize",
+      "residual": 238,
+      "multiplier": "-11520047"
+    },
+    {
+      "kind": "normalize",
+      "residual": 239,
+      "multiplier": "-3141831"
+    },
+    {
+      "kind": "normalize",
+      "residual": 24,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 240,
+      "multiplier": "-1449364490121445611954947787440843"
+    },
+    {
+      "kind": "normalize",
+      "residual": 241,
+      "multiplier": "-247818798829055467329084336712683"
+    },
+    {
+      "kind": "normalize",
+      "residual": 242,
+      "multiplier": "635067534394543480861924783226880"
+    },
+    {
+      "kind": "normalize",
+      "residual": 243,
+      "multiplier": "-346400473306114625924686245396480"
+    },
+    {
+      "kind": "normalize",
+      "residual": 244,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 245,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 246,
+      "multiplier": "-193"
+    },
+    {
+      "kind": "normalize",
+      "residual": 247,
+      "multiplier": "-33"
+    },
+    {
+      "kind": "normalize",
+      "residual": 248,
+      "multiplier": "-2123"
+    },
+    {
+      "kind": "normalize",
+      "residual": 249,
+      "multiplier": "-579"
+    },
+    {
+      "kind": "normalize",
+      "residual": 25,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 250,
+      "multiplier": "-11520047"
+    },
+    {
+      "kind": "normalize",
+      "residual": 251,
+      "multiplier": "-3141831"
+    },
+    {
+      "kind": "normalize",
+      "residual": 252,
+      "multiplier": "-1449364490121445611954947787440843"
+    },
+    {
+      "kind": "normalize",
+      "residual": 253,
+      "multiplier": "-247818798829055467329084336712683"
+    },
+    {
+      "kind": "normalize",
+      "residual": 254,
+      "multiplier": "635067534394543480861924783226880"
+    },
+    {
+      "kind": "normalize",
+      "residual": 255,
+      "multiplier": "-346400473306114625924686245396480"
+    },
+    {
+      "kind": "normalize",
+      "residual": 256,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 257,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 258,
+      "multiplier": "-193"
+    },
+    {
+      "kind": "normalize",
+      "residual": 259,
+      "multiplier": "-33"
+    },
+    {
+      "kind": "normalize",
+      "residual": 26,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 260,
+      "multiplier": "-2123"
+    },
+    {
+      "kind": "normalize",
+      "residual": 261,
+      "multiplier": "-579"
+    },
+    {
+      "kind": "normalize",
+      "residual": 262,
+      "multiplier": "-11520047"
+    },
+    {
+      "kind": "normalize",
+      "residual": 263,
+      "multiplier": "-3141831"
+    },
+    {
+      "kind": "normalize",
+      "residual": 264,
+      "multiplier": "-1449364490121445611954947787440843"
+    },
+    {
+      "kind": "normalize",
+      "residual": 265,
+      "multiplier": "-247818798829055467329084336712683"
+    },
+    {
+      "kind": "normalize",
+      "residual": 266,
+      "multiplier": "635067534394543480861924783226880"
+    },
+    {
+      "kind": "normalize",
+      "residual": 267,
+      "multiplier": "-346400473306114625924686245396480"
+    },
+    {
+      "kind": "normalize",
+      "residual": 268,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 269,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 27,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 270,
+      "multiplier": "-193"
+    },
+    {
+      "kind": "normalize",
+      "residual": 271,
+      "multiplier": "-33"
+    },
+    {
+      "kind": "normalize",
+      "residual": 272,
+      "multiplier": "-2123"
+    },
+    {
+      "kind": "normalize",
+      "residual": 273,
+      "multiplier": "-579"
+    },
+    {
+      "kind": "normalize",
+      "residual": 274,
+      "multiplier": "-11520047"
+    },
+    {
+      "kind": "normalize",
+      "residual": 275,
+      "multiplier": "-3141831"
+    },
+    {
+      "kind": "normalize",
+      "residual": 276,
+      "multiplier": "-1449364490121445611954947787440843"
+    },
+    {
+      "kind": "normalize",
+      "residual": 277,
+      "multiplier": "-247818798829055467329084336712683"
+    },
+    {
+      "kind": "normalize",
+      "residual": 278,
+      "multiplier": "-17471741386407592622366523753863926414947882070193880941692835308347500615842928674637678049230583996265560851352250403280867329640838014650880768921123815762584419696895013683200"
+    },
+    {
+      "kind": "normalize",
+      "residual": 279,
+      "multiplier": "13103806039805694466774892815397944811210911552645410706269626481260625461882196505978258536922937997199170638514187802460650497230628510988160576690842861821938314772671260262400"
+    },
+    {
+      "kind": "normalize",
+      "residual": 28,
+      "multiplier": "-4"
+    },
+    {
+      "kind": "normalize",
+      "residual": 280,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 281,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 282,
+      "multiplier": "-193"
+    },
+    {
+      "kind": "normalize",
+      "residual": 283,
+      "multiplier": "-33"
+    },
+    {
+      "kind": "normalize",
+      "residual": 284,
+      "multiplier": "-2123"
+    },
+    {
+      "kind": "normalize",
+      "residual": 285,
+      "multiplier": "-579"
+    },
+    {
+      "kind": "normalize",
+      "residual": 286,
+      "multiplier": "858"
+    },
+    {
+      "kind": "normalize",
+      "residual": 287,
+      "multiplier": "-468"
+    },
+    {
+      "kind": "normalize",
+      "residual": 288,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 289,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 290,
+      "multiplier": "-193"
+    },
+    {
+      "kind": "normalize",
+      "residual": 291,
+      "multiplier": "-33"
+    },
+    {
+      "kind": "normalize",
+      "residual": 292,
+      "multiplier": "-2123"
+    },
+    {
+      "kind": "normalize",
+      "residual": 293,
+      "multiplier": "-579"
+    },
+    {
+      "kind": "normalize",
+      "residual": 294,
+      "multiplier": "-11520047"
+    },
+    {
+      "kind": "normalize",
+      "residual": 295,
+      "multiplier": "-3141831"
+    },
+    {
+      "kind": "normalize",
+      "residual": 296,
+      "multiplier": "-1449364490121445611954947787440843"
+    },
+    {
+      "kind": "normalize",
+      "residual": 297,
+      "multiplier": "-247818798829055467329084336712683"
+    },
+    {
+      "kind": "normalize",
+      "residual": 298,
+      "multiplier": "635067534394543480861924783226880"
+    },
+    {
+      "kind": "normalize",
+      "residual": 299,
+      "multiplier": "-346400473306114625924686245396480"
+    },
+    {
+      "kind": "normalize",
+      "residual": 3,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 30,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 300,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 301,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 302,
+      "multiplier": "-193"
+    },
+    {
+      "kind": "normalize",
+      "residual": 303,
+      "multiplier": "-33"
+    },
+    {
+      "kind": "normalize",
+      "residual": 304,
+      "multiplier": "-2123"
+    },
+    {
+      "kind": "normalize",
+      "residual": 305,
+      "multiplier": "-579"
+    },
+    {
+      "kind": "normalize",
+      "residual": 306,
+      "multiplier": "-11520047"
+    },
+    {
+      "kind": "normalize",
+      "residual": 307,
+      "multiplier": "-3141831"
+    },
+    {
+      "kind": "normalize",
+      "residual": 308,
+      "multiplier": "-1449364490121445611954947787440843"
+    },
+    {
+      "kind": "normalize",
+      "residual": 309,
+      "multiplier": "-247818798829055467329084336712683"
+    },
+    {
+      "kind": "normalize",
+      "residual": 31,
+      "multiplier": "-2"
+    },
+    {
+      "kind": "normalize",
+      "residual": 310,
+      "multiplier": "635067534394543480861924783226880"
+    },
+    {
+      "kind": "normalize",
+      "residual": 311,
+      "multiplier": "-346400473306114625924686245396480"
+    },
+    {
+      "kind": "normalize",
+      "residual": 312,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 313,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 314,
+      "multiplier": "-193"
+    },
+    {
+      "kind": "normalize",
+      "residual": 315,
+      "multiplier": "-33"
+    },
+    {
+      "kind": "normalize",
+      "residual": 316,
+      "multiplier": "-2123"
+    },
+    {
+      "kind": "normalize",
+      "residual": 317,
+      "multiplier": "-579"
+    },
+    {
+      "kind": "normalize",
+      "residual": 318,
+      "multiplier": "-11520047"
+    },
+    {
+      "kind": "normalize",
+      "residual": 319,
+      "multiplier": "-3141831"
+    },
+    {
+      "kind": "normalize",
+      "residual": 32,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 320,
+      "multiplier": "-1449364490121445611954947787440843"
+    },
+    {
+      "kind": "normalize",
+      "residual": 321,
+      "multiplier": "-247818798829055467329084336712683"
+    },
+    {
+      "kind": "normalize",
+      "residual": 322,
+      "multiplier": "635067534394543480861924783226880"
+    },
+    {
+      "kind": "normalize",
+      "residual": 323,
+      "multiplier": "-346400473306114625924686245396480"
+    },
+    {
+      "kind": "normalize",
+      "residual": 33,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 34,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 340,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 341,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 342,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 343,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 344,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 345,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 346,
+      "multiplier": "-2"
+    },
+    {
+      "kind": "normalize",
+      "residual": 347,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 348,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 349,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 35,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 350,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 351,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 352,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 353,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 354,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 355,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 356,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 357,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 358,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 359,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 36,
+      "multiplier": "-4"
+    },
+    {
+      "kind": "normalize",
+      "residual": 360,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 361,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 362,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 363,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 364,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 365,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 366,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 367,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 368,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 369,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 370,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 371,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 372,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 373,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 374,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 375,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 376,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 377,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 378,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 379,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 38,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 380,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 381,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 382,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 383,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 384,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 385,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 386,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 387,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 388,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 389,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 39,
+      "multiplier": "-2"
+    },
+    {
+      "kind": "normalize",
+      "residual": 390,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 391,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 392,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 393,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 394,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 395,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 396,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 397,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 398,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 399,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 4,
+      "multiplier": "-4"
+    },
+    {
+      "kind": "normalize",
+      "residual": 40,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 400,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 401,
+      "multiplier": "-4"
+    },
+    {
+      "kind": "normalize",
+      "residual": 402,
+      "multiplier": "-4"
+    },
+    {
+      "kind": "normalize",
+      "residual": 403,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 404,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 405,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 406,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 407,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 408,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 409,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 41,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 410,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 411,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 412,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 413,
+      "multiplier": "-2"
+    },
+    {
+      "kind": "normalize",
+      "residual": 414,
+      "multiplier": "-2"
+    },
+    {
+      "kind": "normalize",
+      "residual": 415,
+      "multiplier": "-2"
+    },
+    {
+      "kind": "normalize",
+      "residual": 416,
+      "multiplier": "-2"
+    },
+    {
+      "kind": "normalize",
+      "residual": 417,
+      "multiplier": "-2"
+    },
+    {
+      "kind": "normalize",
+      "residual": 418,
+      "multiplier": "-2"
+    },
+    {
+      "kind": "normalize",
+      "residual": 419,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 42,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 420,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 421,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 422,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 423,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 424,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 425,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 426,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 427,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 428,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 429,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 43,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 430,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 431,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 432,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 433,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 434,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 435,
+      "multiplier": "-1205412"
+    },
+    {
+      "kind": "normalize",
+      "residual": 436,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 437,
+      "multiplier": "-4"
+    },
+    {
+      "kind": "normalize",
+      "residual": 438,
+      "multiplier": "1952786"
+    },
+    {
+      "kind": "normalize",
+      "residual": 439,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 44,
+      "multiplier": "-4"
+    },
+    {
+      "kind": "normalize",
+      "residual": 441,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 442,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 443,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 444,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 445,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 446,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 447,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 448,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 449,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 450,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 451,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 452,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 453,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 454,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 455,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 456,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 457,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 458,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 459,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 46,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 460,
+      "multiplier": "-4"
+    },
+    {
+      "kind": "normalize",
+      "residual": 461,
+      "multiplier": "-2"
+    },
+    {
+      "kind": "normalize",
+      "residual": 462,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 463,
+      "multiplier": "-2"
+    },
+    {
+      "kind": "normalize",
+      "residual": 464,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 465,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 466,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 467,
+      "multiplier": "-2"
+    },
+    {
+      "kind": "normalize",
+      "residual": 468,
+      "multiplier": "-2"
+    },
+    {
+      "kind": "normalize",
+      "residual": 469,
+      "multiplier": "-4"
+    },
+    {
+      "kind": "normalize",
+      "residual": 47,
+      "multiplier": "-2"
+    },
+    {
+      "kind": "normalize",
+      "residual": 470,
+      "multiplier": "-8"
+    },
+    {
+      "kind": "normalize",
+      "residual": 471,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 472,
+      "multiplier": "-2"
+    },
+    {
+      "kind": "normalize",
+      "residual": 473,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 474,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 475,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 477,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 478,
+      "multiplier": "-17"
+    },
+    {
+      "kind": "normalize",
+      "residual": 479,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 48,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 480,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 482,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 483,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 484,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 485,
+      "multiplier": "-1205412"
+    },
+    {
+      "kind": "normalize",
+      "residual": 486,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 487,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 488,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 489,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 49,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 490,
+      "multiplier": "1952786"
+    },
+    {
+      "kind": "normalize",
+      "residual": 491,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 493,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 494,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 495,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 496,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 497,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 498,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 499,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 50,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 500,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 501,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 502,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 503,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 504,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 505,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 506,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 507,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 508,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 509,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 51,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 510,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 511,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 512,
+      "multiplier": "-4"
+    },
+    {
+      "kind": "normalize",
+      "residual": 513,
+      "multiplier": "-2"
+    },
+    {
+      "kind": "normalize",
+      "residual": 514,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 515,
+      "multiplier": "-2"
+    },
+    {
+      "kind": "normalize",
+      "residual": 516,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 517,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 518,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 519,
+      "multiplier": "-2"
+    },
+    {
+      "kind": "normalize",
+      "residual": 52,
+      "multiplier": "-4"
+    },
+    {
+      "kind": "normalize",
+      "residual": 520,
+      "multiplier": "-2"
+    },
+    {
+      "kind": "normalize",
+      "residual": 521,
+      "multiplier": "-4"
+    },
+    {
+      "kind": "normalize",
+      "residual": 522,
+      "multiplier": "-8"
+    },
+    {
+      "kind": "normalize",
+      "residual": 523,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 524,
+      "multiplier": "-2"
+    },
+    {
+      "kind": "normalize",
+      "residual": 525,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 526,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 527,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 529,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 530,
+      "multiplier": "-17"
+    },
+    {
+      "kind": "normalize",
+      "residual": 531,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 532,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 534,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 535,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 536,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 537,
+      "multiplier": "-1205412"
+    },
+    {
+      "kind": "normalize",
+      "residual": 538,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 539,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 54,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 540,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 541,
+      "multiplier": "-4"
+    },
+    {
+      "kind": "normalize",
+      "residual": 542,
+      "multiplier": "1952786"
+    },
+    {
+      "kind": "normalize",
+      "residual": 543,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 545,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 546,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 547,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 548,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 549,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 55,
+      "multiplier": "-2"
+    },
+    {
+      "kind": "normalize",
+      "residual": 550,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 551,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 552,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 553,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 554,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 555,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 556,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 557,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 558,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 559,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 56,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 560,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 561,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 562,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 563,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 564,
+      "multiplier": "-4"
+    },
+    {
+      "kind": "normalize",
+      "residual": 565,
+      "multiplier": "-2"
+    },
+    {
+      "kind": "normalize",
+      "residual": 566,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 567,
+      "multiplier": "-2"
+    },
+    {
+      "kind": "normalize",
+      "residual": 568,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 569,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 57,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 570,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 571,
+      "multiplier": "-2"
+    },
+    {
+      "kind": "normalize",
+      "residual": 572,
+      "multiplier": "-2"
+    },
+    {
+      "kind": "normalize",
+      "residual": 573,
+      "multiplier": "-4"
+    },
+    {
+      "kind": "normalize",
+      "residual": 574,
+      "multiplier": "-8"
+    },
+    {
+      "kind": "normalize",
+      "residual": 575,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 576,
+      "multiplier": "-2"
+    },
+    {
+      "kind": "normalize",
+      "residual": 577,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 578,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 579,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 58,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 581,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 582,
+      "multiplier": "-17"
+    },
+    {
+      "kind": "normalize",
+      "residual": 583,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 584,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 586,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 587,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 588,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 589,
+      "multiplier": "-1205412"
+    },
+    {
+      "kind": "normalize",
+      "residual": 59,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 590,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 591,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 592,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 593,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 594,
+      "multiplier": "1952786"
+    },
+    {
+      "kind": "normalize",
+      "residual": 595,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 597,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 598,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 599,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 6,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 60,
+      "multiplier": "-4"
+    },
+    {
+      "kind": "normalize",
+      "residual": 600,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 601,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 602,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 603,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 604,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 605,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 606,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 607,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 608,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 609,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 610,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 611,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 612,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 613,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 614,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 615,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 616,
+      "multiplier": "-4"
+    },
+    {
+      "kind": "normalize",
+      "residual": 617,
+      "multiplier": "-2"
+    },
+    {
+      "kind": "normalize",
+      "residual": 618,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 619,
+      "multiplier": "-2"
+    },
+    {
+      "kind": "normalize",
+      "residual": 62,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 620,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 621,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 622,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 623,
+      "multiplier": "-2"
+    },
+    {
+      "kind": "normalize",
+      "residual": 624,
+      "multiplier": "-2"
+    },
+    {
+      "kind": "normalize",
+      "residual": 625,
+      "multiplier": "-4"
+    },
+    {
+      "kind": "normalize",
+      "residual": 626,
+      "multiplier": "-8"
+    },
+    {
+      "kind": "normalize",
+      "residual": 627,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 628,
+      "multiplier": "-2"
+    },
+    {
+      "kind": "normalize",
+      "residual": 629,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 63,
+      "multiplier": "-2"
+    },
+    {
+      "kind": "normalize",
+      "residual": 630,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 631,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 633,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 634,
+      "multiplier": "-17"
+    },
+    {
+      "kind": "normalize",
+      "residual": 635,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 636,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 638,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 639,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 64,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 640,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 641,
+      "multiplier": "-1205412"
+    },
+    {
+      "kind": "normalize",
+      "residual": 642,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 643,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 644,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 645,
+      "multiplier": "-4"
+    },
+    {
+      "kind": "normalize",
+      "residual": 646,
+      "multiplier": "1952786"
+    },
+    {
+      "kind": "normalize",
+      "residual": 647,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 649,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 65,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 650,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 651,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 652,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 653,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 654,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 655,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 656,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 657,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 658,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 659,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 66,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 660,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 661,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 662,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 663,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 664,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 665,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 666,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 667,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 668,
+      "multiplier": "-4"
+    },
+    {
+      "kind": "normalize",
+      "residual": 669,
+      "multiplier": "-2"
+    },
+    {
+      "kind": "normalize",
+      "residual": 67,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 670,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 671,
+      "multiplier": "-2"
+    },
+    {
+      "kind": "normalize",
+      "residual": 672,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 673,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 674,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 675,
+      "multiplier": "-2"
+    },
+    {
+      "kind": "normalize",
+      "residual": 676,
+      "multiplier": "-2"
+    },
+    {
+      "kind": "normalize",
+      "residual": 677,
+      "multiplier": "-4"
+    },
+    {
+      "kind": "normalize",
+      "residual": 678,
+      "multiplier": "-8"
+    },
+    {
+      "kind": "normalize",
+      "residual": 679,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 68,
+      "multiplier": "-4"
+    },
+    {
+      "kind": "normalize",
+      "residual": 680,
+      "multiplier": "-2"
+    },
+    {
+      "kind": "normalize",
+      "residual": 681,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 682,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 683,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 685,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 686,
+      "multiplier": "-17"
+    },
+    {
+      "kind": "normalize",
+      "residual": 687,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 688,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 690,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 691,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 692,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 693,
+      "multiplier": "-1205412"
+    },
+    {
+      "kind": "normalize",
+      "residual": 694,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 695,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 696,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 697,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 698,
+      "multiplier": "1952786"
+    },
+    {
+      "kind": "normalize",
+      "residual": 699,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 7,
+      "multiplier": "-2"
+    },
+    {
+      "kind": "normalize",
+      "residual": 70,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 701,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 702,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 703,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 704,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 705,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 706,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 707,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 708,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 709,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 71,
+      "multiplier": "-2"
+    },
+    {
+      "kind": "normalize",
+      "residual": 710,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 711,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 712,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 713,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 714,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 715,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 716,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 717,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 718,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 719,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 720,
+      "multiplier": "-4"
+    },
+    {
+      "kind": "normalize",
+      "residual": 721,
+      "multiplier": "-2"
+    },
+    {
+      "kind": "normalize",
+      "residual": 722,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 723,
+      "multiplier": "-2"
+    },
+    {
+      "kind": "normalize",
+      "residual": 724,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 725,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 726,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 727,
+      "multiplier": "-2"
+    },
+    {
+      "kind": "normalize",
+      "residual": 728,
+      "multiplier": "-2"
+    },
+    {
+      "kind": "normalize",
+      "residual": 729,
+      "multiplier": "-4"
+    },
+    {
+      "kind": "normalize",
+      "residual": 730,
+      "multiplier": "-8"
+    },
+    {
+      "kind": "normalize",
+      "residual": 731,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 732,
+      "multiplier": "-2"
+    },
+    {
+      "kind": "normalize",
+      "residual": 733,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 734,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 735,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 737,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 738,
+      "multiplier": "-17"
+    },
+    {
+      "kind": "normalize",
+      "residual": 739,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 740,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 742,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 743,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 744,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 745,
+      "multiplier": "-1205412"
+    },
+    {
+      "kind": "normalize",
+      "residual": 746,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 747,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 748,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 749,
+      "multiplier": "-4"
+    },
+    {
+      "kind": "normalize",
+      "residual": 75,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 750,
+      "multiplier": "1952786"
+    },
+    {
+      "kind": "normalize",
+      "residual": 751,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 753,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 754,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 755,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 756,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 757,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 758,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 759,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 76,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 760,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 761,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 762,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 763,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 764,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 765,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 766,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 767,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 768,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 769,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 77,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 770,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 771,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 772,
+      "multiplier": "-4"
+    },
+    {
+      "kind": "normalize",
+      "residual": 773,
+      "multiplier": "-2"
+    },
+    {
+      "kind": "normalize",
+      "residual": 774,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 775,
+      "multiplier": "-2"
+    },
+    {
+      "kind": "normalize",
+      "residual": 776,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 777,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 778,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 779,
+      "multiplier": "-2"
+    },
+    {
+      "kind": "normalize",
+      "residual": 780,
+      "multiplier": "-2"
+    },
+    {
+      "kind": "normalize",
+      "residual": 781,
+      "multiplier": "-4"
+    },
+    {
+      "kind": "normalize",
+      "residual": 782,
+      "multiplier": "-8"
+    },
+    {
+      "kind": "normalize",
+      "residual": 783,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 784,
+      "multiplier": "-2"
+    },
+    {
+      "kind": "normalize",
+      "residual": 785,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 786,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 787,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 789,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 79,
+      "multiplier": "2"
+    },
+    {
+      "kind": "normalize",
+      "residual": 790,
+      "multiplier": "-17"
+    },
+    {
+      "kind": "normalize",
+      "residual": 791,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 792,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 794,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 795,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 796,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 797,
+      "multiplier": "-1205412"
+    },
+    {
+      "kind": "normalize",
+      "residual": 798,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 799,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 8,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 80,
+      "multiplier": "3"
+    },
+    {
+      "kind": "normalize",
+      "residual": 800,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 801,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 802,
+      "multiplier": "1952786"
+    },
+    {
+      "kind": "normalize",
+      "residual": 803,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 805,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 806,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 807,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 808,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 809,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 810,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 811,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 812,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 813,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 814,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 815,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 816,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 817,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 818,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 819,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 820,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 821,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 822,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 823,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 824,
+      "multiplier": "-4"
+    },
+    {
+      "kind": "normalize",
+      "residual": 825,
+      "multiplier": "-2"
+    },
+    {
+      "kind": "normalize",
+      "residual": 826,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 827,
+      "multiplier": "-2"
+    },
+    {
+      "kind": "normalize",
+      "residual": 828,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 829,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 83,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 830,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 831,
+      "multiplier": "-2"
+    },
+    {
+      "kind": "normalize",
+      "residual": 832,
+      "multiplier": "-2"
+    },
+    {
+      "kind": "normalize",
+      "residual": 833,
+      "multiplier": "-4"
+    },
+    {
+      "kind": "normalize",
+      "residual": 834,
+      "multiplier": "-8"
+    },
+    {
+      "kind": "normalize",
+      "residual": 835,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 836,
+      "multiplier": "-2"
+    },
+    {
+      "kind": "normalize",
+      "residual": 837,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 838,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 839,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 84,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 841,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 842,
+      "multiplier": "-17"
+    },
+    {
+      "kind": "normalize",
+      "residual": 843,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 844,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 846,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 847,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 848,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 849,
+      "multiplier": "-1205412"
+    },
+    {
+      "kind": "normalize",
+      "residual": 85,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 850,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 851,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 852,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 853,
+      "multiplier": "-4"
+    },
+    {
+      "kind": "normalize",
+      "residual": 854,
+      "multiplier": "1952786"
+    },
+    {
+      "kind": "normalize",
+      "residual": 855,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 857,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 858,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 859,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 86,
+      "multiplier": "3"
+    },
+    {
+      "kind": "normalize",
+      "residual": 860,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 861,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 862,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 863,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 864,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 865,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 866,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 867,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 868,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 869,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 87,
+      "multiplier": "3"
+    },
+    {
+      "kind": "normalize",
+      "residual": 870,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 871,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 872,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 873,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 874,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 875,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 876,
+      "multiplier": "-4"
+    },
+    {
+      "kind": "normalize",
+      "residual": 877,
+      "multiplier": "-2"
+    },
+    {
+      "kind": "normalize",
+      "residual": 878,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 879,
+      "multiplier": "-2"
+    },
+    {
+      "kind": "normalize",
+      "residual": 880,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 881,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 882,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 883,
+      "multiplier": "-2"
+    },
+    {
+      "kind": "normalize",
+      "residual": 884,
+      "multiplier": "-2"
+    },
+    {
+      "kind": "normalize",
+      "residual": 885,
+      "multiplier": "-4"
+    },
+    {
+      "kind": "normalize",
+      "residual": 886,
+      "multiplier": "-8"
+    },
+    {
+      "kind": "normalize",
+      "residual": 887,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 888,
+      "multiplier": "-2"
+    },
+    {
+      "kind": "normalize",
+      "residual": 889,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 890,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 891,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 893,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 894,
+      "multiplier": "-17"
+    },
+    {
+      "kind": "normalize",
+      "residual": 895,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 896,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 898,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 9,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 906,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 907,
+      "multiplier": "-229083"
+    },
+    {
+      "kind": "normalize",
+      "residual": 908,
+      "multiplier": "-3081901"
+    },
+    {
+      "kind": "normalize",
+      "residual": 909,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 91,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 910,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 911,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 912,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 913,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 914,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 915,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 917,
+      "multiplier": "2"
+    },
+    {
+      "kind": "normalize",
+      "residual": 918,
+      "multiplier": "2"
+    },
+    {
+      "kind": "normalize",
+      "residual": 919,
+      "multiplier": "2"
+    },
+    {
+      "kind": "normalize",
+      "residual": 92,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 920,
+      "multiplier": "2"
+    },
+    {
+      "kind": "normalize",
+      "residual": 921,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 922,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 923,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 924,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 926,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 927,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 928,
+      "multiplier": "-13151275"
+    },
+    {
+      "kind": "normalize",
+      "residual": 929,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 93,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 930,
+      "multiplier": "-13151275"
+    },
+    {
+      "kind": "normalize",
+      "residual": 931,
+      "multiplier": "-34320358456164"
+    },
+    {
+      "kind": "normalize",
+      "residual": 932,
+      "multiplier": "-451356472155588209100"
+    },
+    {
+      "kind": "normalize",
+      "residual": 933,
+      "multiplier": "-34320358456164"
+    },
+    {
+      "kind": "normalize",
+      "residual": 934,
+      "multiplier": "-531646922975928784398067383567086876335140753600"
+    },
+    {
+      "kind": "normalize",
+      "residual": 935,
+      "multiplier": "-13151275"
+    },
+    {
+      "kind": "normalize",
+      "residual": 936,
+      "multiplier": "-34320358456164"
+    },
+    {
+      "kind": "normalize",
+      "residual": 937,
+      "multiplier": "-5858358"
+    },
+    {
+      "kind": "normalize",
+      "residual": 938,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 939,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 940,
+      "multiplier": "1/3"
+    },
+    {
+      "kind": "normalize",
+      "residual": 941,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 942,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 944,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 945,
+      "multiplier": "-5585827695760481685343918632902673455818239522807990544488942264859597952837730445956496492895498502144"
+    },
+    {
+      "kind": "normalize",
+      "residual": 946,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 947,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 948,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 949,
+      "multiplier": "-1"
+    },
+    {
+      "kind": "normalize",
+      "residual": 95,
+      "multiplier": "2"
+    },
+    {
+      "kind": "normalize",
+      "residual": 96,
+      "multiplier": "3"
+    },
+    {
+      "kind": "normalize",
+      "residual": 99,
+      "multiplier": "-1"
+    }
+  ]
+}

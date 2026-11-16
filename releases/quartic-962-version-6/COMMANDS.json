@@ -1,0 +1,111 @@
+{
+  "commands": [
+    {
+      "command": [
+        "C:\\Users\\glaze\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-E",
+        "-B",
+        "C:\\Users\\glaze\\Documents\\Codex\\2026-11-02\\lo\\work\\quartic-version6-release\\repository\\handoff\\prepare_handoff.py",
+        "--repo",
+        "C:\\Users\\glaze\\Documents\\Codex\\2026-11-02\\lo\\work\\quartic-version6-release\\repository",
+        "--commit",
+        "a9e834bac43b17e3f8415791f4adbd904f686b9d",
+        "--verification-receipt",
+        "handoff/releases/version6/REPRODUCTION.json",
+        "--output",
+        "C:\\Users\\glaze\\Documents\\Codex\\2026-11-02\\lo\\work\\quartic-version6-release\\handoff\\version6-handoff-plan-final.json"
+      ],
+      "exitCode": 0,
+      "name": "freeze_plan"
+    },
+    {
+      "command": [
+        "C:\\Users\\glaze\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-E",
+        "-B",
+        "C:\\Users\\glaze\\Documents\\Codex\\2026-11-02\\lo\\work\\quartic-version6-release\\repository\\handoff\\build_handoff.py",
+        "--repo",
+        "C:\\Users\\glaze\\Documents\\Codex\\2026-11-02\\lo\\work\\quartic-version6-release\\repository",
+        "--plan",
+        "C:\\Users\\glaze\\Documents\\Codex\\2026-11-02\\lo\\work\\quartic-version6-release\\handoff\\version6-handoff-plan-final.json",
+        "--baseline",
+        "C:\\Users\\glaze\\Documents\\Codex\\2026-11-02\\lo\\work\\quartic-version5-release\\handoff-output\\z-in-q-version5-full-handoff.zip",
+        "--output",
+        "C:\\Users\\glaze\\Documents\\Codex\\2026-11-02\\lo\\work\\quartic-version6-release\\handoff-output"
+      ],
+      "exitCode": 0,
+      "name": "build_and_verify_both_archives"
+    },
+    {
+      "command": [
+        "C:\\Users\\glaze\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-E",
+        "-B",
+        "C:\\Users\\glaze\\Documents\\Codex\\2026-11-02\\lo\\work\\quartic-version6-release\\repository\\handoff\\verify_handoff.py",
+        "C:\\Users\\glaze\\Documents\\Codex\\2026-11-02\\lo\\work\\quartic-version6-release\\handoff-output\\z-in-q-version6-full-handoff.zip",
+        "--expected-plan-sha256",
+        "ebcfc46a93c709ce1d015c319f95af2777e2ec0e34d461b681559ccad51c43c8",
+        "--expected-archive-sha256",
+        "93b53944ea93de08dc653beb70202797c1cbbdf19602ae583940bbf137dd43bc",
+        "--report",
+        "C:\\Users\\glaze\\Documents\\Codex\\2026-11-02\\lo\\work\\quartic-version6-release\\handoff-output\\FULL_ARCHIVE_VERIFY.json"
+      ],
+      "exitCode": 0,
+      "name": "authenticate_full_archive"
+    },
+    {
+      "command": [
+        "C:\\Users\\glaze\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-E",
+        "-B",
+        "C:\\Users\\glaze\\Documents\\Codex\\2026-11-02\\lo\\work\\quartic-version6-release\\repository\\handoff\\replay_extracted_current.py",
+        "C:\\Users\\glaze\\Documents\\Codex\\2026-11-02\\lo\\work\\quartic-version6-release\\handoff-output\\z-in-q-version6-current-handoff.zip",
+        "--expected-plan-sha256",
+        "ebcfc46a93c709ce1d015c319f95af2777e2ec0e34d461b681559ccad51c43c8",
+        "--expected-archive-sha256",
+        "677ed62f74f9331202ae8612877dd32090c4933d6b1bbbf13f613970bc94081e",
+        "--extract",
+        "C:\\Users\\glaze\\Documents\\Codex\\2026-11-02\\lo\\work\\quartic-version6-release\\handoff-extracted",
+        "--replay-output",
+        "C:\\Users\\glaze\\Documents\\Codex\\2026-11-02\\lo\\work\\quartic-version6-release\\handoff-replay",
+        "--report",
+        "C:\\Users\\glaze\\Documents\\Codex\\2026-11-02\\lo\\work\\quartic-version6-release\\handoff-output\\EXTRACTED_REPLAY.json",
+        "--node",
+        "C:/Users/glaze/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/bin/node.exe"
+      ],
+      "exitCode": 0,
+      "name": "authenticate_extract_and_replay_current"
+    },
+    {
+      "command": [
+        "C:\\Users\\glaze\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-E",
+        "-B",
+        "docs/quartic-962/inventory.py",
+        "validate",
+        "--repo",
+        ".",
+        "--manuscript",
+        "quartic_962.tex",
+        "--expected-input-sha256",
+        "b7a42a50809c85ef14a9380a15576ef0170bad571ef713c329e31f594f8c12cf"
+      ],
+      "cwd": "C:\\Users\\glaze\\Documents\\Codex\\2026-11-02\\lo\\work\\quartic-version6-release\\handoff-extracted\\current",
+      "exitCode": 0,
+      "name": "extracted_inventory_validate"
+    },
+    {
+      "command": [
+        "C:\\Users\\glaze\\.cache\\codex-runtimes\\codex-primary-runtime\\dependencies\\python\\python.exe",
+        "-E",
+        "-B",
+        "docs/quartic-962/test_inventory.py"
+      ],
+      "cwd": "C:\\Users\\glaze\\Documents\\Codex\\2026-11-02\\lo\\work\\quartic-version6-release\\handoff-extracted\\current",
+      "exitCode": 0,
+      "name": "extracted_inventory_tests"
+    }
+  ],
+  "gitPermission": "Per-process safe.directory for the exact repository; no global Git configuration change",
+  "schema": "quartic-v6-handoff-commands-v1"
+}

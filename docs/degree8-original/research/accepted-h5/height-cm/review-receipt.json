@@ -1,0 +1,17 @@
+{
+  "schema": "conditional-cm-review-receipt/v1",
+  "reviewer": "/root/astra_adapt_review",
+  "date": "2026-11-05",
+  "status": "accepted_conditional_lemma",
+  "proof_sha256": "7707e8d3c673ddb76854406410243460f24102d39f7cdbc9574def07b3a841e0",
+  "ledger_sha256": "2e5d985886fa467b60fbed0dc780bedd59717f062c151fd6eb7cdc0dbe6ef68b",
+  "checked": [
+    "Same-field factor and homomorphism descent from End(A) over L",
+    "Saturation subgroup has quotient lattice O_F Lambda",
+    "Quadratic-field discriminant radical bound",
+    "Eta product bound",
+    "Published GR2023 original stable normalization, Xi formula and Theorem 1.9(1)",
+    "Isogeny-height inequality and final bound 854R"
+  ],
+  "scope_excludes": ["Non-CM height bound", "Existence and degree of L", "Geometric parameter-height comparison", "Full H5 or polynomial correctness"]
+}

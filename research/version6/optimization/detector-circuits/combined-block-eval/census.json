@@ -1,0 +1,130 @@
+{
+  "counts": {
+    "baseCoordinates": 90,
+    "structuralResiduals": 47,
+    "coordinates": 1030,
+    "residuals": 987,
+    "gates": 940
+  },
+  "blocks": [
+    {
+      "block": "point_modules",
+      "startCoordinates": 90,
+      "startResiduals": 0,
+      "newCoordinates": 72,
+      "newResiduals": 90
+    },
+    {
+      "block": "fourfold_roots",
+      "startCoordinates": 162,
+      "startResiduals": 90,
+      "newCoordinates": 64,
+      "newResiduals": 64
+    },
+    {
+      "block": "five_differences",
+      "startCoordinates": 226,
+      "startResiduals": 154,
+      "newCoordinates": 40,
+      "newResiduals": 40
+    },
+    {
+      "block": "parameters_and_logarithms",
+      "startCoordinates": 266,
+      "startResiduals": 194,
+      "newCoordinates": 164,
+      "newResiduals": 164
+    },
+    {
+      "block": "direct_tests_and_shared_symmetric_coefficients",
+      "startCoordinates": 430,
+      "startResiduals": 358,
+      "newCoordinates": 81,
+      "newResiduals": 81
+    },
+    {
+      "block": "fixed_height_scales",
+      "startCoordinates": 511,
+      "startResiduals": 439,
+      "newCoordinates": 12,
+      "newResiduals": 12
+    },
+    {
+      "block": "detector_0",
+      "startCoordinates": 523,
+      "startResiduals": 451,
+      "newCoordinates": 49,
+      "newResiduals": 51
+    },
+    {
+      "block": "detector_1",
+      "startCoordinates": 572,
+      "startResiduals": 502,
+      "newCoordinates": 52,
+      "newResiduals": 54
+    },
+    {
+      "block": "detector_2",
+      "startCoordinates": 624,
+      "startResiduals": 556,
+      "newCoordinates": 52,
+      "newResiduals": 54
+    },
+    {
+      "block": "detector_3",
+      "startCoordinates": 676,
+      "startResiduals": 610,
+      "newCoordinates": 52,
+      "newResiduals": 54
+    },
+    {
+      "block": "detector_4",
+      "startCoordinates": 728,
+      "startResiduals": 664,
+      "newCoordinates": 52,
+      "newResiduals": 54
+    },
+    {
+      "block": "detector_5",
+      "startCoordinates": 780,
+      "startResiduals": 718,
+      "newCoordinates": 52,
+      "newResiduals": 54
+    },
+    {
+      "block": "detector_6",
+      "startCoordinates": 832,
+      "startResiduals": 772,
+      "newCoordinates": 52,
+      "newResiduals": 54
+    },
+    {
+      "block": "detector_7",
+      "startCoordinates": 884,
+      "startResiduals": 826,
+      "newCoordinates": 52,
+      "newResiduals": 54
+    },
+    {
+      "block": "detector_8",
+      "startCoordinates": 936,
+      "startResiduals": 880,
+      "newCoordinates": 52,
+      "newResiduals": 54
+    },
+    {
+      "block": "scalar_block",
+      "startCoordinates": 988,
+      "startResiduals": 934,
+      "newCoordinates": 41,
+      "newResiduals": 51
+    },
+    {
+      "block": "anchor",
+      "startCoordinates": 1029,
+      "startResiduals": 985,
+      "newCoordinates": 1,
+      "newResiduals": 2
+    }
+  ]
+}

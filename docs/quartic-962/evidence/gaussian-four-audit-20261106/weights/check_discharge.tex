@@ -1,0 +1,58 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb,amsthm}
+\newtheorem{corollary}{Corollary}
+\newcommand{\Q}{\mathbb Q}
+\begin{document}
+\begin{corollary}[Fixed-modulus centered nilsequence estimate]
+\label{cor:ga-fixed-centered-nilsequence}
+Fix the Gaussian ray field and a conjugation-invariant union $C$ of ray
+classes as above. Let $W$ be a fixed multiple of the conductor of
+$K^{\mathrm{ab}}/\Q$, and let $b$ be a unit residue modulo $W$.
+For every $A,C_{\mathrm{init}}>0$ and fixed dimension and degree bounds,
+uniformly over the nilmanifolds and polynomial sequences in
+Proposition~\ref{prop:gf-factorization} with an
+$(\log(2N))^{C_{\mathrm{init}}}$-rational adapted basis,
+\[
+ \left|\sum_{n\leq N}h_{C,b,W}(n)F(g(n)\Gamma)\right|
+ \ll_{H,W,A,C_{\mathrm{init}},m,d}
+ N(\log(2N))^{-A}\|F\|_{\mathrm{Lip}}.
+\]
+The constants are uniform in $b$ and in the polynomial orbit. No
+uniformity as $W$ varies is asserted.
+\end{corollary}
+\begin{proof}
+We check the three hypotheses of
+Proposition~\ref{prop:gf-factorization}. The pointwise inequality
+$|h_{C,b,W}|\leq\lambda_{b,W}$ gives its first hypothesis with $K_w=1$.
+Corollary~\ref{cor:gaussian-centered-progressions} gives its second
+hypothesis for every $A_0,C_0$, in fact for every interval progression.
+
+For the third hypothesis, take $H_0=H$ in
+Corollary~\ref{cor:ga-centered-primes}. Its character expansion is
+\eqref{eq:gaussian-ray-fourier}, with the factor $1/2$ and the
+prime-power error supplied by \eqref{eq:gaussian-ray-prime-factor}
+and the bound following that equation. Its two assumed minor-arc
+estimates are Proposition~\ref{gi-minor-arc} and
+Corollary~\ref{gi-ordinary-primes}. Apply that corollary to the fixed
+linear combination defining $h_{C,b,W}$ in
+\eqref{eq:gaussian-centered-weight}. It gives \eqref{eq:gf-ma} with
+$c=c_W$, $C_1=1$ and $K_1=7$ in the regime
+$\delta\geq N^{-\sigma_1}$, $Q\leq\delta^{-a}$.
+The affine-interpolation result initially restricts $\delta$ to a
+fixed sufficiently small interval. For larger $\delta$, the bound
+$|h_{C,b,W}|\ll_W\log(2N)$ gives \eqref{eq:gf-ma} directly after
+enlarging its fixed constant. For a dimension-zero quotient the
+mean-zero test function vanishes. For all other dimensions and degrees
+within the fixed bounds, take the minimum of the finitely many positive
+exponents $c_W,a,\sigma_1$ and the maximum of the fixed constants.
+Thus the restricted regime \eqref{eq:gf-ma-regime} holds with fixed
+positive $\kappa,\sigma$, uniformly throughout the required class.
+
+Proposition~\ref{prop:gf-factorization} now proves the displayed
+estimate. There are only finitely many unit residues modulo the fixed
+$W$, so their constants can be bounded by a single constant. In
+particular, division by $N$ and the relabeling $W=V$, $N=L$ give the
+fixed-complexity estimate \eqref{eq:gaussian-centered-nil-input}.
+\end{proof}
+
+\end{document}

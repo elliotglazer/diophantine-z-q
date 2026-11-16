@@ -1,0 +1,19 @@
+{
+  "finite_field_chart_checks": 159220,
+  "primes": [
+    3,
+    5,
+    7,
+    11
+  ],
+  "kappa_values": [
+    1,
+    2,
+    3,
+    -1,
+    -2
+  ],
+  "exponent_checks": "passed",
+  "TeX_labels_environments_braces": "passed",
+  "scope": "finite checks supplement the source-level proof audit; no complete manuscript build"
+}

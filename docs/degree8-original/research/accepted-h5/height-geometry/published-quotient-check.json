@@ -1,0 +1,62 @@
+{
+  "schema": "published-quotient-check/v1",
+  "status": "PASS",
+  "source": "Gonzalez-Rotger, JMSJ 58(4) (2006), Theorem 4.2 and Tables 2-3, pp938-939",
+  "rows": [
+    {
+      "m": 30,
+      "quartic": [
+        -43,
+        -686,
+        -2915,
+        -1372,
+        -172
+      ],
+      "j": "191342053882402567201/129708022500",
+      "legendre_parameter": "1/2401"
+    },
+    {
+      "m": 42,
+      "quartic": [
+        -43,
+        600,
+        -986,
+        -600,
+        -43
+      ],
+      "j": "2179252305146449/66177562500",
+      "legendre_parameter": "32/375"
+    },
+    {
+      "m": 70,
+      "quartic": [
+        -43,
+        256,
+        -130,
+        -768,
+        -387
+      ],
+      "j": "128031684631201/9922500",
+      "legendre_parameter": "1/225"
+    },
+    {
+      "m": 105,
+      "quartic": [
+        -43,
+        2,
+        505,
+        12,
+        -1548
+      ],
+      "j": "1169975873419524361/108425318400",
+      "legendre_parameter": "5/1029"
+    }
+  ],
+  "normalized_branch_solutions": [
+    [
+      "2401",
+      "-343/32"
+    ]
+  ],
+  "scope": "Exact invariants and branch recovery from published modular identifications; not a substitute for the published identification theorem."
+}

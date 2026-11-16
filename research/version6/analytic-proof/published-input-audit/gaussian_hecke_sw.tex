@@ -1,0 +1,119 @@
+\begin{lemma}[Fixed-field Hecke Siegel--Walfisz estimate]
+\label{lem:gaussian-hecke-sw}
+Let $E=\Q(i)$, let $\chi$ be a fixed finite-order ray character of $E$
+with finite modulus $\mathfrak m$, and let $B>0$.
+There is $c=c(\chi,B)>0$ such that, uniformly for $X\geq3$,
+$1\leq Y\leq X$, positive integers $q\leq(\log X)^B$, and Dirichlet
+characters $\rho$ modulo $q$,
+\begin{equation}\label{eq:gaussian-hecke-sw-estimate}
+ \sum_{\mathrm N\mathfrak a\leq Y}
+   \Lambda_E(\mathfrak a)\chi(\mathfrak a)\rho(\mathrm N\mathfrak a)
+ =r_{\chi,\rho}Y+
+ O_{\chi,B}\bigl(X\exp(-c\sqrt{\log X})\bigr).
+\end{equation}
+Here $\Lambda_E(\mathfrak p^j)=\log\mathrm N\mathfrak p$ for a prime
+ideal $\mathfrak p$ and $j\geq1$, and it is zero otherwise; characters
+are extended by zero on ideals not coprime to their moduli.
+The number $r_{\chi,\rho}$ is one if the primitive Hecke character
+inducing $\chi(\rho\circ\mathrm N)$ is trivial, and zero otherwise.
+There is also $c_B>0$ such that, with the same ranges of $X,Y,q,\rho$,
+\begin{equation}\label{eq:rational-sw-estimate}
+ \sum_{n\leq Y}\Lambda(n)\rho(n)
+ =1_{\rho\ \mathrm{principal}}Y+
+ O_B\bigl(X\exp(-c_B\sqrt{\log X})\bigr).
+\end{equation}
+In particular, either error is $O(X(\log X)^{-D})$ for every fixed
+$D>0$, with the corresponding dependence on $D$ allowed.
+\end{lemma}
+
+\begin{proof}
+We use the published fixed-field estimate of Mitsui
+\cite[\S1, Lemma~15, p.~12]{Mitsui1956}.
+In his notation, for a fixed number field $K$, a fixed $A>0$, and any
+ray character $\vartheta$ whose finite modulus has norm at most
+$(\log x)^A$, it states
+\begin{equation}\label{eq:mitsui-weighted-primes}
+ \sum_{\mathrm N\mathfrak p\leq x}
+       \vartheta(\mathfrak p)\log\mathrm N\mathfrak p
+ =E(\vartheta)x+
+ O_{K,A}\bigl(x\exp(-c_{K,A}\sqrt{\log x})\bigr),
+\end{equation}
+where $E(\vartheta)=1$ for the principal character and is zero otherwise.
+The sum is over prime ideals of every residue degree.
+Mitsui defines these characters and $E(\vartheta)$ on p.~2, includes
+imprimitive characters, and states the uniformity in the character
+and its modulus immediately before Lemma~14 on p.~11.
+Infinite primes may occur in the ray modulus; only its finite part
+enters the norm bound.
+
+For completeness, the elementary passage from Mitsui's proved
+smoothed estimate (Lemma~14, pp.~11--12) to
+\eqref{eq:mitsui-weighted-primes} also applies to complex characters.
+Put
+\[
+ P(x,\vartheta)=\sum_{\mathrm N\mathfrak p\leq x}
+  \vartheta(\mathfrak p)\log\mathrm N\mathfrak p
+                         \log\frac{x}{\mathrm N\mathfrak p}.
+\]
+Lemma~14 gives $P(x,\vartheta)=E(\vartheta)x+
+O_{K,A}(xe^{-c_1\sqrt{\log x}})$.
+Subtract its values at $xe^h$ and $x$, where
+$h=e^{-c_1\sqrt{\log x}/2}$, and divide by $h$.
+The resulting left side is the prime sum in
+\eqref{eq:mitsui-weighted-primes} plus boundary terms of absolute
+value at most
+\[
+ \sum_{x<\mathrm N\mathfrak p\leq xe^h}\log\mathrm N\mathfrak p
+       \ll_K(xh+1)\log x.
+\]
+Indeed, for each integer norm there are at most $[K:\Q]$ prime ideals.
+The main term is $E(\vartheta)x(e^h-1)/h=E(\vartheta)x+O(xh)$,
+and the error divided by $h$ is
+$O_{K,A}(xe^{-c_1\sqrt{\log x}/2})$.
+Reducing the positive exponent constant proves
+\eqref{eq:mitsui-weighted-primes}.
+
+Prime powers of exponent at least two contribute
+$O_K(\sqrt x\log^2(2x))$: sum over exponents $j\geq2$ and use the
+elementary bound $O_K(x^{1/j})$ for the number of prime ideals of norm
+at most $x^{1/j}$.
+Consequently \eqref{eq:mitsui-weighted-primes} holds with the prime
+sum replaced by
+$\sum_{\mathrm N\mathfrak a\leq x}
+\Lambda_K(\mathfrak a)\vartheta(\mathfrak a)$.
+
+The character $\rho\circ\mathrm N$ on $E$ has ray modulus $(q)$:
+if $\alpha\equiv1\pmod{q\Z[i]}$, then
+$\mathrm N\alpha\equiv1\pmod q$.
+Thus $\chi(\rho\circ\mathrm N)$ has a modulus dividing
+$\mathfrak m(q)$, whose norm is $\mathrm N\mathfrak m\,q^2$.
+For $\sqrt X\leq Y\leq X$, the bounds
+$q\leq(\log X)^B$ and $\log Y\geq\frac12\log X$ imply
+\[
+ \mathrm N\mathfrak m\,q^2\leq(\log Y)^{2B+1}
+\]
+for all sufficiently large $X$, with the threshold depending only
+on $\mathfrak m$ and $B$.
+Apply the preceding estimate with $K=E$, $x=Y$, and $A=2B+1$.
+Its error is at most the error in
+\eqref{eq:gaussian-hecke-sw-estimate}, after reducing $c$.
+For $1\leq Y<\sqrt X$, the elementary bound
+$\sum_{\mathrm N\mathfrak a\leq Y}\Lambda_E(\mathfrak a)
+\ll_E Y\log^2(2Y)$ suffices, and the remaining bounded values of
+$X$ are absorbed in the implied constant.
+
+The principal character at the chosen modulus is exactly the
+character induced by the trivial primitive character, giving the
+stated $r_{\chi,\rho}$.
+Equivalently one can work at the primitive conductor and remove
+the extra Euler factors: the corresponding prime-power towers
+contribute only
+$O_\chi(\log(q+2)\log(Y+2))$, which is absorbed in the error.
+
+For \eqref{eq:rational-sw-estimate}, take $K=\Q$ and use the ray
+character attached to $\rho$, allowing the real infinite place
+for odd characters.  Its finite modulus norm is $q$.
+The same proof uses $A=B+1$ for $Y\geq\sqrt X$ and the elementary
+bound for smaller $Y$.  Finally,
+$e^{-c\sqrt{\log X}}\ll_{c,D}(\log X)^{-D}$ for every fixed $D>0$.
+\end{proof}

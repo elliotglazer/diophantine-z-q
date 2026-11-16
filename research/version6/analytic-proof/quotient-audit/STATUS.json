@@ -1,0 +1,41 @@
+{
+  "date": "2026-11-06",
+  "result": "Explicit Gaussian norm-transfer proof drafted from published one-parameter quantitative Leibman theorem",
+  "proofFile": "NORM_TRANSFER.md",
+  "proofSha256": "2fda5cb7119a00dbd8815a108e9ba4cdfc06a6ab1fe10ad2d1f657522c059380",
+  "reviewStatus": "accepted by independent mathematical review",
+  "reviewFile": "../norm-independent-review/REVIEW.md",
+  "scope": {
+    "field": "Q(i)",
+    "characters": "every fixed finite-order ray character, extended by zero off ideals coprime to fixed H",
+    "intervals": "arbitrary 0 <= A < B <= X; no lower bound on interval length",
+    "progressions": "arbitrary residue modulo q <= delta^(-kappa)",
+    "complexity": "Q-rational adapted Malcev basis with Q <= delta^(-kappa)",
+    "equidistribution": "total delta-equidistribution on [X], X^(-sigma) <= delta <= delta0(H,m,d)",
+    "bound": "O_(H,m,d)(X * delta^kappa * Lip(F))",
+    "logWeightedBound": "same bound times log(2X)",
+    "constantDependence": "kappa,sigma depend only on m,d; implied constant,delta0,X0 may depend on fixed H"
+  },
+  "publishedParent": {
+    "name": "Green-Tao, The quantitative behaviour of polynomial orbits on nilmanifolds",
+    "journal": "Annals of Mathematics 175 (2012), 465-540",
+    "used": ["one-parameter Theorem 2.9", "Appendix A coordinate and metric estimates"],
+    "url": "https://annals.math.princeton.edu/wp-content/uploads/annals-v175-n2-p02-p.pdf",
+    "cachedPdfSha256": "8c7ea5eced84dc5da97508f4eda39fa84c958d3e659a797ab402645c1c207c8f"
+  },
+  "provedStepsInDraft": [
+    "integer binomial composition matrix and quadratic reverse extrapolation",
+    "small horizontal-character obstruction with rationality-dependent Lipschitz bound",
+    "one-variable quadratic pullback equidistribution",
+    "exact four-generator Gaussian ideal-to-element identity",
+    "horizontal-block annulus decomposition with O(delta^kappa X) boundary loss",
+    "all residue classes and arbitrary interval endpoints",
+    "polylogarithmic complexity and progression-modulus interface"
+  ],
+  "notClaimed": [
+    "full ideal von Mangoldt estimate independently checked",
+    "progression main terms",
+    "complete factorization reduction",
+    "removal of the full Frei-Tinkova dependency from the quartic"
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "authored_register": {
+    "bytes": 339038,
+    "path": "docs/quartic-962/new-applications.json",
+    "sha256": "b7a42a50809c85ef14a9380a15576ef0170bad571ef713c329e31f594f8c12cf"
+  },
+  "candidate": {
+    "bytes": 903386,
+    "path": "quartic_962.tex",
+    "sha256": "06f98ff070139c3b6c60589c65867ceb4366b023f7960551abd52f85fa67e30c"
+  },
+  "commands": [
+    {
+      "action": "build",
+      "exit_code": 0
+    },
+    {
+      "action": "validate",
+      "exit_code": 0
+    }
+  ],
+  "coverage": {
+    "all_external_inputs_published": false,
+    "all_final_published_versions_checked": false,
+    "bibliography_entries": 88,
+    "explicit_citations": 226,
+    "external_application_families": 125,
+    "external_proofs_independently_closed": false,
+    "inherited_source_ledgers": 8,
+    "inherited_v5_applications": 8,
+    "internal_results": 150,
+    "references": 504,
+    "status": "PASS_DOCUMENT_BINDING",
+    "uses_frei_tinkova_as_assumed_theorem": false
+  },
+  "date": "2026-11-06",
+  "derived": [
+    {
+      "bytes": 1393943,
+      "path": "docs/quartic-962/theorem-applications.json",
+      "sha256": "dc8457120dfcc836715d8ab6553f30a7d24c8a068ae659c7c0b71ffb92f6f26a"
+    },
+    {
+      "bytes": 500348,
+      "path": "docs/quartic-962/inherited-bridge.json",
+      "sha256": "ee54cfc9d75c86bdb9e41aa1e938ca971d9c455655e56c51b44f1ad94a004ebc"
+    },
+    {
+      "bytes": 501228,
+      "path": "docs/quartic-962/citations.json",
+      "sha256": "06535d3b60b6b57fc868fb774ee22752c5c981798c10367081ed4a702480790e"
+    },
+    {
+      "bytes": 295329,
+      "path": "docs/quartic-962/internal-results.json",
+      "sha256": "91f93184bf48bb147d70d985c56e06df32ecbde62b4a704922c1bd2abb927b7c"
+    },
+    {
+      "bytes": 117270,
+      "path": "docs/quartic-962/bibliography.json",
+      "sha256": "37a60e3a01a62eea6a504ab55d5fd0748d5d1c41297348f410d3d79b483a7cd6"
+    },
+    {
+      "bytes": 281917,
+      "path": "docs/quartic-962/dependency-graph.json",
+      "sha256": "e40ff644696aa7bcee26215a6dd337275f9eccdee53b0ba255c830292fab9e41"
+    },
+    {
+      "bytes": 13965,
+      "path": "docs/quartic-962/coverage.json",
+      "sha256": "410c1e0a7bcd2b6f6213ccd41a0d5c43b8e059001ff6ffa8443ea28f7f5df3f3"
+    }
+  ],
+  "immutable_v5_inputs_rechecked": 32,
+  "sandbox": "work/inventory-sandbox/version6",
+  "scope": "Mechanical inventory validation and regression tests only; independent mathematical review is separate. No existing Version5 file modified; no publication performed.",
+  "status": "PASS_DOCUMENT_BINDING_AND_TOOLING_TESTS",
+  "tests": {
+    "count": 25,
+    "exit_code": 0,
+    "log": {
+      "bytes": 3667,
+      "path": "work/quartic-version6-release/inventory-tools/TEST_RESULTS.txt",
+      "sha256": "285022256bb7494a80e937c5f13e678faf65ad541ba7215c4fe1a1450c8b5336"
+    }
+  },
+  "tools": [
+    {
+      "bytes": 41263,
+      "path": "work/quartic-version6-release/inventory-tools/inventory.py",
+      "sha256": "2af0969b5e9b4767f8e6b2f1b66a1cd81135c1a0c84e58fd84f772264c238a8b"
+    },
+    {
+      "bytes": 16097,
+      "path": "work/quartic-version6-release/inventory-tools/test_inventory.py",
+      "sha256": "d9bbd80089b6910abdcf74ce052dfe752559b70e682f5e3aa03c591d09ab5e83"
+    }
+  ]
+}

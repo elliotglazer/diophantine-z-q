@@ -1,0 +1,210 @@
+{
+  "baseline": "C:\\Users\\glaze\\Documents\\Codex\\2026-11-02\\lo\\work\\quartic-version5-release\\repository\\quartics\\quartic-1272",
+  "components": [
+    {
+      "path": "C:\\Users\\glaze\\Documents\\Codex\\2026-11-02\\lo\\work\\quartic-version5-release\\repository\\quartics\\quartic-1272\\builder\\build_source.cjs",
+      "sha256": "68c553f987f88780d28fbd21d625278701ecc38d8cc92160215e5bf44a270c78"
+    },
+    {
+      "path": "C:\\Users\\glaze\\Documents\\Codex\\2026-11-02\\lo\\work\\quartic-sub1000-20261106\\detector-circuits\\patch_builder.py",
+      "sha256": "357aad9c2140cdc45d9e94415ae100e31501b6c6d01656f5623b235e242dfeef"
+    },
+    {
+      "path": "C:\\Users\\glaze\\Documents\\Codex\\2026-11-02\\lo\\work\\quartic-sub1000-20261106\\dag-sharing\\log-replacement.cjs",
+      "sha256": "477a36eb473f45a464e2b46192dc660259857cdc3a89caede9d9f5505e695095"
+    },
+    {
+      "path": "C:\\Users\\glaze\\Documents\\Codex\\2026-11-02\\lo\\work\\quartic-sub1000-20261106\\source-compression\\build_variant.py",
+      "sha256": "8df448309bfb0c2a242b62fc06877b4b9e636d1d94e279f65e5cdaf714189252"
+    },
+    {
+      "path": "C:\\Users\\glaze\\Documents\\Codex\\2026-11-02\\lo\\work\\quartic-sub1000-20261106\\field-quotients\\patch-certificate.json",
+      "sha256": "78132de3bc2b6fcf1038dd13938c71135a1547414c9f1d26c17731b54cc48214"
+    },
+    {
+      "path": "C:\\Users\\glaze\\Documents\\Codex\\2026-11-02\\lo\\work\\quartic-sub1000-20261106\\detector-circuits\\patch_eval_blocks.py",
+      "sha256": "415e67bdf3ca4cbe351fdd85fb7dbcbef030c83c666c0e07a723dc9bedfc4e79"
+    },
+    {
+      "path": "C:\\Users\\glaze\\Documents\\Codex\\2026-11-02\\lo\\work\\quartic-sub1000-20261106\\field-quotients\\final-b\\patch.json",
+      "sha256": "17d56ca1d3e1bbd5765edff0cd54468f24bb57169ef3d7d274684f8190fa30ea"
+    },
+    {
+      "path": "C:\\Users\\glaze\\Documents\\Codex\\2026-11-02\\lo\\work\\quartic-sub1000-20261106\\dag-sharing\\point-replacement.cjs",
+      "sha256": "01045fcb18b55bec695a73156ad6e408262e635cdcd6b3da322e958359953f3b"
+    },
+    {
+      "path": "C:\\Users\\glaze\\Documents\\Codex\\2026-11-02\\lo\\work\\quartic-sub1000-20261106\\detector-circuits\\patch_weight_factor.py",
+      "sha256": "8278cc267a26a36a590a2b38d050b45bed35e0c45e554e8493f722538ab01978"
+    }
+  ],
+  "edits": [
+    {
+      "name": "detector primary patch",
+      "source": "../detector-circuits/patch_builder.py::patch",
+      "optional_weights": false
+    },
+    {
+      "name": "DAG exact square-completion evaluator",
+      "occurrences": 1,
+      "old": "function log(name,p,e){\n let w=fmul(name+'.w',D,fsq(name+'.fSquare',p.f)),J=e/4-1,b=e===16?4:3;\n let powers=[fc(1),w];for(let j=2;j<=Math.min(b,J);j++)powers[j]=fmul(name+'.wPower'+j,powers[j-1],w);\n let blocks=[];for(let r=0;r<=Math.floor(J/b);r++){let v=fc(0);for(let j=0;j<b&&r*b+j<=J;j++)v=fadd(v,fscale(powers[j],aCoeffs[r*b+j]));blocks.push(v);}\n let out=blocks.pop();while(blocks.length)out=fadd(fmul(name+'.horner'+blocks.length,out,powers[b]),blocks.pop());\n return fmul(name,p.z,out);\n}\n",
+      "new": "// Exact degree-12 square completion, requiring four field assignments.\nconst rawFmul=(a,b)=>[add(mul(a[0],b[0]),scale(mul(a[1],b[1]),2)),add(mul(a[0],b[1]),mul(a[1],b[0]))];\nfunction rawPolynomial6(coeff,basis){\n let out=fc(0);\n for(let k=0;k<coeff.length;k++){\n  let term=k<=3?basis[k]:rawFmul(basis[3],basis[k-3]);\n  out=fadd(out,fscale(term,coeff[k]));\n }\n return out;\n}\nlet squareQ=Array.from({length:7},()=>Q(0));squareQ[6]=Q(1);\nfor(let j=5;j>=0;j--){let known=Q(0);for(let a=j+1;a<=6;a++)for(let b=j+1;b<=6;b++)if(a+b===j+6)known=qadd(known,qmul(squareQ[a],squareQ[b]));squareQ[j]=qmul(qadd(qmul(aCoeffs[j+6],qinv(aCoeffs[12])),qneg(known)),Q(1,2));}\nlet squareR=aCoeffs.slice();for(let a=0;a<=6;a++)for(let b=0;b<=6;b++)squareR[a+b]=qadd(squareR[a+b],qneg(qmul(aCoeffs[12],qmul(squareQ[a],squareQ[b]))));\nif(squareR.slice(6).some(c=>c[0]))throw Error('square completion identity failed');\nfunction log(name,p,e){\n let w=fmul(name+'.w',D,fsq(name+'.fSquare',p.f));\n if(e===52){\n  let w2=fsq(name+'.wPower2',w),w3=fmul(name+'.wPower3',w2,w),basis=[fc(1),w,w2,w3];\n  let rawq=rawPolynomial6(squareQ,basis),q=saveF(name+'.squareRootPolynomial',rawq.map((v,j)=>assign(name+'.squareRootPolynomial.'+j,v)));\n  let rawout=fadd(fscale(rawFmul(q,q),aCoeffs[12]),rawPolynomial6(squareR.slice(0,6),basis));\n  let out=saveF(name+'.polynomial',rawout.map((v,j)=>assign(name+'.polynomial.'+j,v)));\n  return fmul(name,p.z,out);\n }\n let w2=fsq(name+'.wPower2',w),rawout=rawPolynomial6(aCoeffs.slice(0,4),[fc(1),w,w2,rawFmul(w2,w)]);\n let out=saveF(name+'.polynomial',rawout.map((v,j)=>assign(name+'.polynomial.'+j,v)));\n return fmul(name,p.z,out);\n}\n"
+    },
+    {
+      "name": "pole first conic rescaling",
+      "occurrences": 1,
+      "old": " const B=scale(b,17), ee=assign(name+'.ePolynomial',mul(sub(one,p.e),add(one,scale(p.e,3))));\n residual(name+'.firstConic',sub(sq(p.p),mul(B,ee)));",
+      "new": " const B=scale(b,17), pp=rsq(name+'.p2',p.p);\n residual(name+'.firstConic',sub(mul(B,pp),mul(sub(B,p.e),add(B,scale(p.e,3)))));"
+    },
+    {
+      "name": "pole direct scaled H",
+      "occurrences": 1,
+      "old": "let h=rm(name+'.h',p.e,sub(B,rsq(name+'.U2',Up))),Bh=rm(name+'.Bh',B,h),ss=",
+      "new": "let Bh=rm(name+'.Bh',p.e,sub(B,rsq(name+'.U2',Up))),ss="
+    },
+    {
+      "name": "detector witness name",
+      "occurrences": 1,
+      "old": "e:fresh('detector'+r+'.e','base')",
+      "new": "e:fresh('detector'+r+'.scaled_e','base')"
+    },
+    {
+      "name": "scalar witness name",
+      "occurrences": 1,
+      "old": "e:fresh('scalar.e','base')",
+      "new": "e:fresh('scalar.scaled_e','base')"
+    },
+    {
+      "name": "signed correction chain",
+      "occurrences": 1,
+      "old": "let correction=sub(one,scale(booleans[7],2));for(let i=0;i<7;i++)correction=rm('correction.product'+i,correction,add(one,scale(booleans[i],[2,3,5,7,11,13,17][i]-1)));\nfor(let i=0;i<8;i++)residual('correction.boolean'+i,sub(sq(booleans[i]),booleans[i]));",
+      "new": "residual('correction.initialSign',sub(sq(booleans[0]),one));\nfor(let i=1;i<8;i++){const p=[2,3,5,7,11,13,17][i-1];residual('correction.partialProduct'+i,add(sq(booleans[i]),scale(mul(booleans[i],booleans[i-1]),-p-1),scale(sq(booleans[i-1]),p)));}\nlet correction=booleans[7];"
+    },
+    {
+      "name": "correction witness names",
+      "occurrences": 1,
+      "old": "fresh('correction.'+p,'base')",
+      "new": "fresh('correction.partial.'+p,'base')"
+    },
+    {
+      "name": "omit two shared-denominator z pairs",
+      "occurrences": 1,
+      "old": "function parameters(name,p){return{f:finv(name+'.f',p.x),z:fquot(name+'.z',fscale(p.x,-1),p.y,'finite_double_or_difference_nonzero_y_Brox4311_4348')};}",
+      "new": "function parameters(name,p){return{point:p,f:finv(name+'.f',p.x),z:(name==='U0'||name==='V0')?null:fquot(name+'.z',fscale(p.x,-1),p.y,'finite_double_or_difference_nonzero_y_Brox4311_4348')};}"
+    },
+    {
+      "name": "fuse logs into local-parameter quotient",
+      "occurrences": 2,
+      "old": "return fmul(name,p.z,out);",
+      "new": "return p.z?fmul(name,p.z,out):fquot(name,[scale(add(mul(p.point.x[0],out[0]),scale(mul(p.point.x[1],out[1]),2)),-1),scale(add(mul(p.point.x[0],out[1]),mul(p.point.x[1],out[0])),-1)],p.point.y,'finite_double_or_difference_nonzero_y_Brox4311_4348');"
+    },
+    {
+      "name": "fuse scalar ratio without U0 local parameter",
+      "occurrences": 1,
+      "old": "zRatio=fquot('scalar.zRatio',PS.z,PU[0].z,'finite_double_nonzero_z_Brox4350_4352')",
+      "new": "zRatio=fquot('scalar.zRatio',[scale(add(mul(PS.z[0],PU[0].point.y[0]),scale(mul(PS.z[1],PU[0].point.y[1]),2)),-1),scale(add(mul(PS.z[0],PU[0].point.y[1]),mul(PS.z[1],PU[0].point.y[0])),-1)],PU[0].point.x,'retained_U0_f_inverse')"
+    },
+    {
+      "name": "fuse weight and reciprocal R",
+      "occurrences": 1,
+      "old": "let ep=rm('detector'+r+'.eWeight',rp('detector'+r+'.Adelta5',Ad,5),fi),ei=inv('detector'+r+'.eWeightInverse',ep),Rv=rm('detector'+r+'.R',ei,di);",
+      "new": "let ep=rquot('detector'+r+'.eWeight',mul(rp('detector'+r+'.Adelta4',Ad,4),Ad),Fv,'retained_FInverse'),Rv=rquot('detector'+r+'.R',di,ep,'nonzero_numerator_di_enforces_denominator');"
+    },
+    {
+      "name": "remove F inverse using strictly positive fixed scale",
+      "occurrences": 1,
+      "old": "let fi=inv('detector'+r+'.FInverse',Fv),di=inv('detector'+r+'.deltaInverse',delta),Ad=rm('detector'+r+'.Adelta',A,delta);",
+      "new": "let di=inv('detector'+r+'.deltaInverse',delta),Ad=rm('detector'+r+'.Adelta',A,delta);"
+    },
+    {
+      "name": "record F domain proof",
+      "occurrences": 1,
+      "old": "'retained_FInverse'",
+      "new": "'positive_scale_and_deltaInverse_make_numerator_nonzero'"
+    },
+    {
+      "name": "fuse inverse-cube product",
+      "occurrences": 1,
+      "old": "let q1=rm('detector'+r+'.q1',ep,rp('detector'+r+'.deltaInverse3',di,3));",
+      "new": "let q1=rquot('detector'+r+'.q1',mul(ep,rsq('detector'+r+'.deltaInverse2',di)),delta,'retained_deltaInverse');"
+    },
+    {
+      "name": "fuse norm quotient retaining trace guard",
+      "occurrences": 1,
+      "old": "let wi=inv('detector'+r+'.w0Inverse',w[0]),norm=assign('detector'+r+'.norm',sub(sq(w[0]),scale(sq(w[1]),2))),nw=rm('detector'+r+'.normOver2w0',scale(norm,Q(1,2)),wi),bv=rm('detector'+r+'.B',Rv,rsq('detector'+r+'.normOver2w0Square',nw));",
+      "new": "let wi=inv('detector'+r+'.w0Inverse',w[0]),nw=rquot('detector'+r+'.normOver2w0',scale(sub(sq(w[0]),scale(sq(w[1]),2)),Q(1,2)),w[0],'retained_w0Inverse'),bv=rm('detector'+r+'.B',Rv,rsq('detector'+r+'.normOver2w0Square',nw));"
+    },
+    {
+      "name": "resolve immutable mathematical source",
+      "occurrences": 1,
+      "old": "const inputSource=path.resolve(__dirname,'..',sourceName);",
+      "new": "const inputSource=\"C:\\\\Users\\\\glaze\\\\Documents\\\\Codex\\\\2026-11-02\\\\lo\\\\work\\\\quartic-version5-release\\\\repository\\\\quartics\\\\quartic-1272\\\\sources\\\\diophantine_optimization_20261106_v3.tex\";"
+    },
+    {
+      "name": "split degree10 evaluator with fused low block",
+      "source": "../detector-circuits/patch_eval_blocks.py::patch",
+      "expectedSavings": 27
+    },
+    {
+      "name": "final-B quotient fusion",
+      "occurrences": 1,
+      "old": ",Rv=rquot('detector'+r+'.R',di,ep,'nonzero_numerator_di_enforces_denominator')",
+      "new": ""
+    },
+    {
+      "name": "final-B quotient fusion",
+      "occurrences": 1,
+      "old": "bv=rm('detector'+r+'.B',Rv,rsq('detector'+r+'.normOver2w0Square',nw))",
+      "new": "bv=rm('detector'+r+'.B',nw,rquot('detector'+r+'.Rnorm',mul(di,nw),ep,'positive_scale_weight_enforces_nonzero_ep'))"
+    },
+    {
+      "name": "quadratic point chart",
+      "occurrences": 1,
+      "old": "let points={};for(let n of names)points[n]=double(n,half[n],true);",
+      "new": "// Quartic coordinates for the halfpoint. half[n].x represents t=y/x,\n// and half[n].y represents h=x/t-t/2. Both are elements of Q(sqrt(2)).\nlet points={};for(let n of names){\n const t=half[n].x,h=half[n].y,u=fsq(n+'.chart.tSquare',t),x=fsq(n+'.chart.x',h);\n const rhs=fsub(x,fscale(u,Q(1,4)));\n residual(n+'.chart.equation.0',sub(add(mul(u[0],rhs[0]),scale(mul(u[1],rhs[1]),2)),D[0]));\n residual(n+'.chart.equation.1',sub(add(mul(u[0],rhs[1]),mul(u[1],rhs[0])),D[1]));\n const y=fmul(n+'.chart.y',h,fsub(fscale(u,Q(1,2)),x));\n points[n]={x:saveF(n+'.x',x),y:saveF(n+'.y',y)};\n}\n"
+    },
+    {
+      "name": "point base coordinate semantics",
+      "occurrences": 1,
+      "old": ".half.x0",
+      "new": ".chart.t0"
+    },
+    {
+      "name": "point base coordinate semantics",
+      "occurrences": 1,
+      "old": ".half.x1",
+      "new": ".chart.t1"
+    },
+    {
+      "name": "point base coordinate semantics",
+      "occurrences": 1,
+      "old": ".half.y0",
+      "new": ".chart.h0"
+    },
+    {
+      "name": "point base coordinate semantics",
+      "occurrences": 1,
+      "old": ".half.y1",
+      "new": ".chart.h1"
+    },
+    {
+      "name": "share q1*e6 between q16 and q52",
+      "source": "../detector-circuits/patch_weight_factor.py::patch",
+      "expectedSavings": 9
+    },
+    {
+      "name": "portable source provenance path",
+      "occurrences": 1,
+      "old": "const inputSource=\"C:\\\\Users\\\\glaze\\\\Documents\\\\Codex\\\\2026-11-02\\\\lo\\\\work\\\\quartic-version5-release\\\\repository\\\\quartics\\\\quartic-1272\\\\sources\\\\diophantine_optimization_20261106_v3.tex\";",
+      "new": "const inputSource=path.resolve(__dirname,'sources/diophantine_optimization_20261106_v3.tex');"
+    },
+    {
+      "name": "candidate provenance",
+      "occurrences": 1,
+      "old": "fs.writeFileSync(path.join(OUT,'raw-ir.json')",
+      "new": "data.variant={name:'combined_primary',status:'pending_independent_review',transformations:'transformations.json',inputUnchanged:true};\nfs.writeFileSync(path.join(OUT,'raw-ir.json')"
+    }
+  ],
+  "builderSha256": "b99b000a57a904328d167a3b3fe9e319e84dc880f03071af9b4face29bc9a570",
+  "status": "pending_independent_review"
+}

@@ -1,0 +1,481 @@
+{
+  "format": "quartic-12504-evidence-import/v1",
+  "source_provenance": "Inherited arithmetic evidence; source_relative paths are relative to the prior repository snapshot. File hashes identify exact contents.",
+  "files": [
+    {
+      "source_relative": "degree8-original/arithmetic/H5_FINAL_ACCEPTANCE.md",
+      "destination_relative": "degree8-original/arithmetic/H5_FINAL_ACCEPTANCE.md",
+      "sha256": "db62a7fa5fbcd2d4bc711436f2fb4f98c37de9122751ea7aeb097d96680905eb",
+      "bytes": 5906
+    },
+    {
+      "source_relative": "degree8-original/arithmetic/README.md",
+      "destination_relative": "degree8-original/arithmetic/README.md",
+      "sha256": "65cd15663a89e84ce08c4fda122aefc3df46db0e69c1722eaf34cdb3e33814c3",
+      "bytes": 6693
+    },
+    {
+      "source_relative": "degree8-original/arithmetic/SMALLER_ONLY_ACCEPTANCE.md",
+      "destination_relative": "degree8-original/arithmetic/SMALLER_ONLY_ACCEPTANCE.md",
+      "sha256": "3de379463fb4a32702f5098fd08dfa3d62a5a116641803c0411c48d212026b27",
+      "bytes": 3740
+    },
+    {
+      "source_relative": "degree8-original/arithmetic/anchor/README.md",
+      "destination_relative": "degree8-original/arithmetic/anchor/README.md",
+      "sha256": "40ed2509400661894a1469ca0bf4e934393acdb6cbcc5a31377a11ef4735949f",
+      "bytes": 3280
+    },
+    {
+      "source_relative": "degree8-original/arithmetic/anchor/anchor-proof.tex",
+      "destination_relative": "degree8-original/arithmetic/anchor/anchor-proof.tex",
+      "sha256": "eb2afc3ae1ff90f778f68e464c4dad063ecf373b8a2ef7dd31c82e9508cd9f91",
+      "bytes": 7147
+    },
+    {
+      "source_relative": "degree8-original/arithmetic/anchor/check_anchor.py",
+      "destination_relative": "degree8-original/arithmetic/anchor/check_anchor.py",
+      "sha256": "ecfd3232899a64d8cb640f3b63ef024540b765fc6eb3963c8e9267d9092226b4",
+      "bytes": 6148
+    },
+    {
+      "source_relative": "degree8-original/arithmetic/anchor/reference-anchor-check.json",
+      "destination_relative": "degree8-original/arithmetic/anchor/reference-anchor-check.json",
+      "sha256": "60c236722fb2f53f95829c48e007c31828c60c8e7c8e21332e4d1b74ab1623b3",
+      "bytes": 2970
+    },
+    {
+      "source_relative": "degree8-original/arithmetic/anchor/source-application-ledger.json",
+      "destination_relative": "degree8-original/arithmetic/anchor/source-application-ledger.json",
+      "sha256": "2f81ceea6b525913b1790c2695da9fb3cc3c9c8b63bfbe7e16bc26d0a227e5ef",
+      "bytes": 5111
+    },
+    {
+      "source_relative": "degree8-original/arithmetic/assumption-status.json",
+      "destination_relative": "degree8-original/arithmetic/assumption-status.json",
+      "sha256": "79ab37c5b822300ae0472ad391dcc02e2ff15e6020f21b4dad58986b08816101",
+      "bytes": 2805
+    },
+    {
+      "source_relative": "degree8-original/arithmetic/current-proof.json",
+      "destination_relative": "degree8-original/arithmetic/current-proof.json",
+      "sha256": "af4570f0f20c0e1895b3567f2c18a13d0cc40d939ac051047a757a3c145d753e",
+      "bytes": 3151
+    },
+    {
+      "source_relative": "degree8-original/arithmetic/geometry/README.md",
+      "destination_relative": "degree8-original/arithmetic/geometry/README.md",
+      "sha256": "ffdf48f9c18c278eef934e92dbc2e0571d759873e33c585fae8d66264c659d91",
+      "bytes": 1561
+    },
+    {
+      "source_relative": "degree8-original/arithmetic/geometry/check_published_quotients.py",
+      "destination_relative": "degree8-original/arithmetic/geometry/check_published_quotients.py",
+      "sha256": "c505005853f0d3162554093590f6c252a34d95da5a9cf21228a9a0341584da3a",
+      "bytes": 2873
+    },
+    {
+      "source_relative": "degree8-original/arithmetic/geometry/published-identification.tex",
+      "destination_relative": "degree8-original/arithmetic/geometry/published-identification.tex",
+      "sha256": "c1a3f1804a58ea932d808cdd16c03b6a83331ca0a54cd6a0946f83749ff8ae54",
+      "bytes": 3937
+    },
+    {
+      "source_relative": "degree8-original/arithmetic/geometry/published-quotient-check.json",
+      "destination_relative": "degree8-original/arithmetic/geometry/published-quotient-check.json",
+      "sha256": "5ffcf76728a15b87c4f92ac7f5167bec6dbd33f2a027afcc5e838ea236e916a1",
+      "bytes": 1280
+    },
+    {
+      "source_relative": "degree8-original/arithmetic/geometry/source-application-ledger.json",
+      "destination_relative": "degree8-original/arithmetic/geometry/source-application-ledger.json",
+      "sha256": "ccc5a1f092021e34fe833982221530e2bea41703384e87701956b2e4728f4cee",
+      "bytes": 2930
+    },
+    {
+      "source_relative": "degree8-original/arithmetic/parity/AUDIT.md",
+      "destination_relative": "degree8-original/arithmetic/parity/AUDIT.md",
+      "sha256": "be1b8d92771b59005a63acdd527b67a8cdd55b1f31e105733f70ab444d462aa7",
+      "bytes": 8709
+    },
+    {
+      "source_relative": "degree8-original/arithmetic/parity/check_parity.py",
+      "destination_relative": "degree8-original/arithmetic/parity/check_parity.py",
+      "sha256": "d133d2629bc83d20a949b28438dd9e516debdef6cd910148385e6c00863d7ad4",
+      "bytes": 4273
+    },
+    {
+      "source_relative": "degree8-original/arithmetic/parity/parity-justification.tex",
+      "destination_relative": "degree8-original/arithmetic/parity/parity-justification.tex",
+      "sha256": "df67c17520d942a4a5d8505b5ed1d97bf2bd3d18f8d13cbf514f758d7286075d",
+      "bytes": 12607
+    },
+    {
+      "source_relative": "degree8-original/arithmetic/parity/reference-parity-checks.json",
+      "destination_relative": "degree8-original/arithmetic/parity/reference-parity-checks.json",
+      "sha256": "a810dbeacccabb6fddec943b403a1a1767e2ed335c1657ab377a6777fe4cc5d4",
+      "bytes": 2544
+    },
+    {
+      "source_relative": "degree8-original/arithmetic/sieve/applications.json",
+      "destination_relative": "degree8-original/arithmetic/sieve/applications.json",
+      "sha256": "28b8f85d33be96b7148de22214dbe7fd39d221a99ab56c75534ad47edc18b062",
+      "bytes": 4736
+    },
+    {
+      "source_relative": "degree8-original/arithmetic/sieve/audit.md",
+      "destination_relative": "degree8-original/arithmetic/sieve/audit.md",
+      "sha256": "2e03f01cbe555c2d6f4edcafd5b08c6f2b16b8e3f2e4ce0a55dfbcabbc015c7e",
+      "bytes": 10076
+    },
+    {
+      "source_relative": "degree8-original/arithmetic/sieve/check_constants.py",
+      "destination_relative": "degree8-original/arithmetic/sieve/check_constants.py",
+      "sha256": "22e21db4649fbd4209d9f75380525cdb17931d868ec2b947210b995beba475e4",
+      "bytes": 1757
+    },
+    {
+      "source_relative": "degree8-original/arithmetic/sieve/input-hashes.json",
+      "destination_relative": "degree8-original/arithmetic/sieve/input-hashes.json",
+      "sha256": "1665d133d5f111a61e14f0bd06b4f49c31d920ce6428dc5ebd6187730f0cf23a",
+      "bytes": 1057
+    },
+    {
+      "source_relative": "degree8-original/arithmetic/sieve/original41-proof.tex",
+      "destination_relative": "degree8-original/arithmetic/sieve/original41-proof.tex",
+      "sha256": "650e7564eb0158b6ad72506ab465bd054a14b32ed76433908d573a3d05a3228b",
+      "bytes": 13037
+    },
+    {
+      "source_relative": "degree8-original/arithmetic/sieve/reference-constant-check.json",
+      "destination_relative": "degree8-original/arithmetic/sieve/reference-constant-check.json",
+      "sha256": "9fca75c9fa30687a0ab3f80d024773118d40d5011c52e8c894084a012f353cc2",
+      "bytes": 1538
+    },
+    {
+      "source_relative": "degree8-original/arithmetic/sieve/source-ledger.json",
+      "destination_relative": "degree8-original/arithmetic/sieve/source-ledger.json",
+      "sha256": "e98599849e678182edac7c825a58ec9d86604198fbdd277e64faa128eae2b125",
+      "bytes": 6692
+    },
+    {
+      "source_relative": "degree8-original/source/module-specification.md",
+      "destination_relative": "degree8-original/source/module-specification.md",
+      "sha256": "8d48b84bb189f04d6d8970a53b272df1df7d8fb575dd8059f35ba93c504f566b",
+      "bytes": 7851
+    },
+    {
+      "source_relative": "docs/degree8-original/research/accepted-h5/height-alternative/STATUS.md",
+      "destination_relative": "docs/degree8-original/research/accepted-h5/height-alternative/STATUS.md",
+      "sha256": "8b8938390bf0c7ebd213ebd0a0b55dcab3ffbeab5a1789529125d525e3a5bb81",
+      "bytes": 6125
+    },
+    {
+      "source_relative": "docs/degree8-original/research/accepted-h5/height-alternative/alternative-budget.tex",
+      "destination_relative": "docs/degree8-original/research/accepted-h5/height-alternative/alternative-budget.tex",
+      "sha256": "3341fef46410b87cff364fac40f98d6090ef6fbdf9950f3d3fd368af13a3edd9",
+      "bytes": 5305
+    },
+    {
+      "source_relative": "docs/degree8-original/research/accepted-h5/height-alternative/conductor-level-audit.md",
+      "destination_relative": "docs/degree8-original/research/accepted-h5/height-alternative/conductor-level-audit.md",
+      "sha256": "0109d9e66d7d94c21fc418302ded4476e35d8359766d0e94395144cfe709733f",
+      "bytes": 4290
+    },
+    {
+      "source_relative": "docs/degree8-original/research/accepted-h5/height-alternative/conductor-level.tex",
+      "destination_relative": "docs/degree8-original/research/accepted-h5/height-alternative/conductor-level.tex",
+      "sha256": "14e0136c6129e6a3ee5362c93493641b8c06cb0953570af1ecf1e850f35497f5",
+      "bytes": 4033
+    },
+    {
+      "source_relative": "docs/degree8-original/research/accepted-h5/height-alternative/conductor-source-ledger.json",
+      "destination_relative": "docs/degree8-original/research/accepted-h5/height-alternative/conductor-source-ledger.json",
+      "sha256": "d4f8201815c62b06aa17f1079d8512b8f93d4bf004c0072cec2f7d0bf2206627",
+      "bytes": 2960
+    },
+    {
+      "source_relative": "docs/degree8-original/research/accepted-h5/height-alternative/level-source-ledger.json",
+      "destination_relative": "docs/degree8-original/research/accepted-h5/height-alternative/level-source-ledger.json",
+      "sha256": "a688ffadbdea896a60fefa89001e26b23ce5cf454350dcc121847ec7824da58f",
+      "bytes": 3084
+    },
+    {
+      "source_relative": "docs/degree8-original/research/accepted-h5/height-alternative/level-transfer.tex",
+      "destination_relative": "docs/degree8-original/research/accepted-h5/height-alternative/level-transfer.tex",
+      "sha256": "4fdb83163d13bf792f38e7a26fc2b7f3e4aed1e147dddf8835faf7790a466950",
+      "bytes": 3763
+    },
+    {
+      "source_relative": "docs/degree8-original/research/accepted-h5/height-cm/README.md",
+      "destination_relative": "docs/degree8-original/research/accepted-h5/height-cm/README.md",
+      "sha256": "3fc7d18fa2e8f16ce0fda683612fb68eb2688f8c147a5d6dc90261377d140d74",
+      "bytes": 1497
+    },
+    {
+      "source_relative": "docs/degree8-original/research/accepted-h5/height-cm/cm-height-proof.tex",
+      "destination_relative": "docs/degree8-original/research/accepted-h5/height-cm/cm-height-proof.tex",
+      "sha256": "7707e8d3c673ddb76854406410243460f24102d39f7cdbc9574def07b3a841e0",
+      "bytes": 6439
+    },
+    {
+      "source_relative": "docs/degree8-original/research/accepted-h5/height-cm/review-receipt.json",
+      "destination_relative": "docs/degree8-original/research/accepted-h5/height-cm/review-receipt.json",
+      "sha256": "5428fe70a1e815b8e4ffddc418e2c98957e6d090daef19abd325d67cffcf962a",
+      "bytes": 845
+    },
+    {
+      "source_relative": "docs/degree8-original/research/accepted-h5/height-cm/source-application-ledger.json",
+      "destination_relative": "docs/degree8-original/research/accepted-h5/height-cm/source-application-ledger.json",
+      "sha256": "2e5d985886fa467b60fbed0dc780bedd59717f062c151fd6eb7cdc0dbe6ef68b",
+      "bytes": 4681
+    },
+    {
+      "source_relative": "docs/degree8-original/research/accepted-h5/height-cocycle/README.md",
+      "destination_relative": "docs/degree8-original/research/accepted-h5/height-cocycle/README.md",
+      "sha256": "01871fc10453aa63062cd3dfde8677406aaf12d6a2b1a6178d05f6f1f23c7b29",
+      "bytes": 2361
+    },
+    {
+      "source_relative": "docs/degree8-original/research/accepted-h5/height-cocycle/SMALL_PRIME_CONDUCTOR_REVIEW.md",
+      "destination_relative": "docs/degree8-original/research/accepted-h5/height-cocycle/SMALL_PRIME_CONDUCTOR_REVIEW.md",
+      "sha256": "6a351cd2eec355fa4f609d68093aa3982ae88aa0c64568e75d8b10b1e0934413",
+      "bytes": 6623
+    },
+    {
+      "source_relative": "docs/degree8-original/research/accepted-h5/height-cocycle/VOIGHT2021_SOURCE_VERIFICATION.md",
+      "destination_relative": "docs/degree8-original/research/accepted-h5/height-cocycle/VOIGHT2021_SOURCE_VERIFICATION.md",
+      "sha256": "3ab6520961f5ec40fc1e99432e6c1613891a0d0ff5a1384225425696a1bd2ac8",
+      "bytes": 1524
+    },
+    {
+      "source_relative": "docs/degree8-original/research/accepted-h5/height-cocycle/normalizer-and-local-obstruction.tex",
+      "destination_relative": "docs/degree8-original/research/accepted-h5/height-cocycle/normalizer-and-local-obstruction.tex",
+      "sha256": "58007dda4e51af57b48bd3141802b86e32878e7dc8144d22d0746b7f20046bef",
+      "bytes": 8698
+    },
+    {
+      "source_relative": "docs/degree8-original/research/accepted-h5/height-cocycle/source-application-ledger.json",
+      "destination_relative": "docs/degree8-original/research/accepted-h5/height-cocycle/source-application-ledger.json",
+      "sha256": "593bb0857eb8801fa6c7da320f05e3e6085fe507983a42c0eecab513a4ca3e44",
+      "bytes": 4672
+    },
+    {
+      "source_relative": "docs/degree8-original/research/accepted-h5/height-geometry/README.md",
+      "destination_relative": "docs/degree8-original/research/accepted-h5/height-geometry/README.md",
+      "sha256": "370fd30ff85d34515fd3c41b1bdbc7e6bf9f7b92564bc5bf76d1048705adc477",
+      "bytes": 1464
+    },
+    {
+      "source_relative": "docs/degree8-original/research/accepted-h5/height-geometry/check_published_quotients.py",
+      "destination_relative": "docs/degree8-original/research/accepted-h5/height-geometry/check_published_quotients.py",
+      "sha256": "bc80ee832d0abd5720fe09197662905f7aa5ee23accf8ed1b882e8d49da0ba6a",
+      "bytes": 2694
+    },
+    {
+      "source_relative": "docs/degree8-original/research/accepted-h5/height-geometry/published-identification.tex",
+      "destination_relative": "docs/degree8-original/research/accepted-h5/height-geometry/published-identification.tex",
+      "sha256": "c1a3f1804a58ea932d808cdd16c03b6a83331ca0a54cd6a0946f83749ff8ae54",
+      "bytes": 3937
+    },
+    {
+      "source_relative": "docs/degree8-original/research/accepted-h5/height-geometry/published-quotient-check.json",
+      "destination_relative": "docs/degree8-original/research/accepted-h5/height-geometry/published-quotient-check.json",
+      "sha256": "5ffcf76728a15b87c4f92ac7f5167bec6dbd33f2a027afcc5e838ea236e916a1",
+      "bytes": 1280
+    },
+    {
+      "source_relative": "docs/degree8-original/research/accepted-h5/height-geometry/source-application-ledger.json",
+      "destination_relative": "docs/degree8-original/research/accepted-h5/height-geometry/source-application-ledger.json",
+      "sha256": "ccc5a1f092021e34fe833982221530e2bea41703384e87701956b2e4728f4cee",
+      "bytes": 2930
+    },
+    {
+      "source_relative": "docs/degree8-original/research/accepted-h5/height-level-repair/SNAPSHOT.json",
+      "destination_relative": "docs/degree8-original/research/accepted-h5/height-level-repair/SNAPSHOT.json",
+      "sha256": "34c476180af63faad6b90576189b8a1a67af0e0e6e8075f5047524e377a0a323",
+      "bytes": 4844
+    },
+    {
+      "source_relative": "docs/degree8-original/research/accepted-h5/height-level-repair/STATUS.md",
+      "destination_relative": "docs/degree8-original/research/accepted-h5/height-level-repair/STATUS.md",
+      "sha256": "77199281d0e9fe8e9f7f9e8018c882d4a006bfeef34795e973172430ecd050c8",
+      "bytes": 3134
+    },
+    {
+      "source_relative": "docs/degree8-original/research/accepted-h5/height-level-repair/bibliography-additions.tex",
+      "destination_relative": "docs/degree8-original/research/accepted-h5/height-level-repair/bibliography-additions.tex",
+      "sha256": "4c878e290c24750dd0fc56eca8fcd8d79e5a4395e4adcb12aa38905d3a87aefa",
+      "bytes": 808
+    },
+    {
+      "source_relative": "docs/degree8-original/research/accepted-h5/height-level-repair/bound-computations.json",
+      "destination_relative": "docs/degree8-original/research/accepted-h5/height-level-repair/bound-computations.json",
+      "sha256": "2e105296107fdb60efc39d364d68a269e51f1e71d7b0a03f794219f8623048fb",
+      "bytes": 580
+    },
+    {
+      "source_relative": "docs/degree8-original/research/accepted-h5/height-level-repair/check_bounds.py",
+      "destination_relative": "docs/degree8-original/research/accepted-h5/height-level-repair/check_bounds.py",
+      "sha256": "d786719dfaa7330200ab1fd79c1840da6e49b3d562038fbda7fe9d2ef115369a",
+      "bytes": 1413
+    },
+    {
+      "source_relative": "docs/degree8-original/research/accepted-h5/height-level-repair/level-repair.tex",
+      "destination_relative": "docs/degree8-original/research/accepted-h5/height-level-repair/level-repair.tex",
+      "sha256": "76244a20a0a3adb148bab97e2cdfe7824775a360f0a7b2c82787864340ca3f56",
+      "bytes": 12378
+    },
+    {
+      "source_relative": "docs/degree8-original/research/accepted-h5/height-level-repair/source-application-ledger.json",
+      "destination_relative": "docs/degree8-original/research/accepted-h5/height-level-repair/source-application-ledger.json",
+      "sha256": "d7f365bc056fc49a31ca07a6cb1a33fa1a27141616076b632539e9c4ad7cac2c",
+      "bytes": 34453
+    },
+    {
+      "source_relative": "docs/degree8-original/research/accepted-h5/pan-published/README.md",
+      "destination_relative": "docs/degree8-original/research/accepted-h5/pan-published/README.md",
+      "sha256": "921396403e862a91e68a975be54050ba918d4150d2e3ab9cb3a3d77409997256",
+      "bytes": 4925
+    },
+    {
+      "source_relative": "docs/degree8-original/research/accepted-h5/pan-published/alternate-fetches.json",
+      "destination_relative": "docs/degree8-original/research/accepted-h5/pan-published/alternate-fetches.json",
+      "sha256": "21ce0796c407e691f081bebfb29ffee603e7e63f9abe005355ce03aa1997a736",
+      "bytes": 672
+    },
+    {
+      "source_relative": "docs/degree8-original/research/accepted-h5/pan-published/crossref.json",
+      "destination_relative": "docs/degree8-original/research/accepted-h5/pan-published/crossref.json",
+      "sha256": "b45ac9d00fb202d76e6c3f66ba00f4b383ac335598540767c04609be0d605763",
+      "bytes": 26227
+    },
+    {
+      "source_relative": "docs/degree8-original/research/accepted-h5/pan-published/openalex.json",
+      "destination_relative": "docs/degree8-original/research/accepted-h5/pan-published/openalex.json",
+      "sha256": "5630f288a42d2bcf9d8fdb115dcfb92afd566e89952082f180ff1b58b9f56bcb",
+      "bytes": 13849
+    },
+    {
+      "source_relative": "docs/degree8-original/research/accepted-h5/pan-published/publisher-fetches.json",
+      "destination_relative": "docs/degree8-original/research/accepted-h5/pan-published/publisher-fetches.json",
+      "sha256": "da37b6cdfa01d263688e77ce234ae033090145e2cb112be1daa1d98b44ddfa7a",
+      "bytes": 473
+    },
+    {
+      "source_relative": "docs/degree8-original/research/accepted-h5/pan-published/source-application-ledger.json",
+      "destination_relative": "docs/degree8-original/research/accepted-h5/pan-published/source-application-ledger.json",
+      "sha256": "8a6cb4f7a188aa48d3a56f17d2ee0ad488df516d494da784109d9408ec6dd3ea",
+      "bytes": 3502
+    },
+    {
+      "source_relative": "docs/degree8-original/research/accepted-h5/review/ALTERNATIVE_REVIEW.md",
+      "destination_relative": "docs/degree8-original/research/accepted-h5/review/ALTERNATIVE_REVIEW.md",
+      "sha256": "978616b097dc6154d0cd2ab69d5d20260795a706bc8d35267f6b0e996119a184",
+      "bytes": 2213
+    },
+    {
+      "source_relative": "docs/degree8-original/research/accepted-h5/review/COCYCLE_ACCEPTANCE.md",
+      "destination_relative": "docs/degree8-original/research/accepted-h5/review/COCYCLE_ACCEPTANCE.md",
+      "sha256": "17d782ff9a4478ecef09c560fc8fa4791169cab87c4a42e4c0993a1daa1880f9",
+      "bytes": 3845
+    },
+    {
+      "source_relative": "docs/degree8-original/research/accepted-h5/review/GLOBAL_LEVEL_REVIEW.md",
+      "destination_relative": "docs/degree8-original/research/accepted-h5/review/GLOBAL_LEVEL_REVIEW.md",
+      "sha256": "4f1a0bccd5fdf6c5a7b314fc5ad542dcb2556d5fd734c42b7fe7938bb9082db9",
+      "bytes": 7585
+    },
+    {
+      "source_relative": "docs/degree8-original/research/accepted-h5/review/H5_FINAL_ACCEPTANCE.md",
+      "destination_relative": "docs/degree8-original/research/accepted-h5/review/H5_FINAL_ACCEPTANCE.md",
+      "sha256": "db62a7fa5fbcd2d4bc711436f2fb4f98c37de9122751ea7aeb097d96680905eb",
+      "bytes": 5906
+    },
+    {
+      "source_relative": "docs/degree8-original/research/accepted-h5/review/H5_REVIEW.md",
+      "destination_relative": "docs/degree8-original/research/accepted-h5/review/H5_REVIEW.md",
+      "sha256": "e9ae3fb30e1558e1f42f90f31ce13651087e923a516ba2f4f25c6c3c18fdc6d6",
+      "bytes": 4370
+    },
+    {
+      "source_relative": "docs/degree8-original/research/accepted-h5/review/INTEGRATED_ACCEPTANCE.md",
+      "destination_relative": "docs/degree8-original/research/accepted-h5/review/INTEGRATED_ACCEPTANCE.md",
+      "sha256": "5340bcea956e25aaf4f57f07c4ce682511374206540285107d1c4b63a4e8a729",
+      "bytes": 1754
+    },
+    {
+      "source_relative": "docs/degree8-original/research/accepted-h5/review/Q_ACCEPTANCE.md",
+      "destination_relative": "docs/degree8-original/research/accepted-h5/review/Q_ACCEPTANCE.md",
+      "sha256": "36ec05bd0f2a9c0bdc04eafaefc367393db1825074b0805d5356db62451935b8",
+      "bytes": 2128
+    },
+    {
+      "source_relative": "docs/degree8-original/research/accepted-h5/review/SMALLER_ONLY_ACCEPTANCE.md",
+      "destination_relative": "docs/degree8-original/research/accepted-h5/review/SMALLER_ONLY_ACCEPTANCE.md",
+      "sha256": "3de379463fb4a32702f5098fd08dfa3d62a5a116641803c0411c48d212026b27",
+      "bytes": 3740
+    },
+    {
+      "source_relative": "docs/degree8-original/research/accepted-h5/review/SOURCE_REVIEW.md",
+      "destination_relative": "docs/degree8-original/research/accepted-h5/review/SOURCE_REVIEW.md",
+      "sha256": "0188b1e7b6548d58b72e60ffe06ef1a3168658b3075182806653274b3087a43a",
+      "bytes": 6805
+    },
+    {
+      "source_relative": "docs/degree8-original/research/accepted-h5/yuan-published/VERIFICATION.md",
+      "destination_relative": "docs/degree8-original/research/accepted-h5/yuan-published/VERIFICATION.md",
+      "sha256": "14015f8f44905eaabdaddd32f1964eb714380a9fb6f4106f527a73d4c9e3e7ce",
+      "bytes": 6182
+    },
+    {
+      "source_relative": "docs/degree8-original/research/accepted-h5/yuan-published/compare_translation.py",
+      "destination_relative": "docs/degree8-original/research/accepted-h5/yuan-published/compare_translation.py",
+      "sha256": "21093f6732e2c0a65d87c261c7c2f18f65042155b3978391eda6dcc56a821e9d",
+      "bytes": 1884
+    },
+    {
+      "source_relative": "docs/degree8-original/research/accepted-h5/yuan-published/source-application-ledger.json",
+      "destination_relative": "docs/degree8-original/research/accepted-h5/yuan-published/source-application-ledger.json",
+      "sha256": "1251c3510cf14b184897d37a1236f7abc4a752e913e3ea00afd2db6b1236a2d3",
+      "bytes": 3693
+    },
+    {
+      "source_relative": "docs/degree8-original/research/accepted-h5/yuan-published/translation-comparison.json",
+      "destination_relative": "docs/degree8-original/research/accepted-h5/yuan-published/translation-comparison.json",
+      "sha256": "95b0f8b56e13cd5993da300de22a91f6a84a17b0045ecb89fd75bcdaba330604",
+      "bytes": 2883
+    },
+    {
+      "source_relative": "docs/theorem-application-audit/DEPENDENCIES.md",
+      "destination_relative": "docs/theorem-application-audit/DEPENDENCIES.md",
+      "sha256": "55c7350cfc1002457519dff926a0b388c179936802118b9b39aa2317ba400f90",
+      "bytes": 4011
+    },
+    {
+      "source_relative": "docs/theorem-application-audit/applications.json",
+      "destination_relative": "docs/theorem-application-audit/applications.json",
+      "sha256": "1d53028414eefe1eeed85db566aae47b2b00d4206f3eaffeec8625f0e3c089bb",
+      "bytes": 604109
+    },
+    {
+      "source_relative": "docs/theorem-application-audit/computations/generator-arithmetic.json",
+      "destination_relative": "docs/theorem-application-audit/computations/generator-arithmetic.json",
+      "sha256": "b3d54ec0ffc02f51f20636a22a4bd31a6caa41a96680a65edea3291c928d888f",
+      "bytes": 4083
+    },
+    {
+      "source_relative": "docs/theorem-application-audit/sources.json",
+      "destination_relative": "docs/theorem-application-audit/sources.json",
+      "sha256": "6e8732d40657374f58e148cfdbf830b72426eafbc92fd3bd969e4e8a3f9802cf",
+      "bytes": 67747
+    }
+  ],
+  "excludes": [
+    "All primary-source PDFs/scans and downloaded HTML",
+    "Earlier author assembly drafts and abandoned height routes",
+    "Whole-tree manifests claiming omitted files exist"
+  ],
+  "source_version_policy": "Retain the URLs, file hashes, version qualifiers and application maps within imported ledgers. A PDF path in a source ledger is a provenance locator, not a required distributed file.",
+  "finite_inputs": "Compiler/module/residual inputs are separately packaged by the finite verifier owner; this evidence manifest does not replace that file closure."
+}

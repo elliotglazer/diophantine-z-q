@@ -1,0 +1,62 @@
+{
+  "assembly_receipt": "docs/quartic-962-validation/final-assembly-review/receipt.json",
+  "assets": {
+    "current": "z-in-q-version6-current-handoff.zip",
+    "full": "z-in-q-version6-full-handoff.zip"
+  },
+  "contributor_credit": "Stefan Baranczuk, Jose Brox, Gabe Conant, Sohail Farhangi, James Freitag, Elliot Glazer, Jennifer Park, and Caroline Terry.",
+  "date": "2026-11-06",
+  "expected": {
+    "coefficient_height": "64*3^(2^28)",
+    "degree": 4,
+    "monomials": 55409,
+    "primitive_content": "1",
+    "rows": 919,
+    "variables": 962,
+    "witnesses": 961
+  },
+  "format": "quartic-handoff-release/v3",
+  "inventory": "docs/quartic-962/README.md",
+  "inventory_input": "docs/quartic-962/new-applications.json",
+  "inventory_input_sha256": "b7a42a50809c85ef14a9380a15576ef0170bad571ef713c329e31f594f8c12cf",
+  "manuscript": "quartic_962.tex",
+  "package": "quartics/quartic-962",
+  "package_manifest": "MANIFEST.json",
+  "pdf": "quartic_962.pdf",
+  "polynomial": "polynomial.json",
+  "polynomial_sha256": "PENDING_FINAL_FREEZE",
+  "preserved_pins": {},
+  "release_tag": "quartic-962-version-6",
+  "research_manifest": "handoff/V6_RESEARCH_MANIFEST.json",
+  "review_files": {
+    "analytic-proof": "docs/quartic-962/evidence/analytic-assembled-receipt.json",
+    "inventory": "docs/quartic-962-validation/inventory-review.json",
+    "lower-bound": "docs/quartic-962/evidence/work--quartic-version6-preparation--lower-bound--independent-review--receipt.json",
+    "optimization": "quartics/quartic-962/evidence/dag-sharing/COMBINED_REVIEW.md"
+  },
+  "snapshot_pins": {},
+  "source_contract": {
+    "analytic_scope": "Fixed Gaussian ray fields over Q(i), split-prime norms and the stated conjugation-invariant class unions",
+    "construction": "Reviewed rational-projection-preserving reduction of the Version 5 source to 962 coordinates",
+    "external_source_qualifications": [
+      "Dodos-Kanellopoulos exact statement checked in author version",
+      "Kollar exact statement checked in author version",
+      "Inherited sieve-source qualifications retained"
+    ],
+    "final_manuscript_sha256": "06f98ff070139c3b6c60589c65867ceb4366b023f7960551abd52f85fa67e30c",
+    "fixed_parameter": "S = 3^(2^27)",
+    "fixed_parameter_is_coordinate": false,
+    "frei_tinkova_theorem_assumed": false,
+    "lower_bound_scope": "Single polynomial, total degree and rational ground field",
+    "retained_methodological_attribution": true,
+    "review_limit": "Scoped source-level review and finite computation; no proof-assistant certificate or blanket closure of external proofs"
+  },
+  "source_id": "version6-fixed-gaussian-962",
+  "state": "PREPARATION",
+  "support_files": [
+    "scripts/check_quartic962.py",
+    "scripts/quartic962_checks.cjs"
+  ],
+  "verification_receipt": "handoff/releases/version6/REPRODUCTION.json",
+  "version": 6
+}

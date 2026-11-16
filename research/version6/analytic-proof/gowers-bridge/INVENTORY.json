@@ -1,0 +1,177 @@
+{
+  "schema": "gaussian-gowers-polynomial-bridge-v1",
+  "status": "accepted mathematical implication and source/interface reviews, conditional on separately established upstream input",
+  "scope": "Fixed Gaussian ray fields and conjugation-invariant ray-class unions used by the appendix; not arbitrary finite Galois extensions",
+  "usesFreiTinkovaAsTheorem": false,
+  "upstreamInterface": {
+    "label": "eq:gaussian-centered-nil-input",
+    "sourceLabels": [
+      "prop:gf-factorization",
+      "cor:ga-centered-primes",
+      "cor:gaussian-centered-progressions"
+    ],
+    "weight": "phi(V)/V * [Lambda'_C(V*n+b)-mu_C(b)*Lambda'(V*n+b)]",
+    "quantifiers": "Every fixed multiple V of D, unit b, fixed bounded nilsequence complexity, and B>0; O_{V,B,complexity}(log(L)^(-B)) uniformly in polynomial orbit and bounded Lipschitz test function",
+    "providedBy": [
+      "../quotient-audit/NORM_TRANSFER.md",
+      "../type-i-ii/TYPE_I_II.md",
+      "../progression_mainterms.tex",
+      "../factorization/FACTORIZATION.md",
+      "../factorization/AFFINE_PULLBACK.md"
+    ],
+    "independentlyEstablishedHere": false
+  },
+  "newSteps": [
+    {
+      "id": "ordinary_majorant_fixed_conductor_extension",
+      "statement": "Use V_z=E*product_{p<=z}p with fixed E; unit residues remove added prime-power divisors; large-prime sieve and correlation factors unchanged",
+      "input": "GT Proposition6.4 and AppendixD",
+      "newArithmeticAssumption": false
+    },
+    {
+      "id": "relative_inverse",
+      "statement": "Target U^s[L] needs full-cyclic U^(2s) majorant norm; choose complexity at least max(4^s,4s,D_GN)",
+      "normalization": "fixed positive rescaling of real h truncated to [L^(3/5),L]",
+      "input": "DK Theorem5.1",
+      "newArithmeticAssumption": false
+    },
+    {
+      "id": "auxiliary_diagonal",
+      "statement": "Choose z_j for limiting majorant tolerances, then L_j for all residues and firstj nilsequence tests; physical N_j accommodates L comparable to N/V_zj",
+      "forbiddenInference": "No claim fixed-v majorant error is o_N(1); no implicit z=z(N/V_z)"
+    },
+    {
+      "id": "linear_replacement",
+      "label": "lem:gaussian-linear-replacement",
+      "statement": "Every fixed finite-complexity affine system with nonzero linear parts has genuine o_N(N^d) mixed-product replacement Lambda'_C -> mu_C(modD)*Lambda'",
+      "uniformity": "Bounded normalized affine constants and convex regions",
+      "normalForm": "Explicit integer bijection (x,y)->(x+sum y_ij v_ij,y), with full y-box and exact cardinality factor; for one form use a direction v with nonzero value"
+    },
+    {
+      "id": "residue_mass",
+      "label": "eq:gaussian-admissibility-mass",
+      "statement": "|R_z|/V_z^d*(V_z/phi(V_z))^t=product_(p|V_z)beta_p=O_Psi(1)",
+      "purpose": "Prevents amplification by the growing number of residue vectors"
+    },
+    {
+      "id": "local_cube",
+      "label": "eq:gaussian-global-gowers",
+      "statement": "For fixedv, q<=A^C1 and n*A^-C3<=J<=n*A^-C2, local q[J] centered cube is O(1/logv)+o_v(1)",
+      "proof": "Apply completed fixed-system replacement to each wraparound region, then ordinary-prime local factors; p>v dividingq account for O(1/logv)"
+    },
+    {
+      "id": "polynomial_transfer",
+      "statement": "Existing arbitrary-function TZ model, concatenation and generalized von Neumann stage applies unchanged",
+      "inputs": [
+        "TZ Theorem11",
+        "TZ Corollary3",
+        "TZ Theorem9",
+        "TZ Theorem13"
+      ],
+      "newArithmeticAssumption": false
+    },
+    {
+      "id": "boundaries",
+      "statement": "Cube lower cut by crude log bound; polynomial T\u00c2\u00b2 strips via fixed epsilon strips and ordinary polynomial-forms majorant. Stage j preserves all epsilon=1,...,1/j tests; for arbitrary T first fix epsilon, take limsup N, then epsilon down to zero.",
+      "localization": "Fixed enlarged ambient interval avoids cyclic wrap; isolate possible constant-shift anchor nu0, apply TZ15 to nu0*F, nu0*F\u00b2 with independent parameters, and nu0, then weighted Cauchy-Schwarz and the one-dimensional sieve interval mean.",
+      "errorOrder": "O(epsilon)+o_(v to infinity)(1)+o_(v,epsilon)(1), preserving the iterated limits"
+    },
+    {
+      "id": "final_limits",
+      "statement": "Freeze complexities; uniform N,T estimates at fixedv; then diagonal v(N) and omega(N). Impose T=o(sqrtN) only on final diagonal."
+    }
+  ],
+  "externalSources": [
+    {
+      "id": "GT2010",
+      "title": "Linear equations in primes",
+      "authors": "Green and Tao",
+      "published": "Annals of Mathematics171(2010),1753-1850",
+      "url": "https://annals.math.princeton.edu/wp-content/uploads/annals-v171-n3-p08-p.pdf",
+      "locators": [
+        "Lemma4.4,p1773 and reductionpp1774-1775",
+        "Proposition6.4,p1780; constructionpp1839-1842",
+        "Proposition7.1,pp1781-1782; AppendixC,pp1818-1827"
+      ],
+      "checkedVersion": "published PDF read through web tool",
+      "bibliographyKey": "v6gtlinear"
+    },
+    {
+      "id": "DK2022",
+      "title": "Uniformity norms, their weaker versions, and applications",
+      "published": "Acta Arithmetica203(2022),251-270",
+      "doi": "10.4064/aa210728-27-2",
+      "locator": "Theorem5.1",
+      "checkedVersion": "arXiv1610.00487v4,pp12-13,9June2022",
+      "checkedPdfSha256": "1d71ecfcb7a1970ce3d7a10ac426f8c94e9d1d6a88886cb378ca19a099963508",
+      "exactExponent": "2s",
+      "publisherTypesetComparison": "not completed; public download unavailable in parallel audit",
+      "bibliographyKey": "v5dk"
+    },
+    {
+      "id": "Bienvenu2017",
+      "title": "A higher-dimensional Siegel-Walfisz theorem",
+      "published": "Acta Arithmetica179(2017),79-100",
+      "doi": "10.4064/aa8600-10-2016",
+      "locator": "Theorem1.1,pp79-80",
+      "checkedVersion": "cached published PDF",
+      "role": "Ordinary-prime fixed-system correlations only",
+      "bibliographyKey": "v6bienvenu",
+      "checkedPdfSha256": "9634fad788ff65298c361d0d0b596eb89fc097bda1eaa2031ee9ea13cd4c6130"
+    },
+    {
+      "id": "TZ2018",
+      "title": "Polynomial patterns in the primes",
+      "published": "Forum of Mathematics,Pi6(2018),e1",
+      "doi": "10.1017/fmp.2017.3",
+      "locators": [
+        "Theorem9,p21",
+        "Theorem11,p28",
+        "Corollary3,p38",
+        "Proposition6,pp39-40",
+        "Theorem13,p41",
+        "majorantequation36,p29 and Proposition2,p30",
+        "Theorem15, AppendixA, p57 (weighted L2 localization uses this statement)"
+      ],
+      "checkedPdfSha256": "ba1645db9857dd621e8ea6a280927c1e4b7cef5f6df04a4f19e7ac7782220f43",
+      "bibliographyKey": "v5tz"
+    }
+  ],
+  "integration": {
+    "file": "work/quartic-version5-release/sun-proof/sun_appendix.tex",
+    "replace": [
+      "FTnormrepairremark,approximatelylines379-411",
+      "FTTheorem1.4invocationandcubeuse,approximatelylines442-489"
+    ],
+    "retain": "Arbitrary-function dense-model stage beginning approximatelyline491, with explicit finaldiagonal and boundary clarifications",
+    "restrictPropositionScope": "Gaussian ray fields actually used, rather than all finite Galois extensions",
+    "targetEquation": "eq:v5-global-gowers",
+    "targetProposition": "prop:v5-artin-patterns"
+  },
+  "artifact": {
+    "path": "bridge.tex",
+    "sha256": "b9284d40889c3d4308fd0c3d532b7d59c792f22894acc6db21c19a2422c307cd"
+  },
+  "validation": {
+    "json": "parsed",
+    "texBraces": "balanced",
+    "texEnvironments": "paired",
+    "uniqueLabels": 8,
+    "referencesResolvedInIntegrationSources": 16,
+    "pdfTypesetting": "not run; fragment prepared for root integration"
+  },
+  "independentReviews": [
+    {
+      "kind": "mathematical",
+      "receipt": "type-i-ii/BRIDGE_REVIEW_RECEIPT.json",
+      "sha256": "a731e38f4cdeafb0270691905820ce314bb43d5707a8f9a6f62bac1f4f180a08",
+      "reviewedBridgeSha256": "b9284d40889c3d4308fd0c3d532b7d59c792f22894acc6db21c19a2422c307cd"
+    },
+    {
+      "kind": "source_interface",
+      "receipt": "bridge-source-independent-review/receipt.json",
+      "sha256": "6b88a22061509f07810cde93f799cebd8bba25834a6d665e0225fa6546cb7d1a",
+      "reviewedBridgeSha256": "b9284d40889c3d4308fd0c3d532b7d59c792f22894acc6db21c19a2422c307cd"
+    }
+  ]
+}

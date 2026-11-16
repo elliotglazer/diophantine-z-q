@@ -1,32 +1,132 @@
 # Building and checking the research package
 
-Run these commands from a clean checkout. Construction checks use Python 3.11 or later and Node.js 22 or later; the CI workflow pins Python 3.12.14 and Node.js 24.22.1. Python scripts use only the standard library.
+Run these commands from the repository root. Python scripts use the standard library. The current quartic and the original large construction have separate checks. The Version 7 handoffs contain their own build instructions under `current/`; Version 9 adds the [odd-product constructions](quartic-523-540/README.md). See the [handoff guide](../handoff/README.md) for the archive layout and verification procedure.
 
-## Construction
+## Version 16 manuscript and correction checks
+
+Run `python -B research/version16/check.py` to verify the exact correction delta, PDF/source hashes and scoped review record. These finite checks do not replace mathematical review or the protected App check.
+
+To rebuild the PDF with Tectonic 0.17.0, create `build/version16` and run:
+
+```sh
+tectonic --untrusted --bundle https://data1b.fullyjustified.net/tlextras-2022.0r0.tar --keep-logs --outdir build/version16 manuscripts/quartic_v16.tex
+```
+
+The [build record](../research/version16/BUILD.json) describes the supplied PDF. Fonts and engine builds can affect binary identity; a local rebuild should be checked for errors and unresolved references. The original supplied PDF stays in `manuscripts/quartic_v16.pdf`.
+
+## Current 222-variable quartic family
+
+Run the portable finite check from the repository root:
+
+    python -B research/version15/quartics/quartic-222/verify.py
+
+The [Version 15 package guide](../research/version15/quartics/quartic-222/README.md) documents parameter substitution and the separate scopes of finite verification and the arithmetic proof. The defining threshold remains ineffective. The [Version 16 manuscript](../research/version16/README.md) retains this construction. The [Version 15 manuscript PDF and TeX](../research/version15/README.md) remain unchanged as history; the retained manuscript build command below targets Version 14.
+
+## Retained 299- and 314-variable quartics
+
+Run the exact replay and inventory commands in the [Version 14 guide](manuscript-revisions/version14/GUIDE.md). Its finite checks, manuscript review and inherited arithmetic inputs have separate scopes.
+
+## Historical 394- and 411-variable quartics
+
+```sh
+python -B scripts/check_quartic394_portable.py
+python -B docs/manuscript-revisions/version13/validate-applications.py --repo . --self-test
+python -B scripts/check_audit_history.py --self-test
+```
+
+The Version 13 replay uses only Python's standard library. It checks the immutable packet before and after all 27 source and certificate stages, both complete coefficient tables, the compact coordinate maps and the three public download copies. It writes its receipt to `build/quartic-394/verification.json`. The inventory validator checks 39 applications and 351 obligations, with negative controls; it does not decide their mathematical truth. Read the [Version 13 guide](manuscript-revisions/version13/GUIDE.md) for the review boundaries.
+
+## Historical 523- and 540-variable quartics
+
+```sh
+python -B scripts/check_odd_product.py
+python -B docs/quartic-523-540/inventory.py validate
+```
+
+These offline checks require only Python and Node.js. They write into `build/odd-product/` and leave pinned source data unchanged. Both final verifiers run twice; every text coefficient is compared with its JSON value.
+
+## Historical 962-variable quartic
+
+The [Version 7 guide](quartic-962/README.md) describes the complete coefficient table, its fixed integer parameter, and the separate scopes of the finite checks and arithmetic proof. Run:
+
+```sh
+python -E -B scripts/check_quartic962.py --out build/quartic-962-reproduction
+```
+
+Use a new output directory outside the frozen package. Python 3.10 or later and Node.js 18 or later suffice; no third-party packages or network access are needed. Fourteen checks rebuild the source, replay 904 gates and 894 compiler operations, verify the rational coordinate identities, and compare seven artifacts byte for byte. They also check the 962-variable, degree-four, 55,409-monomial statistics. The program does not expand the huge fixed integer coefficients digit by digit.
+
+## Historical 1,272-variable baseline
+
+The [Version 5 package](../quartics/quartic-1272/README.md) contains its portable reproduction command and independent checks. Its complete table encodes the fixed integer coefficients using exact powers; reproduction does not expand those integers digit by digit. Use a fresh output directory as specified there.
+
+```sh
+python -E -B scripts/check_quartic1272.py --out build/quartic-1272-reproduction
+```
+
+This requires Python 3.10 or later and Node.js 18 or later, with no third-party packages or network access. It checks the package inventory, rebuilds the complete source and coefficient table, runs the independent checks, and requires byte identity with the released polynomial. The output directory must be new and outside `quartics/quartic-1272/`.
+
+## Retained 4,973-variable quartic
+
+To replay the frozen certificate and reproduce the complete 4,973-variable construction:
+
+```sh
+python3 -E -B quartics/quartic-4973/reproducibility/run.py --output build/quartic-reproduction --stage-seconds 180
+```
+
+Use a fresh output directory outside the package. The runner reads the package without changing it and writes generated files, logs and reports to that directory. It requires Linux process groups and resource controls; the reference environment is CPython 3.12.14 with zlib 1.3. It requires at least 8 GiB available memory to start, stops if available memory falls below 4 GiB, and runs bounded stages sequentially with a 2 GiB child address-space limit. Standard public GitHub Linux runners satisfy the memory requirement; standard private runners may not. Mandatory reproduction rebuilds the source and base pipeline, then replays the exact selected certificate. Optional timed heuristic rediscovery is not a deterministic reproduction claim. See the [reproduction instructions](../quartics/quartic-4973/reproducibility/README.md) for its stages and failure conditions. The fresh receipt is `SUMMARY.json` in the output directory.
+
+For the frozen artifact's algebraic replay alone, copy `quartics/quartic-4973/` to a writable directory and run:
+
+```sh
+python -E -B /path/to/writable-copy/verify_certificate.py /path/to/writable-copy
+```
+
+This portable checker writes `verification.json` in the supplied directory. Use the copy to keep the released package's exact file inventory unchanged. The packaged original receipt is [evidence/final-verification.json](../quartics/quartic-4973/evidence/final-verification.json). The checker verifies exact projection-preserving equivalence to the pinned source and the complete integer expansion, including the variable count, degree and coefficient bound. These checks do not prove the source system's arithmetic characterization of the integers. The [Version 4 evidence](quartic-4973/README.md) records that separate argument and its review scope.
+
+## Retained Version 14 manuscript
+
+Run `python scripts/build_paper.py` to build the retained Version 14 TeX with the pinned Tectonic engine and bundle. The build writes `quartic_v14.pdf`, its logs and the build receipt under `build/paper/`; it does not replace the checked-in PDF. Review the exact rendered pages and total page count recorded in the Version 14 PDF QA receipt and reviewed workflow. Historical Version 13 receipts retain their original scope.
+
+## Manuscript inventories
+
+The [Version 7 inventory](quartic-962/README.md) binds the unchanged proof body to its source applications, exact reviewed fragments, and historical predecessors:
+
+```sh
+python -E -B docs/quartic-962/inventory.py validate --repo . --manuscript manuscripts/quartic_v7.tex
+python -E -B docs/quartic-962/test_inventory.py
+python -E -B scripts/check_manuscript_revision.py
+```
+
+The Version 7 inventory keeps its frozen logical filename `manuscripts/quartic_v7.tex`; the validator reads the unchanged source from `manuscripts/archive/quartic_v7.tex`.
+
+The following checks remain required for the historical baselines. Their older publication-status records describe those versions, not the replacement proof in Version 7. The adapter resolves the original logical filenames to `manuscripts/archive/` while retaining the frozen validators and all accepted hashes.
+
+```sh
+python -E -B scripts/check_historical_inventory.py 5 validate --repo . --manuscript quartic_1272.tex
+python -E -B scripts/check_historical_inventory.py 5 test
+```
+
+
+```sh
+python docs/theorem-application-audit/validate.py
+python -E -B scripts/check_historical_inventory.py 4 validate --repo . --docs docs/quartic-4973 --acceptance-sha256 TRUSTED_SHA256
+```
+
+For the Pheidas attribution update, the current digest is `06dd04ceb4bdcb40875e70293bf68abba61fd17052a5e90a70ade61af649d88b`, recorded in [the update evidence](https://github.com/elliotglazer/diophantine-z-q/blob/005b17abfbefd8bee7b34f3bbe8f5aabf872eb1f/docs/quartic-4973-validation/pheidas-20261106/UPDATE.json).
+
+Replace `TRUSTED_SHA256` with the independently recorded acceptance digest in the release evidence.
+
+The first command validates the [historical theorem-application inventory](https://github.com/elliotglazer/diophantine-z-q/blob/005b17abfbefd8bee7b34f3bbe8f5aabf872eb1f/docs/theorem-application-audit/README.md) against its archived baseline. The second checks the [Version 4 inventory and manuscript bindings](quartic-4973/README.md). Read those instructions for the exact scopes. These structural checks do not prove mathematical statements. Primary-source verification for the historical inventory additionally requires its separately restored research workspace.
+
+## Original large construction
+
+This check uses Python 3.11 or later and Node.js 22 or later. CI pins Python 3.12.14 and Node.js 24.22.1.
 
 ```sh
 python scripts/check_construction.py --report build/construction-checks.json
 ```
 
-This regenerates the rational expression from its pinned natural-polynomial input, checks hashes and wiring, recalculates syntactic bounds, and runs the supplied finite arithmetic checks. See [the construction README](../construction/README.md) for exactly what each check establishes. It does not prove the main mathematical theorem.
-
-## 11/5 manuscript
-
-```sh
-python scripts/build_paper.py
-```
-
-The script downloads a SHA-256-verified Tectonic 0.17.0 binary for the host platform, then builds a copy of the 11/5 TeX source in an isolated temporary directory. It uses the fixed `tlextras-2022.0r0` bundle URL and checks the selected bundle's fingerprint. Tectonic fetches only the needed support files; it does not download the entire bundle archive. The first run requires network access. Later runs reuse the local resource cache.
-
-If Tectonic 0.17.0 is already installed:
-
-```sh
-python scripts/build_paper.py --tectonic /path/to/tectonic
-```
-
-Results are written to `build/paper/`, including the compiled PDF, compiler log, TeX log, and a JSON receipt. The script fails on a compilation error, unresolved references or citations, or an unexpected bundle fingerprint. Typesetting warnings remain in the log.
-
-The checked-in revision-2 PDF of the 11/5 manuscript, including the November 5 source-application audit repairs, was rebuilt from the corresponding TeX source. Its source and PDF hashes are recorded in [the current build receipt](theorem-application-audit/MANUSCRIPT_BUILD.json). Running this script creates a new build artifact without replacing the checked-in 11/5 PDF. Fixed engine, bundle, and timestamp inputs improve reproducibility, but this repository does not claim that PDF bytes are identical across operating systems.
+It regenerates the original rational expression from its pinned natural-polynomial input, checks hashes and wiring, recalculates syntactic bounds, and runs the supplied finite arithmetic checks. See the [original construction README](../construction/README.md) for each check's scope. This is separate from the quartic reproduction above.
 
 ## Lean helpers
 
@@ -47,18 +147,18 @@ For the quick source and quarantine checks without compiling:
 python scripts/check_lean.py
 ```
 
-Read [the Lean README](../lean/README.md) for the trust boundary and allowed axioms. The main theorem remains unproved; its frozen `sorry` is excluded from the default imports and from the accepted-helper audit.
+Read the [Lean README](../lean/README.md) for the trust boundary and allowed axioms. The main theorem remains unproved; its frozen `sorry` is excluded from the default imports and accepted-helper audit.
 
 ## Continuous integration
 
-[Research checks](../.github/workflows/research-checks.yml) runs three separate jobs for construction, 11/5 manuscript compilation, and accepted Lean helpers. It runs on pushes, pull requests, and manual dispatch. GitHub Actions dependencies are pinned to commit hashes, and the elan installer and Tectonic archives are pinned by SHA-256. TeX resources are cached between runs. Each Lean job fetches the pinned upstream dependency cache directly; it does not archive the toolchain and Mathlib tree again, which can exhaust the runner's disk during cache saving. Project Lean artifacts are rebuilt in a new directory.
+The [Version 15 workflow](../.github/workflows/version15-current.yml) checks the selected 222-variable package. The retained [manuscript workflow](../.github/workflows/manuscript-integration.yml) reproduces the Version 14 quartics, validates its manuscript inventories, and compiles that edition. Run it by manual dispatch; the research workflow also runs on pushes. The [research workflow](../.github/workflows/research-checks.yml) checks the original construction, the historical inventory, manuscript compilation and the accepted Lean helpers.
 
-The workflow uploads reports and logs as CI artifacts. A green run means the named checks passed on that commit. It does not certify the 11/5 manuscript's global arithmetic inputs or complete the main Lean proof.
+GitHub Actions dependencies are pinned to commit hashes; the elan installer and Tectonic archives are pinned by SHA-256. Workflows upload their reports and logs. A green run means the named checks passed on that commit. It does not certify the global arithmetic inputs or complete the main Lean proof.
 
-## Theorem application inventory
+The earlier Version 4 release digest remains in its historical evidence; use the Pheidas-update digest above for the retained current Version 4 source.
 
-```sh
-python docs/theorem-application-audit/validate.py
-```
+The historical Version 10 revision and its inherited application bindings are checked with `python -B docs/manuscript-revisions/version10/check.py`. The bounded valuation regression is `python -B docs/manuscript-revisions/version10/check_valuation.py`. Neither is a decision procedure for the mathematical proof.
 
-This structural check runs in CI. Primary-source verification additionally requires the separately restored research workspace; see the [audit instructions](theorem-application-audit/README.md). The current receipt binds the 148-page PDF to the audited TeX. Earlier build receipts are historical.
+The current application contracts, exact revision and independent acceptance records are checked with `python -B scripts/check_audit_history.py --self-test`. Version 10 checks remain historical. Neither script proves the mathematics.
+
+For the retained Version 12 baseline, run `python -B scripts/check_quartic498.py` for the complete portable reconstruction and coefficient checks. This requires Python and Node. The new application inventory has its separate validator under `docs/manuscript-revisions/version12/inventory/`.

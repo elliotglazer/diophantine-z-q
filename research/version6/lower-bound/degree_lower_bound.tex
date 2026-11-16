@@ -1,0 +1,174 @@
+\section{Why a single defining polynomial must have degree at least four}
+\label{sec:degree-lower-bound}
+
+The argument in this section is due to Jos\'e Brox
+\cite[section on unconditional lower bounds]{Brox2026}.
+We give its specialization to $\Q$, including the treatment of singular
+cubics, cones and geometric reducibility.  It is independent of the
+arithmetic inputs to our constructions.
+
+For $F\in\Q[T,Y_1,\ldots,Y_r]$, write
+\[
+ S_F=\{t\in\Q:\exists\,y\in\Q^r,\ F(t,y)=0\}.
+\]
+All degrees below are total degrees, including the input variable $T$.
+
+\begin{theorem}[Degree obstruction, following Brox]
+\label{thm:degree-four-necessary}
+If $S_F=\Z$, then $\deg F\geq4$.
+\end{theorem}
+
+We use two published results.  The integral form of Hilbert's
+irreducibility theorem says that an irreducible polynomial
+$g(T,Y)\in\Q(T)[Y]$ admits infinitely many specializations $T=t\in\Z$
+which preserve its degree in $Y$ and are irreducible over $\Q$.
+Deleting finitely many values also avoids its coefficient poles and
+any prescribed nonzero polynomial in $t$.
+This integral formulation is recalled in the introduction of
+M\"uller~\cite{Muller2002HIT}; merely obtaining specializations in
+$\Q$ would not suffice here.
+The second result is Koll\'ar's theorem
+\cite[Theorem~2]{Kollar2002Cubic}: a geometrically integral cubic
+hypersurface of dimension at least two over a perfect field is
+unirational over that field if it has a rational point and is not a cone.
+This is a special case of his statement for irreducible cubics.
+We apply it only over $\Q$, and remove every vertex direction before
+applying it.  In particular, we do not assume that a cone over a plane
+cubic is unirational.
+
+\begin{lemma}\label{lem:nonconstant-rational-not-integral}
+A nonconstant rational function $R\in\Q(U_1,\ldots,U_m)$ cannot take
+only integer values at the rational points of a nonempty Zariski-open
+subset of $\mathbb A^m_{\Q}$ on which it is defined.
+\end{lemma}
+\begin{proof}
+Shrink the open subset to a nonempty principal open subset and choose
+a connected real open ball in it, avoiding the denominator of $R$.
+Rational points are dense in this ball.  If their images belong to the
+closed set $\Z$, continuity puts the image of the entire ball in $\Z$.
+Connectedness then makes $R$ constant on the ball.  Its numerator minus
+that constant times its denominator vanishes on a real open set, hence
+is the zero polynomial.  This contradicts nonconstancy.
+\end{proof}
+
+Consequently, if an integral variety $X/\Q$ is unirational and
+$f\in\Q(X)$ is nonconstant, the rational values of $f$ cannot all be
+integers.  Indeed, compose $f$ with a dominant rational map from
+projective space to $X$, and restrict to a nonempty affine open subset
+of its domain.  Dominance keeps this composite nonconstant, so
+Lemma~\ref{lem:nonconstant-rational-not-integral} applies.
+
+\begin{lemma}\label{lem:quadratic-projection-finite}
+If $\deg F\leq2$ and $S_F\subseteq\Z$, then $|S_F|\leq2$.
+\end{lemma}
+\begin{proof}
+Otherwise choose rational zeros $a,b,c$ with distinct input
+coordinates.  If they lie on an affine line, the restriction of $F$
+to that line has three zeros and degree at most two, so vanishes
+identically.  The input is nonconstant on the line and takes every
+rational value, a contradiction.
+
+If the points are not collinear, let $L$ be their rational affine
+plane.  If $F|_L=0$, a line in $L$ with nonconstant input gives the same
+contradiction.  If $F|_L$ factors over $\Q$ into affine linear
+polynomials, its zero set consists of at most two rational lines.
+One contains two of the three selected points and again has
+nonconstant input.  A nonzero polynomial of degree at most one
+cannot vanish at three noncollinear points.
+
+It remains to consider an irreducible quadratic on $L$.  Its
+projective conic has a smooth rational point: a reduced irreducible
+quadratic in characteristic zero has at most one geometric singular
+point, while the three chosen affine points are distinct.  A conic
+with a smooth rational point is rational.  Explicitly, intersecting
+it with the pencil of lines through that point gives a rational
+parametrization by taking the second intersection point.  The input
+function is nonconstant because it takes three different values.
+Composing it with this parametrization contradicts
+Lemma~\ref{lem:nonconstant-rational-not-integral}.
+\end{proof}
+
+\begin{proof}[Proof of Theorem~\ref{thm:degree-four-necessary}]
+Suppose $S_F=\Z$ and $\deg F\leq3$.  The polynomial is neither zero
+nor a nonzero constant.  Lemma~\ref{lem:quadratic-projection-finite}
+excludes degree at most two.  It also excludes a reducible cubic:
+every nonconstant irreducible factor then has degree at most two,
+and the finite union of their projections cannot equal $\Z$.
+Thus $F$ is irreducible of degree three.
+
+Homogenize $F$ to $H$ on a rational vector space $E$, using $X_0$ as
+the homogenizing coordinate and $X_1$ for the input coordinate.
+Thus on $X_0\ne0$ the input is $X_1/X_0$.
+The homogeneous polynomial $H$ is irreducible over $\Q$.
+If it is geometrically reducible, its geometric irreducible factors
+form a single Galois orbit with equal degrees.  In characteristic
+zero they occur without repetition.  Since the total degree is
+three, there are exactly three conjugate linear factors.
+Every rational zero lies on each of their hyperplanes.
+Take rational zeros normalized by $X_0=1$ with inputs zero and one.
+Their whole affine joining line lies on all three hyperplanes and
+its input takes every value in $\Q$, a contradiction.
+We may therefore assume $H$ is geometrically integral.
+
+Define the rational vertex subspace
+\[
+ W=\{v\in E:D_vH=0\text{ identically}\},\qquad
+ D_vH(x)=\left.\frac{d}{ds}H(x+sv)\right|_{s=0}.
+\]
+These are linear conditions on $v$.  In characteristic zero,
+$D_vH=0$ is equivalent to $H(x+sv)=H(x)$ for all $x,s$.
+Thus $H$ descends to a cubic $\overline H$ on $E/W$.
+After a basis of $W$ is extended to one of $E$, this simply deletes
+the coordinates on which $H$ does not depend.
+The quotient has no remaining vertex direction.  This assertion
+holds over the algebraic closure as well, since the kernel of a
+matrix over $\Q$ commutes with extension of scalars.  Hence its
+projective hypersurface is not a cone.
+
+For $v\in W$ and a rational zero $x$ with $x_0=1$, translation by
+$sv$ gives rational zeros whose inputs, whenever defined, are
+\[
+ \frac{x_1+s v_1}{1+s v_0}.
+\]
+Unless $v_1=x_1v_0$, this is a nonconstant fractional linear function
+of $s$, with cofinite image in $\Q$.  Its image cannot be contained
+in $\Z$.  Applying the resulting equality first at input zero and
+then at input one gives $v_0=v_1=0$ for every $v\in W$.
+Therefore $X_0$ and $X_1$ descend to independent linear forms on
+$E/W$.
+
+Choose quotient coordinates beginning with these forms.
+The affine chart $X_0=1$ of $\overline H=0$ has exactly the same
+input projection as $F=0$.  To see both inclusions, project rational
+points from $E$ to $E/W$, and in the reverse direction use a rational
+linear section of that projection.  This section preserves $X_0$
+and $X_1$, and $H$ is constant along each fiber.
+
+If the quotient projective hypersurface has dimension at least two,
+Koll\'ar's theorem applies.  It is geometrically integral, has a
+rational point in $X_0=1$, is not a cone, and the ground field is
+perfect.  It is therefore unirational.  Its input function is
+nonconstant, since its rational values include all integers.
+The consequence of Lemma~\ref{lem:nonconstant-rational-not-integral}
+then contradicts that its input projection is contained in $\Z$.
+
+If the quotient has dimension one, its affine chart is defined by
+an irreducible polynomial $G(T,Y)\in\Q[T,Y]$.  If its degree in $Y$
+is zero, its input projection is finite.  If that degree is one,
+solving the linear equation for $Y$ gives a rational point above
+every rational $T$ outside a finite set, also impossible.
+If its degree in $Y$ is at least two, Gauss's lemma makes it
+irreducible in $\Q(T)[Y]$.  Integral Hilbert irreducibility supplies
+an integer $t$ for which $G(t,Y)$ remains irreducible of that same
+degree.  It has no rational root, contradicting $S_G=\Z$.
+Finally, a zero-dimensional projective quotient has only finitely
+many rational points and cannot have input projection $\Z$.
+These exhaust the possibilities and prove the theorem.
+\end{proof}
+
+\begin{remark}
+This lower bound concerns a single polynomial equation and counts
+degree in every variable.  It allows systems of quadratic equations;
+over $\Q$, their sum of squares is quartic.  It puts no lower bound
+here on the number of variables in a degree-four definition.
+\end{remark}

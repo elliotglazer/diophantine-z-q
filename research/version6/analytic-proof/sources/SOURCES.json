@@ -1,0 +1,26 @@
+[
+  {
+    "file": "kane-v5.pdf",
+    "url": "https://arxiv.org/pdf/1009.1368v5",
+    "version_status": "Author arXiv v5 2012-11-05 of published IJNT 9 (2013), 1073-1111; final typeset bytes not compared",
+    "sha256": "e12a76769ca7dc1d91bdd37a335a9cb21a85d678b48dc1cf938565147df8bc51",
+    "bytes": 384308,
+    "pages": 40
+  },
+  {
+    "file": "kane-author.pdf",
+    "url": "https://cseweb.ucsd.edu/~dakane/chebGold.pdf",
+    "version_status": "Author-hosted version of published IJNT 9 (2013), 1073-1111; final typeset bytes not compared",
+    "sha256": "d6295f1860c3d0148ada2b1dc96c570f5ed72b119b184bf434ad2e49cf3d691b",
+    "bytes": 397990,
+    "pages": 34
+  },
+  {
+    "file": "kollar-author.pdf",
+    "url": "https://arxiv.org/pdf/math/0005146",
+    "version_status": "Author arXiv v1 of published JIMJ 1 (2002), 467-476; final typeset bytes not compared",
+    "sha256": "e01b6f6f4f753c7feef65de4b3538d73f771db5390d6f6ef38822ff2325c82a1",
+    "bytes": 136601,
+    "pages": 11
+  }
+]

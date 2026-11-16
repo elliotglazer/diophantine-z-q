@@ -1,0 +1,45 @@
+{
+  "schema": "original15671-conductor-level-sources-v1",
+  "date": "2026-11-05",
+  "status": "verified application, conditional on companion identification of r3 and r5 with the same primitive newform",
+  "sources": [
+    {
+      "key": "casselman",
+      "author": "William Casselman",
+      "title": "On some results of Atkin and Lehner",
+      "publication": "Mathematische Annalen 201 (1973), 301-314",
+      "url": "https://lesesvre.perso.math.cnrs.fr/newforms-references/casselman.pdf",
+      "author_record": "https://personal.math.ubc.ca/~cass/research/publications.html",
+      "version": "original published scan",
+      "local": "work/astra-t3-opus-reconciliation-001/primary/casselman-1973.pdf",
+      "sha256": "7f91ebae1a8f5e695800f4afb9fc06d0e2ea0b3a476751a31a7c8c3f38ad537d",
+      "locators": ["Theorem 1 p302", "concluding remark pp306-307", "arbitrary character setup p309", "Theorem 3 p312", "Theorem 4 and ensuing newform paragraph p313"],
+      "use": "Primitive classical level equals product of local automorphic conductor ideals, including arbitrary nebentypus; those local ideals are measured by epsilon-factor exponents."
+    },
+    {
+      "key": "carayol",
+      "author": "Henri Carayol",
+      "title": "Sur les representations l-adiques associees aux formes modulaires de Hilbert",
+      "publication": "Annales scientifiques de l'Ecole Normale Superieure, series 4, 19 (1986), 409-468",
+      "doi": "10.24033/asens.1512",
+      "url": "https://www.numdam.org/item/10.24033/asens.1512.pdf",
+      "version": "original published scan",
+      "local": "work/astra-t3-opus-reconciliation-001/primary/carayol-1986.pdf",
+      "sha256": "d4a5fb6b1cd76f944f8948e06df1c7ad5656ae5ee14b9189178ee1e8f2b0dab8",
+      "locators": ["section 0.3 p409", "sections 0.4-0.6 pp409-410", "Theorem A, section 0.7, pp410-411"],
+      "use": "Full local compatibility at every p different from coefficient characteristic; Hecke correspondence preserves conductor through epsilon factors, up to conductor-preserving duality and unramified twists."
+    }
+  ],
+  "checks": [
+    {"id":"CL01","claim":"Arbitrary nebentypus, including imprimitive character modulo primitive form level","status":"pass"},
+    {"id":"CL02","claim":"Prime-square and higher-power levels included","status":"pass"},
+    {"id":"CL03","claim":"Dyadic extraordinary local types included in Theorem A","status":"pass"},
+    {"id":"CL04","claim":"F=Q satisfies Carayol's parity-of-base-degree condition","status":"pass"},
+    {"id":"CL05","claim":"r5 used away from5, r3 used at5; no p=ell application","status":"pass"},
+    {"id":"CL06","claim":"Tate versus cohomological normalization does not change conductor","status":"pass"},
+    {"id":"CL07","claim":"No unpublished irreducibility observation is imported","status":"pass"}
+  ],
+  "conclusion": "For p!=5, a_p(r5)=v_p(N); at p=5, a_5(r3)=v_5(N).",
+  "new_bibliography_keys_required": [],
+  "unpublished_dependencies": []
+}
