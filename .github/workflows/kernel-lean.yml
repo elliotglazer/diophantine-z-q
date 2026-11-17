@@ -93,6 +93,15 @@ jobs:
                   return False
               if path.startswith(('.github/', 'tests/', 'build/')):
                   return True
+              # Versioned polynomial data/verifiers are consumed by Research checks, not
+              # by Lake or the kernel audit. The locked/Lean/config rules above win first.
+              if re.fullmatch(r'research/version[1-9][0-9]*/.+', path):
+                  if (PurePosixPath(path).suffix.lower() in {'.json', '.py', '.txt', '.csv', '.tsv'}
+                          or name in {'LICENSE', 'NOTICE'}):
+                      return False
+              # These two release records feed manuscript/Research checks only.
+              if path in {'docs/current-manuscript.json', 'docs/audit-history/builder-binding.json'}:
+                  return False
               # Only ordinary documentation formats qualify for the remaining skip path.
               # Data, archives, executables and any unrecognized extension run the build.
               return PurePosixPath(path).suffix.lower() not in {'.md', '.tex', '.bib', '.pdf'}
@@ -138,7 +147,7 @@ jobs:
               affected = sorted(p for p in paths if affects_kernel(p, locked))
               if affected:
                   return True, 'Kernel inputs or unclassified files changed: ' + ', '.join(affected[:10]), sorted(paths)
-              return False, 'Only documentation or independent Protocol B files changed; no kernel build or audit input changed.', sorted(paths)
+              return False, 'Only documentation, versioned research data/verifiers, release records or independent Protocol B files changed; no kernel build or audit input changed.', sorted(paths)
 
 
           def main():
@@ -160,6 +169,17 @@ jobs:
           # END KERNEL SCOPE
           KERNEL_SCOPE_PY
           python3 "$RUNNER_TEMP/kernel-pr-scope.py"
+      - name: Identify exact main ref for project cache
+        id: cache_ref
+        if: steps.scope.outcome != 'success' || steps.scope.outputs.full_build != 'false'
+        shell: bash
+        run: |
+          # Actions string equality ignores case; POSIX test does not.
+          if test "$GITHUB_REF" = 'refs/heads/main'; then
+            echo 'is_main=true'
+          else
+            echo 'is_main=false'
+          fi >> "$GITHUB_OUTPUT"
       - name: Check out candidate
         if: steps.scope.outcome != 'success' || steps.scope.outputs.full_build != 'false'
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
@@ -186,8 +206,10 @@ jobs:
         if: steps.scope.outcome != 'success' || steps.scope.outputs.full_build != 'false'
         run: |
           python -B scripts/test_kernel_diagnostics.py
+          python -B scripts/test_kernel_phases.py
           python -B scripts/test_kernel_pr_scope.py
           python -B scripts/test_kernel_contract.py
+          python -B scripts/test_kernel_cache.py
           python -B scripts/check_kernel_contract.py --output build/kernel-ci/contract.json
       - name: Test rejection of invalid proofs
         if: steps.scope.outcome != 'success' || steps.scope.outputs.full_build != 'false'
@@ -196,7 +218,9 @@ jobs:
         if: steps.scope.outcome != 'success' || steps.scope.outputs.full_build != 'false'
         run: lake exe cache get
       - name: Restore project build outputs
-        if: steps.scope.outcome != 'success' || steps.scope.outputs.full_build != 'false'
+        # Never restore on a branch, including a reused reserved dispatch ref.
+        # Its exact and fallback keys may have been populated by earlier code.
+        if: steps.cache_ref.outputs.is_main == 'true' && (steps.scope.outcome != 'success' || steps.scope.outputs.full_build != 'false')
         id: restore
         uses: actions/cache/restore@0057852bfaa89a56745cba8c7296529d2fc39830
         with:
@@ -215,15 +239,31 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
+          swap_file=''
+          allocation='existing'
+          record_swap_on_exit() {
+            original_status=$?
+            trap - EXIT
+            set +e
+            args=(--record-swap build/kernel-ci/swap-status.json --disk-path "$RUNNER_TEMP" --allocation "$allocation")
+            if [[ -n "$swap_file" ]]; then args+=(--added-path "$swap_file"); fi
+            python -B scripts/kernel_diagnostics.py "${args[@]}"
+            record_status=$?
+            if (( original_status != 0 )); then exit "$original_status"; fi
+            exit "$record_status"
+          }
+          trap record_swap_on_exit EXIT
           free -m
           df -h "$RUNNER_TEMP"
           swapon --show
           available=$(df -B1 --output=avail "$RUNNER_TEMP" | tail -n 1)
           if (( available < 12 * 1024 * 1024 * 1024 )); then
+            allocation='skipped-low-disk'
             echo '::warning::Less than 12 GiB free; continuing the full kernel audit without additional swap.'
             echo 'Additional audit swap skipped: insufficient disk space. All audit checks still run.' >> "$GITHUB_STEP_SUMMARY"
           else
             swap_file=$(mktemp "$RUNNER_TEMP/kernel-audit-swap.XXXXXX")
+            allocation='added'
             sudo fallocate -l 8G "$swap_file"
             sudo chmod 600 "$swap_file"
             sudo mkswap "$swap_file"
@@ -231,9 +271,34 @@ jobs:
           fi
           free -m
           swapon --show
-      - name: Build all modules and replay kernel proofs
+      - name: Preserve verified swap configuration
+        if: always() && (steps.scope.outcome != 'success' || steps.scope.outputs.full_build != 'false')
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: kernel-swap-${{ github.run_attempt }}
+          path: build/kernel-ci/swap-status.json
+          if-no-files-found: warn
+      - name: Build all kernel modules
         if: steps.scope.outcome != 'success' || steps.scope.outputs.full_build != 'false'
-        run: python -B scripts/check_kernel.py --base-report build/kernel-ci/base-audit.json
+        run: python -B scripts/check_kernel.py --phase build
+      - name: Preserve completed build and resource samples
+        if: always() && (steps.scope.outcome != 'success' || steps.scope.outputs.full_build != 'false')
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: kernel-build-${{ github.run_attempt }}
+          path: |
+            build/kernel-ci/build-complete.json
+            build/kernel-ci/swap-status.json
+            build/kernel-ci/*-memory.jsonl
+            build/kernel-ci/*-timing.json
+            build/kernel-ci/*-resource-usage.txt
+          if-no-files-found: warn
+      - name: Replay all kernel proofs and exact targets
+        if: steps.scope.outcome != 'success' || steps.scope.outputs.full_build != 'false'
+        env:
+          # Lower only the audit worker count; every replay and target check remains.
+          LEAN_NUM_THREADS: '1'
+        run: python -B scripts/check_kernel.py --phase audit --base-report build/kernel-ci/base-audit.json
       - name: Upload proof-status evidence
         if: always() && (steps.scope.outcome != 'success' || steps.scope.outputs.full_build != 'false')
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
@@ -242,7 +307,7 @@ jobs:
           path: build/kernel-ci/
           if-no-files-found: error
       - name: Save successful main build outputs
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main' && (steps.scope.outcome != 'success' || steps.scope.outputs.full_build != 'false')
+        if: github.event_name == 'push' && steps.cache_ref.outputs.is_main == 'true' && (steps.scope.outcome != 'success' || steps.scope.outputs.full_build != 'false')
         uses: actions/cache/save@0057852bfaa89a56745cba8c7296529d2fc39830
         with:
           path: .lake/build
