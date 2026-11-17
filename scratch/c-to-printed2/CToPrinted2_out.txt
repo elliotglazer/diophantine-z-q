@@ -1,0 +1,38 @@
+scratch/c-to-printed2/CToPrinted2.lean:257:10: warning: `if_neg` has been deprecated: Use `ite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵n̵e̵g̵i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+scratch/c-to-printed2/CToPrinted2.lean:257:66: warning: `if_pos` has been deprecated: Use `ite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  i̵f̵_̵p̵o̵s̵i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+scratch/c-to-printed2/CToPrinted2.lean:717:2: warning: `LinearEquiv.ofLinear` has been deprecated: Use `LinearEquiv.ofLinearMap` instead
+
+Hint: Replace the deprecated name:
+  LinearEquiv.ofLinearM̲a̲p̲
+scratch/c-to-printed2/CToPrinted2.lean:786:8: warning: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+scratch/c-to-printed2/CToPrinted2.lean:786:21: warning: `dif_pos` has been deprecated: Use `dite_eq_left` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵p̵o̵s̵d̲i̲t̲e̲_̲e̲q̲_̲l̲e̲f̲t̲
+scratch/c-to-printed2/CToPrinted2.lean:789:8: warning: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵n̵e̵g̵d̲i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+scratch/c-to-printed2/CToPrinted2.lean:789:21: warning: `dif_neg` has been deprecated: Use `dite_eq_right` instead
+
+Hint: Replace the deprecated name:
+  d̵i̵f̵_̵n̵e̵g̵d̲i̲t̲e̲_̲e̲q̲_̲r̲i̲g̲h̲t̲
+'CToPrinted2.htDual_proof' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CToPrinted2.eigenformHTNew_of_printed' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CToPrinted2.eigenformHTNew_of_realization' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CToPrinted2.eigenformHTNew_of_printedSS' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CToPrinted2.dualGR_isSemisimple' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CToPrinted2.katoRealization_iff_field' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CToPrinted2.katoRealizationCohSS_iff_field' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CToPrinted2.R17.carayolR17'_of_realization' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CToPrinted2.R17.carayolRealization_iff_field' depends on axioms: [propext, Classical.choice, Quot.sound]
+'CToPrinted2.fields_of_printed' depends on axioms: [propext, Classical.choice, Quot.sound]

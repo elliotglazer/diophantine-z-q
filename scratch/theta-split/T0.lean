@@ -1,0 +1,11 @@
+import ZInQKernel.OneProof.H.TailA
+open HDec
+#check @HDec.HSyn.G0Split.ThetaPt.ThetaRatiosAlgebraic
+#check @HDec.HSyn.G0Split.ThetaPt.FibreQMPeriod
+#check @HDec.HSyn.G0Split.ThetaPt.thetaPointOfFibre_of_qm_ratios
+#check @HDec.PkgI1.jNum
+#check @HDec.HSyn.G0Split.ThetaPointOfFibre
+#print HDec.HSyn.G0Split.ThetaPointOfFibre
+#check @ZInQ.LeafPush2.thetaConst
+#check @HDec.ZInQ.J_ne_zero
+#check @Multiset.prod_X_sub_C_coeff

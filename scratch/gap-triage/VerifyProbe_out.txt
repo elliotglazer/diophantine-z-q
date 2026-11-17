@@ -1,0 +1,59 @@
+jacobiTheta₂_functional_equation : ∀ (z τ : ℂ),
+  jacobiTheta₂ z τ =
+    1 / (-Complex.I * τ) ^ (1 / 2) * Complex.exp (-↑Real.pi * Complex.I * z ^ 2 / τ) * jacobiTheta₂ (z / τ) (-1 / τ)
+@MeromorphicOn.circleAverage_log_norm : ∀ {c : ℂ} {R : ℝ} {f : ℂ → ℂ},
+  R ≠ 0 →
+    MeromorphicOn f (Metric.closedBall c |R|) →
+      Real.circleAverage (fun x => Real.log ‖f x‖) c R =
+        ∑ᶠ (u : ℂ), ↑((MeromorphicOn.divisor f (Metric.closedBall c |R|)) u) * Real.log (R * ‖c - u‖⁻¹) +
+            ↑((MeromorphicOn.divisor f (Metric.closedBall c |R|)) c) * Real.log R +
+          Real.log ‖meromorphicTrailingCoeffAt f c‖
+@MeasureTheory.IsFundamentalDomain.measure_eq : ∀ {G : Type u_1} {α : Type u_2} [inst : Group G]
+  [inst_1 : MulAction G α] [inst_2 : MeasurableSpace α] {s t : Set α} {μ : MeasureTheory.Measure α}
+  [MeasurableConstSMul G α] [MeasureTheory.SMulInvariantMeasure G α μ] [Countable G],
+  MeasureTheory.IsFundamentalDomain G s μ → MeasureTheory.IsFundamentalDomain G t μ → μ s = μ t
+inferInstance : MeasureTheory.SMulInvariantMeasure (GL (Fin 2) ℝ) UpperHalfPlane MeasureTheory.volume
+@exists_preimage_eq : ∀ {I : Type u_1} [inst : Category.{u_1, u_1} I] (D : I ⥤ Scheme) (c : Limits.Cone D)
+  (hc : Limits.IsLimit c) [IsCofiltered I] [∀ {i j : I} (f : i ⟶ j), IsAffineHom (D.map f)] (U : c.pt.Opens),
+  IsCompact ↑U → ∃ i V, IsCompact ↑V ∧ c.π.app i ⁻¹ᵁ V = U
+@exists_isIso_baseChange_of_isIso_limitBaseChange : ∀ {I : Type u_2} [inst : Category.{u_1, u_2} I] [IsCofiltered I]
+  [EssentiallySmall.{u_3, u_1, u_2} I] (S : I ⥤ Scheme) [∀ {i j : I} (g : i ⟶ j), IsAffineHom (S.map g)]
+  (c : Limits.Cone S) (hc : Limits.IsLimit c) (i₀ : I) (X₀ Y₀ : Over (S.obj i₀)) (f₀ : X₀ ⟶ Y₀)
+  [CompactSpace ↥(S.obj i₀)] [QuasiSeparatedSpace ↥(S.obj i₀)] [CompactSpace ↥X₀.left] [QuasiSeparatedSpace ↥X₀.left]
+  [CompactSpace ↥Y₀.left] [QuasiSeparatedSpace ↥Y₀.left] [LocallyOfFinitePresentation (Over.Hom.left f₀)]
+  [IsIso (Over.Hom.left ((Over.pullback (c.π.app i₀)).map f₀))],
+  ∃ i g, IsIso (Over.Hom.left ((Over.pullback (S.map g)).map f₀))
+@baseChangeConeIsLimit : {I : Type u_2} →
+  [inst : Category.{u_1, u_2} I] →
+    [IsCofiltered I] →
+      (D : I ⥤ Scheme) →
+        {c : Limits.Cone D} →
+          Limits.IsLimit c → (i : I) → (X : Over (D.obj i)) → Limits.IsLimit (baseChangeCone D c i X)
+HDec.HSyn.G0Split.FibreQM.qmComplexUnif_of_textbook : HDec.HSyn.G0Split.FibreQM.UniformizationExistsT35 →
+  HDec.HSyn.G0Split.FibreQM.T11aRiemannEnd →
+    HDec.HSyn.G0Split.FibreQM.QMLatticeAlgebra → HDec.HSyn.G0Split.FibreQM.QMComplexUnif
+HDec.HSyn.G0Split.FibreQM.qmSkolemNoetherC_proof : HDec.HSyn.G0Split.FibreQM.QMSkolemNoetherC
+HDec.QMSplit.CNO.qmClassNumberOne_proof : HDec.HSyn.G0Split.FibreQM.QMClassNumberOne
+HDec.QMSplit.Aut.rows_of_C : HDec.QMSplit.Aut.QMCentralizerCMC →
+  ZInQ.LeafPush2.T11b_Rigidity →
+    HDec.HeckeRest.QMAutCard ∧ HDec.HeckeRest.ALFixedPoints ∧ HDec.FS5NoCM.CMOptimalEmbedding
+HDec.QMSplit.Yu.qmDichotomyYu_of_yu : HDec.QMSplit.Yu.YuThm11 → PkgI3.QMDichotomyYu
+AvSplit.Final.h69 : BPAnalytic.Uniformization.UniformizationLeafAll →
+  ZInQ.HomLattice.GAGAMorphism → ZInQ.HomUnify.HomLatticeCorr
+AvSplit.Final.h38 : BPAnalytic.Uniformization.UniformizationLeafAll →
+  AvSplit.MumfordTorsionAlgClosed → ZInQ.LeafPush2.UniformizationExists
+T5Torsion.torsionStructureC_of_uniformization : ZInQ.LeafPush2.UniformizationExists → T5Torsion.TorsionStructureC
+@ZInQ.Contrib.AbVarBC.Tangent.eq_one_of_comp_intCast : ∀ {K : Type} [inst : Field K] (A : PkgI3.AbVar K)
+  {U : A.X.left.Opens} [CharZero K],
+  (ZInQ.Contrib.AbVarBC.Tangent.orig A) (IsLocalRing.closedPoint K) ∈ U →
+    IsAffineOpen U →
+      ∀ {v : ZInQ.Contrib.AbVarBC.Tangent.ptR (TrivSqZeroExt K K) ⟶ A.X},
+        ZInQ.Contrib.AbVarBC.Tangent.AtOrigin A v → ∀ (n : ℤ), n ≠ 0 → v ≫ PkgI3.AbVar.Hom.hom ↑n = 1 → v = 1
+@ReductGlue.exists_rational_of_fixed_etale : ∀ {K : Type} [inst : Field K] (X : Over (Spec ↧K)) [Etale X.hom]
+  (q : PkgI3.AbVar.ptObj (AlgebraicClosure K) ⟶ X),
+  (∀ (σ : Gal(AlgebraicClosure K/K)), PkgI3.AbVar.galHom σ ≫ q = q) →
+    ∃ y, ZInQ.Contrib.AbVarBC.extHom (Algebra.ofId K (AlgebraicClosure K)) ≫ y = q
+ZInQ.Contrib.G9.g9Glue_of_fieldEmb : ZInQ.Contrib.G9.G9Bridge.LocalModel →
+  ZInQ.Contrib.G9.G9Bridge.R10Weights → ZInQ.Contrib.G9.G9Bridge.FieldEmbBdR → ZInQ.Contrib.G9.G0Galois.G9Glue
+HDec.G0Galois.g12Det_of : HDec.G0Galois.R14Det →
+  HDec.G0Galois.DetTate → HDec.G0Galois.ResQFiniteIndex → HDec.G0Galois.FrobeniusDenseQ → HDec.G0Galois.G12Det

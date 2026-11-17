@@ -1,0 +1,19 @@
+DISCHARGES [OpenResearchLeaves16.gonzalezRotgerCountX6Ab] by GRCountX6.gonzalezRotgerCountX6Ab_of_eichler
+  still assumes: [GRCountX6.EichlerOptEmbCount6, GRCountX6.CMPointsOptEmb6, HDec.QMSplit.Moduli.GonzalezRotgerX6Ab]
+  axioms: [propext, Classical.choice, Quot.sound]
+DISCHARGES [OpenResearchLeaves16.gonzalezRotgerCountX6Ab] by GRCountX6.gonzalezRotgerCountX6Ab_of_printed
+  still assumes: [GRCountX6.GonzalezRotgerProp56X6, HDec.QMSplit.Moduli.GonzalezRotgerX6Ab]
+  axioms: [propext, Classical.choice, Quot.sound]
+DISCHARGES [OpenResearchLeaves16.gonzalezRotgerCountX6Ab] by GRCountX6.gonzalezRotgerCountX6Ab_of_printed'
+  still assumes: [GRCountX6.GonzalezRotgerProp56X6, ShimuraGlue.DeligneComponentsX6PrintedAb]
+  axioms: [propext, Classical.choice, Quot.sound]
+DISCHARGES [OpenResearchLeaves16.gonzalezRotgerCountX6Ab] by GRCountX6.gonzalezRotgerCountX6Ab_of_r5fpCount
+  still assumes: [LeafQM.AV.R5fpCount, HDec.QMSplit.Moduli.GonzalezRotgerX6Ab]
+  axioms: [propext, Classical.choice, Quot.sound]
+#discharges: 67 open hypotheses, 511 theorems checked, 4 discharge one
+'GRCountX6.gonzalezRotgerCountX6Ab_of_printed' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRCountX6.gonzalezRotgerCountX6Ab_of_eichler' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRCountX6.r5fpCount_of_eichler' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRCountX6.eichlerFactor6_eq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRCountX6.conjRel_equivalence' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GRCountX6.one_add_i_mem_units' depends on axioms: [propext, Classical.choice, Quot.sound]

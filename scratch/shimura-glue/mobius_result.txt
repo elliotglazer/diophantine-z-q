@@ -1,0 +1,5 @@
+'HDec.QMSplit.Moduli.mobiusCompose' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+real	0m8.070s
+user	0m8.906s
+sys	0m2.237s

@@ -1,0 +1,5 @@
+scratch/contrib-kit/DischargesTest.lean:12:8: warning: declaration uses `sorry`
+DISCHARGES [OpenGlue7.quotientP1Coordinate] by t1
+  still assumes: [HDec.MCRGlue.QuotientP1Coordinate]
+  axioms: [propext, Classical.choice, Quot.sound]
+#discharges: 72 open hypotheses, 3 theorems checked, 1 discharge one

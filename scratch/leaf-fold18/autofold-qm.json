@@ -1,0 +1,5 @@
+{"name": "leaf-fold18",
+ "imports": ["ZInQKernel.Contrib.OneProof.QMLattice"],
+ "discharges": [
+   {"field": "qmCentralizerCMC",
+    "proof": "_root_.HDec.QMLattice.qmCentralizerCMC_of {t}.uniformizationLeafAll {t}.gagaMorphism {t}.mumfordTorsionAlgClosed"}]}

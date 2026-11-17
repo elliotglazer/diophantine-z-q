@@ -1,0 +1,5 @@
+k=2: max |e2 - 3/8 e1^2|/|e2| = 9.2e-78
+k=6: 5 monomials, check relres 2.3e+00 
+k=7: 6 monomials, check relres 2.2e+00 
+k=8: 8 monomials, check relres 6.6e+00 
+k=9: 10 monomials, check relres 3.4e+00 

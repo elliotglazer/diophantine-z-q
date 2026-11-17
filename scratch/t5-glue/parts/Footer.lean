@@ -1,0 +1,39 @@
+
+/-! ## Axiom audit -/
+
+#print axioms T5Glue.IsScale.weber
+#print axioms T5Glue.IsConjModel.adjust
+#print axioms T5Glue.exists_conjModel_of_jL
+#print axioms T5Glue.moduli_transport
+#print axioms T5Glue.x0RatStructure_of
+#print axioms T5Glue.ringClass_of_artin
+#print axioms T5Glue.cmModuli_of
+#print axioms T5Glue.ideleLatticeHeegner_of
+#print axioms T5Glue.latHat_inter_of_sandwich
+#print axioms T5Glue.latHatInter
+#print axioms T5Glue.strongApprox
+#print axioms T5Glue.shimuraReciprocityModFn_of_split
+#print axioms T5Glue.shimuraReciprocityModFn_of_leaves
+#print axioms T5Glue.autExtends
+#print axioms T5Glue.fixedAlgebraic
+#print axioms T5Glue.discNeZero
+#print axioms T5Glue.x0RatStructure_of_leaf
+#print axioms T5Glue.cmModuli_of_leaf
+#print axioms T5Glue.shimuraReciprocityModFn_of_t5Leaves
+#print axioms T5Glue.exists_tau_of_sigma
+#print axioms T5Glue.artinCond_of_abs
+#print axioms T5Glue.artinLift_of_abs
+#print axioms T5Glue.cmModuli_of_final
+#print axioms T5Glue.shimuraReciprocityModFn_of_final
+#print axioms T5Glue.continuous_absArt
+#print axioms T5Glue.absArtinSurjective_of_noReal
+#print axioms T5Glue.absArtinSurjectiveQNeg
+#print axioms T5Glue.cmModuli_of_t5
+#print axioms T5Glue.shimuraReciprocityModFn_of_t5
+#print axioms T5Glue.sInvLat_eq_colon
+#print axioms T5Glue.latHat_inter_heegnerN
+#print axioms T5Glue.ideleLatticeScale_of
+#print axioms T5Glue.shimuraReciprocityModFn_of_t5'
+#print axioms T5Glue.invertibleColon
+#print axioms T5Glue.cmModuli_of_t5'
+#print axioms T5Glue.shimuraReciprocityModFn_of_t5''

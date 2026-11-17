@@ -1,0 +1,8 @@
+{"name": "leaf-fold16",
+ "imports": ["ZInQKernel.Contrib.OneProof.BLRLocalizes", "ZInQKernel.Contrib.OneProof.GammaStarArea",
+             "ZInQKernel.Contrib.OneProof.ThetaModularityM46"],
+ "discharges": [
+   {"field": "blr_1_2_4", "proof": "_root_.GapBLR.blr_1_2_4"},
+   {"field": "shimizuCovolumeO1", "proof": "_root_.HDec.GammaStarArea.shimizuCovolumeO1_proof"},
+   {"field": "igusaPsi4", "proof": "_root_.GapTheta.igusaPsi4_proof"},
+   {"field": "igusaChi10", "proof": "_root_.GapTheta.igusaChi10_proof"}]}

@@ -1,0 +1,19 @@
+  thetaRatiosAlgebraic : G0Split.ThetaPt.ThetaRatiosAlgebraic
+  qmCentralizerCMC : QMSplit.Aut.QMCentralizerCMC
+  tateTwistInvariants : _root_.ZInQ.Contrib.HodgeSplit.TateTwistInvariants
+  axSenTate : _root_.ZInQ.Contrib.HodgeSplit.AxSenTate
+  t09SymmIsogenyExists : WeilPairing.T09_SymmIsogenyExists
+  milneIsogenyQuasiInverse : _root_.AvSplit.MilneIsogenyQuasiInverse
+  shimuraTaniyamaQbar : G0Split.FibreQM.PeriodMapH.QMSplitSTQM.ShimuraTaniyamaQbar
+  egaIV_8_10_5_xii : _root_.ZInQ.Contrib.SpreadOut.EGAIV_8_10_5_xii
+  shimuraGoodReductionNoGuard : CurveSplitGR.ShimuraGoodReductionNoGuard
+  /-- qm-split, H-87/H-88: the valence formula for a cocompact Fuchsian group (Shimura 1971 Prop. 2.16,
+  Thm 2.20; Rankin Thm 4.1.4). -/
+  valenceFormulaCocompactEq : LeafQCheck.HM.QMSplit.ValenceFormulaCocompactEq
+  /-- qm-split, H-87/H-88: `ι(𝒪¹)` is cocompact Fuchsian with covolume `2π/3` (Shimura 1971 Prop. 9.2;
+  Shimizu 1965). -/
+  shimizuCovolumeO1 : LeafQCheck.HM.QMSplit.ShimizuCovolumeO1
+  /-- shimura-glue, printed form, on abelian schemes (route-a-fold): Deligne's theorem on the connected
+  components of a Shimura variety for `G = B^×` at level `K₃` on one fine witness `Y₃` (Deligne, Sém. Bourbaki
+  389 (1971) Thm 2.4, §3; PSPM 33 (1979) 2.1.3, 2.6.3; locators UNVERIFIED). -/
+  deligneComponentsY3PrintedAb : _root_.ShimuraGlue.DeligneComponentsY3PrintedAb

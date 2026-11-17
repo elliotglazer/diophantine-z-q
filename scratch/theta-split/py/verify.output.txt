@@ -1,0 +1,32 @@
+ 0 tau=(-2.2853 1.6817i)  |j|=4.05  max rel. residual k=2..10: 1.7e-77
+ 1 tau=(0.0709 2.6290i)  |j|=13.2  max rel. residual k=2..10: 2.7e-77
+ 2 tau=(-2.3842 0.9417i)  |j|=60.7  max rel. residual k=2..10: 4.2e-77
+ 3 tau=(0.6062 1.8249i)  |j|=41.7  max rel. residual k=2..10: 1.6e-77
+ 4 tau=(1.7002 1.8017i)  |j|=0.601  max rel. residual k=2..10: 7.5e-77
+ 5 tau=(1.3832 2.3855i)  |j|=0.564  max rel. residual k=2..10: 6.4e-78
+ 6 tau=(1.5062 1.9043i)  |j|=0.635  max rel. residual k=2..10: 6.9e-78
+ 7 tau=(-1.5604 1.9776i)  |j|=0.61  max rel. residual k=2..10: 9.2e-78
+ 8 tau=(-2.3356 2.5144i)  |j|=0.0902  max rel. residual k=2..10: 5.6e-78
+ 9 tau=(-0.3021 2.5091i)  |j|=17.6  max rel. residual k=2..10: 2.2e-77
+10 tau=(1.1111 2.1504i)  |j|=1.75  max rel. residual k=2..10: 1.1e-77
+11 tau=(-1.7387 1.0165i)  |j|=0.104  max rel. residual k=2..10: 1.7e-77
+12 tau=(2.8795 2.8127i)  |j|=0.0354  max rel. residual k=2..10: 5.2e-78
+13 tau=(1.8308 2.9991i)  |j|=0.025  max rel. residual k=2..10: 2.4e-78
+14 tau=(0.0815 0.5522i)  |j|=1.12  max rel. residual k=2..10: 1.2e-77
+15 tau=(-0.9576 1.8272i)  |j|=3.3  max rel. residual k=2..10: 1.6e-77
+16 tau=(-1.2473 1.5622i)  |j|=0.443  max rel. residual k=2..10: 4.9e-78
+17 tau=(2.2588 2.2155i)  |j|=0.366  max rel. residual k=2..10: 4.3e-78
+18 tau=(0.4645 0.4156i)  |j|=0.174  max rel. residual k=2..10: 7.7e-78
+19 tau=(1.2652 1.3134i)  |j|=0.0845  max rel. residual k=2..10: 3.3e-78
+20 tau=(-0.4667 1.4067i)  |j|=30.4  max rel. residual k=2..10: 1.7e-77
+21 tau=(0.5143 1.6709i)  |j|=86  max rel. residual k=2..10: 9.7e-78
+22 tau=(-2.3013 1.6919i)  |j|=4.1  max rel. residual k=2..10: 1.8e-77
+23 tau=(1.5009 1.9404i)  |j|=0.648  max rel. residual k=2..10: 5.7e-77
+24 tau=(-0.0538 2.7794i)  |j|=6.59  max rel. residual k=2..10: 1.3e-77
+25 tau=(-1.4481 1.4629i)  |j|=0.183  max rel. residual k=2..10: 1.0e-77
+26 tau=(2.5574 1.6199i)  |j|=15.9  max rel. residual k=2..10: 1.5e-77
+27 tau=(0.1079 0.4172i)  |j|=7.84  max rel. residual k=2..10: 2.5e-77
+28 tau=(-1.6529 0.6918i)  |j|=0.546  max rel. residual k=2..10: 6.2e-78
+29 tau=(-2.7067 2.2174i)  |j|=0.46  max rel. residual k=2..10: 4.7e-78
+worst over 30 points: 7.5e-77
+truncation check at tau=(0.4645 0.4156i): max|theta(N=22)-theta(N=30)| = 0.0e+00

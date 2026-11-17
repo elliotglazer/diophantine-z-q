@@ -1,0 +1,30 @@
+field	task	status	since	issue	holder_kind	public_holder	claim_url	hold
+rayClassCMAb	rayclass-cft	in progress	2026-11-14		project	project	https://github.com/Deicyde/diophantine-z-q/tree/wip/rayclass-cft	held
+shimuraFamilyAb	shimura-cft	proved; awaiting a rating, then a fold	2026-11-14		project	project	https://github.com/Deicyde/diophantine-z-q/tree/wip/shimura-cft	held
+mumfordTorsionAlgClosed	batch 2	briefed	2026-11-14	elliotglazer/diophantine-z-q#81	project	project		interest
+mulEtaleAbelianScheme	batch 2	claimed on the issue	2026-11-14	elliotglazer/diophantine-z-q#80	project	project	https://github.com/elliotglazer/diophantine-z-q/issues/80#issuecomment-6886111994	held
+cartierSmooth	batch 2	claimed on the issue	2026-11-15	elliotglazer/diophantine-z-q#81	project	project	https://github.com/elliotglazer/diophantine-z-q/issues/81#issuecomment-6887798791	held
+geomConnOfRationalPoint	batch 2	claimed on the issue	2026-11-15	elliotglazer/diophantine-z-q#81	project	project	https://github.com/elliotglazer/diophantine-z-q/issues/81#issuecomment-6887798791	held
+groupSchemeEquidim	batch 2	claimed on the issue	2026-11-15	elliotglazer/diophantine-z-q#81	project	project	https://github.com/elliotglazer/diophantine-z-q/issues/81#issuecomment-6887798791	held
+tateTwistInvariants	batch 2	claimed on the issue	2026-11-15	elliotglazer/diophantine-z-q#84	project	project	https://github.com/elliotglazer/diophantine-z-q/issues/84#issuecomment-6887798335	held
+axSenTate	batch 2	claimed on the issue	2026-11-15	elliotglazer/diophantine-z-q#84	project	project	https://github.com/elliotglazer/diophantine-z-q/issues/84#issuecomment-6887798335	held
+igusaGL2	batch 2	stopped, not proved; its claim is not yet released	2026-11-15	elliotglazer/diophantine-z-q#83	project	project	https://github.com/elliotglazer/diophantine-z-q/issues/83#issuecomment-6887798638	held
+regularSmoothPerfect	batch 2	claimed on the issue	2026-11-15	elliotglazer/diophantine-z-q#83	project	project	https://github.com/elliotglazer/diophantine-z-q/issues/83#issuecomment-6887798638	held
+shimuraGoodReductionNoGuard	batch 2	claimed on the issue	2026-11-15	elliotglazer/diophantine-z-q#79	project	project	https://github.com/elliotglazer/diophantine-z-q/issues/79#issuecomment-6887798479	held
+uniformizationLeafAll	batch 2	claimed on the issue	2026-11-15	elliotglazer/diophantine-z-q#82	project	project	https://github.com/elliotglazer/diophantine-z-q/issues/82#issuecomment-6887799149	held
+gagaMorphism	batch 2	claimed on the issue	2026-11-15	elliotglazer/diophantine-z-q#82	project	project	https://github.com/elliotglazer/diophantine-z-q/issues/82#issuecomment-1	held
+deligneComponentsX6PrintedAb	batch 2	named as a later target	2026-11-15	elliotglazer/diophantine-z-q#86	project	project	https://github.com/elliotglazer/diophantine-z-q/issues/86#issuecomment-6887798957	held
+geomConnOfAlgClosure	batch 2	claimed on the issue	2026-11-15	elliotglazer/diophantine-z-q#86	project	project	https://github.com/elliotglazer/diophantine-z-q/issues/86#issuecomment-6887798957	held
+milneIsogenyQuasiInverse	batch 2	briefed	2026-11-15	elliotglazer/diophantine-z-q#81	project	project		interest
+egaIV_8_10_5_xii	round 2	in progress (H-65)	2026-11-14	elliotglazer/diophantine-z-q#80	project	project	https://github.com/elliotglazer/diophantine-z-q/issues/80#issuecomment-6885320942	held
+homFreeFiniteAlgClosed	round 2	in progress (H-70)	2026-11-14	elliotglazer/diophantine-z-q#81
+charPolyIndepOfEllAlgClosed	round 2	in progress (H-71)	2026-11-14	elliotglazer/diophantine-z-q#81
+poincareComplement	round 2	in progress (H-72)	2026-11-14	elliotglazer/diophantine-z-q#81
+r7a	round 2	in progress (H-5)	2026-11-14	elliotglazer/diophantine-z-q#37
+h11	round 2	in progress (T-1)	2026-11-14	elliotglazer/diophantine-z-q#74
+h29	round 2	in progress (T-3)	2026-11-14	elliotglazer/diophantine-z-q#74
+yuThm11	stale outside claim		2026-10-01	Deicyde/diophantine-z-q#14	outside	zed-old	https://github.com/Deicyde/diophantine-z-q/issues/14#issuecomment-900	held
+bostLowerBound		claimed	2026-10-01	Deicyde/diophantine-z-q#14	outside	Gina-H	https://github.com/Deicyde/diophantine-z-q/issues/14#issuecomment-1010	held
+javanpeykarBound		claimed	2026-10-01	Deicyde/diophantine-z-q#14	outside	hana-dev	https://github.com/Deicyde/diophantine-z-q/pull/20	held
+weilPairingMumford		claimed	2026-10-15	Deicyde/diophantine-z-q#14	outside	tina-w	https://github.com/Deicyde/diophantine-z-q/issues/14#issuecomment-1030	held
+r9b		needs the Tate conjecture for abelian varieties in Lean	2026-09-01	Deicyde/diophantine-z-q#14	outside	old-y	https://github.com/Deicyde/diophantine-z-q/issues/14#issuecomment-1040	released

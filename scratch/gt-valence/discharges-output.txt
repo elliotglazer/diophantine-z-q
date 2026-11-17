@@ -1,0 +1,4 @@
+DISCHARGES [OpenAddedLeaves14.valenceFormulaCocompactEq] by ValenceCocompact.valenceFormulaCocompactEq_proof
+  still assumes: []
+  axioms: [propext, Classical.choice, Quot.sound]
+#discharges: 67 open hypotheses, 653 theorems checked, 1 discharge one

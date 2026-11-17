@@ -1,0 +1,64 @@
+closure size 73179
+ZInQ.HeightSplit.SemistableReductionThm: 15 non-bundle users in the closure: [ReductB.semistableReductionThm_final_nf,
+ ZInQ.HeightSplit.r21_of_leaves',
+ HDec.HSyn.ss1_ss3_of14,
+ ZInQ.HeightSplit.exists_semistable_neron,
+ ZInQ.HeightSplit.r19_of_leaves,
+ ZInQ.HeightSplit.stableHeightFinite_of',
+ ZInQ.HeightSplit.r21_of_leaves,
+ ZInQ.HeightSplit.stableHeightFinite_of]
+ZInQ.HeightSplit.SemistablePersists: 5 non-bundle users in the closure: [ReductB.semistablePersists_final_nf,
+ HDec.HSyn.ss1_ss3_of14,
+ ReductB.semistablePersists_of_leaves_nf,
+ ReductB.ss1_ss3_of_cp,
+ ZInQ.HeightSplit.r20_of_leaves']
+PkgI2.RaynaudCriterion: 19 non-bundle users in the closure: [HDec.G0ModField.KernelField.kernelFieldExists_of_leaves_FS5,
+ HDec.G0ModField.KernelField.kernelFieldExists_of_split',
+ HDec.HSyn.raynaudCriterion_ofK5,
+ HDec.G0ModField.KernelField.kernelFieldExists_of_split,
+ HDec.PkgI2.goodReduction_of_QM_rational3,
+ ReductSplit.raynaudCriterion_final,
+ HDec.PkgI2.goodReduction_of_QM_rational3_of_alg,
+ ReductSplit.raynaudCriterion_of_leaves]
+HDec.WeilPairing.T09_SymmIsogenyExists: 8 non-bundle users in the closure: [T09Pic.t09SymmIsogenyExists_of_four,
+ HDec.HSyn.tatePairingZl_of_leaves4,
+ HDec.HSyn.detTate_of_leaves4,
+ HDec.HSyn.t9_of_leaves5,
+ T09Pic.t09SymmIsogenyExists_of_leaves,
+ T09Pic.t09SymmIsogenyExists_of_mumford,
+ HDec.AVB2.t9_of_leaves3,
+ HDec.WeilPairing.oldT9_of_symmIsogeny]
+ReductSplit.SemistableReductionDVR: 7 non-bundle users in the closure: [ReductB.reductionNF_of_general,
+ ReductSplit.grothendieckMonodromy_final',
+ ReductB.semistableReductionDVR_of_raynaud,
+ HDec.HSyn.semistableReductionDVR_of14,
+ ReductSplit.grothendieckMonodromy_of_leaves,
+ ReductSplit.grothendieckMonodromy_final,
+ ReductB.ss1_ss3_of_cp]
+ReductSplit.RaynaudSemistable: 7 non-bundle users in the closure: [ReductB.raynaudSemistable_of_SH_pair,
+ ReductSplit.raynaudCriterion_final,
+ ReductB.semistableReductionDVR_of_raynaud,
+ ReductSplit.raynaudCriterion_of_leaves,
+ HDec.HSyn.raynaudSemistable_of14,
+ ReductGlue.raynaudCriterion_leaves,
+ ReductGlue.raynaudSemistable_of_SH']
+ReductB.SemistablePersistsSHcp: 2 non-bundle users in the closure: [ReductB.semistablePersistsDVRcp_of_SH,
+ ReductB.ss1_ss3_of_cp]
+ReductGlue.RaynaudSemistableSH: 2 non-bundle users in the closure: [ReductB.raynaudSemistable_of_SH_pair,
+ ReductGlue.raynaudSemistable_of_SH']
+ReductGlue.StrictHenselizationPair: 4 non-bundle users in the closure: [ReductB.raynaudSemistable_of_SH_pair,
+ ReductB.strictHenselizationNeron_of_pair,
+ ReductB.semistablePersistsDVRcp_of_SH,
+ ReductB.ss1_ss3_of_cp]
+T09Pic.PicRepresentableAbVar: 3 non-bundle users in the closure: [T09Pic.t09SymmIsogenyExists_of_four,
+ T09Pic.t09SymmIsogenyExists_of_leaves,
+ T09Pic.t09SymmIsogenyExists_of_mumford]
+T09Pic.PicZeroAbVar: 3 non-bundle users in the closure: [T09Pic.t09SymmIsogenyExists_of_four,
+ T09Pic.t09SymmIsogenyExists_of_leaves,
+ T09Pic.t09SymmIsogenyExists_of_mumford]
+T09Pic.PhiAmpleIsogeny: 3 non-bundle users in the closure: [T09Pic.t09SymmIsogenyExists_of_four,
+ T09Pic.phiVeryAmpleIsogeny_of_printed,
+ T09Pic.t09SymmIsogenyExists_of_mumford]
+T09Pic.WeilPairingMumford: 3 non-bundle users in the closure: [T09Pic.weilPairingPicZeroPrinted_of_mumford,
+ T09Pic.t09SymmIsogenyExists_of_four,
+ T09Pic.t09SymmIsogenyExists_of_mumford]

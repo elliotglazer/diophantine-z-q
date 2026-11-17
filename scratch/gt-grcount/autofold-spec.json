@@ -1,0 +1,9 @@
+{"name": "gt-grcount-fold",
+ "imports": ["ZInQKernel.Contrib.OneProof.GRCountX6"],
+ "discharges": [
+   {"field": "gonzalezRotgerCountX6Ab",
+    "proof": "_root_.GRCountX6.gonzalezRotgerCountX6Ab_of_printed {n}.gonzalezRotgerProp56X6 {n}.gonzalezRotgerX6Ab",
+    "leaves": [{"name": "gonzalezRotgerProp56X6", "type": "_root_.GRCountX6.GonzalezRotgerProp56X6",
+                "doc": "gt-grcount, printed form: Gonzalez-Rotger 2006 Prop. 5.6 at (D,N) = (6,1) on X0(6,1), for every witness of the moduli description (no existence claim; the model comes from gonzalezRotgerX6Ab). Replaces gonzalezRotgerCountX6Ab.",
+                "kind": "published", "flag": "",
+                "source": "Gonzalez-Rotger, J. Math. Soc. Japan 58 (2006) Prop. 5.6, p. 943 (read by the audit) at (D,N) = (6,1), on every coarse witness of X0(6,1) (with the R1fp/X6 clause lists and Lemma QP, as for r1r2)"}]}]}

@@ -1,0 +1,134 @@
+LPrefix:11685  [field TextbookLeaves.t34]    /-- T34 (new, leaf-modcurves): `dim J₁(N)` is the genus of `Γ₁(N)` (Shimura 1971 Prop. 1.40 with
+LPrefix:11686  [field TextbookLeaves.t34]    §6.7 and `dim Jac = genus`). -/
+LPrefix:11687  [field TextbookLeaves.t34]    t34 : LeafModCurves.DimJ1Genus
+LPrefix:11755  [dead reader modCurveLeaves_of_bundles]  /-- leaf-modcurves' bundle `ModCurveLeaves` from the two bundles (x1-belyi). -/
+LPrefix:11756  [dead reader modCurveLeaves_of_bundles]  theorem modCurveLeaves_of_bundles (r : ResearchLeaves) (t : TextbookLeaves) :
+LPrefix:11757  [dead reader modCurveLeaves_of_bundles]      LeafModCurves.ModCurveLeaves :=
+LPrefix:11758  [dead reader modCurveLeaves_of_bundles]    X1Belyi.modCurveLeaves_of t.x1 t.t33 r.r16 t.t34
+LPrefix:11759  [dead reader modCurveLeaves_of_bundles]  
+LPrefix:12507  [dead reader glueOutputs_of_leaves]  open G0Split in
+LPrefix:12508  [dead reader glueOutputs_of_leaves]  /-- **The glue G1-G17 and G19 (non-Arakelov part), split (g0-split).** The leaves and the ten
+LPrefix:12509  [dead reader glueOutputs_of_leaves]  missing glue pieces (each a `def … : Prop` in `G0Split` whose docstring names its glue step) give
+LPrefix:12510  [dead reader glueOutputs_of_leaves]  glue-assembly's interface `GlueOutputs` at `S = Mult.S_mul`. Applied proved pieces: A4
+LPrefix:12511  [dead reader glueOutputs_of_leaves]  (`LeafQM.AV.exists_fibre_object`, from R1-R2), `model_dim`, H5's finiteness
+LPrefix:12512  [dead reader glueOutputs_of_leaves]  (`faltingsHeight_coe`), E1 (`hom_of_common`: R9, T26, glue-ssbc), T8 (Poincaré, a leaf), E2's
+LPrefix:12513  [dead reader glueOutputs_of_leaves]  `dim J₁(N) ≤ N²` (`LeafModCurves.dim_J1_le`, from T34), `javanpeykarJ1` (concrete R18),
+LPrefix:12514  [dead reader glueOutputs_of_leaves]  `thetaPazuki` (concrete R22), `isogenousProduct`, and the E3-E4 numerics (`transfer_core`, from
+LPrefix:12515  [dead reader glueOutputs_of_leaves]  R19-R21). The non-CM disjunct is used (G6, NoCM). -/
+LPrefix:12516  [dead reader glueOutputs_of_leaves]  theorem glueOutputs_of_leaves (r : ResearchLeaves) (t : TextbookLeaves) (gp : GluePieces) :
+LPrefix:12517  [dead reader glueOutputs_of_leaves]      GlueAssembly.GlueOutputs ZInQ.Mult.S_mul := by
+LPrefix:12518  [dead reader glueOutputs_of_leaves]    obtain ⟨hDimF, hDim, hSimp, hPMH, hBC, hProdE, hRev, hThetaPt, hMod, hCopies⟩ := gp
+LPrefix:12519  [dead reader glueOutputs_of_leaves]    have hBelyi : X1BelyiOnModel := x1BelyiOnModel_of_belyiX1 t.belyiX1
+LPrefix:12520  [dead reader glueOutputs_of_leaves]    have hAdd : HeightAdditivity := heightAdditivity_of_h5neron t.t41 r.h5.2 hPMH
+LPrefix:12521  [dead reader glueOutputs_of_leaves]    have hR18 : R18_JavanpeykarConcrete := r18Concrete_of r.r18 hCopies
+LPrefix:12522  [dead reader glueOutputs_of_leaves]    have hR22 : R22_PazukiConcrete := r22Concrete_of r.r22 hCopies
+LPrefix:12523  [dead reader glueOutputs_of_leaves]    -- A4: the moduli data and an object over every value
+LPrefix:12524  [dead reader glueOutputs_of_leaves]    obtain ⟨Y, Φ, π, h1, h2, hfib⟩ :=
+LPrefix:12525  [dead reader glueOutputs_of_leaves]      LeafQM.AV.exists_fibre_object (LeafAdopt.R1R2fp_of_rep r.r1r2)
+LPrefix:12526  [dead reader glueOutputs_of_leaves]    intro u hu
+LPrefix:12527  [dead reader glueOutputs_of_leaves]    obtain ⟨y, P, hP, hy⟩ := hfib (OnePoint.some (algebraMap ℚ Qbar (ZInQ.JHeight.Jmap u)))
+LPrefix:12528  [dead reader glueOutputs_of_leaves]    -- G2-G16 (missing piece 10, `ModularConstituent`): the field `L'`, the model `A`, the level `N`, `J₁(N)`
+LPrefix:12529  [dead reader glueOutputs_of_leaves]    obtain ⟨L, emb, A, N, J, hiso, hN0, hJ1, hNQ, hdQ, hCC⟩ := hMod Y Φ π h1 h2 u hu y P hP hy
+LPrefix:12530  [dead reader glueOutputs_of_leaves]    have hFib : FibreOver Y Φ π u L A := ⟨emb, y, P, hP, hy, hiso⟩
+LPrefix:12531  [dead reader glueOutputs_of_leaves]    have hA2 : A.dim = 2 := model_dim hDim emb A P.A hiso P.surface
+LPrefix:12532  [dead reader glueOutputs_of_leaves]    -- H5: the stable height of `A` is real
+LPrefix:12533  [dead reader glueOutputs_of_leaves]    have hfin := r.h5.1
+LPrefix:12534  [dead reader glueOutputs_of_leaves]    have hx : ZInQ.DefFaltings.stableFaltingsHeight A = ZInQ.DefFaltings.faltingsHeight A :=
+LPrefix:12535  [dead reader glueOutputs_of_leaves]      (ZInQ.DefFaltings.faltingsHeight_coe hfin A).symm
+LPrefix:12536  [dead reader glueOutputs_of_leaves]    -- G19: the theta point (missing piece 9, `ThetaPointOfFibre`) and Pazuki (R22)
+LPrefix:12537  [dead reader glueOutputs_of_leaves]    obtain ⟨K', z, hF1, hPaz⟩ := thetaPazuki hR22 hThetaPt Y Φ π h1 h2 u hu L A hFib hA2 _ hx
+LPrefix:12538  [dead reader glueOutputs_of_leaves]    refine ⟨K', z, ZInQ.DefFaltings.faltingsHeight A, hF1, hPaz, Or.inl ?_⟩
+LPrefix:12539  [dead reader glueOutputs_of_leaves]    -- E1: a nonzero homomorphism `A → J₁(N)_{L'}`
+LPrefix:12540  [dead reader glueOutputs_of_leaves]    obtain ⟨f, hf⟩ := hom_of_common r t _ _ hCC
+LPrefix:12541  [dead reader glueOutputs_of_leaves]    -- G5-G6 (missing piece 4, `FibreSimple`): `A` simple; T8: Poincaré
+LPrefix:12542  [dead reader glueOutputs_of_leaves]    obtain ⟨Z, g, hisoZ⟩ := t.t8 L.K _ _ (hSimp Y Φ π h1 h2 u hu L A hFib) f hf
+LPrefix:12543  [dead reader glueOutputs_of_leaves]    -- G17 after Poincaré (`isogenousProduct`, from missing pieces 1, 7, 8): `A × Z`, the isogeny `J₁(N)_{L'} → A × Z`
+LPrefix:12544  [dead reader glueOutputs_of_leaves]    obtain ⟨Pr, φ, hφ, hPprod, hdims⟩ :=
+LPrefix:12545  [dead reader glueOutputs_of_leaves]      isogenousProduct hDimF hProdE hRev L.K _ _ _ f g hisoZ
+LPrefix:12546  [dead reader glueOutputs_of_leaves]    -- E2: `dim J₁(N) ≤ N²`
+LPrefix:12547  [dead reader glueOutputs_of_leaves]    obtain ⟨gJ, hgJ, hgN⟩ := LeafModCurves.dim_J1_le t.t34 N hN0 J hJ1
+LPrefix:12548  [dead reader glueOutputs_of_leaves]    have hJLd : (((LeafAdopt.abVarEquiv ℚ).symm J).baseChange L.K).dim = (gJ : WithBot ℕ∞) :=
+LPrefix:12549  [dead reader glueOutputs_of_leaves]      (hDim ℚ L.K ((LeafAdopt.abVarEquiv ℚ).symm J)).trans hgJ
+LPrefix:12550  [dead reader glueOutputs_of_leaves]    have hALd : A.dim = ((2 : ℕ) : WithBot ℕ∞) := by rw [hA2]; rfl
+LPrefix:12551  [dead reader glueOutputs_of_leaves]    obtain ⟨gZ, hZd, hsum⟩ := hdims 2 gJ hALd hJLd
+LPrefix:12552  [dead reader glueOutputs_of_leaves]    -- heights (H5; missing pieces 5, 6; R18 with missing pieces 2, 3)
+LPrefix:12553  [dead reader glueOutputs_of_leaves]    have hxJ : ZInQ.DefFaltings.stableFaltingsHeight
+LPrefix:12554  [dead reader glueOutputs_of_leaves]        (((LeafAdopt.abVarEquiv ℚ).symm J).baseChange L.K) =
+LPrefix:12555  [dead reader glueOutputs_of_leaves]        ZInQ.DefFaltings.faltingsHeight ((LeafAdopt.abVarEquiv ℚ).symm J) := by
+LPrefix:12556  [dead reader glueOutputs_of_leaves]      rw [hBC ℚ L.K ((LeafAdopt.abVarEquiv ℚ).symm J)]
+LPrefix:12557  [dead reader glueOutputs_of_leaves]      exact (ZInQ.DefFaltings.faltingsHeight_coe hfin _).symm
+LPrefix:12558  [dead reader glueOutputs_of_leaves]    have hyP := (ZInQ.DefFaltings.faltingsHeight_coe hfin Pr).symm
+LPrefix:12559  [dead reader glueOutputs_of_leaves]    have hzZ := (ZInQ.DefFaltings.faltingsHeight_coe hfin ((LeafAdopt.abVarEquiv L.K).symm Z)).symm
+LPrefix:12560  [dead reader glueOutputs_of_leaves]    have hadd := hAdd L.K Pr A ((LeafAdopt.abVarEquiv L.K).symm Z) hPprod _ _ _ hx hzZ hyP
+LPrefix:12561  [dead reader glueOutputs_of_leaves]    have hJb := javanpeykarJ1 hR18 hBelyi t.t34 N hN0 J hJ1 gJ hgJ (by omega) _
+LPrefix:12562  [dead reader glueOutputs_of_leaves]      (ZInQ.DefFaltings.faltingsHeight_coe hfin _).symm
+LPrefix:12563  [dead reader glueOutputs_of_leaves]    have hN1 : (1 : ℝ) ≤ N := by exact_mod_cast hN0
+LPrefix:12564  [dead reader glueOutputs_of_leaves]    have hgN' : (gJ : ℝ) ≤ (N : ℝ) ^ 2 := by exact_mod_cast hgN
+LPrefix:12565  [dead reader glueOutputs_of_leaves]    -- E3-E4 (proved from R19-R21)
+LPrefix:12566  [dead reader glueOutputs_of_leaves]    exact transfer_core r.r19 r.r20 r.r21 (((LeafAdopt.abVarEquiv ℚ).symm J).baseChange L.K) Pr A
+LPrefix:12567  [dead reader glueOutputs_of_leaves]      ((LeafAdopt.abVarEquiv L.K).symm Z) gJ gZ hJLd hZd (by omega) (by omega) φ hφ _ _ _ _ hxJ hyP
+LPrefix:12568  [dead reader glueOutputs_of_leaves]      hzZ hadd hN1 hNQ hJb hgN' hdQ
+LPrefix:12569  [dead reader glueOutputs_of_leaves]  
+LPrefix:12582  [dead reader sixContactMin_of_leaves]  /-- **G0. The leaves and the glue pieces imply `SixContactMin`** (no `sorry`). Hypotheses: exactly
+LPrefix:12583  [dead reader sixContactMin_of_leaves]  the three bundles `ResearchLeaves`, `TextbookLeaves`, `GluePieces`. -/
+LPrefix:12584  [dead reader sixContactMin_of_leaves]  theorem sixContactMin_of_leaves (r : ResearchLeaves) (t : TextbookLeaves) (gp : GluePieces) :
+LPrefix:12585  [dead reader sixContactMin_of_leaves]      ZInQ.SixContactMin :=
+LPrefix:12586  [dead reader sixContactMin_of_leaves]    sixContactMin_of_glueOutputs (glueOutputs_of_leaves r t gp)
+LPrefix:12587  [dead reader sixContactMin_of_leaves]  
+LPrefix:12621  [dead reader sixContactMin_of_leaves_pin]  /-- **G0, one-triple form** (no `sorry`): the leaves and `GluePiecesPin` imply `SixContactMin`. -/
+LPrefix:12622  [dead reader sixContactMin_of_leaves_pin]  theorem sixContactMin_of_leaves_pin (r : ResearchLeaves) (t : TextbookLeaves)
+LPrefix:12623  [dead reader sixContactMin_of_leaves_pin]      (gp : GluePiecesPin) : ZInQ.SixContactMin :=
+LPrefix:12624  [dead reader sixContactMin_of_leaves_pin]    sixContactMin_of_leaves r t (gluePieces_of_pin r gp)
+LPrefix:12625  [dead reader sixContactMin_of_leaves_pin]  
+LPrefix:13806  [assignment t34 in textbookLeaves_of_open]    t34 := t.t34
+LPrefix:13811  [dead reader sixContactMin_of_open]  /-- **G0 with only the open leaves** (leaf-fold, 2026-11-13; no `sorry`, standard axioms).
+LPrefix:13812  [dead reader sixContactMin_of_open]  `SixContactMin` follows from the open leaves and the ten glue pieces.
+LPrefix:13813  [dead reader sixContactMin_of_open]  
+LPrefix:13814  [dead reader sixContactMin_of_open]  Open research-level leaves (all 23 of the note's R1-R22 and H5, in 26 fields; none is proved):
+LPrefix:13815  [dead reader sixContactMin_of_open]  R1(a,c,d)+R2+R5-on-`X₆` (`r1r2`), R1(b) (`r1an`, opaque), R1(d) reciprocity (`r1rec`), R3, R4,
+LPrefix:13816  [dead reader sixContactMin_of_open]  R5(ii) (`r5`), R5(i) (`r5count`), R6, R7(a), R7(b), R8, R9(a), R9(b), **R10 corrected**
+LPrefix:13817  [dead reader sixContactMin_of_open]  (`PkgI4.DeRhamComparisonHT`), R11+R12 (`r11r12`), R13, **R14 corrected** (`G0Galois.R14Det`), R15,
+LPrefix:13818  [dead reader sixContactMin_of_open]  R16, R17 (opaque), R18, R19, R20, R21, R22, H5.
+LPrefix:13819  [dead reader sixContactMin_of_open]  
+LPrefix:13820  [dead reader sixContactMin_of_open]  Open textbook leaves (26 fields; `x1` bundles T36-T40): T1, T3, T4, T5, T6, T7, T8,
+LPrefix:13821  [dead reader sixContactMin_of_open]  T9, T10, T11(a), T11(b), T14(a′), T14(b′), T16(b), T23, T24, T26, T27, T28, T29(a), T29(b), T33,
+LPrefix:13822  [dead reader sixContactMin_of_open]  T34, T35, T36-T40 (`x1`), T41.
+LPrefix:13823  [dead reader sixContactMin_of_open]  
+LPrefix:13824  [dead reader sixContactMin_of_open]  Proved (no longer hypotheses): T2 (`t2_proved`), T13, T15 (`t15_proved`), T16(a)
+LPrefix:13825  [dead reader sixContactMin_of_open]  (`t16a_proved`), T17 (`t17_proved`), T18 (`t18_proved`), T19, T20 and T21 in global form
+LPrefix:13826  [dead reader sixContactMin_of_open]  (`t20_proved`, `t21_proved`), T22, T25 (`t25_proved`), T30, T31 (`t31_proved`). -/
+LPrefix:13827  [dead reader sixContactMin_of_open]  theorem sixContactMin_of_open (r : OpenResearchLeaves) (t : OpenTextbookLeaves)
+LPrefix:13828  [dead reader sixContactMin_of_open]      (gp : GluePieces) : ZInQ.SixContactMin :=
+LPrefix:13829  [dead reader sixContactMin_of_open]    sixContactMin_of_leaves (researchLeaves_of_open r) (textbookLeaves_of_open t) gp
+LPrefix:13830  [dead reader sixContactMin_of_open]  
+LPrefix:13876  [#print of dead reader sixContactMin_of_leaves]  #print axioms HSyn.sixContactMin_of_leaves
+LPrefix:13992  [#print of dead reader glueOutputs_of_leaves]  #print axioms HSyn.glueOutputs_of_leaves
+LPrefix:14014  [#print of dead reader modCurveLeaves_of_bundles]  #print axioms HSyn.modCurveLeaves_of_bundles
+LPrefix:14051  [#print of dead reader sixContactMin_of_leaves_pin]  #print axioms HSyn.sixContactMin_of_leaves_pin
+LPrefix:14073  [#print of dead reader sixContactMin_of_open]  #print axioms HSyn.sixContactMin_of_open
+TailA:5019  [dead reader sixContactMin_of_leaves2]  /-- **G0 after wave 26** (g0-assemble): the leaf bundles and `GluePieces2` imply
+TailA:5020  [dead reader sixContactMin_of_leaves2]  `ZInQ.SixContactMin`. -/
+TailA:5021  [dead reader sixContactMin_of_leaves2]  theorem sixContactMin_of_leaves2 (r : ResearchLeaves) (t : TextbookLeaves) (gp2 : GluePieces2) :
+TailA:5022  [dead reader sixContactMin_of_leaves2]      ZInQ.SixContactMin :=
+TailA:5023  [dead reader sixContactMin_of_leaves2]    sixContactMin_of_leaves r t (gluePieces_of_gluePieces2 r t gp2)
+TailA:5024  [dead reader sixContactMin_of_leaves2]  
+TailA:5032  [#print of dead reader sixContactMin_of_leaves2]  #print axioms HSyn.sixContactMin_of_leaves2
+TailE:6505  [field OpenTextbookLeaves2.t34]    t34 : LeafModCurves.DimJ1Genus
+TailE:6620  [assignment t34 in textbookLeaves_of_open2]    t34 := t.t34
+TailI:143  [field OpenTextbookLeaves3.t34]    t34 : LeafModCurves.DimJ1Genus
+TailI:218  [assignment t34 in textbookLeaves2_of_open3]    t34 := t.t34
+TailK:174  [field OpenTextbookLeaves4.t34]    t34 : LeafModCurves.DimJ1Genus
+TailK:245  [assignment t34 in textbookLeaves3_of_open4]    t34 := t.t34
+TailN:228  [assignment t34 in textbookLeaves4_of_open5]    t34 := t34_of_split5 t.dimJacobianEqGenus t.genusX1Field
+TailO:2884  [field OpenTextbookLeaves6.genusX1Field]    /-- curves-g: the genus of `K_N` is the genus of `Γ₁(N)` (Shimura 1971 §6.7 and Prop. 1.40). -/
+TailO:2885  [field OpenTextbookLeaves6.genusX1Field]    genusX1Field : _root_.ZInQ.Contrib.CurvesG.GenusX1Field
+TailO:2954  [assignment t34 in textbookLeaves4_of_open6]    t34 := t34_of_split5 t.dimJacobianEqGenus t.genusX1Field
+TailO:3026  [inline assignment genusX1Field in sixContactMin_of_open6_poincare]   genusX1Field := t.genusX1Field,
+TailX:145  [field OpenTextbookLeaves7.genusX1Field]    genusX1Field : _root_.ZInQ.Contrib.CurvesG.GenusX1Field
+TailX:240  [assignment genusX1Field in textbookLeaves6_of_open7]    genusX1Field := t.genusX1Field
+TailZ11:30  [field OpenTextbookLeaves10.genusX1Field]    genusX1Field : _root_.ZInQ.Contrib.CurvesG.GenusX1Field
+TailZ11:52  [assignment genusX1Field in textbookLeaves9_of_open10]    genusX1Field := t.genusX1Field
+TailZ4:124  [field OpenTextbookLeaves8.genusX1Field]    genusX1Field : _root_.ZInQ.Contrib.CurvesG.GenusX1Field
+TailZ4:227  [assignment genusX1Field in textbookLeaves7_of_open8]    genusX1Field := t.genusX1Field
+TailZ9:87  [field OpenTextbookLeaves9.genusX1Field]    genusX1Field : _root_.ZInQ.Contrib.CurvesG.GenusX1Field
+TailZ9:143  [assignment genusX1Field in textbookLeaves8_of_open9]    genusX1Field := t.genusX1Field

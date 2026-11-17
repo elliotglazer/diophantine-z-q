@@ -1,0 +1,17 @@
+import ZInQKernel.OneProof.H.TailZ26
+open Polynomial
+#check @AdjoinRoot.liftHom
+#check @AdjoinRoot.liftHom_mk
+#check @AdjoinRoot.induction_on
+#check @AdjoinRoot.powerBasis
+#check @AdjoinRoot.powerBasis_dim
+#check @Polynomial.natDegree_X_pow_sub_C
+#check @Polynomial.irreducible_of_degree_le_three_of_not_isRoot
+#check @LinearMap.toMatrixAlgEquiv_apply
+#check @Submodule.eq_of_le_of_finrank_eq
+#check @RingHom.mapMatrix
+#check @Polynomial.aeval_eq_sum_range
+#check @PowerBasis.finrank
+#check @LinearMap.smulRight
+#check @AdjoinRoot.instField
+#check @LinearMap.toMatrixAlgEquiv

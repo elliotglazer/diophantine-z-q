@@ -1,0 +1,5 @@
+{"name": "leaf-fold18",
+ "imports": ["ZInQKernel.Contrib.OneProof.ValenceCocompact"],
+ "discharges": [
+   {"field": "valenceFormulaCocompactEq",
+    "proof": "_root_.ValenceCocompact.valenceFormulaCocompactEq_proof"}]}

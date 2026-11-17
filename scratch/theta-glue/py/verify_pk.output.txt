@@ -1,0 +1,18 @@
+terms: psi4 11 psi6 24 chi10 48 chi12 85
+  e-recursion step 0 sizes [1, 35, 0, 0, 0, 0, 0, 0, 0, 0] 0s
+  e-recursion step 1 sizes [1, 19, 85, 0, 0, 0, 0, 0, 0, 0] 0s
+  e-recursion step 2 sizes [1, 35, 165, 455, 0, 0, 0, 0, 0, 0] 0s
+  e-recursion step 3 sizes [1, 11, 45, 119, 249, 0, 0, 0, 0, 0] 0s
+  e-recursion step 4 sizes [1, 13, 65, 189, 417, 741, 0, 0, 0, 0] 0s
+  e-recursion step 5 sizes [1, 11, 45, 119, 249, 411, 573, 0, 0, 0] 0s
+  e-recursion step 6 sizes [1, 13, 65, 189, 417, 755, 1133, 1493, 0, 0] 0s
+  e-recursion step 7 sizes [1, 11, 45, 119, 249, 429, 645, 861, 1041, 0] 0s
+  e-recursion step 8 sizes [1, 13, 65, 189, 417, 777, 1249, 1761, 2213, 2585] 0s
+  e-recursion step 9 sizes [1, 11, 45, 119, 249, 447, 721, 1025, 1301, 1533] 0s
+k=3: e_k has 119 terms; e_k - P_k == 0: True  (0s)
+k=4: e_k has 249 terms; e_k - P_k == 0: True  (0s)
+k=5: e_k has 447 terms; e_k - P_k == 0: True  (0s)
+k=6: e_k has 721 terms; e_k - P_k == 0: True  (0s)
+k=7: e_k has 1025 terms; e_k - P_k == 0: True  (1s)
+k=8: e_k has 1301 terms; e_k - P_k == 0: True  (1s)
+k=9: e_k has 1533 terms; e_k - P_k == 0: True  (1s)

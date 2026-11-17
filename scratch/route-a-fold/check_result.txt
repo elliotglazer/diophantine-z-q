@@ -1,0 +1,33 @@
+OpenResearchLeaves11.r1r2Ab : OpenResearchLeaves11 → HDec.LeafAdopt.R1R2fpRepAb
+OpenResearchLeaves11.shimuraFamilyAb : OpenResearchLeaves11 → HDec.QMSplit.Moduli.ShimuraFamilyAb
+OpenResearchLeaves11.gonzalezRotgerCountX6Ab : OpenResearchLeaves11 → ShimuraSplit.GonzalezRotgerCountX6Ab
+OpenResearchLeaves11.mumfordRigidityCore : OpenResearchLeaves11 → LeafQM.AV.R1UnivRigid.MumfordRigidityCore
+OpenAddedLeaves10.deligneComponentsY3PrintedAb : OpenAddedLeaves10 → ShimuraGlue.DeligneComponentsY3PrintedAb
+researchLeaves10_of_open11 : OpenResearchLeaves11 → OpenResearchLeaves10
+addedLeaves9_of_open10 : OpenResearchLeaves11 → OpenAddedLeaves10 → OpenAddedLeaves9
+sixContactMin_of_open13 : OpenResearchLeaves11 →
+  OpenTextbookLeaves10 → OpenAddedLeaves10 → OpenGlue7 → ZInQ.SixContactMin
+'HDec.HSyn.sixContactMin_of_open13' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LeafQM.AV.R1UnivRigid.r1R2fpRep_iff_ab' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LeafQM.AV.R1UnivRigid.shimuraFamily_iff_ab' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LeafQM.AV.R1UnivRigid.gonzalezRotgerCountX6_iff_ab' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LeafQM.AV.R1UnivRigid.deligneComponentsY3Printed_iff_ab' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LeafQM.AV.R1UnivRigid.mumfordRigidity_of_core' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LeafQM.AV.R1UnivRigid.r1fpProps_iff_ab_core' depends on axioms: [propext, Classical.choice, Quot.sound]
+'LeafQM.AV.R1UnivRigid.r1univProps_of_core_ab' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ZInQ.OneProof.frozenTarget' depends on axioms: [propext, Classical.choice, Quot.sound]
+def LeafQM.AV.R1UnivRigid.R1fpPropsAb : (Y : CategoryTheory.Over (AlgebraicGeometry.Spec ↧ℚ)) →
+  LeafQM.AV.PtEquiv Y → Prop :=
+fun Y Φ =>
+  AlgebraicGeometry.IsProper Y.hom ∧
+    AlgebraicGeometry.SmoothOfRelativeDimension 1 Y.hom ∧
+      Nonempty (LeafQM.AV.fieldPt LeafQM.AV.Qbar ⟶ Y) ∧
+        (∀ (K L : Type) [inst : Field K] [inst_1 : Field L] [inst_2 : Algebra ℚ K] [inst_3 : Algebra ℚ L]
+            (f : K →ₐ[ℚ] L) (y : LeafQM.AV.fieldPt K ⟶ Y) (P : LeafQM.AV.QML3 K),
+            (Φ K) y = LeafQM.AV.M3.mk P →
+              ∃ Q,
+                (Φ L) (CategoryTheory.CategoryStruct.comp (LeafQM.AV.fieldMap f) y) = LeafQM.AV.M3.mk Q ∧
+                  LeafQM.AV.IsBaseChangeOf (↑f) P Q) ∧
+          LeafQM.AV.R1UnivRigid.R1famAbProps Y Φ ∧ LeafQM.AV.R1UnivRigid.R1univAbProps Y Φ
+def ShimuraGlue.DeligneComponentsY3PrintedAb : Prop :=
+∃ Y Φ, LeafQM.AV.R1UnivRigid.R1fpPropsAb Y Φ ∧ ShimuraGlue.DelignePi0 Y ShimuraGlue.K3

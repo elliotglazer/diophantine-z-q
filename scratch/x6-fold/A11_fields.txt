@@ -1,0 +1,13 @@
+thetaRatiosAlgebraic
+qmCentralizerCMC
+tateTwistInvariants
+axSenTate
+t09SymmIsogenyExists
+milneIsogenyQuasiInverse
+x6ConicModel
+shimuraTaniyamaQbar
+egaIV_8_10_5_xii
+shimuraGoodReductionNoGuard
+valenceFormulaCocompactEq
+shimizuCovolumeO1
+deligneComponentsY3PrintedAb

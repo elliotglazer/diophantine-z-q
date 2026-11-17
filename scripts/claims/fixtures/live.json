@@ -1,0 +1,98 @@
+{
+ "fetched_at": "2026-11-15T04:44:00Z",
+ "_note": "Upstream comments copy the claim lines of a read-only snapshot of elliotglazer/diophantine-z-q taken 2026-11-15, with HTML markers dropped, lane labels replaced by neutral text and long tails trimmed. One synthetic comment on upstream #85 keeps a marker and a lane label to test that they are stripped. Comments on fork #14 by logins other than Deicyde, the Deicyde pings and the pull requests are synthetic test cases.",
+ "repos": {
+  "Deicyde/diophantine-z-q": {
+   "issues": [
+    {"number": 14, "url": "https://github.com/Deicyde/diophantine-z-q/issues/14", "comments": [
+     {"url": "https://github.com/Deicyde/diophantine-z-q/issues/14#issuecomment-1001", "author": {"login": "alice-nt"}, "createdAt": "2026-10-20T10:00:00Z", "body": "Claiming `igusaPsi4` at 2171de2bc\n\nI will start from Igusa 1962."},
+     {"url": "https://github.com/Deicyde/diophantine-z-q/issues/14#issuecomment-1019", "author": {"login": "Deicyde"}, "createdAt": "2026-10-21T10:00:00Z", "body": "> Claiming `igusaPsi4` at 2171de2bc\n\nWelcome @alice-nt, note the statement moved. A claim line looks like this:\n\n```\nClaiming bostLowerBound at <commit>\n```\n\nPosted by Claude Code, at Jack's request."},
+     {"url": "https://github.com/Deicyde/diophantine-z-q/issues/14#issuecomment-1002", "author": {"login": "carol-ag"}, "createdAt": "2026-10-01T09:00:00Z", "body": "Claiming H-6 at 2171de2bc"},
+     {"url": "https://github.com/Deicyde/diophantine-z-q/issues/14#issuecomment-1003", "author": {"login": "Deicyde"}, "createdAt": "2026-10-20T12:00:00Z", "body": "@carol-ag is r9a still active? With no reply in a week the claim lapses.\n\nPing (claim lapse): r9a\n\nPosted by Claude Code, at Jack's request."},
+     {"url": "https://github.com/Deicyde/diophantine-z-q/issues/14#issuecomment-1004", "author": {"login": "dave-ff"}, "createdAt": "2026-11-01T08:00:00Z", "body": "Claiming igusaChi10, gagaMorphism at 2171de2bc"},
+     {"url": "https://github.com/Deicyde/diophantine-z-q/issues/14#issuecomment-1005", "author": {"login": "dave-ff"}, "createdAt": "2026-11-05T08:00:00Z", "body": "Releasing gagaMorphism: needs GAGA for proper morphisms, which Mathlib lacks"},
+     {"url": "https://github.com/Deicyde/diophantine-z-q/issues/14#issuecomment-1006", "author": {"login": "erin-q"}, "createdAt": "2026-11-03T08:00:00Z", "body": "Claiming yuThm11"},
+     {"url": "https://github.com/Deicyde/diophantine-z-q/issues/14#issuecomment-1007", "author": {"login": "erin-q"}, "createdAt": "2026-11-06T08:00:00Z", "body": "Releasing yuThm11: no time this month"},
+     {"url": "https://github.com/Deicyde/diophantine-z-q/issues/14#issuecomment-1008", "author": {"login": "erin-q"}, "createdAt": "2026-11-10T08:00:00Z", "body": "Back on it.\nClaiming `HDec.QMSplit.Yu.YuThm11` at 2171de2bc"},
+     {"url": "https://github.com/Deicyde/diophantine-z-q/issues/14#issuecomment-1009", "author": {"login": "frank-x"}, "createdAt": "2026-11-08T08:00:00Z", "body": "Claiming `ZInQ.HomLattice.NoSuchThing` and H-999 at 2171de2bc"},
+     {"url": "https://github.com/Deicyde/diophantine-z-q/issues/14#issuecomment-1010", "author": {"login": "gina-h"}, "createdAt": "2026-10-01T08:00:00Z", "body": "Claiming bostLowerBound"},
+     {"url": "https://github.com/Deicyde/diophantine-z-q/issues/14#issuecomment-1011", "author": {"login": "gina-h"}, "createdAt": "2026-11-10T08:00:00Z", "body": "Progress bostLowerBound: the normalization matches Deligne's"},
+     {"url": "https://github.com/Deicyde/diophantine-z-q/issues/14#issuecomment-1012", "author": {"login": "elliotglazer"}, "createdAt": "2026-11-11T08:00:00Z", "body": "Claiming ShimuraSplit.GonzalezRotgerCountX6Ab at 2171de2bc"},
+     {"url": "https://github.com/Deicyde/diophantine-z-q/issues/14#issuecomment-1013", "author": {"login": "judy-p"}, "createdAt": "2026-10-01T08:00:00Z", "body": "Claiming pazukiCor13Upper at 2171de2bc"},
+     {"url": "https://github.com/Deicyde/diophantine-z-q/issues/14#issuecomment-1014", "author": {"login": "Deicyde"}, "createdAt": "2026-11-10T08:00:00Z", "body": "@judy-p is this still active?\n\nPing (claim lapse): pazukiCor13Upper\n\nPosted by Claude Code, at Jack's request."},
+     {"url": "https://github.com/Deicyde/diophantine-z-q/issues/14#issuecomment-1015", "author": {"login": "ivan-r"}, "createdAt": "2026-10-01T08:00:00Z", "body": "Claiming `gaudronRemondThm14` at 2171de2bc"},
+     {"url": "https://github.com/Deicyde/diophantine-z-q/issues/14#issuecomment-1016", "author": {"login": "Deicyde"}, "createdAt": "2026-10-16T08:00:00Z", "body": "@ivan-r is this still active?\n\nPing (claim lapse): gaudronRemondThm14\n\nPosted by Claude Code, at Jack's request."},
+     {"url": "https://github.com/Deicyde/diophantine-z-q/issues/14#issuecomment-1017", "author": {"login": "ivan-r"}, "createdAt": "2026-10-18T08:00:00Z", "body": "Still on it; Lemma 3 is done."},
+     {"url": "https://github.com/Deicyde/diophantine-z-q/issues/14#issuecomment-1018", "author": {"login": "kim-l"}, "createdAt": "2026-11-12T08:00:00Z", "body": "Claiming reading R3"},
+     {"url": "https://github.com/Deicyde/diophantine-z-q/issues/14#issuecomment-1020", "author": {"login": "olga-m"}, "createdAt": "2026-11-01T23:59:00Z", "body": "Claiming semistableUnipotent at 2171de2bc"},
+     {"url": "https://github.com/Deicyde/diophantine-z-q/issues/14#issuecomment-1021", "author": {"login": "Deicyde"}, "createdAt": "2026-11-03T08:00:00Z", "body": "@olga-m is this still active?\n\nPing (claim lapse): semistableUnipotent\n\nPosted by Claude Code, at Jack's request."},
+     {"url": "https://github.com/Deicyde/diophantine-z-q/issues/14#issuecomment-1022", "author": {"login": "pete-s"}, "createdAt": "2026-09-01T08:00:00Z", "body": "Claiming thetaRatiosAlgebraic at 2171de2bc"},
+     {"url": "https://github.com/Deicyde/diophantine-z-q/issues/14#issuecomment-1023", "author": {"login": "Deicyde"}, "createdAt": "2026-09-20T08:00:00Z", "body": "@pete-s is this still active?\n\nPing (claim lapse): thetaRatiosAlgebraic\n\nPosted by Claude Code, at Jack's request."},
+     {"url": "https://github.com/Deicyde/diophantine-z-q/issues/14#issuecomment-1024", "author": {"login": "Deicyde"}, "createdAt": "2026-09-28T08:00:00Z", "body": "Releasing thetaRatiosAlgebraic @pete-s: no reply within 7 days of the lapse ping\n\nPosted by Claude Code, at Jack's request."},
+     {"url": "https://github.com/Deicyde/diophantine-z-q/issues/14#issuecomment-1025", "author": {"login": "hana-dev"}, "createdAt": "2026-11-02T08:00:00Z", "body": "Claiming `javanpeykarBound` (draft PR #20)"},
+     {"url": "https://github.com/Deicyde/diophantine-z-q/issues/14#issuecomment-1030", "author": {"login": "tina-w"}, "createdAt": "2026-10-15T08:00:00Z", "body": "Claiming weilPairingMumford at 2171de2bc"},
+     {"url": "https://github.com/Deicyde/diophantine-z-q/issues/14#issuecomment-1031", "author": {"login": "tina-w"}, "createdAt": "2026-11-01T08:00:00Z", "body": "Releasing weilPairingMumford: the Weil pairing API for abelian schemes is missing"},
+     {"url": "https://github.com/Deicyde/diophantine-z-q/issues/14#issuecomment-1041", "author": {"login": "uma-x"}, "createdAt": "2026-11-05T08:00:00Z", "body": "Claiming r9b at 2171de2bc"},
+     {"author": {"login": "Deicyde"}, "createdAt": "2026-11-15T02:18:35Z", "body": "**Superseded.** The live list of open statements, with exact Lean types and who is on each, is the generated board https://github.com/Deicyde/diophantine-z-q/blob/main/docs/one-proof/OPEN.md. Pick an unclaimed row there; the contract is docs/one-proof/CONTRIBUTING.md.\n\nPosted by Claude Code, at Jack's request.\n"}
+    ]}
+   ],
+   "pullRequests": [
+    {"number": 20, "url": "https://github.com/Deicyde/diophantine-z-q/pull/20", "isDraft": true, "author": {"login": "hana-dev"}, "createdAt": "2026-10-01T08:00:00Z", "updatedAt": "2026-11-12T00:00:00Z", "lastCommitDate": "2026-11-12T00:00:00Z", "body": "Claiming `javanpeykarBound` at 2171de2bc\n\nPart of #14.", "comments": []},
+    {"number": 21, "url": "https://github.com/Deicyde/diophantine-z-q/pull/21", "isDraft": true, "author": {"login": "lena-z"}, "createdAt": "2026-11-01T08:00:00Z", "updatedAt": "2026-11-12T00:00:00Z", "lastCommitDate": "2026-11-12T00:00:00Z", "body": "Claiming bdRInvariants at abc1234"},
+    {"number": 22, "url": "https://github.com/Deicyde/diophantine-z-q/pull/22", "isDraft": true, "author": {"login": "quinn-t"}, "createdAt": "2026-09-15T08:00:00Z", "updatedAt": "2026-10-20T08:00:00Z", "lastCommitDate": "2026-10-02T08:00:00Z", "body": "Claiming quotientP1Coordinate at 2171de2bc\n\nPart of #14.", "comments": [
+     {"url": "https://github.com/Deicyde/diophantine-z-q/pull/22#issuecomment-2201", "author": {"login": "Deicyde"}, "createdAt": "2026-10-20T08:00:00Z", "body": "@quinn-t is this still active?\n\nPing (claim lapse): quotientP1Coordinate\n\nPosted by Claude Code, at Jack's request."}
+    ]},
+    {"number": 23, "url": "https://github.com/Deicyde/diophantine-z-q/pull/23", "isDraft": true, "author": {"login": "rosa-u"}, "createdAt": "2026-09-01T08:00:00Z", "updatedAt": "2026-10-12T08:00:00Z", "lastCommitDate": "2026-09-20T08:00:00Z", "body": "Claiming picZeroAbVar at 2171de2bc\n\nPart of https://github.com/Deicyde/diophantine-z-q/issues/14", "comments": [
+     {"url": "https://github.com/Deicyde/diophantine-z-q/pull/23#issuecomment-2301", "author": {"login": "Deicyde"}, "createdAt": "2026-10-10T08:00:00Z", "body": "@rosa-u is this still active?\n\nPing (claim lapse): picZeroAbVar\n\nPosted by Claude Code, at Jack's request."},
+     {"url": "https://github.com/Deicyde/diophantine-z-q/pull/23#issuecomment-2302", "author": {"login": "rosa-u"}, "createdAt": "2026-10-12T08:00:00Z", "body": "Yes, the Picard functor part is nearly done."}
+    ]},
+    {"number": 24, "url": "https://github.com/Deicyde/diophantine-z-q/pull/24", "isDraft": true, "author": {"login": "sam-v"}, "createdAt": "2026-10-01T08:00:00Z", "lastEditedAt": "2026-11-10T08:00:00Z", "updatedAt": "2026-11-10T08:00:00Z", "lastCommitDate": "2026-10-02T08:00:00Z", "body": "Claiming phiAmpleIsogeny at 2171de2bc\n\nPart of #14.", "comments": []},
+    {"number": 13, "url": "https://github.com/Deicyde/diophantine-z-q/pull/13", "isDraft": false, "author": {"login": "Deicyde"}, "createdAt": "2026-11-14T20:00:00Z", "updatedAt": "2026-11-15T02:28:41Z", "lastCommitDate": "2026-11-15T02:20:00Z", "body": "Lean: integer polynomial reflection from integral elements."}
+   ],
+   "branches": ["main", "wip/rayclass-cft"]
+  },
+  "elliotglazer/diophantine-z-q": {
+   "issues": [
+    {"number": 37, "url": "https://github.com/elliotglazer/diophantine-z-q/issues/37", "comments": [
+     {"url": "https://github.com/elliotglazer/diophantine-z-q/issues/37#issuecomment-6872287802", "author": {"login": "Deicyde"}, "createdAt": "2026-11-14T05:18:26Z", "body": "Claiming the **matrix-continuity transport for the original C10 `rL`** at upstream `fb2f78e143af2f6de71ca43e37498c229cde1c6b`.\n\n**First milestone:** prove that the SAME original matrix-unit subrepresentation is the actual `e00` projection–ambient representation–subtype composition."},
+     {"url": "https://github.com/elliotglazer/diophantine-z-q/issues/37#issuecomment-6877826604", "author": {"login": "Deicyde"}, "createdAt": "2026-11-14T13:15:09Z", "body": "Claiming H-5, H-4 (PkgI2.NeronOggShafarevich and PkgI2.RaynaudCriterion) at the exact fixed fork main commit cba8157f7d5d09a4a3c8462aba2f3245494a870e. This is a claim, not a proof-completion or Hilbert10-completion report."},
+     {"url": "https://github.com/elliotglazer/diophantine-z-q/issues/37#issuecomment-6885322130", "author": {"login": "Deicyde"}, "createdAt": "2026-11-14T22:39:48Z", "body": "Claiming the original H-5 and H-4 exact proof tasks again at the owner’s explicit request for maximal subagents: PkgI2.NeronOggShafarevich and PkgI2.RaynaudCriterion as fixed at cba8157f. Checked #3/#5 and this index; no proof/merge claimed."}
+    ]},
+    {"number": 74, "url": "https://github.com/elliotglazer/diophantine-z-q/issues/74", "comments": [
+     {"url": "https://github.com/elliotglazer/diophantine-z-q/issues/74#issuecomment-6877826347", "author": {"login": "Deicyde"}, "createdAt": "2026-11-14T13:15:08Z", "body": "Claiming T-1, T-3 (TYZThm11Integral, TYZLemma29Mod2). Exact fixed Props at fork main commit cba8157f7d5d09a4a3c8462aba2f3245494a870e. Scope does not claim T-5/T-11 or the other TYZ lanes. This is a claim, not a proof-completion report."},
+     {"url": "https://github.com/elliotglazer/diophantine-z-q/issues/74#issuecomment-6885321859", "author": {"login": "Deicyde"}, "createdAt": "2026-11-14T22:39:46Z", "body": "Claiming T-1 and T-3 again at the owner’s explicit request, in separate exact arithmetic proof lanes. Fixed TYZThm11Integral and TYZLemma29Mod2 at cba8157f, current main df98652a, preserve arXiv-v1 and reading-A caveats. Existing T-12/T-13/T-14/project lanes untouched. No proof/merge claimed; checked #3/#5 and this issue."}
+    ]},
+    {"number": 79, "url": "https://github.com/elliotglazer/diophantine-z-q/issues/79", "comments": [
+     {"url": "https://github.com/elliotglazer/diophantine-z-q/issues/79#issuecomment-6887798479", "author": {"login": "Deicyde"}, "createdAt": "2026-11-15T02:14:28Z", "updatedAt": "2026-11-15T02:14:28Z", "body": "Claiming lane A H90 FiniteQuotientExists (then H91 TameQuotientSmooth after the exact main target) and lane B H119 ShimuraGoodReductionNoGuard (order-bridge feasibility first; later DeligneComponentsX6Ab only).\n\nThis is a claim, not a completion report."}
+    ]},
+    {"number": 80, "url": "https://github.com/elliotglazer/diophantine-z-q/issues/80", "comments": [
+     {"url": "https://github.com/elliotglazer/diophantine-z-q/issues/80#issuecomment-6882145622", "author": {"login": "Deicyde"}, "createdAt": "2026-11-14T18:21:54Z", "body": "H-65 continuation is stopped and the claim released after four concrete compatibility failures; no exact export/type/axiom or combined-nine check passed."},
+     {"url": "https://github.com/elliotglazer/diophantine-z-q/issues/80#issuecomment-6885320942", "author": {"login": "Deicyde"}, "createdAt": "2026-11-14T22:39:42Z", "body": "Claiming H-65 again at the owner’s explicit request for maximal subagents. Restoring the banked unverified port; repairing the four exact compatibility failures in parallel, not changing EGAIV_8_10_5_xii or adding hypotheses. No proof/merge claimed. Checked current #3/#5 and this issue."},
+     {"url": "https://github.com/elliotglazer/diophantine-z-q/issues/80#issuecomment-6886111994", "author": {"login": "Deicyde"}, "createdAt": "2026-11-14T23:47:42Z", "body": "Claiming H-101, the exact `AvSplit.T4.MulEtaleAbelianScheme` statement at fork main `df98652abbeeef78b57f0868f19523a26d811b58` (`ZInQKernel/OneProof/H/TailQ.lean:1681–1683`).\n\nThe target ranges over **every commutative ring O** and the given actual abelian scheme."}
+    ]},
+    {"number": 81, "url": "https://github.com/elliotglazer/diophantine-z-q/issues/81", "comments": [
+     {"url": "https://github.com/elliotglazer/diophantine-z-q/issues/81#issuecomment-6877825066", "author": {"login": "Deicyde"}, "createdAt": "2026-11-14T13:15:01Z", "body": "Claiming H-70, H-71 (HomFreeFiniteAlgClosed, CharPolyIndepOfEllAlgClosed). Exact fixed Props at fork main commit cba8157f7d5d09a4a3c8462aba2f3245494a870e. Not claiming the separate general integer-endomorphism integrality lane. This is a claim, not a proof-completion report."},
+     {"url": "https://github.com/elliotglazer/diophantine-z-q/issues/81#issuecomment-6877825295", "author": {"login": "Deicyde"}, "createdAt": "2026-11-14T13:15:03Z", "body": "Claiming H-72 (PoincareComplement); the same lane claims H-75 separately on #82. Exact fixed Props at fork main commit cba8157f7d5d09a4a3c8462aba2f3245494a870e. This is a claim, not a proof-completion report."},
+     {"url": "https://github.com/elliotglazer/diophantine-z-q/issues/81#issuecomment-6885321564", "author": {"login": "Deicyde"}, "createdAt": "2026-11-14T22:39:45Z", "body": "Claiming H-70, H-71, H-72 again at the owner’s explicit request, with separate proof leads and independent sub-obligations. Exact fixed Props at cba8157f; current work base df98652a, newest-main rebase before PR. Checked #3/#5 and this issue."},
+     {"url": "https://github.com/elliotglazer/diophantine-z-q/issues/81#issuecomment-6887798791", "author": {"login": "Deicyde"}, "createdAt": "2026-11-15T02:14:30Z", "updatedAt": "2026-11-15T02:14:30Z", "body": "Claiming lane C H98-H102: MumfordTorsionAlgClosed first, MulEtaleAbelianScheme second, CartierSmooth/GeomConnOfRationalPoint/GroupSchemeEquidim; lane D may research the separate CharZero MilneIsogenyQuasiInverse follow-on without replacing the all-field statement.\n\nThis is a claim, not a completion report."}
+    ]},
+    {"number": 82, "url": "https://github.com/elliotglazer/diophantine-z-q/issues/82", "comments": [
+     {"url": "https://github.com/elliotglazer/diophantine-z-q/issues/82#issuecomment-6887799149", "author": {"login": "Deicyde"}, "createdAt": "2026-11-15T02:14:32Z", "updatedAt": "2026-11-15T02:14:32Z", "body": "Claiming lane D H103 UniformizationLeafAll and H105 GAGAMorphism behind the prescribed complex-chart/holomorphic-coordinate feasibility check.\n\nThis is a claim, not a completion report."}
+    ]},
+    {"number": 83, "url": "https://github.com/elliotglazer/diophantine-z-q/issues/83", "comments": [
+     {"url": "https://github.com/elliotglazer/diophantine-z-q/issues/83#issuecomment-6887798638", "author": {"login": "Deicyde"}, "createdAt": "2026-11-15T02:14:29Z", "updatedAt": "2026-11-15T02:14:29Z", "body": "Claiming lane E H117 via exact X0Transitive, and lane F H118 RegularSmoothPerfect.\n\nThis is a claim, not a completion report."},
+     {"url": "https://github.com/elliotglazer/diophantine-z-q/issues/83#issuecomment-6888477008", "author": {"login": "Deicyde"}, "createdAt": "2026-11-15T03:20:08Z", "updatedAt": "2026-11-15T03:20:08Z", "body": "Status for H-41 (`x0Transitive : ZInQ.RLeaf.X0Transitive`): **stopping, not proved.** A local commit is handed to the integrator for review.\n\nPosted by Claude Code, at Jack's request.\n"}
+    ]},
+    {"number": 84, "url": "https://github.com/elliotglazer/diophantine-z-q/issues/84", "comments": [
+     {"url": "https://github.com/elliotglazer/diophantine-z-q/issues/84#issuecomment-6887798335", "author": {"login": "Deicyde"}, "createdAt": "2026-11-15T02:14:27Z", "updatedAt": "2026-11-15T02:14:27Z", "body": "Claiming lane G: H120 TateTwistInvariants and H121 AxSenTate.\n\nThis is a claim, not a completion report."}
+    ]},
+    {"number": 85, "url": "https://github.com/elliotglazer/diophantine-z-q/issues/85", "comments": [
+     {"url": "https://github.com/elliotglazer/diophantine-z-q/issues/85#issuecomment-9000001", "author": {"login": "Deicyde"}, "createdAt": "2026-11-14T22:39:43Z", "body": "<!-- synthetic-marker:test -->\nClaiming W4: H-77 for Worker 4 (NeronSchemeExtensionExists) at cba8157f."}
+    ]},
+    {"number": 86, "url": "https://github.com/elliotglazer/diophantine-z-q/issues/86", "comments": [
+     {"url": "https://github.com/elliotglazer/diophantine-z-q/issues/86#issuecomment-6887798957", "author": {"login": "Deicyde"}, "createdAt": "2026-11-15T02:14:31Z", "updatedAt": "2026-11-15T02:14:31Z", "body": "Claiming lane C H150 GeomConnOfAlgClosure; lane B lower-priority DeligneComponentsX6Ab after ShimuraGoodReductionNoGuard, from the newest main abelian-scheme statement only, not old group-free DeligneComponentsX6.\n\nThis is a claim, not a completion report."}
+    ]}
+   ]
+  }
+ }
+}

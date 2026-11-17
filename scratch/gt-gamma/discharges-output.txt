@@ -1,0 +1,4 @@
+DISCHARGES [OpenAddedLeaves13.shimizuCovolumeO1] by HDec.GammaStarArea.shimizuCovolumeO1_proof
+  still assumes: []
+  axioms: [propext, Classical.choice, Quot.sound]
+#discharges: 72 open hypotheses, 204 theorems checked, 1 discharge one

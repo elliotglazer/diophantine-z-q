@@ -11,10 +11,12 @@ with root number $-1$, stated on the strip $0<\operatorname{Re}s<2$ for squarefr
 $d\equiv5\pmod8$, and the positive-rank half of Gross–Zagier for every elliptic curve over
 $\mathbb Q$. The third is Tian–Yuan–Zhang's row 5b: when the genus sum of class numbers
 $T^{\rm Cl}_{5b}(d)$ is odd, the order of vanishing of $L(C_d,s)$ at $s=1$ is at most one. Row 5b
-is their theorem in a reading that no refereed text consulted here prints (the journal version of
-their paper and Tian's expository articles were not consulted); the bound on the order follows
-from their unambiguous statements by Proposition N, an unpublished argument that has not been
-refereed or checked by a human reader, and the existence of the continuation is Hecke's.
+follows from their Theorem 3.5(2) in reading A, which no refereed text found by a literature search
+carried out by AI agents states explicitly (AI agents compared the journal version of their paper
+with the arXiv version; Tian's expository articles were not read). The bound on the order follows
+from reading A, which Proposition N, an unpublished argument reviewed only by AI models and never
+by a human, derives from their unambiguous statements; the existence of the continuation is
+Hecke's.
 
 The order of vanishing is read off an entire continuation of the L-series from the half-plane
 $\operatorname{Re}s>3/2$, and such a continuation is unique. The functional equation gives
@@ -23,7 +25,22 @@ $s=1$, and Gross–Zagier then gives a point of infinite order on $C_d$. Row 5b 
 Tian–Yuan–Zhang's Theorem 3.5(2) in reading A (both genus sums are even when the order of
 vanishing is at least two) together with Hecke's continuation of $L(C_d,s)$.
 
-None of the literature statements is proved here; the reductions between them are.
+The L-series in these statements is defined from local polynomials of minimal equations over the
+completions of $\mathbb Q$. A subsection computes $L(C_d,s)$ for odd squarefree $d$, which includes
+every squarefree $d\equiv5\pmod8$: the equation $y^2=x^3-d^2x$ is minimal at every prime, the local
+factor at a prime $p\nmid2d$ is $1-a_pT+pT^2$ with $a_p=p+1-\#C_d(\mathbb F_p)$ and the factor at
+$p\mid2d$ is $1$, so $L(C_d,s)$ is the Dirichlet series of the formal standard Euler product. That
+computation is proved; it shows that the L-series in the functional equation, row 5b and reading A,
+for squarefree $d\equiv5\pmod8$, is the standard one, and proves none of the literature statements.
+It says nothing about $L(C_d,s)$ for even or non-squarefree $d$, which Hecke's continuation also
+covers, nor about the other curves in Gross–Zagier. The section proving Hecke's
+continuation extends the computation to every squarefree $d$ and shows
+$L(C_{m^2d},s)=L(C_d,s)$ ([the L-series of $C_d$ for every $d\ne0$](hecke/every-d/README.md)).
+
+The functional equation and Hecke's continuation are proved
+([the functional equation holds](hecke/functional-equation-holds.md),
+[Hecke's continuation holds](hecke/hecke-continuation-holds.md)); the other literature statements
+are not proved here, and the reductions between them are.
 
 Throughout, $C_d$ is the curve $y^2=x^3-d^2x$ over $\mathbb Q$ for a natural number $d$, and the
 order of vanishing of an entire function at a point is its order as an analytic function, a
@@ -32,6 +49,21 @@ value in $\{0,1,2,\dots\}\cup\{\infty\}$.
 ## Entire continuations
 
 - [Entire continuations of the L-series of an elliptic curve](l-series-continuation.md)
+
+## The L-series of $C_d$, computed
+
+- [The L-series of the congruent number curves, computed](l-function-cd/README.md)
+
+## Hecke's continuation and the functional equation, proved
+
+Two of the literature statements, Hecke's continuation of $L(C_d,s)$ for every natural number $d\ne0$ and the
+functional equation on the strip $0<\operatorname{Re}s<2$ for squarefree $d\equiv5\pmod8$, are
+proved, with no hypothesis, along Hecke's route: Deuring's identity, proved from Gauss's count of
+the points of $y^2=x^3-x$, makes $L(C_d,s)$ a periodic twist of the theta series of
+$\mathbb Z[i]$, whose Mellin transform is entire and satisfies a functional equation under
+$s\mapsto2-s$.
+
+- [Hecke's continuation and the functional equation, proved](hecke/README.md)
 
 ## The three literature statements
 

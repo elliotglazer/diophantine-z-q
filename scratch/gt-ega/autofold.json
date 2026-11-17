@@ -1,0 +1,4 @@
+{"name": "gt-ega",
+ "imports": ["ZInQKernel.Contrib.OneProof.EGAOpenImm"],
+ "discharges": [
+   {"field": "egaIV_8_10_5_openImm", "proof": "_root_.ZInQ.Contrib.EGAOpenImm.egaIV_8_10_5_openImm_proof"}]}

@@ -1,0 +1,884 @@
+CoarseFactorAG.specQ_hom_ext	1635	1641	
+ShimuraGlue.toZhatUnits._proof_1	0	0	ShimuraGlue.Af ShimuraGlue.Af._proof_1
+HDec.QMSplit.Moduli.x6ConicModel_of_elkies	4382	4387	HDec.QMSplit.Moduli.ElkiesConicX6 HDec.QMSplit.Moduli.x6ConicModel_of HDec.QMSplit.Moduli.conicOfWitness_of_elkies HDec.QMSplit.Moduli.coarseCompare_of HDec.QMSplit.Moduli.coarseFactor_of_rep' CurveSplit.curveBijIso HDec.QMSplit.Moduli.hauptmodulUniqueX6S_of
+X6Glue.ElkiesCharts._proof_1	0	0	
+ShimuraGlue.toZhatUnits._proof_4	0	0	ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.ZhatU ShimuraGlue.Zhat ShimuraGlue.toZhatUnits._proof_1 ShimuraGlue.toZhatUnits._proof_2 ShimuraGlue.toZhatUnits._proof_3
+HDec.QMSplit.Moduli.canonicalCoarseX6_of	4207	4216	HDec.QMSplit.Moduli.GeomConnX6 HDec.QMSplit.Moduli.PairsLift HDec.QMSplit.Moduli.CanonicalCoarseX6
+HDec.QMSplit.Moduli.coarseFactor_of_canonical	1885	1888	HDec.QMSplit.Moduli.CanonicalCoarseX6 HDec.QMSplit.Moduli.FactorThroughSurj HDec.QMSplit.Moduli.CoarseFactor HDec.QMSplit.Moduli.coarseFactor_of HDec.QMSplit.Moduli.pairsLift_of_canonical
+HDec.QMSplit.Moduli.ShimuraGlueLeaves2.deligneX6P	6548	6548	HDec.QMSplit.Moduli.ShimuraGlueLeaves2 ShimuraGlue.DeligneComponentsX6Printed
+CurveSplit.ZMTOriginal	2563	2576	CurveSplit.SpecK CurveSplit.ZMTOriginal._proof_1
+ShimuraGlue.Mob.good_W	6231	6240	ShimuraGlue.Mob.Good ShimuraGlue.Mob.gl2 ShimuraGlue.Mob.ToP1.swap ShimuraGlue.Mob.invP1 ShimuraGlue.Mob.val_swap ShimuraGlue.Mob.map_gl2_smul.match_1 ShimuraGlue.Mob.map_gl2_smul
+HDec.QMSplit.Moduli.r1r2fpRep_of'	480	483	HDec.QMSplit.Moduli.CanonicalModelY3 HDec.QMSplit.Moduli.CoarseX6OfFine HDec.QMSplit.Moduli.HauptmodulOfX6 HDec.QMSplit.Moduli.ReciprocityOfFine HDec.QMSplit.Moduli.ResidueOfX6 HDec.QMSplit.Moduli.r1r2fpRep_of HDec.QMSplit.Moduli.heckeOfFine_proof
+HDec.QMSplit.Moduli.shimuraSplitLeaves_of_glue	5731	5736	HDec.QMSplit.Moduli.ShimuraGlueLeaves HDec.QMSplit.Moduli.ShimuraSplitLeaves HDec.QMSplit.Moduli.ShimuraSplitLeaves.mk ShimuraGlue.deligneComponentsX6_of_printed HDec.QMSplit.Moduli.ShimuraGlueLeaves.deligneX6P HDec.QMSplit.Moduli.ShimuraGlueLeaves.geomConn HDec.QMSplit.Moduli.ShimuraGlueLeaves.t5 HDec.QMSplit.Moduli.ShimuraGlueLeaves.babaGranath HDec.QMSplit.Moduli.ShimuraGlueLeaves.reciprocity HDec.QMSplit.Moduli.ShimuraGlueLeaves.gonzalezRotger HDec.QMSplit.Moduli.ShimuraGlueLeaves.gonzalezRotgerCount ShimuraGlue.deligneComponentsY3_of_printed HDec.QMSplit.Moduli.ShimuraGlueLeaves.deligneY3P HDec.QMSplit.Moduli.ShimuraGlueLeaves.elkies
+ShimuraSplit.left_inv_mod3	3919	3930	ShimuraSplit.sq_sub_one_mod3 ShimuraSplit.coe_three_mul ShimuraSplit.mulCoord_smul_left
+ShimuraGlue.mulCoordR.eq_1	0	0	ShimuraGlue.mulCoordR ShimuraGlue.N4._proof_1
+ShimuraSplit.bcPt_surjective_algClosed	3956	3971	
+HDec.QMSplit.Moduli.ShimuraGlueLeaves3.casesOn	6768	6779	HDec.QMSplit.Moduli.ShimuraGlueLeaves3 ShimuraGlue.DeligneComponentsX6Printed HDec.QMSplit.Moduli.GeomConnOfAlgClosure HDec.QMSplit.Moduli.BabaGranathRational ShimuraGlue.Ray.RayClassCM HDec.QMSplit.Moduli.GonzalezRotgerX6 ShimuraSplit.GonzalezRotgerCountX6 ShimuraGlue.DeligneComponentsY3Printed HDec.QMSplit.Moduli.ElkiesConicT HDec.QMSplit.Moduli.ShimuraGlueLeaves3.mk
+ShimuraGlue.mem_U3_of_r3	5362	5394	ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.ZhatU ShimuraGlue.Zhat ShimuraGlue.r3 ShimuraGlue.U3 ShimuraGlue.Place ShimuraGlue.instFactPrimes ShimuraGlue.locA ShimuraGlue.v3 ShimuraGlue.v3_spec ShimuraGlue.r3_apply ShimuraGlue.norm_lt_one_iff_toZMod ShimuraGlue.isUnit_iff_toZMod ShimuraGlue.BR._proof_1 ShimuraGlue.adeleHom ShimuraGlue.adeleHom_mem ShimuraGlue.adeleHom_locA
+ShimuraSplit.mul_oj_of_dvd	3932	3943	ShimuraSplit.coe_three_mul
+HDec.QMSplit.Moduli.HauptmodulOfX6	101	111	
+HDec.QMSplit.Moduli.isoRightMulOne	343	354	HDec.QMSplit.Moduli.isoRightMulOne._proof_1 HDec.QMSplit.Moduli.isoTwistSymm._proof_1 HDec.QMSplit.Moduli.isoTwistSymm._proof_2 HDec.QMSplit.Moduli.isoRightMulOne._proof_2 HDec.QMSplit.Moduli.isoRightMulOne._proof_3
+HDec.QMSplit.Moduli.elkiesConicT_of	6521	6534	HDec.QMSplit.Moduli.ElkiesConicX6 HDec.QMSplit.Moduli.ElkiesConicT HDec.QMSplit.Moduli.gT HDec.QMSplit.Moduli.mobiusCompose HDec.QMSplit.Moduli.ConicModelT HDec.QMSplit.Moduli.gT_smul
+HDec.QMSplit.Moduli.babaGranathX6'_of_rational'	6536	6539	HDec.QMSplit.Moduli.BabaGranathRational HDec.QMSplit.Moduli.BabaGranathX6' HDec.QMSplit.Moduli.babaGranathX6'_of_rational HDec.QMSplit.Moduli.mobiusCompose
+HDec.QMSplit.Moduli.ReciprocityOfFine	113	118	
+ShimuraGlue.K3._proof_3	0	0	ShimuraGlue.BAf ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.N4._proof_2 ShimuraGlue.BR._proof_1 ShimuraGlue.Kfull ShimuraGlue.Ohat ShimuraGlue.K3._abel_2 ShimuraGlue.K3._abel_3
+ShimuraSplit.sq_sub_one_mod3	3909	3914	
+HDec.QMSplit.Moduli.isoTwistSymm._proof_4	0	0	
+HDec.QMSplit.Moduli.ShimuraGlueLeaves4.rec	7330	7340	HDec.QMSplit.Moduli.ShimuraGlueLeaves4 ShimuraGlue.DeligneComponentsX6Printed HDec.QMSplit.Moduli.GeomConnOfAlgClosure HDec.QMSplit.Moduli.BabaGranathRational ShimuraGlue.Ray.RayClassCM HDec.QMSplit.Moduli.GonzalezRotgerX6 ShimuraSplit.GonzalezRotgerCountX6 ShimuraGlue.DeligneComponentsY3Printed HDec.QMSplit.Moduli.ElkiesEquationsX6 HDec.QMSplit.Moduli.ShimuraGlueLeaves4.mk
+HDec.QMSplit.Moduli.r1r2fpRep_of_canonical''	3246	3250	HDec.QMSplit.Moduli.CanonicalModelY3 HDec.QMSplit.Moduli.CanonicalCoarseX6 HDec.QMSplit.Moduli.BabaGranathX6 HDec.QMSplit.Moduli.GonzalezRotgerX6 HDec.QMSplit.Moduli.ReciprocityOfFine HDec.QMSplit.Moduli.r1r2fpRep_of_canonical HDec.QMSplit.Moduli.coarseFactor_of_canonical' CurveSplit.curveBijIso
+HDec.QMSplit.Moduli.rows_of_shimuraSplitLeaves	4447	4454	HDec.QMSplit.Moduli.ShimuraSplitLeaves HDec.QMSplit.Moduli.r1r2fpRep_of_printed_t5 HDec.QMSplit.Moduli.ShimuraSplitLeaves.deligneX6 HDec.QMSplit.Moduli.ShimuraSplitLeaves.geomConn HDec.QMSplit.Moduli.ShimuraSplitLeaves.t5 HDec.QMSplit.Moduli.ShimuraSplitLeaves.babaGranath HDec.QMSplit.Moduli.ShimuraSplitLeaves.reciprocity HDec.QMSplit.Moduli.ShimuraSplitLeaves.gonzalezRotger HDec.QMSplit.Moduli.r1rec_of_r1r2 HDec.QMSplit.Moduli.r5fp_of_r1r2 HDec.QMSplit.Moduli.r5fpCount_of_points HDec.QMSplit.Moduli.ShimuraSplitLeaves.gonzalezRotgerCount HDec.QMSplit.Moduli.y3Connected_of_deligne HDec.QMSplit.Moduli.ShimuraSplitLeaves.deligneY3 HDec.QMSplit.Moduli.x6ConicModel_of_elkies_t5 HDec.QMSplit.Moduli.ShimuraSplitLeaves.elkies
+ShimuraGlue.instSubsingletonPi0Kfull	5447	5448	ShimuraGlue.Pi0 ShimuraGlue.Kfull ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.posRat ShimuraGlue.BAf ShimuraGlue.N4._proof_2 ShimuraGlue.BR._proof_1 ShimuraGlue.nrdU ShimuraGlue.pi0_Kfull_eq_one
+HDec.QMSplit.Moduli.CanonicalCoarseX6	601	610	
+ShimuraGlue.K3._proof_2	0	0	ShimuraGlue.BAf ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.N4._proof_2 ShimuraGlue.BR._proof_1 ShimuraGlue.Kfull ShimuraGlue.Ohat
+CurveSplit.BijToNormalIsIso	2154	2173	CurveSplit.SpecK CurveSplit.kPt
+HDec.QMSplit.Moduli.X6Leaves.elkiesEq	7323	7323	HDec.QMSplit.Moduli.X6Leaves HDec.QMSplit.Moduli.ElkiesEquationsX6
+HDec.QMSplit.Moduli.ShimuraGlueLeaves3.mk	6770	6770	ShimuraGlue.DeligneComponentsX6Printed HDec.QMSplit.Moduli.GeomConnOfAlgClosure HDec.QMSplit.Moduli.BabaGranathRational ShimuraGlue.Ray.RayClassCM HDec.QMSplit.Moduli.GonzalezRotgerX6 ShimuraSplit.GonzalezRotgerCountX6 ShimuraGlue.DeligneComponentsY3Printed HDec.QMSplit.Moduli.ElkiesConicT HDec.QMSplit.Moduli.ShimuraGlueLeaves3
+HDec.QMSplit.Moduli.M3.rightMul_inv'	361	363	HDec.QMSplit.Moduli.M3.rightMul_inv
+ShimuraGlue.emb	5166	5167	ShimuraGlue.Af ShimuraGlue.Af._proof_1
+HDec.QMSplit.Moduli.R1bTransport	169	176	
+ShimuraSplit.surj_of_fibre	3856	3871	ShimuraSplit.pairTwistClass_finite
+CoarseFactorAG.bijective_of_points._simp_1_3	0	0	
+ShimuraGlue.du.eq_1	0	0	ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.du ShimuraGlue.emb ShimuraGlue.dq
+HDec.QMSplit.Moduli.ShimuraGlueLeaves3	6768	6779	HDec.QMSplit.Moduli.ShimuraGlueLeaves3.mk
+ShimuraGlue.Ray.s6_sq	6685	6703	ShimuraGlue.Ray.s6 ShimuraGlue.Ray.instCyc24 ShimuraGlue.Ray.z24 ShimuraGlue.N4._proof_2
+ShimuraGlue.nrm_one	5138	5139	ShimuraGlue.Place ShimuraGlue.nrm ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.locZ._proof_1 ShimuraGlue.locZ._proof_2 ShimuraGlue.locQ ShimuraGlue.ev
+HDec.QMSplit.Moduli.isoTwistSymm._proof_1	0	0	
+HDec.QMSplit.Moduli.r1r2fpRep_of_split'	4166	4172	HDec.QMSplit.Moduli.CanonicalCoarseX6 HDec.QMSplit.Moduli.BabaGranathX6 HDec.QMSplit.Moduli.ReciprocityCanonical HDec.QMSplit.Moduli.GonzalezRotgerX6 HDec.QMSplit.Moduli.r1r2fpRep_of_split HDec.QMSplit.Moduli.r1rec_of_reciprocityCanonical ShimuraSplit.r5fp_of_point
+HDec.QMSplit.Moduli.r1r2fpRep_of_printed_t5	4419	4423	HDec.QMSplit.Moduli.DeligneComponentsX6 HDec.QMSplit.Moduli.GeomConnOfAlgClosure HDec.QMSplit.Moduli.BabaGranathX6' HDec.QMSplit.Moduli.ReciprocityCanonical HDec.QMSplit.Moduli.GonzalezRotgerX6 HDec.QMSplit.Moduli.r1r2fpRep_of_printed HDec.QMSplit.Moduli.pairsLift_of_t5
+HDec.QMSplit.Moduli.ShimuraGlueLeaves2.gonzalezRotger	6553	6553	HDec.QMSplit.Moduli.ShimuraGlueLeaves2 HDec.QMSplit.Moduli.GonzalezRotgerX6
+CurveSplit.isLocalization_of_cofinal	2916	2930	
+HDec.QMSplit.Moduli.ConicOfWitness	190	201	
+X6Glue.psiU_comp	7097	7100	X6Glue.ElkiesRing X6Glue.elkiesIdeal X6Glue.pt X6Glue.psiU X6Glue.ev_comp X6Glue.psiU._proof_1
+ShimuraGlue.Af	4683	4684	ShimuraGlue.Af._proof_1
+ShimuraGlue.Af._proof_1	0	0	
+CoarseFactorAG.bijective_of_unramifiedAt	1343	1385	CoarseFactorAG.isLocalization_of_cofinal
+ShimuraGlue.e0.eq_1	0	0	ShimuraGlue.e0
+HDec.QMSplit.Moduli.r1r2fpRep_of_split5	4224	4229	HDec.QMSplit.Moduli.GeomConnX6 HDec.QMSplit.Moduli.PairsLift HDec.QMSplit.Moduli.BabaGranathX6 HDec.QMSplit.Moduli.r1r2fpRep_of_split HDec.QMSplit.Moduli.canonicalCoarseX6_of
+ShimuraGlue.Ray.instNeZero3	6657	6657	
+ShimuraGlue.Ray.RayClassCM._proof_4	0	0	
+HDec.QMSplit.Moduli.r5fp_of_r1r2	4119	4123	ShimuraSplit.r5fp_of_point
+ShimuraGlue.Ray.RayClassCM._proof_1	0	0	ShimuraGlue.Ray.K4
+ShimuraGlue.Ray.not_mem_support_mod3._proof_1_1	0	0	
+ShimuraSplit.mulCoord_smul_left	3905	3907	
+ShimuraGlue.evZ._proof_9	0	0	ShimuraGlue.Place ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.Zhat ShimuraGlue.evZ._proof_1
+CurveSplit.components_disjoint	2304	2316	CurveSplit.SpecK CurveSplit.irreducibleComponent_eq_of_isDomain_stalk CurveSplit.stalk_closed_normal
+HDec.QMSplit.Moduli.exists_mobius01._simp_1_1	0	0	
+ShimuraGlue.cycU.eq_1	0	0	ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.cycU ShimuraGlue.Place ShimuraGlue.locZ._proof_1 ShimuraGlue.locZ._proof_2 ShimuraGlue.cycU._proof_1 ShimuraGlue.adeleHom ShimuraGlue.cycU._proof_2
+ShimuraGlue.evZ._proof_8	0	0	ShimuraGlue.Place ShimuraGlue.Af._proof_1 ShimuraGlue.Af ShimuraGlue.Zhat ShimuraGlue.evZ._proof_1 ShimuraGlue.evZ._proof_7 ShimuraGlue.locZ._proof_3
+ShimuraGlue.posQ_ZhatU._proof_1_1	0	0	
+ShimuraGlue.exists_decomp	5177	5219	ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.posQ ShimuraGlue.ZhatU ShimuraGlue.emb ShimuraGlue.Place ShimuraGlue.instFactPrimes ShimuraGlue.locQ ShimuraGlue.nrm ShimuraGlue.mem_ZhatU_iff ShimuraGlue.norm_prime_ne ShimuraGlue.ev ShimuraGlue.ev_apply ShimuraGlue.nrm_emb ShimuraGlue.nrm_mul ShimuraGlue.locZ._proof_1 ShimuraGlue.locZ._proof_2 ShimuraGlue.nrm_eq_one_of_mem ShimuraGlue.exists_decomp._simp_1_3
+ShimuraGlue.Ray.RayClassCM	6725	6744	ShimuraGlue.Ray.K4 ShimuraGlue.Ray.RayClassCM._proof_2 ShimuraGlue.Ray.RayClassCM._proof_3 ShimuraGlue.Ray.mod3 ShimuraGlue.Ray.RayClassCM._proof_4 ShimuraGlue.Ray.RayClassCM._proof_5 ShimuraGlue.Ray.RayClassCM._proof_6 ShimuraGlue.Ray.K3 ShimuraGlue.Ray.RayClassCM._proof_8 ShimuraGlue.Ray.RayClassCM._proof_9 ShimuraGlue.Ray.RayClassCM._proof_10 ShimuraGlue.Ray.RayClassCM._proof_11 ShimuraGlue.Ray.z24._proof_2 ShimuraGlue.Ray.K24 ShimuraGlue.Ray.RayClassCM._proof_13 ShimuraGlue.Ray.RayClassCM._proof_14 ShimuraGlue.Ray.RayClassCM._proof_15 ShimuraGlue.Ray.RayClassCM._proof_16
+HDec.QMSplit.Moduli.ShimuraGlueLeaves	5718	5729	HDec.QMSplit.Moduli.ShimuraGlueLeaves.mk
+ShimuraGlue.nrm_one._simp_1_2	0	0	ShimuraGlue.Place ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.ev ShimuraGlue.ev_apply
+ShimuraGlue.Mob.s₂.eq_1	0	0	ShimuraGlue.Mob.W₂ ShimuraGlue.Mob.s₂ ShimuraGlue.Mob.W₂_le ShimuraGlue.Mob.hT ShimuraGlue.Mob.isUnit₂
+ShimuraGlue.K3._abel_1	0	0	ShimuraGlue.BAf ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.N4._proof_2 ShimuraGlue.BR._proof_1
+HDec.QMSplit.Moduli.canonicalModelY3_of_coarse	4133	4136	HDec.QMSplit.Moduli.CanonicalCoarseX6 HDec.QMSplit.Moduli.CanonicalModelY3
+HDec.QMSplit.Moduli.M3.twist_symm_twist	334	336	HDec.QMSplit.Moduli.isoTwistSymm
+HDec.QMSplit.Moduli.ShimuraGlueLeaves.rec	5718	5729	HDec.QMSplit.Moduli.ShimuraGlueLeaves ShimuraGlue.DeligneComponentsX6Printed HDec.QMSplit.Moduli.GeomConnOfAlgClosure HDec.QMSplit.Moduli.BabaGranathX6' HDec.QMSplit.Moduli.ReciprocityCanonical HDec.QMSplit.Moduli.GonzalezRotgerX6 ShimuraSplit.GonzalezRotgerCountX6 ShimuraGlue.DeligneComponentsY3Printed HDec.QMSplit.Moduli.ElkiesConicX6 HDec.QMSplit.Moduli.ShimuraGlueLeaves.mk
+CoarseFactorAG.exists_hom_ker_eq	1291	1299	
+HDec.QMSplit.Moduli.ShimuraGlueLeaves3.gonzalezRotgerCount	6777	6777	HDec.QMSplit.Moduli.ShimuraGlueLeaves3 ShimuraSplit.GonzalezRotgerCountX6
+X6Glue.s_zero	7075	7078	X6Glue.ElkiesRing X6Glue.elkiesIdeal X6Glue.eT X6Glue.eS X6Glue.rel1
+ShimuraGlue.Mob.ToP1.translate._proof_1	0	0	ShimuraGlue.Mob.W₁ ShimuraGlue.Mob.W₂ ShimuraGlue.Mob.mem_W₂_iff ShimuraGlue.Mob.g_eval_eq_zero
+ShimuraGlue.r3._proof_4	0	0	ShimuraGlue.Af._proof_1 ShimuraGlue.v3 ShimuraGlue.locZ._proof_1 ShimuraGlue.r3._proof_1 ShimuraGlue.r3._proof_3 ShimuraGlue.instFactPrimes
+ShimuraGlue.cycU._proof_1	0	0	ShimuraGlue.Place ShimuraGlue.locZ._proof_1 ShimuraGlue.Af._proof_1 ShimuraGlue.locZ._proof_2 ShimuraGlue.Af ShimuraGlue.instFactPrimes
+ShimuraGlue.adeleHom._proof_5	0	0	ShimuraGlue.Af._proof_1 ShimuraGlue.locZ._proof_1 ShimuraGlue.adeleHom._proof_1 ShimuraGlue.adeleHom._proof_2 ShimuraGlue.locZ ShimuraGlue.Place ShimuraGlue.locZ._proof_2 ShimuraGlue.adeleHom._proof_4 ShimuraGlue.Af ShimuraGlue.instFactPrimes
+HDec.QMSplit.Moduli.ShimuraSplitLeaves.deligneX6	4437	4437	HDec.QMSplit.Moduli.ShimuraSplitLeaves HDec.QMSplit.Moduli.DeligneComponentsX6
+X6Glue.eS	6931	6931	X6Glue.ElkiesRing X6Glue.elkiesIdeal X6Glue.eT._proof_1 ShimuraSplit.chi3._proof_2
+HDec.QMSplit.Moduli.pairsLift_of_rep	1858	1860	HDec.QMSplit.Moduli.PairsLift HDec.QMSplit.Moduli.pairsLift_of_witness
+HDec.QMSplit.Moduli.ShimuraGlueLeaves3.babaGranathR	6774	6774	HDec.QMSplit.Moduli.ShimuraGlueLeaves3 HDec.QMSplit.Moduli.BabaGranathRational
+ShimuraGlue.eq_cycU	5664	5672	ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.Place ShimuraGlue.instFactPrimes ShimuraGlue.cycU ShimuraGlue.cycU_apply
+CurveSplit.isDomain_of_dim_one	2179	2238	CurveSplit.isDomain_of_dim_one._proof_1_1
+HDec.QMSplit.Moduli.ShimuraGlueLeaves2.recOn	6545	6556	HDec.QMSplit.Moduli.ShimuraGlueLeaves2 ShimuraGlue.DeligneComponentsX6Printed HDec.QMSplit.Moduli.GeomConnOfAlgClosure HDec.QMSplit.Moduli.BabaGranathRational HDec.QMSplit.Moduli.ReciprocityCanonical HDec.QMSplit.Moduli.GonzalezRotgerX6 ShimuraSplit.GonzalezRotgerCountX6 ShimuraGlue.DeligneComponentsY3Printed HDec.QMSplit.Moduli.ElkiesConicT HDec.QMSplit.Moduli.ShimuraGlueLeaves2.mk HDec.QMSplit.Moduli.ShimuraGlueLeaves2.casesOn
+ShimuraGlue.Mob.ToP1.translate._proof_4	0	0	ShimuraGlue.Mob.W₁ ShimuraGlue.Mob.W₂ ShimuraGlue.Mob.ToP1.translate._proof_2 ShimuraGlue.Mob.fT ShimuraGlue.Mob.ToP1.translate._proof_3 ShimuraGlue.Mob.gT ShimuraGlue.Mob.U_inf_V' ShimuraGlue.Mob.res_res ShimuraGlue.Mob.s₁ ShimuraGlue.Mob.gT_res₁ ShimuraGlue.Mob.fT_mul_s₁
+ShimuraGlue.r3._proof_1	0	0	ShimuraGlue.locZ._proof_1 ShimuraGlue.Af._proof_1 ShimuraGlue.v3 ShimuraGlue.instFactPrimes
+ShimuraGlue.chi._proof_1	0	0	ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.Zhat ShimuraGlue.evZ._proof_1
+CoarseFactorAG.isIso_of_points	1594	1621	CoarseFactorAG.SpecK CoarseFactorAG.isOpen_irreducibleComponent CoarseFactorAG.isIso_affine CoarseFactorAG.isReduced_of_smooth CoarseFactorAG.restrict_inj CoarseFactorAG.restrict_surj
+ShimuraGlue.r3_one_add_three	5354	5360	ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.Zhat ShimuraGlue.r3
+HDec.QMSplit.Moduli.ShimuraGlueLeaves3.deligneY3P	6778	6778	HDec.QMSplit.Moduli.ShimuraGlueLeaves3 ShimuraGlue.DeligneComponentsY3Printed
+HDec.QMSplit.Moduli.gT	6508	6509	ShimuraGlue.Mob.gl2 HDec.QMSplit.Moduli.gT._proof_1
+ShimuraGlue.Mob.eval_fT	5902	5905	ShimuraGlue.Mob.fT ShimuraGlue.Mob.onU ShimuraGlue.Mob.fT.eq_1 ShimuraGlue.Mob.eval_onU
+HDec.QMSplit.Moduli.coarseFactor_of_rep	1890	1893	HDec.QMSplit.Moduli.FactorThroughSurj HDec.QMSplit.Moduli.CoarseFactor HDec.QMSplit.Moduli.coarseFactor_of HDec.QMSplit.Moduli.pairsLift_of_rep
+ShimuraGlue.du_mul	5297	5298	ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.du ShimuraGlue.emb ShimuraGlue.dq ShimuraGlue.du.eq_1 ShimuraGlue.dq_mul
+HDec.QMSplit.Moduli.ShimuraGlueLeaves3.rec	6768	6779	HDec.QMSplit.Moduli.ShimuraGlueLeaves3 ShimuraGlue.DeligneComponentsX6Printed HDec.QMSplit.Moduli.GeomConnOfAlgClosure HDec.QMSplit.Moduli.BabaGranathRational ShimuraGlue.Ray.RayClassCM HDec.QMSplit.Moduli.GonzalezRotgerX6 ShimuraSplit.GonzalezRotgerCountX6 ShimuraGlue.DeligneComponentsY3Printed HDec.QMSplit.Moduli.ElkiesConicT HDec.QMSplit.Moduli.ShimuraGlueLeaves3.mk
+ShimuraSplit.galAct._proof_2	0	0	
+HDec.QMSplit.Moduli.ReciprocityCanonical	4138	4149	
+HDec.QMSplit.Moduli.ShimuraGlueLeaves.gonzalezRotgerCount	5727	5727	HDec.QMSplit.Moduli.ShimuraGlueLeaves ShimuraSplit.GonzalezRotgerCountX6
+ShimuraGlue.Kfull._proof_2	0	0	ShimuraGlue.BAf ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.N4._proof_2 ShimuraGlue.BR._proof_1 ShimuraGlue.Ohat
+ShimuraGlue.evZ._proof_10	0	0	ShimuraGlue.Place ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.Zhat ShimuraGlue.evZ._proof_1 ShimuraGlue.evZ._proof_9 ShimuraGlue.locZ._proof_3 ShimuraGlue.evZ._proof_2
+ShimuraGlue.Mob.ToP1.translate._proof_5	0	0	ShimuraGlue.Mob.W₁ ShimuraGlue.Mob.W₂ ShimuraGlue.Mob.U_inf_V'
+CurveSplit.instSubsingletonCarrierCarrierCommRingCatSpecOfRat_scratch._proof_1	0	0	
+ShimuraSplit.bc_transportPair	3395	3411	
+ShimuraSplit.galAct._proof_3	0	0	ShimuraSplit.sQbar ShimuraSplit.galAct._proof_1 ShimuraSplit.specMap_sigma_comp
+ShimuraGlue.Mob.invP1.match_1	0	0	
+HDec.QMSplit.Moduli.rows_of_shimuraGlueLeaves4	7342	7346	HDec.QMSplit.Moduli.ShimuraGlueLeaves4 HDec.QMSplit.Moduli.rows_of_shimuraGlueLeaves3 HDec.QMSplit.Moduli.ShimuraGlueLeaves3.mk HDec.QMSplit.Moduli.ShimuraGlueLeaves4.deligneX6P HDec.QMSplit.Moduli.ShimuraGlueLeaves4.geomConn HDec.QMSplit.Moduli.ShimuraGlueLeaves4.t5 HDec.QMSplit.Moduli.ShimuraGlueLeaves4.babaGranathR HDec.QMSplit.Moduli.ShimuraGlueLeaves4.rayClass HDec.QMSplit.Moduli.ShimuraGlueLeaves4.gonzalezRotger HDec.QMSplit.Moduli.ShimuraGlueLeaves4.gonzalezRotgerCount HDec.QMSplit.Moduli.ShimuraGlueLeaves4.deligneY3P HDec.QMSplit.Moduli.elkiesConicT_of_equations HDec.QMSplit.Moduli.ShimuraGlueLeaves4.elkiesEq
+CurveSplit.instSubsingletonCarrierCarrierCommRingCatSpecOfRat_scratch	1945	1946	CurveSplit.instSubsingletonCarrierCarrierCommRingCatSpecOfRat_scratch._proof_1
+HDec.X6Kummer.conicGal.eq_1	0	0	
+CurveSplit.sec_snd	1972	1974	CurveSplit.SpecK CurveSplit.kPt CurveSplit.bQ
+ShimuraGlue.Mob.isUnit₁	5823	5824	ShimuraGlue.Mob.W₁ ShimuraGlue.Mob.W₁_le ShimuraGlue.Mob.fT
+ShimuraGlue.adeleHom	4952	4971	ShimuraGlue.Place ShimuraGlue.instFactPrimes ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.locZ._proof_1 ShimuraGlue.locZ._proof_2 ShimuraGlue.adeleHom._proof_1 ShimuraGlue.adeleHom._proof_2 ShimuraGlue.locZ ShimuraGlue.adeleHom._proof_3 ShimuraGlue.adeleHom._proof_5 ShimuraGlue.adeleHom._proof_7 ShimuraGlue.adeleHom._proof_9 ShimuraGlue.adeleHom._proof_11
+ShimuraGlue.Kfull._proof_3	0	0	ShimuraGlue.BAf ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.N4._proof_2 ShimuraGlue.BR._proof_1 ShimuraGlue.Ohat
+ShimuraGlue.emb_dq_mul_du	5289	5290	ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.emb ShimuraGlue.dq ShimuraGlue.du ShimuraGlue.du.eq_1
+HDec.QMSplit.Moduli.ShimuraGlueLeaves.deligneY3P	5728	5728	HDec.QMSplit.Moduli.ShimuraGlueLeaves ShimuraGlue.DeligneComponentsY3Printed
+ShimuraSplit.baseQbar._proof_1	0	0	ShimuraSplit.sQbar
+CoarseFactorAG.exists_lift_of_surjective	1265	1272	CoarseFactorAG.exists_lift_of_closed
+X6Glue.elkiesLift_S	6983	6984	X6Glue.ElkiesRing X6Glue.elkiesIdeal X6Glue.elkiesLift X6Glue.eS ShimuraSplit.chi3._proof_2
+ShimuraSplit.baseQbar	3602	3603	ShimuraSplit.sQbar ShimuraSplit.baseQbar._proof_1
+X6Glue.memV_of_not_memU	7027	7031	X6Glue.pt
+HDec.QMSplit.Moduli.ShimuraGlueLeaves4.mk	7331	7331	ShimuraGlue.DeligneComponentsX6Printed HDec.QMSplit.Moduli.GeomConnOfAlgClosure HDec.QMSplit.Moduli.BabaGranathRational ShimuraGlue.Ray.RayClassCM HDec.QMSplit.Moduli.GonzalezRotgerX6 ShimuraSplit.GonzalezRotgerCountX6 ShimuraGlue.DeligneComponentsY3Printed HDec.QMSplit.Moduli.ElkiesEquationsX6 HDec.QMSplit.Moduli.ShimuraGlueLeaves4
+HDec.QMSplit.Moduli.ShimuraGlueLeaves3.elkiesT	6779	6779	HDec.QMSplit.Moduli.ShimuraGlueLeaves3 HDec.QMSplit.Moduli.ElkiesConicT
+ShimuraGlue.adeleHom._proof_1	0	0	ShimuraGlue.locZ._proof_1 ShimuraGlue.Af._proof_1 ShimuraGlue.instFactPrimes
+ShimuraGlue.Mob.res_res._simp_1_2	0	0	
+ShimuraGlue.adeleHom._proof_4	0	0	ShimuraGlue.Af._proof_1 ShimuraGlue.locZ._proof_1 ShimuraGlue.adeleHom._proof_1 ShimuraGlue.adeleHom._proof_2 ShimuraGlue.locZ ShimuraGlue.Place ShimuraGlue.locZ._proof_2 ShimuraGlue.instFactPrimes
+CurveSplit.bQ_flat	1953	1958	CurveSplit.SpecK CurveSplit.bQ
+HDec.QMSplit.Moduli.rightMulFam	392	400	HDec.QMSplit.Moduli.isoRightMulOne._proof_1 HDec.QMSplit.Moduli.rightMulFam._proof_1
+ShimuraGlue.adeleHom._proof_2	0	0	ShimuraGlue.Af._proof_1
+ShimuraGlue.Kfull._proof_1	0	0	ShimuraGlue.BAf ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.N4._proof_2 ShimuraGlue.BR._proof_1 ShimuraGlue.Ohat
+CurveSplit.restrict_isIso'._simp_1_2	0	0	
+ShimuraGlue.ofQ_e0	5072	5075	ShimuraGlue.BR ShimuraGlue.ofQ ShimuraGlue.e0 ShimuraGlue.N4._proof_2 ShimuraGlue.BR._proof_1 ShimuraGlue.N4._proof_1 ShimuraGlue.half
+CurveSplit.isDedekindDomain_sections	2979	3000	CurveSplit.SpecK CurveSplit.isIntegrallyClosed_of_normal CurveSplit.isNormal_of_integral CurveSplit.topDim_le_one
+ShimuraGlue.pi0K3Equiv	5450	5453	ShimuraGlue.Pi0 ShimuraGlue.K3 ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.posRat ShimuraGlue.BAf ShimuraGlue.N4._proof_2 ShimuraGlue.BR._proof_1 ShimuraGlue.nrdU ShimuraGlue.chi ShimuraGlue.pi0K3Equiv._proof_1 ShimuraGlue.pi0K3Equiv._proof_2 ShimuraGlue.pi0K3Equiv._proof_3 ShimuraGlue.chi_surjective
+ShimuraSplit.galAct._proof_1	0	0	
+CoarseFactorAG.restrict_inj	1568	1576	
+HDec.QMSplit.Moduli.hauptmodulUniqueX6S_of.match_1_1	0	0	
+ShimuraGlue.Ray.RayClassCM._proof_12	0	0	ShimuraGlue.Ray.z24._proof_2 ShimuraGlue.Ray.K24
+HDec.QMSplit.Moduli.ShimuraSplitLeaves.rec	4434	4445	HDec.QMSplit.Moduli.ShimuraSplitLeaves HDec.QMSplit.Moduli.DeligneComponentsX6 HDec.QMSplit.Moduli.GeomConnOfAlgClosure HDec.QMSplit.Moduli.BabaGranathX6' HDec.QMSplit.Moduli.ReciprocityCanonical HDec.QMSplit.Moduli.GonzalezRotgerX6 ShimuraSplit.GonzalezRotgerCountX6 ShimuraSplit.DeligneComponentsY3 HDec.QMSplit.Moduli.ElkiesConicX6 HDec.QMSplit.Moduli.ShimuraSplitLeaves.mk
+CoarseFactorAG.stalk_closed_normal	1086	1099	CoarseFactorAG.SpecK CoarseFactorAG.isDomain_of_dim_one
+ShimuraGlue.norm_prime_ne	5173	5175	ShimuraGlue.instFactPrimes
+ShimuraGlue.Mob.ToP1.swap	6053	6069	ShimuraGlue.Mob.ToP1.swap._proof_1 ShimuraGlue.Mob.ToP1.swap._proof_4 ShimuraGlue.Mob.ToP1.swap._proof_5 ShimuraGlue.Mob.ToP1.swap._proof_6
+HDec.QMSplit.Moduli.ConnectedOfFine	138	144	
+ShimuraGlue.adeleHom._proof_3	0	0	ShimuraGlue.Place ShimuraGlue.locZ._proof_1 ShimuraGlue.Af._proof_1 ShimuraGlue.locZ._proof_2 ShimuraGlue.adeleHom._proof_1 ShimuraGlue.adeleHom._proof_2 ShimuraGlue.locZ ShimuraGlue.instFactPrimes
+ShimuraGlue.Mob.good_all	6251	6277	ShimuraGlue.Mob.Good ShimuraGlue.Mob.gl2 ShimuraGlue.Mob.good_mul ShimuraGlue.Mob.good_Sc ShimuraGlue.Mob.good_T ShimuraGlue.Mob.good_D ShimuraGlue.Mob.gl2.congr_simp ShimuraGlue.Mob.good_W
+CurveSplit.CurveBijIsoClosed	1911	1917	CurveSplit.SpecK CurveSplit.kPt
+X6Glue.psiV_T	7083	7086	X6Glue.ElkiesRing X6Glue.elkiesIdeal X6Glue.eT X6Glue.pt X6Glue.psiV X6Glue.ev X6Glue.psiV._proof_1 X6Glue.ev_g_eq_zero
+HDec.QMSplit.Moduli.exists_mobius01	6315	6369	ShimuraGlue.Mob.gl2 ShimuraGlue.Mob.gl2_smul_infty ShimuraGlue.Mob.gl2_smul_some
+ShimuraGlue.evZ._proof_6	0	0	ShimuraGlue.Place ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.Zhat ShimuraGlue.evZ._proof_1 ShimuraGlue.evZ._proof_5 ShimuraGlue.locZ._proof_3 ShimuraGlue.evZ._proof_2
+HDec.QMSplit.Moduli.isReduced_of_etale_of_isDomain'	217	231	
+HDec.QMSplit.Moduli.reciprocityOfFine_of_r1rec	4125	4127	HDec.QMSplit.Moduli.ReciprocityOfFine ShimuraSplit.point_of_r1rec
+ShimuraGlue.DelignePi0	5547	5568	ShimuraGlue.BAf ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.N4._proof_2 ShimuraGlue.BR._proof_1 ShimuraSplit.baseQbar ShimuraGlue.Pi0 ShimuraGlue.Place ShimuraGlue.locZ._proof_1 ShimuraGlue.locZ._proof_2 ShimuraGlue.locQ._proof_1 ShimuraSplit.chi3._proof_1 ShimuraSplit.galActπ₀ ShimuraGlue.posRat ShimuraGlue.nrdU ShimuraGlue.DelignePi0._proof_1
+ShimuraGlue.sq_three	4658	4666	ShimuraGlue.hensel_simple
+X6Glue.elkiesLift	6965	6979	X6Glue.ElkiesRing X6Glue.elkiesIdeal ShimuraGlue.BR._proof_1 X6Glue.eT._proof_1 X6Glue.elkiesLift._proof_1
+HDec.QMSplit.Moduli.isReduced_of_smooth_of_isDomain	233	259	HDec.QMSplit.Moduli.isReduced_of_etale_of_isDomain'
+HDec.QMSplit.Moduli.gT_smul	6511	6519	HDec.QMSplit.Moduli.gT ShimuraGlue.Mob.gl2 HDec.QMSplit.Moduli.gT._proof_1
+HDec.QMSplit.Moduli.connectedCanonical_iff	4178	4180	HDec.QMSplit.Moduli.ConnectedCanonical
+CoarseFactorAG.isDomain_of_dim_one	997	1056	CoarseFactorAG.isDomain_of_dim_one._proof_1_1
+CoarseFactorAG.exists_lift_of_closed	1248	1263	
+HDec.QMSplit.Moduli.ShimuraSplitLeaves.gonzalezRotger	4442	4442	HDec.QMSplit.Moduli.ShimuraSplitLeaves HDec.QMSplit.Moduli.GonzalezRotgerX6
+ShimuraSplit.r5fp_of_point	3537	3550	ShimuraSplit.fieldOfModuliPair_eq_residueImage
+Rat.HeightOneSpectrum.primesEquiv.congr_simp	0	0	
+CoarseFactorAG.isDomain_of_dim_one._proof_1_1	0	0	
+ShimuraGlue.Mob.res_inv_rel	5843	5846	
+ShimuraGlue.Mob.gl2_smul_some	6172	6175	ShimuraGlue.Mob.gl2
+HDec.QMSplit.Moduli.y3Connected_of	146	149	HDec.QMSplit.Moduli.CanonicalModelY3 HDec.QMSplit.Moduli.ConnectedOfFine
+ShimuraGlue.Ray.instCyc24	6658	6659	ShimuraGlue.Ray.instNeZero24
+ShimuraGlue.rep_three	4538	4556	ShimuraGlue.N4 ShimuraGlue.isUnit_iff_toZMod ShimuraGlue.toZMod_lift ShimuraGlue.hensel_simple ShimuraGlue.N4._proof_2 ShimuraGlue.N4._proof_1
+ShimuraGlue.Mob.gl2	6165	6167	ShimuraGlue.Mob.gl2._proof_1
+ShimuraGlue.ofInt_mem_Ohat	5658	5660	ShimuraGlue.BR ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.BAf ShimuraGlue.N4._proof_2 ShimuraGlue.BR._proof_1 ShimuraGlue.Ohat ShimuraGlue.ofQ ShimuraGlue.Zhat
+HDec.QMSplit.Moduli.r1b_of	178	186	HDec.QMSplit.Moduli.ShimuraFamily HDec.QMSplit.Moduli.R1bTransport
+CurveSplit.isOpen_irreducibleComponent._simp_1_3	0	0	
+HDec.QMSplit.Moduli.x6Rows_of_leaves	7325	7328	HDec.QMSplit.Moduli.X6Leaves HDec.QMSplit.Moduli.r1r2_of_published HDec.QMSplit.Moduli.X6Leaves.deligneX6P HDec.QMSplit.Moduli.X6Leaves.geomConn HDec.QMSplit.Moduli.X6Leaves.t5 HDec.QMSplit.Moduli.X6Leaves.babaGranathR HDec.QMSplit.Moduli.X6Leaves.rayClass HDec.QMSplit.Moduli.X6Leaves.gonzalezRotger HDec.QMSplit.Moduli.x6ConicModel_of_published HDec.QMSplit.Moduli.X6Leaves.elkiesEq
+ShimuraGlue.isUnit_iff_toZMod	4517	4518	ShimuraGlue.norm_eq_one_iff_toZMod
+ShimuraGlue.Ray.z24._proof_1	0	0	
+ShimuraSplit.exists_primitive3	3625	3628	
+ShimuraGlue.toZhatUnits._proof_15	0	0	ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.ZhatU ShimuraGlue.Zhat ShimuraGlue.toZhatUnits._proof_1 ShimuraGlue.duHom._proof_1 ShimuraGlue.toZhatUnits._proof_11 ShimuraGlue.toZhatUnits._proof_12 ShimuraGlue.toZhatUnits._proof_13 ShimuraGlue.toZhatUnits._proof_14 ShimuraGlue.toZhatUnits._proof_2 ShimuraGlue.toZhatUnits._proof_3 ShimuraGlue.toZhatUnits._proof_4 ShimuraGlue.toZhatUnits._proof_5
+CurveSplit.bQ_surjective	1950	1951	CurveSplit.SpecK CurveSplit.bQ CurveSplit.instNonemptyCarrierCarrierCommRingCatSpecKQbar CurveSplit.instSubsingletonCarrierCarrierCommRingCatSpecOfRat_scratch
+HDec.QMSplit.Moduli.DeligneComponentsX6	4306	4314	ShimuraSplit.baseQbar
+ShimuraGlue.Mob.Good	6182	6187	
+ShimuraGlue.toZhatUnits._proof_12	0	0	ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.ZhatU ShimuraGlue.Zhat ShimuraGlue.duHom._proof_1
+CurveSplit.isIso_of_finite_bijective	3102	3127	CurveSplit.SpecK CurveSplit.app_bijective_of_finite_bijective CurveSplit.isIso_of_finite_bijective._proof_1_1
+CurveSplit.bcMap._proof_2	0	0	
+HDec.QMSplit.Moduli.x6ConicModel_of_canonical	731	734	HDec.QMSplit.Moduli.ConicCanonical HDec.QMSplit.Moduli.CoarseFactor ModelGlue.CurveBijIso HDec.QMSplit.Moduli.HauptmodulUniqueX6 HDec.QMSplit.Moduli.x6ConicModel_of HDec.QMSplit.Moduli.conicOfWitness_of HDec.QMSplit.Moduli.coarseCompare_of
+X6Glue.psiV.eq_1	0	0	X6Glue.ElkiesRing X6Glue.elkiesIdeal X6Glue.psiV X6Glue.ev X6Glue.psiV._proof_1
+ShimuraGlue.Mob.good_all._simp_1_8	0	0	
+ShimuraSplit.pt_one_left	3295	3298	
+ShimuraGlue.Mob.res_res	5774	5777	ShimuraGlue.Mob.res_res._simp_1_1 ShimuraGlue.Mob.res_res._simp_1_2
+ShimuraGlue.r3	5333	5336	ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.Zhat ShimuraGlue.locZ._proof_1 ShimuraGlue.v3 ShimuraGlue.evZ._proof_1 ShimuraGlue.r3._proof_1 ShimuraGlue.r3._proof_2 ShimuraGlue.v3_spec ShimuraGlue.r3._proof_3 ShimuraGlue.r3._proof_4 ShimuraGlue.locZ ShimuraGlue.evZ
+ShimuraGlue.posQ_div	5264	5265	ShimuraGlue.posQ
+HDec.QMSplit.Moduli.r1b_of'	485	491	HDec.QMSplit.Moduli.ShimuraFamily HDec.QMSplit.Moduli.r1b_of HDec.QMSplit.Moduli.r1bTransport_proof
+ShimuraGlue.chi	5346	5347	ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.Zhat ShimuraGlue.toZhatUnits._proof_1 ShimuraGlue.evZ._proof_1 ShimuraGlue.chi._proof_1 ShimuraGlue.r3 ShimuraGlue.ZhatU ShimuraGlue.duHom._proof_1 ShimuraGlue.toZhatUnits ShimuraGlue.duHom
+CoarseFactorAG.factorThroughSurj	1679	1806	CoarseFactorAG.FactorThroughSurj CoarseFactorAG.exists_lift_of_surjective CoarseFactorAG.toPt CoarseFactorAG.exists_lift_at CoarseFactorAG.isIso_of_points CoarseFactorAG.isReduced_image CoarseFactorAG.isReduced_of_smooth CoarseFactorAG.isZariskiLocalAtTarget_isFinite
+ShimuraGlue.Mob.ToP1.translate	5955	6017	ShimuraGlue.Mob.W₁ ShimuraGlue.Mob.W₂ ShimuraGlue.Mob.ToP1.translate._proof_1 ShimuraGlue.Mob.fT ShimuraGlue.Mob.gT ShimuraGlue.Mob.ToP1.translate._proof_4 ShimuraGlue.Mob.ToP1.translate._proof_5 ShimuraGlue.Mob.ToP1.translate._proof_6
+ShimuraGlue.Mob.s₂	5832	5834	ShimuraGlue.Mob.W₂ ShimuraGlue.Mob.W₂_le ShimuraGlue.Mob.hT ShimuraGlue.Mob.isUnit₂
+ShimuraGlue.ZhatU._proof_2	0	0	ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.Zhat
+ShimuraGlue.nrdQ_ofQ	4750	4757	ShimuraGlue.BR ShimuraGlue.N4._proof_2 ShimuraGlue.BR._proof_1 ShimuraGlue.nrdQ ShimuraGlue.ofQ ShimuraGlue.N4 ShimuraGlue.half ShimuraGlue.two_mul_half ShimuraGlue.N4._proof_1
+HDec.QMSplit.Moduli.X6Leaves.deligneX6P	7317	7317	HDec.QMSplit.Moduli.X6Leaves ShimuraGlue.DeligneComponentsX6Printed
+ShimuraGlue.e0	5042	5043	
+HDec.QMSplit.Moduli.r1rec_of_r1r2	4112	4117	ShimuraSplit.r1rec_of_point
+ShimuraGlue.cycU	5464	5468	ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.Place ShimuraGlue.locZ._proof_1 ShimuraGlue.locZ._proof_2 ShimuraGlue.cycU._proof_1 ShimuraGlue.adeleHom ShimuraGlue.cycU._proof_2
+ShimuraSplit.instSurjectiveSQbar	3693	3697	ShimuraSplit.sQbar CurveSplit.instNonemptyCarrierCarrierCommRingCatSpecKQbar CurveSplit.instSubsingletonCarrierCarrierCommRingCatSpecOfRat_scratch
+CurveSplit.algebraMap_integralClosure_bijective	2780	2825	CurveSplit.isIntegrallyClosed_of_normal
+CurveSplit.bcMap._proof_3	0	0	CurveSplit.SpecK CurveSplit.bQ
+HDec.QMSplit.Moduli.ElkiesConicX6	4342	4354	
+CoarseFactorAG.isOpen_irreducibleComponent._simp_1_2	0	0	
+ShimuraGlue.ZhatU._proof_3	0	0	ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.Zhat
+CurveSplit.kPt	1908	1909	CurveSplit.SpecK
+ShimuraGlue.Mob.gval_cQ	6160	6163	ShimuraGlue.Mob.gval ShimuraGlue.Mob.cQ
+ShimuraGlue.toZMod_cyc_three	5491	5520	
+ShimuraSplit.exists_level3	4078	4091	ShimuraSplit.exists_good_point ShimuraSplit.act_mul ShimuraSplit.ker_of_good ShimuraSplit.act_three
+X6Glue.psiU.congr_simp	0	0	X6Glue.ElkiesRing X6Glue.elkiesIdeal X6Glue.psiU
+HDec.QMSplit.Moduli.x6ConicModel_of_elkies_t5	4401	4405	HDec.QMSplit.Moduli.ElkiesConicX6 HDec.QMSplit.Moduli.x6ConicModel_of_elkies
+HDec.QMSplit.Moduli.isoTwistSymm._proof_2	0	0	
+ShimuraGlue.BAf	4690	4691	ShimuraGlue.BR ShimuraGlue.Af ShimuraGlue.Af._proof_1
+HDec.QMSplit.Moduli.hauptmodulUniqueX6S_of	790	808	HDec.QMSplit.Moduli.HauptmodulUniqueX6S HDec.QMSplit.Moduli.cm_lift HDec.QMSplit.Moduli.hauptmodulUniqueX6S_of.match_1_1 HDec.QMSplit.Moduli.r2fp_of_r2X6
+ShimuraGlue.cycU_mem	5474	5477	ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.ZhatU ShimuraGlue.cycU ShimuraGlue.Zhat ShimuraGlue.adeleHom_mem ShimuraGlue.Place ShimuraGlue.locZ._proof_1 ShimuraGlue.locZ._proof_2 ShimuraGlue.cycU._proof_2 ShimuraGlue.cycU._proof_1 ShimuraGlue.adeleHom ShimuraGlue.cycU.eq_1
+HDec.QMSplit.Moduli.elkiesConicX6_of_t'	6541	6543	HDec.QMSplit.Moduli.ElkiesConicT HDec.QMSplit.Moduli.ElkiesConicX6 HDec.QMSplit.Moduli.elkiesConicX6_of_t HDec.QMSplit.Moduli.mobiusCompose
+ShimuraGlue.Mob.hT.eq_1	0	0	ShimuraGlue.Mob.hT ShimuraGlue.Mob.onU
+HDec.QMSplit.Moduli.residueOfX6_of	657	673	HDec.QMSplit.Moduli.GonzalezRotgerX6 HDec.QMSplit.Moduli.CoarseCompare HDec.QMSplit.Moduli.ResidueOfX6 HDec.QMSplit.Moduli.compare_iso HDec.QMSplit.Moduli.x6Props_transport
+X6Glue.pt_mem_top	6825	6827	
+ShimuraGlue.K3._proof_1	0	0	ShimuraGlue.BAf ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.N4._proof_2 ShimuraGlue.BR._proof_1 ShimuraGlue.Kfull ShimuraGlue.Ohat ShimuraGlue.K3._abel_1
+HDec.QMSplit.Moduli.rows_of_shimuraGlueLeaves2	6562	6566	HDec.QMSplit.Moduli.ShimuraGlueLeaves2 HDec.QMSplit.Moduli.rows_of_shimuraGlueLeaves HDec.QMSplit.Moduli.shimuraGlueLeaves_of_2
+HDec.QMSplit.Moduli.ShimuraSplitLeaves.mk	4436	4436	HDec.QMSplit.Moduli.DeligneComponentsX6 HDec.QMSplit.Moduli.GeomConnOfAlgClosure HDec.QMSplit.Moduli.BabaGranathX6' HDec.QMSplit.Moduli.ReciprocityCanonical HDec.QMSplit.Moduli.GonzalezRotgerX6 ShimuraSplit.GonzalezRotgerCountX6 ShimuraSplit.DeligneComponentsY3 HDec.QMSplit.Moduli.ElkiesConicX6 HDec.QMSplit.Moduli.ShimuraSplitLeaves
+ShimuraGlue.Ray.RayClassCM._proof_7	0	0	ShimuraGlue.Ray.K3
+ShimuraGlue.du_mem	5287	5287	ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.ZhatU ShimuraGlue.du ShimuraGlue.posQ ShimuraGlue.emb ShimuraGlue.exists_decomp
+ShimuraGlue.du	5284	5285	ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.emb ShimuraGlue.dq
+HDec.QMSplit.Moduli.ShimuraGlueLeaves4	7330	7340	HDec.QMSplit.Moduli.ShimuraGlueLeaves4.mk
+HDec.QMSplit.Moduli.isoTwistSymm._proof_3	0	0	
+ShimuraGlue.toZhatUnits	5340	5344	ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.ZhatU ShimuraGlue.Zhat ShimuraGlue.toZhatUnits._proof_1 ShimuraGlue.duHom._proof_1 ShimuraGlue.toZhatUnits._proof_2 ShimuraGlue.toZhatUnits._proof_3 ShimuraGlue.toZhatUnits._proof_4 ShimuraGlue.toZhatUnits._proof_5 ShimuraGlue.toZhatUnits._proof_10 ShimuraGlue.toZhatUnits._proof_15
+ShimuraGlue.nrdQ_apply	4699	4700	ShimuraGlue.BR ShimuraGlue.N4._proof_2 ShimuraGlue.BR._proof_1 ShimuraGlue.nrdQ
+X6Glue.ElkiesCharts	6988	7005	X6Glue.ElkiesRing X6Glue.elkiesIdeal X6Glue.eT X6Glue.ElkiesCharts._proof_1 X6Glue.eS X6Glue.ElkiesCharts._proof_2 X6Glue.eR
+ShimuraGlue.Mob.eval_hT	5907	5910	ShimuraGlue.Mob.hT ShimuraGlue.Mob.onU ShimuraGlue.Mob.hT.eq_1 ShimuraGlue.Mob.eval_onU
+ShimuraGlue.nrdQ_eq_kernel	5655	5656	ShimuraGlue.BR ShimuraGlue.N4._proof_2 ShimuraGlue.BR._proof_1 ShimuraGlue.nrdQ
+HDec.QMSplit.Moduli.isFibre_twist	402	406	HDec.QMSplit.Moduli.twistFam
+HDec.QMSplit.Moduli.ShimuraGlueLeaves2.mk._flat_ctor	0	0	ShimuraGlue.DeligneComponentsX6Printed HDec.QMSplit.Moduli.GeomConnOfAlgClosure HDec.QMSplit.Moduli.BabaGranathRational HDec.QMSplit.Moduli.ReciprocityCanonical HDec.QMSplit.Moduli.GonzalezRotgerX6 ShimuraSplit.GonzalezRotgerCountX6 ShimuraGlue.DeligneComponentsY3Printed HDec.QMSplit.Moduli.ElkiesConicT HDec.QMSplit.Moduli.ShimuraGlueLeaves2 HDec.QMSplit.Moduli.ShimuraGlueLeaves2.mk
+ShimuraGlue.isUnit_locA	4986	4993	ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.ZhatU ShimuraGlue.Place ShimuraGlue.instFactPrimes ShimuraGlue.locA ShimuraGlue.Zhat ShimuraGlue.locZ._proof_1 ShimuraGlue.locZ._proof_2 ShimuraGlue.locZ._proof_3 ShimuraGlue.locZ ShimuraGlue.locA.eq_1 ShimuraGlue.ev ShimuraGlue.ev_apply
+CurveSplit.isNormal_of_integral	2355	2370	CurveSplit.SpecK CurveSplit.stalk_closed_normal CurveSplit.closure_mem_irreducibleComponents CurveSplit.topDim_le_one
+ShimuraGlue.rep_unit3	5045	5070	ShimuraGlue.N4 ShimuraGlue.e0 ShimuraGlue.sq_three ShimuraGlue.norm_lt_one_iff_toZMod ShimuraGlue.N4._proof_1 ShimuraGlue.N4._proof_2 ShimuraGlue.rep_unit ShimuraGlue.isUnit_iff_toZMod
+CoarseFactorAG.closure_mem_irreducibleComponents	885	912	
+X6Glue.specQ_hom_ext	6896	6902	
+ShimuraGlue.Mob.good_all._simp_1_5	0	0	
+ShimuraGlue.toZhatUnits._proof_2	0	0	ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.ZhatU ShimuraGlue.Zhat
+ShimuraGlue.Mob.good_mul	6189	6193	ShimuraGlue.Mob.Good
+ShimuraGlue.nrd_K3_le	4926	4933	ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.BAf ShimuraGlue.N4._proof_2 ShimuraGlue.BR._proof_1 ShimuraGlue.nrdU ShimuraGlue.K3 ShimuraGlue.U3 ShimuraGlue.Kfull ShimuraGlue.Ohat ShimuraGlue.Zhat ShimuraGlue.ofQ ShimuraGlue.ZhatU ShimuraGlue.nrd_Kfull_le ShimuraGlue.N4 ShimuraGlue.N4_mem ShimuraGlue.BR ShimuraGlue.nrdQ ShimuraGlue.nrd_one_add_three
+CurveSplit.bij_restrict	2427	2476	CurveSplit.SpecK CurveSplit.kPt
+ShimuraGlue.N4	4497	4499	ShimuraGlue.N4._proof_1 ShimuraGlue.N4._proof_2
+ShimuraGlue.locA.congr_simp	0	0	ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.Zhat ShimuraGlue.Place ShimuraGlue.instFactPrimes ShimuraGlue.locA
+X6Glue.conicModelT_of_charts	7222	7236	X6Glue.ElkiesCharts HDec.QMSplit.Moduli.ConicModelT X6Glue.ElkiesRing X6Glue.elkiesIdeal X6Glue.eT X6Glue.ElkiesCharts._proof_1 X6Glue.eS X6Glue.ElkiesCharts._proof_2 X6Glue.eR X6Glue.conicMapL X6Glue.conicMapL_injective X6Glue.conicMapL_surjective X6Glue.specQ_hom_ext X6Glue.conicMapL_comp X6Glue.val_of_inl X6Glue.val_of_inr
+ShimuraGlue.rep_unit	4645	4656	ShimuraGlue.N4 ShimuraGlue.rep_unit._proof_1_1 ShimuraGlue.rep_two ShimuraGlue.rep_three ShimuraGlue.rep_ge5
+HDec.QMSplit.Moduli.ShimuraSplitLeaves.casesOn	4434	4445	HDec.QMSplit.Moduli.ShimuraSplitLeaves HDec.QMSplit.Moduli.DeligneComponentsX6 HDec.QMSplit.Moduli.GeomConnOfAlgClosure HDec.QMSplit.Moduli.BabaGranathX6' HDec.QMSplit.Moduli.ReciprocityCanonical HDec.QMSplit.Moduli.GonzalezRotgerX6 ShimuraSplit.GonzalezRotgerCountX6 ShimuraSplit.DeligneComponentsY3 HDec.QMSplit.Moduli.ElkiesConicX6 HDec.QMSplit.Moduli.ShimuraSplitLeaves.mk
+CurveSplit.curveBijIsoClosed_proved	3183	3212	CurveSplit.CurveBijIsoClosed CurveSplit.SpecK CurveSplit.kPt CurveSplit.closedPoint_facts CurveSplit.bijective_of_closedPoints CurveSplit.topDim_le_one CurveSplit.components_disjoint CurveSplit.isOpen_irreducibleComponent CurveSplit.restrict_isIso_noleaf
+ShimuraGlue.instNeZeroRatCastOfNatNat_scratch	5600	5600	
+ShimuraGlue.toZhatUnits._proof_3	0	0	ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.ZhatU ShimuraGlue.Zhat
+ShimuraSplit.exists_chi3_neg	3665	3688	ShimuraSplit.chi3 ShimuraSplit.exists_primitive3 ShimuraSplit.card_mu3
+ShimuraGlue.three_mem_Zhat	5077	5077	ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.Zhat
+HDec.QMSplit.Moduli.heckeOfFine_proof	432	460	HDec.QMSplit.Moduli.HeckeOfFine HDec.QMSplit.Moduli.classify HDec.QMSplit.Moduli.twistFam HDec.QMSplit.Moduli.isFibre_twist HDec.QMSplit.Moduli.iso_of_pair HDec.QMSplit.Moduli.M3.twist_symm_twist HDec.QMSplit.Moduli.M3.twist_twist_symm HDec.QMSplit.Moduli.rightMulFam HDec.QMSplit.Moduli.isFibre_rightMul HDec.QMSplit.Moduli.M3.rightMul_inv HDec.QMSplit.Moduli.M3.rightMul_inv'
+HDec.QMSplit.Moduli.exists_mobius01._simp_1_5	0	0	
+ShimuraGlue.locA	4979	4980	ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.Zhat ShimuraGlue.Place ShimuraGlue.instFactPrimes ShimuraGlue.locZ._proof_1 ShimuraGlue.locZ._proof_2 ShimuraGlue.locZ._proof_3 ShimuraGlue.locZ
+HDec.QMSplit.Moduli.X6Leaves.geomConn	7318	7318	HDec.QMSplit.Moduli.X6Leaves HDec.QMSplit.Moduli.GeomConnOfAlgClosure
+X6Glue.ElkiesCharts._proof_2	0	0	
+HDec.QMSplit.Moduli.ShimuraGlueLeaves2.rec	6545	6556	HDec.QMSplit.Moduli.ShimuraGlueLeaves2 ShimuraGlue.DeligneComponentsX6Printed HDec.QMSplit.Moduli.GeomConnOfAlgClosure HDec.QMSplit.Moduli.BabaGranathRational HDec.QMSplit.Moduli.ReciprocityCanonical HDec.QMSplit.Moduli.GonzalezRotgerX6 ShimuraSplit.GonzalezRotgerCountX6 ShimuraGlue.DeligneComponentsY3Printed HDec.QMSplit.Moduli.ElkiesConicT HDec.QMSplit.Moduli.ShimuraGlueLeaves2.mk
+ShimuraGlue.Mob.gT._proof_1	0	0	ShimuraGlue.Mob.W₁ ShimuraGlue.Mob.W₂
+ShimuraGlue.adeleHom._proof_10	0	0	ShimuraGlue.Place ShimuraGlue.locZ._proof_1 ShimuraGlue.Af._proof_1 ShimuraGlue.locZ._proof_2 ShimuraGlue.adeleHom._proof_1 ShimuraGlue.adeleHom._proof_2 ShimuraGlue.locZ ShimuraGlue.instFactPrimes
+ShimuraSplit.units_zmod3	3690	3691	
+ShimuraGlue.Ray.hK3._proof_1_1	0	0	
+ShimuraGlue.Mob.invP1.eq_1	0	0	ShimuraGlue.Mob.invP1
+CurveSplit.isOpen_irreducibleComponent._simp_1_1	0	0	
+HDec.QMSplit.Moduli.FactorThroughSurj	1828	1839	
+ShimuraGlue.Mob.onU.eq_1	0	0	ShimuraGlue.Mob.onU ShimuraGlue.Mob.onU._proof_1
+CurveSplit.isIso_fromNormalization	2827	2863	CurveSplit.algebraMap_integralClosure_bijective CurveSplit.isIso_fromNormalization._proof_1_1
+HDec.QMSplit.Moduli.ShimuraGlueLeaves4.rayClass	7336	7336	HDec.QMSplit.Moduli.ShimuraGlueLeaves4 ShimuraGlue.Ray.RayClassCM
+ShimuraGlue.duHom	5311	5315	ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.ZhatU ShimuraGlue.duHom._proof_1 ShimuraGlue.du ShimuraGlue.du_mem ShimuraGlue.duHom._proof_3 ShimuraGlue.duHom._proof_5
+ShimuraGlue.star_ofQ	4759	4766	ShimuraGlue.BR ShimuraGlue.N4._proof_2 ShimuraGlue.BR._proof_1 ShimuraGlue.ofQ ShimuraGlue.half ShimuraGlue.two_mul_half ShimuraGlue.N4._proof_1
+HDec.QMSplit.Moduli.ShimuraGlueLeaves.babaGranath	5724	5724	HDec.QMSplit.Moduli.ShimuraGlueLeaves HDec.QMSplit.Moduli.BabaGranathX6'
+CurveSplit.instNonemptyCarrierCarrierCommRingCatSpecKQbar	1948	1948	CurveSplit.SpecK CurveSplit.instNonemptyCarrierCarrierCommRingCatSpecKQbar._proof_1
+ShimuraGlue.Mob.gT	5890	5892	ShimuraGlue.Mob.W₁ ShimuraGlue.Mob.W₂ ShimuraGlue.Mob.gT._proof_1 ShimuraGlue.Mob.gT._proof_2 ShimuraGlue.Mob.s₁ ShimuraGlue.Mob.s₂ ShimuraGlue.Mob.s_agree
+CurveSplit.instNonemptyCarrierCarrierCommRingCatSpecKQbar._proof_1	0	0	CurveSplit.SpecK
+ShimuraGlue.dq_of_mem	5300	5301	ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.ZhatU ShimuraGlue.dq ShimuraGlue.decomp_unique ShimuraGlue.dq_pos ShimuraGlue.posQ ShimuraGlue.du ShimuraGlue.du_mem ShimuraGlue.emb ShimuraGlue.emb_dq_mul_du
+HDec.QMSplit.Moduli.elkiesConicT_of_equations	7282	7285	HDec.QMSplit.Moduli.ElkiesEquationsX6 HDec.QMSplit.Moduli.ElkiesConicT X6Glue.ElkiesCharts HDec.QMSplit.Moduli.ConicModelT X6Glue.conicModelT_of_charts
+X6Glue.psiV.congr_simp	0	0	X6Glue.ElkiesRing X6Glue.elkiesIdeal X6Glue.psiV
+ShimuraGlue.U3._proof_3	0	0	ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.ZhatU ShimuraGlue.Zhat ShimuraGlue.BR._proof_1
+X6Glue.eT._proof_1	0	0	X6Glue.elkiesIdeal
+ShimuraGlue.evZ._proof_1	0	0	ShimuraGlue.Af ShimuraGlue.Af._proof_1
+ShimuraSplit.point_of_r5fp	3552	3563	ShimuraSplit.fieldOfModuliPair_eq_residueImage
+X6Glue.eT	6929	6930	X6Glue.ElkiesRing X6Glue.elkiesIdeal X6Glue.eT._proof_1 ShimuraSplit.chi3._proof_2
+HDec.QMSplit.Moduli.ShimuraGlueLeaves.recOn	5718	5729	HDec.QMSplit.Moduli.ShimuraGlueLeaves ShimuraGlue.DeligneComponentsX6Printed HDec.QMSplit.Moduli.GeomConnOfAlgClosure HDec.QMSplit.Moduli.BabaGranathX6' HDec.QMSplit.Moduli.ReciprocityCanonical HDec.QMSplit.Moduli.GonzalezRotgerX6 ShimuraSplit.GonzalezRotgerCountX6 ShimuraGlue.DeligneComponentsY3Printed HDec.QMSplit.Moduli.ElkiesConicX6 HDec.QMSplit.Moduli.ShimuraGlueLeaves.mk HDec.QMSplit.Moduli.ShimuraGlueLeaves.casesOn
+HDec.QMSplit.Moduli.coarseFactor_of_rep'	3238	3240	HDec.QMSplit.Moduli.CoarseFactor HDec.QMSplit.Moduli.coarseFactor_of_rep HDec.QMSplit.Moduli.factorThroughSurj_proof
+ShimuraGlue.BR._proof_1	0	0	
+ShimuraGlue.ofQ_zero	4747	4748	ShimuraGlue.BR ShimuraGlue.ofQ ShimuraGlue.N4._proof_2 ShimuraGlue.BR._proof_1 ShimuraGlue.N4._proof_1 ShimuraGlue.half
+ShimuraGlue.nrdQ._proof_1	0	0	
+ShimuraGlue.ofQ.eq_1	0	0	ShimuraGlue.BR ShimuraGlue.ofQ ShimuraGlue.N4._proof_2 ShimuraGlue.BR._proof_1 ShimuraGlue.N4._proof_1 ShimuraGlue.half
+ShimuraGlue.evZ	5325	5331	ShimuraGlue.Place ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.Zhat ShimuraGlue.evZ._proof_1 ShimuraGlue.locZ._proof_3 ShimuraGlue.evZ._proof_2 ShimuraGlue.evZ._proof_4 ShimuraGlue.evZ._proof_6 ShimuraGlue.evZ._proof_8 ShimuraGlue.evZ._proof_10
+ShimuraSplit.bcPt_pow	3973	3974	
+ShimuraGlue.duHom._proof_1	0	0	ShimuraGlue.Af ShimuraGlue.Af._proof_1
+HDec.QMSplit.Moduli.geomConnX6_pairsLift_of	4218	4222	HDec.QMSplit.Moduli.CanonicalCoarseX6 HDec.QMSplit.Moduli.GeomConnX6 HDec.QMSplit.Moduli.PairsLift HDec.QMSplit.Moduli.pairsLift_of_canonical
+HDec.QMSplit.Moduli.ShimuraGlueLeaves2.elkiesT	6556	6556	HDec.QMSplit.Moduli.ShimuraGlueLeaves2 HDec.QMSplit.Moduli.ElkiesConicT
+ShimuraGlue.duHom._proof_4	0	0	ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.ZhatU ShimuraGlue.du ShimuraGlue.du_mem
+ShimuraGlue.U3._proof_2	0	0	ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.ZhatU ShimuraGlue.Zhat ShimuraGlue.BR._proof_1
+ShimuraGlue.rep_ge5._proof_1_2	0	0	
+ShimuraGlue.Ray.RayClassCM._proof_8	0	0	ShimuraGlue.Ray.K3 ShimuraGlue.Ray.RayClassCM._proof_7
+HDec.QMSplit.Moduli.ShimuraGlueLeaves4.gonzalezRotger	7337	7337	HDec.QMSplit.Moduli.ShimuraGlueLeaves4 HDec.QMSplit.Moduli.GonzalezRotgerX6
+ShimuraGlue.evZ._proof_4	0	0	ShimuraGlue.Place ShimuraGlue.Af._proof_1 ShimuraGlue.Af ShimuraGlue.Zhat ShimuraGlue.evZ._proof_1 ShimuraGlue.evZ._proof_3 ShimuraGlue.locZ._proof_3
+HDec.QMSplit.Moduli.cm_lift	776	788	
+ShimuraGlue.BR	4686	4688	ShimuraGlue.N4._proof_2 ShimuraGlue.BR._proof_1
+ShimuraGlue.Mob.val_scale	6096	6108	ShimuraGlue.Mob.ToP1.scale ShimuraGlue.Mob.gval ShimuraGlue.Mob.onU ShimuraGlue.Mob.eval_onU
+ShimuraGlue.nrdQ	4693	4697	ShimuraGlue.BR ShimuraGlue.N4._proof_2 ShimuraGlue.BR._proof_1 ShimuraGlue.nrdQ._proof_1 ShimuraGlue.nrdQ._proof_2 ShimuraGlue.nrdQ._proof_3
+ShimuraGlue.Ray.RayClassCM._proof_9	0	0	
+HDec.QMSplit.Moduli.ShimuraGlueLeaves4.deligneX6P	7332	7332	HDec.QMSplit.Moduli.ShimuraGlueLeaves4 ShimuraGlue.DeligneComponentsX6Printed
+ShimuraSplit.fieldOfModuli3_eq_residueImage	3460	3486	ShimuraSplit.bc_unique3 ShimuraSplit.bc_transport3 ShimuraSplit.fixing_iff
+CurveSplit.curveBijIso_of_zmt	2746	2749	CurveSplit.ZMTOriginal CurveSplit.DegreeGeneralFibre ModelGlue.CurveBijIso CurveSplit.curveBijIso_of_closed CurveSplit.curveBijIsoClosed_of_zmt
+CoarseFactorAG.toPt	1643	1646	CoarseFactorAG.toPt._proof_1
+HDec.QMSplit.Moduli.isReduced_of_smooth_domain	261	272	HDec.QMSplit.Moduli.isReduced_of_smooth_of_isDomain
+CurveSplit.toS._proof_1	0	0	CurveSplit.SpecK CurveSplit.kPt CurveSplit.bQ CurveSplit.bcMap._proof_1
+X6Glue.val_of_inl	7134	7151	X6Glue.ElkiesRing X6Glue.elkiesIdeal X6Glue.eT X6Glue.conicMapL X6Glue.pt X6Glue.psiU X6Glue.eS X6Glue.eR X6Glue.conicMapL._proof_1 X6Glue.psiV X6Glue.memV_of_not_memU X6Glue.conicMapL._proof_2 X6Glue.conicMapL.eq_1 X6Glue.ev X6Glue.rel1
+CoarseFactorAG.isIntegrallyClosed_of_normal	1194	1211	
+ShimuraGlue.Ray.hK24._proof_1_1	0	0	ShimuraGlue.Ray.K24
+ShimuraGlue.adeleHom_locA	4982	4984	ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.Zhat ShimuraGlue.Place ShimuraGlue.instFactPrimes ShimuraGlue.adeleHom ShimuraGlue.locA ShimuraGlue.locZ
+ShimuraSplit.specMap_sigma_comp	3605	3609	ShimuraSplit.sQbar ShimuraSplit.sQbar.eq_1
+ShimuraGlue.Ray.hK4._proof_1_1	0	0	
+HDec.QMSplit.Moduli.ShimuraGlueLeaves3.t5	6773	6773	HDec.QMSplit.Moduli.ShimuraGlueLeaves3
+CoarseFactorAG.bijective_of_points.match_1_1	0	0	
+CoarseFactorAG.isReduced_of_smooth	1101	1120	CoarseFactorAG.SpecK
+CurveSplit.app_bijective_of_finite_bijective	3002	3100	CurveSplit.SpecK CurveSplit.isDedekindDomain_sections CurveSplit.bijective_of_unramifiedAt
+HDec.QMSplit.Moduli.coarseX6OfFine_of	632	639	HDec.QMSplit.Moduli.CanonicalCoarseX6 HDec.QMSplit.Moduli.CoarseX6OfFine HDec.QMSplit.Moduli.compare_iso HDec.QMSplit.Moduli.x6Props_transport
+ShimuraGlue.mem_iff_norm	5123	5130	ShimuraGlue.Place ShimuraGlue.instFactPrimes ShimuraGlue.locQ
+CoarseFactorAG.topDim_le_one	1162	1171	CoarseFactorAG.SpecK
+HDec.QMSplit.Moduli.ConicModelT	6433	6440	
+X6Glue.rel2	6938	6943	X6Glue.ElkiesRing X6Glue.elkiesIdeal X6Glue.eR X6Glue.eT ShimuraSplit.chi3._proof_2 ShimuraGlue.BR._proof_1
+ShimuraGlue.Mob.onU._proof_1	0	0	
+HDec.QMSplit.Moduli.ShimuraSplitLeaves.mk._flat_ctor	0	0	HDec.QMSplit.Moduli.DeligneComponentsX6 HDec.QMSplit.Moduli.GeomConnOfAlgClosure HDec.QMSplit.Moduli.BabaGranathX6' HDec.QMSplit.Moduli.ReciprocityCanonical HDec.QMSplit.Moduli.GonzalezRotgerX6 ShimuraSplit.GonzalezRotgerCountX6 ShimuraSplit.DeligneComponentsY3 HDec.QMSplit.Moduli.ElkiesConicX6 HDec.QMSplit.Moduli.ShimuraSplitLeaves HDec.QMSplit.Moduli.ShimuraSplitLeaves.mk
+HDec.QMSplit.Moduli.M3.rightMul_inv	356	359	HDec.QMSplit.Moduli.isoRightMulOne
+HDec.QMSplit.Moduli.r1r2_of_published	7292	7305	ShimuraGlue.DeligneComponentsX6Printed HDec.QMSplit.Moduli.GeomConnOfAlgClosure HDec.QMSplit.Moduli.BabaGranathRational ShimuraGlue.Ray.RayClassCM HDec.QMSplit.Moduli.GonzalezRotgerX6 HDec.QMSplit.Moduli.r1r2fpRep_of_printed_t5 ShimuraGlue.deligneComponentsX6_of_printed HDec.QMSplit.Moduli.babaGranathX6'_of_rational' ShimuraGlue.Ray.reciprocityCanonical_of_rayClass
+X6Glue.psiU	7055	7058	X6Glue.ElkiesRing X6Glue.elkiesIdeal X6Glue.ev X6Glue.psiU._proof_1
+ShimuraSplit.act_three	3981	3983	
+HDec.QMSplit.Moduli.elkiesConicX6_of	4389	4392	HDec.QMSplit.Moduli.ElkiesConicX6
+HDec.QMSplit.Moduli.babaGranathX6'_of	4272	4274	HDec.QMSplit.Moduli.BabaGranathX6 HDec.QMSplit.Moduli.BabaGranathX6'
+CoarseFactorAG.restrict_surj	1578	1592	
+ShimuraGlue.Mob.ToP1.scale._proof_2	0	0	
+ShimuraGlue.locA.eq_1	0	0	ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.Zhat ShimuraGlue.Place ShimuraGlue.instFactPrimes ShimuraGlue.locA ShimuraGlue.locZ._proof_1 ShimuraGlue.locZ._proof_2 ShimuraGlue.locZ._proof_3 ShimuraGlue.locZ
+HDec.QMSplit.Moduli.CoarseX6OfFine	90	99	
+ShimuraGlue.Mob.gl2_apply	6169	6170	ShimuraGlue.Mob.gl2
+HDec.QMSplit.Moduli.ShimuraSplitLeaves.elkies	4445	4445	HDec.QMSplit.Moduli.ShimuraSplitLeaves HDec.QMSplit.Moduli.ElkiesConicX6
+ShimuraGlue.adeleHom._proof_8	0	0	ShimuraGlue.Af._proof_1 ShimuraGlue.locZ._proof_1 ShimuraGlue.adeleHom._proof_1 ShimuraGlue.adeleHom._proof_2 ShimuraGlue.locZ ShimuraGlue.Place ShimuraGlue.locZ._proof_2 ShimuraGlue.instFactPrimes
+ShimuraGlue.Ray.RayClassCM._proof_10	0	0	ShimuraGlue.Ray.K3
+ShimuraGlue.posQ._proof_3	0	0	
+X6Glue.conic_rel	7064	7068	X6Glue.ElkiesRing X6Glue.elkiesIdeal X6Glue.eR X6Glue.eS X6Glue.eT X6Glue.rel1 X6Glue.rel2
+HDec.QMSplit.Moduli.ShimuraGlueLeaves.t5	5723	5723	HDec.QMSplit.Moduli.ShimuraGlueLeaves
+ShimuraSplit.galAct_fst	3616	3618	ShimuraSplit.baseQbar ShimuraSplit.galAct ShimuraSplit.sQbar ShimuraSplit.baseQbar._proof_1 ShimuraSplit.galAct._proof_1 ShimuraSplit.galAct._proof_2 ShimuraSplit.galAct._proof_3
+ShimuraGlue.adeleHom._proof_9	0	0	ShimuraGlue.Af._proof_1 ShimuraGlue.locZ._proof_1 ShimuraGlue.adeleHom._proof_1 ShimuraGlue.adeleHom._proof_2 ShimuraGlue.locZ ShimuraGlue.Place ShimuraGlue.locZ._proof_2 ShimuraGlue.adeleHom._proof_8 ShimuraGlue.Af ShimuraGlue.instFactPrimes
+ShimuraGlue.vec4_mem	5006	5009	ShimuraGlue.Af ShimuraGlue.Af._proof_1
+CurveSplit.closure_mem_irreducibleComponents	2044	2071	
+X6Glue.psiU._proof_1	0	0	X6Glue.ElkiesRing X6Glue.elkiesIdeal
+ShimuraGlue.Mob.ToP1.scale._proof_3	0	0	ShimuraGlue.Mob.ToP1.scale._proof_1 ShimuraGlue.Mob.onU ShimuraGlue.Mob.ToP1.scale._proof_2 ShimuraGlue.Mob.onU_res ShimuraGlue.Mob.onU._proof_1 ShimuraGlue.Mob.onU.eq_1
+ShimuraGlue.ZhatU_le	5030	5039	ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.ZhatU ShimuraGlue.BAf ShimuraGlue.N4._proof_2 ShimuraGlue.BR._proof_1 ShimuraGlue.nrdU ShimuraGlue.Kfull ShimuraGlue.instFactPrimes ShimuraGlue.N4 ShimuraGlue.locA ShimuraGlue.Zhat ShimuraGlue.Place ShimuraGlue.adeleHom ShimuraGlue.BR ShimuraGlue.nrdQ ShimuraGlue.ofQ ShimuraGlue.nrdQ_ofQ ShimuraGlue.N4_adeleHom ShimuraGlue.adeleHom_locA ShimuraGlue.exists_unit_of_nrd ShimuraGlue.adeleHom_mem ShimuraGlue.rep_unit ShimuraGlue.isUnit_locA
+HDec.QMSplit.Moduli.y3Connected_of_deligne	4231	4234	ShimuraSplit.DeligneComponentsY3 ShimuraSplit.y3Connected_of_deligne
+ShimuraGlue.Ray.RayClassCM._proof_13	0	0	ShimuraGlue.Ray.z24._proof_2 ShimuraGlue.Ray.K24 ShimuraGlue.Ray.RayClassCM._proof_12
+ShimuraGlue.posQ._proof_2	0	0	
+X6Glue.inf_rel	7070	7073	X6Glue.ElkiesRing X6Glue.elkiesIdeal X6Glue.eT X6Glue.eR X6Glue.rel2
+ShimuraGlue.N4.eq_1	0	0	ShimuraGlue.N4 ShimuraGlue.N4._proof_1 ShimuraGlue.N4._proof_2
+X6Glue.rel1	6934	6936	X6Glue.ElkiesRing X6Glue.elkiesIdeal X6Glue.eS X6Glue.eT X6Glue.eT._proof_1 ShimuraSplit.chi3._proof_2 ShimuraGlue.BR._proof_1
+ShimuraGlue.Pi0	4900	4901	ShimuraGlue.BAf ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.N4._proof_2 ShimuraGlue.BR._proof_1 ShimuraGlue.posRat ShimuraGlue.nrdU
+ShimuraGlue.map_N4	4501	4503	ShimuraGlue.N4 ShimuraGlue.N4._proof_1 ShimuraGlue.N4._proof_2
+CurveSplit.isOpen_irreducibleComponent	2318	2342	CurveSplit.SpecK CurveSplit.components_disjoint CurveSplit.isOpen_irreducibleComponent._simp_1_1 CurveSplit.isOpen_irreducibleComponent._simp_1_2 CurveSplit.isOpen_irreducibleComponent._simp_1_3
+ShimuraGlue.nrm_mul	5135	5136	ShimuraGlue.Place ShimuraGlue.Af ShimuraGlue.nrm ShimuraGlue.Af._proof_1 ShimuraGlue.locZ._proof_1 ShimuraGlue.locZ._proof_2 ShimuraGlue.locQ ShimuraGlue.ev
+ShimuraGlue.Ray.K3	6676	6677	
+ShimuraGlue.Mob.val_swap	6116	6148	ShimuraGlue.Mob.ToP1.swap ShimuraGlue.Mob.invP1 ShimuraGlue.Mob.eval_fg ShimuraGlue.Mob.g_eval_eq_zero
+HDec.QMSplit.Moduli.isoTwistSymm	317	332	HDec.QMSplit.Moduli.isoTwistSymm._proof_1 HDec.QMSplit.Moduli.isoTwistSymm._proof_2 HDec.QMSplit.Moduli.isoTwistSymm._proof_3 HDec.QMSplit.Moduli.isoTwistSymm._proof_5
+ShimuraGlue.mulCoordR	4718	4723	ShimuraGlue.N4._proof_1
+HDec.QMSplit.Moduli.ShimuraGlueLeaves2.t5	6550	6550	HDec.QMSplit.Moduli.ShimuraGlueLeaves2
+ShimuraSplit.card_mu3	3630	3632	ShimuraSplit.exists_primitive3
+X6Glue.ev_injective	6854	6859	X6Glue.ev X6Glue.psi X6Glue.eq_specMap_psi X6Glue.ev_eq_psi
+ShimuraGlue.pi0K3Equiv_mk	5455	5455	ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.Pi0 ShimuraGlue.K3 ShimuraGlue.posRat ShimuraGlue.BAf ShimuraGlue.N4._proof_2 ShimuraGlue.BR._proof_1 ShimuraGlue.nrdU ShimuraGlue.pi0K3Equiv ShimuraGlue.chi
+HDec.QMSplit.Moduli.ShimuraGlueLeaves4.casesOn	7330	7340	HDec.QMSplit.Moduli.ShimuraGlueLeaves4 ShimuraGlue.DeligneComponentsX6Printed HDec.QMSplit.Moduli.GeomConnOfAlgClosure HDec.QMSplit.Moduli.BabaGranathRational ShimuraGlue.Ray.RayClassCM HDec.QMSplit.Moduli.GonzalezRotgerX6 ShimuraSplit.GonzalezRotgerCountX6 ShimuraGlue.DeligneComponentsY3Printed HDec.QMSplit.Moduli.ElkiesEquationsX6 HDec.QMSplit.Moduli.ShimuraGlueLeaves4.mk
+ShimuraGlue.Ray.RayClassCM._proof_5	0	0	ShimuraGlue.Ray.K4
+X6Glue.ev_eq_psi	6843	6852	X6Glue.ev X6Glue.psi X6Glue.pt_mem_top X6Glue.psi.eq_1
+ShimuraSplit.y3Connected_of_deligne	3699	3744	ShimuraSplit.DeligneComponentsY3 ShimuraSplit.baseQbar ShimuraSplit.galActπ₀ ShimuraSplit.chi3 ShimuraSplit.sQbar ShimuraSplit.baseQbar._proof_1 ShimuraSplit.instSurjectiveSQbar ShimuraSplit.galAct ShimuraSplit.galAct_fst ShimuraSplit.exists_chi3_neg ShimuraSplit.units_zmod3
+HDec.QMSplit.Moduli.r1r2fpRep_of_canonical	675	680	HDec.QMSplit.Moduli.CanonicalModelY3 HDec.QMSplit.Moduli.CanonicalCoarseX6 HDec.QMSplit.Moduli.BabaGranathX6 HDec.QMSplit.Moduli.GonzalezRotgerX6 HDec.QMSplit.Moduli.ReciprocityOfFine HDec.QMSplit.Moduli.CoarseFactor ModelGlue.CurveBijIso HDec.QMSplit.Moduli.r1r2fpRep_of' HDec.QMSplit.Moduli.coarseX6OfFine_of HDec.QMSplit.Moduli.hauptmodulOfX6_of HDec.QMSplit.Moduli.coarseCompare_of HDec.QMSplit.Moduli.residueOfX6_of
+X6Glue.ev_g_eq_zero	7033	7040	X6Glue.pt X6Glue.ev X6Glue.ev_apply
+ShimuraGlue.Mob.good_all._simp_1_7	0	0	
+CurveSplit.bcMap	1928	1930	CurveSplit.SpecK CurveSplit.bQ CurveSplit.bcMap._proof_1 CurveSplit.bcMap._proof_2 CurveSplit.bcMap._proof_3
+HDec.QMSplit.Moduli.eq_id_of_Φ	295	297	HDec.QMSplit.Moduli.eq_id_of_fieldPts
+HDec.QMSplit.Moduli.gT.eq_1	0	0	HDec.QMSplit.Moduli.gT ShimuraGlue.Mob.gl2 HDec.QMSplit.Moduli.gT._proof_1
+HDec.QMSplit.Moduli.exists_mobius01._simp_1_2	0	0	
+ShimuraGlue.Mob.good_all._simp_1_4	0	0	
+ShimuraGlue.chi_val	5349	5349	ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.chi ShimuraGlue.Zhat ShimuraGlue.r3 ShimuraGlue.du ShimuraGlue.du_mem
+HDec.QMSplit.Moduli.ShimuraGlueLeaves3.mk._flat_ctor	0	0	ShimuraGlue.DeligneComponentsX6Printed HDec.QMSplit.Moduli.GeomConnOfAlgClosure HDec.QMSplit.Moduli.BabaGranathRational ShimuraGlue.Ray.RayClassCM HDec.QMSplit.Moduli.GonzalezRotgerX6 ShimuraSplit.GonzalezRotgerCountX6 ShimuraGlue.DeligneComponentsY3Printed HDec.QMSplit.Moduli.ElkiesConicT HDec.QMSplit.Moduli.ShimuraGlueLeaves3 HDec.QMSplit.Moduli.ShimuraGlueLeaves3.mk
+HDec.QMSplit.Moduli.ShimuraGlueLeaves3.deligneX6P	6771	6771	HDec.QMSplit.Moduli.ShimuraGlueLeaves3 ShimuraGlue.DeligneComponentsX6Printed
+ShimuraGlue.exists_lift	4790	4793	ShimuraGlue.Af ShimuraGlue.Af._proof_1
+HDec.QMSplit.Moduli.ShimuraGlueLeaves4.t5	7334	7334	HDec.QMSplit.Moduli.ShimuraGlueLeaves4
+HDec.QMSplit.Moduli.exists_mobius01._simp_1_7	0	0	
+X6Glue.not_memU_of_ev_g	7042	7051	X6Glue.ev X6Glue.ev_apply
+X6Glue.elkiesLift._proof_1	0	0	ShimuraGlue.BR._proof_1 X6Glue.elkiesIdeal ShimuraSplit.chi3._proof_2
+ShimuraGlue.Mob.good_all._simp_1_6	0	0	
+ShimuraGlue.Mob.good_all._simp_1_2	0	0	
+ShimuraGlue.chi_cycU	5522	5530	ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.chi ShimuraGlue.cycU ShimuraGlue.Zhat ShimuraGlue.r3 ShimuraGlue.cycU_mem ShimuraGlue.chi_of_mem ShimuraGlue.v3 ShimuraGlue.v3_spec ShimuraGlue.instFactPrimes ShimuraGlue.locA ShimuraGlue.r3_apply ShimuraGlue.locA_cycU ShimuraGlue.toZMod_transport ShimuraGlue.toZMod_cyc_three
+ShimuraGlue.toZhatUnits._proof_13	0	0	ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.ZhatU ShimuraGlue.Zhat ShimuraGlue.toZhatUnits._proof_1 ShimuraGlue.duHom._proof_1 ShimuraGlue.toZhatUnits._proof_11 ShimuraGlue.toZhatUnits._proof_12
+HDec.QMSplit.Moduli.exists_mobius01._simp_1_4	0	0	
+CurveSplit.restrict_isIso_noleaf	3129	3181	CurveSplit.SpecK CurveSplit.isReduced_of_smooth CurveSplit.isIso_of_finite_bijective
+HDec.QMSplit.Moduli.coarseCompare_of	575	587	HDec.QMSplit.Moduli.CoarseFactor ModelGlue.CurveBijIso HDec.QMSplit.Moduli.CoarseCompare
+ShimuraGlue.Mob.gl2._proof_1	0	0	
+ShimuraGlue.Mob.ToP1.swap._proof_5	0	0	
+X6Glue.mem_comp_iff	6888	6892	
+ShimuraGlue.decomp_unique	5267	5274	ShimuraGlue.posQ ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.ZhatU ShimuraGlue.emb ShimuraGlue.posQ_ZhatU ShimuraGlue.posQ_div
+ShimuraSplit.chi3._proof_2	0	0	
+CurveSplit.toS_left	1968	1970	CurveSplit.SpecK CurveSplit.kPt CurveSplit.bQ CurveSplit.toS
+HDec.QMSplit.Moduli.ShimuraGlueLeaves2.casesOn	6545	6556	HDec.QMSplit.Moduli.ShimuraGlueLeaves2 ShimuraGlue.DeligneComponentsX6Printed HDec.QMSplit.Moduli.GeomConnOfAlgClosure HDec.QMSplit.Moduli.BabaGranathRational HDec.QMSplit.Moduli.ReciprocityCanonical HDec.QMSplit.Moduli.GonzalezRotgerX6 ShimuraSplit.GonzalezRotgerCountX6 ShimuraGlue.DeligneComponentsY3Printed HDec.QMSplit.Moduli.ElkiesConicT HDec.QMSplit.Moduli.ShimuraGlueLeaves2.mk
+ShimuraGlue.DelignePi0._proof_1	0	0	ShimuraGlue.BAf ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.N4._proof_2 ShimuraGlue.BR._proof_1 ShimuraGlue.posRat ShimuraGlue.nrdU
+HDec.QMSplit.Moduli.exists_mobius01._simp_1_6	0	0	
+ShimuraGlue.toZhatUnits._proof_10	0	0	ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.Zhat ShimuraGlue.toZhatUnits._proof_1 ShimuraGlue.ZhatU ShimuraGlue.duHom._proof_1 ShimuraGlue.toZhatUnits._proof_6 ShimuraGlue.toZhatUnits._proof_7 ShimuraGlue.toZhatUnits._proof_8 ShimuraGlue.toZhatUnits._proof_9
+_private.scratch.«x6-fold».Dump3.0.HDec.X6Kummer.conicGal.match_1.splitter	0	0	
+ShimuraGlue.ZhatU	4825	4835	ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.Zhat ShimuraGlue.ZhatU._proof_1 ShimuraGlue.ZhatU._proof_2 ShimuraGlue.ZhatU._proof_3
+ShimuraSplit.pairTwistClass_finite	3846	3854	
+ShimuraSplit.chi3._proof_1	0	0	
+CurveSplit.bijective_of_unramifiedAt	2932	2974	CurveSplit.isLocalization_of_cofinal
+ShimuraGlue.half.eq_1	0	0	ShimuraGlue.half
+CurveSplit.closedPoint_facts	2379	2424	CurveSplit.SpecK CurveSplit.kPt
+CurveSplit.curveBijIso_of_closed	2017	2036	CurveSplit.CurveBijIsoClosed ModelGlue.CurveBijIso CurveSplit.SpecK CurveSplit.bQ CurveSplit.bcMap CurveSplit.bcMap_snd CurveSplit.bij_bc CurveSplit.bQ_surjective CurveSplit.bQ_flat CurveSplit.bcMap_isPullback
+HDec.QMSplit.Moduli.ShimuraGlueLeaves2	6545	6556	HDec.QMSplit.Moduli.ShimuraGlueLeaves2.mk
+HDec.QMSplit.Moduli.pairsLift_of_witness	1843	1852	HDec.QMSplit.Moduli.PairsLift
+CoarseFactorAG.isIso_affine	1521	1566	CoarseFactorAG.SpecK CoarseFactorAG.bijective_of_points CoarseFactorAG.isDedekindDomain_sections
+CoarseFactorAG.components_disjoint	1122	1134	CoarseFactorAG.SpecK CoarseFactorAG.irreducibleComponent_eq_of_isDomain_stalk CoarseFactorAG.stalk_closed_normal
+ShimuraGlue.chi_neg_one	5399	5403	ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.chi ShimuraGlue.Zhat ShimuraGlue.r3 ShimuraGlue.neg_one_mem_ZhatU ShimuraGlue.chi_of_mem
+ShimuraGlue.Mob.onU	5784	5785	ShimuraGlue.Mob.onU._proof_1
+CurveSplit.restrict_isIso'.match_1_3	0	0	CurveSplit.SpecK
+HDec.QMSplit.Moduli.ShimuraGlueLeaves.reciprocity	5725	5725	HDec.QMSplit.Moduli.ShimuraGlueLeaves HDec.QMSplit.Moduli.ReciprocityCanonical
+ShimuraGlue.Ohat._proof_5	0	0	ShimuraGlue.BAf ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.Zhat ShimuraGlue.ofQ ShimuraGlue.N4._proof_2 ShimuraGlue.BR._proof_1 ShimuraGlue.ofQ_neg
+HDec.QMSplit.Moduli.ElkiesConicT	6442	6463	HDec.QMSplit.Moduli.ConicModelT
+ShimuraGlue.Mob.invP1	6111	6114	ShimuraGlue.Mob.invP1.match_1
+ShimuraGlue.ofQ	4714	4716	ShimuraGlue.BR ShimuraGlue.N4._proof_2 ShimuraGlue.BR._proof_1 ShimuraGlue.N4._proof_1 ShimuraGlue.half
+ShimuraSplit.bcPt_one	3976	3977	
+HDec.QMSplit.Moduli.BabaGranathX6	612	620	
+CurveSplit.isDomain_of_dim_one._proof_1_1	0	0	
+CurveSplit.toS	1960	1966	CurveSplit.SpecK CurveSplit.kPt CurveSplit.bQ CurveSplit.bcMap._proof_1 CurveSplit.toS._proof_1
+ShimuraSplit.r5fpCount_of_points	3798	3806	ShimuraSplit.GonzalezRotgerCountX6 ShimuraSplit.GonzalezRotgerCountX6._proof_1
+CoarseFactorAG.isLocalization_of_cofinal	1327	1341	
+X6Glue.conicMapL_surjective	7193	7218	X6Glue.ElkiesRing X6Glue.elkiesIdeal X6Glue.eT X6Glue.conicMapL X6Glue.elkiesLift X6Glue.ev X6Glue.ev_surjective X6Glue.psiU X6Glue.psiU._proof_1 X6Glue.pt X6Glue.eS X6Glue.eR X6Glue.conicMapL._proof_1 X6Glue.psiV X6Glue.memV_of_not_memU X6Glue.conicMapL._proof_2 X6Glue.conicMapL.eq_1 X6Glue.elkiesLift_S X6Glue.elkiesLift_R X6Glue.psiV._proof_1 X6Glue.elkiesLift_T X6Glue.not_memU_of_ev_g
+ShimuraGlue.neg_one_mem_ZhatU	5396	5397	ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.ZhatU ShimuraGlue.Zhat
+ShimuraGlue.toZhatUnits._proof_6	0	0	ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.Zhat ShimuraGlue.ZhatU ShimuraGlue.duHom._proof_1
+ShimuraGlue.pi0K3Equiv._proof_2	0	0	ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.chi
+ShimuraGlue.posRat	4895	4895	ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.posQ
+HDec.QMSplit.Moduli.geomConnX6_of	4316	4318	HDec.QMSplit.Moduli.DeligneComponentsX6 HDec.QMSplit.Moduli.GeomConnOfAlgClosure HDec.QMSplit.Moduli.GeomConnX6 ShimuraSplit.baseQbar
+CoarseFactorAG.isOpen_irreducibleComponent	1136	1160	CoarseFactorAG.SpecK CoarseFactorAG.components_disjoint CoarseFactorAG.isOpen_irreducibleComponent._simp_1_1 CoarseFactorAG.isOpen_irreducibleComponent._simp_1_2 CoarseFactorAG.isOpen_irreducibleComponent._simp_1_3
+_private.scratch.«x6-fold».Dump3.0.ShimuraGlue.Mob.invP1.match_1.splitter	0	0	ShimuraGlue.Mob.invP1.match_1
+ShimuraGlue.chi_surjective	5407	5411	ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.chi ShimuraGlue.units_zmod3' ShimuraGlue.chi_neg_one
+ShimuraGlue.evZ._proof_7	0	0	ShimuraGlue.Place ShimuraGlue.Af._proof_1 ShimuraGlue.Af ShimuraGlue.Zhat ShimuraGlue.evZ._proof_1
+ShimuraGlue.r3_apply	5338	5338	ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.Zhat ShimuraGlue.r3 ShimuraGlue.v3 ShimuraGlue.v3_spec ShimuraGlue.instFactPrimes ShimuraGlue.locA
+HDec.QMSplit.Moduli.X6Leaves.mk	7316	7316	ShimuraGlue.DeligneComponentsX6Printed HDec.QMSplit.Moduli.GeomConnOfAlgClosure HDec.QMSplit.Moduli.BabaGranathRational ShimuraGlue.Ray.RayClassCM HDec.QMSplit.Moduli.GonzalezRotgerX6 HDec.QMSplit.Moduli.ElkiesEquationsX6 HDec.QMSplit.Moduli.X6Leaves
+ShimuraGlue.Mob.ToP1.swap._proof_3	0	0	
+ShimuraGlue.v3	5319	5320	ShimuraGlue.Place ShimuraGlue.locZ._proof_1 ShimuraGlue.Af._proof_1
+ShimuraGlue.Ohat._proof_4	0	0	ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.Zhat ShimuraGlue.BAf ShimuraGlue.N4._proof_2 ShimuraGlue.BR._proof_1 ShimuraGlue.ofQ ShimuraGlue.BR ShimuraGlue.ofQ_zero
+HDec.QMSplit.Moduli.coarseFactor_of_canonical'	3234	3236	HDec.QMSplit.Moduli.CanonicalCoarseX6 HDec.QMSplit.Moduli.CoarseFactor HDec.QMSplit.Moduli.coarseFactor_of_canonical HDec.QMSplit.Moduli.factorThroughSurj_proof
+ShimuraGlue.Ohat._proof_1	0	0	ShimuraGlue.BAf ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.Zhat ShimuraGlue.ofQ ShimuraGlue.N4._proof_2 ShimuraGlue.BR._proof_1 ShimuraGlue.mulCoordR ShimuraGlue.mulCoordR_mem ShimuraGlue.ofQ_mul
+HDec.QMSplit.Moduli.elkiesConicX6_of_equations	7287	7290	HDec.QMSplit.Moduli.ElkiesEquationsX6 HDec.QMSplit.Moduli.ElkiesConicX6 HDec.QMSplit.Moduli.elkiesConicX6_of_t' HDec.QMSplit.Moduli.elkiesConicT_of_equations
+ShimuraGlue.K3	4865	4886	ShimuraGlue.BAf ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.N4._proof_2 ShimuraGlue.BR._proof_1 ShimuraGlue.Kfull ShimuraGlue.Ohat ShimuraGlue.K3._proof_1 ShimuraGlue.K3._proof_2 ShimuraGlue.K3._proof_3
+ShimuraSplit.GonzalezRotgerCountX6._proof_1	0	0	
+ShimuraSplit.point_of_r1rec	3530	3535	ShimuraSplit.fieldOfModuli3_eq_residueImage
+HDec.QMSplit.Moduli.CoarseCompare	567	573	
+ShimuraGlue.nrd_mem_Zhat	4905	4907	ShimuraGlue.BAf ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.N4._proof_2 ShimuraGlue.BR._proof_1 ShimuraGlue.Ohat ShimuraGlue.Zhat ShimuraGlue.BR ShimuraGlue.nrdQ ShimuraGlue.ofQ ShimuraGlue.N4 ShimuraGlue.nrdQ_ofQ ShimuraGlue.N4_mem
+ShimuraGlue.locZ._proof_1	0	0	
+ShimuraGlue.pi0K3Equiv._proof_3	0	0	ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.posRat ShimuraGlue.BAf ShimuraGlue.N4._proof_2 ShimuraGlue.BR._proof_1 ShimuraGlue.nrdU ShimuraGlue.K3 ShimuraGlue.chi ShimuraGlue.chi_ker
+X6Glue.conicMapL.eq_1	0	0	X6Glue.ElkiesRing X6Glue.elkiesIdeal X6Glue.eT X6Glue.conicMapL X6Glue.pt X6Glue.psiU X6Glue.eS X6Glue.eR X6Glue.conicMapL._proof_1 X6Glue.psiV X6Glue.memV_of_not_memU X6Glue.conicMapL._proof_2
+HDec.QMSplit.Moduli.ConnectedCanonical	738	741	
+ShimuraGlue.Mob.ToP1.swap._proof_2	0	0	
+ShimuraGlue.Mob.W₁_le	5820	5820	ShimuraGlue.Mob.W₁ ShimuraGlue.Mob.fT
+ShimuraGlue.Mob.eval_fg	5912	5920	ShimuraGlue.Mob.eval_res'
+ShimuraGlue.Ray.mod3._proof_1	0	0	ShimuraGlue.BR._proof_1
+ShimuraGlue.adeleHom_mem	4976	4977	ShimuraGlue.Place ShimuraGlue.instFactPrimes ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.Zhat ShimuraGlue.adeleHom ShimuraGlue.locZ
+HDec.QMSplit.Moduli.X6Leaves.casesOn	7315	7323	HDec.QMSplit.Moduli.X6Leaves ShimuraGlue.DeligneComponentsX6Printed HDec.QMSplit.Moduli.GeomConnOfAlgClosure HDec.QMSplit.Moduli.BabaGranathRational ShimuraGlue.Ray.RayClassCM HDec.QMSplit.Moduli.GonzalezRotgerX6 HDec.QMSplit.Moduli.ElkiesEquationsX6 HDec.QMSplit.Moduli.X6Leaves.mk
+HDec.QMSplit.Moduli.BabaGranathRational	6389	6413	
+HDec.QMSplit.Moduli.HauptmodulUniqueX6S	757	763	
+_private.scratch.«x6-fold».Dump3.0.ShimuraGlue.Mob.invP1.match_1.eq_2	0	0	ShimuraGlue.Mob.invP1.match_1
+ShimuraSplit.sQbar.eq_1	0	0	ShimuraSplit.sQbar
+X6Glue.conicMapL._proof_1	0	0	X6Glue.ElkiesRing X6Glue.elkiesIdeal X6Glue.pt X6Glue.psiU X6Glue.eR ShimuraGlue.BR._proof_1 X6Glue.eS X6Glue.conic_rel
+HDec.QMSplit.Moduli.isoRightMulOne._proof_3	0	0	HDec.QMSplit.Moduli.isoRightMulOne._proof_1 HDec.QMSplit.Moduli.isoTwistSymm._proof_4
+ShimuraGlue.Mob.W₂.eq_1	0	0	ShimuraGlue.Mob.W₂ ShimuraGlue.Mob.hT
+ShimuraGlue.Ray.instNeZero24	6655	6655	
+HDec.QMSplit.Moduli.M3.twist_twist_symm	338	340	HDec.QMSplit.Moduli.M3.twist_symm_twist
+CoarseFactorAG.bijective_of_points._simp_1_4	0	0	
+ShimuraGlue.Mob.W₁.eq_1	0	0	ShimuraGlue.Mob.W₁ ShimuraGlue.Mob.fT
+HDec.QMSplit.Moduli.ShimuraSplitLeaves.geomConn	4438	4438	HDec.QMSplit.Moduli.ShimuraSplitLeaves HDec.QMSplit.Moduli.GeomConnOfAlgClosure
+ShimuraGlue.posQ	4888	4893	ShimuraGlue.posQ._proof_1 ShimuraGlue.posQ._proof_2 ShimuraGlue.posQ._proof_3
+ShimuraGlue.K3._abel_3	0	0	ShimuraGlue.BAf ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.N4._proof_2 ShimuraGlue.BR._proof_1
+ShimuraGlue.ev._proof_4	0	0	ShimuraGlue.Place ShimuraGlue.Af ShimuraGlue.Af._proof_1
+HDec.QMSplit.Moduli.isoRightMulOne._proof_2	0	0	
+ShimuraGlue.ev._proof_1	0	0	ShimuraGlue.Place ShimuraGlue.Af._proof_1 ShimuraGlue.Af
+ShimuraGlue.units_zmod3'	5405	5405	
+ShimuraSplit.ker_of_good._abel_1_1	0	0	
+ShimuraGlue.connectedSpace_of_subsingleton	5620	5631	
+CurveSplit.curveBijIsoClosed_of_zmt	2714	2744	CurveSplit.ZMTOriginal CurveSplit.DegreeGeneralFibre CurveSplit.CurveBijIsoClosed CurveSplit.SpecK CurveSplit.kPt CurveSplit.closedPoint_facts CurveSplit.bijective_of_closedPoints CurveSplit.topDim_le_one CurveSplit.components_disjoint CurveSplit.isOpen_irreducibleComponent CurveSplit.restrict_isIso'
+CurveSplit.restrict_isIso'._simp_1_1	0	0	
+ShimuraGlue.Mob.ToP1.scale	6027	6051	ShimuraGlue.Mob.onU ShimuraGlue.Mob.ToP1.scale._proof_3 ShimuraGlue.Mob.ToP1.scale._proof_4 ShimuraGlue.Mob.ToP1.scale._proof_5
+ShimuraGlue.Mob.ToP1.scale._proof_5	0	0	ShimuraGlue.Mob.onU
+HDec.QMSplit.Moduli.ShimuraGlueLeaves.elkies	5729	5729	HDec.QMSplit.Moduli.ShimuraGlueLeaves HDec.QMSplit.Moduli.ElkiesConicX6
+CurveSplit.isIso_fromNormalization._proof_1_1	0	0	
+HDec.QMSplit.Moduli.pairsLift_of_t5	4415	4417	HDec.QMSplit.Moduli.PairsLift ShimuraSplit.pairsLift_of_T5
+ShimuraGlue.Mob.gl2_smul_infty	6177	6180	ShimuraGlue.Mob.gl2
+X6Glue.psi	6829	6832	X6Glue.pt_mem_top
+ShimuraGlue.ofQ_mul	4725	4734	ShimuraGlue.BR ShimuraGlue.N4._proof_2 ShimuraGlue.BR._proof_1 ShimuraGlue.ofQ ShimuraGlue.mulCoordR ShimuraGlue.half ShimuraGlue.two_mul_half ShimuraGlue.N4._proof_1
+ShimuraGlue.Ray.hK3	6711	6712	ShimuraGlue.Ray.K3 ShimuraGlue.Ray.cyclotomic_unram ShimuraGlue.Ray.instCyc3 ShimuraGlue.Ray.hK3._proof_1_1
+ShimuraGlue.nrd_Kfull_le	4909	4912	ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.BAf ShimuraGlue.N4._proof_2 ShimuraGlue.BR._proof_1 ShimuraGlue.nrdU ShimuraGlue.Kfull ShimuraGlue.ZhatU ShimuraGlue.Ohat ShimuraGlue.Zhat ShimuraGlue.nrd_mem_Zhat
+CurveSplit.curveBijIso_of_leaf	2557	2559	CurveSplit.BijToNormalIsIso ModelGlue.CurveBijIso CurveSplit.curveBijIso_of_closed CurveSplit.curveBijIsoClosed_of_leaf
+X6Glue.elkiesLift_R	6985	6986	X6Glue.ElkiesRing X6Glue.elkiesIdeal X6Glue.elkiesLift X6Glue.eR ShimuraSplit.chi3._proof_2
+ShimuraGlue.N4_mem	4804	4806	ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.N4 ShimuraGlue.exists_lift ShimuraGlue.map_N4
+HDec.QMSplit.Moduli.ConicCanonical	695	701	
+ShimuraGlue.nrm_emb	5169	5171	ShimuraGlue.Place ShimuraGlue.nrm ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.emb ShimuraGlue.instFactPrimes ShimuraGlue.locZ._proof_1 ShimuraGlue.locZ._proof_2 ShimuraGlue.locQ ShimuraGlue.locQ_rat
+CurveSplit.restrict_isIso	2480	2522	CurveSplit.BijToNormalIsIso CurveSplit.SpecK CurveSplit.kPt CurveSplit.isReduced_of_smooth CurveSplit.isNormal_of_integral CurveSplit.bij_restrict
+HDec.QMSplit.Moduli.ShimuraSplitLeaves.t5	4439	4439	HDec.QMSplit.Moduli.ShimuraSplitLeaves
+ShimuraGlue.nrdU	4897	4898	ShimuraGlue.BAf ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.N4._proof_2 ShimuraGlue.BR._proof_1 ShimuraGlue.nrdQ
+HDec.QMSplit.Moduli.coarseCompare_of_canonical	3242	3244	HDec.QMSplit.Moduli.CanonicalCoarseX6 HDec.QMSplit.Moduli.CoarseCompare HDec.QMSplit.Moduli.coarseCompare_of HDec.QMSplit.Moduli.coarseFactor_of_canonical' CurveSplit.curveBijIso
+CurveSplit.bijective_of_finrank_eq_one	2597	2604	
+HDec.QMSplit.Moduli.X6Leaves.babaGranathR	7320	7320	HDec.QMSplit.Moduli.X6Leaves HDec.QMSplit.Moduli.BabaGranathRational
+CoarseFactorAG.bijective_of_closedPoints	914	989	CoarseFactorAG.closure_mem_irreducibleComponents
+_private.scratch.«x6-fold».Dump3.0.ShimuraGlue.Mob.invP1.match_1.eq_1	0	0	ShimuraGlue.Mob.invP1.match_1
+HDec.QMSplit.Moduli.gJ_smul	6468	6476	HDec.QMSplit.Moduli.gJ ShimuraGlue.Mob.gl2 HDec.QMSplit.Moduli.gJ._proof_1
+ShimuraGlue.adeleHom._proof_6	0	0	ShimuraGlue.Place ShimuraGlue.locZ._proof_1 ShimuraGlue.Af._proof_1 ShimuraGlue.locZ._proof_2 ShimuraGlue.adeleHom._proof_1 ShimuraGlue.adeleHom._proof_2 ShimuraGlue.locZ ShimuraGlue.instFactPrimes
+CurveSplit.SpecK	1905	1906	
+ShimuraSplit.bc_unique3	3339	3361	ShimuraSplit.pt_one_left ShimuraSplit.bc_core ShimuraSplit.over_ext_pb
+CoarseFactorAG.irreducibleComponent_eq_of_isDomain_stalk	1058	1082	
+ShimuraSplit.exists_good_point	3989	4030	ShimuraSplit.act_three ShimuraSplit.act_mul ShimuraSplit.bcPt_surjective_algClosed ShimuraSplit.bcPt_pow ShimuraSplit.bcPt_one
+HDec.QMSplit.Moduli.PairsLift	1819	1826	
+ShimuraGlue.dq	5279	5280	ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.posQ ShimuraGlue.ZhatU ShimuraGlue.emb ShimuraGlue.exists_decomp
+ShimuraGlue.evZ._proof_2	0	0	ShimuraGlue.Place ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.Zhat
+ShimuraGlue.K3._abel_2	0	0	ShimuraGlue.BAf ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.N4._proof_2 ShimuraGlue.BR._proof_1
+CoarseFactorAG.isOpen_irreducibleComponent._simp_1_1	0	0	
+ShimuraGlue.duHom._proof_3	0	0	ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.ZhatU ShimuraGlue.du ShimuraGlue.duHom._proof_2 ShimuraGlue.duHom._proof_1 ShimuraGlue.du_mem ShimuraGlue.du_of_mem
+HDec.QMSplit.Moduli.iso_of_pair	365	380	HDec.QMSplit.Moduli.eq_id_of_Φ
+X6Glue.ev_apply	6821	6823	X6Glue.ev
+ShimuraGlue.Zhat._proof_5	0	0	ShimuraGlue.Af ShimuraGlue.Place ShimuraGlue.Af._proof_1
+ShimuraGlue.nrdQ._proof_3	0	0	ShimuraGlue.BR ShimuraGlue.N4._proof_2 ShimuraGlue.BR._proof_1 ShimuraGlue.nrdQ._proof_1
+HDec.QMSplit.Moduli.X6Leaves.mk._flat_ctor	0	0	ShimuraGlue.DeligneComponentsX6Printed HDec.QMSplit.Moduli.GeomConnOfAlgClosure HDec.QMSplit.Moduli.BabaGranathRational ShimuraGlue.Ray.RayClassCM HDec.QMSplit.Moduli.GonzalezRotgerX6 HDec.QMSplit.Moduli.ElkiesEquationsX6 HDec.QMSplit.Moduli.X6Leaves HDec.QMSplit.Moduli.X6Leaves.mk
+ShimuraGlue.evZ._proof_3	0	0	ShimuraGlue.Place ShimuraGlue.Af._proof_1 ShimuraGlue.Af ShimuraGlue.Zhat ShimuraGlue.evZ._proof_1
+HDec.QMSplit.Moduli.BabaGranathX6'	4254	4263	
+X6Glue.psi.eq_1	0	0	X6Glue.psi X6Glue.pt_mem_top
+ShimuraGlue.U3._proof_1	0	0	ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.ZhatU ShimuraGlue.Zhat ShimuraGlue.BR._proof_1
+ShimuraGlue.Mob.gT._proof_2	0	0	ShimuraGlue.Mob.W₁ ShimuraGlue.Mob.W₂
+ShimuraGlue.duHom._proof_2	0	0	ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.ZhatU ShimuraGlue.du ShimuraGlue.du_mem
+ShimuraGlue.Mob.U_inf_W₂_le	5935	5947	ShimuraGlue.Mob.W₂ ShimuraGlue.Mob.W₁ ShimuraGlue.Mob.W₂_le ShimuraGlue.Mob.mem_W₁_iff ShimuraGlue.Mob.mem_W₂_iff ShimuraGlue.Mob.eval_fg
+ShimuraGlue.Mob.val_translate	6083	6094	ShimuraGlue.Mob.ToP1.translate ShimuraGlue.Mob.gval ShimuraGlue.Mob.fT ShimuraGlue.Mob.eval_fT
+ShimuraGlue.nrdQ._proof_2	0	0	ShimuraGlue.N4._proof_2 ShimuraGlue.BR._proof_1 ShimuraGlue.BR ShimuraGlue.nrdQ._proof_1
+ShimuraGlue.hensel_simple	4520	4532	ShimuraGlue.norm_lt_one_iff_toZMod ShimuraGlue.norm_eq_one_iff_toZMod
+ShimuraSplit.DeligneComponentsY3	3639	3661	ShimuraSplit.baseQbar ShimuraSplit.galActπ₀ ShimuraSplit.chi3
+HDec.QMSplit.Moduli.babaGranathX6'_of_rational	6415	6431	HDec.QMSplit.Moduli.BabaGranathRational HDec.QMSplit.Moduli.MobiusCompose HDec.QMSplit.Moduli.BabaGranathX6' HDec.QMSplit.Moduli.exists_mobiusBG HDec.QMSplit.Moduli.smul_map_iff
+HDec.QMSplit.Moduli.smul_map_iff	6382	6387	
+HDec.QMSplit.Moduli.x6ConicModel_of_published	7307	7313	ShimuraGlue.DeligneComponentsX6Printed HDec.QMSplit.Moduli.GeomConnOfAlgClosure HDec.QMSplit.Moduli.BabaGranathRational ShimuraGlue.Ray.RayClassCM HDec.QMSplit.Moduli.GonzalezRotgerX6 HDec.QMSplit.Moduli.ElkiesEquationsX6 HDec.QMSplit.Moduli.x6ConicModel_of_elkies_t5 HDec.QMSplit.Moduli.r1r2_of_published HDec.QMSplit.Moduli.elkiesConicX6_of_equations
+HDec.QMSplit.Moduli.r1rec_of_reciprocityCanonical	4151	4152	HDec.QMSplit.Moduli.ReciprocityCanonical ShimuraSplit.r1rec_of_point
+HDec.QMSplit.Moduli.ShimuraSplitLeaves.babaGranath	4440	4440	HDec.QMSplit.Moduli.ShimuraSplitLeaves HDec.QMSplit.Moduli.BabaGranathX6'
+ShimuraGlue.Mob.good_D	6220	6229	ShimuraGlue.Mob.Good ShimuraGlue.Mob.gl2 ShimuraGlue.Mob.ToP1.scale ShimuraGlue.Mob.cQ ShimuraGlue.Mob.gval ShimuraGlue.Mob.val_scale ShimuraGlue.Mob.gval_cQ ShimuraGlue.Mob.map_gl2_smul.match_1 ShimuraGlue.Mob.map_gl2_smul
+ShimuraGlue.N4._proof_2	0	0	
+CurveSplit.bcMap_isPullback	1938	1943	CurveSplit.SpecK CurveSplit.bQ CurveSplit.bcMap CurveSplit.bcMap_snd CurveSplit.bcMap_fst
+ShimuraGlue.Zhat._proof_1	0	0	ShimuraGlue.Af ShimuraGlue.Place ShimuraGlue.Af._proof_1
+HDec.QMSplit.Moduli.exists_mobiusBG	6371	6380	HDec.QMSplit.Moduli.exists_mobius01 ShimuraGlue.Mob.gl2 ShimuraGlue.Mob.gl2_smul_some ShimuraGlue.Mob.gl2_smul_infty
+HDec.QMSplit.Moduli.X6Leaves	7315	7323	HDec.QMSplit.Moduli.X6Leaves.mk
+ShimuraGlue.nrm_unit	5141	5142	ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.Place ShimuraGlue.nrm ShimuraGlue.nrm_mul ShimuraGlue.nrm_one
+X6Glue.conicMapL_comp	7107	7129	X6Glue.ElkiesRing X6Glue.elkiesIdeal X6Glue.eT X6Glue.conicMapL X6Glue.pt X6Glue.mem_comp_iff X6Glue.psiU X6Glue.eS X6Glue.eR X6Glue.conicMapL._proof_1 X6Glue.psiV X6Glue.memV_of_not_memU X6Glue.conicMapL._proof_2 X6Glue.conicMapL.eq_1 X6Glue.psiU_comp X6Glue.psiV_comp
+ShimuraGlue.Mob.cQ	6156	6158	
+HDec.QMSplit.Moduli.ElkiesEquationsX6	7250	7280	X6Glue.ElkiesCharts
+ModelGlue.CurveBijIso	525	537	
+ShimuraGlue.nrm	5132	5133	ShimuraGlue.Place ShimuraGlue.Af ShimuraGlue.locZ._proof_1 ShimuraGlue.Af._proof_1 ShimuraGlue.locZ._proof_2 ShimuraGlue.locQ
+HDec.QMSplit.Moduli.ShimuraFamily	158	167	
+HDec.QMSplit.Moduli.ShimuraSplitLeaves.recOn	4434	4445	HDec.QMSplit.Moduli.ShimuraSplitLeaves HDec.QMSplit.Moduli.DeligneComponentsX6 HDec.QMSplit.Moduli.GeomConnOfAlgClosure HDec.QMSplit.Moduli.BabaGranathX6' HDec.QMSplit.Moduli.ReciprocityCanonical HDec.QMSplit.Moduli.GonzalezRotgerX6 ShimuraSplit.GonzalezRotgerCountX6 ShimuraSplit.DeligneComponentsY3 HDec.QMSplit.Moduli.ElkiesConicX6 HDec.QMSplit.Moduli.ShimuraSplitLeaves.mk HDec.QMSplit.Moduli.ShimuraSplitLeaves.casesOn
+ShimuraGlue.Ray.RayClassCM._proof_15	0	0	ShimuraGlue.Ray.z24._proof_2 ShimuraGlue.Ray.K24
+HDec.QMSplit.Moduli.compare_iso	299	312	HDec.QMSplit.Moduli.eq_id_of_Φ
+ShimuraGlue.Zhat._proof_4	0	0	ShimuraGlue.Place ShimuraGlue.Af._proof_1
+HDec.QMSplit.Moduli.conicOfWitness_of_elkies	4356	4380	HDec.QMSplit.Moduli.ElkiesConicX6 HDec.QMSplit.Moduli.CoarseCompare HDec.QMSplit.Moduli.HauptmodulUniqueX6S HDec.QMSplit.Moduli.ConicOfWitness HDec.QMSplit.Moduli.compare_iso HDec.QMSplit.Moduli.x6Props_transport
+ShimuraGlue.Mob.res_res._simp_1_3	0	0	
+ShimuraGlue.Mob.ToP1.translate._proof_6	0	0	ShimuraGlue.Mob.W₁ ShimuraGlue.Mob.W₂ ShimuraGlue.Mob.gT ShimuraGlue.Mob.U_inf_V' ShimuraGlue.Mob.W₂_le ShimuraGlue.Mob.U_inf_W₂_le ShimuraGlue.Mob.hT ShimuraGlue.Mob.isUnit₂ ShimuraGlue.Mob.g_eval_eq_zero ShimuraGlue.Mob.eval_res' ShimuraGlue.Mob.s₂ ShimuraGlue.Mob.s₂.eq_1 ShimuraGlue.Mob.gT_res₂ ShimuraGlue.Mob.s₁ ShimuraGlue.Mob.gT_res₁ ShimuraGlue.Mob.W₁_le ShimuraGlue.Mob.fT ShimuraGlue.Mob.fT_mul_s₁
+ShimuraGlue.Zhat	4781	4788	ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.Place ShimuraGlue.Zhat._proof_1 ShimuraGlue.Zhat._proof_2 ShimuraGlue.Zhat._proof_3 ShimuraGlue.Zhat._proof_4 ShimuraGlue.Zhat._proof_5
+ShimuraGlue.Ray.s6	6682	6683	ShimuraGlue.N4._proof_2 ShimuraGlue.Ray.z24
+ShimuraGlue.Mob.hT	5811	5812	ShimuraGlue.Mob.onU
+HDec.QMSplit.Moduli.coarseFactor_of	1862	1883	HDec.QMSplit.Moduli.PairsLift HDec.QMSplit.Moduli.FactorThroughSurj HDec.QMSplit.Moduli.CoarseFactor
+HDec.QMSplit.Moduli.ShimuraGlueLeaves3.recOn	6768	6779	HDec.QMSplit.Moduli.ShimuraGlueLeaves3 ShimuraGlue.DeligneComponentsX6Printed HDec.QMSplit.Moduli.GeomConnOfAlgClosure HDec.QMSplit.Moduli.BabaGranathRational ShimuraGlue.Ray.RayClassCM HDec.QMSplit.Moduli.GonzalezRotgerX6 ShimuraSplit.GonzalezRotgerCountX6 ShimuraGlue.DeligneComponentsY3Printed HDec.QMSplit.Moduli.ElkiesConicT HDec.QMSplit.Moduli.ShimuraGlueLeaves3.mk HDec.QMSplit.Moduli.ShimuraGlueLeaves3.casesOn
+ShimuraGlue.evZ._proof_5	0	0	ShimuraGlue.Place ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.Zhat ShimuraGlue.evZ._proof_1
+X6Glue.psiU.eq_1	0	0	X6Glue.ElkiesRing X6Glue.elkiesIdeal X6Glue.psiU X6Glue.ev X6Glue.psiU._proof_1
+CoarseFactorAG.isNormal_of_integral	1173	1188	CoarseFactorAG.SpecK CoarseFactorAG.stalk_closed_normal CoarseFactorAG.closure_mem_irreducibleComponents CoarseFactorAG.topDim_le_one
+ShimuraSplit.over_ext_pb	3307	3310	
+HDec.QMSplit.Moduli.ShimuraGlueLeaves2.babaGranathR	6551	6551	HDec.QMSplit.Moduli.ShimuraGlueLeaves2 HDec.QMSplit.Moduli.BabaGranathRational
+ShimuraGlue.Zhat._proof_3	0	0	ShimuraGlue.Af ShimuraGlue.Place ShimuraGlue.Af._proof_1
+ShimuraGlue.two_mul_half	4711	4712	ShimuraGlue.half ShimuraGlue.half.eq_1
+HDec.QMSplit.Moduli.shimuraGlueLeaves2_of_3	6781	6784	HDec.QMSplit.Moduli.ShimuraGlueLeaves3 HDec.QMSplit.Moduli.ShimuraGlueLeaves2 HDec.QMSplit.Moduli.ShimuraGlueLeaves2.mk HDec.QMSplit.Moduli.ShimuraGlueLeaves3.deligneX6P HDec.QMSplit.Moduli.ShimuraGlueLeaves3.geomConn HDec.QMSplit.Moduli.ShimuraGlueLeaves3.t5 HDec.QMSplit.Moduli.ShimuraGlueLeaves3.babaGranathR ShimuraGlue.Ray.reciprocityCanonical_of_rayClass HDec.QMSplit.Moduli.ShimuraGlueLeaves3.rayClass HDec.QMSplit.Moduli.ShimuraGlueLeaves3.gonzalezRotger HDec.QMSplit.Moduli.ShimuraGlueLeaves3.gonzalezRotgerCount HDec.QMSplit.Moduli.ShimuraGlueLeaves3.deligneY3P HDec.QMSplit.Moduli.ShimuraGlueLeaves3.elkiesT
+ShimuraGlue.zmod3_zpow	5602	5606	
+ShimuraGlue.Ray.K4	6674	6675	
+HDec.QMSplit.Moduli.eq_id_of_fieldPts	275	293	HDec.QMSplit.Moduli.isReduced_of_smooth_domain
+X6Glue.elkiesLift_T	6981	6982	X6Glue.ElkiesRing X6Glue.elkiesIdeal X6Glue.elkiesLift X6Glue.eT ShimuraSplit.chi3._proof_2
+HDec.QMSplit.Moduli.ShimuraGlueLeaves2.gonzalezRotgerCount	6554	6554	HDec.QMSplit.Moduli.ShimuraGlueLeaves2 ShimuraSplit.GonzalezRotgerCountX6
+_private.scratch.«x6-fold».Dump3.0.HDec.X6Kummer.conicGal.match_1.eq_1	0	0	
+CurveSplit.curveBijIsoClosed_of_leaf	2526	2555	CurveSplit.BijToNormalIsIso CurveSplit.CurveBijIsoClosed CurveSplit.SpecK CurveSplit.kPt CurveSplit.closedPoint_facts CurveSplit.bijective_of_closedPoints CurveSplit.topDim_le_one CurveSplit.components_disjoint CurveSplit.isOpen_irreducibleComponent CurveSplit.restrict_isIso
+ShimuraGlue.duHom._proof_5	0	0	ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.ZhatU ShimuraGlue.du ShimuraGlue.duHom._proof_4 ShimuraGlue.duHom._proof_1 ShimuraGlue.du_mem ShimuraGlue.du_mul
+ShimuraGlue.norm_eq_one_iff_toZMod	4510	4515	ShimuraGlue.norm_lt_one_iff_toZMod
+CurveSplit.bcMap_fst	1935	1936	CurveSplit.SpecK CurveSplit.bQ CurveSplit.bcMap CurveSplit.bcMap._proof_1 CurveSplit.bcMap._proof_2 CurveSplit.bcMap._proof_3
+ShimuraGlue.toZhatUnits._proof_11	0	0	ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.ZhatU ShimuraGlue.Zhat ShimuraGlue.duHom._proof_1
+HDec.QMSplit.Moduli.ShimuraGlueLeaves4.geomConn	7333	7333	HDec.QMSplit.Moduli.ShimuraGlueLeaves4 HDec.QMSplit.Moduli.GeomConnOfAlgClosure
+ShimuraGlue.toZhatUnits._proof_14	0	0	ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.ZhatU ShimuraGlue.Zhat ShimuraGlue.toZhatUnits._proof_1 ShimuraGlue.duHom._proof_1 ShimuraGlue.toZhatUnits._proof_12 ShimuraGlue.toZhatUnits._proof_11
+ShimuraGlue.Zhat._proof_2	0	0	ShimuraGlue.Place ShimuraGlue.Af._proof_1
+ShimuraGlue.N4._proof_1	0	0	
+HDec.QMSplit.Moduli.ShimuraGlueLeaves2.deligneY3P	6555	6555	HDec.QMSplit.Moduli.ShimuraGlueLeaves2 ShimuraGlue.DeligneComponentsY3Printed
+HDec.QMSplit.Moduli.ShimuraGlueLeaves4.gonzalezRotgerCount	7338	7338	HDec.QMSplit.Moduli.ShimuraGlueLeaves4 ShimuraSplit.GonzalezRotgerCountX6
+HDec.QMSplit.Moduli.ShimuraGlueLeaves4.babaGranathR	7335	7335	HDec.QMSplit.Moduli.ShimuraGlueLeaves4 HDec.QMSplit.Moduli.BabaGranathRational
+X6Glue.psiV	7060	7062	X6Glue.ElkiesRing X6Glue.elkiesIdeal X6Glue.ev X6Glue.psiV._proof_1
+HDec.QMSplit.Moduli.rows_of_shimuraGlueLeaves3	6786	6790	HDec.QMSplit.Moduli.ShimuraGlueLeaves3 HDec.QMSplit.Moduli.rows_of_shimuraGlueLeaves2 HDec.QMSplit.Moduli.shimuraGlueLeaves2_of_3
+CoarseFactorAG.bijective_of_points._simp_1_5	0	0	
+ShimuraGlue.instNonemptyPi0Kfull	5689	5689	ShimuraGlue.Pi0 ShimuraGlue.Kfull ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.posRat ShimuraGlue.BAf ShimuraGlue.N4._proof_2 ShimuraGlue.BR._proof_1 ShimuraGlue.nrdU
+ShimuraGlue.ZhatU._proof_1	0	0	ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.Zhat
+ShimuraGlue.Ray.instNeZero4	6656	6656	
+ShimuraGlue.ofQ_eq_ofInt	5650	5653	ShimuraGlue.BR ShimuraGlue.ofQ ShimuraGlue.half ShimuraGlue.N4._proof_2 ShimuraGlue.BR._proof_1 ShimuraGlue.N4._proof_1
+CurveSplit.bcMap._proof_1	0	0	CurveSplit.SpecK CurveSplit.bQ
+ShimuraGlue.ofQ_neg	4740	4742	ShimuraGlue.BR ShimuraGlue.N4._proof_2 ShimuraGlue.BR._proof_1 ShimuraGlue.ofQ ShimuraGlue.half ShimuraGlue.N4._proof_1
+CurveSplit.bijective_of_closedPoints	2073	2148	CurveSplit.closure_mem_irreducibleComponents
+HDec.QMSplit.Moduli.GeomConnOfAlgClosure	4293	4304	HDec.QMSplit.Moduli.GeomConnOfAlgClosure._proof_1
+CoarseFactorAG.SpecK	878	879	
+HDec.QMSplit.Moduli.isoTwistSymm._proof_5	0	0	HDec.QMSplit.Moduli.isoTwistSymm._proof_4
+CurveSplit.irreducibleComponent_eq_of_isDomain_stalk	2240	2264	
+ShimuraGlue.chi_ker	5413	5435	ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.chi ShimuraGlue.posRat ShimuraGlue.BAf ShimuraGlue.N4._proof_2 ShimuraGlue.BR._proof_1 ShimuraGlue.nrdU ShimuraGlue.K3 ShimuraGlue.Zhat ShimuraGlue.r3 ShimuraGlue.du ShimuraGlue.du_mem ShimuraGlue.chi_val ShimuraGlue.U3_le ShimuraGlue.mem_U3_of_r3 ShimuraGlue.emb ShimuraGlue.dq ShimuraGlue.emb_dq_mul_du ShimuraGlue.posQ ShimuraGlue.dq_pos ShimuraGlue.du_emb ShimuraGlue.ZhatU ShimuraGlue.U3 ShimuraGlue.nrd_K3_le ShimuraGlue.chi_of_mem ShimuraGlue.r3_one_add_three
+ShimuraGlue.nrm_mul._simp_1_2	0	0	ShimuraGlue.Place ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.ev ShimuraGlue.ev_apply
+ShimuraGlue.U3_le	5079	5108	ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.U3 ShimuraGlue.BAf ShimuraGlue.N4._proof_2 ShimuraGlue.BR._proof_1 ShimuraGlue.nrdU ShimuraGlue.K3 ShimuraGlue.ZhatU ShimuraGlue.Zhat ShimuraGlue.Place ShimuraGlue.instFactPrimes ShimuraGlue.locA ShimuraGlue.locZ._proof_1 ShimuraGlue.locZ._proof_2 ShimuraGlue.locZ._proof_3 ShimuraGlue.locZ ShimuraGlue.locA.eq_1 ShimuraGlue.ev ShimuraGlue.N4 ShimuraGlue.e0 ShimuraGlue.adeleHom ShimuraGlue.BR ShimuraGlue.nrdQ ShimuraGlue.ofQ ShimuraGlue.nrdQ_ofQ ShimuraGlue.N4_adeleHom ShimuraGlue.adeleHom_locA ShimuraGlue.three_mem_Zhat ShimuraGlue.adeleHom_mem ShimuraGlue.Kfull ShimuraGlue.exists_unit_of_nrd ShimuraGlue.Ohat ShimuraGlue.ofQ_e0 ShimuraGlue.rep_unit3 ShimuraGlue.isUnit_locA
+HDec.X6Kummer.conicGal.eq_2	0	0	
+ShimuraGlue.nrm_eq_one_of_mem	5144	5157	ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.Place ShimuraGlue.nrm ShimuraGlue.instFactPrimes ShimuraGlue.locQ ShimuraGlue.mem_iff_norm ShimuraGlue.nrm_unit ShimuraGlue.locZ._proof_1 ShimuraGlue.locZ._proof_2
+HDec.QMSplit.Moduli.twistFam	382	390	HDec.QMSplit.Moduli.twistFam._proof_1 HDec.QMSplit.Moduli.twistFam._proof_2
+HDec.QMSplit.Moduli.ShimuraGlueLeaves2.geomConn	6549	6549	HDec.QMSplit.Moduli.ShimuraGlueLeaves2 HDec.QMSplit.Moduli.GeomConnOfAlgClosure
+CoarseFactorAG.exists_extend	1301	1322	
+HDec.QMSplit.Moduli.connectedOfFine_of_canonical	743	749	HDec.QMSplit.Moduli.ConnectedCanonical HDec.QMSplit.Moduli.ConnectedOfFine HDec.QMSplit.Moduli.compare_iso
+ShimuraGlue.Mob.g_eval_eq_zero	5930	5933	
+HDec.QMSplit.Moduli.ShimuraGlueLeaves4.deligneY3P	7339	7339	HDec.QMSplit.Moduli.ShimuraGlueLeaves4 ShimuraGlue.DeligneComponentsY3Printed
+HDec.QMSplit.Moduli.ShimuraGlueLeaves.mk	5720	5720	ShimuraGlue.DeligneComponentsX6Printed HDec.QMSplit.Moduli.GeomConnOfAlgClosure HDec.QMSplit.Moduli.BabaGranathX6' HDec.QMSplit.Moduli.ReciprocityCanonical HDec.QMSplit.Moduli.GonzalezRotgerX6 ShimuraSplit.GonzalezRotgerCountX6 ShimuraGlue.DeligneComponentsY3Printed HDec.QMSplit.Moduli.ElkiesConicX6 HDec.QMSplit.Moduli.ShimuraGlueLeaves
+CurveSplit.isOpen_irreducibleComponent._simp_1_2	0	0	
+HDec.QMSplit.Moduli.CoarseFactor	552	565	
+ShimuraGlue.Ray.hK24	6714	6723	ShimuraGlue.Ray.K24 ShimuraGlue.Ray.hK24._proof_1_1 ShimuraGlue.Ray.hK24._proof_1_2 ShimuraGlue.Ray.cyclotomic_unram ShimuraGlue.Ray.instCyc24
+HDec.QMSplit.Moduli.ShimuraGlueLeaves4.mk._flat_ctor	0	0	ShimuraGlue.DeligneComponentsX6Printed HDec.QMSplit.Moduli.GeomConnOfAlgClosure HDec.QMSplit.Moduli.BabaGranathRational ShimuraGlue.Ray.RayClassCM HDec.QMSplit.Moduli.GonzalezRotgerX6 ShimuraSplit.GonzalezRotgerCountX6 ShimuraGlue.DeligneComponentsY3Printed HDec.QMSplit.Moduli.ElkiesEquationsX6 HDec.QMSplit.Moduli.ShimuraGlueLeaves4 HDec.QMSplit.Moduli.ShimuraGlueLeaves4.mk
+ShimuraGlue.mem_ZhatU_iff	5159	5164	ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.ZhatU ShimuraGlue.Place ShimuraGlue.nrm ShimuraGlue.Zhat ShimuraGlue.nrm_eq_one_of_mem ShimuraGlue.instFactPrimes ShimuraGlue.locQ ShimuraGlue.mem_iff_norm ShimuraGlue.nrm_unit
+ShimuraGlue.Mob.eval_res'	5779	5782	
+ShimuraGlue.exists_unit_of_nrd	5011	5028	ShimuraGlue.BAf ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.N4._proof_2 ShimuraGlue.BR._proof_1 ShimuraGlue.Ohat ShimuraGlue.ZhatU ShimuraGlue.BR ShimuraGlue.nrdQ ShimuraGlue.Kfull ShimuraGlue.nrdU ShimuraGlue.nrdQ_eq_mul_star ShimuraGlue.nrdQ_star ShimuraGlue.Zhat ShimuraGlue.ofQ ShimuraGlue.vec4_mem ShimuraGlue.star_ofQ ShimuraGlue.coe_eq_ofQ
+HDec.QMSplit.Moduli.x6Props_transport	589	597	
+ShimuraGlue.Ray.RayClassCM._proof_14	0	0	ShimuraGlue.Ray.z24._proof_2 ShimuraGlue.Ray.K24
+HDec.QMSplit.Moduli.elkiesConicX6_of_t	6478	6492	HDec.QMSplit.Moduli.ElkiesConicT HDec.QMSplit.Moduli.MobiusCompose HDec.QMSplit.Moduli.ElkiesConicX6 HDec.QMSplit.Moduli.ConicModelT HDec.QMSplit.Moduli.gJ HDec.QMSplit.Moduli.gJ_smul
+HDec.QMSplit.Moduli.ShimuraGlueLeaves3.rayClass	6775	6775	HDec.QMSplit.Moduli.ShimuraGlueLeaves3 ShimuraGlue.Ray.RayClassCM
+ShimuraGlue.Ray.RayClassCM._proof_11	0	0	ShimuraGlue.Ray.K3 ShimuraGlue.Ray.RayClassCM._proof_8
+HDec.QMSplit.Moduli.ShimuraGlueLeaves.geomConn	5722	5722	HDec.QMSplit.Moduli.ShimuraGlueLeaves HDec.QMSplit.Moduli.GeomConnOfAlgClosure
+_private.scratch.«x6-fold».Dump3.0.HDec.X6Kummer.conicGal.match_1.eq_2	0	0	
+X6Glue.elkiesLift.eq_1	0	0	ShimuraGlue.BR._proof_1 X6Glue.ElkiesRing X6Glue.elkiesIdeal X6Glue.elkiesLift X6Glue.eT._proof_1 X6Glue.elkiesLift._proof_1
+ShimuraGlue.DeligneComponentsX6Printed	5591	5598	ShimuraGlue.DelignePi0 ShimuraGlue.Kfull
+ShimuraGlue.Ray.hK4	6708	6709	ShimuraGlue.Ray.K4 ShimuraGlue.Ray.cyclotomic_unram ShimuraGlue.Ray.instCyc4 ShimuraGlue.Ray.hK4._proof_1_1
+HDec.QMSplit.Moduli.gT._proof_1	0	0	
+ShimuraGlue.U3	4837	4851	ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.ZhatU ShimuraGlue.Zhat ShimuraGlue.BR._proof_1 ShimuraGlue.U3._proof_1 ShimuraGlue.U3._proof_2 ShimuraGlue.U3._proof_3
+ShimuraGlue.mulCoordR_mem	4795	4802	ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.Zhat ShimuraGlue.mulCoordR ShimuraGlue.exists_lift ShimuraGlue.N4._proof_1
+CoarseFactorAG.isOpen_irreducibleComponent._simp_1_3	0	0	
+X6Glue.ElkiesRing	6925	6927	X6Glue.elkiesIdeal
+ShimuraGlue.Ray.z24._proof_2	0	0	
+ShimuraGlue.Ray.RayClassCM._proof_16	0	0	ShimuraGlue.Ray.z24._proof_2 ShimuraGlue.Ray.K24 ShimuraGlue.Ray.RayClassCM._proof_13
+ShimuraSplit.three_mul_cancel	3945	3951	ShimuraSplit.coe_three_mul
+HDec.QMSplit.Moduli.classify	414	430	
+HDec.QMSplit.Moduli.ShimuraGlueLeaves2.mk	6547	6547	ShimuraGlue.DeligneComponentsX6Printed HDec.QMSplit.Moduli.GeomConnOfAlgClosure HDec.QMSplit.Moduli.BabaGranathRational HDec.QMSplit.Moduli.ReciprocityCanonical HDec.QMSplit.Moduli.GonzalezRotgerX6 ShimuraSplit.GonzalezRotgerCountX6 ShimuraGlue.DeligneComponentsY3Printed HDec.QMSplit.Moduli.ElkiesConicT HDec.QMSplit.Moduli.ShimuraGlueLeaves2
+ShimuraGlue.N4_adeleHom	4995	4997	ShimuraGlue.Place ShimuraGlue.instFactPrimes ShimuraGlue.Af ShimuraGlue.N4 ShimuraGlue.Af._proof_1 ShimuraGlue.adeleHom ShimuraGlue.map_N4
+HDec.QMSplit.Moduli.ShimuraGlueLeaves3.gonzalezRotger	6776	6776	HDec.QMSplit.Moduli.ShimuraGlueLeaves3 HDec.QMSplit.Moduli.GonzalezRotgerX6
+ShimuraGlue.cycU_apply	5470	5472	ShimuraGlue.Place ShimuraGlue.Af._proof_1 ShimuraGlue.Af ShimuraGlue.cycU ShimuraGlue.instFactPrimes
+HDec.QMSplit.Moduli.conicCanonical_iff	4174	4176	HDec.QMSplit.Moduli.ConicCanonical
+CurveSplit.bcMap_snd	1932	1933	CurveSplit.SpecK CurveSplit.bQ CurveSplit.bcMap CurveSplit.bcMap._proof_1 CurveSplit.bcMap._proof_2 CurveSplit.bcMap._proof_3
+HDec.QMSplit.Moduli.rows_of_shimuraGlueLeaves	5738	5743	HDec.QMSplit.Moduli.ShimuraGlueLeaves HDec.QMSplit.Moduli.rows_of_shimuraSplitLeaves HDec.QMSplit.Moduli.shimuraSplitLeaves_of_glue
+ShimuraGlue.Mob.eval_onU	5791	5792	ShimuraGlue.Mob.onU ShimuraGlue.Mob.eval_res' ShimuraGlue.Mob.onU._proof_1
+CoarseFactorAG.bijective_of_points._proof_1_6	0	0	CoarseFactorAG.bijective_of_points._simp_1_3 CoarseFactorAG.bijective_of_points._simp_1_4 CoarseFactorAG.bijective_of_points._simp_1_5
+X6Glue.ev.congr_simp	0	0	X6Glue.ev
+HDec.QMSplit.Moduli.r1bTransport_proof	462	476	HDec.QMSplit.Moduli.R1bTransport HDec.QMSplit.Moduli.compare_iso
+HDec.QMSplit.Moduli.ShimuraGlueLeaves3.geomConn	6772	6772	HDec.QMSplit.Moduli.ShimuraGlueLeaves3 HDec.QMSplit.Moduli.GeomConnOfAlgClosure
+ShimuraGlue.norm_lt_one_iff_toZMod	4507	4508	
+HDec.QMSplit.Moduli.x6ConicModel_of_canonical''	3252	3256	HDec.QMSplit.Moduli.ConicCanonical HDec.QMSplit.Moduli.x6ConicModel_of_canonical' HDec.QMSplit.Moduli.coarseFactor_of_rep' CurveSplit.curveBijIso
+ShimuraGlue.ev._proof_2	0	0	ShimuraGlue.Place ShimuraGlue.Af ShimuraGlue.Af._proof_1
+ShimuraSplit.sQbar	3598	3600	
+ShimuraGlue.chi_of_mem	5351	5352	ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.ZhatU ShimuraGlue.chi ShimuraGlue.Zhat ShimuraGlue.r3 ShimuraGlue.du ShimuraGlue.du_mem ShimuraGlue.chi_val ShimuraGlue.du_of_mem
+HDec.QMSplit.Moduli.babaGranathX6_of	4265	4270	HDec.QMSplit.Moduli.BabaGranathX6' HDec.QMSplit.Moduli.BabaGranathX6 ShimuraSplit.surj_of_fibre
+HDec.QMSplit.Moduli.isoRightMulOne._proof_1	0	0	
+X6Glue.pt	7022	7025	
+ShimuraGlue.pi0_Kfull_eq_one	5439	5445	ShimuraGlue.Pi0 ShimuraGlue.Kfull ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.posRat ShimuraGlue.BAf ShimuraGlue.N4._proof_2 ShimuraGlue.BR._proof_1 ShimuraGlue.nrdU ShimuraGlue.emb ShimuraGlue.dq ShimuraGlue.du ShimuraGlue.emb_dq_mul_du ShimuraGlue.posQ ShimuraGlue.dq_pos ShimuraGlue.ZhatU_le ShimuraGlue.du_mem
+CurveSplit.ZMTOriginal._proof_1	0	0	CurveSplit.SpecK
+CurveSplit.bQ	1925	1926	CurveSplit.SpecK
+ShimuraGlue.Mob.W₁	5814	5815	ShimuraGlue.Mob.fT
+ShimuraGlue.toZhatUnits._proof_9	0	0	ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.Zhat ShimuraGlue.toZhatUnits._proof_1 ShimuraGlue.ZhatU ShimuraGlue.duHom._proof_1 ShimuraGlue.toZhatUnits._proof_7 ShimuraGlue.toZhatUnits._proof_6
+ShimuraGlue.Ray.hK24._proof_1_2	0	0	ShimuraGlue.Ray.K24
+ShimuraGlue.Mob.res_res._simp_1_1	0	0	
+CoarseFactorAG.isDedekindDomain_sections	1219	1240	CoarseFactorAG.SpecK CoarseFactorAG.isIntegrallyClosed_of_normal CoarseFactorAG.isNormal_of_integral CoarseFactorAG.topDim_le_one
+CurveSplit.stalk_closed_normal	2268	2281	CurveSplit.SpecK CurveSplit.isDomain_of_dim_one
+ShimuraGlue.printed_of_deligneComponentsX6	5691	5701	HDec.QMSplit.Moduli.DeligneComponentsX6 ShimuraGlue.DeligneComponentsX6Printed ShimuraSplit.baseQbar ShimuraGlue.Pi0 ShimuraGlue.Kfull ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.posRat ShimuraGlue.BAf ShimuraGlue.N4._proof_2 ShimuraGlue.BR._proof_1 ShimuraGlue.nrdU ShimuraGlue.instSubsingletonPi0Kfull ShimuraGlue.DelignePi0 ShimuraGlue.Place ShimuraGlue.locZ._proof_1 ShimuraGlue.locZ._proof_2 ShimuraGlue.locQ._proof_1 ShimuraSplit.chi3._proof_1 ShimuraSplit.galActπ₀ ShimuraGlue.DelignePi0._proof_1
+ShimuraGlue.toZhatUnits._proof_8	0	0	ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.Zhat ShimuraGlue.toZhatUnits._proof_1 ShimuraGlue.ZhatU ShimuraGlue.duHom._proof_1 ShimuraGlue.toZhatUnits._proof_6 ShimuraGlue.toZhatUnits._proof_7
+ShimuraGlue.locZ	4948	4950	ShimuraGlue.Place ShimuraGlue.instFactPrimes ShimuraGlue.Af._proof_1 ShimuraGlue.locZ._proof_1 ShimuraGlue.locZ._proof_2 ShimuraGlue.locZ._proof_3
+HDec.QMSplit.Moduli.ShimuraGlueLeaves.gonzalezRotger	5726	5726	HDec.QMSplit.Moduli.ShimuraGlueLeaves HDec.QMSplit.Moduli.GonzalezRotgerX6
+ShimuraGlue.deligneComponentsX6_of_printed	5633	5646	ShimuraGlue.DeligneComponentsX6Printed HDec.QMSplit.Moduli.DeligneComponentsX6 ShimuraGlue.DelignePi0 ShimuraGlue.Kfull ShimuraSplit.baseQbar ShimuraGlue.Pi0 ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.Place ShimuraGlue.locZ._proof_1 ShimuraGlue.locZ._proof_2 ShimuraGlue.locQ._proof_1 ShimuraSplit.chi3._proof_1 ShimuraSplit.galActπ₀ ShimuraGlue.posRat ShimuraGlue.BAf ShimuraGlue.N4._proof_2 ShimuraGlue.BR._proof_1 ShimuraGlue.nrdU ShimuraGlue.DelignePi0._proof_1 ShimuraGlue.connectedSpace_of_subsingleton ShimuraSplit.sQbar ShimuraSplit.baseQbar._proof_1 CurveSplit.instNonemptyCarrierCarrierCommRingCatSpecKQbar ShimuraGlue.instSubsingletonPi0Kfull
+ShimuraGlue.ofQ_one	4744	4745	ShimuraGlue.BR ShimuraGlue.ofQ ShimuraGlue.N4._proof_2 ShimuraGlue.BR._proof_1 ShimuraGlue.N4._proof_1 ShimuraGlue.half
+ShimuraGlue.Ohat	4808	4822	ShimuraGlue.BAf ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.N4._proof_2 ShimuraGlue.BR._proof_1 ShimuraGlue.Zhat ShimuraGlue.ofQ ShimuraGlue.Ohat._proof_1 ShimuraGlue.Ohat._proof_2 ShimuraGlue.Ohat._proof_3 ShimuraGlue.Ohat._proof_4 ShimuraGlue.Ohat._proof_5
+ShimuraSplit.ker_of_good._abel_1_2	0	0	
+ShimuraSplit.fixing_iff	3420	3452	
+ShimuraGlue.Ray.instCyc4	6660	6661	ShimuraGlue.Ray.instNeZero4
+ShimuraGlue.Mob.W₂	5817	5818	ShimuraGlue.Mob.hT
+ShimuraSplit.fieldOfModuliPair_eq_residueImage	3488	3516	ShimuraSplit.bc_uniquePair ShimuraSplit.bc_transportPair ShimuraSplit.fixing_iff
+ShimuraGlue.Mob.good_T	6210	6218	ShimuraGlue.Mob.Good ShimuraGlue.Mob.gl2 ShimuraGlue.Mob.ToP1.translate ShimuraGlue.Mob.cQ ShimuraGlue.Mob.gval ShimuraGlue.Mob.val_translate ShimuraGlue.Mob.gval_cQ ShimuraGlue.Mob.map_gl2_smul.match_1 ShimuraGlue.Mob.map_gl2_smul
+ShimuraGlue.Mob.invP1.eq_2	0	0	ShimuraGlue.Mob.invP1
+ShimuraGlue.adeleHom_apply	4973	4974	ShimuraGlue.Place ShimuraGlue.instFactPrimes ShimuraGlue.Af._proof_1 ShimuraGlue.Af ShimuraGlue.adeleHom ShimuraGlue.locZ
+ShimuraGlue.Mob.uniq_inv	5848	5851	
+ShimuraGlue.ev._proof_3	0	0	ShimuraGlue.Place ShimuraGlue.Af._proof_1 ShimuraGlue.Af
+ShimuraSplit.GonzalezRotgerCountX6	3770	3796	ShimuraSplit.GonzalezRotgerCountX6._proof_1
+HDec.QMSplit.Moduli.ShimuraGlueLeaves4.recOn	7330	7340	HDec.QMSplit.Moduli.ShimuraGlueLeaves4 ShimuraGlue.DeligneComponentsX6Printed HDec.QMSplit.Moduli.GeomConnOfAlgClosure HDec.QMSplit.Moduli.BabaGranathRational ShimuraGlue.Ray.RayClassCM HDec.QMSplit.Moduli.GonzalezRotgerX6 ShimuraSplit.GonzalezRotgerCountX6 ShimuraGlue.DeligneComponentsY3Printed HDec.QMSplit.Moduli.ElkiesEquationsX6 HDec.QMSplit.Moduli.ShimuraGlueLeaves4.mk HDec.QMSplit.Moduli.ShimuraGlueLeaves4.casesOn
+HDec.QMSplit.Moduli.HeckeOfFine	84	88	
+X6Glue.conicMapL._proof_2	0	0	X6Glue.ElkiesRing X6Glue.elkiesIdeal X6Glue.eT X6Glue.pt X6Glue.psiV X6Glue.memV_of_not_memU X6Glue.eR ShimuraGlue.BR._proof_1 X6Glue.inf_rel X6Glue.psiV_T
+ShimuraGlue.rep_ge5._proof_1_1	0	0	
+ShimuraGlue.Mob.isUnit₂	5826	5827	ShimuraGlue.Mob.W₂ ShimuraGlue.Mob.W₂_le ShimuraGlue.Mob.hT
+ShimuraGlue.nrd_one_add_three	4914	4924	ShimuraGlue.BR ShimuraGlue.N4._proof_2 ShimuraGlue.BR._proof_1 ShimuraGlue.nrdQ ShimuraGlue.ofQ ShimuraGlue.N4 ShimuraGlue.half ShimuraGlue.two_mul_half ShimuraGlue.N4._proof_1 ShimuraGlue.nrdQ_apply
+ShimuraGlue.du_emb	5306	5309	ShimuraGlue.posQ ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.du ShimuraGlue.emb ShimuraGlue.dq ShimuraGlue.decomp_unique ShimuraGlue.dq_pos ShimuraGlue.du_mem ShimuraGlue.ZhatU ShimuraGlue.emb_dq_mul_du ShimuraGlue.du.eq_1
+ShimuraSplit.galAct	3611	3614	ShimuraSplit.baseQbar ShimuraSplit.sQbar ShimuraSplit.baseQbar._proof_1 ShimuraSplit.galAct._proof_1 ShimuraSplit.galAct._proof_2 ShimuraSplit.galAct._proof_3
+ShimuraGlue.Ohat._proof_3	0	0	ShimuraGlue.BAf ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.Zhat ShimuraGlue.ofQ ShimuraGlue.N4._proof_2 ShimuraGlue.BR._proof_1 ShimuraGlue.ofQ_add
+ShimuraGlue.locZ._proof_2	0	0	ShimuraGlue.Place ShimuraGlue.locZ._proof_1 ShimuraGlue.Af._proof_1
+HDec.QMSplit.Moduli.r1r2fpRep_of	127	134	HDec.QMSplit.Moduli.CanonicalModelY3 HDec.QMSplit.Moduli.HeckeOfFine HDec.QMSplit.Moduli.CoarseX6OfFine HDec.QMSplit.Moduli.HauptmodulOfX6 HDec.QMSplit.Moduli.ReciprocityOfFine HDec.QMSplit.Moduli.ResidueOfX6
+HDec.QMSplit.Moduli.x6ConicModel_of	203	206	HDec.QMSplit.Moduli.ConicOfWitness
+ShimuraGlue.Mob.ToP1.swap._proof_1	0	0	
+HDec.QMSplit.Moduli.r2fp_of_r2X6	765	774	
+HDec.QMSplit.Moduli.ShimuraSplitLeaves.reciprocity	4441	4441	HDec.QMSplit.Moduli.ShimuraSplitLeaves HDec.QMSplit.Moduli.ReciprocityCanonical
+HDec.QMSplit.Moduli.pairsLift_of_canonical	1854	1856	HDec.QMSplit.Moduli.CanonicalCoarseX6 HDec.QMSplit.Moduli.PairsLift HDec.QMSplit.Moduli.pairsLift_of_witness
+HDec.QMSplit.Moduli.residueOfX6_of_r5fp	4129	4131	HDec.QMSplit.Moduli.ResidueOfX6 ShimuraSplit.point_of_r5fp
+ShimuraGlue.Mob.gT_res₁	5894	5896	ShimuraGlue.Mob.W₁ ShimuraGlue.Mob.W₂ ShimuraGlue.Mob.gT ShimuraGlue.Mob.s₁ ShimuraGlue.Mob.gT._proof_1 ShimuraGlue.Mob.gT._proof_2 ShimuraGlue.Mob.s₂ ShimuraGlue.Mob.s_agree
+ShimuraGlue.Ohat._proof_2	0	0	ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.Zhat ShimuraGlue.BAf ShimuraGlue.N4._proof_2 ShimuraGlue.BR._proof_1 ShimuraGlue.ofQ ShimuraGlue.BR ShimuraGlue.ofQ_one
+ShimuraGlue.Ray.unramifiedAbove5_of_embed	6617	6653	ShimuraGlue.Ray.mod3 ShimuraGlue.Ray.not_mem_support_mod3
+X6Glue.eR	6932	6932	X6Glue.ElkiesRing X6Glue.elkiesIdeal X6Glue.eT._proof_1 ShimuraSplit.chi3._proof_2
+ShimuraGlue.toZMod_transport	5486	5489	
+ShimuraGlue.Kfull	4853	4863	ShimuraGlue.BAf ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.N4._proof_2 ShimuraGlue.BR._proof_1 ShimuraGlue.Ohat ShimuraGlue.Kfull._proof_1 ShimuraGlue.Kfull._proof_2 ShimuraGlue.Kfull._proof_3
+ShimuraGlue.Mob.ToP1.swap._proof_4	0	0	ShimuraGlue.Mob.ToP1.swap._proof_2 ShimuraGlue.Mob.ToP1.swap._proof_3
+ShimuraGlue.Place	4680	4681	
+ShimuraGlue.adeleHom._proof_11	0	0	ShimuraGlue.Place ShimuraGlue.locZ._proof_1 ShimuraGlue.Af._proof_1 ShimuraGlue.locZ._proof_2 ShimuraGlue.adeleHom._proof_1 ShimuraGlue.adeleHom._proof_2 ShimuraGlue.locZ ShimuraGlue.adeleHom._proof_10 ShimuraGlue.Af ShimuraGlue.adeleHom._proof_3 ShimuraGlue.instFactPrimes
+HDec.QMSplit.Moduli.conicOfWitness_of'	810	835	HDec.QMSplit.Moduli.ConicCanonical HDec.QMSplit.Moduli.CoarseCompare HDec.QMSplit.Moduli.HauptmodulUniqueX6S HDec.QMSplit.Moduli.ConicOfWitness HDec.QMSplit.Moduli.compare_iso HDec.QMSplit.Moduli.x6Props_transport
+ShimuraGlue.dq_mul	5292	5295	ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.dq ShimuraGlue.decomp_unique ShimuraGlue.dq_pos ShimuraGlue.posQ ShimuraGlue.du ShimuraGlue.du_mem ShimuraGlue.ZhatU ShimuraGlue.emb ShimuraGlue.emb_dq_mul_du
+LeafQM.AV.ToP1.val.eq_1	0	0	
+HDec.QMSplit.Moduli.rightMulFam._proof_1	0	0	HDec.QMSplit.Moduli.isoRightMulOne._proof_1
+X6Glue.ev_comp	6876	6886	X6Glue.ev X6Glue.ev_apply
+ShimuraGlue.pi0K3Equiv._proof_1	0	0	ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.posRat ShimuraGlue.BAf ShimuraGlue.N4._proof_2 ShimuraGlue.BR._proof_1 ShimuraGlue.nrdU ShimuraGlue.K3
+ShimuraGlue.locZ._proof_3	0	0	ShimuraGlue.Place ShimuraGlue.Af._proof_1
+HDec.QMSplit.Moduli.ShimuraGlueLeaves.deligneX6P	5721	5721	HDec.QMSplit.Moduli.ShimuraGlueLeaves ShimuraGlue.DeligneComponentsX6Printed
+CurveSplit.DegreeGeneralFibre	2578	2595	CurveSplit.SpecK CurveSplit.ZMTOriginal._proof_1
+X6Glue.elkiesLift.congr_simp	0	0	X6Glue.ElkiesRing X6Glue.elkiesIdeal X6Glue.elkiesLift
+HDec.QMSplit.Moduli.gJ	6465	6466	ShimuraGlue.Mob.gl2 HDec.QMSplit.Moduli.gJ._proof_1
+ShimuraGlue.toZhatUnits._proof_7	0	0	ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.Zhat ShimuraGlue.ZhatU ShimuraGlue.duHom._proof_1
+ShimuraGlue.r3._proof_2	0	0	ShimuraGlue.locZ._proof_1 ShimuraGlue.Af._proof_1 ShimuraGlue.v3 ShimuraGlue.r3._proof_1 ShimuraGlue.instFactPrimes
+ShimuraGlue.nrdQ_eq_mul_star	4702	4706	ShimuraGlue.BR ShimuraGlue.N4._proof_2 ShimuraGlue.BR._proof_1 ShimuraGlue.nrdQ
+ShimuraGlue.Ray.reciprocityCanonical_of_rayClass	6746	6756	ShimuraGlue.Ray.RayClassCM HDec.QMSplit.Moduli.ReciprocityCanonical ShimuraGlue.Ray.K4 ShimuraGlue.Ray.RayClassCM._proof_2 ShimuraGlue.Ray.RayClassCM._proof_3 ShimuraGlue.Ray.mod3 ShimuraGlue.Ray.RayClassCM._proof_4 ShimuraGlue.Ray.RayClassCM._proof_5 ShimuraGlue.Ray.RayClassCM._proof_6 ShimuraGlue.Ray.K3 ShimuraGlue.Ray.RayClassCM._proof_8 ShimuraGlue.Ray.RayClassCM._proof_9 ShimuraGlue.Ray.RayClassCM._proof_10 ShimuraGlue.Ray.RayClassCM._proof_11 ShimuraGlue.Ray.z24._proof_2 ShimuraGlue.Ray.K24 ShimuraGlue.Ray.RayClassCM._proof_13 ShimuraGlue.Ray.RayClassCM._proof_14 ShimuraGlue.Ray.RayClassCM._proof_15 ShimuraGlue.Ray.RayClassCM._proof_16 ShimuraGlue.Ray.unramifiedAbove5_of_embed ShimuraGlue.Ray.hK4 ShimuraGlue.Ray.hK3 ShimuraGlue.Ray.hK24
+ShimuraGlue.Mob.gl2.congr_simp	0	0	ShimuraGlue.Mob.gl2
+HDec.QMSplit.Moduli.gJ._proof_1	0	0	
+HDec.QMSplit.Moduli.X6Leaves.t5	7319	7319	HDec.QMSplit.Moduli.X6Leaves
+X6Glue.elkies_hom_ext	6945	6963	X6Glue.ElkiesRing X6Glue.elkiesIdeal X6Glue.eS X6Glue.eR X6Glue.eT X6Glue.rel1
+ShimuraGlue.printed_of_deligneComponentsY3	5674	5687	ShimuraSplit.DeligneComponentsY3 ShimuraGlue.DeligneComponentsY3Printed ShimuraSplit.baseQbar ShimuraSplit.galActπ₀ ShimuraSplit.chi3 ShimuraGlue.DelignePi0 ShimuraGlue.K3 ShimuraGlue.Pi0 ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.Place ShimuraGlue.locZ._proof_1 ShimuraGlue.locZ._proof_2 ShimuraGlue.locQ._proof_1 ShimuraSplit.chi3._proof_1 ShimuraGlue.posRat ShimuraGlue.BAf ShimuraGlue.N4._proof_2 ShimuraGlue.BR._proof_1 ShimuraGlue.nrdU ShimuraGlue.DelignePi0._proof_1 ShimuraGlue.pi0K3Equiv ShimuraGlue.cycU ShimuraGlue.eq_cycU ShimuraGlue.chi ShimuraGlue.pi0K3Equiv_mk ShimuraSplit.card_mu3 ShimuraGlue.chi_cycU ShimuraGlue.instNeZeroRatCastOfNatNat_scratch
+HDec.QMSplit.Moduli.MobiusCompose	6288	6295	
+ShimuraGlue.cycU._proof_2	0	0	
+ShimuraGlue.posQ_ZhatU	5221	5262	ShimuraGlue.posQ ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.ZhatU ShimuraGlue.emb ShimuraGlue.instFactPrimes ShimuraGlue.nrm ShimuraGlue.nrm_emb ShimuraGlue.Place ShimuraGlue.mem_ZhatU_iff ShimuraGlue.posQ_ZhatU._proof_1_1
+ShimuraGlue.Mob.inv_res	5794	5800	ShimuraGlue.Mob.res_res
+ShimuraGlue.DeligneComponentsY3Printed	5570	5589	ShimuraGlue.DelignePi0 ShimuraGlue.K3
+ShimuraGlue.Mob.ToP1.translate._proof_2	0	0	ShimuraGlue.Mob.W₁ ShimuraGlue.Mob.W₂
+ShimuraGlue.r3._proof_3	0	0	ShimuraGlue.Af._proof_1 ShimuraGlue.v3
+CurveSplit.restrict_isIso'	2610	2710	CurveSplit.ZMTOriginal CurveSplit.DegreeGeneralFibre CurveSplit.SpecK CurveSplit.isReduced_of_smooth CurveSplit.isNormal_of_integral CurveSplit.ZMTOriginal._proof_1 CurveSplit.restrict_isIso'._simp_1_1 CurveSplit.restrict_isIso'._simp_1_2 CurveSplit.restrict_isIso'.match_1_3 CurveSplit.bijective_of_finrank_eq_one
+ShimuraGlue.ev_apply	4946	4946	ShimuraGlue.Place ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.ev
+ShimuraSplit.coe_three_mul	3916	3917	
+CoarseFactorAG.FactorThroughSurj	1666	1677	
+ShimuraGlue.Ray.not_mem_support_mod3	6599	6615	ShimuraGlue.Ray.mod3 ShimuraGlue.BR._proof_1 ShimuraGlue.Ray.not_mem_support_mod3._proof_1_1
+ShimuraGlue.Mob.fT	5808	5809	ShimuraGlue.Mob.onU
+ShimuraGlue.Mob.ToP1.translate._proof_3	0	0	ShimuraGlue.Mob.W₁ ShimuraGlue.Mob.W₂
+HDec.QMSplit.Moduli.ShimuraSplitLeaves.gonzalezRotgerCount	4443	4443	HDec.QMSplit.Moduli.ShimuraSplitLeaves ShimuraSplit.GonzalezRotgerCountX6
+HDec.QMSplit.Moduli.GeomConnX6	4196	4205	
+ShimuraGlue.instFactPrimes	4678	4678	
+HDec.QMSplit.Moduli.r1r2fpRep_of_printed	4320	4328	HDec.QMSplit.Moduli.DeligneComponentsX6 HDec.QMSplit.Moduli.GeomConnOfAlgClosure HDec.QMSplit.Moduli.PairsLift HDec.QMSplit.Moduli.BabaGranathX6' HDec.QMSplit.Moduli.ReciprocityCanonical HDec.QMSplit.Moduli.GonzalezRotgerX6 HDec.QMSplit.Moduli.r1r2fpRep_of_split6 HDec.QMSplit.Moduli.geomConnX6_of HDec.QMSplit.Moduli.r1rec_of_reciprocityCanonical ShimuraSplit.r5fp_of_point
+CurveSplit.isIso_of_finite_bijective._proof_1_1	0	0	
+HDec.QMSplit.Moduli.x6ConicModel_of_canonical'	837	840	HDec.QMSplit.Moduli.ConicCanonical HDec.QMSplit.Moduli.CoarseFactor ModelGlue.CurveBijIso HDec.QMSplit.Moduli.x6ConicModel_of HDec.QMSplit.Moduli.conicOfWitness_of' HDec.QMSplit.Moduli.coarseCompare_of HDec.QMSplit.Moduli.hauptmodulUniqueX6S_of
+ShimuraGlue.Mob.gT_res₂	5898	5900	ShimuraGlue.Mob.W₂ ShimuraGlue.Mob.W₁ ShimuraGlue.Mob.gT ShimuraGlue.Mob.s₂ ShimuraGlue.Mob.gT._proof_1 ShimuraGlue.Mob.gT._proof_2 ShimuraGlue.Mob.s₁ ShimuraGlue.Mob.s_agree
+HDec.QMSplit.Moduli.GonzalezRotgerX6	622	628	
+ShimuraGlue.Ray.RayClassCM._proof_2	0	0	ShimuraGlue.Ray.K4 ShimuraGlue.Ray.RayClassCM._proof_1
+ShimuraSplit.chi3	3634	3637	ShimuraSplit.chi3._proof_1 ShimuraSplit.chi3._proof_2 ShimuraSplit.card_mu3
+HDec.QMSplit.Moduli.shimuraGlueLeaves_of_2	6558	6560	HDec.QMSplit.Moduli.ShimuraGlueLeaves2 HDec.QMSplit.Moduli.ShimuraGlueLeaves HDec.QMSplit.Moduli.ShimuraGlueLeaves.mk HDec.QMSplit.Moduli.ShimuraGlueLeaves2.deligneX6P HDec.QMSplit.Moduli.ShimuraGlueLeaves2.geomConn HDec.QMSplit.Moduli.ShimuraGlueLeaves2.t5 HDec.QMSplit.Moduli.babaGranathX6'_of_rational' HDec.QMSplit.Moduli.ShimuraGlueLeaves2.babaGranathR HDec.QMSplit.Moduli.ShimuraGlueLeaves2.reciprocity HDec.QMSplit.Moduli.ShimuraGlueLeaves2.gonzalezRotger HDec.QMSplit.Moduli.ShimuraGlueLeaves2.gonzalezRotgerCount HDec.QMSplit.Moduli.ShimuraGlueLeaves2.deligneY3P HDec.QMSplit.Moduli.elkiesConicX6_of_t' HDec.QMSplit.Moduli.ShimuraGlueLeaves2.elkiesT
+ShimuraGlue.locA_cycU	5479	5484	ShimuraGlue.Place ShimuraGlue.instFactPrimes ShimuraGlue.locA ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.cycU ShimuraGlue.Zhat ShimuraGlue.cycU_mem ShimuraGlue.locZ._proof_1 ShimuraGlue.locZ._proof_2 ShimuraGlue.locZ._proof_3 ShimuraGlue.locZ ShimuraGlue.locA.eq_1
+ShimuraSplit.points_of_r5fpCount	3808	3818	ShimuraSplit.GonzalezRotgerCountX6 ShimuraSplit.GonzalezRotgerCountX6._proof_1
+HDec.QMSplit.Moduli.gJ.eq_1	0	0	HDec.QMSplit.Moduli.gJ ShimuraGlue.Mob.gl2 HDec.QMSplit.Moduli.gJ._proof_1
+ShimuraGlue.Mob.W₁₂_le	5853	5854	ShimuraGlue.Mob.W₁ ShimuraGlue.Mob.W₂ ShimuraGlue.Mob.W₁_le ShimuraGlue.Mob.W₂_le
+ShimuraGlue.Mob.good_Sc	6242	6249	ShimuraGlue.Mob.Good ShimuraGlue.Mob.gl2 ShimuraGlue.Mob.map_gl2_smul.match_1 ShimuraGlue.Mob.map_gl2_smul
+ShimuraGlue.Mob.gval	6079	6081	
+ShimuraGlue.locQ._proof_1	0	0	ShimuraGlue.Place ShimuraGlue.locZ._proof_1 ShimuraGlue.Af._proof_1 ShimuraGlue.locZ._proof_2
+ShimuraGlue.ofQ_coords	4768	4777	ShimuraGlue.BR ShimuraGlue.ofQ ShimuraGlue.N4._proof_2 ShimuraGlue.BR._proof_1 ShimuraGlue.half ShimuraGlue.two_mul_half
+HDec.QMSplit.Moduli.r1r2fpRep_of_split6	4276	4279	HDec.QMSplit.Moduli.GeomConnX6 HDec.QMSplit.Moduli.PairsLift HDec.QMSplit.Moduli.BabaGranathX6' HDec.QMSplit.Moduli.r1r2fpRep_of_split5 HDec.QMSplit.Moduli.babaGranathX6_of
+ShimuraGlue.Mob.fT.eq_1	0	0	ShimuraGlue.Mob.fT ShimuraGlue.Mob.onU
+ShimuraGlue.Ray.RayClassCM._proof_3	0	0	
+HDec.QMSplit.Moduli.connectedOfFine_of	151	154	HDec.QMSplit.Moduli.ConnectedOfFine
+HDec.QMSplit.Moduli.conicOfWitness_of	703	729	HDec.QMSplit.Moduli.ConicCanonical HDec.QMSplit.Moduli.CoarseCompare HDec.QMSplit.Moduli.HauptmodulUniqueX6 HDec.QMSplit.Moduli.ConicOfWitness HDec.QMSplit.Moduli.compare_iso HDec.QMSplit.Moduli.x6Props_transport
+HDec.QMSplit.Moduli.X6Leaves.recOn	7315	7323	HDec.QMSplit.Moduli.X6Leaves ShimuraGlue.DeligneComponentsX6Printed HDec.QMSplit.Moduli.GeomConnOfAlgClosure HDec.QMSplit.Moduli.BabaGranathRational ShimuraGlue.Ray.RayClassCM HDec.QMSplit.Moduli.GonzalezRotgerX6 HDec.QMSplit.Moduli.ElkiesEquationsX6 HDec.QMSplit.Moduli.X6Leaves.mk HDec.QMSplit.Moduli.X6Leaves.casesOn
+ShimuraSplit.galActπ₀	3620	3623	ShimuraSplit.baseQbar ShimuraSplit.galAct ShimuraSplit.galActπ₀._proof_1
+X6Glue.elkiesIdeal	6919	6923	ShimuraSplit.chi3._proof_2 ShimuraGlue.BR._proof_1
+HDec.QMSplit.Moduli.factorThroughSurj_proof	3230	3232	HDec.QMSplit.Moduli.FactorThroughSurj CoarseFactorAG.factorThroughSurj
+ShimuraGlue.Ray.K24	6705	6706	ShimuraGlue.Ray.z24._proof_2 ShimuraGlue.Ray.s6
+ShimuraSplit.galAct.eq_1	0	0	ShimuraSplit.baseQbar ShimuraSplit.galAct ShimuraSplit.sQbar ShimuraSplit.baseQbar._proof_1 ShimuraSplit.galAct._proof_1 ShimuraSplit.galAct._proof_2 ShimuraSplit.galAct._proof_3
+ShimuraSplit.galActπ₀._proof_1	0	0	ShimuraSplit.baseQbar ShimuraSplit.galAct
+X6Glue.ev	6815	6819	
+HDec.QMSplit.Moduli.ShimuraSplitLeaves	4434	4445	HDec.QMSplit.Moduli.ShimuraSplitLeaves.mk
+ShimuraSplit.r1rec_of_point	3521	3528	ShimuraSplit.fieldOfModuli3_eq_residueImage
+HDec.QMSplit.Moduli.CanonicalModelY3	73	80	
+ShimuraGlue.Mob.ToP1.scale._proof_1	0	0	
+ShimuraGlue.du_of_mem	5303	5304	ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.ZhatU ShimuraGlue.du ShimuraGlue.emb ShimuraGlue.dq ShimuraGlue.du.eq_1 ShimuraGlue.dq_of_mem
+X6Glue.conicMapL	7089	7095	X6Glue.ElkiesRing X6Glue.elkiesIdeal X6Glue.eT X6Glue.pt X6Glue.psiU X6Glue.eS X6Glue.eR X6Glue.conicMapL._proof_1 X6Glue.psiV X6Glue.memV_of_not_memU X6Glue.conicMapL._proof_2
+ShimuraGlue.Ray.s6.eq_1	0	0	ShimuraGlue.Ray.s6 ShimuraGlue.N4._proof_2 ShimuraGlue.Ray.z24
+HDec.QMSplit.Moduli.ShimuraGlueLeaves4.elkiesEq	7340	7340	HDec.QMSplit.Moduli.ShimuraGlueLeaves4 HDec.QMSplit.Moduli.ElkiesEquationsX6
+ShimuraGlue.Mob.s_agree	5856	5888	ShimuraGlue.Mob.W₁ ShimuraGlue.Mob.W₂ ShimuraGlue.Mob.s₁ ShimuraGlue.Mob.s₂ ShimuraGlue.Mob.W₁₂_le ShimuraGlue.Mob.onU ShimuraGlue.Mob.inv_res ShimuraGlue.Mob.W₁_le ShimuraGlue.Mob.fT ShimuraGlue.Mob.res_inv_rel ShimuraGlue.Mob.fT_mul_s₁ ShimuraGlue.Mob.fT.eq_1 ShimuraGlue.Mob.onU_res ShimuraGlue.Mob.W₂_le ShimuraGlue.Mob.hT ShimuraGlue.Mob.isUnit₂ ShimuraGlue.Mob.hT_mul_inv ShimuraGlue.Mob.hT.eq_1 ShimuraGlue.Mob.uniq_inv ShimuraGlue.Mob.res_res ShimuraGlue.Mob.s₂.eq_1
+ShimuraGlue.Ray.mod3	6593	6597	ShimuraGlue.BR._proof_1 ShimuraGlue.Ray.mod3._proof_1
+ShimuraGlue.rep_unit._proof_1_1	0	0	
+ShimuraSplit.bc_transport3	3363	3381	
+ShimuraGlue.Mob.U_inf_V'	5949	5953	ShimuraGlue.Mob.W₁ ShimuraGlue.Mob.W₂ ShimuraGlue.Mob.U_inf_W₂_le ShimuraGlue.Mob.W₁_le
+ShimuraGlue.ev	4938	4944	ShimuraGlue.Place ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.ev._proof_1 ShimuraGlue.ev._proof_2 ShimuraGlue.ev._proof_3 ShimuraGlue.ev._proof_4
+ShimuraGlue.posQ._proof_1	0	0	
+X6Glue.psiV_comp	7102	7105	X6Glue.ElkiesRing X6Glue.elkiesIdeal X6Glue.pt X6Glue.psiV X6Glue.ev_comp X6Glue.psiV._proof_1
+HDec.QMSplit.Moduli.ShimuraGlueLeaves.mk._flat_ctor	0	0	ShimuraGlue.DeligneComponentsX6Printed HDec.QMSplit.Moduli.GeomConnOfAlgClosure HDec.QMSplit.Moduli.BabaGranathX6' HDec.QMSplit.Moduli.ReciprocityCanonical HDec.QMSplit.Moduli.GonzalezRotgerX6 ShimuraSplit.GonzalezRotgerCountX6 ShimuraGlue.DeligneComponentsY3Printed HDec.QMSplit.Moduli.ElkiesConicX6 HDec.QMSplit.Moduli.ShimuraGlueLeaves HDec.QMSplit.Moduli.ShimuraGlueLeaves.mk
+ShimuraGlue.locQ_rat	5117	5121	ShimuraGlue.Place ShimuraGlue.instFactPrimes ShimuraGlue.locQ ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.ev
+HDec.QMSplit.Moduli.ShimuraSplitLeaves.deligneY3	4444	4444	HDec.QMSplit.Moduli.ShimuraSplitLeaves ShimuraSplit.DeligneComponentsY3
+ShimuraGlue.Ray.RayClassCM._proof_6	0	0	ShimuraGlue.Ray.K4 ShimuraGlue.Ray.RayClassCM._proof_2
+ShimuraGlue.toZMod_lift	4534	4536	
+ShimuraGlue.nrdQ_star	5003	5004	ShimuraGlue.BR ShimuraGlue.N4._proof_2 ShimuraGlue.BR._proof_1 ShimuraGlue.nrdQ
+ShimuraGlue.Ray.instCyc3	6662	6663	ShimuraGlue.Ray.instNeZero3
+X6Glue.conicMapL_injective	7163	7190	X6Glue.ElkiesRing X6Glue.elkiesIdeal X6Glue.eT X6Glue.conicMapL X6Glue.pt X6Glue.psiU X6Glue.eS X6Glue.eR X6Glue.conicMapL._proof_1 X6Glue.psiV X6Glue.memV_of_not_memU X6Glue.conicMapL._proof_2 X6Glue.conicMapL.eq_1 X6Glue.elkies_hom_ext X6Glue.ev_injective X6Glue.ev X6Glue.s_zero X6Glue.psiV_T
+ShimuraGlue.ofQ_add	4736	4738	ShimuraGlue.BR ShimuraGlue.N4._proof_2 ShimuraGlue.BR._proof_1 ShimuraGlue.ofQ ShimuraGlue.N4._proof_1 ShimuraGlue.half
+ShimuraGlue.rep_ge5	4572	4643	ShimuraGlue.N4 ShimuraGlue.isUnit_iff_toZMod ShimuraGlue.rep_ge5._proof_1_1 ShimuraGlue.rep_ge5._proof_1_2 ShimuraGlue.hensel_simple ShimuraGlue.toZMod_lift ShimuraGlue.N4._proof_2 ShimuraGlue.N4._proof_1
+ShimuraGlue.Mob.map_gl2_smul	6195	6208	ShimuraGlue.Mob.gl2 ShimuraGlue.Mob.map_gl2_smul.match_1
+HDec.QMSplit.Moduli.X6Leaves.rec	7315	7323	HDec.QMSplit.Moduli.X6Leaves ShimuraGlue.DeligneComponentsX6Printed HDec.QMSplit.Moduli.GeomConnOfAlgClosure HDec.QMSplit.Moduli.BabaGranathRational ShimuraGlue.Ray.RayClassCM HDec.QMSplit.Moduli.GonzalezRotgerX6 HDec.QMSplit.Moduli.ElkiesEquationsX6 HDec.QMSplit.Moduli.X6Leaves.mk
+CurveSplit.zmtOriginal	2865	2895	CurveSplit.ZMTOriginal CurveSplit.SpecK CurveSplit.ZMTOriginal._proof_1 CurveSplit.isIso_fromNormalization
+ShimuraGlue.exists_decomp._simp_1_3	0	0	
+ShimuraGlue.nrm.eq_1	0	0	ShimuraGlue.Place ShimuraGlue.Af ShimuraGlue.nrm ShimuraGlue.locZ._proof_1 ShimuraGlue.Af._proof_1 ShimuraGlue.locZ._proof_2 ShimuraGlue.locQ
+ShimuraGlue.Mob.ToP1.scale._proof_4	0	0	ShimuraGlue.Mob.onU
+CoarseFactorAG.bijective_of_points	1398	1512	CoarseFactorAG.exists_hom_ker_eq CoarseFactorAG.exists_extend CoarseFactorAG.bijective_of_points.match_1_1 CoarseFactorAG.bijective_of_points._simp_1_3 CoarseFactorAG.bijective_of_points._simp_1_4 CoarseFactorAG.bijective_of_points._simp_1_5 CoarseFactorAG.bijective_of_points._proof_1_6 CoarseFactorAG.bijective_of_finrank_eq_one CoarseFactorAG.bijective_of_unramifiedAt
+HDec.QMSplit.Moduli.hauptmodulOfX6_of	641	655	HDec.QMSplit.Moduli.BabaGranathX6 HDec.QMSplit.Moduli.CoarseCompare HDec.QMSplit.Moduli.HauptmodulOfX6 HDec.QMSplit.Moduli.compare_iso HDec.QMSplit.Moduli.x6Props_transport
+ShimuraGlue.Mob.onU_res	5787	5789	ShimuraGlue.Mob.onU ShimuraGlue.Mob.onU._proof_1 ShimuraGlue.Mob.onU.eq_1 ShimuraGlue.Mob.res_res
+CurveSplit.curveBijIso	3214	3216	ModelGlue.CurveBijIso CurveSplit.curveBijIso_of_closed CurveSplit.curveBijIsoClosed_proved
+HDec.QMSplit.Moduli.twistFam._proof_1	0	0	
+ShimuraSplit.ker_of_good	4035	4076	ShimuraSplit.act_mul ShimuraSplit.act_three ShimuraSplit.mul_oj_of_dvd ShimuraSplit.three_mul_cancel ShimuraSplit.ker_of_good._abel_1_1 ShimuraSplit.ker_of_good._abel_1_2 ShimuraSplit.left_inv_mod3
+HDec.QMSplit.Moduli.exists_mobius01._simp_1_3	0	0	
+HDec.QMSplit.Moduli.babaGranathRational_of	6496	6506	HDec.QMSplit.Moduli.BabaGranathX6' HDec.QMSplit.Moduli.BabaGranathRational
+ShimuraGlue.Mob.mem_W₂_iff	5926	5928	ShimuraGlue.Mob.W₂ ShimuraGlue.Mob.hT ShimuraGlue.Mob.W₂.eq_1 ShimuraGlue.Mob.eval_hT
+ShimuraGlue.deligneComponentsY3_of_printed	5608	5618	ShimuraGlue.DeligneComponentsY3Printed ShimuraSplit.DeligneComponentsY3 ShimuraGlue.DelignePi0 ShimuraGlue.K3 ShimuraSplit.baseQbar ShimuraGlue.Pi0 ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.Place ShimuraGlue.locZ._proof_1 ShimuraGlue.locZ._proof_2 ShimuraGlue.locQ._proof_1 ShimuraSplit.chi3._proof_1 ShimuraSplit.galActπ₀ ShimuraGlue.posRat ShimuraGlue.BAf ShimuraGlue.N4._proof_2 ShimuraGlue.BR._proof_1 ShimuraGlue.nrdU ShimuraGlue.DelignePi0._proof_1 ShimuraSplit.chi3 ShimuraGlue.pi0K3Equiv ShimuraGlue.cycU ShimuraGlue.cycU_apply ShimuraGlue.chi ShimuraSplit.card_mu3 ShimuraGlue.chi_cycU ShimuraGlue.instNeZeroRatCastOfNatNat_scratch ShimuraGlue.zmod3_zpow
+HDec.QMSplit.Moduli.mobiusCompose	6297	6298	HDec.QMSplit.Moduli.MobiusCompose ShimuraGlue.Mob.good_all
+HDec.QMSplit.Moduli.GeomConnOfAlgClosure._proof_1	0	0	
+ShimuraSplit.bc_core	3312	3336	ShimuraSplit.over_ext_pb
+ShimuraGlue.Ray.cyclotomic_unram	6665	6672	
+ShimuraGlue.Mob.ToP1.swap._proof_6	0	0	
+ShimuraGlue.Ray.z24	6679	6680	ShimuraGlue.Ray.z24._proof_1 ShimuraGlue.Ray.z24._proof_2 ShimuraGlue.Ray.instCyc24
+X6Glue.ev_surjective	6861	6874	X6Glue.ev X6Glue.psi X6Glue.eq_specMap_psi X6Glue.ev_eq_psi
+CurveSplit.isReduced_of_smooth	2283	2302	CurveSplit.SpecK
+HDec.QMSplit.Moduli.X6Leaves.rayClass	7321	7321	HDec.QMSplit.Moduli.X6Leaves ShimuraGlue.Ray.RayClassCM
+HDec.QMSplit.Moduli.r5fpCount_of_points	4236	4238	ShimuraSplit.GonzalezRotgerCountX6 ShimuraSplit.r5fpCount_of_points
+CurveSplit.topDim_le_one	2344	2353	CurveSplit.SpecK
+HDec.QMSplit.Moduli.ShimuraGlueLeaves2.reciprocity	6552	6552	HDec.QMSplit.Moduli.ShimuraGlueLeaves2 HDec.QMSplit.Moduli.ReciprocityCanonical
+ShimuraSplit.act_mul	3985	3987	
+HDec.QMSplit.Moduli.r1r2fpRep_of_split	4154	4164	HDec.QMSplit.Moduli.CanonicalCoarseX6 HDec.QMSplit.Moduli.BabaGranathX6 HDec.QMSplit.Moduli.r1r2fpRep_of' HDec.QMSplit.Moduli.canonicalModelY3_of_coarse HDec.QMSplit.Moduli.coarseX6OfFine_of HDec.QMSplit.Moduli.hauptmodulOfX6_of HDec.QMSplit.Moduli.coarseCompare_of_canonical HDec.QMSplit.Moduli.reciprocityOfFine_of_r1rec HDec.QMSplit.Moduli.residueOfX6_of_r5fp
+HDec.QMSplit.Moduli.X6Leaves.gonzalezRotger	7322	7322	HDec.QMSplit.Moduli.X6Leaves HDec.QMSplit.Moduli.GonzalezRotgerX6
+ShimuraGlue.Mob.W₂_le	5821	5821	ShimuraGlue.Mob.W₂ ShimuraGlue.Mob.hT
+ShimuraGlue.half	4708	4709	
+CoarseFactorAG.exists_lift_at	1274	1283	CoarseFactorAG.exists_lift_of_closed
+ShimuraGlue.Mob.good_all._simp_1_3	0	0	
+ShimuraGlue.Mob.map_gl2_smul.match_1	0	0	
+ShimuraSplit.bc_uniquePair	3383	3393	ShimuraSplit.bc_core ShimuraSplit.pt_one_left ShimuraSplit.over_ext_pb
+CurveSplit.isIntegrallyClosed_of_normal	2761	2778	
+HDec.QMSplit.Moduli.ResidueOfX6	120	125	
+X6Glue.psiV._proof_1	0	0	X6Glue.ElkiesRing X6Glue.elkiesIdeal
+ShimuraGlue.adeleHom._proof_7	0	0	ShimuraGlue.Place ShimuraGlue.locZ._proof_1 ShimuraGlue.Af._proof_1 ShimuraGlue.locZ._proof_2 ShimuraGlue.adeleHom._proof_1 ShimuraGlue.adeleHom._proof_2 ShimuraGlue.locZ ShimuraGlue.adeleHom._proof_6 ShimuraGlue.Af ShimuraGlue.adeleHom._proof_3 ShimuraGlue.instFactPrimes
+CoarseFactorAG.isReduced_image	1648	1664	
+HDec.QMSplit.Moduli.HauptmodulUniqueX6	684	693	
+HDec.QMSplit.Moduli.isFibre_rightMul	408	412	HDec.QMSplit.Moduli.rightMulFam
+ShimuraGlue.rep_two	4558	4570	ShimuraGlue.N4 ShimuraGlue.isUnit_iff_toZMod ShimuraGlue.hensel_simple ShimuraGlue.N4._proof_1 ShimuraGlue.N4._proof_2
+ShimuraSplit.pairsLift_of_T5	4093	4098	ShimuraSplit.exists_level3
+ShimuraGlue.Mob.s₁	5829	5830	ShimuraGlue.Mob.W₁ ShimuraGlue.Mob.W₁_le ShimuraGlue.Mob.fT ShimuraGlue.Mob.isUnit₁
+ShimuraGlue.toZhatUnits._proof_5	0	0	ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.ZhatU ShimuraGlue.Zhat ShimuraGlue.toZhatUnits._proof_1 ShimuraGlue.toZhatUnits._proof_3 ShimuraGlue.toZhatUnits._proof_2
+CoarseFactorAG.toPt._proof_1	0	0	CoarseFactorAG.specQ_hom_ext
+CurveSplit.bij_bc	1976	2015	CurveSplit.SpecK CurveSplit.kPt CurveSplit.bQ CurveSplit.bcMap CurveSplit.bcMap_snd CurveSplit.toS CurveSplit.bcMap_fst CurveSplit.sec_snd
+CoarseFactorAG.isZariskiLocalAtTarget_isFinite	1629	1633	
+X6Glue.eq_specMap_psi	6834	6841	X6Glue.psi X6Glue.pt_mem_top X6Glue.psi.eq_1
+ShimuraGlue.Mob.hT_mul_inv	5839	5841	ShimuraGlue.Mob.W₂ ShimuraGlue.Mob.W₂_le ShimuraGlue.Mob.hT ShimuraGlue.Mob.isUnit₂
+CurveSplit.curveBijIso_of_degree	2897	2899	CurveSplit.DegreeGeneralFibre ModelGlue.CurveBijIso CurveSplit.curveBijIso_of_zmt CurveSplit.zmtOriginal
+HDec.QMSplit.Moduli.twistFam._proof_2	0	0	
+ShimuraGlue.locQ	5113	5115	ShimuraGlue.Place ShimuraGlue.instFactPrimes ShimuraGlue.Af._proof_1 ShimuraGlue.locZ._proof_1 ShimuraGlue.locZ._proof_2 ShimuraGlue.locQ._proof_1
+ShimuraGlue.Mob.fT_mul_s₁	5836	5837	ShimuraGlue.Mob.W₁ ShimuraGlue.Mob.W₁_le ShimuraGlue.Mob.fT ShimuraGlue.Mob.s₁ ShimuraGlue.Mob.isUnit₁
+ShimuraGlue.coe_eq_ofQ	4999	5001	ShimuraGlue.N4._proof_2 ShimuraGlue.BR._proof_1 ShimuraGlue.ofQ ShimuraGlue.BR ShimuraGlue.N4._proof_1 ShimuraGlue.half
+ShimuraGlue.Mob.mem_W₁_iff	5922	5924	ShimuraGlue.Mob.W₁ ShimuraGlue.Mob.fT ShimuraGlue.Mob.W₁.eq_1 ShimuraGlue.Mob.eval_fT
+HDec.QMSplit.Moduli.ShimuraGlueLeaves.casesOn	5718	5729	HDec.QMSplit.Moduli.ShimuraGlueLeaves ShimuraGlue.DeligneComponentsX6Printed HDec.QMSplit.Moduli.GeomConnOfAlgClosure HDec.QMSplit.Moduli.BabaGranathX6' HDec.QMSplit.Moduli.ReciprocityCanonical HDec.QMSplit.Moduli.GonzalezRotgerX6 ShimuraSplit.GonzalezRotgerCountX6 ShimuraGlue.DeligneComponentsY3Printed HDec.QMSplit.Moduli.ElkiesConicX6 HDec.QMSplit.Moduli.ShimuraGlueLeaves.mk
+CoarseFactorAG.bijective_of_finrank_eq_one	1389	1396	
+X6Glue.val_of_inr	7153	7160	X6Glue.ElkiesRing X6Glue.elkiesIdeal X6Glue.eT X6Glue.conicMapL X6Glue.pt X6Glue.psiU X6Glue.eS X6Glue.eR X6Glue.conicMapL._proof_1 X6Glue.psiV X6Glue.memV_of_not_memU X6Glue.conicMapL._proof_2 X6Glue.conicMapL.eq_1
+ShimuraGlue.v3_spec	5322	5323	ShimuraGlue.v3
+ShimuraGlue.dq_pos	5282	5282	ShimuraGlue.Af ShimuraGlue.Af._proof_1 ShimuraGlue.posQ ShimuraGlue.dq ShimuraGlue.ZhatU ShimuraGlue.emb ShimuraGlue.exists_decomp

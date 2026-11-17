@@ -1,0 +1,28 @@
+id	field	lean_name	revisions	latest
+H-4		r6 : PkgI2.RaynaudCriterion	249195fd0,f6df5fa32,cba8157f7,5fd81e870	no
+H-5		r7a : PkgI2.NeronOggShafarevich	249195fd0,f6df5fa32,cba8157f7,5fd81e870,085a7a53a,f18bcb904	yes
+H-6		r9a : PkgI3.FaltingsSemisimple	249195fd0,f6df5fa32,cba8157f7,5fd81e870,085a7a53a,f18bcb904	yes
+H-41		ZInQ.RLeaf.X0Transitive	249195fd0,f6df5fa32,cba8157f7	no
+H-65	egaIV_8_10_5_xii	ZInQ.Contrib.SpreadOut.EGAIV_8_10_5_xii	249195fd0,f6df5fa32,cba8157f7,5fd81e870,085a7a53a,f18bcb904	yes
+H-70	homFreeFiniteAlgClosed	ZInQ.Contrib.AVB1.HomFreeFiniteAlgClosed	f6df5fa32,cba8157f7,5fd81e870,085a7a53a,f18bcb904	yes
+H-71	charPolyIndepOfEllAlgClosed	ZInQ.Contrib.AVB1.CharPolyIndepOfEllAlgClosed	f6df5fa32,cba8157f7,5fd81e870,085a7a53a,f18bcb904	yes
+H-72	poincareComplement	ZInQ.Contrib.AVB1.PoincareComplement	f6df5fa32,cba8157f7,5fd81e870,085a7a53a,f18bcb904	yes
+H-77	neronSchemeExtensionExists	ZInQ.Contrib.NeronC.NeronSchemeExtensionExists	f6df5fa32,cba8157f7,5fd81e870,085a7a53a,f18bcb904	yes
+H-90		MCRGlue.FiniteQuotientExists	5fd81e870,085a7a53a,f18bcb904	yes
+H-91		MCRGlue.TameQuotientSmooth	5fd81e870,085a7a53a,f18bcb904	yes
+H-98	cartierSmooth	AVGlue.CartierSmooth	5fd81e870,085a7a53a,f18bcb904	yes
+H-99	geomConnOfRationalPoint	AVGlue.GeomConnOfRationalPoint	5fd81e870,085a7a53a,f18bcb904	yes
+H-100	groupSchemeEquidim	AVGlue.GroupSchemeEquidim	5fd81e870,085a7a53a,f18bcb904	yes
+H-101	mulEtaleAbelianScheme	AvSplit.T4.MulEtaleAbelianScheme	5fd81e870,085a7a53a,f18bcb904	yes
+H-102	mumfordTorsionAlgClosed	AvSplit.MumfordTorsionAlgClosed	5fd81e870,085a7a53a,f18bcb904	yes
+H-103	uniformizationLeafAll	BPAnalytic.Uniformization.UniformizationLeafAll	5fd81e870,085a7a53a,f18bcb904	yes
+H-104	milneIsogenyQuasiInverse	AvSplit.MilneIsogenyQuasiInverse	5fd81e870,085a7a53a,f18bcb904	yes
+H-105	gagaMorphism	ZInQ.HomLattice.GAGAMorphism	5fd81e870,085a7a53a,f18bcb904	yes
+H-117	igusaGL2	ZInQ.RLeaf.IgusaGL2	5fd81e870,085a7a53a,f18bcb904	yes
+H-118	regularSmoothPerfect	CurveSplit.RegularSmoothPerfect	5fd81e870,085a7a53a,f18bcb904	yes
+H-119	shimuraGoodReductionNoGuard	CurveSplit.ShimuraGoodReductionNoGuard	5fd81e870,085a7a53a,f18bcb904	yes
+H-120	tateTwistInvariants	ZInQ.Contrib.HodgeSplit.TateTwistInvariants	5fd81e870,085a7a53a,f18bcb904	yes
+H-121	axSenTate	ZInQ.Contrib.HodgeSplit.AxSenTate	5fd81e870,085a7a53a,f18bcb904	yes
+H-150	geomConnOfAlgClosure	HDec.QMSplit.Moduli.GeomConnOfAlgClosure	085a7a53a,f18bcb904	yes
+T-1	h11	ZInQ.Contrib.TYZDecomp.TYZThm11Integral	249195fd0,f6df5fa32,cba8157f7,5fd81e870,085a7a53a,f18bcb904	yes
+T-3	h29	ZInQ.Contrib.TYZDecomp.TYZLemma29Mod2	249195fd0,f6df5fa32,cba8157f7,5fd81e870,085a7a53a,f18bcb904	yes

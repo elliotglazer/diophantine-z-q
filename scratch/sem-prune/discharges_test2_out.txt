@@ -1,0 +1,8 @@
+scratch/sem-prune/DischargesTest2.lean:12:8: warning: declaration uses `sorry`
+DISCHARGES [OpenGlue7.quotientP1Coordinate] by t1
+  still assumes: [HDec.MCRGlue.QuotientP1Coordinate]
+  axioms: [propext, Classical.choice, Quot.sound]
+DISCHARGES [OpenTextbookLeaves10.cartierSmooth] by t3 (uses sorry: not a proof)
+  still assumes: []
+  axioms: [propext, sorryAx, Classical.choice, Quot.sound]
+#discharges: 72 open hypotheses, 3 theorems checked, 2 discharge one

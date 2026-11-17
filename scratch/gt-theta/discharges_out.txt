@@ -1,0 +1,16 @@
+DISCHARGES [OpenResearchLeaves14.igusaChi10] by GapTheta.igusaChi10_proof
+  still assumes: []
+  axioms: [propext, Classical.choice, Quot.sound]
+DISCHARGES [OpenResearchLeaves14.igusaPsi4] by GapTheta.igusaPsi4_proof
+  still assumes: []
+  axioms: [propext, Classical.choice, Quot.sound]
+#discharges: 72 open hypotheses, 204 theorems checked, 2 discharge one
+'GapTheta.igusaPsi4_proof' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GapTheta.igusaChi10_proof' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GapTheta.thetaModularity_proof' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GapTheta.thetaModularityM46' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GapTheta.thetaModularityM46Siegel' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GapTheta.s8WeightExact_of'' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GapTheta.s20WeightExact_of'' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GapTheta.s8WeightExact_of_gen' depends on axioms: [propext, Classical.choice, Quot.sound]
+'GapTheta.s20WeightExact_of_gen' depends on axioms: [propext, Classical.choice, Quot.sound]

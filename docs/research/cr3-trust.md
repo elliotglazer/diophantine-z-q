@@ -49,6 +49,10 @@ Marks, as in h-trust:
 - **ARXIV-READ** (after a TYZ locator): `nt-tyz` and `rv-nt-tyz` (and, where said, `rv-cr5b-sec3`)
   read that place in the arXiv v1 TeX source. That is a model's reading of the preprint. The
   journal text has been read by no one. This mark plays the role of h-trust's ASTRA-READ.
+- **HUMAN-READ** (after a locator): a person checked the printed statement at that place under
+  the rules of `docs/one-proof/STATEMENT-CHECKS.md`, recorded in `docs/one-proof/reviews.tsv`
+  with evidence HUMAN-READ. Unlike ARXIV-READ (and h-trust's ASTRA-READ and AUDIT-READ), this is a
+  human reading.
 - **UNVERIFIED** (after a locator): no one in this repository has read the source at that place.
   §2.4 says where to check it.
 - **SPECULATIVE**: an assessment.

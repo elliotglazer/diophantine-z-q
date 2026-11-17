@@ -1,0 +1,13 @@
+closure size: 212392
+g8_g12_of_leaves: []
+newformG12Out_of_galois: []
+afterG7_of: []
+g8_g12_of_leaves3: [HDec.G0Galois.g8_g12_of_leaves3]
+afterG7_of3: [HDec.HSyn.G0AssembleMod.afterG7_of3]
+g8_g11: [HDec.G0Galois.g8_g11]
+g8_g12: [HDec.G0Galois.g8_g12]
+g9Glue_of_fieldEmb: [HDec.ZInQ.Contrib.G9.g9Glue_of_fieldEmb]
+t23_all_of_bdrInvariants: [ZInQ.Contrib.HodgeSplit.t23_all_of_bdrInvariants]
+transfer_core: [HDec.HSyn.G0Split.transfer_core]
+heckeIrreducible_of_connected: [HDec.TSHecke.heckeIrreducible_of_connected]
+y3Connected_of_deligne: [ShimuraSplit.y3Connected_of_deligne]

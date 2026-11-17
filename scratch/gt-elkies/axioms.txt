@@ -1,0 +1,6 @@
+'HDec.QMSplit.Moduli.ElkiesX6Star.orbit_iff_twist' depends on axioms: [propext, Classical.choice, Quot.sound]
+'HDec.QMSplit.Moduli.ElkiesX6Star.elkiesEquationsX6Ab_of_printed' depends on axioms: [propext,
+ Classical.choice,
+ Quot.sound]
+'HDec.QMSplit.Moduli.ElkiesX6Star.elkiesX6StarPrinted_of_ab' depends on axioms: [propext, Classical.choice, Quot.sound]
+'HDec.QMSplit.Moduli.ElkiesX6Star.elkiesX6StarPrinted_iff' depends on axioms: [propext, Classical.choice, Quot.sound]

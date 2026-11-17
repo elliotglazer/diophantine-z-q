@@ -1,0 +1,9 @@
+{"name": "elkies-fold",
+ "imports": ["ZInQKernel.Contrib.OneProof.ElkiesX6Star"],
+ "discharges": [
+   {"field": "elkiesEquationsX6Ab",
+    "proof": "_root_.HDec.QMSplit.Moduli.ElkiesX6Star.elkiesEquationsX6Ab_of_printed {n}.elkiesX6StarPrinted",
+    "leaves": [{"name": "elkiesX6StarPrinted", "type": "_root_.HDec.QMSplit.Moduli.ElkiesX6Star.ElkiesX6StarPrinted",
+                "doc": "gt-elkies: Elkies, Shimura curve computations (ANTS-III 1998) section 3 on X*(6) = X6/W, printed form on the canonical witness: t is a coordinate on X6/W (fibres on Qbar-points = orbits of W = {1,w2,w3,w6}, defined by their moduli action), t = 0, 1, infinity at the CM points of discriminant -24, -4, -3, and the charts s^2 = -t, r^2 = 3(t-1) (section, display and 0/infinity orientation UNVERIFIED). Replaces elkiesEquationsX6Ab (the moduli step orbit_iff_twist is proved).",
+                "kind": "published", "flag": "",
+                "source": "Elkies 1998 (ANTS-III, LNCS 1423) section 3, X*(6) = X6/W with coordinate t, CM values and equations of X6 over the t-line (section, display and 0/infinity orientation UNVERIFIED)"}]}]}

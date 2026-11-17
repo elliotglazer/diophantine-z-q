@@ -1,0 +1,4 @@
+{"name": "gt-blr-fold",
+ "imports": ["ZInQKernel.Contrib.OneProof.BLRLocalizes"],
+ "discharges": [
+   {"field": "blr_1_2_4", "proof": "_root_.GapBLR.blr_1_2_4"}]}

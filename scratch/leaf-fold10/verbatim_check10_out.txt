@@ -1,0 +1,17 @@
+ZInQKernel/OneProof/H/TailZ10.lean <- scratch/dimjac-glue/DimJacGlue.lean
+  imports of the module: ['import ZInQKernel.OneProof.H.TailZ9', 'import ZInQKernel.Contrib.CurvesG.GenusSplit', 'import ZInQKernel.Contrib.CloudW07JacobiansCurves.JacobianExists', 'import ZInQKernel.Contrib.CloudW07JacobiansCurves.Jacobian.AlgebraicGeometry.Curve.CanonicalDegree', 'import ZInQKernel.Contrib.Dim.SmoothStalk', 'import ZInQKernel.Contrib.Dim.Basic']
+  source imports present (except the replaced one): True ; replaced: None
+  source body is a suffix block of the module: True
+  dropped lines: 3 ['#print axioms', 'example :']
+ZInQKernel/OneProof/H/TailZ12.lean <- scratch/shimura-glue/Deligne.lean
+  imports of the module: ['import ZInQKernel.OneProof.H.TailZ11', 'import ZInQKernel.HDecomp.QM.Leaves', 'import ZInQKernel.HDecomp.QM.Polar', 'import Mathlib.NumberTheory.Padics.Hensel', 'import Mathlib.NumberTheory.Padics.RingHoms', 'import Mathlib.FieldTheory.Finite.Basic', 'import Mathlib.RingTheory.DedekindDomain.FiniteAdeleRing', 'import Mathlib.NumberTheory.Padics.HeightOneSpectrum', 'import Mathlib.Algebra.Quaternion', 'import Mathlib.Tactic.NoncommRing', 'import Mathlib.NumberTheory.Cyclotomic.CyclotomicCharacter', 'import Mathlib.RingTheory.RootsOfUnity.AlgebraicallyClosed']
+  source imports present (except the replaced one): True ; replaced: None
+  source body is a suffix block of the module: True
+  dropped lines: 6 ['#print axioms']
+ZInQKernel/OneProof/H/TailZ14.lean <- scratch/reduct-glue/Body.lean
+  imports of the module: ['import ZInQKernel.OneProof.H.TailZ13', 'import ZInQKernel.Contrib.CloudW03NeronSurj.Main', 'import ZInQKernel.Contrib.FrobChain.Pieces']
+  source imports present (except the replaced one): True ; replaced: import ReductSplitBase
+  source body is a suffix block of the module: True
+  dropped lines: 24 ['#print axioms']
+reduct-glue Base.lean minus imports and #print lines is a suffix block of TailZ7: True
+  same imports: True

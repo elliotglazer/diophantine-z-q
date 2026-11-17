@@ -1,0 +1,4 @@
+DISCHARGES [OpenResearchLeaves16.elkiesEquationsX6Ab] by HDec.QMSplit.Moduli.ElkiesX6Star.elkiesEquationsX6Ab_of_printed
+  still assumes: [HDec.QMSplit.Moduli.ElkiesX6Star.ElkiesX6StarPrinted]
+  axioms: [propext, Classical.choice, Quot.sound]
+#discharges: 67 open hypotheses, 499 theorems checked, 1 discharge one

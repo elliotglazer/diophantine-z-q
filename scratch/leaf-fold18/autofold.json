@@ -1,0 +1,9 @@
+{"name": "leaf-fold18",
+ "imports": ["ZInQKernel.Contrib.OneProof.StrictHenselizationPair"],
+ "discharges": [
+   {"field": "strictHenselizationPair",
+    "proof": "_root_.GapSHPair.strictHenselizationPair_of_neron {n}.neronBaseChangeStrictHenselization",
+    "leaves": [{"name": "neronBaseChangeStrictHenselization", "type": "_root_.GapSHPair.NeronBaseChangeStrictHenselization",
+                "doc": "gt-shpair, printed form: Bosch-Lutkebohmert-Raynaud, Neron models, 1.2 Prop. 2 (Neron models commute with strict henselization), for unramified strictly henselian extensions with separable residue extension, which pin the base to O^sh (locator UNVERIFIED). Replaces strictHenselizationPair; the commutative algebra (GapSHPair.shPair) is proved.",
+                "kind": "published", "flag": "locator UNVERIFIED (BLR 1.2 Prop. 2); pending statement review",
+                "source": "Bosch-Lutkebohmert-Raynaud, Neron models, 1.2 Prop. 2: Neron models commute with strict henselization (locator UNVERIFIED)"}]}]}

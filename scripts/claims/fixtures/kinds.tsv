@@ -1,0 +1,5 @@
+bundle	field	kind	flag	strict	strictest	source	rated_by	packet	label	tier	flag_class	area_issue
+research	gaudronRemondThm14	published		LEAF	LEAF	Gaudron-Remond	fixture		good-first	T1		elliotglazer/diophantine-z-q#85
+research	pazukiCor13Upper	published		LEAF	LEAF	Pazuki	fixture		outside-first	T2		elliotglazer/diophantine-z-q#85
+research	bostLowerBound	published		LEAF	LEAF	Bost	fixture	R5	project-interest			elliotglazer/diophantine-z-q#85
+research	mumfordTorsionAlgClosed	published		LEAF	LEAF	Mumford	fixture		wave			elliotglazer/diophantine-z-q#81

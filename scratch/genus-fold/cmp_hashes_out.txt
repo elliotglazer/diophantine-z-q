@@ -1,0 +1,204 @@
+base 11811  after 12125  removed 19  new 333  changed 174
+
+## removed
+  HDec.HSyn.OpenTextbookLeaves10.genusX1Field ZInQKernel.OneProof.H.TailZ11
+  HDec.HSyn.OpenTextbookLeaves2.t34 ZInQKernel.OneProof.H.TailE
+  HDec.HSyn.OpenTextbookLeaves3.t34 ZInQKernel.OneProof.H.TailI
+  HDec.HSyn.OpenTextbookLeaves4.t34 ZInQKernel.OneProof.H.TailK
+  HDec.HSyn.OpenTextbookLeaves6.genusX1Field ZInQKernel.OneProof.H.TailO
+  HDec.HSyn.OpenTextbookLeaves7.genusX1Field ZInQKernel.OneProof.H.TailX
+  HDec.HSyn.OpenTextbookLeaves8.genusX1Field ZInQKernel.OneProof.H.TailZ4
+  HDec.HSyn.OpenTextbookLeaves9.genusX1Field ZInQKernel.OneProof.H.TailZ9
+  HDec.HSyn.TextbookLeaves.t34 ZInQKernel.OneProof.H.LPrefix
+  HDec.HSyn.glueOutputs_of_leaves ZInQKernel.OneProof.H.LPrefix
+  HDec.HSyn.glueOutputs_of_leaves._proof_1_1 ZInQKernel.OneProof.H.LPrefix
+  HDec.HSyn.glueOutputs_of_leaves._proof_1_2 ZInQKernel.OneProof.H.LPrefix
+  HDec.HSyn.glueOutputs_of_leaves._proof_1_3 ZInQKernel.OneProof.H.LPrefix
+  HDec.HSyn.modCurveLeaves_of_bundles ZInQKernel.OneProof.H.LPrefix
+  HDec.HSyn.sixContactMin_of_leaves ZInQKernel.OneProof.H.LPrefix
+  HDec.HSyn.sixContactMin_of_leaves2 ZInQKernel.OneProof.H.TailA
+  HDec.HSyn.sixContactMin_of_leaves_pin ZInQKernel.OneProof.H.LPrefix
+  HDec.HSyn.sixContactMin_of_open ZInQKernel.OneProof.H.LPrefix
+  topologicalKrullDim.eq_1 ZInQKernel.OneProof.H.TailR
+
+## new, by module
+  ZInQKernel.OneProof.Genus.Bridge: 5
+  ZInQKernel.OneProof.Genus.DimJac: 67
+  ZInQKernel.OneProof.Genus.GenusBound: 177
+  ZInQKernel.OneProof.Genus.LocalDer: 84
+
+## changed (T = type hash changed, V = value only)
+  V HDec.AVB2.hom_ext_of_pts ZInQKernel.OneProof.H.TailM
+  V HDec.AVB2.serreRigidity3_of_T35 ZInQKernel.OneProof.H.TailM
+  V HDec.FrobTrace.tateBridge35_of_algFrobLink ZInQKernel.OneProof.H.TailH
+  V HDec.G0Galois.torsion_surj_of_T5 ZInQKernel.OneProof.H.TailE
+  V HDec.G0ModField.KernelField.iota_isogeny ZInQKernel.OneProof.H.TailF
+  V HDec.G0ModField.KernelField.td_construct ZInQKernel.OneProof.H.TailF
+  V HDec.G15Ram.betaTwist2_of_roots ZInQKernel.OneProof.H.TailH
+  V HDec.G15Ram.beta_one_of_charOn ZInQKernel.OneProof.H.TailH
+  V HDec.G15Ram.decomp_spec ZInQKernel.OneProof.H.TailH
+  V HDec.G15Ram.embP._proof_3 ZInQKernel.OneProof.H.TailH
+  V HDec.G15Ram.embP._proof_4 ZInQKernel.OneProof.H.TailH
+  V HDec.G15Ram.exists_finGal_ramCard_le ZInQKernel.OneProof.H.TailH
+  V HDec.G15Ram.fRingCoconeIsColimit._proof_1 ZInQKernel.OneProof.H.TailH
+  V HDec.G15Ram.fRingCoconeIsColimit._proof_4 ZInQKernel.OneProof.H.TailH
+  V HDec.G15Ram.ptFinite ZInQKernel.OneProof.H.TailH
+  V HDec.G15Ram.qEmbRing_surjective ZInQKernel.OneProof.H.TailH
+  V HDec.G15Ram.raynaudPlace_of_R6 ZInQKernel.OneProof.H.TailH
+  V HDec.G15Ram.torsFix_of_descent ZInQKernel.OneProof.H.TailH
+  V HDec.G15Ram.wild_fix_small_degree ZInQKernel.OneProof.H.TailH
+  V HDec.GFC.exists_extend ZInQKernel.OneProof.H.TailG
+  V HDec.GFC.genericFibreCount ZInQKernel.OneProof.H.TailG
+  V HDec.HSyn.G0Split.FibreQM.PeriodGlue.baseChangeClassUnique_proof ZInQKernel.OneProof.H.TailJ
+  V HDec.HSyn.G0Split.FibreQM.PeriodGlue.exists_qbarPt ZInQKernel.OneProof.H.TailJ
+  V HDec.HSyn.G0Split.FibreQM.PeriodGlue.qmLatticeTwistAlg_mp ZInQKernel.OneProof.H.TailJ
+  V HDec.HSyn.G0Split.FibreQM.PeriodMapH.LeafQCheck.card_torsion_algClosed ZInQKernel.OneProof.H.TailO
+  V HDec.HSyn.G0Split.FibreQM.PeriodMapH.LeafQCheck.descend_main ZInQKernel.OneProof.H.TailO
+  V HDec.HSyn.G0Split.FibreQM.PeriodMapH.QMSplitSTQM.Ed_finrank ZInQKernel.OneProof.H.TailU
+  V HDec.HSyn.LinkedTate.specMap_flat ZInQKernel.OneProof.H.TailF
+  T HDec.HSyn.OpenTextbookLeaves10.casesOn ZInQKernel.OneProof.H.TailZ11
+  V HDec.HSyn.OpenTextbookLeaves10.igusaGL2 ZInQKernel.OneProof.H.TailZ11
+  T HDec.HSyn.OpenTextbookLeaves10.mk ZInQKernel.OneProof.H.TailZ11
+  T HDec.HSyn.OpenTextbookLeaves10.mk._flat_ctor ZInQKernel.OneProof.H.TailZ11
+  V HDec.HSyn.OpenTextbookLeaves10.neronSchemeExtensionExists ZInQKernel.OneProof.H.TailZ11
+  T HDec.HSyn.OpenTextbookLeaves10.rec ZInQKernel.OneProof.H.TailZ11
+  T HDec.HSyn.OpenTextbookLeaves10.recOn ZInQKernel.OneProof.H.TailZ11
+  V HDec.HSyn.OpenTextbookLeaves10.regularSmoothPerfect ZInQKernel.OneProof.H.TailZ11
+  T HDec.HSyn.OpenTextbookLeaves2.casesOn ZInQKernel.OneProof.H.TailE
+  T HDec.HSyn.OpenTextbookLeaves2.mk ZInQKernel.OneProof.H.TailE
+  T HDec.HSyn.OpenTextbookLeaves2.mk._flat_ctor ZInQKernel.OneProof.H.TailE
+  T HDec.HSyn.OpenTextbookLeaves2.rec ZInQKernel.OneProof.H.TailE
+  T HDec.HSyn.OpenTextbookLeaves2.recOn ZInQKernel.OneProof.H.TailE
+  V HDec.HSyn.OpenTextbookLeaves2.t35 ZInQKernel.OneProof.H.TailE
+  V HDec.HSyn.OpenTextbookLeaves2.t38 ZInQKernel.OneProof.H.TailE
+  V HDec.HSyn.OpenTextbookLeaves2.t40 ZInQKernel.OneProof.H.TailE
+  V HDec.HSyn.OpenTextbookLeaves2.t41 ZInQKernel.OneProof.H.TailE
+  T HDec.HSyn.OpenTextbookLeaves3.casesOn ZInQKernel.OneProof.H.TailI
+  T HDec.HSyn.OpenTextbookLeaves3.mk ZInQKernel.OneProof.H.TailI
+  T HDec.HSyn.OpenTextbookLeaves3.mk._flat_ctor ZInQKernel.OneProof.H.TailI
+  T HDec.HSyn.OpenTextbookLeaves3.rec ZInQKernel.OneProof.H.TailI
+  T HDec.HSyn.OpenTextbookLeaves3.recOn ZInQKernel.OneProof.H.TailI
+  V HDec.HSyn.OpenTextbookLeaves3.t35 ZInQKernel.OneProof.H.TailI
+  V HDec.HSyn.OpenTextbookLeaves3.t38 ZInQKernel.OneProof.H.TailI
+  V HDec.HSyn.OpenTextbookLeaves3.t40 ZInQKernel.OneProof.H.TailI
+  V HDec.HSyn.OpenTextbookLeaves3.t41 ZInQKernel.OneProof.H.TailI
+  T HDec.HSyn.OpenTextbookLeaves4.casesOn ZInQKernel.OneProof.H.TailK
+  T HDec.HSyn.OpenTextbookLeaves4.mk ZInQKernel.OneProof.H.TailK
+  T HDec.HSyn.OpenTextbookLeaves4.mk._flat_ctor ZInQKernel.OneProof.H.TailK
+  T HDec.HSyn.OpenTextbookLeaves4.rec ZInQKernel.OneProof.H.TailK
+  T HDec.HSyn.OpenTextbookLeaves4.recOn ZInQKernel.OneProof.H.TailK
+  V HDec.HSyn.OpenTextbookLeaves4.t35 ZInQKernel.OneProof.H.TailK
+  V HDec.HSyn.OpenTextbookLeaves4.t38 ZInQKernel.OneProof.H.TailK
+  V HDec.HSyn.OpenTextbookLeaves4.t41 ZInQKernel.OneProof.H.TailK
+  V HDec.HSyn.OpenTextbookLeaves4.x0Transitive ZInQKernel.OneProof.H.TailK
+  T HDec.HSyn.OpenTextbookLeaves6.casesOn ZInQKernel.OneProof.H.TailO
+  V HDec.HSyn.OpenTextbookLeaves6.geomConnectedOfConstantFieldQ ZInQKernel.OneProof.H.TailO
+  T HDec.HSyn.OpenTextbookLeaves6.mk ZInQKernel.OneProof.H.TailO
+  T HDec.HSyn.OpenTextbookLeaves6.mk._flat_ctor ZInQKernel.OneProof.H.TailO
+  V HDec.HSyn.OpenTextbookLeaves6.neronSchemeExtensionExists ZInQKernel.OneProof.H.TailO
+  V HDec.HSyn.OpenTextbookLeaves6.normalCurveSmoothQ ZInQKernel.OneProof.H.TailO
+  V HDec.HSyn.OpenTextbookLeaves6.normalModelOfFunctionFieldQ ZInQKernel.OneProof.H.TailO
+  T HDec.HSyn.OpenTextbookLeaves6.rec ZInQKernel.OneProof.H.TailO
+  T HDec.HSyn.OpenTextbookLeaves6.recOn ZInQKernel.OneProof.H.TailO
+  V HDec.HSyn.OpenTextbookLeaves6.t35 ZInQKernel.OneProof.H.TailO
+  V HDec.HSyn.OpenTextbookLeaves6.x0Transitive ZInQKernel.OneProof.H.TailO
+  T HDec.HSyn.OpenTextbookLeaves7.casesOn ZInQKernel.OneProof.H.TailX
+  V HDec.HSyn.OpenTextbookLeaves7.igusaGL2 ZInQKernel.OneProof.H.TailX
+  T HDec.HSyn.OpenTextbookLeaves7.mk ZInQKernel.OneProof.H.TailX
+  T HDec.HSyn.OpenTextbookLeaves7.mk._flat_ctor ZInQKernel.OneProof.H.TailX
+  V HDec.HSyn.OpenTextbookLeaves7.neronSchemeExtensionExists ZInQKernel.OneProof.H.TailX
+  V HDec.HSyn.OpenTextbookLeaves7.normalModelOfFunctionFieldQ ZInQKernel.OneProof.H.TailX
+  T HDec.HSyn.OpenTextbookLeaves7.rec ZInQKernel.OneProof.H.TailX
+  T HDec.HSyn.OpenTextbookLeaves7.recOn ZInQKernel.OneProof.H.TailX
+  V HDec.HSyn.OpenTextbookLeaves7.regularSmoothPerfect ZInQKernel.OneProof.H.TailX
+  T HDec.HSyn.OpenTextbookLeaves8.casesOn ZInQKernel.OneProof.H.TailZ4
+  V HDec.HSyn.OpenTextbookLeaves8.igusaGL2 ZInQKernel.OneProof.H.TailZ4
+  T HDec.HSyn.OpenTextbookLeaves8.mk ZInQKernel.OneProof.H.TailZ4
+  T HDec.HSyn.OpenTextbookLeaves8.mk._flat_ctor ZInQKernel.OneProof.H.TailZ4
+  V HDec.HSyn.OpenTextbookLeaves8.neronSchemeExtensionExists ZInQKernel.OneProof.H.TailZ4
+  V HDec.HSyn.OpenTextbookLeaves8.normalModelOfFunctionFieldQ ZInQKernel.OneProof.H.TailZ4
+  T HDec.HSyn.OpenTextbookLeaves8.rec ZInQKernel.OneProof.H.TailZ4
+  T HDec.HSyn.OpenTextbookLeaves8.recOn ZInQKernel.OneProof.H.TailZ4
+  V HDec.HSyn.OpenTextbookLeaves8.regularSmoothPerfect ZInQKernel.OneProof.H.TailZ4
+  T HDec.HSyn.OpenTextbookLeaves9.casesOn ZInQKernel.OneProof.H.TailZ9
+  V HDec.HSyn.OpenTextbookLeaves9.igusaGL2 ZInQKernel.OneProof.H.TailZ9
+  T HDec.HSyn.OpenTextbookLeaves9.mk ZInQKernel.OneProof.H.TailZ9
+  T HDec.HSyn.OpenTextbookLeaves9.mk._flat_ctor ZInQKernel.OneProof.H.TailZ9
+  V HDec.HSyn.OpenTextbookLeaves9.neronSchemeExtensionExists ZInQKernel.OneProof.H.TailZ9
+  T HDec.HSyn.OpenTextbookLeaves9.rec ZInQKernel.OneProof.H.TailZ9
+  T HDec.HSyn.OpenTextbookLeaves9.recOn ZInQKernel.OneProof.H.TailZ9
+  V HDec.HSyn.OpenTextbookLeaves9.regularSmoothPerfect ZInQKernel.OneProof.H.TailZ9
+  T HDec.HSyn.TextbookLeaves.casesOn ZInQKernel.OneProof.H.LPrefix
+  T HDec.HSyn.TextbookLeaves.mk ZInQKernel.OneProof.H.LPrefix
+  T HDec.HSyn.TextbookLeaves.mk._flat_ctor ZInQKernel.OneProof.H.LPrefix
+  T HDec.HSyn.TextbookLeaves.rec ZInQKernel.OneProof.H.LPrefix
+  T HDec.HSyn.TextbookLeaves.recOn ZInQKernel.OneProof.H.LPrefix
+  V HDec.HSyn.TextbookLeaves.t35 ZInQKernel.OneProof.H.LPrefix
+  V HDec.HSyn.TextbookLeaves.t41 ZInQKernel.OneProof.H.LPrefix
+  V HDec.HSyn.TextbookLeaves.x1 ZInQKernel.OneProof.H.LPrefix
+  V HDec.HSyn.glueOutputs_of_leaves3 ZInQKernel.OneProof.H.TailD
+  V HDec.HSyn.sixContactMin_of_open6_poincare ZInQKernel.OneProof.H.TailO
+  V HDec.HSyn.textbookLeaves2_of_open3 ZInQKernel.OneProof.H.TailI
+  V HDec.HSyn.textbookLeaves3_of_open4 ZInQKernel.OneProof.H.TailK
+  V HDec.HSyn.textbookLeaves4_of_open5 ZInQKernel.OneProof.H.TailN
+  V HDec.HSyn.textbookLeaves4_of_open6 ZInQKernel.OneProof.H.TailO
+  V HDec.HSyn.textbookLeaves6_of_open7 ZInQKernel.OneProof.H.TailX
+  V HDec.HSyn.textbookLeaves7_of_open8 ZInQKernel.OneProof.H.TailZ4
+  V HDec.HSyn.textbookLeaves8_of_open9 ZInQKernel.OneProof.H.TailZ9
+  V HDec.HSyn.textbookLeaves9_of_open10 ZInQKernel.OneProof.H.TailZ11
+  V HDec.HSyn.textbookLeaves_of_open ZInQKernel.OneProof.H.LPrefix
+  V HDec.HSyn.textbookLeaves_of_open2 ZInQKernel.OneProof.H.TailE
+  V HDec.HeckeRestCurve.curveChartInf_of ZInQKernel.OneProof.H.TailG
+  V HDec.HeckeRestCurve.infFnField_of ZInQKernel.OneProof.H.TailG
+  V HDec.KummerComp.extend_along ZInQKernel.OneProof.H.TailG
+  V HDec.LTGoodRed.goodRedTorsion ZInQKernel.OneProof.H.TailF
+  V HDec.LTLocal.exists_equiv_extending_aux ZInQKernel.OneProof.H.TailH
+  V HDec.LTLocal.g7Clauses_of_transport ZInQKernel.OneProof.H.TailH
+  V HDec.LTLocal.padicAlgCl_card ZInQKernel.OneProof.H.TailH
+  V HDec.LTLocal.qbar_card_le ZInQKernel.OneProof.H.TailH
+  V HDec.LeafQCheck.HM.QMSplit.g_inv ZInQKernel.OneProof.H.TailZ2
+  V HDec.LeafQCheck.HM.QMSplit.zeta_congr ZInQKernel.OneProof.H.TailZ2
+  V HDec.LeafQCheck.HM.QMSplit.zeta_pow_ord ZInQKernel.OneProof.H.TailZ2
+  V HDec.LeafQM.AV.Pin.ev_eq_of_nilpotent ZInQKernel.OneProof.H.TailG
+  V HDec.ModelGlue.exists_qbarPt ZInQKernel.OneProof.H.TailL
+  V HDec.PeriodGlue.MulRigidity.isMonHom_of_geometricallyIntegral ZInQKernel.OneProof.H.TailJ
+  V HDec.PropTSGlue.isSeparable_of_finrank_lt ZInQKernel.OneProof.H.TailG
+  V HDec.PropTSGlue.mem_of_isIntegral_of_mem_closure ZInQKernel.OneProof.H.TailG
+  V HDec.PropTSGlue.snSpecializeUnram_aux ZInQKernel.OneProof.H.TailG
+  V HDec.PropTSRed.functionFieldModel_of_normalization ZInQKernel.OneProof.H.TailG
+  V HDec.QMSplit.Aut.card_units_R ZInQKernel.OneProof.H.TailU
+  V HDec.QMSplit.Aut.isFractionRing_of_mul_mem ZInQKernel.OneProof.H.TailU
+  V HDec.QMSplit.Aut.order_spans ZInQKernel.OneProof.H.TailU
+  V HDec.QMSplit.Aut.qmCentralizerCM_of ZInQKernel.OneProof.H.TailU
+  V HDec.QMSplit.Aut.span_two ZInQKernel.OneProof.H.TailU
+  V HDec.RQ.resQ_comm' ZInQKernel.OneProof.H.TailH
+  V HDec.RQ.resQ_range ZInQKernel.OneProof.H.TailH
+  V HDec.RamCount.ramCount ZInQKernel.OneProof.H.TailG
+  V HDec.TPurity3.formallyUnramified_of_traceForm_nondegenerate ZInQKernel.OneProof.H.TailG
+  V HDec.TSHecke.heckeBranch_of ZInQKernel.OneProof.H.TailG
+  V HDec.TSHecke.isFractionRing_infCoord ZInQKernel.OneProof.H.TailG
+  V HDec.TSHeckeGal.eq_of_forall_qbar ZInQKernel.OneProof.H.TailG
+  V HDec.TSHeckeGal.exists_qbar_point ZInQKernel.OneProof.H.TailG
+  V HDec.TSHeckeGal.isGalois_of_transitive ZInQKernel.OneProof.H.TailG
+  V HDec.TsKummer.compositum_core0 ZInQKernel.OneProof.H.TailG
+  V HDec.TsKummer.isFractionRing_infCoord ZInQKernel.OneProof.H.TailG
+  V HDec.TsKummer.kummerVerticalFin_proof ZInQKernel.OneProof.H.TailG
+  V HDec.TsKummer.kummerVerticalInf_proof ZInQKernel.OneProof.H.TailG
+  V HDec.TsKummer.unramBaseChange ZInQKernel.OneProof.H.TailG
+  V HDec.TsKummer.unramCompositum ZInQKernel.OneProof.H.TailG
+  V HDec.TsKummer.vertical_hL ZInQKernel.OneProof.H.TailG
+  V HDec.UnramTate.embP._proof_3 ZInQKernel.OneProof.H.TailF
+  V HDec.UnramTate.embP._proof_4 ZInQKernel.OneProof.H.TailF
+  V HDec.UnramTate.embP_decomp ZInQKernel.OneProof.H.TailF
+  V HDec.UnramTate.linkedTateCoreDR_of ZInQKernel.OneProof.H.TailF
+  V HDec.UnramTate.scalarTransferK ZInQKernel.OneProof.H.TailH
+  V HDec.UnramTate.scalarTransferQ ZInQKernel.OneProof.H.TailF
+  V HDec.VertWitness.vertGaussWitness_of_DVR ZInQKernel.OneProof.H.TailL
+  V HDec.X6Kummer.ne_neg_self' ZInQKernel.OneProof.H.TailE
+  V HDec.ZInQ.Contrib.AbVarBC.abVarBaseChangeK_of_mulIsogeny ZInQKernel.OneProof.H.TailE
+  T HDec.ZInQ.Contrib.AbVarBC.abVarBaseChangeK_of_torsionDescends ZInQKernel.OneProof.H.TailE
+  V HDec.ZInQ.Contrib.AbVarBC.abVarBaseChange_of_mulIsogeny ZInQKernel.OneProof.H.TailE
+  V HDec.ZInQ.Contrib.AbVarBC.abVarBaseChange_of_tateModuleFree ZInQKernel.OneProof.H.TailE
+  T HDec.ZInQ.Contrib.AbVarBC.abVarBaseChange_of_torsionDescends ZInQKernel.OneProof.H.TailE
+  V HDec.ZInQ.Metrization2.jacDetNondegenerate_of ZInQKernel.OneProof.H.TailE
+  V HDec.ZInQ.UnifDims.detLatticeProd_aux ZInQKernel.OneProof.H.TailE

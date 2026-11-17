@@ -1,0 +1,59 @@
+'GapTriage.modelYIrreducible_of_open9' depends on axioms: [propext, Classical.choice, Quot.sound]
+projectiveLineOver : (k : Type u_1) → [inst : Field k] → Over (Spec ↧k)
+ProjectiveLine.isProper_toSpec : ∀ (baseField : Type u_1) [inst : Field baseField],
+  IsProper (projectiveLineToSpec baseField)
+ProjectiveLine.smoothOfRelativeDimension_toSpec : ∀ (baseField : Type u_1) [inst : Field baseField],
+  SmoothOfRelativeDimension 1 (projectiveLineToSpec baseField)
+ProjectiveLine.chartSpecIso : (baseField : Type u_1) →
+  [inst : Field baseField] →
+    (coordinate : Fin 2) →
+      ↑(ProjectiveLine.chart baseField coordinate) ≅ Spec ↧(MvPolynomial { index // index ≠ coordinate } baseField)
+ProjectiveLine.isAffineOpen_chart : ∀ (baseField : Type u_1) [inst : Field baseField] (coordinate : Fin 2),
+  IsAffineOpen (ProjectiveLine.chart baseField coordinate)
+ProjectiveLine.polyEquivChart : (baseField : Type u_1) →
+  [inst : Field baseField] →
+    (coordinate : Fin 2) →
+      Polynomial baseField ≃+* ↑Γ(projectiveLine baseField, ProjectiveLine.chart baseField coordinate)
+@ProjectiveSpace.homOfSections : {sourceScheme baseScheme : Scheme} →
+  {coordinates : Type u_1} →
+    (sourceScheme ⟶ baseScheme) →
+      (sections : coordinates → ↑Γ(sourceScheme, ⊤)) →
+        Ideal.span (Set.range sections) = ⊤ → (sourceScheme ⟶ ℙ(coordinates; baseScheme))
+@ProjectiveSpace.homOfSections_preimage_standardOpen : ∀ {sourceScheme baseScheme : Scheme} {coordinates : Type u_1}
+  (secondMap : sourceScheme ⟶ baseScheme) (sections : coordinates → ↑Γ(sourceScheme, ⊤))
+  (generates : Ideal.span (Set.range sections) = ⊤) (coordinate : coordinates),
+  ProjectiveSpace.homOfSections secondMap sections generates ⁻¹ᵁ
+      ProjectiveSpace.standardOpen coordinates baseScheme coordinate =
+    sourceScheme.basicOpen (sections coordinate)
+ProjectiveSpace.hom_ext : ∀ (coordinates : Type u_1) (baseScheme : Scheme) {sourceScheme : Scheme}
+  {firstMap secondMap : sourceScheme ⟶ ℙ(coordinates; baseScheme)},
+  firstMap ≫ ℙ(coordinates; baseScheme) ↘ baseScheme = secondMap ≫ ℙ(coordinates; baseScheme) ↘ baseScheme →
+    firstMap ≫ ProjectiveSpace.toIntegralModel coordinates baseScheme =
+        secondMap ≫ ProjectiveSpace.toIntegralModel coordinates baseScheme →
+      firstMap = secondMap
+ProjectiveSpace.instIsProper : ∀ (coordinates : Type u_1) (baseScheme : Scheme) [Finite coordinates],
+  IsProper (ℙ(coordinates; baseScheme) ↘ baseScheme)
+@ProjectiveLine.normalized : {source base : Scheme} →
+  (source ⟶ base) → ULift.{u_1, 0} (Fin 2) → ↑Γ(source, ⊤) → (source ⟶ ProjectiveLine.relativeLine base)
+@ProjectiveLine.normalized_eq_of_mul_eq_one : ∀ {source base : Scheme} (structureMap : source ⟶ base)
+  (first second : ULift.{u_1, 0} (Fin 2)),
+  first ≠ second →
+    ∀ (firstValue secondValue : ↑Γ(source, ⊤)),
+      firstValue * secondValue = 1 →
+        ProjectiveLine.normalized structureMap first firstValue =
+          ProjectiveLine.normalized structureMap second secondValue
+@ProjectiveLine.relativeChartCoordinate_mul : ∀ {source base : Scheme} (first second : ULift.{u_1, 0} (Fin 2)),
+  first ≠ second →
+    ∀ (firstMap : source ⟶ ↑(ProjectiveSpace.standardOpen (ULift.{u_1, 0} (Fin 2)) base first))
+      (secondMap : source ⟶ ↑(ProjectiveSpace.standardOpen (ULift.{u_1, 0} (Fin 2)) base second)),
+      firstMap ≫ (ProjectiveSpace.standardOpen (ULift.{u_1, 0} (Fin 2)) base first).ι =
+          secondMap ≫ (ProjectiveSpace.standardOpen (ULift.{u_1, 0} (Fin 2)) base second).ι →
+        (ConcreteCategory.hom (Scheme.Hom.appTop firstMap)) (ProjectiveLine.relativeChartCoordinate base first) *
+            (ConcreteCategory.hom (Scheme.Hom.appTop secondMap)) (ProjectiveLine.relativeChartCoordinate base second) =
+          1
+@Scheme.Cover.glueMorphisms : {X : Scheme} →
+  (𝒰 : X.OpenCover) →
+    {Y : Scheme} →
+      (f : (x : 𝒰.I₀) → 𝒰.X x ⟶ Y) →
+        (∀ (x y : 𝒰.I₀), Limits.pullback.fst (𝒰.f x) (𝒰.f y) ≫ f x = Limits.pullback.snd (𝒰.f x) (𝒰.f y) ≫ f y) →
+          (X ⟶ Y)

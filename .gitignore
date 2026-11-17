@@ -13,3 +13,8 @@
 # Immutable inputs under work/ are explicitly tracked from MANIFEST.json.
 # The verifier also puts reproducible intermediate outputs here.
 /quartics/quartic-498-514/work/
+.lake/
+site/
+site-src/
+.autoform-publication-*/
+.claude/worktrees/

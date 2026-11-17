@@ -1,0 +1,81 @@
+before 13225  after 13414  only before 0  only after 189  changed 0
+  HDec.HSyn.OpenAddedLeaves13 None | ZInQKernel.OneProof.H.TailZ24 [] 3944470172 0
+
+  HDec.HSyn.OpenAddedLeaves13.axSenTate None | ZInQKernel.OneProof.H.TailZ24 [] 1988596422 2322775401
+
+  HDec.HSyn.OpenAddedLeaves13.casesOn None | ZInQKernel.OneProof.H.TailZ24 [u] 2803489408 2055655233
+
+  HDec.HSyn.OpenAddedLeaves13.deligneComponentsX6PrintedAb None | ZInQKernel.OneProof.H.TailZ24 [] 3043499467 1014091586
+
+  HDec.HSyn.OpenAddedLeaves13.deligneComponentsY3PrintedAb None | ZInQKernel.OneProof.H.TailZ24 [] 1748602585 1534315677
+
+  HDec.HSyn.OpenAddedLeaves13.egaIV_8_10_5_xii None | ZInQKernel.OneProof.H.TailZ24 [] 3109018175 469530202
+
+  HDec.HSyn.OpenAddedLeaves13.geomConnOfAlgClosure None | ZInQKernel.OneProof.H.TailZ24 [] 3561662284 4196816988
+
+  HDec.HSyn.OpenAddedLeaves13.milneIsogenyQuasiInverse None | ZInQKernel.OneProof.H.TailZ24 [] 1561016737 2249025700
+
+  HDec.HSyn.OpenAddedLeaves13.mk None | ZInQKernel.OneProof.H.TailZ24 [] 61413889 0
+
+  HDec.HSyn.OpenAddedLeaves13.mk._flat_ctor None | ZInQKernel.OneProof.H.TailZ24 [] 61413889 1329776668
+
+  HDec.HSyn.OpenAddedLeaves13.phiAmpleIsogeny None | ZInQKernel.OneProof.H.TailZ24 [] 1467569342 1817712650
+
+  HDec.HSyn.OpenAddedLeaves13.picRepresentableAbVar None | ZInQKernel.OneProof.H.TailZ24 [] 2501443326 2637114100
+
+  HDec.HSyn.OpenAddedLeaves13.picZeroAbVar None | ZInQKernel.OneProof.H.TailZ24 [] 306226642 4028501210
+
+  HDec.HSyn.OpenAddedLeaves13.qmCentralizerCMC None | ZInQKernel.OneProof.H.TailZ24 [] 1983414935 1042817719
+
+  HDec.HSyn.OpenAddedLeaves13.rec None | ZInQKernel.OneProof.H.TailZ24 [u] 1124556191 0
+
+  HDec.HSyn.OpenAddedLeaves13.recOn None | ZInQKernel.OneProof.H.TailZ24 [u] 2803489408 3982829988
+
+  HDec.HSyn.OpenAddedLeaves13.shimizuCovolumeO1 None | ZInQKernel.OneProof.H.TailZ24 [] 1901589211 151205677
+
+  HDec.HSyn.OpenAddedLeaves13.shimuraGoodReductionNoGuard None | ZInQKernel.OneProof.H.TailZ24 [] 299112650 3421110953
+
+  HDec.HSyn.OpenAddedLeaves13.shimuraTaniyamaQbar None | ZInQKernel.OneProof.H.TailZ24 [] 52211384 4174638900
+
+  HDec.HSyn.OpenAddedLeaves13.tateTwistInvariants None | ZInQKernel.OneProof.H.TailZ24 [] 2659788973 3585410382
+
+  HDec.HSyn.OpenAddedLeaves13.thetaRatiosAlgebraic None | ZInQKernel.OneProof.H.TailZ24 [] 2229973197 3026097491
+
+  HDec.HSyn.OpenAddedLeaves13.valenceFormulaCocompactEq None | ZInQKernel.OneProof.H.TailZ24 [] 908315938 1310920478
+
+  HDec.HSyn.OpenAddedLeaves13.weilPairingMumford None | ZInQKernel.OneProof.H.TailZ24 [] 3662888470 1598397057
+
+  HDec.HSyn.OpenResearchLeaves14 None | ZInQKernel.OneProof.H.TailZ23 [] 3944470172 0
+
+  HDec.HSyn.OpenResearchLeaves14.babaGranathRationalAb None | ZInQKernel.OneProof.H.TailZ23 [] 1801281924 1191993818
+
+  HDec.HSyn.OpenResearchLeaves14.blr_1_2_4 None | ZInQKernel.OneProof.H.TailZ23 [] 2083177593 3032081316
+
+  HDec.HSyn.OpenResearchLeaves14.bostLowerBound None | ZInQKernel.OneProof.H.TailZ23 [] 1483650810 3449933441
+
+  HDec.HSyn.OpenResearchLeaves14.casesOn None | ZInQKernel.OneProof.H.TailZ23 [u] 3161016454 375411765
+
+  HDec.HSyn.OpenResearchLeaves14.deRhamH1AbVarT None | ZInQKernel.OneProof.H.TailZ23 [] 951420539 2962188751
+
+  HDec.HSyn.OpenResearchLeaves14.dsThm965 None | ZInQKernel.OneProof.H.TailZ23 [] 3305140387 4087635228
+
+  HDec.HSyn.OpenResearchLeaves14.dsThm966 None | ZInQKernel.OneProof.H.TailZ23 [] 1305076076 3785591828
+
+  HDec.HSyn.OpenResearchLeaves14.egaIV_8_10_5_openImm None | ZInQKernel.OneProof.H.TailZ23 [] 1508894277 1495564707
+
+  HDec.HSyn.OpenResearchLeaves14.eigenformHTNew None | ZInQKernel.OneProof.H.TailZ23 [] 357367040 953780718
+
+  HDec.HSyn.OpenResearchLeaves14.elkiesEquationsX6Ab None | ZInQKernel.OneProof.H.TailZ23 [] 2178752094 1257954804
+
+  HDec.HSyn.OpenResearchLeaves14.faltingsLemma5Printed None | ZInQKernel.OneProof.H.TailZ23 [] 3371698101 1750170180
+
+  HDec.HSyn.OpenResearchLeaves14.gaudronRemondThm14 None | ZInQKernel.OneProof.H.TailZ23 [] 3686485721 1356200910
+
+  HDec.HSyn.OpenResearchLeaves14.gonzalezRotgerCountX6Ab None | ZInQKernel.OneProof.H.TailZ23 [] 2807007585 1092349965
+
+  HDec.HSyn.OpenResearchLeaves14.gonzalezRotgerX6Ab None | ZInQKernel.OneProof.H.TailZ23 [] 3707539033 2944404986
+
+  HDec.HSyn.OpenResearchLeaves14.hodgeTateDecompAbVar None | ZInQKernel.OneProof.H.TailZ23 [] 4005541463 3264907983
+
+  HDec.HSyn.OpenResearchLeaves14.igusaChi10 None | ZInQKernel.OneProof.H.TailZ23 [] 1123724574 3481362532
+

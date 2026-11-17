@@ -1,0 +1,218 @@
+tyz-cm 0ad48a7d 2026-11-13 11:42:56 -0800
+cm-bridge ed50dc33 2026-11-13 12:00:47 -0800
+t40-tate 7ed2ca99 2026-11-13 11:06:26 -0800
+t40-igusa e9b071d6 2026-11-13 11:16:56 -0800
+twist-descent 1f665a4b 2026-11-13 11:16:48 -0800
+ts-kummer 1bbe3543 2026-11-13 11:17:40 -0800
+kummer-comp 423d6b7c 2026-11-13 11:33:23 -0800
+hecke-rest 6c2c1d76 2026-11-13 12:07:04 -0800
+period-glue 7e1531df 2026-11-13 12:05:13 -0800
+spread-out aa304ed7 2026-11-13 11:30:39 -0800
+zariski-conn 3802f2bc 2026-11-13 12:06:18 -0800
+t5-torsion 58ac8d0b 2026-11-13 12:45:45 -0800
+assemble-port 92a27877 2026-11-13 14:37:37 -0800
+leaf-fold3 f7951690 2026-11-13 13:20:03 -0800
+linked-frob 795a9bd9 2026-11-13 11:09:31 -0800
+linked-ram 3cb898bf 2026-11-13 11:43:55 -0800
+hom-unify 97d81832 2026-11-13 11:03:10 -0800
+homlattice 89a1fc02 2026-11-13 12:26:28 -0800
+kerwild-fix f596943a 2026-11-13 12:45:22 -0800
+gz-statements 85d344bc 2026-11-13 12:14:54 -0800
+lt-local 3d1b90b5 2026-11-13 10:13:01 -0800
+frob-pieces 60340bed 2026-11-13 10:12:01 -0800
+unram-roots b066d686 2026-11-13 09:45:22 -0800
+conj-pieces 110ae272 2026-11-13 07:05:46 -0800
+atkin-li 6f77abb1 2026-11-13 10:11:29 -0800
+one-proof 1e30d4b2 2026-11-13 16:13:24 -0800
+Fri Nov 13 05:35:27 PM PST 2026
+
+# refresh r2: heads read at 2026-11-14 00:05 PST (wip/ branches unless marked)
+leaf-fold4 9dcf1ca8 2026-11-13 19:29:46 -0800
+vert-witness 9314d508 2026-11-13 18:41:43 -0800
+smooth-fibre 82abd02c 2026-11-13 21:22:31 -0800
+model-glue c6231df7 2026-11-13 23:03:54 -0800
+av-b1 02ae2421 2026-11-13 21:26:36 -0800
+av-b2 ffbd299a 2026-11-13 18:55:55 -0800
+curves-g 0fefa215 2026-11-13 18:59:02 -0800
+neron-c 6bea04f0 2026-11-13 18:26:42 -0800
+leaf-review-a 25f988f8 2026-11-13 18:26:39 -0800
+leaf-review-b 3cc85b82 2026-11-13 18:31:27 -0800
+tyz-lcal 61d0b14e 2026-11-13 23:12:19 -0800
+tyz-35 a8101726 2026-11-13 23:19:30 -0800
+tyz-321 521eacc0 2026-11-14 00:03:08 -0800
+tyz-318 94b05c87 2026-11-13 23:59:51 -0800
+shimura-modfn 6bc73469 2026-11-13 23:41:43 -0800
+stab-clash 78b9171f 2026-11-13 22:48:43 -0800
+leaf-fold5 5121acdc 2026-11-13 23:50:11 -0800
+sqrt2-glue 3f3b95c1 2026-11-14 00:00:57 -0800
+ss-exponent 37486c07 2026-11-14 00:01:08 -0800
+one-proof 3d527a1c 2026-11-13 21:16:34 -0800
+one-proof-tyz 1a7aa829 2026-11-13 23:48:44 -0800
+op-dedupe a2de2112 2026-11-13 23:08:49 -0800
+integrate-w51 71dc3f1b 2026-11-13 22:32:31 -0800
+main 67c2daf9 2026-11-13 23:55:43 -0800
+
+# refresh r3: heads read at 2026-11-14 02:30 PST (wip/ branches unless marked)
+integrate-w54 d5d43efc 2026-11-14 02:11:04 -0800
+tyz-chain 377a2ec5 2026-11-14 01:23:54 -0800
+sqrt2-glue 84107b66 2026-11-14 01:11:36 -0800
+ss-exponent 8b343fa8 2026-11-14 00:12:15 -0800
+tyz-318 94b05c87 2026-11-13 23:59:51 -0800
+tyz-321 c5908c68 2026-11-14 00:04:50 -0800
+shimura-modfn 6bc73469 2026-11-13 23:41:43 -0800
+leaf-fold5 5a7e03d1 2026-11-14 01:42:36 -0800
+leafq-check 52012ea4 2026-11-14 01:18:43 -0800
+one-proof 053cbad0 2026-11-14 00:59:56 -0800
+main a53d1c7d 2026-11-14 01:08:22 -0800
+
+# refresh r4: heads read at 2026-11-14 12:40 PST (all merged into fork main 5da857b0, w59)
+main 5da857b0 2026-11-14 11:11:53 -0800
+leaf-fold8 b0f2f6da 2026-11-14 09:07:27 -0800
+mcr-quot 9367131f 2026-11-14 09:16:29 -0800
+coarse-factor 961af262 2026-11-14 08:59:46 -0800
+cloud-w07 44e8323f 2026-11-14 06:57:09 -0800 (work/cloud-w07-jacobians-curves, fork PR #11)
+leaf-fold7 53acb891 2026-11-14 07:30:51 -0800
+qm-glue 96c318b1 2026-11-14 07:46:55 -0800
+height-glue 48126d61 2026-11-14 07:58:13 -0800
+tyz-split 99e582b5 2026-11-14 07:28:26 -0800
+qm-split ead4b7dc 2026-11-14 06:17:05 -0800
+hodge-split 683f3372 2026-11-14 05:52:44 -0800
+curve-split 34323233 2026-11-14 04:58:09 -0800
+av-split 60d0da44 2026-11-14 04:08:51 -0800
+height-split 256f8e41 2026-11-14 03:55:46 -0800
+leaf-fold6 733d8013 2026-11-14 03:53:55 -0800
+av-glue 8d3c7a91 2026-11-14 03:41:01 -0800
+mcr-glue 512c3a7e 2026-11-14 03:19:43 -0800
+# revisions chain.py reads that are not on main (their branches must stay): wip/leaf-fold5 5a7e03d1, wip/ts-kummer
+# 1bbe3543, wip/t40-tate 7ed2ca99, wip/assemble-port 92a27877 (93a1e33c is its ancestor); all on off-route edges.
+
+# refresh r5: heads read at 2026-11-14 13:20 PST (merged into fork main 28b41fb3, w60, except wip/w61)
+main 28b41fb3 2026-11-14 12:53:42 -0800
+leaf-fold9 cf6914e1 2026-11-14 12:38:11 -0800
+shimura-split e80361ee 2026-11-14 12:32:50 -0800
+reduct-split a4fca6ae 2026-11-14 12:13:58 -0800
+modular-split cfcac8bc 2026-11-14 11:59:52 -0800
+w61 3c241950 2026-11-14 13:15:41 -0800 (tyz-split statement review v2: the docstring of TYZThm33)
+# chain.py's off-main revisions are r4's (above); r5 adds none.
+
+# refresh r6: heads read at 2026-11-14 18:41 PST (fork main b5ff0474, w63; branch heads where marked)
+main b5ff0474 2026-11-14 17:28:07 -0800 (w63)
+leaf-fold11 b73da969 2026-11-14 17:27:22 -0800 (merged in w63, with leaf-fold12)
+genus-fold d5df7c4d 2026-11-14 17:01:57 -0800 (merged in w63)
+route-a-fold 6f939b14 2026-11-14 16:15:33 -0800 (merged in w63)
+cm24-value d8d1363a 2026-11-14 16:57:54 -0800 (copied into TailZ18 by leaf-fold12)
+c-to-printed ba24fa83 2026-11-14 17:02:05 -0800 (copied into TailZ19 by leaf-fold12)
+prune 0218a662 2026-11-14 15:34:53 -0800 (merged in w62)
+leaf-fold10 a5df68fe 2026-11-14 14:12:08 -0800 (merged in w61)
+shimura-glue 2e698102 2026-11-14 14:00:59 -0800 (merged in w61)
+reduct-glue 221ba4e7 2026-11-14 13:57:45 -0800 (merged in w61)
+dimjac-glue 24435c82 2026-11-14 12:49:53 -0800 (merged in w61)
+theta-split b285cb60 2026-11-14 14:58:31 -0800 (merged in w62)
+r1univ-rigid b40823ba 2026-11-14 14:59:38 -0800 (merged in w62)
+genus-route 4be3bdae 2026-11-14 15:20:53 -0800 (merged in w62)
+prune-scan e3045e7d 2026-11-14 15:26:33 -0800 (the fixed scan)
+x6-glue 685a56e1 2026-11-14 17:31:15 -0800 (branch head, after its report)
+c-to-printed2 dbeaecf7 2026-11-14 17:40:13 -0800 (branch head, after its report)
+t5-glue 405763f6 2026-11-14 15:51:31 -0800 (branch head, after its report)
+theta-glue 336ec1fd 2026-11-14 17:55:13 -0800 (running)
+# in flight at the snapshot, not used: reduct-b 85495b37, unipotent-b 24c44f3d, sh-route 89c75e42, shimura-cft
+# c1f76fc2, t09-pic a3759092, igusa-alg 620ff92d, gap-triage f25c301d
+# revisions chain.py reads that are not on main (their branches must stay): r4's (above), and wip/x6-glue 685a56e1,
+# wip/c-to-printed2 dbeaecf7, wip/theta-glue 336ec1fd, wip/t5-glue 405763f6 (on the route); wip/cm24-value d8d1363a
+# (off the route).
+
+# refresh r7: heads read at 2026-11-14 19:53 PST (fork main 4db0a627: w66 ecdb5d84 with r6 merged)
+main 4db0a627 2026-11-14 19:51:49 -0800 (w66 with r6 merged)
+w66 ecdb5d84 2026-11-14 18:56:17 -0800 (integration w66)
+leaf-fold13 29885092 2026-11-14 18:49:30 -0800 (merged in w66)
+x6-fold e33b690a 2026-11-14 18:21:23 -0800 (merged in w66 through leaf-fold13)
+contrib-kit 46afc732 2026-11-14 18:26:20 -0800 (merged in w66)
+reduct-b 85495b37 2026-11-14 18:13:04 -0800 (merged in w66; used)
+unipotent-b 24c44f3d 2026-11-14 18:15:26 -0800 (merged in w66; used)
+t09-pic 3d0f47a8 2026-11-14 18:36:27 -0800 (merged in w66; used)
+igusa-alg c9360203 2026-11-14 18:41:59 -0800 (merged in w66; used)
+sh-route 89c75e42 2026-11-14 18:12:45 -0800 (merged in w66; read, not applied)
+shimura-cft c1f76fc2 2026-11-14 18:03:24 -0800 (merged in w66; read, not applied)
+gap-triage 33bd9eb5 2026-11-14 18:32:28 -0800 (merged in w66; read, not applied)
+t5-glue 39bb3cd2 2026-11-14 15:56:55 -0800 (merged in w66; r6 read 405763f6, the same T5Glue.lean)
+theta-glue 336ec1fd 2026-11-14 17:55:13 -0800 (merged in w66)
+c-to-printed2 dbeaecf7 2026-11-14 17:40:13 -0800 (merged in w66)
+x6-glue 685a56e1 2026-11-14 17:31:15 -0800 (merged in w66; folded by x6-fold)
+# in flight at the snapshot, not used: rayclass-cft 7b27f1c3, leaf-fold14 97579a97, linyang-printed 3bb5a828,
+# sh-printed2 ea486e30, sem-prune 15a9a0ae
+# revisions chain.py reads that are not on main (their branches must stay): r4's (above); r7 adds none, and r6's
+# branch heads are on main since w66.
+
+# refresh r8: heads read at 2026-11-15 04:33 PST (fork main 37391b11: w70 6edf020d with leaf-fold19 and the merge-bar commits)
+main 37391b11 2026-11-15 04:04:54 -0800 (w70 with leaf-fold19 and the merge-bar commits)
+w70 6edf020d 2026-11-15 02:14:52 -0800 (integration w70)
+leaf-fold19 c2ad4181 2026-11-15 02:28:42 -0800 (on main; fork PR #19 folded)
+leaf-fold18 3782dac8 2026-11-15 01:35:47 -0800 (on main)
+leaf-fold17 be8511f3 2026-11-14 23:24:50 -0800 (on main)
+leaf-fold16 a454ad64 2026-11-14 22:31:43 -0800 (on main)
+leaf-fold15 63205204 2026-11-14 21:46:53 -0800 (on main; gt-ega folded)
+leaf-fold14 97579a97 2026-11-14 19:21:28 -0800 (on main; reduct-b's Route B-cp and t09-pic folded)
+sem-prune 2b486d04 2026-11-14 20:48:22 -0800 (on main)
+crowd-kit 1c791eb1 2026-11-14 23:01:39 -0800 (on main)
+gt-ega cf8e5042 2026-11-14 21:34:52 -0800 (on main; folded)
+gt-blr bca6c158 2026-11-14 22:02:45 -0800 (on main; folded)
+gt-gamma 57264686 2026-11-14 22:06:56 -0800 (on main; folded)
+gt-theta e32311e5 2026-11-14 21:57:51 -0800 (on main; folded)
+gt-ringclass 06f03bd4 2026-11-14 23:04:00 -0800 (on main; folded)
+gt-grcount 77774f85 2026-11-14 23:04:37 -0800 (on main; folded)
+gt-shpair 00bfe84a 2026-11-14 23:21:37 -0800 (on main; folded)
+gt-elkies 0f83a86a 2026-11-14 23:18:05 -0800 (on main; folded)
+gt-qm 1509a623 2026-11-14 23:23:19 -0800 (on main; folded)
+gt-valence 36d94c0d 2026-11-14 23:30:00 -0800 (on main; folded)
+# after main at the snapshot, not used: gt-rayclass 28ec5c91, gt-rigidity 762ea48b, gt-sga3 deba22d7, gt-sga7
+# 70a16c4c, gt-unip 42e1af66, gt-x6facts 80631ed5, rayclass-cft 7b27f1c3, linyang-printed 3bb5a828, sh-printed2
+# ea486e30
+# revisions chain.py reads that are not on main (their branches must stay): r4's (above); r8 adds none, and r7's
+# branch heads were on main already.
+# refresh r9: branch heads read at 2026-11-15 22:48 PST, fork main 0e70c94e (leaf-fold29 over leaf-fold28b 8961bb09) read at 2026-11-16 00:38 PST; main moved on to leaf-fold30 after the snapshot
+main 0e70c94e 2026-11-15 23:44:03 -0800 (leaf-fold29, whose branch is gone: bg-explicit, st-qbar, faltings5-lower, r6-nf with neron-dvr, h29-ne3 and dcy3-used merged, all but dcy3-used folded; main moved on to leaf-fold30 after the snapshot)
+leaf-fold28b 8961bb09 2026-11-15 22:35:59 -0800 (on main; the claims row of `hX` dropped, locators)
+leaf-fold-hx 862bd440 2026-11-15 22:32:55 -0800 (on main; theta-wp8 folded, `hX` removed, the re-ratings)
+leaf-fold27 f3f288d8 2026-11-15 05:26:38 -0800 (on main; flt-cqj2 folded, frontier r8 merged)
+leaf-fold26 86755ad8 2026-11-15 04:55:44 -0800 (on main; elkies-coord folded)
+leaf-fold25 bc90deac 2026-11-15 04:45:11 -0800 (on main; r16-split folded, merging leaf-fold23 and leaf-fold24)
+leaf-fold24 b2ae6c53 2026-11-15 04:26:01 -0800 (on main; gz-fh folded)
+leaf-fold23 aa9763a1 2026-11-15 04:31:43 -0800 (on main; gt-rigidity and rigid-prune folded)
+leaf-fold22b 9a100aa7 2026-11-15 04:21:03 -0800 (on main; gt-rayclass, sgr-split and h33-sign folded)
+leaf-fold21 47bba295 2026-11-15 04:02:55 -0800 (on main; yu-prune folded)
+leaf-fold20 24f97774 2026-11-15 03:27:41 -0800 (on main; gt-sga7 and gt-unip folded)
+frontier-r8 864c9f19 2026-11-15 04:53:48 -0800 (on main through leaf-fold27)
+gt-sga7 70a16c4c 2026-11-15 01:49:58 -0800 (on main; folded)
+gt-unip 42e1af66 2026-11-15 01:40:02 -0800 (on main; folded)
+yu-prune a162b51a 2026-11-15 03:18:53 -0800 (on main; folded)
+gt-rayclass 28ec5c91 2026-11-15 03:16:05 -0800 (on main; folded)
+sgr-split 990fb6a6 2026-11-15 03:12:34 -0800 (on main; folded)
+h33-sign abfc77cf 2026-11-15 04:13:27 -0800 (on main; folded)
+gt-rigidity 762ea48b 2026-11-14 23:12:07 -0800 (on main; folded)
+rigid-prune 98a0a37d 2026-11-15 03:01:51 -0800 (on main; folded)
+gz-fh 75a3c0bd 2026-11-15 04:20:51 -0800 (on main; folded)
+r16-split e1066890 2026-11-15 04:27:42 -0800 (on main; folded)
+elkies-coord 398043e7 2026-11-15 04:29:40 -0800 (on main; folded)
+flt-cqj2 c894d5ba 2026-11-15 04:32:25 -0800 (on main; folded)
+theta-wp8 04afc477 2026-11-15 07:18:05 -0800 (on main; folded)
+gz-hl3 bbb6c764 2026-11-15 04:14:28 -0800 (on main; not folded, scenario F)
+gz-heegner 58a780e4 2026-11-15 05:49:58 -0800 (on main; not folded, scenario F)
+bg-explicit c47e220c 2026-11-15 06:13:14 -0800 (on main; folded by leaf-fold29)
+st-qbar 0de7c471 2026-11-15 06:02:09 -0800 (on main; folded by leaf-fold29)
+faltings5-lower 8391dc2a 2026-11-15 06:31:58 -0800 (on main; folded by leaf-fold29)
+neron-dvr 998fa5b5 2026-11-15 04:11:58 -0800 (on main; folded by leaf-fold29)
+r6-nf 0bc2446d 2026-11-15 05:21:21 -0800 (on main; folded by leaf-fold29)
+h29-split 14503253 2026-11-15 03:08:56 -0800 (on main; folded by leaf-fold29)
+h29-fix 0f61e9c0 2026-11-15 03:54:54 -0800 (on main; folded by leaf-fold29)
+h29-ne3 a03caff2 2026-11-15 05:58:34 -0800 (on main; folded by leaf-fold29)
+dcy3-used 36240662 2026-11-15 05:50:56 -0800 (on main; not folded, scenario F)
+jacobi-lambda b6fc38e9 2026-11-15 05:33:53 -0800 (on main; not folded, scenario F)
+open-leaf-def c0f4abb8 2026-11-15 07:48:16 -0800 (on main)
+rayclass-cft 7b27f1c3 2026-11-14 19:20:16 -0800 (on main through gt-rayclass)
+flt-cqj 0d8105c7 2026-11-15 03:21:43 -0800 (on main through flt-cqj2)
+# after main at the snapshot, not used: cm-stab feff8ecd, composite-out 822da7b5, faltings-cm ce696e14, fh-printed
+# 8d0b9b64, gr56-prove 90b817cb, gt-sga3 deba22d7, gz-weil ad22e947, hcm-printed 15055182, ht-exists 7088f9ed,
+# linyang-printed 3bb5a828, theta-fold 8e3dbdea, p1-quot 319fa317, p1-quot2 19793c5d, p1-quot3 b533b204, pb-bypass
+# c1636db9, r16-used dcf24ac6, sga7-cp 0c200c57, sgr-direct 56478c75, sir-printed e5968542, shimura-split2 838a7430,
+# unif-printed 9c2e1809
+# revisions chain.py reads that are not on main (their branches must stay): r4's (above); r9 adds none.

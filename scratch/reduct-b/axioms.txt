@@ -1,0 +1,14 @@
+ 18:08:35 up 3 days, 11:01, 10 users,  load average: 3.70, 4.55, 5.16
+Mem:             235          76          58           0         103         159
+'ReductB.semistableReductionDVR_of_raynaud' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ReductB.strictHenselizationNeron_of_pair' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ReductB.three_fields_of_printed' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ReductB.raynaudSemistableCP_of_SH' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ReductB.semistablePersistsDVRcp_of_SH' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ReductB.semistablePersists_of_leaves_nf' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ReductB.ss1_ss3_of_cp' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ReductB.semistableReductionDVRnf_of_raynaudCP' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ReductB.ss1_ss3_of_cp_full' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ReductB.fold_uses' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ReductB.fold_uses_K1' depends on axioms: [propext, Classical.choice, Quot.sound]
+52.45 s 7626268 KB

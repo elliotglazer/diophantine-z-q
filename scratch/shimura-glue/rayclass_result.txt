@@ -1,0 +1,6 @@
+'ShimuraGlue.Ray.s6_sq' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShimuraGlue.Ray.reciprocityCanonical_of_rayClass' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+real	0m6.459s
+user	0m4.850s
+sys	0m2.362s

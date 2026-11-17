@@ -1,0 +1,361 @@
+LPrefix:11672  [field TextbookLeaves.t23]    t23 : ∀ (p : ℕ) [Fact p.Prime], PkgI4.T23_FontaineClosure p
+LPrefix:13731  [assignment t23 in textbookLeaves_of_open]    t23 := t.t23
+TailA:2526  [dead reader g8_g12_of_leaves]  /-- **G8-G12 from the leaf bundles** (`HSyn.ResearchLeaves`, `HSyn.TextbookLeaves`), glue-ssbc's
+TailA:2527  [dead reader g8_g12_of_leaves]  proved `SemisimpleBaseChange`, the outputs of G2, G3, G6, G7 and the five named pieces. -/
+TailA:2528  [dead reader g8_g12_of_leaves]  theorem g8_g12_of_leaves (r : HSyn.ResearchLeaves) (t : HSyn.TextbookLeaves) (m : GaloisPieces)
+TailA:2529  [dead reader g8_g12_of_leaves]      {K : Type} [Field K] [NumberField K] [IsGalois ℚ K] (A : PkgI3.AbVar K) (T : Finset ℕ)
+TailA:2530  [dead reader g8_g12_of_leaves]      (h2 : G2Out K T) (h6 : G6Out A) (h3 : G3Out A 5 T)
+TailA:2531  [dead reader g8_g12_of_leaves]      (Tm : PkgI4.GQ → Module.End (PadicAlgCl 5) (Vb A 5))
+TailA:2532  [dead reader g8_g12_of_leaves]      (c ε : PkgI4.GQ → PkgI4.GQ → PadicAlgCl 5) (a β : PkgI4.GQ → PadicAlgCl 5)
+TailA:2533  [dead reader g8_g12_of_leaves]      (u : GlueDescent.MatrixUnits2 (PadicAlgCl 5) (Vb A 5))
+TailA:2534  [dead reader g8_g12_of_leaves]      (h7 : G7Out A 5 Tm c ε a β u) :
+TailA:2535  [dead reader g8_g12_of_leaves]      ∃ r₅ : GaloisRep 5 2, G8Out A 5 (GlueDescent.rho Tm a β) r₅ ∧ G9Out r₅ ∧ G10Out r₅ ∧
+TailA:2536  [dead reader g8_g12_of_leaves]        G11Out T r₅ ∧ G12Out r₅ :=
+TailA:2537  [dead reader g8_g12_of_leaves]    g8_g12 r.r9a r.r9b t.t26 t.t6 HSyn.G0Split.semisimpleBaseChange r.r10 t.t11a t.t11b
+TailA:2538  [dead reader g8_g12_of_leaves]      r.r11r12 r.r14 r.r13 r.r15 t.frobeniusDense HSyn.t19_proved t.t9 (g8Matrix_of_burnside m.burnside) (g9GlueNoT23_of_g9Glue m.deRham t.t23) m.odd m.weight
+TailA:2539  [dead reader g8_g12_of_leaves]      (g12Det_of m.r14det m.detTate m.finIndex (frobeniusDenseQ_of t.frobeniusDense))
+TailA:2540  [dead reader g8_g12_of_leaves]      A T h2 h6 h3 Tm c ε a β u h7
+TailA:2541  [dead reader g8_g12_of_leaves]  
+TailA:2735  [dead reader newformG12Out_of_galois]  /-- **The range G8-G12 delivers g0-mod-newform's input `G12Out` (there; here `NF.NewformG12Out`).**
+TailA:2736  [dead reader newformG12Out_of_galois]  Proved from the leaves, the outputs of G2, G3, G6, G7 at `ℓ = 3` and `ℓ = 5`, the five named
+TailA:2737  [dead reader newformG12Out_of_galois]  pieces of this range and `FiniteCharDirichlet`. -/
+TailA:2738  [dead reader newformG12Out_of_galois]  theorem newformG12Out_of_galois (r : HSyn.ResearchLeaves) (t : HSyn.TextbookLeaves)
+TailA:2739  [dead reader newformG12Out_of_galois]      (m : GaloisPieces) (hKW : HSyn.KroneckerWeber) (hFD : FiniteCharDirichlet)
+TailA:2740  [dead reader newformG12Out_of_galois]      {K : Type} [Field K] [NumberField K] [IsGalois ℚ K] (A : PkgI3.AbVar K) (T : Finset ℕ)
+TailA:2741  [dead reader newformG12Out_of_galois]      (h2 : G2Out K T) (h6 : G6Out A) (h3₅ : G3Out A 5 T) (h3₃ : G3Out A 3 T)
+TailA:2742  [dead reader newformG12Out_of_galois]      (Tm₅ : PkgI4.GQ → Module.End (PadicAlgCl 5) (Vb A 5))
+TailA:2743  [dead reader newformG12Out_of_galois]      (c₅ ε₅ : PkgI4.GQ → PkgI4.GQ → PadicAlgCl 5) (a₅ β₅ : PkgI4.GQ → PadicAlgCl 5)
+TailA:2744  [dead reader newformG12Out_of_galois]      (u₅ : GlueDescent.MatrixUnits2 (PadicAlgCl 5) (Vb A 5))
+TailA:2745  [dead reader newformG12Out_of_galois]      (h7₅ : G7Out A 5 Tm₅ c₅ ε₅ a₅ β₅ u₅)
+TailA:2746  [dead reader newformG12Out_of_galois]      (Tm₃ : PkgI4.GQ → Module.End (PadicAlgCl 3) (Vb A 3))
+TailA:2747  [dead reader newformG12Out_of_galois]      (c₃ ε₃ : PkgI4.GQ → PkgI4.GQ → PadicAlgCl 3) (a₃ β₃ : PkgI4.GQ → PadicAlgCl 3)
+TailA:2748  [dead reader newformG12Out_of_galois]      (u₃ : GlueDescent.MatrixUnits2 (PadicAlgCl 3) (Vb A 3))
+TailA:2749  [dead reader newformG12Out_of_galois]      (h7₃ : G7Out A 3 Tm₃ c₃ ε₃ a₃ β₃ u₃) (ι3 : PkgI4.Qbar →ₐ[ℚ] PadicAlgCl 3) :
+TailA:2750  [dead reader newformG12Out_of_galois]      NF.NewformG12Out A := by
+TailA:2751  [dead reader newformG12Out_of_galois]    obtain ⟨r₅, ⟨hres₅, e₅, hint₅, hadj₅⟩, -, -, -, h12⟩ :=
+TailA:2752  [dead reader newformG12Out_of_galois]      g8_g12_of_leaves r t m A T h2 h6 h3₅ Tm₅ c₅ ε₅ a₅ β₅ u₅ h7₅
+TailA:2753  [dead reader newformG12Out_of_galois]    obtain ⟨r₃, ⟨hres₃, e₃, hint₃, hadj₃⟩, -, -, -⟩ :=
+TailA:2754  [dead reader newformG12Out_of_galois]      g8_g11 r.r9a r.r9b t.t26 t.t6 HSyn.G0Split.semisimpleBaseChange r.r10 t.t11a t.t11b
+TailA:2755  [dead reader newformG12Out_of_galois]        (g8Matrix_of_burnside m.burnside) (g9GlueNoT23_of_g9Glue m.deRham t.t23) m.odd A T h2 h6 3 h3₃ Tm₃ c₃ ε₃ a₃ β₃ u₃ h7₃
+TailA:2756  [dead reader newformG12Out_of_galois]    obtain ⟨ιC, ι5, hpan⟩ := panOutput_of_g12 hKW hFD r₅ h12
+TailA:2757  [dead reader newformG12Out_of_galois]    exact ⟨⟨qEmb K, ιC, ι5, ι3, r₅, r₃⟩, isIrreducible_of_g8 hadj₅, isIrreducible_of_g8 hadj₃,
+TailA:2758  [dead reader newformG12Out_of_galois]      isConstituentOf_of_intertwines A 5 r₅ e₅ (intertwines_res hres₅ hint₅),
+TailA:2759  [dead reader newformG12Out_of_galois]      isConstituentOf_of_intertwines A 3 r₃ e₃ (intertwines_res hres₃ hint₃), hpan⟩
+TailA:2760  [dead reader newformG12Out_of_galois]  
+TailA:4696  [dead reader afterG7_of]  /-- **`AfterG7` (G8-G16), proved** from the leaf bundles, g0-mod-galois' `GaloisPieces`,
+TailA:4697  [dead reader afterG7_of]  g0-mod-newform's `DirichletOfFinite`, the concrete R17 `CarayolR17'`, the three LadicCond glue
+TailA:4698  [dead reader afterG7_of]  Props, and the two glue Props `ModelG3G6`, `LinkedTateData`. -/
+TailA:4699  [dead reader afterG7_of]  theorem afterG7_of (r : ResearchLeaves) (t : TextbookLeaves) (m : G0Galois.GaloisPieces)
+TailA:4700  [dead reader afterG7_of]      (hDF : G0ModNewform.DirichletOfFinite) (hCar : LadicCond.CarayolR17')
+TailA:4701  [dead reader afterG7_of]      (hSw : ∀ (p : ℕ) [Fact p.Prime], LadicCond.SwanIndependent (p := p))
+TailA:4702  [dead reader afterG7_of]      (hL8 : LadicCond.SwanIntegral)
+TailA:4703  [dead reader afterG7_of]      (hAd : ∀ (p : ℕ) [Fact p.Prime], LadicCond.AdaptedExists (p := p))
+TailA:4704  [dead reader afterG7_of]      (hG36 : ModelG3G6) (hLink : LinkedTateData) : AfterG7 := by
+TailA:4705  [dead reader afterG7_of]    intro Y Φ π u P hctx L _ _ A ε N _ χ β L' _ _ hLL' hdata
+TailA:4706  [dead reader afterG7_of]    letI : NumberField L' := numberField_of_fd L'
+TailA:4707  [dead reader afterG7_of]    obtain ⟨h6, h3₅, h3₃⟩ := hG36 Y Φ π u P hctx L A ε N χ β L' hLL' hdata
+TailA:4708  [dead reader afterG7_of]    obtain ⟨Tm₅, c₅, ε₅, a₅, β₅, u₅, Tm₃, c₃, ε₃, a₃, β₃, u₃, h7₅, h7₃, hlink⟩ :=
+TailA:4709  [dead reader afterG7_of]      hLink Y Φ π u P hctx L A ε N χ β L' hLL' hdata
+TailA:4710  [dead reader afterG7_of]    have h2 : G0Galois.G2Out L' (T u) :=
+TailA:4711  [dead reader afterG7_of]      galoisG2Out_of_g7Data resQRange u P L A ε N χ β L' hLL' hdata
+TailA:4712  [dead reader afterG7_of]    obtain ⟨r₅, h8₅, -, -, h11₅, h12⟩ :=
+TailA:4713  [dead reader afterG7_of]      G0Galois.g8_g12_of_leaves r t m _ (T u) h2 h6 h3₅ Tm₅ c₅ ε₅ a₅ β₅ u₅ h7₅
+TailA:4714  [dead reader afterG7_of]    obtain ⟨r₃, h8₃, -, -, h11₃⟩ :=
+TailA:4715  [dead reader afterG7_of]      G0Galois.g8_g11 r.r9a r.r9b t.t26 t.t6 HSyn.G0Split.semisimpleBaseChange r.r10 t.t11a
+TailA:4716  [dead reader afterG7_of]        t.t11b (G0Galois.g8Matrix_of_burnside m.burnside) (G0Galois.g9GlueNoT23_of_g9Glue m.deRham t.t23) m.odd _ (T u) h2 h6 3 h3₃
+TailA:4717  [dead reader afterG7_of]        Tm₃ c₃ ε₃ a₃ β₃ u₃ h7₃
+TailA:4718  [dead reader afterG7_of]    obtain ⟨i, ιC, ι5, hspec⟩ := G0ModNewform.g12Spec_of_galois hDF _ _ _ r₅ r₃ h8₅ h8₃ h12
+TailA:4719  [dead reader afterG7_of]    obtain ⟨ι3, h14, h15⟩ := hlink r₅ r₃ h8₅ h8₃ i ιC ι5
+TailA:4720  [dead reader afterG7_of]    obtain ⟨M, J, hM, hJ, hMle, hCC⟩ :=
+TailA:4721  [dead reader afterG7_of]      G0ModNewform.modularConstituent_tail_G (newformLeaves_of r t hCar) t.t33 t.x1ModelExists
+TailA:4722  [dead reader afterG7_of]        hSw hL8 hAd _ u ⟨_, hspec ι3, h14, g15RamG_of_wild _ u h15 h11₅ h11₃⟩
+TailA:4723  [dead reader afterG7_of]    exact ⟨M, J, hM, hJ, hMle, (commonConstituent_copy' _ _).1 hCC⟩
+TailA:4724  [dead reader afterG7_of]  
+TailA:4729  [#print of dead reader afterG7_of]  #print axioms HSyn.G0AssembleMod.afterG7_of
+TailA:5010  [dead reader gluePieces_of_gluePieces2]  /-- **`GluePieces` from `GluePieces2` and the leaf bundles** (g0-assemble): every field of
+TailA:5011  [dead reader gluePieces_of_gluePieces2]  `GluePieces` is a wave-26 theorem applied to fields of `GluePieces2`, `r` or `t`. -/
+TailA:5012  [dead reader gluePieces_of_gluePieces2]  theorem gluePieces_of_gluePieces2 (r : ResearchLeaves) (t : TextbookLeaves) (gp2 : GluePieces2) :
+TailA:5013  [dead reader gluePieces_of_gluePieces2]      GluePieces where
+TailA:5014  [dead reader gluePieces_of_gluePieces2]    dimFinite := G0Split.dimFinite
+TailA:5015  [dead reader gluePieces_of_gluePieces2]    dimBaseChange := G0Split.dimBaseChange
+TailA:5016  [dead reader gluePieces_of_gluePieces2]    fibreSimple := G0FibreSimple.fibreSimple_of_leaves t gp2.mulIsogeny gp2.rigidityHom
+TailA:5017  [dead reader gluePieces_of_gluePieces2]      ⟨gp2.finiteDescends, gp2.fibreComTrivial⟩
+TailA:5018  [dead reader gluePieces_of_gluePieces2]    productModelHeight := ZInQ.G0HeightAdd.productModelHeight_of gp2.analyticUniformizationUnique
+TailA:5019  [dead reader gluePieces_of_gluePieces2]      gp2.metrizationDimUnique gp2.metrizationExists
+TailA:5020  [dead reader gluePieces_of_gluePieces2]      (ZInQ.G0HeightAdd.productMetrization_of_geo gp2.productMetrizationGeo)
+TailA:5021  [dead reader gluePieces_of_gluePieces2]    stableHeightBaseChange := G0StableBC.stableHeightBaseChange_of_hodgeLine gp2.hodgeLineBaseChange
+TailA:5022  [dead reader gluePieces_of_gluePieces2]    productExists := G0Product.productExists
+TailA:5023  [dead reader gluePieces_of_gluePieces2]    reverseIsogeny := G0RevIsog.reverseIsogeny_of_leaves r G0Split.dimFinite
+TailA:5024  [dead reader gluePieces_of_gluePieces2]    thetaPoint := G0Split.ThetaPt.thetaPointOfFibre_of_qm_ratios gp2.fibreQMPeriod
+TailA:5025  [dead reader gluePieces_of_gluePieces2]      gp2.thetaRatiosAlgebraic
+TailA:5026  [dead reader gluePieces_of_gluePieces2]    modularConstituent := modularConstituent_of_field t gp2.fibreCoverExists gp2.kernelFieldExists
+TailA:5027  [dead reader gluePieces_of_gluePieces2]      gp2.unramifiedSup (G0AssembleMod.afterG7_of r t
+TailA:5028  [dead reader gluePieces_of_gluePieces2]        ⟨gp2.burnsideAbsIrred, gp2.r14Det, gp2.g9Glue, gp2.g10Glue, gp2.g12Weight, gp2.detTate,
+TailA:5029  [dead reader gluePieces_of_gluePieces2]          G0AssembleMod.resQFiniteIndex⟩
+TailA:5030  [dead reader gluePieces_of_gluePieces2]        gp2.dirichletOfFinite gp2.carayolR17 gp2.swanIndependent gp2.swanIntegral gp2.adaptedExists
+TailA:5031  [dead reader gluePieces_of_gluePieces2]        gp2.modelG3G6 gp2.linkedTateData)
+TailA:5032  [dead reader gluePieces_of_gluePieces2]    heightCopies := G0HeightCopies.heightCopiesAgree
+TailA:5033  [dead reader gluePieces_of_gluePieces2]  
+TailA:5040  [#print of dead reader gluePieces_of_gluePieces2]  #print axioms HSyn.gluePieces_of_gluePieces2
+TailD:77  [field ResearchLeaves3.r20]    r20 : ZInQ.DefFaltings.R20_FaltingsLemma5
+TailD:110  [assignment r20 in researchLeaves3_of]      r20 := r.r20,
+TailD:611  [dead reader sixContactMin_of_leaves3]  /-- **G0 after waves 26-27** (g0-assemble2): the leaf bundles (`ResearchLeaves3`: no `opaque`
+TailD:612  [dead reader sixContactMin_of_leaves3]  placeholder) and `GluePieces3` imply `ZInQ.SixContactMin`. -/
+TailD:613  [dead reader sixContactMin_of_leaves3]  theorem sixContactMin_of_leaves3 (r : ResearchLeaves3) (t : TextbookLeaves) (gp : GluePieces3) :
+TailD:614  [dead reader sixContactMin_of_leaves3]      ZInQ.SixContactMin :=
+TailD:615  [dead reader sixContactMin_of_leaves3]    sixContactMin_of_leavesR3 r t (gluePieces_of_gluePieces3 r t gp) (G0Split.r20Lower_of_r20 r.r20)
+TailD:616  [dead reader sixContactMin_of_leaves3]  
+TailD:617  [dead reader sixContactMin_of_leaves3']  /-- The same with Leaves.lean's `ResearchLeaves` (which implies `ResearchLeaves3`). -/
+TailD:618  [dead reader sixContactMin_of_leaves3']  theorem sixContactMin_of_leaves3' (r : ResearchLeaves) (t : TextbookLeaves) (gp : GluePieces3) :
+TailD:619  [dead reader sixContactMin_of_leaves3']      ZInQ.SixContactMin :=
+TailD:620  [dead reader sixContactMin_of_leaves3']    sixContactMin_of_leaves3 (researchLeaves3_of r) t gp
+TailD:621  [dead reader sixContactMin_of_leaves3']  
+TailD:627  [#print of dead reader sixContactMin_of_leaves3]  #print axioms HSyn.sixContactMin_of_leaves3
+TailD:628  [#print of dead reader sixContactMin_of_leaves3']  #print axioms HSyn.sixContactMin_of_leaves3'
+TailE:6487  [field OpenResearchLeaves2.r20]    r20 : ZInQ.DefFaltings.R20_FaltingsLemma5
+TailE:6505  [field OpenTextbookLeaves2.t23]    t23 : ∀ (p : ℕ) [Fact p.Prime], PkgI4.T23_FontaineClosure p
+TailE:6591  [assignment r20 in researchLeaves3_of_open2]    r20 := r.r20
+TailE:6617  [assignment t23 in textbookLeaves_of_open2]    t23 := t.t23
+TailE:6684  [dead reader sixContactMin_of_open2]  /-- **G0 with only the open leaves and the open glue** (leaf-fold2; no `sorry`, standard axioms).
+TailE:6685  [dead reader sixContactMin_of_open2]  `ZInQ.SixContactMin` follows from
+TailE:6686  [dead reader sixContactMin_of_open2]  * `OpenResearchLeaves2`: 26 research-level fields (R1(b), R10, R14, R17 in concrete or corrected
+TailE:6687  [dead reader sixContactMin_of_open2]    form; no `opaque` placeholder);
+TailE:6688  [dead reader sixContactMin_of_open2]  * `OpenTextbookLeaves2`: 18 textbook fields;
+TailE:6689  [dead reader sixContactMin_of_open2]  * `OpenAddedLeaves2`: 13 leaves (9 LEAF, 4 LEAF?) introduced by the wave 26-27 reductions and x6-kummer;
+TailE:6690  [dead reader sixContactMin_of_open2]  * `OpenGlue2`: 9 glue Props.
+TailE:6691  [dead reader sixContactMin_of_open2]  The table of every field, its kind and source is `docs/research/leaf-fold2.md`. -/
+TailE:6692  [dead reader sixContactMin_of_open2]  theorem sixContactMin_of_open2 (r : OpenResearchLeaves2) (t : OpenTextbookLeaves2)
+TailE:6693  [dead reader sixContactMin_of_open2]      (l : OpenAddedLeaves2) (g : OpenGlue2) : ZInQ.SixContactMin :=
+TailE:6694  [dead reader sixContactMin_of_open2]    sixContactMin_of_leavesR3 (researchLeaves3_of_open2 r) (textbookLeaves_of_open2 t)
+TailE:6695  [dead reader sixContactMin_of_open2]      (gluePieces_of_open2 r t l g) (G0Split.r20Lower_of_r20 r.r20)
+TailE:6696  [dead reader sixContactMin_of_open2]  
+TailE:6727  [#print of dead reader sixContactMin_of_open2]  #print axioms HSyn.sixContactMin_of_open2
+TailF:2511  [dead reader afterG7_of_linked]  /-- **`AfterG7` (G8-G16)** from g0-assemble's inputs of `afterG7_of` with `ModelG3G6` replaced by
+TailF:2512  [dead reader afterG7_of_linked]  `FibreSimple` and `QMModelG3`, and `LinkedTateData` by `LinkedTateCore` (T7 is `t.t7`). -/
+TailF:2513  [dead reader afterG7_of_linked]  theorem afterG7_of_linked (r : HSyn.ResearchLeaves) (t : HSyn.TextbookLeaves)
+TailF:2514  [dead reader afterG7_of_linked]      (m : G0Galois.GaloisPieces) (hDF : G0ModNewform.DirichletOfFinite)
+TailF:2515  [dead reader afterG7_of_linked]      (hCar : LadicCond.CarayolR17')
+TailF:2516  [dead reader afterG7_of_linked]      (hSw : ∀ (p : ℕ) [Fact p.Prime], LadicCond.SwanIndependent (p := p))
+TailF:2517  [dead reader afterG7_of_linked]      (hL8 : LadicCond.SwanIntegral)
+TailF:2518  [dead reader afterG7_of_linked]      (hAd : ∀ (p : ℕ) [Fact p.Prime], LadicCond.AdaptedExists (p := p))
+TailF:2519  [dead reader afterG7_of_linked]      (hFS : HSyn.G0Split.FibreSimple) (hG3 : QMModelG3) (hC : LinkedTateCore) : AfterG7 :=
+TailF:2520  [dead reader afterG7_of_linked]    HSyn.G0AssembleMod.afterG7_of r t m hDF hCar hSw hL8 hAd (modelG3G6_of hFS hG3)
+TailF:2521  [dead reader afterG7_of_linked]      (linkedTateData_of t.t7 hC)
+TailF:2522  [dead reader afterG7_of_linked]  
+TailF:2523  [dead reader afterG7_of_linked']  /-- **`AfterG7` with G3 reduced to the bundle's R6, R7a, T5 and `GoodRedG3Bridge`, and
+TailF:2524  [dead reader afterG7_of_linked']  `LinkedTateCore` to `QMEndRank` and `LinkedTateCoreDR`.** -/
+TailF:2525  [dead reader afterG7_of_linked']  theorem afterG7_of_linked' (r : HSyn.ResearchLeaves) (t : HSyn.TextbookLeaves)
+TailF:2526  [dead reader afterG7_of_linked']      (m : G0Galois.GaloisPieces) (hDF : G0ModNewform.DirichletOfFinite)
+TailF:2527  [dead reader afterG7_of_linked']      (hCar : LadicCond.CarayolR17')
+TailF:2528  [dead reader afterG7_of_linked']      (hSw : ∀ (p : ℕ) [Fact p.Prime], LadicCond.SwanIndependent (p := p))
+TailF:2529  [dead reader afterG7_of_linked']      (hL8 : LadicCond.SwanIntegral)
+TailF:2530  [dead reader afterG7_of_linked']      (hAd : ∀ (p : ℕ) [Fact p.Prime], LadicCond.AdaptedExists (p := p))
+TailF:2531  [dead reader afterG7_of_linked']      (hFS : HSyn.G0Split.FibreSimple) (hB : GoodRedG3Bridge) (hR : QMEndRank)
+TailF:2532  [dead reader afterG7_of_linked']      (hDR : LinkedTateCoreDR) : AfterG7 :=
+TailF:2533  [dead reader afterG7_of_linked']    afterG7_of_linked r t m hDF hCar hSw hL8 hAd hFS (qmModelG3_of r.r7a r.r6 t.t5 hB)
+TailF:2534  [dead reader afterG7_of_linked']      (linkedTateCore_of hFS hR hDR)
+TailF:2535  [dead reader afterG7_of_linked']  
+TailF:2989  [dead reader HSyn.LinkedTate.afterG7_of_final]  /-- **`AfterG7` (G8-G16) with both joint Props of g0-assemble reduced** (proved): g0-assemble's
+TailF:2990  [dead reader HSyn.LinkedTate.afterG7_of_final]  inputs of `afterG7_of` (leaf bundles, `GaloisPieces`, `DirichletOfFinite`, `CarayolR17'`, the
+TailF:2991  [dead reader HSyn.LinkedTate.afterG7_of_final]  three LadicCond glue Props) with `ModelG3G6` and `LinkedTateData` replaced by the glue Props
+TailF:2992  [dead reader HSyn.LinkedTate.afterG7_of_final]  `FibreSimple` (already a `GluePieces` field), `GoodRedG3Bridge`, `QMEndRank`, `LinkedFrob`,
+TailF:2993  [dead reader HSyn.LinkedTate.afterG7_of_final]  `LinkedRam`; the leaves used are the bundles' R6, R7a, T5 (G3), T7 (G14) and T26 = I3.M0. -/
+TailF:2994  [dead reader HSyn.LinkedTate.afterG7_of_final]  theorem HSyn.LinkedTate.afterG7_of_final (r : HSyn.ResearchLeaves) (t : HSyn.TextbookLeaves)
+TailF:2995  [dead reader HSyn.LinkedTate.afterG7_of_final]      (m : G0Galois.GaloisPieces) (hDF : G0ModNewform.DirichletOfFinite)
+TailF:2996  [dead reader HSyn.LinkedTate.afterG7_of_final]      (hCar : LadicCond.CarayolR17')
+TailF:2997  [dead reader HSyn.LinkedTate.afterG7_of_final]      (hSw : ∀ (p : ℕ) [Fact p.Prime], LadicCond.SwanIndependent (p := p))
+TailF:2998  [dead reader HSyn.LinkedTate.afterG7_of_final]      (hL8 : LadicCond.SwanIntegral)
+TailF:2999  [dead reader HSyn.LinkedTate.afterG7_of_final]      (hAd : ∀ (p : ℕ) [Fact p.Prime], LadicCond.AdaptedExists (p := p))
+TailF:3000  [dead reader HSyn.LinkedTate.afterG7_of_final]      (hFS : HSyn.G0Split.FibreSimple) (hB : HSyn.LinkedTate.GoodRedG3Bridge)
+TailF:3001  [dead reader HSyn.LinkedTate.afterG7_of_final]      (hR : HSyn.LinkedTate.QMEndRank) (hF : UnramTate.LinkedFrob) (hRam : UnramTate.LinkedRam) :
+TailF:3002  [dead reader HSyn.LinkedTate.afterG7_of_final]      G0ModField.AfterG7 :=
+TailF:3003  [dead reader HSyn.LinkedTate.afterG7_of_final]    HSyn.G0AssembleMod.afterG7_of r t m hDF hCar hSw hL8 hAd
+TailF:3004  [dead reader HSyn.LinkedTate.afterG7_of_final]      (HSyn.LinkedTate.modelG3G6_of hFS (HSyn.LinkedTate.qmModelG3_of r.r7a r.r6 t.t5 hB))
+TailF:3005  [dead reader HSyn.LinkedTate.afterG7_of_final]      (HSyn.LinkedTate.linkedTateData_of_frobRam t.t7 t.t26 hFS hR
+TailF:3006  [dead reader HSyn.LinkedTate.afterG7_of_final]        (UnramTate.linkedFrobRam_of hF hRam))
+TailF:3007  [dead reader HSyn.LinkedTate.afterG7_of_final]  
+TailI:138  [field OpenTextbookLeaves3.t23]    t23 : ∀ (p : ℕ) [Fact p.Prime], PkgI4.T23_FontaineClosure p
+TailI:212  [assignment t23 in textbookLeaves2_of_open3]    t23 := t.t23
+TailI:281  [dead reader sixContactMin_of_open3]  /-- **G0 with only the open leaves and the open glue** (leaf-fold3; no `sorry`, standard axioms).
+TailI:282  [dead reader sixContactMin_of_open3]  `ZInQ.SixContactMin` follows from
+TailI:283  [dead reader sixContactMin_of_open3]  * `OpenResearchLeaves2`: 26 research-level fields (unchanged from leaf-fold2);
+TailI:284  [dead reader sixContactMin_of_open3]  * `OpenTextbookLeaves3`: 20 textbook fields (`HomLatticeCorr` for T11(a); T3 and T4 back);
+TailI:285  [dead reader sixContactMin_of_open3]  * `OpenAddedLeaves3`: 16 leaves (11 LEAF, 5 LEAF?);
+TailI:286  [dead reader sixContactMin_of_open3]  * `OpenGlue3`: 6 glue Props.
+TailI:287  [dead reader sixContactMin_of_open3]  The table of every field is `docs/research/leaf-fold3.md` §2. -/
+TailI:288  [dead reader sixContactMin_of_open3]  theorem sixContactMin_of_open3 (r : OpenResearchLeaves2) (t : OpenTextbookLeaves3)
+TailI:289  [dead reader sixContactMin_of_open3]      (l : OpenAddedLeaves3) (g : OpenGlue3) : ZInQ.SixContactMin :=
+TailI:290  [dead reader sixContactMin_of_open3]    sixContactMin_of_leavesR3 (researchLeaves3_of_open2 r)
+TailI:291  [dead reader sixContactMin_of_open3]      (textbookLeaves_of_open2 (textbookLeaves2_of_open3 t)) (gluePieces_of_open3 r t l g)
+TailI:292  [dead reader sixContactMin_of_open3]      (G0Split.r20Lower_of_r20 r.r20)
+TailI:293  [dead reader sixContactMin_of_open3]  
+TailI:313  [#print of dead reader sixContactMin_of_open3]  #print axioms HSyn.sixContactMin_of_open3
+TailK:170  [field OpenTextbookLeaves4.t23]    t23 : ∀ (p : ℕ) [Fact p.Prime], PkgI4.T23_FontaineClosure p
+TailK:239  [assignment t23 in textbookLeaves3_of_open4]    t23 := t.t23
+TailN:94  [field OpenResearchLeaves5.r20]    r20 : ZInQ.DefFaltings.R20_FaltingsLemma5
+TailN:122  [assignment r20 in researchLeaves2_of_open5]    r20 := r.r20
+TailN:224  [assignment t23 in textbookLeaves4_of_open5]    t23 := t.t23
+TailN:262  [dead reader sixContactMin_of_open5]  /-- **G0 with only the open leaves and the open glue** (leaf-fold5; no `sorry`, standard axioms).
+TailN:263  [dead reader sixContactMin_of_open5]  `ZInQ.SixContactMin` follows from
+TailN:264  [dead reader sixContactMin_of_open5]  * `OpenResearchLeaves5`: 26 research-level fields (nine restated over the kernel's Props);
+TailN:265  [dead reader sixContactMin_of_open5]  * `OpenTextbookLeaves5`: 21 textbook fields;
+TailN:266  [dead reader sixContactMin_of_open5]  * `OpenAddedLeaves5`: 21 added leaves;
+TailN:267  [dead reader sixContactMin_of_open5]  * `OpenGlue5`: 2 glue Props (`ModelCoordinateResidue`, `SimpleImageIsogeny`).
+TailN:268  [dead reader sixContactMin_of_open5]  The table of every field is `docs/research/leaf-fold5.md` §2. -/
+TailN:269  [dead reader sixContactMin_of_open5]  theorem sixContactMin_of_open5 (r : OpenResearchLeaves5) (t : OpenTextbookLeaves5)
+TailN:270  [dead reader sixContactMin_of_open5]      (l : OpenAddedLeaves5) (g : OpenGlue5) : ZInQ.SixContactMin :=
+TailN:271  [dead reader sixContactMin_of_open5]    sixContactMin_of_open4 (researchLeaves2_of_open5 r) (textbookLeaves4_of_open5 t l g) (addedLeaves4_of_open5 t l)
+TailN:272  [dead reader sixContactMin_of_open5]      (glue4_of_open5 r t l g) (G0Split.r20Lower_of_r20 r.r20)
+TailN:273  [dead reader sixContactMin_of_open5]  
+TailN:293  [#print of dead reader sixContactMin_of_open5]  #print axioms HSyn.sixContactMin_of_open5
+TailO:2601  [dead reader sixContactMin_of_openQ5]  /-- **`SixContactMin` from 26 + 19 + 19 leaves and one glue Prop** (leaf-fold4's 66 fields minus
+TailO:2602  [dead reader sixContactMin_of_openQ5]  `gammaStarGen`). -/
+TailO:2603  [dead reader sixContactMin_of_openQ5]  theorem sixContactMin_of_openQ5 (r : OpenResearchLeaves2) (t : OpenTextbookLeaves4)
+TailO:2604  [dead reader sixContactMin_of_openQ5]      (l : OpenAddedLeavesQ5) (g : OpenGlue4) : ZInQ.SixContactMin :=
+TailO:2605  [dead reader sixContactMin_of_openQ5]    sixContactMin_of_open4 r t (openAddedLeaves4_of_Q5 l) g (G0Split.r20Lower_of_r20 r.r20)
+TailO:2606  [dead reader sixContactMin_of_openQ5]  
+TailO:2637  [dead reader sixContactMin_of_openQ6]  /-- **`SixContactMin` from 26 + 19 + 19 leaves and one glue Prop, with the valence formula in its
+TailO:2638  [dead reader sixContactMin_of_openQ6]  published form.** -/
+TailO:2639  [dead reader sixContactMin_of_openQ6]  theorem sixContactMin_of_openQ6 (r : OpenResearchLeaves2) (t : OpenTextbookLeaves4)
+TailO:2640  [dead reader sixContactMin_of_openQ6]      (l : OpenAddedLeavesQ6) (g : OpenGlue4) : ZInQ.SixContactMin :=
+TailO:2641  [dead reader sixContactMin_of_openQ6]    sixContactMin_of_openQ5 r t (openAddedLeavesQ5_of_Q6 l) g
+TailO:2642  [dead reader sixContactMin_of_openQ6]  
+TailO:2668  [dead reader sixContactMin_of_openQ7]  /-- **`SixContactMin` from 26 + 19 + 19 leaves and one glue Prop, with `CMDescends` replaced by the
+TailO:2669  [dead reader sixContactMin_of_openQ7]  published Shimura–Taniyama statement `STQM`.** -/
+TailO:2670  [dead reader sixContactMin_of_openQ7]  theorem sixContactMin_of_openQ7 (r : OpenResearchLeaves2) (t : OpenTextbookLeaves4)
+TailO:2671  [dead reader sixContactMin_of_openQ7]      (l : OpenAddedLeavesQ7) (g : OpenGlue4) : ZInQ.SixContactMin :=
+TailO:2672  [dead reader sixContactMin_of_openQ7]    sixContactMin_of_openQ6 r t
+TailO:2673  [dead reader sixContactMin_of_openQ7]      ⟨l.cmOptimalEmbedding, l.thetaRatiosAlgebraic, l.qmHauptmodul, l.qmClassNumberOne, l.senTwist,
+TailO:2674  [dead reader sixContactMin_of_openQ7]        l.finiteImageHT, l.t09SymmIsogenyExists, l.isogenyQuasiInverse, l.x6ConicModel, l.y3Connected,
+TailO:2675  [dead reader sixContactMin_of_openQ7]        l.qmAutCard, l.serreRigidity3, l.alFixedPoints, l.zariskiConnectedness,
+TailO:2676  [dead reader sixContactMin_of_openQ7]        G0Split.FibreQM.PeriodMapH.LeafQCheck.cmDescends_of l.stQM t.t11b
+TailO:2677  [dead reader sixContactMin_of_openQ7]          (G0Split.FibreQM.PeriodMapH.LeafQCheck.torsionDescends_of_t5 t.t5) r.r1r2,
+TailO:2678  [dead reader sixContactMin_of_openQ7]        l.valenceFormulaGammaStar, l.egaIV_8_8_2_ii, l.egaIV_8_10_5_xii, l.egaIV_17_7_8_ii⟩ g
+TailO:2679  [dead reader sixContactMin_of_openQ7]  
+TailO:2704  [dead reader sixContactMin_of_openQ8]  /-- **`SixContactMin` from 26 + 19 + 19 leaves and one glue Prop** (leafq-check's final form: no
+TailO:2705  [dead reader sixContactMin_of_openQ8]  `gammaStarGen`; the valence formula, Shimura–Taniyama and the narrowed Hauptmodul in place of three
+TailO:2706  [dead reader sixContactMin_of_openQ8]  LEAF? fields). -/
+TailO:2707  [dead reader sixContactMin_of_openQ8]  theorem sixContactMin_of_openQ8 (r : OpenResearchLeaves2) (t : OpenTextbookLeaves4)
+TailO:2708  [dead reader sixContactMin_of_openQ8]      (l : OpenAddedLeavesQ8) (g : OpenGlue4) : ZInQ.SixContactMin :=
+TailO:2709  [dead reader sixContactMin_of_openQ8]    sixContactMin_of_openQ7 r t
+TailO:2710  [dead reader sixContactMin_of_openQ8]      ⟨l.cmOptimalEmbedding, l.thetaRatiosAlgebraic,
+TailO:2711  [dead reader sixContactMin_of_openQ8]        LeafQCheck.HM.qmHauptmodul_of_base l.qmHauptmodulBase, l.qmClassNumberOne, l.senTwist,
+TailO:2712  [dead reader sixContactMin_of_openQ8]        l.finiteImageHT, l.t09SymmIsogenyExists, l.isogenyQuasiInverse, l.x6ConicModel, l.y3Connected,
+TailO:2713  [dead reader sixContactMin_of_openQ8]        l.qmAutCard, l.serreRigidity3, l.alFixedPoints, l.zariskiConnectedness, l.stQM,
+TailO:2714  [dead reader sixContactMin_of_openQ8]        l.valenceFormulaGammaStar, l.egaIV_8_8_2_ii, l.egaIV_8_10_5_xii, l.egaIV_17_7_8_ii⟩ g
+TailO:2715  [dead reader sixContactMin_of_openQ8]  
+TailO:2740  [dead reader sixContactMin_of_openQ9]  /-- **`SixContactMin` from 26 + 19 + 19 leaves and one glue Prop** (leafq-check's final form). -/
+TailO:2741  [dead reader sixContactMin_of_openQ9]  theorem sixContactMin_of_openQ9 (r : OpenResearchLeaves2) (t : OpenTextbookLeaves4)
+TailO:2742  [dead reader sixContactMin_of_openQ9]      (l : OpenAddedLeavesQ9) (g : OpenGlue4) : ZInQ.SixContactMin :=
+TailO:2743  [dead reader sixContactMin_of_openQ9]    sixContactMin_of_openQ8 r t
+TailO:2744  [dead reader sixContactMin_of_openQ9]      ⟨l.cmOptimalEmbedding, l.thetaRatiosAlgebraic,
+TailO:2745  [dead reader sixContactMin_of_openQ9]        LeafQCheck.HM.base_of_base2 l.qmHauptmodulBase2, l.qmClassNumberOne, l.senTwist,
+TailO:2746  [dead reader sixContactMin_of_openQ9]        l.finiteImageHT, l.t09SymmIsogenyExists, l.isogenyQuasiInverse, l.x6ConicModel, l.y3Connected,
+TailO:2747  [dead reader sixContactMin_of_openQ9]        l.qmAutCard, l.serreRigidity3, l.alFixedPoints, l.zariskiConnectedness, l.stQM,
+TailO:2748  [dead reader sixContactMin_of_openQ9]        l.valenceFormulaGammaStar, l.egaIV_8_8_2_ii, l.egaIV_8_10_5_xii, l.egaIV_17_7_8_ii⟩ g
+TailO:2749  [dead reader sixContactMin_of_openQ9]  
+TailO:2774  [dead reader sixContactMin_of_openQ10]  /-- **`SixContactMin` from 26 + 19 + 19 leaves and one glue Prop** (leafq-check's final form). -/
+TailO:2775  [dead reader sixContactMin_of_openQ10]  theorem sixContactMin_of_openQ10 (r : OpenResearchLeaves2) (t : OpenTextbookLeaves4)
+TailO:2776  [dead reader sixContactMin_of_openQ10]      (l : OpenAddedLeavesQ10) (g : OpenGlue4) : ZInQ.SixContactMin :=
+TailO:2777  [dead reader sixContactMin_of_openQ10]    sixContactMin_of_openQ9 r t
+TailO:2778  [dead reader sixContactMin_of_openQ10]      ⟨l.cmOptimalEmbedding, l.thetaRatiosAlgebraic,
+TailO:2779  [dead reader sixContactMin_of_openQ10]        LeafQCheck.HM.base2_of_base3 r.r4 LeafQCheck.gammaStarGen_proof
+TailO:2780  [dead reader sixContactMin_of_openQ10]          (LeafQCheck.VB.valenceBound_of_formula l.valenceFormulaGammaStar) l.qmHauptmodulBase3,
+TailO:2781  [dead reader sixContactMin_of_openQ10]        l.qmClassNumberOne, l.senTwist,
+TailO:2782  [dead reader sixContactMin_of_openQ10]        l.finiteImageHT, l.t09SymmIsogenyExists, l.isogenyQuasiInverse, l.x6ConicModel, l.y3Connected,
+TailO:2783  [dead reader sixContactMin_of_openQ10]        l.qmAutCard, l.serreRigidity3, l.alFixedPoints, l.zariskiConnectedness, l.stQM,
+TailO:2784  [dead reader sixContactMin_of_openQ10]        l.valenceFormulaGammaStar, l.egaIV_8_8_2_ii, l.egaIV_8_10_5_xii, l.egaIV_17_7_8_ii⟩ g
+TailO:2785  [dead reader sixContactMin_of_openQ10]  
+TailO:2788  [example of dead reader sixContactMin_of_openQ5]  example : ∀ (_ : HDec.HSyn.OpenResearchLeaves2) (_ : HDec.HSyn.OpenTextbookLeaves4)
+TailO:2789  [example of dead reader sixContactMin_of_openQ5]      (_ : HDec.HSyn.OpenAddedLeavesQ5) (_ : HDec.HSyn.OpenGlue4), _root_.ZInQ.SixContactMin :=
+TailO:2790  [example of dead reader sixContactMin_of_openQ5]    HDec.HSyn.sixContactMin_of_openQ5
+TailO:2791  [example of dead reader sixContactMin_of_openQ5]  
+TailO:2792  [example of dead reader sixContactMin_of_openQ7]  example : ∀ (_ : HDec.HSyn.OpenResearchLeaves2) (_ : HDec.HSyn.OpenTextbookLeaves4)
+TailO:2793  [example of dead reader sixContactMin_of_openQ7]      (_ : HDec.HSyn.OpenAddedLeavesQ7) (_ : HDec.HSyn.OpenGlue4), _root_.ZInQ.SixContactMin :=
+TailO:2794  [example of dead reader sixContactMin_of_openQ7]    HDec.HSyn.sixContactMin_of_openQ7
+TailO:2795  [example of dead reader sixContactMin_of_openQ7]  
+TailO:2796  [example of dead reader sixContactMin_of_openQ8]  example : ∀ (_ : HDec.HSyn.OpenResearchLeaves2) (_ : HDec.HSyn.OpenTextbookLeaves4)
+TailO:2797  [example of dead reader sixContactMin_of_openQ8]      (_ : HDec.HSyn.OpenAddedLeavesQ8) (_ : HDec.HSyn.OpenGlue4), _root_.ZInQ.SixContactMin :=
+TailO:2798  [example of dead reader sixContactMin_of_openQ8]    HDec.HSyn.sixContactMin_of_openQ8
+TailO:2799  [example of dead reader sixContactMin_of_openQ8]  
+TailO:2800  [example of dead reader sixContactMin_of_openQ9]  example : ∀ (_ : HDec.HSyn.OpenResearchLeaves2) (_ : HDec.HSyn.OpenTextbookLeaves4)
+TailO:2801  [example of dead reader sixContactMin_of_openQ9]      (_ : HDec.HSyn.OpenAddedLeavesQ9) (_ : HDec.HSyn.OpenGlue4), _root_.ZInQ.SixContactMin :=
+TailO:2802  [example of dead reader sixContactMin_of_openQ9]    HDec.HSyn.sixContactMin_of_openQ9
+TailO:2803  [example of dead reader sixContactMin_of_openQ9]  
+TailO:2804  [example of dead reader sixContactMin_of_openQ10]  example : ∀ (_ : HDec.HSyn.OpenResearchLeaves2) (_ : HDec.HSyn.OpenTextbookLeaves4)
+TailO:2805  [example of dead reader sixContactMin_of_openQ10]      (_ : HDec.HSyn.OpenAddedLeavesQ10) (_ : HDec.HSyn.OpenGlue4), _root_.ZInQ.SixContactMin :=
+TailO:2806  [example of dead reader sixContactMin_of_openQ10]    HDec.HSyn.sixContactMin_of_openQ10
+TailO:2807  [example of dead reader sixContactMin_of_openQ10]  
+TailO:2810  [#print of dead reader sixContactMin_of_openQ5]  #print axioms HDec.HSyn.sixContactMin_of_openQ5
+TailO:2812  [#print of dead reader sixContactMin_of_openQ6]  #print axioms HDec.HSyn.sixContactMin_of_openQ6
+TailO:2813  [#print of dead reader sixContactMin_of_openQ7]  #print axioms HDec.HSyn.sixContactMin_of_openQ7
+TailO:2815  [#print of dead reader sixContactMin_of_openQ8]  #print axioms HDec.HSyn.sixContactMin_of_openQ8
+TailO:2816  [#print of dead reader sixContactMin_of_openQ9]  #print axioms HDec.HSyn.sixContactMin_of_openQ9
+TailO:2818  [#print of dead reader sixContactMin_of_openQ10]  #print axioms HDec.HSyn.sixContactMin_of_openQ10
+TailO:2878  [field OpenTextbookLeaves6.t23]    t23 : ∀ (p : ℕ) [Fact p.Prime], PkgI4.T23_FontaineClosure p
+TailO:2948  [assignment t23 in textbookLeaves4_of_open6]    t23 := t.t23
+TailO:3013  [dead reader sixContactMin_of_open6_poincare]  /-- **The other choice for T8** (goal (b)): leaf-fold5's textbook bundle (with `poincareComplement`) and leaf-fold5's
+TailO:3014  [dead reader sixContactMin_of_open6_poincare]  glue bundle (with `simpleImageIsogeny`): 26 + 21 + 20 + 2 = 69 fields, glue 2. T8 is the kernel's
+TailO:3015  [dead reader sixContactMin_of_open6_poincare]  `ZInQ.Contrib.AVB1.poincareReducibility_of_simpleImage`. -/
+TailO:3016  [dead reader sixContactMin_of_open6_poincare]  theorem sixContactMin_of_open6_poincare (r : OpenResearchLeaves5) (t : OpenTextbookLeaves5)
+TailO:3017  [dead reader sixContactMin_of_open6_poincare]      (l : OpenAddedLeaves6) (g : OpenGlue5) : ZInQ.SixContactMin :=
+TailO:3018  [dead reader sixContactMin_of_open6_poincare]    sixContactMin_of_open6 r
+TailO:3019  [dead reader sixContactMin_of_open6_poincare]      { t3Surj := t.t3Surj, t4 := t.t4, t5 := t.t5, homFreeFiniteAlgClosed := t.homFreeFiniteAlgClosed,
+TailO:3020  [dead reader sixContactMin_of_open6_poincare]        charPolyIndepOfEllAlgClosed := t.charPolyIndepOfEllAlgClosed,
+TailO:3021  [dead reader sixContactMin_of_open6_poincare]        t8 := _root_.ZInQ.Contrib.AVB1.poincareReducibility_of_simpleImage t.poincareComplement g.simpleImageIsogeny,
+TailO:3022  [dead reader sixContactMin_of_open6_poincare]        homLatticeCorr := t.homLatticeCorr, t11bExists := t.t11bExists, t23 := t.t23, t24 := t.t24,
+TailO:3023  [dead reader sixContactMin_of_open6_poincare]        t27 := t.t27, t33 := t.t33, dimJacobianEqGenus := t.dimJacobianEqGenus,
+TailO:3024  [dead reader sixContactMin_of_open6_poincare]        t35 := t.t35, normalModelOfFunctionFieldQ := t.normalModelOfFunctionFieldQ,
+TailO:3025  [dead reader sixContactMin_of_open6_poincare]        normalCurveSmoothQ := t.normalCurveSmoothQ, geomConnectedOfConstantFieldQ := t.geomConnectedOfConstantFieldQ,
+TailO:3026  [dead reader sixContactMin_of_open6_poincare]        x0Transitive := t.x0Transitive, neronSchemeExtensionExists := t.neronSchemeExtensionExists }
+TailO:3027  [dead reader sixContactMin_of_open6_poincare]      l ⟨g.modelCoordinateResidue⟩ (G0Split.r20Lower_of_r20 r.r20)
+TailO:3028  [dead reader sixContactMin_of_open6_poincare]  
+TailO:3064  [example of dead reader sixContactMin_of_open6_poincare]  example : ∀ (_ : HDec.HSyn.OpenResearchLeaves5) (_ : HDec.HSyn.OpenTextbookLeaves5)
+TailO:3065  [example of dead reader sixContactMin_of_open6_poincare]      (_ : HDec.HSyn.OpenAddedLeaves6) (_ : HDec.HSyn.OpenGlue5), _root_.ZInQ.SixContactMin :=
+TailO:3066  [example of dead reader sixContactMin_of_open6_poincare]    HDec.HSyn.sixContactMin_of_open6_poincare
+TailO:3067  [example of dead reader sixContactMin_of_open6_poincare]  
+TailO:3076  [#print of dead reader sixContactMin_of_open6_poincare]  #print axioms HDec.HSyn.sixContactMin_of_open6_poincare
+TailX:106  [field OpenResearchLeaves7.r20]    r20 : ZInQ.DefFaltings.R20_FaltingsLemma5
+TailX:138  [field OpenTextbookLeaves7.bdRInvariants]    /-- hodge-split, H-32: `B_dR^{G_{ℚ_p}} = ℚ_p` (Fontaine, Astérisque 223 Exp. II; replaces `t23`). -/
+TailX:139  [field OpenTextbookLeaves7.bdRInvariants]    bdRInvariants : ∀ (p : ℕ) [Fact p.Prime], _root_.ZInQ.Contrib.HodgeSplit.BdRInvariants p
+TailX:218  [assignment r20 in researchLeaves5_of_open7]    r20 := r.r20
+TailX:234  [assignment t23 in textbookLeaves6_of_open7]    t23 := HodgeLF7.t23 (_root_.ZInQ.Contrib.HodgeSplit.t23_all_of_bdrInvariants t.bdRInvariants)
+TailZ11:28  [field OpenTextbookLeaves10.bdRInvariants]    bdRInvariants : ∀ (p : ℕ) [Fact p.Prime], _root_.ZInQ.Contrib.HodgeSplit.BdRInvariants p
+TailZ11:48  [assignment bdRInvariants in textbookLeaves9_of_open10]    bdRInvariants := t.bdRInvariants
+TailZ15:121  [assignment faltingsLemma5BC in researchLeaves9_of_open10]    faltingsLemma5BC := r.faltingsLemma5BC
+TailZ23:660  [field OpenResearchLeaves14.raynaudKernelBound]    /-- c-to-printed, printed form: Raynaud's bound on the kernel term in Faltings' Lemma 5 (locator UNVERIFIED). -/
+TailZ23:661  [field OpenResearchLeaves14.raynaudKernelBound]    raynaudKernelBound : _root_.CToPrinted.RaynaudKernelBound
+TailZ23:801  [assignment faltingsLemma5BC in researchLeaves9_of_open14]    faltingsLemma5BC := _root_.CToPrinted.faltingsLemma5BC_of_printed r.faltingsLemma5Printed r.raynaudKernelBound
+TailZ4:99  [field OpenResearchLeaves8.faltingsLemma5BC]    /-- height-split, H-16: Faltings 1983 Lemma 5 (semistable form) over every number field `L ⊇ K`, replaces
+TailZ4:100  [field OpenResearchLeaves8.faltingsLemma5BC]    `r20`. -/
+TailZ4:101  [field OpenResearchLeaves8.faltingsLemma5BC]    faltingsLemma5BC : _root_.ZInQ.HeightSplit.FaltingsLemma5BC
+TailZ4:120  [field OpenTextbookLeaves8.bdRInvariants]    bdRInvariants : ∀ (p : ℕ) [Fact p.Prime], _root_.ZInQ.Contrib.HodgeSplit.BdRInvariants p
+TailZ4:156  [dead reader heightLeaves_of8]  /-- Height-split's leaf bundle from the new research fields and N1 (from `neronSchemeExtensionExists`). -/
+TailZ4:157  [dead reader heightLeaves_of8]  theorem heightLeaves_of8 (r : OpenResearchLeaves8) (t : OpenTextbookLeaves8) :
+TailZ4:158  [dead reader heightLeaves_of8]      _root_.ZInQ.HeightSplit.HeightLeaves where
+TailZ4:159  [dead reader heightLeaves_of8]    n1 := _root_.ZInQ.Contrib.NeronC.neronModelExists_of_extension t.neronSchemeExtensionExists
+TailZ4:160  [dead reader heightLeaves_of8]    ss1 := r.semistableReductionThm
+TailZ4:161  [dead reader heightLeaves_of8]    ss2 := r.semistableNeronBaseChange
+TailZ4:162  [dead reader heightLeaves_of8]    ss3 := r.semistablePersists
+TailZ4:163  [dead reader heightLeaves_of8]    bost := r.bostLowerBound
+TailZ4:164  [dead reader heightLeaves_of8]    javanpeykar := r.javanpeykarBound
+TailZ4:165  [dead reader heightLeaves_of8]    faltings5 := r.faltingsLemma5BC
+TailZ4:166  [dead reader heightLeaves_of8]    pazuki := r.pazukiCor13Upper
+TailZ4:167  [dead reader heightLeaves_of8]    gaudronRemond := r.gaudronRemondThm14
+TailZ4:168  [dead reader heightLeaves_of8]  
+TailZ4:169  [dead reader heightRows_of8]  /-- The six height rows from height-split's leaves and T35 (av-split's `h38` from the textbook fields). -/
+TailZ4:170  [dead reader heightRows_of8]  theorem heightRows_of8 (r : OpenResearchLeaves8) (t : OpenTextbookLeaves8) :
+TailZ4:171  [dead reader heightRows_of8]      _root_.ZInQ.LeafPush2.R18_Javanpeykar ∧ _root_.ZInQ.DefFaltings.R19_GaudronRemond ∧
+TailZ4:172  [dead reader heightRows_of8]        _root_.ZInQ.DefFaltings.R20_FaltingsLemma5 ∧ _root_.ZInQ.DefFaltings.R21_Bost ∧
+TailZ4:173  [dead reader heightRows_of8]        _root_.ZInQ.LeafPush2.R22_Pazuki ∧ _root_.ZInQ.DefFaltings.StableHeightFinite :=
+TailZ4:174  [dead reader heightRows_of8]    _root_.ZInQ.HeightGlue.heightRows_of_t35 (heightLeaves_of8 r t)
+TailZ4:175  [dead reader heightRows_of8]      (_root_.AvSplit.Final.h38 t.uniformizationLeafAll t.mumfordTorsionAlgClosed)
+TailZ4:176  [dead reader heightRows_of8]  
+TailZ4:231  [assignment r20 in researchLeaves7_of_open8]    r20 := (heightRows_of8 r t).2.2.1
+TailZ4:250  [assignment bdRInvariants in textbookLeaves7_of_open8]    bdRInvariants := t.bdRInvariants
+TailZ9:53  [field OpenResearchLeaves9.faltingsLemma5BC]    /-- height-split, H-16: Faltings 1983 Lemma 5 (semistable form) over every number field `L ⊇ K`, replaces
+TailZ9:54  [field OpenResearchLeaves9.faltingsLemma5BC]    `r20`. -/
+TailZ9:55  [field OpenResearchLeaves9.faltingsLemma5BC]    faltingsLemma5BC : _root_.ZInQ.HeightSplit.FaltingsLemma5BC
+TailZ9:84  [field OpenTextbookLeaves9.bdRInvariants]    bdRInvariants : ∀ (p : ℕ) [Fact p.Prime], _root_.ZInQ.Contrib.HodgeSplit.BdRInvariants p
+TailZ9:122  [assignment faltingsLemma5BC in researchLeaves8_of_open9]    faltingsLemma5BC := r.faltingsLemma5BC
+TailZ9:138  [assignment bdRInvariants in textbookLeaves8_of_open9]    bdRInvariants := t.bdRInvariants

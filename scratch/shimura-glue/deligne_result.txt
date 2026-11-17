@@ -1,0 +1,10 @@
+'ShimuraSplit.y3Connected_of_deligne' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShimuraGlue.printed_of_deligneComponentsY3' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShimuraGlue.printed_of_deligneComponentsX6' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShimuraGlue.ofQ_eq_ofInt' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShimuraGlue.deligneComponentsY3_of_printed' depends on axioms: [propext, Classical.choice, Quot.sound]
+'ShimuraGlue.deligneComponentsX6_of_printed' depends on axioms: [propext, Classical.choice, Quot.sound]
+
+real	0m11.594s
+user	0m25.930s
+sys	0m2.362s

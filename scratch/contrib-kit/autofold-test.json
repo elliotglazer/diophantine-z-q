@@ -1,0 +1,7 @@
+{"name": "autofold-test",
+ "imports": [],
+ "discharges": [
+   {"field": "quotientP1Coordinate", "proof": "sorry"},
+   {"field": "cartierSmooth", "proof": "{n}.testLeaf",
+    "leaves": [{"name": "testLeaf", "type": "_root_.AVGlue.CartierSmooth", "doc": "test leaf (autofold mechanics only)",
+                "kind": "published", "flag": "", "source": "test"}]}]}

@@ -1,0 +1,71 @@
+closure size 72551
+HDec.HSyn.ResearchLeaves.r8: false
+HDec.HSyn.ResearchLeaves.r6: false
+ReductSplit.grothendieckMonodromy_final': true
+ReductGlue.raynaudCriterion_leaves: true
+ReductSplit.raynaudCriterion_of_leaves: true
+ReductSplit.grothendieckMonodromy_of_leaves: true
+PkgI2.D2_fixed_of_raynaud: false
+PkgI2.goodReduction_of_QM_rational3': false
+PkgI2.goodReduction_of_QM_rational3_of_alg: false
+GlueA6Alg.goodReduction_of_QM_rational3_of_alg: false
+G0ModField.KernelField.kernelFieldExists_of_split'': false
+ReductSplit.SemistableUnipotent: true
+ReductGlue.SemistableUnipotentSH: false
+TYPEUSES ReductSplit.SemistableUnipotent :: HDec.HSyn.OpenResearchLeaves10.semistableUnipotent proj=true
+TYPEUSES PkgI2.RaynaudCriterion :: HDec.G0ModField.KernelField.kernelFieldExists_of_leaves_FS5 proj=false
+TYPEUSES PkgI2.RaynaudCriterion :: HDec.G0ModField.KernelField.kernelFieldExists_of_split' proj=false
+TYPEUSES PkgI2.GrothendieckMonodromy :: HDec.HSyn.grothendieckMonodromy_ofK5 proj=false
+TYPEUSES PkgI2.RaynaudCriterion :: HDec.HSyn.OpenResearchLeaves2.mk proj=false
+TYPEUSES PkgI2.GrothendieckMonodromy :: HDec.HSyn.OpenResearchLeaves2.mk proj=false
+TYPEUSES PkgI2.RaynaudCriterion :: HDec.HSyn.OpenResearchLeaves2.r6 proj=true
+TYPEUSES PkgI2.GrothendieckMonodromy :: HDec.HSyn.OpenResearchLeaves7.r8 proj=true
+TYPEUSES PkgI2.RaynaudCriterion :: HDec.HSyn.raynaudCriterion_ofK5 proj=false
+TYPEUSES PkgI2.GrothendieckMonodromy :: ReductSplit.grothendieckMonodromy_final' proj=false
+TYPEUSES ReductSplit.SemistableUnipotent :: ReductSplit.grothendieckMonodromy_final' proj=false
+TYPEUSES PkgI2.RaynaudCriterion :: HDec.HSyn.OpenResearchLeaves9.mk proj=false
+TYPEUSES ReductSplit.SemistableUnipotent :: HDec.HSyn.OpenResearchLeaves9.mk proj=false
+TYPEUSES PkgI2.RaynaudCriterion :: HDec.HSyn.OpenResearchLeaves5.mk proj=false
+TYPEUSES PkgI2.GrothendieckMonodromy :: HDec.HSyn.OpenResearchLeaves5.mk proj=false
+TYPEUSES PkgI2.GrothendieckMonodromy :: HDec.HSyn.OpenResearchLeaves5.r8 proj=true
+TYPEUSES PkgI2.RaynaudCriterion :: HDec.G0ModField.KernelField.kernelFieldExists_of_split proj=false
+TYPEUSES PkgI2.RaynaudCriterion :: HDec.PkgI2.goodReduction_of_QM_rational3 proj=false
+TYPEUSES PkgI2.RaynaudCriterion :: ReductSplit.raynaudCriterion_final proj=false
+TYPEUSES ReductSplit.SemistableUnipotent :: ReductSplit.raynaudCriterion_final proj=false
+TYPEUSES PkgI2.RaynaudCriterion :: HDec.PkgI2.goodReduction_of_QM_rational3_of_alg proj=false
+TYPEUSES PkgI2.RaynaudCriterion :: ReductSplit.raynaudCriterion_of_leaves proj=false
+TYPEUSES ReductSplit.SemistableUnipotent :: ReductSplit.raynaudCriterion_of_leaves proj=false
+TYPEUSES ReductSplit.SemistableUnipotent :: HDec.HSyn.OpenResearchLeaves9.semistableUnipotent proj=true
+TYPEUSES PkgI2.RaynaudCriterion :: ObjBridge.raynaudCriterion_iff proj=false
+TYPEUSES PkgI2.RaynaudCriterion :: HDec.HSyn.modelG3G6_of_leaves3 proj=false
+TYPEUSES PkgI2.RaynaudCriterion :: HDec.HSyn.OpenResearchLeaves8.mk proj=false
+TYPEUSES PkgI2.GrothendieckMonodromy :: HDec.HSyn.OpenResearchLeaves8.mk proj=false
+TYPEUSES PkgI2.RaynaudCriterion :: HDec.HSyn.OpenResearchLeaves7.r6 proj=true
+TYPEUSES PkgI2.RaynaudCriterion :: HDec.HSyn.linkedTateLocal_of_leaves3 proj=false
+TYPEUSES PkgI2.RaynaudCriterion :: HDec.PkgI2.goodReduction_of_QM_rational3' proj=false
+TYPEUSES PkgI2.RaynaudCriterion :: HDec.HSyn.ResearchLeaves3.mk proj=false
+TYPEUSES PkgI2.GrothendieckMonodromy :: HDec.HSyn.ResearchLeaves3.mk proj=false
+TYPEUSES PkgI2.RaynaudCriterion :: ReductGlue.raynaudCriterion_leaves proj=false
+TYPEUSES ReductSplit.SemistableUnipotent :: ReductGlue.raynaudCriterion_leaves proj=false
+TYPEUSES PkgI2.RaynaudCriterion :: HDec.HSyn.LinkedTate.qmModelG3_of proj=false
+TYPEUSES PkgI2.GrothendieckMonodromy :: ReductSplit.grothendieckMonodromy_of_leaves proj=false
+TYPEUSES ReductSplit.SemistableUnipotent :: ReductSplit.grothendieckMonodromy_of_leaves proj=false
+TYPEUSES PkgI2.RaynaudCriterion :: HDec.LeafQM.AV.QML3.goodReduction proj=false
+TYPEUSES ReductSplit.SemistableUnipotent :: HDec.HSyn.OpenResearchLeaves12.mk proj=false
+TYPEUSES ReductSplit.SemistableUnipotent :: HDec.HSyn.OpenResearchLeaves11.mk proj=false
+TYPEUSES PkgI2.RaynaudCriterion :: HDec.HSyn.OpenResearchLeaves9.r6 proj=true
+TYPEUSES PkgI2.GrothendieckMonodromy :: ReductSplit.grothendieckMonodromy_final proj=false
+TYPEUSES ReductSplit.SemistableUnipotent :: ReductSplit.grothendieckMonodromy_final proj=false
+TYPEUSES ReductSplit.SemistableUnipotent :: HDec.HSyn.OpenResearchLeaves11.semistableUnipotent proj=true
+TYPEUSES PkgI2.RaynaudCriterion :: HDec.G0ModField.KernelField.kernelFieldExists_of_split'' proj=false
+TYPEUSES PkgI2.RaynaudCriterion :: HDec.HSyn.OpenResearchLeaves7.mk proj=false
+TYPEUSES PkgI2.GrothendieckMonodromy :: HDec.HSyn.OpenResearchLeaves7.mk proj=false
+TYPEUSES ReductSplit.SemistableUnipotent :: HDec.HSyn.OpenResearchLeaves10.mk proj=false
+TYPEUSES PkgI2.RaynaudCriterion :: HDec.G0ModField.KernelField.kernelFieldExists_of_pieces proj=false
+TYPEUSES PkgI2.GrothendieckMonodromy :: HDec.HSyn.OpenResearchLeaves2.r8 proj=true
+TYPEUSES PkgI2.GrothendieckMonodromy :: HDec.HSyn.OpenResearchLeaves8.r8 proj=true
+TYPEUSES ReductSplit.SemistableUnipotent :: HDec.HSyn.OpenResearchLeaves12.semistableUnipotent proj=true
+TYPEUSES PkgI2.RaynaudCriterion :: HDec.G0ModField.KernelField.kernelFieldExists_of_leaves proj=false
+TYPEUSES PkgI2.RaynaudCriterion :: HDec.HSyn.OpenResearchLeaves8.r6 proj=true
+TYPEUSES PkgI2.RaynaudCriterion :: HDec.G0ModField.KernelField.good_of_QML3 proj=false
+TYPEUSES PkgI2.RaynaudCriterion :: HDec.HSyn.OpenResearchLeaves5.r6 proj=true
