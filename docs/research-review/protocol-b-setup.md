@@ -577,12 +577,33 @@ on the PR. Dispatched kernel runs neither save the push-only kernel cache nor
 serve as push-run base evidence for later PR progress tables. Those tables can
 therefore report `not_measured`. This gate change preserves those limitations.
 
-**Deferred auto-merges require a manual step.** The review job does not poll for
-them, and there is no closed-PR or `workflow_run` handler. Once a maintainer
-confirms a deferred merge, they must open Actions and run both **Research checks**
-and **Kernel Lean build and audit** with branch **main**. The same applies if
-auto-merge was already enabled. `post-merge-manual.json` records this limitation
-in the gate artifact. A successful App check is not evidence of post-merge tests.
+**Deferred auto-merges have a separate recovery job.** The review job does not
+poll. After this revision is deployed on main, the existing schedule and
+Research/Kernel completion events wake `Recover deferred main checks`. It has
+Actions write access and read access to repository evidence, with no protected
+environment or provider/App secrets. It ignores the triggering workflow's branch,
+title and payload, and reloads actual GitHub state.
+
+The job uses `.github/protocol_b_main/baseline.json` to exclude historical merges.
+It requires a confirmed gate-actor merge and the authentic App acceptance and
+original deferred auto-merge request. It reconciles earlier run and artifact
+evidence before dispatching either check. Failed, expired or ambiguous evidence
+stays unresolved. A completed failed build is not verification success or a
+reason to repeat the dispatch automatically.
+
+A completed artifact upload preserves each intent before any dispatch. The job
+makes each request once on ref main, records the returned run and actual head,
+and preserves independent results if one request fails. Non-release merges can
+share a main run whose commit contains the merge. A changed current-manuscript
+manifest requires checks at the exact release merge commit; if main advanced
+before dispatch, the job reports the missing exact run for a maintainer decision.
+Its run summary distinguishes verification success, work in progress, failed
+checks and effects needing reconciliation. The original artifacts retain the
+full evidence. No new issue comments or paid reviews are created by this job.
+
+Historical `post-merge-manual.json` files remain unchanged. They record what the
+original review job did, rather than proof of a later dispatch. A successful
+App check is still not evidence that post-merge tests passed.
 
 For direct merges, `merge-result.json`, `merge-confirmation.json`, and the two
 `dispatch-*.json` receipts are retained with the review artifact. Each receipt
