@@ -922,3 +922,16 @@ consumes the automatic allowance; later model calls need a write collaborator's
 `/protocol-b review`. Admin decisions remain explicit, exact-head overrides.
 The existing required computation checks still apply. No model review is
 treated as formal verification.
+
+## Scheduling small documentation changes
+
+Until the kernel evidence-reuse workflow is deployed, hold an otherwise ready
+editorial merge while an authorized kernel-affecting PR with auto-merge enabled
+finishes its required kernel run. This avoids invalidating that branch for an
+unrelated README or credit edit. It does not waive any required check.
+
+The [kernel scope guide](../kernel-ci-scope.md#reusing-a-full-audit-after-an-unrelated-merge)
+describes reuse of a prior full PR audit when all kernel inputs are identical.
+It restores no build outputs, leaves post-merge main builds full, and does not
+replace the Lean profile's exact-head direct-run evidence. The editorial
+classifier and both reviewers' scope are unchanged by this optimization.
