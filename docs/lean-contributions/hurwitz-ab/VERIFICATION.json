@@ -1,0 +1,107 @@
+{
+  "schema": "hurwitz-ab-upstream-focused-verification/v1",
+  "fixed_upstream_source_parent": "581ab23c9e3c5b3af96086ff556a8d649c88a873",
+  "primary_source": "84a9f2e6773e3c15873f2ac1b18ebdf5439e03f0",
+  "compiler": "Lean 4.35.0 eb6cafb7290e8bd5f2937522d8d804f58f02bafc",
+  "mathlib": "56a005855ea17e0b0958f73ec801ae140b0a1679",
+  "source_build": {
+    "fresh_modules": 2,
+    "borrowed_project_objects": 0,
+    "exit_code": 0,
+    "seconds": 10.299,
+    "source_sha256": {
+      "ZInQKernel.Contrib.OneProof.TYZSquareOddness": "6f12bcea0784130bffb168dea9a7c3f34c35a894c736cbbcf1a5ca0d8b0653c0",
+      "ZInQKernel.Contrib.OneProof.TYZSquareOddness.Coordinates": "48d4fcf453ecc7e3ad1cbf85de4c4952a5a3acd1c68fa8732caf208d1ad63145"
+    },
+    "observed_warning_lines_in_focused_logs": {
+      "ZInQKernel.Contrib.OneProof.TYZSquareOddness": 0,
+      "ZInQKernel.Contrib.OneProof.TYZSquareOddness.Coordinates": 0
+    }
+  },
+  "complete_literal_checks": {
+    "A_full_literal_exists5Int_and_strict_norm": true,
+    "B_original_five_integrality_inputs_full_literal_exists5Int": true,
+    "actual_rational_Hamilton_carrier": true,
+    "closed_at_exports": true,
+    "no_new_predicate_alias": true,
+    "unconjugated_trace_signs_retained": true,
+    "check_source_sha256": "35495729df0f304ed28773e8e9a75452aef9b726e05e9bc2a639e92d58fdecce",
+    "raw_output_sha256": "f72c87a02b3725ffa5b00f9d6ef08c39b60cc74331dbeb5225238d6a1a76bc75",
+    "exit_code": 0
+  },
+  "axioms": {
+    "actual_prints": 4,
+    "each_exactly_standard_three": true,
+    "allowed": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ]
+  },
+  "selected_raw_replay": {
+    "same_three_module_set_replayed_twice_to_check_both_headlines": true,
+    "declaration_counts_not_summed": true,
+    "auditor_source_unchanged": true,
+    "runs": [
+      {
+        "literal_headline": "A",
+        "modules": 3,
+        "declarations_per_run": 23,
+        "raw_bodies_per_run": 23,
+        "runtime_skips": [],
+        "duplicate_bodies": 0,
+        "allowed_axioms_used": [
+          "Quot.sound",
+          "Classical.choice",
+          "propext"
+        ],
+        "full_literal_type": "∀ (q : Quaternion Rat),\n  Exists fun a =>\n    And\n      (Exists fun r =>\n        Exists fun s =>\n          Exists fun t =>\n            Exists fun u =>\n              Exists fun e =>\n                Eq a\n                  { re := instHSub.hSub r.cast (instHDiv.hDiv e.cast 2),\n                    imI := instHAdd.hAdd s.cast (instHDiv.hDiv e.cast 2),\n                    imJ := instHAdd.hAdd t.cast (instHDiv.hDiv e.cast 2),\n                    imK := instHAdd.hAdd u.cast (instHDiv.hDiv e.cast 2) })\n      (Rat.instLT.lt (MonoidWithZeroHom.funLike.coe Quaternion.normSq (instHSub.hSub q a)) 1)",
+        "auditor_sha256": "79096b836bce4c04735cc4ab2f6af21e207cb9b1b84fc46b959b55369787198a",
+        "spec_sha256": "b89244c8a27de5aa13ce2a95f9721812ff15449b38bff19b4fdc68b76a0dacf2",
+        "raw_log_sha256": "0ce61e6261336a16e13d67a19cb1a33a7117f5a77ec91b20f15e6c8fbe180425",
+        "report_sha256": "1264ce2216ee33a28b959be1ca8226b46e52006180fffa425e76e34a7bfab560",
+        "exit_code": 0,
+        "seconds": 7.32
+      },
+      {
+        "literal_headline": "B",
+        "modules": 3,
+        "declarations_per_run": 23,
+        "raw_bodies_per_run": 23,
+        "runtime_skips": [],
+        "duplicate_bodies": 0,
+        "allowed_axioms_used": [
+          "Quot.sound",
+          "Classical.choice",
+          "propext"
+        ],
+        "full_literal_type": "∀ (q : Quaternion Rat),\n  (Exists fun a => Eq (instHMul.hMul 2 q.re) a.cast) →\n    (Exists fun b => Eq (instHMul.hMul (-2) q.imI) b.cast) →\n      (Exists fun c => Eq (instHMul.hMul (-2) q.imJ) c.cast) →\n        (Exists fun s =>\n            Eq (Rat.instNeg.neg (instHAdd.hAdd (instHAdd.hAdd (instHAdd.hAdd q.re q.imI) q.imJ) q.imK)) s.cast) →\n          (Exists fun n => Eq (MonoidWithZeroHom.funLike.coe Quaternion.normSq q) n.cast) →\n            Exists fun r =>\n              Exists fun s =>\n                Exists fun t =>\n                  Exists fun u =>\n                    Exists fun e =>\n                      Eq q\n                        { re := instHSub.hSub r.cast (instHDiv.hDiv e.cast 2),\n                          imI := instHAdd.hAdd s.cast (instHDiv.hDiv e.cast 2),\n                          imJ := instHAdd.hAdd t.cast (instHDiv.hDiv e.cast 2),\n                          imK := instHAdd.hAdd u.cast (instHDiv.hDiv e.cast 2) }",
+        "auditor_sha256": "79096b836bce4c04735cc4ab2f6af21e207cb9b1b84fc46b959b55369787198a",
+        "spec_sha256": "8348eac39c9b90f004c071475e2747bcad4406ae5e8160cb64b63c967fbda2f9",
+        "raw_log_sha256": "178e02824b6162ac3e5063728857ff78964201901acf74d0889c49e8ba3aadb2",
+        "report_sha256": "7bf257bdd25eb43217c78f8b6dc86e234631627ce1bb27bae9c47c3e18a329c8",
+        "exit_code": 0,
+        "seconds": 7.361
+      }
+    ]
+  },
+  "warning_scope": "Focused logs are measured separately from the historical fork defining-module warning-bearing build; no warning-free whole-world claim.",
+  "original_primary_checks": "Historical input only, not fresh upstream admission",
+  "full_imported_library_raw_replay": "NOT_RUN; ordinary external imports and selected-body axiom closure are not whole-world replay",
+  "full_registry_CI_App_hP23_hfx_H10_acceptance": false,
+  "lattice_basis_closure_Ig_work_excluded": true,
+  "new_Lake_external_Lean_dependencies": 0,
+  "proof_code_vendored": false,
+  "public_command_rendering": "Portable/redacted descriptions, not literal private argv. Full original runtime receipts remain private.",
+  "kernel_adversarial_tests": {
+    "count": 18,
+    "exit_code": 0,
+    "seconds": 109.05,
+    "scope": "Actual unchanged auditor negative controls, not full project/CI"
+  },
+  "source_contract_tests": {
+    "count": 7,
+    "exit_code": 0,
+    "scope": "Current fixed-parent source checker tests, not App acceptance"
+  }
+}

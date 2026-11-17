@@ -1,0 +1,58 @@
+{
+  "schema": "hurwitz-ab-upstream-transfer/v1",
+  "fixed_upstream_source_parent": "581ab23c9e3c5b3af96086ff556a8d649c88a873",
+  "primary_fork_pr": "https://github.com/Deicyde/diophantine-z-q/pull/39",
+  "primary_source": "84a9f2e6773e3c15873f2ac1b18ebdf5439e03f0",
+  "primary_base": "2880fef1e827a05ab9238cd200e555c585f00e30",
+  "files": [
+    {
+      "primary_commit": "84a9f2e6773e3c15873f2ac1b18ebdf5439e03f0",
+      "primary_path": "ZInQKernel/Contrib/OneProof/TYZSquareOddness.lean",
+      "primary_sha256": "df1976150a817f91cd3f7ae5bf8267cf36092b3a3753d63d71784ec02cb85911",
+      "upstream_path": "ZInQKernel/Contrib/OneProof/TYZSquareOddness.lean",
+      "upstream_sha256": "6f12bcea0784130bffb168dea9a7c3f34c35a894c736cbbcf1a5ca0d8b0653c0",
+      "byte_identical": false,
+      "adaptation": "Missing defining import and namespace open removed; full literal output expansion; proof body unchanged"
+    },
+    {
+      "primary_commit": "84a9f2e6773e3c15873f2ac1b18ebdf5439e03f0",
+      "primary_path": "ZInQKernel/Contrib/OneProof/TYZSquareOddness/Coordinates.lean",
+      "primary_sha256": "48d4fcf453ecc7e3ad1cbf85de4c4952a5a3acd1c68fa8732caf208d1ad63145",
+      "upstream_path": "ZInQKernel/Contrib/OneProof/TYZSquareOddness/Coordinates.lean",
+      "upstream_sha256": "48d4fcf453ecc7e3ad1cbf85de4c4952a5a3acd1c68fa8732caf208d1ad63145",
+      "byte_identical": true,
+      "adaptation": "Unchanged concrete coordinate proof"
+    }
+  ],
+  "exact_original_predicate_reference": {
+    "namespace": "ZInQ.Contrib.TYZDecomp.H29Split",
+    "file": "ZInQKernel/Contrib/OneProof/TYZLemma29Mod2.lean",
+    "lines": [
+      256,
+      257
+    ],
+    "sha256": "9dede3a4b33925b153877cf9d49932e7d88b511dbc2d7f3f35f0ca24e3d1fbf8",
+    "literal": "∃ a b c d e : ℤ, q = ⟨a - e / 2, b + e / 2, c + e / 2, d + e / 2⟩",
+    "accepted_defining_module_present_upstream": false,
+    "defining_module_copied": false,
+    "surrogate_predicate_defined": false
+  },
+  "same_public_names": [
+    "TYZSquareOddness.hurwitz_norm_approximation",
+    "TYZSquareOddness.hurwitz_of_integral_trace_norm"
+  ],
+  "two_entry_proof_bodies_unchanged": true,
+  "unconjugated_trace_signs_unchanged": true,
+  "hamilton_carrier": "ℍ[ℚ]",
+  "new_external_Lean_or_Lake_dependencies": 0,
+  "vendored_proof_code": false,
+  "excluded_scope": [
+    "All right-lattice/basis/closure files",
+    "Fractional principality",
+    "Local-2/Un/adelic I(g) construction",
+    "hP23/hfx/H10 and registry closure"
+  ],
+  "primary_writer_ownership_unchanged": true,
+  "draft_only": true,
+  "old_original_source_and_receipts_preserved": true
+}
