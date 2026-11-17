@@ -111,6 +111,7 @@ class ScopeTests(unittest.TestCase):
                 root = Path(tmp)
                 (root / 'event.json').write_text(json.dumps(self.event))
                 env = {'GITHUB_EVENT_NAME': 'pull_request', 'GITHUB_EVENT_PATH': str(root / 'event.json'),
+                       'RUNNER_TEMP': str(root),
                        'GITHUB_REPOSITORY': 'x/y', 'GITHUB_OUTPUT': str(root / 'output'),
                        'GITHUB_STEP_SUMMARY': str(root / 'summary')}
                 with patch.dict(os.environ, env), patch.object(scope, 'api', side_effect=OSError('offline') if failed else self.api):
@@ -133,6 +134,10 @@ class ScopeTests(unittest.TestCase):
         self.assertIn('continue-on-error: true', steps[0])
         self.assertIn("if: github.event_name == 'pull_request'", steps[0])
         for step in steps[1:]:
+            if step.startswith('Preserve kernel scope decision\n'):
+                self.assertIn("github.event_name == 'pull_request'", step)
+                self.assertIn("steps.scope.outcome == 'success'", step)
+                continue
             self.assertIn("steps.scope.outcome != 'success' || steps.scope.outputs.full_build != 'false'", step)
 
 

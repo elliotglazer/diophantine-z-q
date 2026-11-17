@@ -4,7 +4,7 @@
   "scope": "Conditional original existential polynomial; no claim of a formalized explicit quartic or proved premises.",
   "files": {
     ".gitattributes": "d72cd1a01bce3da869df78301c170c8eff08ffb0bb39a3cedb263f1df138d399",
-    ".github/workflows/kernel-lean.yml": "a340919517c59da2c446ab3f7119377d9b4aa2cdc7760159cf93d5165cd7d745",
+    ".github/workflows/kernel-lean.yml": "d2b2c7d2846b8d9a31021d76dca859fffeee1a3c8a1fe4f95e5f4a50de6c7fb8",
     "ThirdParty/GreenTao/ChallengeDeps.lean": "996bfc179f93078686a6a805adfc072727bbad1b7dbb59a87b2a0adafdb9fafe",
     "ThirdParty/GreenTao/Submission.lean": "6c01d0d42973f587d95e1731860910584ddaba17b92c9a170c3d22ea882724df",
     "ThirdParty/GreenTao/Submission/ArithmeticProgression/Basic.lean": "9e3ac01ce10d186a1fbbb25202f8ce66fb8a0518563c09d91f5d4ddb719985b2",
@@ -942,13 +942,14 @@
     "scripts/check_target.py": "3217b013bf839c4166dfbbfe6fb560a2d3b56bc1408addbfc08646807dfa2e25",
     "scripts/kernel_base_report.py": "994453807d588cd255edaa5b7488268f73f15f0d97b5e49b0ecc5cda8a83273c",
     "scripts/kernel_diagnostics.py": "4be2262183922a8067e609e7b556d84fa0e0c63e8e83e871fe9d11e6351c973a",
-    "scripts/kernel_pr_scope.py": "e48da253fcab6d68be69f2dde5848797f12c82d3c727e3bf4fec10b7659c5712",
+    "scripts/kernel_pr_scope.py": "e4a8c55370fb31c612033a76e1df11319af5da7ecead04241837aa13dce7d51f",
     "scripts/print_axioms.lean": "dda22248b496bc767c9ae88b24d84d350d8bd21585a647b2d54eb61f13e552e0",
     "scripts/test_kernel_audit.py": "81e103c0f06f5840ddd64ff997288a703e69557e39f1779f66bbd8c3ce3b0469",
     "scripts/test_kernel_cache.py": "06551ff625de2ef2896841d035258a1666fc4dcefcec423b5eb6a332b5276030",
     "scripts/test_kernel_contract.py": "1f4641c5dcd96809f9a65857384b1b0ea981b680116b6d5e9ebedfd5afca8a45",
     "scripts/test_kernel_diagnostics.py": "60d11d4c647cfb31a89aa8285df310055df1c6690aaeb5bf6b1402239a504edd",
-    "scripts/test_kernel_pr_scope.py": "65883934ba125bdcd4b66328aaa3bd8721b9912316dd1c606d59d75c4c1c2dc9"
+    "scripts/test_kernel_pr_scope.py": "3ebb4cab680e3ad876fd1c5dee1f95edabf2ff55e3ef792d6567a228bdb02cd5",
+    "scripts/test_kernel_reuse.py": "9ca0a97a07ed3bbae2aba754965a9571364f831243bdbbff536aadf2080d4e39"
   },
   "targets": [
     {
