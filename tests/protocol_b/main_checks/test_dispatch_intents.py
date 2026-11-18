@@ -1,6 +1,6 @@
 import copy
 import unittest
-from dispatch_intents import operation_key, reconcile_intent
+from dispatch_intents import operation_key, reconcile_intent, confirmed_inert_execution
 
 class DispatchIntents(unittest.TestCase):
     def setUp(self):
@@ -38,11 +38,11 @@ class DispatchIntents(unittest.TestCase):
         self.job['steps'][0].update(conclusion='skipped',started_at=None)
         result=self.check();self.assertEqual(result['state'],'dispatcher_explicitly_not_started')
         self.assertTrue(result['safe_absence'])
-    def test_skip_with_missing_or_present_start_is_uncertain(self):
+    def test_explicit_skip_is_inert_even_with_github_timestamp_or_missing_timestamp(self):
         self.job['steps'][0]['conclusion']='skipped'
-        self.assertFalse(self.check()['safe_absence'])
+        self.assertTrue(self.check()['safe_absence'])
         self.job['steps'][0].pop('started_at')
-        self.assertFalse(self.check()['safe_absence'])
+        self.assertTrue(self.check()['safe_absence'])
     def test_running_executor_is_not_safe_to_take_over(self):
         self.job['status']='in_progress'
         self.job['steps'][0].update(conclusion='skipped',started_at=None)
@@ -110,6 +110,50 @@ class DispatchIntents(unittest.TestCase):
     def test_actual_main_workflow_path_suffix_preserves_run_evidence(self):
         self.run['path']+='@main'
         self.assertEqual(self.check(self.receipt)['state'],'response_and_actual_run_confirmed')
+
+
+    def inert_record(self):
+        receipt={k:v for k,v in self.receipt.items() if k!='workflow_run_id'}
+        receipt.update(status='not_sent',request_sent=False)
+        return {'publisher':{'id':10,'run_attempt':1},'job':copy.deepcopy(self.job),
+                'executor_terminal':True,'dispatch_step':'Dispatch Kernel',
+                'results_persisted_after_dispatch':True,
+                'operations':{self.key:{'intent':copy.deepcopy(self.intent),'receipt':receipt}}}
+
+    def test_inert_record_retires_without_claiming_any_run_search(self):
+        record=self.inert_record()
+        self.assertTrue(confirmed_inert_execution(record))
+        item=record['operations'][self.key]
+        result=reconcile_intent(self.op,item['intent'],item['receipt'],record['job'],
+            dispatch_step='Dispatch Kernel',current_runs=[],enumeration_complete=False,
+            results_persisted_after_dispatch=True)
+        self.assertFalse(result['safe_absence'])
+        self.assertFalse(result['dispatch_authorized'])
+
+    def test_inert_retirement_rejects_uncertain_positive_or_misbound_records(self):
+        for mutate in (
+            lambda e:e.update(results_persisted_after_dispatch=False),
+            lambda e:e.update(executor_terminal=False),
+            lambda e:e['publisher'].update(run_attempt=2),
+            lambda e:e['publisher'].update(id=11),
+            lambda e:e['job'].update(status='in_progress'),
+            lambda e:e['operations'][self.key].update(receipt=None),
+            lambda e:e['operations'][self.key]['receipt'].update(request_sent=True),
+            lambda e:e['operations'][self.key]['receipt'].update(workflow_run_id=20),
+            lambda e:e['operations'][self.key]['receipt'].update(response={}),
+            lambda e:e['operations'][self.key]['intent'].update(request={'ref':'topic'}),
+            lambda e:e['operations'][self.key]['receipt'].update(recovery_attempt=2),
+            lambda e:e.update(operations={})):
+            record=self.inert_record();mutate(record)
+            self.assertFalse(confirmed_inert_execution(record),str(record))
+
+    def test_every_operation_must_be_inert_to_retire_executor(self):
+        record=self.inert_record();op=self.op|{'workflow':'research-checks.yml'}
+        key=operation_key(op);item=copy.deepcopy(record['operations'][self.key])
+        item['intent'].update(operation=op,operation_key=key)
+        item['receipt'].update(operation_key=key,request_sent=True,status='sending')
+        record['operations'][key]=item
+        self.assertFalse(confirmed_inert_execution(record))
 
 
 if __name__=='__main__': unittest.main()

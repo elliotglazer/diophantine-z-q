@@ -591,6 +591,52 @@ evidence before dispatching either check. Failed, expired or ambiguous evidence
 stays unresolved. A completed failed build is not verification success or a
 reason to repeat the dispatch automatically.
 
+Discovery uses an authenticated `protocol-b-main-progress` artifact. It records
+which main commits and workflow-run numbers have been examined, all pending
+PRs, and original executions that still need reconciliation. It is not proof
+that a check passed and cannot authorize a dispatch. The reader verifies the
+original first-attempt main execution, job steps, repository, archive digest
+and deployment baseline. Missing or invalid progress causes bounded
+rediscovery from the baseline. The code manifest checks integrity; the trust
+root remains protected main and the actual GitHub execution records.
+
+Each preparation and dispatch phase has a 60-read cap and checks that at least
+200 API requests remain before it begins. Preparation visits at most four new
+main commits, two pending PRs and eight retained executions. New discovery
+pauses when 40 items await investigation. Pending work rotates so one lost
+receipt does not prevent examining the other original executions. Recovery-run
+discovery uses the unfiltered workflow list and requires contiguous run-number
+coverage; missing numbers never prove absence. Main-check searches split
+filtered time ranges before GitHub's 1,000-result ceiling. Unvisited windows
+and immutable run identities remain in the authenticated progress record for
+the next wake. Searches re-read the last boundary second and new time range;
+they never reuse a saved run status or conclusion. At most ten listing requests,
+four new commit comparisons and two current run outcomes are read per search,
+within the stage's total cap. Unknown identities, failed reads and incomplete
+windows never establish absence. A complete empty search is required before
+intent reconciliation can permit a dispatch.
+
+A fresh successful run can positively establish coverage while older discovery
+is incomplete. The record identifies that witness, other known matching run IDs,
+which outcomes were not rechecked, and any observed failures or lookup errors.
+This does not claim all matching runs passed. It authorizes no dispatch or retry.
+Exact-release coverage still requires the exact merge commit. An inventory above
+10,000 retained identities requires investigation instead of dropping evidence.
+The dispatch phase rechecks only the uploaded operation set and its current
+search progress, not all repository history. Empty plans do not upload a
+dispatch-intent artifact.
+
+Recovery is first-attempt-only, including its workflow guard and entry points.
+An ordinary rerun cannot create a new dispatch behind a saved discovery cursor.
+A terminal job cancelled before runner assignment, an explicitly skipped
+dispatch, or a confirmed failed prerequisite before the intent upload is inert.
+An active executor, a missing step after runner loss, or a possible send without
+a confirmed result remains unresolved. Recovery does not infer absence from a
+missing artifact or from an elapsed timeout. A rejected HTTP response retains
+its status, GitHub request ID when supplied, a bounded JSON error message and
+the response-body hash. The receipt does not treat a 4xx or 5xx response as
+proof of absence, and the transport does not retry the request.
+
 A completed artifact upload preserves each intent before any dispatch. The job
 makes each request once on ref main, records the returned run and actual head,
 and preserves independent results if one request fails. Non-release merges can
@@ -600,6 +646,9 @@ before dispatch, the job reports the missing exact run for a maintainer decision
 Its run summary distinguishes verification success, work in progress, failed
 checks and effects needing reconciliation. The original artifacts retain the
 full evidence. No new issue comments or paid reviews are created by this job.
+
+This recovery lane covers deferred auto-merges only. An uncertain inline
+dispatch after a direct merge remains outside it.
 
 Historical `post-merge-manual.json` files remain unchanged. They record what the
 original review job did, rather than proof of a later dispatch. A successful

@@ -38,8 +38,8 @@ class Planner(unittest.TestCase):
         self.mocks=[p.start() for p in self.patchers]
         for p in self.patchers:self.addCleanup(p.stop)
     def result(self,**kw):
-        r=planner.prepare_recovery(self.api,self.repo,self.baseline,program_commit=self.program,
-            recovery_run=50,recovery_attempt=1,**kw)
+        r=planner.plan_recovery(self.api,self.repo,self.baseline,program_commit=self.program,
+            recovery_run=50,recovery_attempt=1,observed="b"*40,previous=self.previous,queue=self.queue,**kw)
         self.assertFalse(r['dispatch_authorized']);return r
     def prior_intent(self):
         op={'repository':self.repo,'number':7,'head':'a'*40,'merge':'b'*40,'workflow':'kernel-lean.yml','ref':'main'}
@@ -81,9 +81,6 @@ class Planner(unittest.TestCase):
             'recovery_run':40,'recovery_attempt':1,'workflow_run_id':99}
         r=self.result();self.assertEqual(len(r['operations']),1)
         self.assertEqual(r['observations'][1]['prior_executions'][0]['state'],'returned_run_not_reconciled')
-    def test_retained_pending_ids_are_passed_to_complete_queue_scan(self):
-        self.previous['pending_numbers']=[2,7]
-        self.result();self.assertEqual(self.mocks[1].call_args.kwargs['pending_numbers'],[2,7])
     def test_no_authenticated_deferred_source_means_no_plan(self):
         self.source['eligible']=False
         r=self.result();self.assertFalse(r['operations']);self.assertEqual(len(r['unresolved']),2)
@@ -111,13 +108,33 @@ class Planner(unittest.TestCase):
         self.mocks[3].side_effect=[ValueError('unavailable source'),self.source]
         r=self.result();self.assertEqual([o['operation']['workflow'] for o in r['operations']],['kernel-lean.yml'])
         self.assertEqual(r['unresolved'][0]['workflow'],'research-checks.yml')
-    def test_incomplete_prior_execution_enumeration_never_returns_partial_plan(self):
-        self.mocks[0].side_effect=ValueError('incomplete listing')
-        with self.assertRaisesRegex(ValueError,'incomplete'):self.result()
-        self.mocks[1].assert_not_called()
     def test_actual_main_is_recorded_in_every_intent(self):
         r=self.result();self.assertEqual(r['observed_main'],'b'*40)
         self.assertTrue(all(o['planned_main']=='b'*40 for o in r['operations']))
 
+
+    def test_incomplete_search_is_retained_without_authorizing_a_plan(self):
+        original={'pending_windows':[{'start':'old','end':'later'}]}
+        updated={'pending_windows':[{'start':'remaining','end':'now'}]}
+        op={'repository':self.repo,'number':7,'head':'a'*40,'merge':'b'*40,
+            'workflow':'kernel-lean.yml','ref':'main'}
+        key=operation_key(op)
+        self.classified.update(classification={'state':'incomplete_enumeration'},search=updated)
+        result=self.result(searches={key:original})
+        self.assertFalse(result['operations'])
+        self.assertEqual(self.mocks[-1].call_args.kwargs['cursor'],original)
+        self.assertEqual(result['existing_searches'][key],updated)
+        self.mocks[3].assert_not_called()
+
+    def test_positive_witness_does_not_discard_other_observed_outcomes(self):
+        self.classified.update(classification={'state':'verification_passed','verification_witness':12},
+            observations=[{'state':'existing_runs_need_attention','run_ids':[11]},
+                          {'state':'verification_passed','run_ids':[12]}],
+            unresolved=[{'run':10,'reason':'lookup unavailable'}])
+        result=self.result()
+        self.assertFalse(result['operations'])
+        for observation in result['observations']:
+            self.assertEqual(observation['existing_observations'],self.classified['observations'])
+            self.assertEqual(observation['existing_search_unresolved'],self.classified['unresolved'])
 
 if __name__=='__main__':unittest.main()

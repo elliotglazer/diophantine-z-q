@@ -3,7 +3,7 @@ import unittest
 from urllib.parse import quote
 import test_discover_intents as fixtures
 from enumerate_intents import enumerate_recovery_intents
-from discover_intents import JOB, DISPATCH
+from discover_intents import JOB, UPLOAD, DISPATCH
 
 
 class EnumerateIntents(unittest.TestCase):
@@ -40,10 +40,10 @@ class EnumerateIntents(unittest.TestCase):
         self.f.artifacts.clear();self.f.records[self.f.art_path]['total_count']=0
         self.f.job['steps'][1].update(conclusion='skipped',started_at=None)
         r=self.result();self.assertFalse(r['unresolved']);self.assertEqual(r['excluded'][0]['reason'],'dispatcher_explicitly_never_started')
-    def test_missing_start_timestamp_does_not_prove_absence(self):
+    def test_explicit_skip_does_not_require_a_null_start_timestamp(self):
         self.f.artifacts.clear();self.f.records[self.f.art_path]['total_count']=0
         self.f.job['steps'][1].update(conclusion='skipped');self.f.job['steps'][1].pop('started_at')
-        self.assertTrue(self.result()['unlocated_effects'])
+        self.assertFalse(self.result()['unlocated_effects'])
     def test_active_job_with_no_artifact_is_not_safe_to_take_over(self):
         self.f.job['status']='in_progress';self.f.artifacts.clear();self.f.records[self.f.art_path]['total_count']=0
         self.assertTrue(self.result()['unlocated_effects'])
@@ -90,6 +90,64 @@ class EnumerateIntents(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,'identity'):self.result()
     def test_excessive_attempt_count_is_unresolved(self):
         self.f.publisher['run_attempt']=33
+        self.assertTrue(self.result()['unlocated_effects'])
+
+
+    def no_artifacts(self):
+        self.f.artifacts.clear(); self.f.records[self.f.art_path]['total_count'] = 0
+
+    def test_real_github_skipped_step_shape_with_timestamp_is_inert(self):
+        # Fields from job 134330004196, run 44152406835 attempt 2, step 10.
+        # Adapt only the name/number to the recovery dispatch; it was a kernel job.
+        self.no_artifacts()
+        self.f.job['steps'][1] = {'name': DISPATCH, 'number': 4, 'status': 'completed',
+            'conclusion': 'skipped', 'started_at': '2026-11-17T20:08:14Z',
+            'completed_at': '2026-11-17T20:08:14Z'}
+        self.assertFalse(self.result()['unlocated_effects'])
+
+    def test_terminal_cancelled_job_without_runner_is_inert(self):
+        self.no_artifacts()
+        self.f.job.update(status='completed', conclusion='cancelled', runner_id=0, steps=[])
+        result = self.result()
+        self.assertFalse(result['unlocated_effects'])
+        self.assertEqual(result['excluded'][0]['reason'], 'cancelled_before_runner_assignment')
+        self.f.job['runner_id'] = 42
+        self.assertTrue(self.result()['unlocated_effects'])
+        self.f.job.pop('runner_id')
+        self.assertTrue(self.result()['unlocated_effects'])
+
+    def test_failed_upload_and_unstarted_dispatch_do_not_poison_future_work(self):
+        self.no_artifacts()
+        self.f.job['steps'][1].update(status='pending', conclusion=None, started_at=None, completed_at=None)
+        for conclusion in ('failure', 'cancelled', 'skipped'):
+            with self.subTest(conclusion=conclusion):
+                self.f.job['steps'][0].update(status='completed', conclusion=conclusion)
+                result = self.result()
+                self.assertFalse(result['unlocated_effects'])
+                self.assertEqual(result['excluded'][0]['reason'], 'intent_upload_did_not_succeed')
+        self.f.job['steps'][0].update(conclusion='success')
+        self.assertTrue(self.result()['unlocated_effects'])
+
+    def test_failed_bootstrap_without_upload_or_dispatch_is_inert(self):
+        self.no_artifacts()
+        self.f.job['steps'] = [{'name': 'Load recovery code from the actual main execution',
+            'number': 1, 'status': 'completed', 'conclusion': 'failure'}]
+        self.assertFalse(self.result()['unlocated_effects'])
+        self.f.job['steps'][0]['status'] = 'in_progress'
+        self.assertTrue(self.result()['unlocated_effects'])
+
+    def test_started_dispatch_never_falls_back_to_failed_prerequisite(self):
+        self.no_artifacts()
+        self.f.job['steps'][0].update(conclusion='failure')
+        self.assertTrue(self.result()['unlocated_effects'])
+        self.f.job['steps'][1].update(status='pending', conclusion=None, started_at=None)
+        self.f.job['status'] = 'in_progress'
+        self.assertTrue(self.result()['unlocated_effects'])
+
+    def test_ambiguous_step_records_do_not_prove_absence(self):
+        self.no_artifacts()
+        self.f.job['steps'][1].update(conclusion='skipped')
+        self.f.job['steps'].append(copy.deepcopy(self.f.job['steps'][1]))
         self.assertTrue(self.result()['unlocated_effects'])
 
 

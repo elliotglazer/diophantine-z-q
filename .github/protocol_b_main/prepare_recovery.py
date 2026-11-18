@@ -20,29 +20,19 @@ def main_tip(api):
     return sha
 
 
-def existing_evidence(api, operation, merged_at, observed_main, exact_release):
-    path='actions/workflows/'+operation['workflow']+'/runs?branch=main&created='+quote('>='+merged_at,safe='')
-    runs=pages(api,path,'workflow_runs',identity='id')
-    comparisons={}
-    for run in runs:
-        head=run.get('head_sha')
-        if isinstance(head,str) and SHA.fullmatch(head) and head!=operation['merge'] and not exact_release:
-            comparisons[head]=api.json(f"compare/{operation['merge']}...{head}")
-    state=classify_existing_runs(operation,runs,comparisons,merged_at=merged_at,
-        observed_main=observed_main,exact_release=exact_release,enumeration_complete=True)
-    return {'classification':state,'runs':runs}
+def existing_evidence(api, operation, merged_at, observed_main, exact_release, *, cursor=None):
+    from existing_search import search_existing
+    return search_existing(api,operation,merged_at,observed_main,exact_release,cursor=cursor)
 
 
-def prepare_recovery(api, repo, baseline, *, program_commit, recovery_run, recovery_attempt, limit=100):
+def plan_recovery(api, repo, baseline, *, program_commit, recovery_run, recovery_attempt,
+                  observed, previous, queue, limit=100, searches=None):
     """Produce only a plan. A successful artifact upload and fresh checks precede writes."""
     require(isinstance(program_commit,str) and SHA.fullmatch(program_commit), 'program commit')
-    require(type(recovery_run) is int and recovery_run>0 and type(recovery_attempt) is int and recovery_attempt>0,
+    require(type(recovery_run) is int and recovery_run>0 and type(recovery_attempt) is int and recovery_attempt==1,
             'recovery execution identity')
     require(type(limit) is int and 1<=limit<=100,'operation bound')
-    observed=main_tip(api)
-    previous=enumerate_recovery_intents(api,repo,baseline,observed,
-        current_execution=(recovery_run,recovery_attempt))
-    queue=discover_queue(api,repo,baseline,pending_numbers=previous['pending_numbers'])
+    searches={} if searches is None else searches
     prior={}
     for execution in previous['executions']:
         for key,item in execution['operations'].items():
@@ -61,10 +51,14 @@ def prepare_recovery(api, repo, baseline, *, program_commit, recovery_run, recov
                 operation={'repository':repo,'number':number,'head':head,'merge':merge,'workflow':workflow,'ref':'main'}
                 key=operation_key(operation)
                 try:
-                    evidence=existing_evidence(api,operation,pr['merged_at'],observed,transition['exact_release_required'])
+                    evidence=existing_evidence(api,operation,pr['merged_at'],observed,
+                        transition['exact_release_required'],cursor=searches.get(key))
+                    if 'search' in evidence:searches[key]=evidence['search']
                     classified=evidence['classification']
                     state={'operation':operation,'operation_key':key,'existing':classified,
-                           'release_transition':transition,'prior_executions':[]}
+                           'release_transition':transition,'prior_executions':[],
+                           'existing_observations':evidence.get('observations',[]),
+                           'existing_search_unresolved':evidence.get('unresolved',[])}
                     states.append(state)
                     if classified['state']!='no_confirmed_run_check_intents':
                         continue
@@ -104,4 +98,10 @@ def prepare_recovery(api, repo, baseline, *, program_commit, recovery_run, recov
         'recovery_run':recovery_run,'recovery_attempt':recovery_attempt,'program_commit':program_commit,
         'observed_main':observed,'created_at':datetime.datetime.now(datetime.timezone.utc).isoformat(),
         'operations':plans,'observations':states,'unresolved':unresolved,
-        'prior_execution_errors':previous['unresolved'],'dispatch_authorized':False}
+        'prior_execution_errors':previous['unresolved'],'existing_searches':searches,'dispatch_authorized':False}
+
+
+def prepare_recovery(api, repo, baseline, *, program_commit, recovery_run, recovery_attempt, limit=4):
+    from bounded_recovery import prepare_bounded
+    return prepare_bounded(api,repo,baseline,program_commit=program_commit,
+        recovery_run=recovery_run,recovery_attempt=recovery_attempt,limit=limit)

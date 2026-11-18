@@ -11,6 +11,16 @@ import recovery_entry as entry
 
 
 class Transport(unittest.TestCase):
+    def test_low_or_unavailable_rate_budget_refuses_before_work(self):
+        for response in (subprocess.CompletedProcess([],0,b'{"resources":{"core":{"remaining":199}}}'),
+                         subprocess.CompletedProcess([],0,b'{"resources":{"core":{"remaining":true}}}'),
+                         subprocess.CompletedProcess([],1,b'',b'failure')):
+            with patch('github_api.subprocess.run',return_value=response):
+                with self.assertRaises(RuntimeError):API('owner/repo').require_rate_reserve()
+    def test_remaining_budget_at_reserve_is_accepted(self):
+        with patch('github_api.subprocess.run',return_value=subprocess.CompletedProcess([],0,
+                 b'{"resources":{"core":{"remaining":200}}}')):
+            self.assertEqual(API('owner/repo').require_rate_reserve(),200)
     def test_compare_and_timestamp_query_stay_repository_scoped(self):
         api=API('owner/repo')
         for path in ('compare/'+'a'*40+'...'+'b'*40,'actions/runs?created=>=2026-11-17T01:00:00Z',''):
@@ -29,7 +39,7 @@ class Transport(unittest.TestCase):
                 run.assert_not_called()
     def test_one_post_uses_stdin_not_shell_or_credential_arguments(self):
         with patch.dict(os.environ,{'GH_TOKEN':'secret-for-fixture'}),patch('github_api.subprocess.run',
-                return_value=subprocess.CompletedProcess([],0,b'{"workflow_run_id":9}')) as run:
+                return_value=subprocess.CompletedProcess([],0,b'HTTP/2.0 200 OK\r\nContent-Type: application/json\r\n\r\n{"workflow_run_id":9}')) as run:
             self.assertEqual(API('owner/repo').post_once('actions/workflows/kernel-lean.yml/dispatches',
                 {'ref':'main','return_run_details':True}),{'workflow_run_id':9})
             self.assertEqual(run.call_count,1)
@@ -71,6 +81,18 @@ class Entrypoint(unittest.TestCase):
             self.assertEqual(prepare.call_args.kwargs,{'program_commit':'a'*40,'recovery_run':50,'recovery_attempt':1})
             self.assertNotIn('steal',str(prepare.call_args))
             self.assertEqual(json.loads((self.root/'out/intents.json').read_text()),{'operations':[]})
+    def test_preparation_writes_progress_and_no_operation_output(self):
+        plan={'operations':[],'progress':{'schema':'test-progress'}}
+        with patch.dict(os.environ,self.env|{'GITHUB_OUTPUT':str(self.root/'outputs')}),patch.object(entry,'API'),patch.object(entry,'prepare_recovery',return_value=plan):
+            entry.run(self.argv('prepare'))
+        self.assertEqual(json.loads((self.root/'out/progress.json').read_text()),plan['progress'])
+        self.assertEqual((self.root/'outputs').read_text(),'has_operations=false\n')
+    def test_rerun_cannot_read_or_dispatch_behind_a_progress_cursor(self):
+        for stage in ('prepare','dispatch'):
+            with patch.dict(os.environ,self.env|{'GITHUB_RUN_ATTEMPT':'2'}),patch.object(entry,'API') as api:
+                with self.assertRaisesRegex(ValueError,'first attempt'):entry.run(self.argv(stage))
+                api.assert_not_called()
+
     def test_pr_event_cannot_enter_recovery(self):
         with patch.dict(os.environ,self.env|{'GITHUB_EVENT_NAME':'pull_request_target'}),patch.object(entry,'API') as api:
             with self.assertRaises(ValueError):entry.run(self.argv('prepare'))

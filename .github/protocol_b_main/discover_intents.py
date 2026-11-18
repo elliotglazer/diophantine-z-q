@@ -26,10 +26,11 @@ def require(value, message):
         raise ValueError(message)
 
 
-def _record(raw, artifact, publisher, repo_id, kind):
+def _record(raw, artifact, publisher, repo_id, kind, *, expected_name=None):
     run, attempt = publisher['id'], publisher['run_attempt']
     require(isinstance(raw, bytes) and 0 < len(raw) <= MAX_ZIP, 'archive size')
-    require(artifact.get('name') == f'protocol-b-main-{kind}-{run}-{attempt}'
+    name = expected_name if expected_name is not None else f'protocol-b-main-{kind}-{run}-{attempt}'
+    require(artifact.get('name') == name
             and artifact.get('expired') is False, 'archive name, attempt or expiry')
     binding = artifact.get('workflow_run') or {}
     require(binding.get('id') == run and binding.get('repository_id') == repo_id
@@ -151,6 +152,7 @@ def discover_recovery_intents(api, repo, run_id, attempt, *, activation_commit, 
                     'orphan, duplicate or misbound receipt')
             selected[key]['receipt'] = receipt
     return {'publisher': original, 'job': job, 'operations': selected, 'artifacts': provenance,
+            'plan': records['intents'],
             'dispatch_step': DISPATCH, 'dispatch_authorized': False,
             'executor_terminal': job.get('status') == 'completed',
             'results_persisted_after_dispatch': results_persisted}

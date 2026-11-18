@@ -23,7 +23,7 @@ class WorkflowBootstrap(unittest.TestCase):
     def fixture(self):
         manifest = json.loads((ROOT/'code-manifest.json').read_text())
         files = {name: (ROOT/name).read_bytes() for name in manifest['files']}
-        actual = {'id': 17, 'run_attempt': 2, 'repository': {'full_name': REPO},
+        actual = {'id': 17, 'run_attempt': 1, 'repository': {'full_name': REPO},
                   'head_repository': {'full_name': REPO}, 'head_branch': 'main', 'head_sha': SHA,
                   'path': '.github/workflows/protocol-b.yml', 'event': 'workflow_run'}
         return actual, manifest, files
@@ -49,12 +49,27 @@ class WorkflowBootstrap(unittest.TestCase):
             if alter: value = alter(name, value)
             return json.dumps(value).encode()
         env = {'GITHUB_REPOSITORY': REPO, 'GITHUB_SHA': SHA, 'GITHUB_RUN_ID': '17',
-               'GITHUB_RUN_ATTEMPT': '2', 'RUNNER_TEMP': str(root),
+               'GITHUB_RUN_ATTEMPT': '1', 'RUNNER_TEMP': str(root),
                'GITHUB_EVENT_PATH': str(root/'untrusted-event.json')}
         env.update(overrides or {})
         with patch.dict(os.environ, env), patch('subprocess.check_output', side_effect=output):
             exec(compile(CODE, '<actual-workflow-bootstrap>', 'exec'), {})
         return calls
+
+    def test_progress_precedes_dispatch_and_empty_plans_do_not_upload_intents(self):
+        progress=FRAGMENT.index('- name: Persist main-check recovery progress')
+        intents=FRAGMENT.index('- name: Persist main-check dispatch intents')
+        dispatch=FRAGMENT.index('- name: Dispatch confirmed main checks')
+        self.assertLess(progress,intents);self.assertLess(intents,dispatch)
+        self.assertIn("if: steps.recovery_prepare.outputs.has_operations == 'true'",FRAGMENT[intents:dispatch])
+        self.assertIn("if: steps.recovery_prepare.outputs.has_operations == 'true'",FRAGMENT[dispatch:])
+    def test_rerun_is_refused_before_any_bootstrap_read(self):
+        with tempfile.TemporaryDirectory() as temp:
+            actual,manifest,files=self.fixture();actual['run_attempt']=2
+            with self.assertRaises(AssertionError):
+                self.execute(Path(temp),actual,manifest,files,overrides={'GITHUB_RUN_ATTEMPT':'2'})
+            self.assertFalse((Path(temp)/'protocol-b-main-code').exists())
+        self.assertIn('github.run_attempt == 1',FRAGMENT)
 
     def test_downloads_only_exact_manifest_files_from_actual_main_sha(self):
         actual, manifest, files = self.fixture()
@@ -73,7 +88,7 @@ class WorkflowBootstrap(unittest.TestCase):
                        {'repository': {'full_name': 'attacker/fork'}},
                        {'head_branch': 'contributor-branch'}, {'head_sha': 'b'*40},
                        {'path': '.github/workflows/candidate.yml'}, {'event': 'pull_request'},
-                       {'run_attempt': 1}, {'id': 18}):
+                       {'run_attempt': 2}, {'id': 18}):
             with self.subTest(change=change), tempfile.TemporaryDirectory() as temp:
                 actual, manifest, files = self.fixture()
                 actual.update(change)

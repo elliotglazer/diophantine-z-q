@@ -25,8 +25,8 @@ def operation_key(operation):
     return hashlib.sha256(raw).hexdigest()
 
 
-def reconcile_intent(operation, intent, receipt, job, *, dispatch_step, current_runs, enumeration_complete,
-                     results_persisted_after_dispatch=False):
+def _reconcile_intent(operation, intent, receipt, job, *, dispatch_step, current_runs,
+                      results_persisted_after_dispatch=False):
     """Classify one authenticated previous intent, without issuing permission.
 
     `safe_absence` means that this particular old execution did not dispatch;
@@ -39,8 +39,6 @@ def reconcile_intent(operation, intent, receipt, job, *, dispatch_step, current_
                 'dispatch_authorized': False}
     try:
         key = operation_key(operation)
-        if not enumeration_complete:
-            return result('incomplete_run_enumeration')
         if (not isinstance(intent, dict) or intent.get('schema') != 'main-check-intent/v1'
                 or intent.get('operation_key') != key
                 or operation_key(intent['operation']) != key
@@ -84,12 +82,52 @@ def reconcile_intent(operation, intent, receipt, job, *, dispatch_step, current_
                 # valid returned run proves a dispatch happened, not success.
                 return result('response_and_actual_run_confirmed', run_id)
             return result('receipt_has_no_confirmed_run')
-        # Missing or incomplete step reporting after a runner crash is not proof
-        # of no effect. Accept only an explicit completed/skipped step with no
-        # recorded start, on a terminal original executor.
-        if (step.get('status') == 'completed' and step.get('conclusion') == 'skipped'
-                and 'started_at' in step and step['started_at'] is None):
+        # GitHub records timestamps even for explicitly skipped steps. The
+        # completed/skipped conclusion proves that the terminal executor did
+        # not run this step. A pending step after runner loss does not.
+        if step.get('status') == 'completed' and step.get('conclusion') == 'skipped':
             return result('dispatcher_explicitly_not_started', safe_absence=True)
         return result('effect_uncertain_no_retry')
     except (KeyError, TypeError, ValueError, AttributeError):
         return result('malformed_evidence')
+
+
+def reconcile_intent(operation, intent, receipt, job, *, dispatch_step, current_runs, enumeration_complete,
+                     results_persisted_after_dispatch=False):
+    # Dispatch eligibility still requires a complete actual-run search, even
+    # when an individual old executor can be proved inert without that search.
+    if not enumeration_complete:
+        return {'state': 'incomplete_run_enumeration', 'run_id': None,
+                'safe_absence': False, 'dispatch_authorized': False}
+    return _reconcile_intent(operation, intent, receipt, job, dispatch_step=dispatch_step,
+        current_runs=current_runs, results_persisted_after_dispatch=results_persisted_after_dispatch)
+
+
+def confirmed_inert_execution(execution):
+    """Retire only authenticated original records proving every request unsent.
+
+    This is a progress-queue decision, never authority to dispatch. Positive
+    or uncertain receipts remain retained. The ordinary reconciliation API
+    still requires complete actual-run enumeration before any retry.
+    """
+    try:
+        publisher = execution['publisher']
+        job = execution['job']
+        operations = execution['operations']
+        if (not execution['executor_terminal'] or job.get('status') != 'completed'
+                or job.get('run_id') != publisher.get('id')
+                or job.get('run_attempt') != publisher.get('run_attempt')
+                or not isinstance(operations, dict) or not operations):
+            return False
+        for key, item in operations.items():
+            intent = item['intent']
+            if key != intent.get('operation_key'):
+                return False
+            result = _reconcile_intent(intent['operation'], intent, item['receipt'], job,
+                dispatch_step=execution['dispatch_step'], current_runs=[],
+                results_persisted_after_dispatch=execution.get('results_persisted_after_dispatch', False))
+            if not result['safe_absence']:
+                return False
+        return True
+    except (KeyError, TypeError, ValueError, AttributeError):
+        return False

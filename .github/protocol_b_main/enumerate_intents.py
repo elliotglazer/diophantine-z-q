@@ -5,11 +5,58 @@ cannot dispatch. Unlocated effects are retained as global unresolved evidence.
 """
 from urllib.parse import quote
 from discover_deferred import pages
-from discover_intents import JOB, DISPATCH, WORKFLOW, discover_recovery_intents, require
+from discover_intents import JOB, UPLOAD, DISPATCH, WORKFLOW, discover_recovery_intents, require
 from discover_queue import _stamp
 
 
-def enumerate_recovery_intents(api, repo, baseline, current_main, *, current_execution=None):
+def inert_execution(job):
+    """Prove this terminal executor never reached a dispatch, not merely that records are missing.
+
+    GitHub can give skipped steps timestamps. A pending dispatch alone after a
+    successful intent upload is still uncertain, including after runner loss.
+    """
+    if job.get('status') != 'completed':
+        return None
+    steps = job.get('steps')
+    if not isinstance(steps, list) or not all(isinstance(s, dict) for s in steps):
+        return None
+    dispatch = [s for s in steps if s.get('name') == DISPATCH]
+    upload = [s for s in steps if s.get('name') == UPLOAD]
+    if len(dispatch) > 1 or len(upload) > 1:
+        return None
+    if dispatch:
+        step = dispatch[0]
+        if step.get('status') == 'completed' and step.get('conclusion') == 'skipped':
+            return 'dispatcher_explicitly_never_started'
+        if not (step.get('status') == 'pending' and step.get('conclusion') is None
+                and 'started_at' in step and step['started_at'] is None):
+            return None
+    if not steps:
+        if job.get('conclusion') == 'cancelled' and job.get('runner_id') == 0:
+            return 'cancelled_before_runner_assignment'
+        return None
+    # The workflow cannot enter dispatch unless this earlier step succeeds.
+    # A contradictory started dispatch was rejected above. Missing upload data
+    # alone is not proof; require an explicit failed/skipped/cancelled upload.
+    if upload and upload[0].get('status') == 'completed' and upload[0].get('conclusion') in {'failure', 'cancelled', 'skipped'}:
+        if dispatch and not (type(upload[0].get('number')) is int
+                and type(dispatch[0].get('number')) is int
+                and upload[0]['number'] < dispatch[0]['number']):
+            return None
+        return 'intent_upload_did_not_succeed'
+    # If the runner stops before these steps are reported, retain uncertainty.
+    # The explicit prerequisite failure below is stronger evidence than a
+    # missing/pending step or missing artifact.
+    prerequisites = {'Load recovery code from the actual main execution',
+                     'Prepare main-check dispatch intents'}
+    if not upload and any(s.get('name') in prerequisites and s.get('status') == 'completed'
+            and s.get('conclusion') in {'failure', 'cancelled'} for s in steps):
+        return 'failed_before_intent_upload'
+    return None
+
+
+def enumerate_recovery_intents(api, repo, baseline, current_main, *, current_execution=None,
+                               run_ids=None):
     require(isinstance(baseline,dict) and baseline.get('schema')=='main-check-baseline/v1'
             and baseline.get('repository')==repo, 'deployment baseline')
     activated=_stamp(baseline.get('activated_at'))
@@ -17,8 +64,13 @@ def enumerate_recovery_intents(api, repo, baseline, current_main, *, current_exe
     workflow=api.json('actions/workflows/protocol-b.yml')
     require(type(workflow.get('id')) is int and workflow['id']>0
             and workflow.get('path')==WORKFLOW, 'recovery workflow identity')
-    path=f"actions/workflows/{workflow['id']}/runs?branch=main&created="+quote('>='+baseline['activated_at'],safe='')
-    runs=pages(api,path,'workflow_runs',identity='id')
+    if run_ids is None:
+        path=f"actions/workflows/{workflow['id']}/runs?branch=main&created="+quote('>='+baseline['activated_at'],safe='')
+        runs=pages(api,path,'workflow_runs',identity='id')
+    else:
+        require(isinstance(run_ids,list) and len(run_ids)<=1000
+                and all(type(rid) is int and rid>0 for rid in run_ids), 'retained recovery run IDs')
+        runs=[{'id':rid} for rid in sorted(set(run_ids))]
     recovered=[];unresolved=[];excluded=[]
     for listed in runs:
         rid=listed['id']
@@ -57,12 +109,9 @@ def enumerate_recovery_intents(api, repo, baseline, current_main, *, current_exe
                     if job.get('status')=='completed' and job.get('conclusion')=='skipped' and not matching:
                         excluded.append({'run':rid,'attempt':attempt,'reason':'recovery_job_skipped'});continue
                     if not matching:
-                        steps=job.get('steps') or []
-                        dispatch=[s for s in steps if s.get('name')==DISPATCH]
-                        if (job.get('status')=='completed' and len(dispatch)==1
-                                and dispatch[0].get('status')=='completed' and dispatch[0].get('conclusion')=='skipped'
-                                and 'started_at' in dispatch[0] and dispatch[0]['started_at'] is None):
-                            excluded.append({'run':rid,'attempt':attempt,'reason':'dispatcher_explicitly_never_started'});continue
+                        inert = inert_execution(job)
+                        if inert:
+                            excluded.append({'run':rid,'attempt':attempt,'reason':inert});continue
                         raise ValueError('missing durable records; dispatch effect unlocated')
                     recovered.append(discover_recovery_intents(api,repo,rid,attempt,
                         activation_commit=anchor,current_main=current_main))

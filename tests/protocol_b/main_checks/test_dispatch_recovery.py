@@ -32,7 +32,7 @@ class Dispatcher(unittest.TestCase):
                 'recovery_run':50,'recovery_attempt':1})
         self.original={'publisher':{'head_sha':self.program,'status':'in_progress'},
             'job':{'status':'in_progress','steps':[{'name':dispatch.DISPATCH,'status':'in_progress'}]},
-            'artifacts':{'intents':{'id':10}},'operations':{
+            'plan':{'repository_id':7},'artifacts':{'intents':{'id':10}},'operations':{
                 x['operation_key']:{'intent':x,'receipt':None} for x in self.ops}}
         self.fresh={'repository':self.repo,'repository_id':7,'recovery_run':50,'recovery_attempt':1,
                     'program_commit':self.program,'operations':copy.deepcopy(self.ops)}
@@ -43,7 +43,7 @@ class Dispatcher(unittest.TestCase):
         self.transition={'exact_release_required':False}
         self.existing={'classification':{'state':'no_confirmed_run_check_intents'}}
         data=[('main_tip',{'return_value':'b'*40}),('discover_recovery_intents',{'return_value':self.original}),
-              ('prepare_recovery',{'return_value':self.fresh}),('discover_deferred',{'return_value':self.source}),
+              ('revalidate_operations',{'return_value':self.fresh}),('discover_deferred',{'return_value':self.source}),
               ('_ancestor',{}),('release_transition',{'return_value':self.transition}),
               ('existing_evidence',{'return_value':self.existing})]
         self.mocks={}
@@ -52,7 +52,9 @@ class Dispatcher(unittest.TestCase):
         self.api.before_post=self.check_saved_boundary
     def persist(self,value):self.saved.append(copy.deepcopy(value))
     def check_saved_boundary(self,path,body):
-        receipt=self.saved[-1]['receipts'][-1]
+        matching=[r for r in self.saved[-1]['receipts'] if path=='actions/workflows/'+r['workflow']+'/dispatches']
+        self.assertEqual(len(matching),1)
+        receipt=matching[0]
         self.assertEqual(receipt['status'],'sending');self.assertIsNone(receipt['request_sent'])
         self.assertEqual(path,'actions/workflows/'+receipt['workflow']+'/dispatches')
         self.assertEqual(body,{'ref':'main','return_run_details':True})
@@ -60,6 +62,12 @@ class Dispatcher(unittest.TestCase):
         return dispatch.dispatch_recovery(self.api,self.repo,self.baseline,program_commit=self.program,
                     recovery_run=50,recovery_attempt=1,persist=persist or self.persist)
     def assert_no_posts(self):self.assertEqual(self.api.posts,[])
+    def test_rerun_is_refused_before_discovery_or_any_write(self):
+        with self.assertRaisesRegex(ValueError,'first-attempt-only'):
+            dispatch.dispatch_recovery(self.api,self.repo,self.baseline,program_commit=self.program,
+                recovery_run=50,recovery_attempt=2,persist=self.persist)
+        self.mocks['main_tip'].assert_not_called();self.assert_no_posts();self.assertFalse(self.saved)
+
     def test_durable_intents_then_fresh_merge_then_two_one_shot_dispatches(self):
         r=self.run_dispatch();self.assertEqual(len(self.api.posts),2)
         self.assertEqual([x['status'] for x in r['receipts']],['run_confirmed','run_confirmed'])
@@ -83,9 +91,12 @@ class Dispatcher(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,'already has results'):self.run_dispatch()
         self.assert_no_posts()
     def test_fresh_reconciliation_refusal_prevents_all_writes(self):
-        self.mocks['prepare_recovery'].side_effect=ValueError('uncertain earlier dispatcher')
+        self.mocks['revalidate_operations'].side_effect=ValueError('uncertain earlier dispatcher')
         with self.assertRaises(ValueError):self.run_dispatch()
         self.assert_no_posts()
+        self.assertTrue(self.saved)
+        self.assertTrue(all(r['status']=='not_sent' and r['request_sent'] is False
+                            for r in self.saved[-1]['receipts']))
     def test_operation_removed_from_fresh_plan_is_recorded_not_sent(self):
         self.fresh['operations']=[];r=self.run_dispatch();self.assert_no_posts()
         self.assertTrue(all(x['request_sent'] is False for x in r['receipts']))
@@ -149,5 +160,17 @@ class Dispatcher(unittest.TestCase):
         r=self.run_dispatch(persist);self.assertEqual(len(self.api.posts),2)
         self.assertTrue(all(x['status']=='effect_needs_reconciliation' for x in r['receipts']))
 
+
+    def test_boundary_search_uses_fresh_plan_cursor_and_new_run_prevents_post(self):
+        self.fresh['existing_searches']={x['operation_key']:{'refreshed_for':x['operation_key']} for x in self.ops}
+        self.original['plan']['existing_searches']={x['operation_key']:{'stale':True} for x in self.ops}
+        def found(api,op,merged_at,tip,exact_release,*,cursor=None):
+            self.assertEqual(cursor,self.fresh['existing_searches'][operation_key(op)])
+            return {'classification':{'state':'existing_run_in_progress','run_ids':[123]}}
+        self.mocks['existing_evidence'].side_effect=found
+        result=self.run_dispatch();self.assert_no_posts()
+        self.assertEqual(self.mocks['existing_evidence'].call_count,2)
+        self.assertTrue(all(r['status']=='not_sent' and r['request_sent'] is False for r in result['receipts']))
+        self.assertTrue(all(r['existing']['run_ids']==[123] for r in result['receipts']))
 
 if __name__=='__main__':unittest.main()

@@ -5039,7 +5039,7 @@ jobs:
   recover_main_checks:
     name: Recover deferred main checks
     if: >-
-      github.repository == 'elliotglazer/diophantine-z-q' && vars.PROTOCOL_B_MODE == 'live' &&
+      github.repository == 'elliotglazer/diophantine-z-q' && vars.PROTOCOL_B_MODE == 'live' && github.run_attempt == 1 &&
       (github.event_name == 'schedule' || github.event_name == 'workflow_run')
     runs-on: ubuntu-24.04
     timeout-minutes: 30
@@ -5063,7 +5063,7 @@ jobs:
           repo=os.environ['GITHUB_REPOSITORY'];sha=os.environ['GITHUB_SHA']
           run=os.environ['GITHUB_RUN_ID'];attempt=os.environ['GITHUB_RUN_ATTEMPT']
           assert repo=='elliotglazer/diophantine-z-q' and re.fullmatch(r'[0-9a-f]{40}',sha)
-          assert run.isdigit() and attempt.isdigit()
+          assert run.isdigit() and attempt.isdigit() and int(attempt)==1
           def get(path):
               return json.loads(subprocess.check_output(['gh','api','repos/'+repo+'/'+path]))
           actual=get('actions/runs/'+run)
@@ -5077,7 +5077,7 @@ jobs:
               assert value['encoding']=='base64'
               return base64.b64decode(value['content'],validate=False)
           manifest=json.loads(content('code-manifest.json'))
-          expected={'release_transition.py', 'discover_intents.py', 'enumerate_intents.py', 'dispatch_intents.py', 'discover_deferred.py', 'prepare_recovery.py', 'existing_runs.py', 'dispatch_recovery.py', 'discover_queue.py', 'baseline.json', 'deferred_artifact.py', 'recovery_entry.py', 'github_api.py', 'deferred_source.py'}
+          expected={'github_api.py', 'discover_deferred.py', 'dispatch_intents.py', 'progress_record.py', 'revalidate_operations.py', 'existing_search.py', 'history_queue.py', 'deferred_artifact.py', 'dispatch_recovery.py', 'discover_queue.py', 'discover_intents.py', 'enumerate_intents.py', 'deferred_source.py', 'release_transition.py', 'read_budget.py', 'bounded_recovery.py', 'recovery_entry.py', 'run_windows.py', 'run_sequence.py', 'prepare_recovery.py', 'existing_runs.py', 'baseline.json'}
           assert manifest['schema']=='main-check-code/v1' and set(manifest['files'])==expected
           destination=pathlib.Path(os.environ['RUNNER_TEMP'])/'protocol-b-main-code'
           destination.mkdir(exist_ok=False)
@@ -5087,12 +5087,21 @@ jobs:
               (destination/name).write_bytes(raw)
           PY
       - name: Prepare main-check dispatch intents
+        id: recovery_prepare
         shell: bash
         run: |
           python3 -B "$RUNNER_TEMP/protocol-b-main-code/recovery_entry.py" prepare \
             --baseline "$RUNNER_TEMP/protocol-b-main-code/baseline.json" \
             --output "$RUNNER_TEMP/protocol-b-main-records"
+      - name: Persist main-check recovery progress
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: protocol-b-main-progress
+          path: ${{ runner.temp }}/protocol-b-main-records/progress.json
+          if-no-files-found: error
+          retention-days: 90
       - name: Persist main-check dispatch intents
+        if: steps.recovery_prepare.outputs.has_operations == 'true'
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
           name: protocol-b-main-intents-${{ github.run_id }}-${{ github.run_attempt }}
@@ -5100,6 +5109,7 @@ jobs:
           if-no-files-found: error
           retention-days: 90
       - name: Dispatch confirmed main checks
+        if: steps.recovery_prepare.outputs.has_operations == 'true'
         shell: bash
         run: |
           python3 -B "$RUNNER_TEMP/protocol-b-main-code/recovery_entry.py" dispatch \
