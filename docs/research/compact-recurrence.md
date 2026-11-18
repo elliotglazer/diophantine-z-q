@@ -51,11 +51,14 @@ acceptance record. It changes no accepted manuscript application or audit bindin
 
 ## Reproduction in the current package
 
-Use the root `lakefile.toml` (`z_in_q_kernel`) and its unchanged
-`lean-toolchain` and `lake-manifest.json`. Prepare the pinned dependency cache,
-then run **from the repository root**:
+Run these commands from the repository root on the PR head. The root
+`z_in_q_kernel` package pins Lean and Mathlib in `lean-toolchain` and
+`lake-manifest.json`. Use the merge base with upstream main to check the
+committed contribution diff.
 
 ```sh
+git fetch --no-tags https://github.com/elliotglazer/diophantine-z-q.git refs/heads/main
+pr_base=$(git merge-base HEAD FETCH_HEAD)
 lake exe cache get Mathlib.Topology.Algebra.Group.SubmonoidClosure
 lake --wfail build \
   +ZInQKernel.Contrib.CompactRecurrence +ZInQKernel.Contrib.CompactRecurrenceCheck
@@ -63,10 +66,10 @@ lake env lean -Ddebug.skipKernelTC=false -DwarningAsError=true \
   ZInQKernel/Contrib/CompactRecurrence.lean
 lake env lean -Ddebug.skipKernelTC=false -DwarningAsError=true \
   ZInQKernel/Contrib/CompactRecurrenceCheck.lean
-python3 -B scripts/check_kernel_contract.py --base-ref a5937595cde3e3db00975b81e5171cdef92c801a
+python3 -B scripts/check_kernel_contract.py --base-ref "$pr_base"
 python3 -B scripts/check_lean.py
 python3 -B scripts/check_audit_history.py --self-test
-git diff --check
+git diff --check "$pr_base" HEAD
 ```
 
 A compatible dependency cache can be reused after checking all nine git
@@ -78,11 +81,13 @@ they do not rebuild Lean, Mathlib, the accepted helper snapshot, or the entire
 kernel project. The helper source check and kernel contract check have their
 own structural scope and do not establish an arithmetic theorem.
 
-The importer was written and checked by the integrator. Fresh non-author review
-of this revision, exact-head required CI and the designated authenticated
-`gpt-6-astra` Protocol acceptance remain separate gates. The earlier PR14 reviews
-retain only their earlier revision and scope; no acceptance is carried forward
-by updating their hashes.
+The integrator wrote and checked the importer. Both Lean modules trigger the
+full upstream kernel build and audit. The designated App publishes the
+`Protocol B / review` check for the current revision. The contributor guide
+requires both Astra 6 and Fable 5.2 and documents the item-specific admin
+override. Earlier PR14 reviews cover the sources and revisions they examined.
+See the [kernel CI scope](../kernel-ci-scope.md) and the
+[Protocol B contributor guide](../research-review/README.md).
 
 ## Conditional connection to historical HypCC
 
