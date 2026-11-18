@@ -5096,7 +5096,7 @@ jobs:
       - name: Persist main-check recovery progress
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
-          name: protocol-b-main-progress
+          name: ${{ steps.recovery_prepare.outputs.progress_artifact_name }}
           path: ${{ runner.temp }}/protocol-b-main-records/progress.json
           if-no-files-found: error
           retention-days: 90

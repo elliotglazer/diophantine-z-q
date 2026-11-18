@@ -12,6 +12,9 @@ class API:
           '':{'id':7,'full_name':'owner/repo'},
           'actions/workflows/protocol-b.yml':{'id':99,'path':'.github/workflows/protocol-b.yml'},
           'actions/runs/5':{'id':5,'workflow_id':99,'run_number':4,'repository':{'full_name':'owner/repo'}},
+          'actions/runs/10/attempts/1/jobs?per_page=100&page=1':{'total_count':1,'jobs':[{'id':100,
+              'run_id':10,'run_attempt':1,'name':'Recover deferred main checks','status':'in_progress',
+              'started_at':'2026-11-17T01:00:00Z'}]},
           'actions/runs/10':{'id':10,'run_attempt':1,'head_sha':'b'*40,'head_branch':'main',
               'workflow_id':99,'event':'schedule','run_number':10,
               'path':'.github/workflows/protocol-b.yml',
@@ -26,11 +29,11 @@ class Bounded(unittest.TestCase):
         self.history={'cursor':{'schema':'main-check-history/v1','repository':'owner/repo',
             'activation_commit':'a'*40,'frontier':'c'*40,'scan_head':None,'next_commit':None},
             'candidates':[],'unresolved':[],'enumeration_complete':True}
-        self.scan={'runs':[],'enumeration_complete':True,'partial':None,'unresolved':[]}
+        self.scan={'runs':[],'enumeration_complete':True,'partial':None,'unresolved':[],'discovery_complete':True}
         self.previous={'pending_numbers':[],'unresolved':[],'executions':[],'unlocated_effects':False}
-        self.plan={'operations':[],'observations':[],'unresolved':[]}
+        self.plan={'operations':[],'observations':[],'unresolved':[],'discovery_complete':True}
         self.mocks={}
-        for module,name,result in [(bounded,'latest_progress',{'progress':None,'unresolved':[]}),
+        for module,name,result in [(bounded,'latest_progress',{'progress':None,'unresolved':[],'discovery_complete':True}),
              (bounded,'discover_main_history',self.history),(bounded,'scan_run_sequence',self.scan),
              (bounded,'enumerate_recovery_intents',self.previous),(planner,'plan_recovery',self.plan)]:
             p=patch.object(module,name,return_value=result);self.mocks[name]=p.start();self.addCleanup(p.stop)
@@ -38,17 +41,30 @@ class Bounded(unittest.TestCase):
         return bounded.prepare_bounded(self.api,'owner/repo',self.baseline,program_commit='b'*40,
             recovery_run=10,recovery_attempt=1)
     def old(self,pending=()):
-        record={'history':self.history['cursor'],'pending_prs':list(pending),
+        record={'history':self.history['cursor'],'pending_prs':list(pending),'run_anchor':{'run':8,'number':9},
             'executions':[{'run':8,'attempt':1}], 'run_sequence':{'frontier':8,'partial':None}}
-        self.mocks['latest_progress'].return_value={'progress':{'record':record,'artifact':{'id':42}},'unresolved':[]}
+        self.mocks['latest_progress'].return_value={'progress':{'record':record,'artifact':{'id':42}},'unresolved':[],'discovery_complete':True}
         return record
     def pr(self,n):
         return {'number':n,'base':{'repo':{'full_name':'owner/repo'}},'merge_commit_sha':'e'*40}
     def test_quiet_wake_has_small_bound_and_retains_own_executor(self):
-        r=self.run_prepare();self.assertEqual(len(self.api.calls),5)
+        r=self.run_prepare();self.assertEqual(len(self.api.calls),6)
         self.assertEqual(r['progress']['executions'],[{'run':10,'attempt':1}])
         self.assertEqual(r['progress']['run_sequence']['frontier'],9)
         self.assertFalse(r['progress']['dispatch_authorized'])
+    def test_incomplete_progress_lookup_does_not_reconstruct_or_plan_dispatch(self):
+        self.mocks['latest_progress'].return_value={'progress':None,'discovery_complete':False,
+                                                   'unresolved':[{'reason':'date bound'}]}
+        with self.assertRaisesRegex(ValueError,'no reset or dispatch'):self.run_prepare()
+        self.mocks['discover_main_history'].assert_not_called()
+        self.mocks['plan_recovery'].assert_not_called()
+    def test_older_queued_run_preserves_a_later_run_number_anchor(self):
+        old=self.old();old['run_anchor']={'run':12,'number':12}
+        old['run_sequence']['frontier']=11
+        value=self.run_prepare()
+        self.assertEqual(self.mocks['scan_run_sequence'].call_args.args[2:4],(11,11))
+        self.assertEqual(value['progress']['run_anchor'],{'run':12,'number':12})
+        self.assertEqual(value['progress_artifact_name'],'protocol-b-main-progress-20261117')
     def test_uses_only_retained_and_new_recovery_executions(self):
         self.old();self.scan['runs']=[{'id':9,'event':'schedule','head_branch':'main'},
           {'id':11,'event':'pull_request_target','head_branch':'topic'}]
@@ -72,7 +88,7 @@ class Bounded(unittest.TestCase):
         self.old([2,3,4]);
         for n in (2,3,4):self.api.records['pulls/'+str(n)]=self.pr(n)
         first=self.run_prepare()
-        self.mocks['latest_progress'].return_value={'progress':{'record':first['progress'],'artifact':{'id':42}},'unresolved':[]}
+        self.mocks['latest_progress'].return_value={'progress':{'record':first['progress'],'artifact':{'id':42}},'unresolved':[],'discovery_complete':True}
         self.run_prepare()
         selected=self.mocks['plan_recovery'].call_args.kwargs['queue']['candidates']
         self.assertEqual([x['number'] for x in selected],[4,2])
@@ -137,7 +153,7 @@ class Bounded(unittest.TestCase):
             self.assertLessEqual(result['discovery']['reads'],60)
             if result['discovery']['run_sequence_complete'] and progress['executions']==[{'run':10,'attempt':1}]:
                 break
-            self.mocks['latest_progress'].return_value={'progress':{'record':progress,'artifact':{'id':42}},'unresolved':[]}
+            self.mocks['latest_progress'].return_value={'progress':{'record':progress,'artifact':{'id':42}},'unresolved':[],'discovery_complete':True}
         else:self.fail('bounded discovery did not drain its inert backlog')
         self.assertEqual(seen,{row['id'] for row in rows})
         self.assertLessEqual(peak,341)

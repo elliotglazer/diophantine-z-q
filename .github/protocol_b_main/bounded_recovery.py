@@ -5,7 +5,9 @@ from discover_intents import require,WORKFLOW
 from enumerate_intents import enumerate_recovery_intents
 from dispatch_intents import confirmed_inert_execution
 from history_queue import discover_main_history
-from progress_record import latest_progress,baseline_digest
+from progress_record import latest_progress,baseline_digest,checkpoint_name
+from discover_deferred import pages
+from discover_intents import JOB
 from read_budget import BoundedReads,ReadBudgetExceeded
 from run_sequence import scan_run_sequence
 
@@ -16,24 +18,6 @@ def prepare_bounded(raw_api,repo,baseline,*,program_commit,recovery_run,recovery
     api=BoundedReads(raw_api,60)
     observed=main_tip(api);metadata=api.json('')
     require(metadata.get('full_name')==repo and type(metadata.get('id')) is int,'repository identity')
-    loaded=latest_progress(api,repo,baseline,observed,candidate_limit=3)
-    old=loaded['progress']['record'] if loaded['progress'] else None
-    order=list(old['pending_prs'] if old else [])
-    pending=set(order)
-    execution_order=[item['run'] for item in old['executions']] if old else []
-    execution_ids=set(execution_order)
-    errors=[]
-    # Do not discover work faster than a bounded wake can reconcile it.
-    if old and len(pending)>=40:
-        history={'cursor':old['history'],'candidates':[],'unresolved':[],
-                 'enumeration_complete':False}
-    else:
-        history=discover_main_history(api,repo,baseline['activation_commit'],observed,
-                cursor=old['history'] if old else None,max_commits=4)
-    for candidate in history['candidates']:
-        if candidate['number'] not in pending:order.append(candidate['number'])
-        pending.add(candidate['number'])
-    errors.extend(history['unresolved'])
     workflow=api.json('actions/workflows/protocol-b.yml')
     require(workflow.get('path')==WORKFLOW and type(workflow.get('id')) is int,'recovery workflow identity')
     anchor=api.json('actions/runs/'+str(baseline['workflow_run_id']))
@@ -51,9 +35,39 @@ def prepare_bounded(raw_api,repo,baseline,*,program_commit,recovery_run,recovery
             and actual.get('event') in ('schedule','workflow_run')
             and type(actual.get('run_number')) is int and actual['run_number']>baseline['workflow_run_number'],
             'current recovery sequence identity')
+    jobs=pages(api,f'actions/runs/{recovery_run}/attempts/1/jobs','jobs',identity='id')
+    selected_jobs=[j for j in jobs if j.get('name')==JOB]
+    require(len(selected_jobs)==1,'current recovery job identity')
+    current_job=selected_jobs[0]
+    require(current_job.get('run_id')==recovery_run and current_job.get('run_attempt')==1
+            and current_job.get('status')=='in_progress','current recovery job is not active')
+    name=checkpoint_name(current_job.get('started_at'))
+    loaded=latest_progress(api,repo,baseline,observed,current_job=current_job,candidate_limit=3)
+    require(loaded.get('discovery_complete') is True,
+            'Progress discovery incomplete; no reset or dispatch: '+str(loaded.get('unresolved',[]))[:1500])
+    old=loaded['progress']['record'] if loaded['progress'] else None
+    run_anchor={'run':recovery_run,'number':actual['run_number']}
+    if old and old['run_anchor']['number']>run_anchor['number']:
+        run_anchor=copy.deepcopy(old['run_anchor'])
+    order=list(old['pending_prs'] if old else [])
+    pending=set(order)
+    execution_order=[item['run'] for item in old['executions']] if old else []
+    execution_ids=set(execution_order)
+    errors=[]
+    # Do not discover work faster than a bounded wake can reconcile it.
+    if old and len(pending)>=40:
+        history={'cursor':old['history'],'candidates':[],'unresolved':[],
+                 'enumeration_complete':False}
+    else:
+        history=discover_main_history(api,repo,baseline['activation_commit'],observed,
+                cursor=old['history'] if old else None,max_commits=4)
+    for candidate in history['candidates']:
+        if candidate['number'] not in pending:order.append(candidate['number'])
+        pending.add(candidate['number'])
+    errors.extend(history['unresolved'])
     sequence=old['run_sequence'] if old else {'frontier':baseline['workflow_run_number'],'partial':None}
     partial=sequence['partial']
-    target=partial['target'] if partial else actual['run_number']-1
+    target=partial['target'] if partial else run_anchor['number']-1
     if len(execution_ids)>=40:
         scan={'runs':[],'new_runs':[],'enumeration_complete':False,
               'partial':partial,'unresolved':[]}
@@ -78,7 +92,7 @@ def prepare_bounded(raw_api,repo,baseline,*,program_commit,recovery_run,recovery
     # Retain every unresolved executor, even when it has no readable intent.
     retained_exec=set(deferred_executions)|{item['run'] for item in previous['unresolved']}
     for execution in previous['executions']:retained_exec.add(execution['publisher']['id'])
-    incomplete=(not scan['enumeration_complete'] or new_frontier!=actual['run_number']-1
+    incomplete=(not scan['enumeration_complete'] or new_frontier!=run_anchor['number']-1
                 or bool(previous['unresolved']) or bool(deferred_executions))
     if incomplete:previous['unlocated_effects']=True
     candidates=[]
@@ -127,16 +141,17 @@ def prepare_bounded(raw_api,repo,baseline,*,program_commit,recovery_run,recovery
     retained_order.append(recovery_run)
     progress={'schema':'main-check-progress/v1','repository':repo,'repository_id':metadata['id'],
         'recovery_run':recovery_run,'recovery_attempt':recovery_attempt,'program_commit':program_commit,
-        'baseline_sha256':baseline_digest(baseline),'dispatch_authorized':False,
+        'baseline_sha256':baseline_digest(baseline),'dispatch_authorized':False,'run_anchor':run_anchor,
         'history':history['cursor'],'pending_prs':[n for n in order if n in pending and n not in attempted]+[n for n in attempted if n in pending],
         'executions':[{'run':rid,'attempt':1} for rid in retained_order],
         'run_sequence':{'frontier':new_frontier,'partial':scan['partial']},
         'existing_searches':{key:value for key,value in plan.get('existing_searches',{}).items()
                              if value['operation']['number'] in pending}}
     plan['progress']=progress
+    plan['progress_artifact_name']=name
     plan['discovery']={'reads':api.count,'read_limit':api.limit,
         'progress_artifact':loaded['progress']['artifact'] if loaded['progress'] else None,
-        'progress_errors':loaded['unresolved'],'history_complete':history['enumeration_complete'],
+        'progress_errors':loaded['unresolved'],'progress_buckets':loaded.get('searched_buckets',[]),'history_complete':history['enumeration_complete'],
         'run_sequence_complete':not incomplete,'retained_executions':retained_order,
         'deferred_executions':deferred_executions}
     return plan

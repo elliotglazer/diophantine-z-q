@@ -83,6 +83,11 @@ def run(argv=None):
         if os.environ.get('GITHUB_OUTPUT'):
             with open(os.environ['GITHUB_OUTPUT'],'a',encoding='utf-8') as output:
                 output.write('has_operations='+str(bool(plan['operations'])).lower()+'\n')
+                if 'progress' in plan:
+                    name=plan['progress_artifact_name']
+                    if not re.fullmatch(r'protocol-b-main-progress-[0-9]{8}',name):
+                        raise ValueError('Invalid progress artifact output name')
+                    output.write('progress_artifact_name='+name+'\n')
         publish_summary('prepare',plan)
         print('Prepared '+str(len(plan['operations']))+' operations; no dispatch has been made.')
     else:

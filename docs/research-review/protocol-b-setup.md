@@ -591,14 +591,28 @@ evidence before dispatching either check. Failed, expired or ambiguous evidence
 stays unresolved. A completed failed build is not verification success or a
 reason to repeat the dispatch automatically.
 
-Discovery uses an authenticated `protocol-b-main-progress` artifact. It records
+Discovery uses authenticated `protocol-b-main-progress-YYYYMMDD` artifacts,
+where the date is the original recovery job's UTC start date. Each record keeps
 which main commits and workflow-run numbers have been examined, all pending
-PRs, and original executions that still need reconciliation. It is not proof
-that a check passed and cannot authorize a dispatch. The reader verifies the
-original first-attempt main execution, job steps, repository, archive digest
-and deployment baseline. Missing or invalid progress causes bounded
-rediscovery from the baseline. The code manifest checks integrity; the trust
-root remains protected main and the actual GitHub execution records.
+PRs, and original executions that still need reconciliation. It cannot authorize
+a dispatch or prove a check passed. The reader verifies the original first-attempt
+main execution, terminal recovery job, successful pre-dispatch upload, repository,
+archive digest and deployment baseline. Other jobs in the same workflow may still
+be running. The original recovery job itself must be terminal.
+
+The lookup walks backward at most 14 UTC dates, stopping at deployment. It reads
+all pages for each date, with a maximum of 300 artifacts per date and the existing
+60-read stage cap. Within a complete date it uses GitHub's upload timestamp,
+confirmed to fall inside the original job, and rejects tied newest timestamps.
+Artifact IDs, listing order and workflow run numbers are not execution order.
+Serialization and the original job timestamps bind the selected record to an
+execution that ended before the current job started. A retained actual workflow
+anchor prevents an older queued run from moving the run-number frontier backward.
+Failed authentication, missing pages or a lookup beyond the bound stops preparation
+without replacing the saved queue. Only complete empty discovery back to deployment
+permits initialization from the baseline. No legacy checkpoint name was deployed.
+The code manifest checks integrity; protected main and actual GitHub execution
+records remain the trust root.
 
 Each preparation and dispatch phase has a 60-read cap and checks that at least
 200 API requests remain before it begins. Preparation visits at most four new

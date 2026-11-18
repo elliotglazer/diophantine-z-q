@@ -1,6 +1,6 @@
 import copy,hashlib,io,json,unittest,zipfile
 import test_discover_intents as fixtures
-from progress_record import NAME,PREPARE,UPLOAD,read_progress,latest_progress,baseline_digest
+from progress_record import NAME,PREPARE,UPLOAD,read_progress,latest_progress,baseline_digest,checkpoint_name
 from discover_intents import DISPATCH
 
 
@@ -9,13 +9,14 @@ class Progress(unittest.TestCase):
         self.f=fixtures.RecoveryIntents();self.f.setUp();f=self.f
         self.baseline={'schema':'main-check-baseline/v1','repository':f.repo,'activation_commit':f.activation,
                        'activated_at':'2026-11-17T00:00:00.012345+00:00','workflow_run_number':4,'workflow_run_id':5}
-        f.publisher['run_number']=10
+        f.publisher.update(run_number=10,workflow_id=99,created_at='2026-11-17T00:59:00Z')
+        f.job.update(started_at='2026-11-17T01:00:00Z',completed_at='2026-11-17T01:00:03Z')
         f.job['steps']=[{'number':2,'name':PREPARE,'status':'completed','conclusion':'success'},
                        {'number':3,'name':UPLOAD,'status':'completed','conclusion':'success'},
                        {'number':5,'name':DISPATCH,'status':'completed','conclusion':'failure'}]
         self.record={'schema':'main-check-progress/v1','repository':f.repo,'repository_id':12,
           'recovery_run':10,'recovery_attempt':1,'program_commit':f.program,
-          'baseline_sha256':baseline_digest(self.baseline),'dispatch_authorized':False,
+          'baseline_sha256':baseline_digest(self.baseline),'dispatch_authorized':False,'run_anchor':{'run':10,'number':10},
           'history':{'schema':'main-check-history/v1','repository':f.repo,'activation_commit':f.activation,
                      'frontier':f.program,'scan_head':None,'next_commit':None},
           'pending_prs':[161],'executions':[{'run':10,'attempt':1},{'run':9,'attempt':1}],
@@ -26,7 +27,7 @@ class Progress(unittest.TestCase):
         with zipfile.ZipFile(buf,'w',zipfile.ZIP_DEFLATED) as z:
             for name,body in entries or [('progress.json',json.dumps(self.record))]:z.writestr(name,body)
         raw=buf.getvalue();f=self.f
-        self.artifact={'id':42,'name':NAME,'expired':False,'size_in_bytes':len(raw),
+        self.artifact={'id':42,'name':checkpoint_name(f.job['started_at']),'expired':False,'size_in_bytes':len(raw),
           'created_at':'2026-11-17T01:00:01Z','digest':'sha256:'+hashlib.sha256(raw).hexdigest(),
           'workflow_run':{'id':10,'repository_id':12,'head_sha':f.program}}
         f.records['actions/artifacts/42']=self.artifact
@@ -45,8 +46,28 @@ class Progress(unittest.TestCase):
         self.record['executions']=[{'run':9,'attempt':1}];self.pack()
         with self.assertRaisesRegex(ValueError,'own unfinished'):self.read()
     def test_active_original_executor_cannot_supply_progress(self):
+        self.f.job['status']='in_progress'
+        with self.assertRaisesRegex(ValueError,'not terminal'):self.read()
+    def test_terminal_recovery_job_can_supply_progress_while_other_jobs_run(self):
         self.f.publisher['status']='in_progress'
-        with self.assertRaises(ValueError):self.read()
+        self.assertEqual(self.read()['job']['status'],'completed')
+    def test_wrong_day_or_upload_outside_original_job_is_refused(self):
+        self.artifact['name']=NAME+'-20261116'
+        with self.assertRaisesRegex(ValueError,'job-date bucket'):self.read()
+        self.artifact['name']=NAME+'-20261117';self.artifact['created_at']='2026-11-17T00:59:00Z'
+        with self.assertRaisesRegex(ValueError,'outside original job'):self.read()
+    def test_later_run_number_in_earlier_execution_is_preserved(self):
+        self.record['run_anchor']={'run':11,'number':11}
+        self.record['run_sequence']['frontier']=10
+        self.f.records['actions/runs/11']=dict(self.f.publisher,id=11,run_number=11)
+        self.pack()
+        self.assertEqual(self.read()['record']['run_sequence']['frontier'],10)
+    def test_forged_or_future_workflow_anchor_is_refused(self):
+        self.record['run_anchor']={'run':11,'number':11};self.pack()
+        for mutation in ({'run_number':12},{'workflow_id':101},{'created_at':'2026-11-18T01:00:00Z'}):
+            self.f.records['actions/runs/11']=dict(self.f.publisher,id=11,run_number=11)
+            self.f.records['actions/runs/11'].update(mutation)
+            with self.subTest(mutation=mutation),self.assertRaisesRegex(ValueError,'anchor binding'):self.read()
     def test_original_attempt_is_read_after_rerun(self):
         self.f.records['actions/runs/10/attempts/1']=copy.deepcopy(self.f.publisher)
         self.f.publisher['run_attempt']=2
@@ -101,15 +122,6 @@ class Progress(unittest.TestCase):
         self.assertEqual(self.read()['record']['run_sequence']['partial'],partial)
         partial['frontier']=8;self.pack()
         with self.assertRaisesRegex(ValueError,'partial run-number'):self.read()
-    def test_candidate_read_failure_requires_baseline_not_invented_empty_state(self):
-        self.f.records['actions/artifacts?name='+NAME+'&per_page=10&page=1']={'artifacts':[{'id':99}]}
-        r=latest_progress(self.f.api,self.f.repo,self.baseline,self.f.main)
-        self.assertIsNone(r['progress']);self.assertTrue(r['unresolved']);self.assertIn('baseline',r['fallback'])
-    def test_latest_authenticated_candidate_selected_without_trusting_display_name(self):
-        self.f.records['actions/artifacts?name='+NAME+'&per_page=10&page=1']={'artifacts':[{'id':42},{'id':99}]}
-        r=latest_progress(self.f.api,self.f.repo,self.baseline,self.f.main)
-        self.assertEqual(r['progress']['artifact']['id'],42);self.assertEqual(r['unresolved'][0]['artifact'],99)
-
     def search_record(self):
         from existing_search import search_existing
         from dispatch_intents import operation_key

@@ -82,11 +82,20 @@ class Entrypoint(unittest.TestCase):
             self.assertNotIn('steal',str(prepare.call_args))
             self.assertEqual(json.loads((self.root/'out/intents.json').read_text()),{'operations':[]})
     def test_preparation_writes_progress_and_no_operation_output(self):
-        plan={'operations':[],'progress':{'schema':'test-progress'}}
+        plan={'operations':[],'progress':{'schema':'test-progress'},
+              'progress_artifact_name':'protocol-b-main-progress-20261117'}
         with patch.dict(os.environ,self.env|{'GITHUB_OUTPUT':str(self.root/'outputs')}),patch.object(entry,'API'),patch.object(entry,'prepare_recovery',return_value=plan):
             entry.run(self.argv('prepare'))
         self.assertEqual(json.loads((self.root/'out/progress.json').read_text()),plan['progress'])
-        self.assertEqual((self.root/'outputs').read_text(),'has_operations=false\n')
+        self.assertEqual((self.root/'outputs').read_text(),
+                         'has_operations=false\nprogress_artifact_name=protocol-b-main-progress-20261117\n')
+    def test_progress_output_cannot_inject_another_workflow_output(self):
+        plan={'operations':[],'progress':{'schema':'test-progress'},
+              'progress_artifact_name':'protocol-b-main-progress-20261117\nhas_operations=true'}
+        with patch.dict(os.environ,self.env|{'GITHUB_OUTPUT':str(self.root/'outputs')}),patch.object(entry,'API'),patch.object(entry,'prepare_recovery',return_value=plan):
+            with self.assertRaisesRegex(ValueError,'artifact output name'):
+                entry.run(self.argv('prepare'))
+        self.assertNotIn('has_operations=true',(self.root/'outputs').read_text())
     def test_rerun_cannot_read_or_dispatch_behind_a_progress_cursor(self):
         for stage in ('prepare','dispatch'):
             with patch.dict(os.environ,self.env|{'GITHUB_RUN_ATTEMPT':'2'}),patch.object(entry,'API') as api:
