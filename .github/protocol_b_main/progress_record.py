@@ -206,7 +206,8 @@ def latest_progress(api,repo,baseline,current_main,*,current_job,candidate_limit
                     job=loaded['job']
                     require(stamp(job['completed_at'])<=current_start,'progress executor overlaps current job')
                     candidates.append(loaded)
-                require(len(candidates)==1,'ambiguous same-second progress uploads; retain original executions')
+                require(len(candidates)==1,'ambiguous same-second progress uploads; retain original executions; artifact IDs: '
+                        +', '.join(str(a['id']) for a in tied))
                 return result(candidates[0])
             if current_day==first_day:
                 value=result();value['fallback']='Complete empty discovery since deployment; reconstruct the baseline.'

@@ -81,6 +81,7 @@ class Selection(unittest.TestCase):
         with patch('progress_record.read_progress',side_effect=[loaded,dict(loaded,artifact=second)]):
             value=self.run_lookup()
         self.assertFalse(value['discovery_complete']);self.assertIn('same-second',str(value['unresolved']))
+        self.assertIn('artifact IDs: 42, 100',str(value['unresolved']))
     def test_tie_authentication_bound(self):
         self.page([dict(self.f.artifact,id=i) for i in range(100,104)])
         with patch('progress_record.read_progress') as read:

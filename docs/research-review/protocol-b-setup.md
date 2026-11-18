@@ -611,6 +611,16 @@ anchor prevents an older queued run from moving the run-number frontier backward
 Failed authentication, missing pages or a lookup beyond the bound stops preparation
 without replacing the saved queue. Only complete empty discovery back to deployment
 permits initialization from the baseline. No legacy checkpoint name was deployed.
+
+Every successful preparation writes a new checkpoint even when no checks need
+starting. Regular idle wakes therefore refresh the most recent evidence. This
+does not recover from a stopped schedule longer than the search window, expired
+latest evidence, or an overfull daily bucket. Those cases stop this lane; this
+revision has no automatic re-baseline command. Preserve the retained queue and
+original intent/result records. A recovery change must reconstruct unresolved
+operations from that evidence before permitting another send, rather than reset
+to the deployment baseline. Ambiguous latest timestamps report both artifact IDs
+for inspection of the original jobs; deleting one is not a retry procedure.
 The code manifest checks integrity; protected main and actual GitHub execution
 records remain the trust root.
 

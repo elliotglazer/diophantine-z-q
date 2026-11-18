@@ -73,6 +73,15 @@ class Preparation(unittest.TestCase):
         self.records['actions/runs/501/attempts/1/jobs?per_page=100&page=1']={'total_count':1,'jobs':[newjob]}
         self.records['actions/workflows/900/runs?per_page=100&page=1']={
             'workflow_runs':[self.records['actions/runs/501'],self.records['actions/runs/500']]}
+    def test_idle_wake_still_prepares_fresh_checkpoint_without_dispatch(self):
+        self.baseline['activation_commit']=self.f.program
+        plan=self.prepare()
+        self.assertEqual(plan['operations'],[],plan)
+        self.assertEqual(plan['progress']['pending_prs'],[])
+        self.assertEqual(plan['progress_artifact_name'],NAME+'-20261117')
+        self.assertEqual(plan['progress']['run_anchor'],{'run':500,'number':500})
+        self.assertFalse(self.api.posts)
+
     def test_first_preparation_plans_both_workflows_within_read_cap(self):
         plan=self.prepare()
         self.assertEqual(len(plan['operations']),2,plan)
