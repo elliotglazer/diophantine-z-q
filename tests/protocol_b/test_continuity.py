@@ -304,8 +304,8 @@ class Continuity(unittest.TestCase):
                 v['review_round']['number'] = 2
                 app.checks[5]['output']['text'] = json.dumps(v)
             provider = Mock(return_value=report())
-            _, _, errors, _ = run_pipeline(gh, app, event=self.command(gh), provider=provider)
-            self.assertEqual(errors, [])
+            _, _, errors, state = run_pipeline(gh, app, event=self.command(gh), provider=provider)
+            self.assertEqual(errors, [], json.dumps(state, indent=2, sort_keys=True))
             self.assertEqual(provider.call_count, 2)
 
     def rebased_without_future_binding(self):
