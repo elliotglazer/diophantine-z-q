@@ -71,6 +71,25 @@ class Sequence(unittest.TestCase):
         api=API(110,missing=[105]);api.rows.reverse()
         self.assertFalse(self.scan(api,100,110)['enumeration_complete'])
 
+    def test_old_rows_on_an_early_page_do_not_end_complete_discovery(self):
+        api=API(110);api.rows.reverse()
+        result=self.scan(api,100,110)
+        self.assertTrue(result['enumeration_complete'])
+        self.assertEqual(result['requests'],2)
+        self.assertEqual([r['run_number'] for r in result['runs']],list(range(101,111)))
+        self.assertFalse(result['unresolved'])
+
+    def test_out_of_order_pages_resume_past_rows_before_the_frontier(self):
+        api=API(310);api.rows.reverse()
+        first=self.scan(api,300,310,max_pages=2)
+        self.assertFalse(first['enumeration_complete'])
+        self.assertEqual(first['partial']['next_page'],3)
+        self.assertFalse(first['unresolved'])
+        final=self.scan(api,300,310,partial=first['partial'],max_pages=3)
+        self.assertTrue(final['enumeration_complete'])
+        self.assertEqual([r['run_number'] for r in final['runs']],list(range(301,311)))
+        self.assertFalse(final['unresolved'])
+
     def test_missing_event_branch_or_time_cannot_hide_possible_executor(self):
         for key in ('event','head_branch','created_at'):
             for value in (None,'',False):

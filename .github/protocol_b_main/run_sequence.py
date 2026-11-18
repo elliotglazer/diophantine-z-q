@@ -49,7 +49,9 @@ def scan_run_sequence(api,workflow_id,frontier,target_number,*,partial=None,max_
         chunk=value.get('workflow_runs')
         require(isinstance(chunk,list) and len(chunk)<=100,'workflow sequence page')
         for row in chunk:retain(row)
-        if len(chunk)<100 or any(row.get('run_number',target_number)>0 and row.get('run_number',target_number)<=frontier for row in chunk):
+        # IDs and page order need not follow workflow chronology. An old
+        # row is not the end of the collection; only a short page is.
+        if len(chunk)<100:
             end_reached=True;break
         page+=1
     require(len(known)<=10000,'workflow discovery retention bound')
