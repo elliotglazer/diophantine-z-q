@@ -10,6 +10,10 @@ from discover_deferred import pages
 from discover_intents import JOB
 from read_budget import BoundedReads,ReadBudgetExceeded
 from run_sequence import scan_run_sequence
+from run_windows import stamp, printed
+
+# At most 288 successful checkpoint-producing jobs per UTC start-date bucket.
+MIN_CHECKPOINT_SECONDS=300
 
 
 def prepare_bounded(raw_api,repo,baseline,*,program_commit,recovery_run,recovery_attempt,limit=4,now=None):
@@ -46,6 +50,22 @@ def prepare_bounded(raw_api,repo,baseline,*,program_commit,recovery_run,recovery
     require(loaded.get('discovery_complete') is True,
             'Progress discovery incomplete; no reset or dispatch: '+str(loaded.get('unresolved',[]))[:1500])
     old=loaded['progress']['record'] if loaded['progress'] else None
+    if old:
+        artifact=loaded['progress']['artifact']
+        uploaded=stamp(artifact['created_at']);started=stamp(current_job['started_at'])
+        require(uploaded<=started,'checkpoint upload is after current executor start')
+        if started<uploaded+MIN_CHECKPOINT_SECONDS:
+            # Do not advance either cursor or overwrite any pending operation.
+            # The workflow explicitly skips all uploads and dispatch in this case.
+            # A later wake retires this executor only from that skipped step.
+            return {'schema':'main-check-intents/v1','repository_id':metadata['id'],'repository':repo,
+                'recovery_run':recovery_run,'recovery_attempt':recovery_attempt,'program_commit':program_commit,
+                'observed_main':observed,'operations':[],'observations':[],'unresolved':[],
+                'prior_execution_errors':[],'dispatch_authorized':False,
+                'checkpoint_deferred':{'reason':'checkpoint_frequency_bound',
+                    'not_before':printed(uploaded+MIN_CHECKPOINT_SECONDS),
+                    'retained_artifact':artifact,'progress_replaced':False},
+                'discovery':{'reads':api.count,'read_limit':api.limit}}
     run_anchor={'run':recovery_run,'number':actual['run_number']}
     if old and old['run_anchor']['number']>run_anchor['number']:
         run_anchor=copy.deepcopy(old['run_anchor'])

@@ -43,7 +43,7 @@ class Bounded(unittest.TestCase):
     def old(self,pending=()):
         record={'history':self.history['cursor'],'pending_prs':list(pending),'run_anchor':{'run':8,'number':9},
             'executions':[{'run':8,'attempt':1}], 'run_sequence':{'frontier':8,'partial':None}}
-        self.mocks['latest_progress'].return_value={'progress':{'record':record,'artifact':{'id':42}},'unresolved':[],'discovery_complete':True}
+        self.mocks['latest_progress'].return_value={'progress':{'record':record,'artifact':{'id':42,'created_at':'2026-11-17T00:50:00Z'}},'unresolved':[],'discovery_complete':True}
         return record
     def pr(self,n):
         return {'number':n,'base':{'repo':{'full_name':'owner/repo'}},'merge_commit_sha':'e'*40}
@@ -58,6 +58,22 @@ class Bounded(unittest.TestCase):
         with self.assertRaisesRegex(ValueError,'no reset or dispatch'):self.run_prepare()
         self.mocks['discover_main_history'].assert_not_called()
         self.mocks['plan_recovery'].assert_not_called()
+    def test_checkpoint_cadence_boundary_preserves_unknown_state_before_five_minutes(self):
+        for age,eligible in [(299,False),(300,True),(301,True)]:
+            with self.subTest(seconds_since_upload=age):
+                old=self.old();original=copy.deepcopy(old)
+                uploaded=datetime.datetime(2026,11,17,1,tzinfo=datetime.timezone.utc)-datetime.timedelta(seconds=age)
+                self.mocks['latest_progress'].return_value['progress']['artifact']['created_at']=uploaded.isoformat().replace('+00:00','Z')
+                result=self.run_prepare()
+                self.assertEqual('progress' in result,eligible)
+                if not eligible:
+                    self.assertFalse(result['operations'])
+                    self.assertFalse(result['dispatch_authorized'])
+                    self.assertEqual(old,original)
+                    self.mocks['discover_main_history'].assert_not_called()
+                    self.mocks['plan_recovery'].assert_not_called()
+                for mock in self.mocks.values():mock.reset_mock()
+
     def test_older_queued_run_preserves_a_later_run_number_anchor(self):
         old=self.old();old['run_anchor']={'run':12,'number':12}
         old['run_sequence']['frontier']=11
@@ -88,7 +104,7 @@ class Bounded(unittest.TestCase):
         self.old([2,3,4]);
         for n in (2,3,4):self.api.records['pulls/'+str(n)]=self.pr(n)
         first=self.run_prepare()
-        self.mocks['latest_progress'].return_value={'progress':{'record':first['progress'],'artifact':{'id':42}},'unresolved':[],'discovery_complete':True}
+        self.mocks['latest_progress'].return_value={'progress':{'record':first['progress'],'artifact':{'id':42,'created_at':'2026-11-17T00:50:00Z'}},'unresolved':[],'discovery_complete':True}
         self.run_prepare()
         selected=self.mocks['plan_recovery'].call_args.kwargs['queue']['candidates']
         self.assertEqual([x['number'] for x in selected],[4,2])
@@ -153,7 +169,7 @@ class Bounded(unittest.TestCase):
             self.assertLessEqual(result['discovery']['reads'],60)
             if result['discovery']['run_sequence_complete'] and progress['executions']==[{'run':10,'attempt':1}]:
                 break
-            self.mocks['latest_progress'].return_value={'progress':{'record':progress,'artifact':{'id':42}},'unresolved':[],'discovery_complete':True}
+            self.mocks['latest_progress'].return_value={'progress':{'record':progress,'artifact':{'id':42,'created_at':'2026-11-17T00:50:00Z'}},'unresolved':[],'discovery_complete':True}
         else:self.fail('bounded discovery did not drain its inert backlog')
         self.assertEqual(seen,{row['id'] for row in rows})
         self.assertLessEqual(peak,341)

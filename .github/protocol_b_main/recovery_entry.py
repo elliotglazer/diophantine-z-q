@@ -31,6 +31,9 @@ def publish_summary(stage, value):
     if not path:
         return
     rows = []
+    if stage == 'prepare' and value.get('checkpoint_deferred'):
+        rows.append({'checkpoint_deferred': value['checkpoint_deferred'],
+                     'meaning': 'No new checkpoint or dispatch. Retained pending work is unchanged.'})
     if stage == 'prepare':
         rows.append({'planned_operations': len(value.get('operations', [])),
                      'unresolved_reads': len(value.get('unresolved', [])),

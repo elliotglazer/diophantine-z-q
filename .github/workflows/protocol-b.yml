@@ -5094,6 +5094,7 @@ jobs:
             --baseline "$RUNNER_TEMP/protocol-b-main-code/baseline.json" \
             --output "$RUNNER_TEMP/protocol-b-main-records"
       - name: Persist main-check recovery progress
+        if: steps.recovery_prepare.outputs.progress_artifact_name != ''
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
         with:
           name: ${{ steps.recovery_prepare.outputs.progress_artifact_name }}

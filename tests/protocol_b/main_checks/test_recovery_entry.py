@@ -89,6 +89,18 @@ class Entrypoint(unittest.TestCase):
         self.assertEqual(json.loads((self.root/'out/progress.json').read_text()),plan['progress'])
         self.assertEqual((self.root/'outputs').read_text(),
                          'has_operations=false\nprogress_artifact_name=protocol-b-main-progress-20261117\n')
+    def test_frequency_deferral_outputs_no_checkpoint_or_dispatch(self):
+        plan={'operations':[],'checkpoint_deferred':{'not_before':'2026-11-17T13:07:00Z'}}
+        with patch.dict(os.environ,self.env|{'GITHUB_OUTPUT':str(self.root/'outputs'),
+                'GITHUB_STEP_SUMMARY':str(self.root/'summary')}),patch.object(entry,'API'), \
+                patch.object(entry,'prepare_recovery',return_value=plan), \
+                patch.object(entry,'dispatch_recovery') as dispatch:
+            entry.run(self.argv('prepare'))
+        self.assertEqual((self.root/'outputs').read_text(),'has_operations=false\n')
+        self.assertFalse((self.root/'out/progress.json').exists())
+        self.assertIn('Retained pending work is unchanged',(self.root/'summary').read_text())
+        dispatch.assert_not_called()
+
     def test_progress_output_cannot_inject_another_workflow_output(self):
         plan={'operations':[],'progress':{'schema':'test-progress'},
               'progress_artifact_name':'protocol-b-main-progress-20261117\nhas_operations=true'}

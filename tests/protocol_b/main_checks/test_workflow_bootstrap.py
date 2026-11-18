@@ -61,6 +61,7 @@ class WorkflowBootstrap(unittest.TestCase):
         intents=FRAGMENT.index('- name: Persist main-check dispatch intents')
         dispatch=FRAGMENT.index('- name: Dispatch confirmed main checks')
         self.assertLess(progress,intents);self.assertLess(intents,dispatch)
+        self.assertIn("if: steps.recovery_prepare.outputs.progress_artifact_name != ''",FRAGMENT[progress:intents])
         self.assertIn("if: steps.recovery_prepare.outputs.has_operations == 'true'",FRAGMENT[intents:dispatch])
         self.assertIn("if: steps.recovery_prepare.outputs.has_operations == 'true'",FRAGMENT[dispatch:])
     def test_rerun_is_refused_before_any_bootstrap_read(self):

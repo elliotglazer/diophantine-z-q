@@ -69,7 +69,7 @@ class Preparation(unittest.TestCase):
         self.records['actions/runs/501']=dict(self.records['actions/runs/500'],id=501,
             run_number=501,status='in_progress',created_at='2026-11-17T13:04:00Z')
         newjob=copy.deepcopy(self.job);newjob.update(id=2501,run_id=501,status='in_progress',
-            started_at='2026-11-17T13:05:00Z',completed_at=None)
+            started_at='2026-11-17T13:08:00Z',completed_at=None)
         self.records['actions/runs/501/attempts/1/jobs?per_page=100&page=1']={'total_count':1,'jobs':[newjob]}
         self.records['actions/workflows/900/runs?per_page=100&page=1']={
             'workflow_runs':[self.records['actions/runs/501'],self.records['actions/runs/500']]}
@@ -95,6 +95,46 @@ class Preparation(unittest.TestCase):
         self.assertEqual(len(self.api.posts),2,result)
         self.assertTrue(all(r['status']=='run_confirmed' for r in result['receipts']),result)
         self.assertLessEqual(len(self.api.reads)-before,60)
+    def test_early_wake_preserves_original_checkpoint_and_does_not_dispatch(self):
+        plan=self.prepare();self.upload_plan(plan);self.finish_original(unknown=True)
+        self.records['actions/runs/501/attempts/1/jobs?per_page=100&page=1']['jobs'][0].update(
+            started_at='2026-11-17T13:05:00Z')
+        original=copy.deepcopy(self.records[self.bucket]);blobs=copy.deepcopy(self.blobs)
+        resumed=self.prepare(501)
+        self.assertFalse(resumed['operations'])
+        self.assertNotIn('progress',resumed)
+        self.assertEqual(resumed['checkpoint_deferred']['not_before'],'2026-11-17T13:07:00Z')
+        self.assertFalse(resumed['checkpoint_deferred']['progress_replaced'])
+        self.assertEqual(self.records[self.bucket],original)
+        self.assertEqual(self.blobs,blobs)
+        self.assertFalse(self.api.posts)
+
+    def test_next_eligible_wake_retires_skipped_wake_but_preserves_older_unknown_send(self):
+        plan=self.prepare();self.upload_plan(plan);self.finish_original(unknown=True)
+        jobs_path='actions/runs/501/attempts/1/jobs?per_page=100&page=1'
+        skipped=self.records[jobs_path]['jobs'][0]
+        skipped.update(started_at='2026-11-17T13:05:00Z')
+        deferred=self.prepare(501);self.assertIn('checkpoint_deferred',deferred)
+        self.records['actions/runs/501']['status']='completed'
+        skipped.update(status='completed',completed_at='2026-11-17T13:06:00Z')
+        for step in skipped['steps']:
+            step.update(status='completed',conclusion='success' if step['name']==PREPARE else 'skipped')
+        self.records['actions/runs/501/artifacts?per_page=100&page=1']={'total_count':0,'artifacts':[]}
+        self.records['actions/runs/502']=dict(self.records['actions/runs/501'],id=502,run_number=502,
+            status='in_progress',created_at='2026-11-17T13:07:00Z')
+        job=copy.deepcopy(skipped);job.update(id=2502,run_id=502,status='in_progress',
+            started_at='2026-11-17T13:08:00Z',completed_at=None)
+        self.records['actions/runs/502/attempts/1/jobs?per_page=100&page=1']={'total_count':1,'jobs':[job]}
+        self.records['actions/workflows/900/runs?per_page=100&page=1']={'workflow_runs':[
+            self.records['actions/runs/502'],self.records['actions/runs/501'],self.records['actions/runs/500']]}
+        resumed=self.prepare(502)
+        self.assertNotIn('checkpoint_deferred',resumed)
+        self.assertFalse(resumed['operations'])
+        self.assertIn({'run':500,'attempt':1},resumed['progress']['executions'])
+        self.assertNotIn({'run':501,'attempt':1},resumed['progress']['executions'])
+        self.assertEqual(resumed['progress']['pending_prs'],[7])
+        self.assertFalse(self.api.posts)
+
     def test_next_wake_can_retire_authenticated_unsent_executor(self):
         plan=self.prepare();self.upload_plan(plan);self.finish_original(unknown=False)
         self.pack(500,'results',{'schema':'main-check-results/v1','repository_id':7,

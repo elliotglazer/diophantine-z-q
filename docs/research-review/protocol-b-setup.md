@@ -612,9 +612,20 @@ Failed authentication, missing pages or a lookup beyond the bound stops preparat
 without replacing the saved queue. Only complete empty discovery back to deployment
 permits initialization from the baseline. No legacy checkpoint name was deployed.
 
-Every successful preparation writes a new checkpoint even when no checks need
-starting. Regular idle wakes therefore refresh the most recent evidence. This
-does not recover from a stopped schedule longer than the search window, expired
+Every eligible preparation writes a new checkpoint even when no checks need
+starting. To keep event bursts below the daily listing bound, the serialized
+recovery lane waits until its actual job start is at least five minutes after
+the previous authenticated checkpoint's upload. An earlier wake records a
+summary and explicitly skips checkpoint upload and dispatch. It leaves the
+original queue, cursors and unresolved sends intact; a later eligible workflow
+completion or hourly scheduled wake resumes them. This is not a timer promising
+to wake exactly five minutes later, and it does not delay the review job or
+inline post-merge dispatch. Since upload cannot precede the original job start,
+successive checkpoint-producing starts are at least 300 seconds apart: at most
+288 checkpoints fall in one UTC start-date bucket, below its 300-artifact bound.
+
+Regular eligible idle wakes refresh the most recent evidence. This does not
+recover from a stopped schedule longer than the search window, expired
 latest evidence, or an overfull daily bucket. Those cases stop this lane; this
 revision has no automatic re-baseline command. Preserve the retained queue and
 original intent/result records. A recovery change must reconstruct unresolved
