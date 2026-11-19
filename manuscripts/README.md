@@ -1,6 +1,6 @@
 # Manuscripts
 
-Version 21 adds José Brox's explicit 229-variable result, with
+Version 21 adds Jose Brox's explicit 229-variable result, with
 its complete proof and the unchanged 195-variable Busy Beaver polynomial:
 
 - [Candidate PDF](quartic_v21.pdf), [TeX](quartic_v21.tex)

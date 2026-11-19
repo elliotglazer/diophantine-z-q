@@ -11,7 +11,7 @@ Project licensing applies only to original project material. It does not relicen
 
 ## Version 21 construction sources
 
-José Brox supplied the explicit 229-variable construction accepted in PR158.
+Jose Brox supplied the explicit 229-variable construction accepted in PR158.
 It builds on Gemini 4 Carbon's three-detector construction and Brox's
 additive-detector framework. The source package also attributes its additional
 independent exact-integer computations and preparation to GPT-6.
@@ -24,7 +24,7 @@ source is changed.
 ## Version 20 construction sources
 
 Gemini 4 Carbon supplied the explicit247 data and normalization certificate,
-building on José Brox's construction. The [selected input inventory](research/version20/construction/INPUTS.json)
+building on Jose Brox's construction. The [selected input inventory](research/version20/construction/INPUTS.json)
 preserves their original bytes. The unbalanced 244-coordinate input is identical
 to the retained Version 19 input; its upstream provenance and notices remain
 in that release. See the [Version 20 construction notice](research/version20/construction/NOTICE.md)
@@ -60,7 +60,7 @@ Version 6 proves the required fixed Gaussian ray-field special case within the m
 
 ## Version 5 sources, preserved
 
-The Version 5 quartic reconstructs formulas from José Brox's [public improvements manuscript](https://github.com/JoseBrox/diophantine-z-q_improvements), pinned by commit and hash in the [package provenance](quartics/quartic-1272/PROVENANCE.json). Brox receives credit for the shared-point construction, detector formulas, fixed scales and affine anchor change. The reconstruction, gate program and independent checking are identified separately. This is not a redistribution of an unavailable original coefficient archive.
+The Version 5 quartic reconstructs formulas from Jose Brox's [public improvements manuscript](https://github.com/JoseBrox/diophantine-z-q_improvements), pinned by commit and hash in the [package provenance](quartics/quartic-1272/PROVENANCE.json). Brox receives credit for the shared-point construction, detector formulas, fixed scales and affine anchor change. The reconstruction, gate program and independent checking are identified separately. This is not a redistribution of an unavailable original coefficient archive.
 
 Zhi-Wei Sun's [arXiv:2610.20691](https://arxiv.org/abs/2610.20691) supplies the simultaneous prime-pattern argument. The manuscript includes its application and the audited derivation, with individual published and preprint inputs recorded in the [Version 5 inventory](docs/quartic-1272/README.md). In particular, publication status for Frei–Tinková is not inferred from its arXiv upload. Preserved source material retains its own authorship and terms; repository licensing applies only to original project material.
 
