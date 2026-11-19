@@ -34,8 +34,8 @@ class PostMerge(unittest.TestCase):
             if already_enabled:
                 gh.pr['auto_merge'] = {'enabled': True}
             with patch.object(tg.gate.time, 'sleep', side_effect=AssertionError('No polling')):
-                _, _, errors, _ = tg.run_pipeline(gh, mode='live')
-            self.assertEqual(errors, [])
+                _, _, errors, state = tg.run_pipeline(gh, mode='live')
+            self.assertEqual(errors, [], json.dumps(state, indent=2, sort_keys=True))
             self.assertEqual(gh.dispatches, [])
             self.assertFalse(gh.pr['merged'])
 

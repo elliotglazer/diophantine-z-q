@@ -5035,3 +5035,92 @@ jobs:
           path: ${{ runner.temp }}/protocol-b-reports/
           if-no-files-found: ignore
           retention-days: 90
+
+  recover_main_checks:
+    name: Recover deferred main checks
+    if: >-
+      github.repository == 'elliotglazer/diophantine-z-q' && vars.PROTOCOL_B_MODE == 'live' && github.run_attempt == 1 &&
+      (github.event_name == 'schedule' || github.event_name == 'workflow_run')
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    concurrency:
+      group: protocol-b-main-check-recovery
+      cancel-in-progress: false
+    permissions:
+      contents: read
+      pull-requests: read
+      issues: read
+      checks: read
+      actions: write
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Load recovery code from the actual main execution
+        shell: bash
+        run: |
+          python3 - <<'PY'
+          import base64, hashlib, json, os, pathlib, re, subprocess
+          repo=os.environ['GITHUB_REPOSITORY'];sha=os.environ['GITHUB_SHA']
+          run=os.environ['GITHUB_RUN_ID'];attempt=os.environ['GITHUB_RUN_ATTEMPT']
+          assert repo=='elliotglazer/diophantine-z-q' and re.fullmatch(r'[0-9a-f]{40}',sha)
+          assert run.isdigit() and attempt.isdigit() and int(attempt)==1
+          def get(path):
+              return json.loads(subprocess.check_output(['gh','api','repos/'+repo+'/'+path]))
+          actual=get('actions/runs/'+run)
+          assert (actual['id']==int(run) and actual['run_attempt']==int(attempt)
+              and actual['repository']['full_name']==repo and actual['head_repository']['full_name']==repo
+              and actual['head_branch']=='main' and actual['head_sha']==sha
+              and actual['path']=='.github/workflows/protocol-b.yml'
+              and actual['event'] in ('schedule','workflow_run'))
+          def content(name):
+              value=get('contents/.github/protocol_b_main/'+name+'?ref='+sha)
+              assert value['encoding']=='base64'
+              return base64.b64decode(value['content'],validate=False)
+          manifest=json.loads(content('code-manifest.json'))
+          expected={'github_api.py', 'discover_deferred.py', 'dispatch_intents.py', 'progress_record.py', 'revalidate_operations.py', 'existing_search.py', 'history_queue.py', 'deferred_artifact.py', 'dispatch_recovery.py', 'discover_queue.py', 'discover_intents.py', 'enumerate_intents.py', 'deferred_source.py', 'release_transition.py', 'read_budget.py', 'bounded_recovery.py', 'recovery_entry.py', 'run_windows.py', 'run_sequence.py', 'prepare_recovery.py', 'existing_runs.py', 'baseline.json'}
+          assert manifest['schema']=='main-check-code/v1' and set(manifest['files'])==expected
+          destination=pathlib.Path(os.environ['RUNNER_TEMP'])/'protocol-b-main-code'
+          destination.mkdir(exist_ok=False)
+          for name in sorted(expected):
+              raw=content(name)
+              assert hashlib.sha256(raw).hexdigest()==manifest['files'][name]
+              (destination/name).write_bytes(raw)
+          PY
+      - name: Prepare main-check dispatch intents
+        id: recovery_prepare
+        shell: bash
+        run: |
+          python3 -B "$RUNNER_TEMP/protocol-b-main-code/recovery_entry.py" prepare \
+            --baseline "$RUNNER_TEMP/protocol-b-main-code/baseline.json" \
+            --output "$RUNNER_TEMP/protocol-b-main-records"
+      - name: Persist main-check recovery progress
+        if: steps.recovery_prepare.outputs.progress_artifact_name != ''
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: ${{ steps.recovery_prepare.outputs.progress_artifact_name }}
+          path: ${{ runner.temp }}/protocol-b-main-records/progress.json
+          if-no-files-found: error
+          retention-days: 90
+      - name: Persist main-check dispatch intents
+        if: steps.recovery_prepare.outputs.has_operations == 'true'
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: protocol-b-main-intents-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/protocol-b-main-records/intents.json
+          if-no-files-found: error
+          retention-days: 90
+      - name: Dispatch confirmed main checks
+        if: steps.recovery_prepare.outputs.has_operations == 'true'
+        shell: bash
+        run: |
+          python3 -B "$RUNNER_TEMP/protocol-b-main-code/recovery_entry.py" dispatch \
+            --baseline "$RUNNER_TEMP/protocol-b-main-code/baseline.json" \
+            --output "$RUNNER_TEMP/protocol-b-main-records"
+      - name: Persist main-check dispatch results
+        if: always()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
+        with:
+          name: protocol-b-main-results-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ runner.temp }}/protocol-b-main-records/results.json
+          if-no-files-found: ignore
+          retention-days: 90

@@ -577,12 +577,117 @@ on the PR. Dispatched kernel runs neither save the push-only kernel cache nor
 serve as push-run base evidence for later PR progress tables. Those tables can
 therefore report `not_measured`. This gate change preserves those limitations.
 
-**Deferred auto-merges require a manual step.** The review job does not poll for
-them, and there is no closed-PR or `workflow_run` handler. Once a maintainer
-confirms a deferred merge, they must open Actions and run both **Research checks**
-and **Kernel Lean build and audit** with branch **main**. The same applies if
-auto-merge was already enabled. `post-merge-manual.json` records this limitation
-in the gate artifact. A successful App check is not evidence of post-merge tests.
+**Deferred auto-merges have a separate recovery job.** The review job does not
+poll. After this revision is deployed on main, the existing schedule and
+Research/Kernel completion events wake `Recover deferred main checks`. It has
+Actions write access and read access to repository evidence, with no protected
+environment or provider/App secrets. It ignores the triggering workflow's branch,
+title and payload, and reloads actual GitHub state.
+
+The job uses `.github/protocol_b_main/baseline.json` to exclude historical merges.
+It requires a confirmed gate-actor merge and the authentic App acceptance and
+original deferred auto-merge request. It reconciles earlier run and artifact
+evidence before dispatching either check. Failed, expired or ambiguous evidence
+stays unresolved. A completed failed build is not verification success or a
+reason to repeat the dispatch automatically.
+
+Discovery uses authenticated `protocol-b-main-progress-YYYYMMDD` artifacts,
+where the date is the original recovery job's UTC start date. Each record keeps
+which main commits and workflow-run numbers have been examined, all pending
+PRs, and original executions that still need reconciliation. It cannot authorize
+a dispatch or prove a check passed. The reader verifies the original first-attempt
+main execution, terminal recovery job, successful pre-dispatch upload, repository,
+archive digest and deployment baseline. Other jobs in the same workflow may still
+be running. The original recovery job itself must be terminal.
+
+The lookup walks backward at most 14 UTC dates, stopping at deployment. It reads
+all pages for each date, with a maximum of 300 artifacts per date and the existing
+60-read stage cap. Within a complete date it uses GitHub's upload timestamp,
+confirmed to fall inside the original job, and rejects tied newest timestamps.
+Artifact IDs, listing order and workflow run numbers are not execution order.
+Serialization and the original job timestamps bind the selected record to an
+execution that ended before the current job started. A retained actual workflow
+anchor prevents an older queued run from moving the run-number frontier backward.
+Failed authentication, missing pages or a lookup beyond the bound stops preparation
+without replacing the saved queue. Only complete empty discovery back to deployment
+permits initialization from the baseline. No legacy checkpoint name was deployed.
+
+Every eligible preparation writes a new checkpoint even when no checks need
+starting. To keep event bursts below the daily listing bound, the serialized
+recovery lane waits until its actual job start is at least five minutes after
+the previous authenticated checkpoint's upload. An earlier wake records a
+summary and explicitly skips checkpoint upload and dispatch. It leaves the
+original queue, cursors and unresolved sends intact; a later eligible workflow
+completion or hourly scheduled wake resumes them. This is not a timer promising
+to wake exactly five minutes later, and it does not delay the review job or
+inline post-merge dispatch. Since upload cannot precede the original job start,
+successive checkpoint-producing starts are at least 300 seconds apart: at most
+288 checkpoints fall in one UTC start-date bucket, below its 300-artifact bound.
+
+Regular eligible idle wakes refresh the most recent evidence. This does not
+recover from a stopped schedule longer than the search window, expired
+latest evidence, or an overfull daily bucket. Those cases stop this lane; this
+revision has no automatic re-baseline command. Preserve the retained queue and
+original intent/result records. A recovery change must reconstruct unresolved
+operations from that evidence before permitting another send, rather than reset
+to the deployment baseline. Ambiguous latest timestamps report both artifact IDs
+for inspection of the original jobs; deleting one is not a retry procedure.
+The code manifest checks integrity; protected main and actual GitHub execution
+records remain the trust root.
+
+Each preparation and dispatch phase has a 60-read cap and checks that at least
+200 API requests remain before it begins. Preparation visits at most four new
+main commits, two pending PRs and eight retained executions. New discovery
+pauses when 40 items await investigation. Pending work rotates so one lost
+receipt does not prevent examining the other original executions. Recovery-run
+discovery uses the unfiltered workflow list and requires contiguous run-number
+coverage; missing numbers never prove absence. Main-check searches split
+filtered time ranges before GitHub's 1,000-result ceiling. Unvisited windows
+and immutable run identities remain in the authenticated progress record for
+the next wake. Searches re-read the last boundary second and new time range;
+they never reuse a saved run status or conclusion. At most ten listing requests,
+four new commit comparisons and two current run outcomes are read per search,
+within the stage's total cap. Unknown identities, failed reads and incomplete
+windows never establish absence. A complete empty search is required before
+intent reconciliation can permit a dispatch.
+
+A fresh successful run can positively establish coverage while older discovery
+is incomplete. The record identifies that witness, other known matching run IDs,
+which outcomes were not rechecked, and any observed failures or lookup errors.
+This does not claim all matching runs passed. It authorizes no dispatch or retry.
+Exact-release coverage still requires the exact merge commit. An inventory above
+10,000 retained identities requires investigation instead of dropping evidence.
+The dispatch phase rechecks only the uploaded operation set and its current
+search progress, not all repository history. Empty plans do not upload a
+dispatch-intent artifact.
+
+Recovery is first-attempt-only, including its workflow guard and entry points.
+An ordinary rerun cannot create a new dispatch behind a saved discovery cursor.
+A terminal job cancelled before runner assignment, an explicitly skipped
+dispatch, or a confirmed failed prerequisite before the intent upload is inert.
+An active executor, a missing step after runner loss, or a possible send without
+a confirmed result remains unresolved. Recovery does not infer absence from a
+missing artifact or from an elapsed timeout. A rejected HTTP response retains
+its status, GitHub request ID when supplied, a bounded JSON error message and
+the response-body hash. The receipt does not treat a 4xx or 5xx response as
+proof of absence, and the transport does not retry the request.
+
+A completed artifact upload preserves each intent before any dispatch. The job
+makes each request once on ref main, records the returned run and actual head,
+and preserves independent results if one request fails. Non-release merges can
+share a main run whose commit contains the merge. A changed current-manuscript
+manifest requires checks at the exact release merge commit; if main advanced
+before dispatch, the job reports the missing exact run for a maintainer decision.
+Its run summary distinguishes verification success, work in progress, failed
+checks and effects needing reconciliation. The original artifacts retain the
+full evidence. No new issue comments or paid reviews are created by this job.
+
+This recovery lane covers deferred auto-merges only. An uncertain inline
+dispatch after a direct merge remains outside it.
+
+Historical `post-merge-manual.json` files remain unchanged. They record what the
+original review job did, rather than proof of a later dispatch. A successful
+App check is still not evidence that post-merge tests passed.
 
 For direct merges, `merge-result.json`, `merge-confirmation.json`, and the two
 `dispatch-*.json` receipts are retained with the review artifact. Each receipt

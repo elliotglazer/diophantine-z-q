@@ -1,0 +1,9 @@
+{
+  "schema": "main-check-baseline/v1",
+  "repository": "elliotglazer/diophantine-z-q",
+  "activation_commit": "629a6e23cbcf1bfca6c1a92bf226d29dde328859",
+  "activated_at": "2026-11-17T22:11:48.773289+00:00",
+  "note": "Unreleased deployment baseline: main history starts at the recorded activation commit. The workflow sequence anchor was read from GitHub before this recovery implementation was deployed; no recovery dispatcher existed on main then.",
+  "workflow_run_id": 44197315244,
+  "workflow_run_number": 552
+}

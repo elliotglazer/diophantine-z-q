@@ -6,6 +6,7 @@ on:
       - '.github/workflows/protocol-b-pdf-test.yml'
       - '.github/workflows/protocol-b-admission-test.yml'
       - '.github/scripts/test_protocol_b_admission.py'
+      - '.github/protocol_b_main/**'
       - 'tests/protocol_b/**'
   workflow_dispatch:
   schedule:
