@@ -1911,7 +1911,7 @@ jobs:
           # no credentials, a read-only tree. It uses no repository script, so pinning its
           # bytes fixes what executes around the package. A change requires a pin update.
           CHECKS_WORKFLOW = '.github/workflows/contribution-checks.yml'
-          CHECKS_WORKFLOW_SHA256 = '57bcd3f7eb7be05260491eb04fad1f1d8d401f7ad2715173ffd7de666e494b5d'
+          CHECKS_WORKFLOW_SHA256 = 'fd9bcfc5e49f355b4543b9d51485004fe2e983f38f8be1d49e5b6540a4db9d48'
           CHECKS_REF_PREFIX = 'refs/heads/codex/protocol-b-checks/'
           CHECKS_LIMIT = 3
           CHECKS_PACKAGE = r'[A-Za-z0-9][A-Za-z0-9_.-]{0,99}'

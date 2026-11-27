@@ -40,11 +40,15 @@ jobs:
           EVENT: ${{ github.event_name }}
         run: |
           set -euo pipefail
+          # The sandbox user cannot enter the runner's home directory, so the
+          # tree it sees is staged in a world-readable folder outside it.
+          root=/opt/contribution-commit
+          sudo -n mkdir -m 0755 "$root"
+          sudo -n chown "$(id -u):$(id -g)" "$root"
           if [ "$EVENT" = pull_request ]; then
             # A change to this workflow tests the sandbox itself on a fixture.
             # It never runs a pull request's package.
             name=selftest
-            root="$RUNNER_TEMP/selftest-root"
             mkdir -p "$root/research/contributions/$name"
             cat > "$root/research/contributions/$name/check_all.py" <<'PY'
           import os
@@ -76,12 +80,14 @@ jobs:
           PY
           else
             name="$PACKAGE"
-            root="$GITHUB_WORKSPACE"
             if ! [[ "$name" =~ ^[A-Za-z0-9][A-Za-z0-9_.-]{0,99}$ ]]; then
               echo "Invalid package name"; exit 2
             fi
-            echo "Commit under test: $(git -C "$root" rev-parse HEAD)"
+            echo "Commit under test: $(git -C "$GITHUB_WORKSPACE" rev-parse HEAD)"
+            # Exactly the committed files, without the repository metadata.
+            git -C "$GITHUB_WORKSPACE" archive --format=tar HEAD | tar -x -C "$root"
           fi
+          chmod -R a+rX,go-w "$root"
           package="$root/research/contributions/$name"
           if [ "$(realpath -e "$package")" != "$(realpath -e "$root")/research/contributions/$name" ] \
               || [ ! -f "$package/check_all.py" ] || [ -L "$package/check_all.py" ]; then

@@ -1126,7 +1126,8 @@ before the reviewers start:
    is recorded, and the reviewers see whatever exists.
 
 The workflow has read-only permissions and uses no secret, environment or
-repository script. It checks out the dispatched commit without credentials and
+repository script. It checks out the dispatched commit without credentials, stages its committed
+files (not the repository metadata) in a separate folder, and
 runs `python3 -B check_all.py` from the package folder inside `bwrap`: no
 network, an empty environment, an unprivileged user, the commit mounted
 read-only at `/repo`, and a private `/tmp`. The limit is 60 minutes. Python 3
