@@ -886,9 +886,14 @@ record, is not eligible, or discussion is uncovered.
   updating first. The tip is read by its full branch ref and stored with the
   decision. The gate rechecks it before it records success, when it publishes
   the check, and before it requests a merge; if the default branch is no longer
-  at that commit the decision no longer applies. The merge request itself names
-  only the head, so a default-branch push in the instant between that last
-  check and the merge is not excluded. A comparison with 300 or more files or
+  at that commit the decision no longer applies. For the same reason a
+  collaborator's decision is accepted only when every other required check has
+  already passed on the head, so the gate merges at once; it is never left to
+  deferred auto-merge, and if the direct merge cannot be made the gate stops
+  with an error. Two things are not excluded: a default-branch push in the
+  instant between the last check and the merge call, which names only the head;
+  and, if that direct merge fails after the check was published, a later manual
+  merge by someone with write access while the successful check still stands. A comparison with 300 or more files or
   250 or more commits, or whose file count differs from the pull request's,
   needs an admin. Everything else needs an admin: files the current-record
   checks execute, `research/versionNN/`, other research folders, Lean,
@@ -975,7 +980,7 @@ metadata must establish an unedited comment with the matching body and author.
 Missing metadata fails closed. Apart from the scope decisions above, a non-admin
 collaborator's override has no effect and receives a short reply. The gate's ignored-override replies do not alter the
 reviewed discussion digest or trigger paid supplements. Write-access collaborators retain automatic review, `/protocol-b review`,
-and ordinary protected merge access. This change does not alter any review,
+and ordinary protected merge access. The admin-only rule for findings does not alter any review,
 computation, head-binding or merge requirement.
 
 

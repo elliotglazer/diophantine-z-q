@@ -2980,6 +2980,19 @@ jobs:
                          if isinstance(item, dict) and item.get('authority') == 'scope-collaborator')
 
 
+          def collaborator_decided(state):
+              return any(isinstance(item, dict) and item.get('authority') == 'scope-collaborator'
+                         for item in (state.get('overrides') or {}).values())
+
+
+          def other_required_checks_passed(gh, head, default):
+              """Every required check except the review check itself has passed on this head."""
+              rules = gh.pages('/rules/branches/' + urllib.parse.quote(default, safe=''))
+              requirements = [c for rule in rules if rule['type'] == 'required_status_checks'
+                              for c in rule['parameters']['required_status_checks'] if c['context'] != CHECK]
+              return required_checks_passed(gh, head, requirements)
+
+
           def scope_decider(gh, pr, user):
               """A current collaborator who neither opened nor committed to the pull request,
               on a change confined to contribution notes.
@@ -4331,6 +4344,21 @@ jobs:
                                      'Request a review that covers it, or ask an admin to decide.')
                           gh.call(f'/issues/{number}/comments', 'POST', {'body': message})
                           raise ValueError(message)
+                      if any(item.get('authority') == 'scope-collaborator' for item in applied.values()):
+                          # A collaborator's decision is bound to the default-branch tip it was measured
+                          # from. It is accepted only when the pull request can merge at once, so it is
+                          # never left waiting on deferred auto-merge while the default branch can move.
+                          if not scope_decision_tip_current({'overrides': applied}, default_branch_tip(gh, default)):
+                              message = ('This scope decision was not applied. The default branch moved after the decision '
+                                         'was measured. Update the branch and decide again, or ask an admin.')
+                              gh.call(f'/issues/{number}/comments', 'POST', {'body': message})
+                              raise ValueError(message)
+                          if not other_required_checks_passed(gh, pr['head']['sha'], default):
+                              message = ('This scope decision was not applied. A collaborator\'s scope decision is accepted only '
+                                         'when every other required check has already passed on this head, so that the pull '
+                                         'request can merge at once. Post a new decision when the checks have passed, or ask an admin.')
+                              gh.call(f'/issues/{number}/comments', 'POST', {'body': message})
+                              raise ValueError(message)
                       conclusion = 'success'
                       summary = 'Accepted by collaborator override, not by unanimous model acceptance. Affected claims are NOT outside reviewed.\n' + json.dumps(applied, indent=2)
                       if limits:
@@ -4693,6 +4721,10 @@ jobs:
               expected_merge = None
               if ready:
                   expected_merge = direct_merge(gh, state, latest_ref)
+              elif collaborator_decided(state):
+                  # Never leave a tip-bound decision to a deferred merge of unknown duration.
+                  raise RuntimeError('Merge withheld: required checks are not ready, and a collaborator\'s scope '
+                                     'decision is not left to deferred auto-merge. Decide again when the checks have passed.')
               elif not current.get('auto_merge'):
                   # Only an explicit refusal permits the one readiness recheck. Transport
                   # failures and ambiguous partial GraphQL success are never replayed.
@@ -4825,7 +4857,7 @@ jobs:
               if accepted:
                   rows.append('No review changes are required. Merge remains subject to the repository\'s required checks and current-head rules.')
               elif blocking:
-                  rows.append('Address the blocking findings above, or reply on this PR to request an admin decision. The nonblocking observations do not require changes in this PR.')
+                  rows.append('Address the blocking findings above, or reply on this PR to request an admin decision (incomplete-scope items may have a second route, named below). The nonblocking observations do not require changes in this PR.')
               else:
                   rows.append('The review has not produced an accepted result. See the check summary for missing prerequisites or an interrupted review; this alone is not a mathematical error.')
               scope_ids = sorted(item['id'] for e in reports.values()

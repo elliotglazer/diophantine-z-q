@@ -3,7 +3,8 @@ import copy
 import unittest
 from unittest.mock import patch
 
-from test_gate import gate, FakeGH, FakeApp, HEAD, BASE, changed, envelope, report, comment, report_comment, run_pipeline
+from test_gate import (gate, FakeGH, FakeApp, HEAD, BASE, APP_ID, changed, envelope, report, comment,
+                       report_comment, run_pipeline)
 
 NOTE = 'research/contributions/example/README.md'
 UNREAD = ['The application of Theorem 3 on p. 14 was not reviewed.']
@@ -23,6 +24,13 @@ class ResearchGH(FakeGH):
     behind, merge_base = 0, None
     branch_tip = None    # What the qualified branch ref returns; defaults to main_sha.
     later_paths = None   # The diff from a default-branch tip the branch ref did not show.
+
+    def __init__(self):
+        super().__init__()
+        # Every other required check has passed on the head.
+        self.check_runs = [{'id': i, 'name': name, 'head_sha': HEAD, 'status': 'completed',
+                            'conclusion': 'success', 'app': {'id': 15368}}
+                           for i, name in enumerate(sorted(self.required - {gate.CHECK}), 1)]
 
     def call(self, path, method='GET', data=None):
         if path == '/git/ref/heads/main':
@@ -231,6 +239,50 @@ class CollaboratorScopeDecisions(unittest.TestCase):
         self.assertNotEqual((app.final or {}).get('conclusion'), 'success')
         self.assertEqual(gh.merge_requests, [])
         self.assertIn('default branch moved', str(app.final)+str(errors))
+
+    def test_decision_waits_for_the_other_required_checks(self):
+        # Round 5, Astra's unread item: a decision must not sit behind deferred auto-merge.
+        for change in ({'status': 'in_progress', 'conclusion': None}, {'conclusion': 'failure'}):
+            gh, app, event, known, eligible = self.case()
+            gh.check_runs[0].update(change)
+            self.assertFalse(gate.other_required_checks_passed(gh, HEAD, 'main'))
+            gh, app, errors, state = self.decide(gh, app, event)
+            self.assertNotEqual((app.final or {}).get('conclusion'), 'success')
+            self.assertEqual(gh.merge_requests, [])
+            self.assertTrue(any('every other required check has already passed' in p['body'] for p in gh.posts))
+            self.assertFalse(any(p['body'].startswith('Accepted by collaborator override') for p in gh.posts))
+        gh, app, event, known, eligible = self.case()
+        gh.check_runs = []
+        self.assertFalse(gate.other_required_checks_passed(gh, HEAD, 'main'))
+        # An admin's decision is not subject to this condition.
+        gh, app, event, known, eligible = self.case('admin')
+        gh.check_runs[0].update(status='in_progress', conclusion=None)
+        gh, app, errors, state = self.decide(gh, app, event)
+        self.assertEqual(app.final['conclusion'], 'success')
+
+    def test_collaborator_decision_is_never_left_to_deferred_auto_merge(self):
+        state = {'overrides': {'scope-1-1-astra': {'collaborator': 'jo', 'authority': 'scope-collaborator',
+                                                   'default_tip': BASE}}}
+        self.assertTrue(gate.collaborator_decided(state))
+        self.assertFalse(gate.collaborator_decided({'overrides': {'x': {'collaborator': 'owner'}}}))
+        self.assertFalse(gate.collaborator_decided({}))
+        gh = ResearchGH()
+        with patch.object(gate, 'merge_readiness', return_value=(False, {'auto_merge': None, 'node_id': 'PR_1'}, BASE)), \
+             patch.object(gate, 'direct_merge', side_effect=AssertionError('no merge')), \
+             patch.object(gh, 'api', side_effect=AssertionError('auto-merge must not be enabled')):
+            with self.assertRaisesRegex(RuntimeError, 'not left to deferred auto-merge'):
+                gate.merge_and_dispatch(gh, state)
+
+    def test_acceptance_comment_is_not_posted_when_the_tip_has_moved(self):
+        # Round 5, Fable N1: the tip is checked before the acceptance comment is posted.
+        gh, app, event, known, eligible = self.case()
+        reads = iter([BASE, BASE])
+        original = gate.default_branch_tip
+        with patch.object(gate, 'default_branch_tip', lambda g, default: next(reads, 'd' * 40)):
+            gh, app, errors, state = self.decide(gh, app, event)
+        self.assertNotEqual((app.final or {}).get('conclusion'), 'success')
+        self.assertFalse(any(p['body'].startswith('Accepted by collaborator override') for p in gh.posts))
+        self.assertTrue(any('default branch moved' in p['body'] for p in gh.posts))
 
     def test_stored_tip_is_checked_at_every_later_step(self):
         state = {'overrides': {'scope-1-1-astra': {'collaborator': 'jo', 'authority': 'scope-collaborator',
