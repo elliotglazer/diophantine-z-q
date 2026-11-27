@@ -1102,6 +1102,51 @@ are treated as diagnostic data; failure processing is isolated per worker so
 it cannot interrupt collection of the peer reviewer's verdict.
 
 
+## Contribution package checkers
+
+A package under `research/contributions/<name>/` may carry its own entry point,
+`check_all.py`. No pull-request workflow runs it, and a fork's own runs are not
+evidence for the exact head, so reviewers previously had nothing they could
+cite for such a package's tables.
+
+The preparation job, which holds no App or provider secret, now handles this
+before the reviewers start:
+
+1. It lists the packages the pull request touches, both names of a rename
+   included, that have `check_all.py` at the head. More than three is refused
+   and none is run.
+2. It requires `.github/workflows/contribution-checks.yml` at the head to match
+   the hash pinned in the gate. A branch that predates the workflow, or changes
+   it, runs nothing; update the branch from `main`.
+3. It creates the branch `codex/protocol-b-checks/<PR>/<head SHA>` at the head,
+   unless it exists, and dispatches the workflow there once per package. A ref
+   that points anywhere else is never used or moved.
+4. It waits up to 80 minutes for the runs and records their outcome. Nothing in
+   this step can fail the job or stop the review: a missing, failed or late run
+   is recorded, and the reviewers see whatever exists.
+
+The workflow has read-only permissions and uses no secret, environment or
+repository script. It checks out the dispatched commit without credentials and
+runs `python3 -B check_all.py` from the package folder inside `bwrap`: no
+network, an empty environment, an unprivileged user, the commit mounted
+read-only at `/repo`, and a private `/tmp`. The limit is 60 minutes. Python 3
+and Node from the runner image are available; nothing can be installed. A
+checker must therefore read only committed files, write only under `/tmp`, and
+need no network.
+
+Because these are `workflow_dispatch` runs on the exact head in this repository,
+`read_ci_job` accepts them. A passing run shows only that `check_all.py` exited
+zero on that commit. The reviewer still reads the checker to establish what it
+verifies before recording table coverage.
+
+For an outside author this step runs only after that run's admission, so the
+existing size and quota limits bound how often it can be triggered. The
+scheduled cleanup deletes a reserved branch once its pull request is closed and
+its runs have finished.
+
+A change to the workflow runs its sandbox self-test on the pull request and
+needs the pin in the gate updated in the same change.
+
 ## Light profile
 
 The light profile limits automatic repetition; both approved reviewers still

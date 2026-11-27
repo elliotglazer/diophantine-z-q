@@ -41,7 +41,7 @@ Typos, broken links, build instructions, credits. Keep it to a few files and a c
 Examples: a shorter argument, a better constant, a polynomial with fewer variables, a repair for a reported gap.
 
 - Submit a self-contained note under `research/`, with its own statement, proof, and the exact list of results from the current manuscript and from the literature that it uses. For each one, give the location and check its hypotheses against the objects you actually have. State conventions (fields, normalizations, quantifier order).
-- If there is a finite computation, submit the data and a checker that reads the data and verifies it independently of the program that found it. Give the command, the tool versions, the output and file hashes.
+- If there is a finite computation, submit the data and a checker that reads the data and verifies it independently of the program that found it. In a package under `research/contributions/<name>/`, name the entry point `check_all.py`: the review gate runs it on your exact commit in a sandbox (Python 3 and Node, no network, read-only files, writes only under `/tmp`, 60 minutes), which gives reviewers an execution they can cite. Give the command, the tool versions, the output and file hashes.
 - Do not edit the manuscript to insert your result. A new record becomes official only when the maintainers integrate it into a complete new manuscript version and release it. A chain of supplements to an old version is not accepted. Your note is the input to that step, and you will be credited.
 
 ### D. A Lean proof of an open statement (a pull request to Jack's fork)

@@ -1,0 +1,101 @@
+# Runs one contribution package's own checker on the exact commit that was
+# dispatched, with no network, no credentials and no write access to the tree.
+# Protocol B pins this file by hash and dispatches it on a reserved branch that
+# holds a pull request's head. It uses no repository script, so the commit under
+# test cannot change what this workflow does. A change here needs a pin update.
+name: Contribution checks
+run-name: "Contribution checks: ${{ inputs.package || 'sandbox self-test' }}"
+
+on:
+  workflow_dispatch:
+    inputs:
+      package:
+        description: Folder name under research/contributions/ whose check_all.py to run
+        required: true
+        type: string
+  pull_request:
+    paths:
+      - '.github/workflows/contribution-checks.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  package:
+    name: Contribution package checker
+    runs-on: ubuntu-24.04
+    timeout-minutes: 75
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Install the sandbox
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends bubblewrap
+          dpkg-query -W bubblewrap coreutils
+      - name: Run check_all.py without network, credentials or write access
+        env:
+          PACKAGE: ${{ inputs.package }}
+          EVENT: ${{ github.event_name }}
+        run: |
+          set -euo pipefail
+          if [ "$EVENT" = pull_request ]; then
+            # A change to this workflow tests the sandbox itself on a fixture.
+            # It never runs a pull request's package.
+            name=selftest
+            root="$RUNNER_TEMP/selftest-root"
+            mkdir -p "$root/research/contributions/$name"
+            cat > "$root/research/contributions/$name/check_all.py" <<'PY'
+          import os
+          import pathlib
+          import socket
+          import subprocess
+
+          here = pathlib.Path(__file__).resolve().parent
+          assert str(here) == '/repo/research/contributions/selftest', here
+          assert os.getuid() == 65534, os.getuid()
+          leaked = sorted(k for k in os.environ if k.startswith(('GITHUB_', 'ACTIONS_', 'RUNNER_', 'INPUT_')))
+          assert not leaked, leaked
+          try:
+              (here / 'written').write_text('x')
+          except OSError:
+              pass
+          else:
+              raise SystemExit('FAIL: the package directory is writable')
+          pathlib.Path('/tmp/scratch').write_text('ok')
+          try:
+              socket.create_connection(('1.1.1.1', 443), timeout=5)
+          except OSError:
+              pass
+          else:
+              raise SystemExit('FAIL: the network is reachable')
+          for program in (['node', '--version'], ['python3', '--version']):
+              print(subprocess.run(program, check=True, capture_output=True, text=True).stdout.strip())
+          print('PASS: sandbox self-test')
+          PY
+          else
+            name="$PACKAGE"
+            root="$GITHUB_WORKSPACE"
+            if ! [[ "$name" =~ ^[A-Za-z0-9][A-Za-z0-9_.-]{0,99}$ ]]; then
+              echo "Invalid package name"; exit 2
+            fi
+            echo "Commit under test: $(git -C "$root" rev-parse HEAD)"
+          fi
+          package="$root/research/contributions/$name"
+          if [ "$(realpath -e "$package")" != "$(realpath -e "$root")/research/contributions/$name" ] \
+              || [ ! -f "$package/check_all.py" ] || [ -L "$package/check_all.py" ]; then
+            echo "research/contributions/$name/check_all.py is not a regular file in a regular folder"; exit 2
+          fi
+          # Only system programs, a read-only copy of the commit and a private
+          # /tmp are visible. No host home, environment, credentials or network.
+          sudo -n /usr/bin/timeout --signal=KILL 3600 \
+            /usr/bin/bwrap --unshare-all --die-with-parent --new-session \
+            --uid 65534 --gid 65534 --cap-drop ALL --clearenv \
+            --setenv PATH /usr/local/bin:/usr/bin --setenv LC_ALL C.UTF-8 \
+            --setenv HOME /tmp --setenv PYTHONDONTWRITEBYTECODE 1 \
+            --ro-bind /usr /usr --ro-bind /lib /lib --ro-bind /lib64 /lib64 \
+            --symlink usr/bin /bin --proc /proc --dev /dev --tmpfs /tmp \
+            --ro-bind "$root" /repo --chdir "/repo/research/contributions/$name" \
+            /usr/bin/python3 -B check_all.py
+          echo "check_all.py for $name exited 0"

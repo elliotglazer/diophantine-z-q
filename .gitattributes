@@ -85,3 +85,4 @@ scripts/validate_kernel_reuse_project.py text eol=lf
 
 # Byte-pinned periodic kernel evidence action.
 .github/actions/kernel-progress/** text eol=lf
+.github/workflows/contribution-checks.yml text eol=lf
