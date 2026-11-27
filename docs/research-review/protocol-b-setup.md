@@ -848,10 +848,12 @@ ordinary protected merge access.
 
 A collaborator with current write or maintain access may accept incomplete-scope
 items with the same exact-head command when all of the following hold. Otherwise
-no item is accepted and the item needs an admin. A command that fails the first
-two conditions, or names another head, is ignored with a short reply. One that
-passes them but fails a later condition starts a check that ends unsuccessful,
-with a reply saying why.
+no item is accepted and the item needs an admin. The gate screens a command
+first: it must name the current head and only scope-shaped IDs, and the
+commenter and the changed paths must qualify. A command that fails this screen
+is ignored with a short reply and no check is created. A command that passes it
+starts a check, which ends unsuccessful with a reply if an ID is not in the App
+record, is not eligible, or discussion is uncovered.
 
 - The commenter did not open the pull request and is not the GitHub author or
   committer of any of its commits. The gate cannot tell who operates an agent,
@@ -877,9 +879,12 @@ with a reply saying why.
 - Every changed path, both names of a rename included, lies under
   `research/contributions/` and is not a Lean source or a Lake configuration or
   toolchain file. The paths and the commit authors are read from a comparison
-  of the exact base and head commits, not from the pull request's current file
-  listing, so moving the pull request to another head cannot change the answer.
-  A comparison with 300 or more files or 250 or more commits needs an admin. Everything else needs an admin: files the current-record
+  of two exact commits, the default branch's current tip and the head, not from
+  the pull request's file listing or its recorded base, which GitHub does not
+  keep current. The head must contain the default branch's tip, so the compared
+  change is exactly what merging would do; a branch that is behind needs
+  updating first. A comparison with 300 or more files or 250 or more commits
+  needs an admin. Everything else needs an admin: files the current-record
   checks execute, `research/versionNN/`, other research folders, Lean,
   manuscripts, releases, documentation, workflows, scripts and tests. Inside
   `research/contributions/` the outside lane's name-based rule for words such
@@ -896,7 +901,12 @@ pull request each say, item by item, whether an admin or a collaborator who is
 not the author accepted the incomplete scope. A collaborator's decision is
 applied in override-command runs on that head (its own, and any later one, where
 it is revalidated) and on the merge recheck. It is never passed to a review as
-an authenticated override. Findings stay
+an authenticated override. If an admin later overrides a finding on a head that
+has a stored collaborator decision and uncovered discussion, the admin's
+comment should name the scope items too; otherwise the collaborator's stored
+decision is refused for the uncovered discussion and the run fails closed. A
+scope item from an earlier round that a later review left unresolved is never
+eligible for a collaborator. Findings stay
 blocking until an admin decides them, so this never accepts a pull request on
 which a reviewer raised an unresolved objection.
 

@@ -19,13 +19,19 @@ class ResearchGH(FakeGH):
             return [changed(p) for p in (self.listed or self.paths)]
         return super().pages(path)
 
+    stale_paths = None  # The diff from the pull request's recorded, possibly old, base.
+    behind, merge_base = 0, None
+
     def call(self, path, method='GET', data=None):
-        if path == f'/compare/{BASE}...{HEAD}':
+        if path.startswith('/compare/') and path.endswith('...'+HEAD):
             self.compare_requests.append(path)
+            base = path.removeprefix('/compare/').split('...')[0]
             commits = [{'author': {'login': a} if a else None, 'committer': {'login': c} if c else None}
                        for a, c in self.committers]
-            return {'behind_by': 0, 'merge_base_commit': {'sha': BASE}, 'total_commits': len(commits),
-                    'commits': commits, 'files': [changed(p) for p in self.paths]}
+            # Only a comparison from the default branch's tip shows the true change.
+            paths = self.paths if base == self.main_sha else (self.stale_paths or self.paths)
+            return {'behind_by': self.behind, 'merge_base_commit': {'sha': self.merge_base or base},
+                    'total_commits': len(commits), 'commits': commits, 'files': [changed(p) for p in paths]}
         return super().call(path, method, data)
 
     def text(self, path, ref):
@@ -168,8 +174,7 @@ class CollaboratorScopeDecisions(unittest.TestCase):
                               {**good, **broken} if path.startswith('/compare/') else FakeGH.call(self, path, method, data)):
                 self.assertFalse(gate.scope_decider(gh, gh.pr, user), broken)
         gh, *_ = self.case()
-        for change in ({'head': {'sha': 'not-a-sha'}}, {'base': {'sha': None}}):
-            self.assertFalse(gate.scope_decider(gh, {**gh.pr, **change}, user))
+        self.assertFalse(gate.scope_decider(gh, {**gh.pr, 'head': {'sha': 'not-a-sha'}}, user))
 
     def test_paths_come_from_the_reviewed_commits_not_the_mutable_listing(self):
         # Round 2, Astra F1: the pull request shows a contribution-only head with the same
@@ -181,6 +186,36 @@ class CollaboratorScopeDecisions(unittest.TestCase):
         gh, app, errors, state = self.decide(gh, app, event)
         self.assertIsNone(state)
         self.assertEqual(app.created, [])
+
+    def test_true_change_is_measured_from_the_default_branch_tip(self):
+        # Round 3, Fable F1: the recorded base is old; the head contains the newer default
+        # branch but restores a protected file, so only the diff from the tip shows it.
+        user = {'login': 'collaborator', 'type': 'User'}
+        gh, app, event, known, eligible = self.case(paths=(NOTE, '.github/workflows/protocol-b.yml'))
+        gh.main_sha = 'd' * 40
+        gh.stale_paths = (NOTE,)
+        self.assertEqual(gh.pr['base']['sha'], BASE)
+        self.assertFalse(gate.scope_decider(gh, gh.pr, user))
+        self.assertFalse(gate.history(gh, gh.pr, known, eligible)[2])
+        self.assertTrue(any(('d' * 40) in request for request in gh.compare_requests))
+        # The converse: an honest branch that merged a newer default branch is not
+        # charged with the default branch's own files.
+        gh, app, event, known, eligible = self.case()
+        gh.main_sha = 'd' * 40
+        gh.stale_paths = (NOTE, 'scripts/changed_on_main.py')
+        self.assertTrue(gate.scope_decider(gh, gh.pr, user))
+
+    def test_branch_behind_or_not_based_on_the_default_tip_needs_an_admin(self):
+        user = {'login': 'collaborator', 'type': 'User'}
+        gh, *_ = self.case()
+        gh.behind = 1
+        self.assertFalse(gate.scope_decider(gh, gh.pr, user))
+        gh, *_ = self.case()
+        gh.merge_base = 'e' * 40
+        self.assertFalse(gate.scope_decider(gh, gh.pr, user))
+        gh, *_ = self.case()
+        gh.pr['base']['ref'] = 'release'
+        self.assertFalse(gate.scope_decider(gh, gh.pr, user))
 
     def test_command_for_another_head_is_refused_before_any_check(self):
         gh, app, event, known, eligible = self.case()
@@ -251,7 +286,7 @@ class CollaboratorScopeDecisions(unittest.TestCase):
         self.assertFalse(gate.history(gh, gh.pr, known, eligible)[2])
         gh, app, errors, state = self.decide(gh, app, event)
         self.assertNotEqual((app.final or {}).get('conclusion'), 'success')
-        self.assertTrue(any('no completed reviewer report itemizing' in p['body'] for p in gh.posts))
+        self.assertTrue(any('holds no completed reviewer report itemizing' in p['body'] for p in gh.posts))
         self.assertEqual(gh.merge_requests, [])
 
     def test_interrupted_review_record_is_not_a_reviewer_list(self):

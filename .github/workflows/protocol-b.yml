@@ -2969,24 +2969,31 @@ jobs:
               """A current collaborator who neither opened nor committed to the pull request,
               on a change confined to contribution notes.
 
-              Paths and commit authors come from a comparison of the two commit SHAs in
-              this pull-request snapshot. That comparison is immutable, so moving the
-              pull request to another head while it is read cannot change the answer.
-              An incomplete or oversized comparison needs an admin.
+              Paths and commit authors come from a comparison of two commit SHAs: the
+              default branch's current tip and this snapshot's head. The head must
+              contain that tip, so the comparison is exactly what merging would change;
+              the pull request's recorded base SHA can be older and is not used. A
+              comparison of commits is immutable, so moving the pull request to another
+              head while it is read cannot change the answer. An incomplete or oversized
+              comparison, or a branch behind the default branch, needs an admin.
               """
               login = str(user.get('login') or '').casefold()
               if (not login or not collaborator(gh, user) or not (pr.get('user') or {}).get('login')
                       or login == pr['user']['login'].casefold()):
                   return False
-              head, base = (pr.get('head') or {}).get('sha'), (pr.get('base') or {}).get('sha')
+              default = gh.call('')['default_branch']
+              if (pr.get('base') or {}).get('ref') != default:
+                  return False
+              head = (pr.get('head') or {}).get('sha')
+              base = gh.call('/commits/'+urllib.parse.quote(default, safe='')).get('sha')
               if not all(isinstance(sha, str) and re.fullmatch('[0-9a-f]{40}', sha) for sha in (head, base)):
                   return False
               comparison = gh.call(f'/compare/{base}...{head}')
               files, commits = comparison.get('files'), comparison.get('commits')
-              if (not isinstance(files, list) or not files or len(files) >= 300
+              if (comparison.get('behind_by') != 0 or (comparison.get('merge_base_commit') or {}).get('sha') != base
+                      or not isinstance(files, list) or not files or len(files) >= 300
                       or not isinstance(commits, list) or not commits or len(commits) >= 250
-                      or comparison.get('total_commits') != len(commits)
-                      or not (comparison.get('merge_base_commit') or {}).get('sha')):
+                      or comparison.get('total_commits') != len(commits)):
                   return False
               names = [file.get('filename') for file in files]
               if len(set(names)) != len(names) or any(not isinstance(name, str) or not name for name in names):
@@ -4273,8 +4280,9 @@ jobs:
                       refused = [ident for ident in parsed[1] if ident not in overrides] if scope_decision else []
                       if refused:
                           message = ('This override was ignored. Comment '+str(event['comment']['id'])+
-                                     ' names incomplete-scope items a collaborator cannot accept, because the App record '
-                                     'holds no completed reviewer report itemizing what was not read: '+', '.join(refused)+
+                                     ' names incomplete-scope items a collaborator cannot accept. Either the App record '
+                                     'holds no completed reviewer report itemizing what was not read, or the pull request '
+                                     'changed while the command was processed: '+', '.join(refused)+
                                      '. No item from that comment was applied. These need an admin decision.')
                           gh.call(f'/issues/{number}/comments', 'POST', {'body': message})
                           raise ValueError(message)
