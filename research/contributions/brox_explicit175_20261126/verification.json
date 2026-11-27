@@ -1,0 +1,26 @@
+{
+  "source_commit": "6864691d536057574be873667936610da6a4ea99",
+  "receiving_base": "964d7dd71f253091dbc5eac793b78cc56d1fcc73",
+  "check": "Independent JavaScript BigInt replay performed in this turn",
+  "variables": 175,
+  "quadrics": 147,
+  "monomials": 3196,
+  "degree": 4,
+  "coefficient_bits": 802,
+  "content": 1,
+  "ascii_bytes": 73080,
+  "changed_rows": [
+    "additive.detector0.contactSquare",
+    "additive.detector0.contactCombination",
+    "additive.detector0.contactRelation",
+    "additive.detector1.contactSquare",
+    "additive.detector1.contactCombination",
+    "additive.detector1.contactRelation",
+    "additive.detector2.contactSquare",
+    "additive.detector2.contactCombination",
+    "additive.detector2.contactRelation"
+  ],
+  "anchor_mod331_cases": 331,
+  "contact_constant_lt_2_pow_249": true,
+  "scope": "Final contact rechart, final expansion, census, numerical anchor and contact constant only; not independent proof of all earlier transformations or arithmetic suppliers."
+}

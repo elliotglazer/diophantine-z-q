@@ -1,0 +1,7 @@
+{
+  "source_commit": "6864691d536057574be873667936610da6a4ea99",
+  "executed": "Code Mode V8 exact BigInt checker; same verifyV74 in check-v74.js",
+  "v74_physical_rows": 162,
+  "rederived_field_and_detector_rows": 81,
+  "retained_source195_rows": 81
+}

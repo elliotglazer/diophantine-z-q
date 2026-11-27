@@ -1,0 +1,13 @@
+{
+  "computation/aligned_gate_20261125/README.md": "a413a6bf886387a3eca8e5202ebb751294e8cb6c",
+  "computation/aligned_gate_20261125/certificate175.json": "6d4e22c84032fda759d7129611f442a06b5b5f2c",
+  "computation/aligned_gate_20261125/quartic175.json": "00f2de3d5b4727170498243cec3eaa0eb0bbbd4a",
+  "computation/depressed_scalar_20261125/README.md": "cd5aa7aee8ced36564f39e4bcd638ee01c8056b3",
+  "computation/depressed_scalar_20261125/quartic177.json": "7e4906081cefd5aecec9d7dabd6f0e748a9d0fd5",
+  "computation/harmonic_scalar_20261125/README.md": "1ce7336e94a5dc330662f6887cfc4da53da6d407",
+  "computation/harmonic_scalar_20261125/quartic177.json": "29433e60c785fb503879aa786b96ac2ed1f0804b",
+  "computation/weighted_explicit178_20261124/README.md": "746572a164f3994791a505646684741f4ae97a1b",
+  "computation/weighted_explicit178_20261124/quadrics.json": "5f5dc81b80d46f93cd2018c93849c87e1ee83bc1",
+  "computation/bb_native_quartic_20261124/README.md": "3907b9048f7f86bce42046cdca5f5c25d8e961ff",
+  "computation/bb_native_quartic_20261124/quartic179/quadrics.json": "bcced13754b2e2032aa1d4750e6576a05ac09bc9"
+}

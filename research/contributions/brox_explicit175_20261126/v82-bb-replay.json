@@ -1,0 +1,9 @@
+{
+  "source_commit": "6864691d536057574be873667936610da6a4ea99",
+  "executed": "Code Mode V8 BigInt exact rational Laurent checker (same arithmetic and verifyV82 functions in check-v82-bb.js)",
+  "v82_physical_rows": 147,
+  "v82_compiled_rows": 151,
+  "bb_compiled_rows": 151,
+  "bb_changed_rows": 12,
+  "guards": 4
+}

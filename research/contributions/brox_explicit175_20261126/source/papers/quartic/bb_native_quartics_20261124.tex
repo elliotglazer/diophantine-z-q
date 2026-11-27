@@ -1,0 +1,371 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,mathtools,booktabs,microtype}
+\usepackage[margin=27mm]{geometry}
+\usepackage[colorlinks=true,linkcolor=blue,urlcolor=blue]{hyperref}
+\setlength{\emergencystretch}{3em}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+\newcommand{\Q}{\mathbb Q}
+\newcommand{\Z}{\mathbb Z}
+\DeclareMathOperator{\ord}{ord}
+\DeclareMathOperator{\sqf}{sqf}
+\title{Congruent-number pole equations in two quartic constructions}
+\author{ZQ Diophantine Project}
+\date{24 November 2026}
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We replace the non-CM elliptic-curve realization input in two
+previously specified quartic systems by Bhargava--Burungale's
+congruent-number result. The replacement changes exactly three
+quadratic equations in each pole block and does not introduce
+variables or weaken the integer-detection conclusion. The resulting
+systems have respectively 163 and 179 variables, 137 and 151
+quadratic equations, and 2771 and 3012 nonzero monomials after
+summing the squares. All other arithmetic hypotheses of the previous
+constructions are retained. The source literature, explicit
+local preparation, exact coefficient reconstruction, and limits of
+the verification are separated.
+\end{abstract}
+
+\section{The square-denominator equation}
+
+For a nonzero rational number $c$, say that $c$ has a
+\emph{square denominator} if its denominator, written in lowest terms,
+is a square. This means precisely that $v_p(c)$ is even whenever
+$v_p(c)<0$, for every rational prime $p$.
+
+\begin{lemma}[Elementary obstruction]\label{lem:sound}
+If $d,e,p,u,v,q\in\Q$ with $d\ne0$ satisfy
+\begin{equation}\label{eq:cm}
+ e^2+dp^2=1,\qquad
+ uv=e(1-d),\qquad
+ u^2-v^2=dq^2,
+\end{equation}
+then $d$ has a square denominator.
+\end{lemma}
+\begin{proof}
+Suppose $\nu=v_\ell(d)<0$ is odd for a prime $\ell$.
+If $p\ne0$, the valuation of $dp^2$ is odd, while that of
+$e^2$ is even. Their sum is $1$, so neither summand can have
+negative valuation; moreover $e$ must be an $\ell$-adic unit.
+The same conclusion is immediate if $p=0$.
+Since $v_\ell(1-d)=\nu$, the middle equation gives
+$v_\ell(u)+v_\ell(v)=\nu$, an odd integer, and in particular
+$uv\ne0$.
+If $q=0$, the last equation yields $u^2=v^2$, so the two
+valuations coincide. If $q\ne0$, its right side has odd
+valuation, whereas the left side has even valuation whenever
+$v_\ell(u)\ne v_\ell(v)$; therefore these valuations must
+again coincide. In either case $v_\ell(uv)$ is even, a
+contradiction. The argument also applies to $\ell=2$.
+\end{proof}
+
+For $d>0$ put $C_n:y^2=x^3-n^2x$.
+We use the following consequence of
+Bhargava--Burungale~\cite[Theorem~2.3 and Lemma~2.2]{BB},
+proved there using Tian--Yuan--Zhang~\cite{TYZ},
+explicit $2$-descent, and Gross--Zagier--Kolyvagin.
+
+\begin{theorem}[Bhargava--Burungale, prepared form]
+\label{thm:bb}
+Let $0<d<1$ have square denominator and satisfy
+\[
+ v_2(d)\ge4,\qquad d\in7\Q_2^{\times2}.
+\]
+Then the equations \eqref{eq:cm} have rational solutions.
+Moreover solutions can be obtained with the auxiliary
+nonzero conditions needed for the rational-point
+parametrizations, and the associated two free-parameter
+solution set is Zariski dense.
+\end{theorem}
+\begin{remark}
+Theorem~\ref{thm:bb} is a cited external arithmetic result,
+not a consequence of Lemma~\ref{lem:sound}. Its translation to
+the variables in \eqref{eq:cm}, including zero-branch and
+density issues, is proved in the project manuscript
+\cite[Section~3]{Intrinsic}. The original Theorem~5.3,
+Route~K, its certified-rank hypothesis and the project's
+Proposition~N are not imported in this paper.
+The source theorem itself still depends on rational points
+on congruent-number curves; only the \emph{application}
+avoids constructing them anew.
+\end{remark}
+
+\section{Preparation and a small rational normalization}
+
+The previously specified quartic systems~\cite{V82} use one
+rational input $b$ for each elliptic-curve pole condition.
+Their ordered construction of witnesses for integer inputs
+already makes these numbers positive with square denominators,
+$2$-adic squares of valuation at least four, and $3$-adic
+squares of valuation at least two. The original real interval
+$0<b<17$ can be reduced to $0<b<1$ without changing any
+equation. We first make this precise.
+
+\begin{lemma}[Smaller real intervals]\label{lem:real}
+For integer inputs, the old ordered source construction
+can be made to satisfy $0<b<1$ for every scalar and
+comparison pole input, while preserving the other
+preparation conditions.
+\end{lemma}
+\begin{proof}
+The previous scalar estimate~\cite[Section~7]{V82} gives
+\[
+  0<b_s\le \frac{24482500}{R^4},\qquad R>100,
+\]
+so $b_s<24482500/10^8<1$ already. Every comparison
+input approaches
+\[
+ c_*=\left(\frac{204}{409}\right)^2\in(0,1)
+\]
+in the relevant real neighborhood. There are only
+finitely many comparison poles. Shrinking those
+neighborhoods keeps them all inside $(0,1)$ and
+preserves their other open inequalities. The retained
+real recurrence permits this simultaneous shrinking
+before the later prime selection. No additional height
+estimate or rational variable is needed.
+\end{proof}
+
+\begin{lemma}[A fixed additional local condition]
+\label{lem:seven}
+The previous ordered integer-completeness construction
+can also arrange that every pole input $b$ is
+$7$-adically integral, without changing its scalar,
+prime-pattern or real arguments.
+\end{lemma}
+\begin{proof}
+The source recurrence supplies arbitrary prescribed
+finite local approximation and exact formal-group
+depths, with finitely many denominator guards.
+Enlarge its finite preparation set by the prime $7$.
+At the scalar pole,
+\[
+ b_s=K_s\tau^2,\qquad K_s=R(R+9792).
+\]
+The source's exact-depth construction (choose a
+sufficiently deep reference point first, then the
+rational index depth) works at any fixed prime of
+good or potentially good reduction with a fixed
+formal-logarithm denominator loss; the source
+already imposes such conditions at its finite
+exceptional primes. At the added prime $7$ choose
+the depth so that
+\[
+  2v_7(\tau)\ge -v_7(K_s).
+\]
+This ensures $v_7(b_s)\ge0$. The interval of
+allowable index depths remains nonempty because
+the reference depth may be increased arbitrarily
+before the scalar index is chosen.
+
+For the comparison poles, the source expressions
+are rational functions regular at their prescribed
+local limiting data. Their prepared limiting value
+is $c_*=(204/409)^2$, a $7$-adic unit, since
+$7\nmid204\cdot409$. Thus the same local
+approximation, chosen sufficiently close at $7$,
+gives $v_7(b_j)=0$ at every comparison pole.
+These are finitely many open conditions and are
+combined with the original finite congruences by
+the unchanged simultaneous recurrence. No
+condition is imposed on arbitrary rational zeros
+of the polynomial.
+\end{proof}
+
+\begin{theorem}[Congruent-number pole replacing the old pole]
+\label{thm:pole}
+For every input $b$ produced as in
+Lemmas~\ref{lem:real}--\ref{lem:seven}, the three
+quadratic equations
+\begin{equation}\label{eq:scaled}
+ 9e^2-9+7bp^2=0,\qquad
+ 9uv-9e+7eb=0,\qquad
+ 9u^2-9v^2-7bq^2=0
+\end{equation}
+have rational solutions. These solutions can be
+chosen in the dense nondegenerate locus required
+by the retained finite-algebra guard arguments.
+
+Conversely, for any $b\in\Q^\times$,
+the existence of rational solutions of
+\eqref{eq:scaled} implies that $v_\ell(b)$
+is not negative and odd for any
+prime $\ell\ne7$.
+\end{theorem}
+\begin{proof}
+Put
+\[
+ d=\frac{7b}{9}.
+\]
+By Lemma~\ref{lem:real}, $0<d<7/9<1$.
+At $2$ the factor $7/9$ represents the
+unit squareclass $7$, so
+$d\in7\Q_2^{\times2}$ and
+$v_2(d)=v_2(b)\ge4$.
+All negative valuations of $b$ are even.
+For primes other than $3$ and $7$,
+$v_\ell(d)=v_\ell(b)$.
+At $3$,
+$v_3(d)=v_3(b)-2\ge0$ by the original
+prepared depth. At $7$,
+$v_7(d)=v_7(b)+1\ge1$
+by Lemma~\ref{lem:seven}.
+Consequently $d$ has a square denominator
+and satisfies every hypothesis of
+Theorem~\ref{thm:bb}. The latter gives
+the prescribed rational solutions to
+\eqref{eq:cm} and their dense
+nondegenerate variations; multiplying
+those equations by $9$ gives
+\eqref{eq:scaled}.
+
+For the converse, the equations
+\eqref{eq:scaled} are
+\eqref{eq:cm} after substituting
+$d=7b/9$. Lemma~\ref{lem:sound}
+therefore applies. For $\ell\ne7$
+the valuations of $b$ and $d$ differ
+by either zero or $-2$ (at $\ell=3$).
+If $v_\ell(b)$ were negative and odd,
+then $v_\ell(d)$ would also be negative
+and odd, which is impossible.
+\end{proof}
+
+\begin{remark}[Choice of scaling]
+The earlier checkpoint used $d=7b/17^2$,
+which works for the larger real interval
+$b<17$ but has larger coefficients.
+The sharper real bound allows $7/9$.
+A tempting smaller ratio $d=3b/5$
+does \emph{not} work with the existing
+$5$-adic comparison preparation: the
+comparison inputs tend to a $5$-adic unit,
+whereas dividing by $5$ would create
+an odd negative valuation. That rejected
+option is not used in the certified
+systems. Since the original height
+exceptional set includes $7$, the
+new soundness exception adds no height
+cost, including at the fixed numerical
+endpoint~\cite{V62}.
+\end{remark}
+
+\section{Quadratic systems and exact coefficient tables}
+
+The source systems of~\cite{V82} have two ordinary
+comparison poles and one scalar pole (163 coordinates),
+or three comparison poles and one scalar pole
+(179 coordinates). Each pole occupies five quadratic
+rows: two square-register identities and three equations
+as in the old system
+\[
+ 3e^2-34e-289+17bp^2=0,\quad
+ e(17-b)-17uv=0,\quad
+ u^2+34uv-867v^2-17bq^2=0.
+\]
+For each block replace the latter three rows by
+\eqref{eq:scaled}, leaving both square-register rows
+unchanged. Use the existing invertible Laurent rescalings,
+including the distinct factors in the two comparison
+blocks. Their ratios are nonzero on every valid
+source fiber. A direct substitution into the source
+physical rows and their maps gives the exact new ordinary
+quadratic tables. All other rows are literally unchanged.
+
+\begin{center}
+\begin{tabular}{lrr}
+\toprule
+ & General family & Fully specified member\\
+\midrule
+Total variables (including input) & 163 & 179\\
+Quadratic rows & 137 & 151\\
+Newly replaced rows & 9 & 12\\
+Nonzero monomials & 2771 & 3012\\
+Previous monomial counts & 2789 & 3036\\
+Total degree & 4 & 4\\
+Integer content & 1 & 1\\
+Maximum coefficient (bits), fixed member & -- & 748\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The general family's exact coefficient height remains
+\[
+ \max\{126616122944180358034867798936,149^{4N+2}\},
+ \qquad N\ge1,
+\]
+and the fixed member's height remains $A_a^2$,
+where
+\[
+ A_a=645904574641049503754777843805872291231896003979
+       \cdot14904184670611231^4.
+\]
+These statements are exact algebraic consequences of
+the full coefficient tables, not estimates depending
+on the arithmetic completeness issue.
+
+\section{Verification and logical status}
+
+The two complete residual lists and expanded polynomials
+are in
+\[
+\texttt{computation/bb\_native\_quartic\_20261124/quartic163/},
+\qquad
+\texttt{computation/bb\_native\_quartic\_20261124/quartic179/}.
+\]
+Run \texttt{python -B computation/bb\_native\_quartic\_20261124/build.py
+--verify} and \texttt{python -B computation/bb\_native\_quartic\_20261124/check.py}.
+The independent checker reads the original Laurent-weighted
+physical rows, rederives the new rows, and directly
+reconstructs every coefficient of the squared sum.
+It does not import the producer.
+
+The former source versions and their coefficient tables
+remain unchanged. The current exact new systems remove
+every use of the original non-CM pole \emph{within their
+defining equations}; they do not imply the original
+non-CM restricted converse theorem. The pole realization is supplied by
+Theorem~\ref{thm:pole}, independently of the original
+non-CM restricted converse or Route~K. The inherited
+elliptic carrier, height, comparison and prime-pattern
+inputs remain as explicitly stated in~\cite{V82}.
+The validity of the whole construction is conditional
+on those retained external arithmetic inputs;
+finite algebraic checks do not prove them.
+
+\begin{thebibliography}{9}
+\bibitem{BB}
+M.~Bhargava and A.~Burungale,
+\emph{A Diophantine definition of $\Z$ in $\Q$},
+arXiv:2611.16130v2, 19 November 2026, Lemma~2.2
+and Theorem~2.3.
+\url{https://arxiv.org/html/2611.16130v2}.
+\bibitem{TYZ}
+Y.~Tian, X.~Yuan and S.-W.~Zhang,
+\emph{Genus periods, genus points and congruent number problem},
+Asian J. Math. \textbf{21} (2017), 721--774.
+\bibitem{Intrinsic}
+ZQ Diophantine Project,
+\emph{A two-coordinate pole test of coefficient height four},
+17 November 2026,
+\texttt{papers/pole\_parameters/intrinsic\_pole\_20261117\_v56.tex}.
+\bibitem{V82}
+ZQ Diophantine Project,
+\emph{A scalar-point sharing construction in 163 and 179 variables},
+20 November 2026,
+\texttt{papers/quartic/scalar\_point163\_179\_20261120\_v82.tex}.
+\bibitem{V62}
+ZQ Diophantine Project,
+\emph{A quartic construction in 229 variables},
+17 November 2026,
+\texttt{papers/quartic/quartic229\_20261117\_v62.tex}.
+\end{thebibliography}
+\end{document}

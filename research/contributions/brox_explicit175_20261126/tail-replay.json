@@ -1,0 +1,23 @@
+{
+  "source_commit": "6864691d536057574be873667936610da6a4ea99",
+  "executed": "Code Mode V8 BigInt checker; same verifyTail function in check-tail.js",
+  "weighted_rows": 150,
+  "harmonic_rows": 149,
+  "depressed_rows": 149,
+  "aligned_rows": 147,
+  "aligned_deleted": [
+    "shared.gate1",
+    "shared.gate2"
+  ],
+  "reciprocal_rows": 147,
+  "projective_rows": 147,
+  "final_variables": 175,
+  "monomials": 3196,
+  "degree": 4,
+  "content": 1,
+  "height_bits": 802,
+  "ascii_bytes": 73080,
+  "anchor_residues": 331,
+  "contact_constant_lt_2_pow_249": true,
+  "small_prime_Euler_bound": true
+}

@@ -1,0 +1,9 @@
+{
+  "computation/quartic/seven_units193_v74/primitive/laurent-source.json": "661b41ff6118284b10245b8d97ca281663b357f4",
+  "computation/quartic/seven_units193_v74/source/source195.json": "5d6c4a4b482a4065b87a79d03426b0dcfff0f593",
+  "computation/quartic/seven_units193_v74/laurent-certificate.json": "b4209389c02ba662de2dacfa202eddc4ef014788",
+  "computation/quartic/explicit229_v62/quadratic.json": "ac9d6da105c6897efcf44436891e4deb846fa18e",
+  "computation/coauthor_audit_v78/H10-quartics/quartics/explicit-physical/quadrics.json": "424ae3fd930024a07a0ff34b8dfb24fd17dc7be7",
+  "computation/coauthor_audit_v78/H10-quartics/quartics/explicit-physical/weights.json": "94d9aa0fcee29f21aa40b170bd409ccee3b9d3f4",
+  "computation/coauthor_audit_v78/H10-quartics/quartics/explicit-physical/assignment.json": "bebf15d53b4c2d4702e3efca375c178f65f17b32"
+}
