@@ -25,7 +25,8 @@ Both approved reviewers assess an admitted PR; triage is not acceptance.
 After the first round, a write collaborator must request another with
 `/protocol-b review`. A changed head still requires its own valid acceptance.
 The light profile also limits qualifying small documentation changes to one
-paid round. Only an admin may override an item.
+paid round. Only an admin may override a finding; a collaborator who is not
+the author may accept itemized incomplete-scope items as the setup guide describes.
 
 Modifications to `docs/building.md` and newly added note/data files under
 `research/contributions/` may merge automatically after acceptance. Deletions,
