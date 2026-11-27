@@ -838,10 +838,38 @@ The Lean profile below uses the same one-round rule with a narrower model-review
 
 ### Admin decisions on incomplete review
 
-Only a current repository admin can override an item, both when the command is
+Only a current repository admin can override a finding, both when the command is
 received and when stored override comments are read back. A non-admin override
-has no effect and receives a short explanation. Write-access collaborators keep
-automatic reviews, `/protocol-b review`, and ordinary protected merge access.
+has no effect and receives a short explanation, with the one exception below.
+Write-access collaborators keep automatic reviews, `/protocol-b review`, and
+ordinary protected merge access.
+
+#### Scope decisions by a collaborator who is not the author
+
+A collaborator with current write or maintain access may accept incomplete-scope
+items with the same exact-head command when all of the following hold. Otherwise
+the comment has no effect and the item needs an admin.
+
+- The commenter is not the pull request's author. The gate compares GitHub
+  logins; it cannot tell who operates an agent, so a collaborator should not
+  decide a pull request their own agent wrote.
+- Every ID in the comment is a `scope-RUN-ATTEMPT-REVIEWER` item in the current
+  App record. A comment that also names a finding is refused as a whole.
+- The reviewer left an itemized list of what it did not read. A review that did
+  not start, failed after its report, rejected without a finding, or whose list
+  was too long for the App record stays an admin decision.
+- The complete changed-file list, both names of a rename included, has no
+  protected path: a file at the repository root; anything under `.github/`,
+  `scripts/`, `tests/`, `manuscripts/`, `releases/`, `docs/` or
+  `research/versionNN/`; or a Lake configuration or toolchain file anywhere.
+- The comment is new and unedited, and the commenter still has access when the
+  stored comment is read back.
+
+The App record names the collaborator and marks the decision
+`scope-collaborator`; the summary says the pull request was accepted by a
+collaborator who is not the author with incomplete reviewer scope. Findings stay
+blocking until an admin decides them, so this never accepts a pull request on
+which a reviewer raised an unresolved objection.
 
 Incomplete review is always presented as an explicit administrative item with
 ID `scope-RUN-ATTEMPT-REVIEWER`. This covers unfinished scope, missing required
@@ -895,7 +923,8 @@ App record. A scope-shaped ID in a report comment alone is never sufficient.
 
 Only repository admins may override reviewer findings. The gate checks current
 admin permission when receiving a command and again when reading stored override
-comments. Edited comments are not accepted, including edits made by an admin;
+comments. The scope decisions described above are the only non-admin use of the
+command. Edited comments are not accepted, including edits made by an admin;
 post a new comment instead. Both timestamps and GitHub's `lastEditedAt`/`editor`
 metadata must establish an unedited comment with the matching body and author.
 Missing metadata fails closed. A non-admin collaborator's override has no effect

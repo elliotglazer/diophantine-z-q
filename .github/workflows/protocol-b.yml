@@ -2945,6 +2945,34 @@ jobs:
                        and ident not in recorded_scope_ids)]
 
 
+          SCOPE_ID = r"scope-[0-9]+-[0-9]+-(astra|fable)"
+
+
+          def scope_decision_protected(path):
+              """Paths whose incomplete review only an admin may accept."""
+              path = path.casefold()
+              return ('/' not in path
+                      or path.startswith(('.github/', 'scripts/', 'tests/', 'manuscripts/', 'releases/', 'docs/'))
+                      or path.rsplit('/', 1)[-1] in {'lakefile.toml', 'lakefile.lean', 'lake-manifest.json', 'lean-toolchain'}
+                      or bool(re.match(r'research/version[0-9]+(?:/|$)', path)))
+
+
+          def scope_decider(gh, pr, user):
+              """A current collaborator other than the author, on a change without protected paths."""
+              if (not collaborator(gh, user) or not (pr.get('user') or {}).get('login')
+                      or user['login'].casefold() == pr['user']['login'].casefold()):
+                  return False
+              files = gh.pages(f"/pulls/{pr['number']}/files")
+              if not files or len(files) != pr.get('changed_files'):
+                  return False
+              return not any(scope_decision_protected(path) for path in outside_paths(files))
+
+
+          def scope_decision_ids(ids, itemized):
+              """Only coverage items the reviewer itemized; never a finding or a review that left no report."""
+              return bool(ids) and all(re.fullmatch(SCOPE_ID, ident) and ident in itemized for ident in ids)
+
+
           def history(gh, pr, known=None):
               comments = gh.pages(f"/issues/{pr['number']}/comments")
               discussion = [{"id": c["id"], "author": c["user"]["login"], "created": c["created_at"], "body": c["body"]}
@@ -2952,6 +2980,7 @@ jobs:
               for endpoint in ("reviews", "comments"):
                   discussion.extend(gh.pages(f"/pulls/{pr['number']}/" + endpoint))
               prior, overrides, latest, completed_runs = dict(known or {}), {}, {}, set()
+              itemized, decider = set(), {}
               for comment in comments:
                   body = comment["body"]
                   if body.startswith(MARKER) and own_comment(gh, comment):
@@ -2974,6 +3003,9 @@ jobs:
                       scope = review_scope_item(report)
                       if scope:
                           prior[scope['id']] = scope
+                          if (report['review'].get('not_reviewed') and not report.get('post_review_error')
+                                  and not scope.get('coverage_omitted')):
+                              itemized.add(scope['id'])
                       key = (report['run'], report['attempt'], report['reviewer'])
                       if report.get('complete'):
                           completed_runs.add(key)
@@ -2996,9 +3028,19 @@ jobs:
                       if unknown_override_ids(ids, prior, known or {}):
                           continue
                       login = comment["user"]["login"]
-                      if administrator(gh, comment["user"]) and unedited_override_comment(gh, comment):
+                      if administrator(gh, comment["user"]):
+                          authority = 'admin'
+                      elif scope_decision_ids(ids, itemized):
+                          if login not in decider:
+                              decider[login] = scope_decider(gh, pr, comment["user"])
+                          authority = 'scope-collaborator' if decider[login] else None
+                      else:
+                          authority = None
+                      if authority and unedited_override_comment(gh, comment):
                           for ident in ids:
                               overrides[ident] = {"collaborator": login, "reason": reason, "url": comment["html_url"]}
+                              if authority != 'admin':
+                                  overrides[ident]["authority"] = authority
               return discussion, prior, overrides, latest
 
 
@@ -4032,10 +4074,17 @@ jobs:
                   if event['comment']['user']['login'] != login or not collaborator(gh, event['comment']['user']):
                       return
                   override_command = command.startswith('/protocol-b override ')
+                  scope_decision = False
                   if override_command and not administrator(gh, event['comment']['user']):
-                      gh.call(f'/issues/{number}/comments', 'POST', {'body':
-                          'This override was ignored. Only a repository admin may override a review item.'})
-                      return
+                      parsed = parse_override_command(command)
+                      scope_decision = bool(parsed and all(re.fullmatch(SCOPE_ID, ident) for ident in parsed[1])
+                                            and scope_decider(gh, gh.call(f'/pulls/{number}'), event['comment']['user']))
+                      if not scope_decision:
+                          gh.call(f'/issues/{number}/comments', 'POST', {'body':
+                              'This override was ignored. Only a repository admin may override a review item. '
+                              'The one exception: a collaborator who is not the author may accept itemized '
+                              'incomplete-scope items, and nothing else, on a pull request that changes no protected path.'})
+                          return
                   if override_command and not unedited_override_comment(gh, event['comment']):
                       gh.call(f'/issues/{number}/comments', 'POST', {'body':
                           'This override was ignored. Overrides must be new, unedited admin comments. Post a new comment instead of editing one.'})
@@ -4164,6 +4213,14 @@ jobs:
                                      '. No item from that comment was applied. Post a corrected new comment.')
                           gh.call(f'/issues/{number}/comments', 'POST', {'body': message})
                           raise ValueError(message)
+                      refused = [ident for ident in parsed[1] if ident not in overrides] if scope_decision else []
+                      if refused:
+                          message = ('This override was ignored. Comment '+str(event['comment']['id'])+
+                                     ' names incomplete-scope items a collaborator cannot accept, because the reviewer '
+                                     'left no itemized list of what it did not read: '+', '.join(refused)+
+                                     '. No item from that comment was applied. These need an admin decision.')
+                          gh.call(f'/issues/{number}/comments', 'POST', {'body': message})
+                          raise ValueError(message)
                   record("context.json", {"head": pr["head"]["sha"], "base": pr["base"]["sha"],
                                          "trusted_workflow": trusted_ref, "class": change_class,
                                          "prior_findings": prior, "overrides": overrides, "discussion": discussion})
@@ -4188,7 +4245,10 @@ jobs:
                       state['scope_overrides'] = [item for e in envelopes.values()
                                                   if (item := review_scope_item(e)) and item['id'] in applied]
                       if state['scope_overrides']:
-                          summary += '\nAccepted by admin with incomplete reviewer scope. This is not completed model review:\n' + json.dumps(state['scope_overrides'], indent=2)
+                          by_collaborator = any(applied[item['id']].get('authority') == 'scope-collaborator'
+                                                for item in state['scope_overrides'])
+                          summary += ('\nAccepted by '+('a collaborator who is not the author' if by_collaborator else 'admin')+
+                                      ' with incomplete reviewer scope. This is not completed model review:\n' + json.dumps(state['scope_overrides'], indent=2))
                       gh.call(f'/issues/{number}/comments', 'POST', {'body': summary + findings_summary(envelopes)})
                   elif change_class == "editorial" and not prior and not state.get('outside_admission'):
                       conclusion, summary = "success", "Editorial change under the path/diff rule; author declared no mathematical change. No model review."
@@ -4663,7 +4723,7 @@ jobs:
               scope_ids = sorted(item['id'] for e in reports.values()
                                  if (item := review_scope_item(e)) and item['id'] in blocking)
               if scope_ids:
-                  rows.append('Current incomplete-scope items: '+', '.join('`'+ident+'`' for ident in scope_ids)+'. An admin decision must name these current IDs and this head; an older round has different IDs.')
+                  rows.append('Current incomplete-scope items: '+', '.join('`'+ident+'`' for ident in scope_ids)+'. An admin decision must name these current IDs and this head; an older round has different IDs. Where the reviewer itemized what it did not read and the pull request changes no protected path, a collaborator other than the author may accept these items with the same command; findings always need an admin.')
               rows += ['', '[Full App check and retained review records]('+check_url+').', '']
               runs = sorted({str(e['run']) for e in reports.values() if e.get('run')})
               if runs:
