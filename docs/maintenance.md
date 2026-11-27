@@ -12,7 +12,8 @@ This file describes how the repository is run day to day. It summarizes other do
 | Merge an accepted outside pull request with `/protocol-b merge <full head SHA>` | Collaborators |
 | Prepare a manuscript version | Collaborators |
 | Approve a version's release | The owner, or a collaborator who is neither the principal author of the new result nor the operator of the agent that wrote the pull request |
-| Decide a finding or an incomplete-review item with `/protocol-b override` | Repository admins only |
+| Decide a finding with `/protocol-b override` | Repository admins only |
+| Accept an itemized incomplete-review item with `/protocol-b override` | Admins; also a collaborator who is not the pull request's author, when it is confined to `research/contributions/` |
 | Repository settings, the branch ruleset, secrets, billing | The owner only |
 
 An outside pull request is one whose author is not a collaborator. The repository belongs to a personal account, which has exactly one admin, the owner.
@@ -30,8 +31,8 @@ An outside pull request is one whose author is not a collaborator. The repositor
 ## 3. When the reviewers do not accept
 
 - **A finding.** Repair it in one push. A reviewer can close a finding it raised; it cannot close the other reviewer's, and a comment arguing with a finding does not remove it.
-- **Incomplete review scope.** The reviewer did not finish: most often it ran out of budget, sometimes a source or dependency could not be inspected or the provider restricted the request. The gate records this separately from findings. It is a limit of the review, not a defect in your work, and **it is not something to fix by pushing again**. Make the pull request smaller if you can; otherwise ask for an admin decision.
-- **An override** is an admin's recorded decision at one exact head. It is a new, never-edited comment in the form given in the setup guide. One comment may name several finding or scope IDs separated by commas without spaces; if any ID is wrong, the whole comment is refused. An agent never posts one, and a collaborator who is not an admin cannot.
+- **Incomplete review scope.** The reviewer did not finish: most often it ran out of budget, sometimes a source or dependency could not be inspected or the provider restricted the request. The gate records this separately from findings. It is a limit of the review, not a defect in your work, and **it is not something to fix by pushing again**. Make the pull request smaller if you can; otherwise ask another collaborator or an admin for a decision.
+- **An override** is an admin's recorded decision at one exact head. It is a new, never-edited comment in the form given in the setup guide. One comment may name several finding or scope IDs separated by commas without spaces; if any ID is wrong, the whole comment is refused. An agent never posts one. A collaborator who is not an admin can decide one thing only: incomplete-scope items that the reviewer itemized, on someone else's pull request confined to `research/contributions/` (the setup guide gives the exact conditions). It is refused if you committed to the branch or if the pull request has discussion no review has covered. Do not use it on a pull request your own agent wrote.
 - Never state that something was reviewed, accepted or approved without linking the record.
 
 Budgets: reviews of manuscripts, `research/` and `data/` paths get the larger context budget; other pull requests, including gate and workflow changes, get the standard one. Large workflow changes commonly end with incomplete scope.

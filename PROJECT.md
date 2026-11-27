@@ -37,7 +37,9 @@ claims as not outside reviewed and discloses the unreviewed work. If no model re
 completed, it says so, including when neither model ran. It never changes an
 incomplete execution or rejecting model verdict into a model acceptance.
 Write-access collaborators retain ordinary review commands and protected merge
-access; only admins may override.
+access. Only admins may override a finding. A collaborator who is not the author
+may accept an itemized incomplete-scope item on a pull request confined to
+`research/contributions/`, under the conditions in the Protocol B setup guide.
 
 There is no fallback model. Changing this list is the owner's decision and takes
 effect at the next release. The workflow records the requested and returned model

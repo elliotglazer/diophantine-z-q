@@ -13,6 +13,9 @@ from test_gate import gate, HEAD, BASE, APP_ID
 from test_outside_admission import candidate, response
 from test_outside_screen import file, NOW, reservation
 
+# admit_outside reads the real clock; a fixed date leaves the seven-day author window.
+RECENT = __import__('datetime').datetime.now(__import__('datetime').timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
+
 
 def runtime_env(directory):
     event = Path(directory)/'event.json'
@@ -150,7 +153,7 @@ class Runtime(unittest.TestCase):
     def test_real_entry_point_persists_size_quota_and_history_refusals(self):
         oversized=file(added='x'*33000)
         for args, expected in [({'files':[oversized]}, 'triage_size'),
-                ({'rows':[reservation(i,author_id=7) for i in (1,2,3)]}, 'quota'),
+                ({'rows':[reservation(i,author_id=7,created_at=RECENT) for i in (1,2,3)]}, 'quota'),
                 ({'history_error':ValueError('Uncertain earlier intent')}, None)]:
             with self.subTest(args=args):
                 result,calls,_=self.admission(**args)
