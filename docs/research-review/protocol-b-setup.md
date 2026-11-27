@@ -851,23 +851,38 @@ items with the same exact-head command when all of the following hold. Otherwise
 the comment has no effect and the item needs an admin.
 
 - The commenter is not the pull request's author. The gate compares GitHub
-  logins; it cannot tell who operates an agent, so a collaborator should not
-  decide a pull request their own agent wrote.
+  logins with the account that opened the pull request. It cannot tell who
+  operates an agent or who pushed commits to someone else's branch, so a
+  collaborator should not decide a pull request that their own agent wrote or
+  that they pushed to.
 - Every ID in the comment is a `scope-RUN-ATTEMPT-REVIEWER` item in the current
   App record. A comment that also names a finding is refused as a whole.
-- The reviewer left an itemized list of what it did not read. A review that did
-  not start, failed after its report, rejected without a finding, or whose list
-  was too long for the App record stays an admin decision.
-- The complete changed-file list, both names of a rename included, has no
-  protected path: a file at the repository root; anything under `.github/`,
-  `scripts/`, `tests/`, `manuscripts/`, `releases/`, `docs/` or
-  `research/versionNN/`; or a Lake configuration or toolchain file anywhere.
+- The App's own record for this head holds a completed report from that
+  reviewer which lists what it did not read. Eligibility is computed from the
+  App record alone; a report comment never establishes it. A review that did
+  not start or was interrupted (the gate writes its own "Review interrupted"
+  entry for those), a report whose metadata failed, an identity problem, a
+  rejection without a finding, or a list too long for the App record stays an
+  admin decision.
+- Every changed path, both names of a rename included, lies under
+  `research/contributions/` and is not a Lean source or a Lake configuration or
+  toolchain file. Everything else needs an admin: files the current-record
+  checks execute, `research/versionNN/`, other research folders, Lean,
+  manuscripts, releases, documentation, workflows, scripts and tests. Inside
+  `research/contributions/` the outside lane's name-based rule for words such
+  as "review" or "audit" is deliberately not applied: a note there does not
+  change what the manuscript claims, and adopting it takes a manuscript
+  version with its own review.
+- An admin's decision on an item is never replaced by a collaborator's.
 - The comment is new and unedited, and the commenter still has access when the
   stored comment is read back.
 
 The App record names the collaborator and marks the decision
-`scope-collaborator`; the summary says the pull request was accepted by a
-collaborator who is not the author with incomplete reviewer scope. Findings stay
+`scope-collaborator`. The check summary and the round summary posted on the
+pull request each say, item by item, whether an admin or a collaborator who is
+not the author accepted the incomplete scope. A collaborator's decision is
+applied only in the run its comment starts and on the merge recheck; it is not
+passed to a later review as an authenticated override. Findings stay
 blocking until an admin decides them, so this never accepts a pull request on
 which a reviewer raised an unresolved objection.
 
@@ -927,8 +942,8 @@ comments. The scope decisions described above are the only non-admin use of the
 command. Edited comments are not accepted, including edits made by an admin;
 post a new comment instead. Both timestamps and GitHub's `lastEditedAt`/`editor`
 metadata must establish an unedited comment with the matching body and author.
-Missing metadata fails closed. A non-admin collaborator's override has no effect
-and receives a short reply. The gate's ignored-override replies do not alter the
+Missing metadata fails closed. Apart from the scope decisions above, a non-admin
+collaborator's override has no effect and receives a short reply. The gate's ignored-override replies do not alter the
 reviewed discussion digest or trigger paid supplements. Write-access collaborators retain automatic review, `/protocol-b review`,
 and ordinary protected merge access. This change does not alter any review,
 computation, head-binding or merge requirement.
