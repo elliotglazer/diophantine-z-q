@@ -21,15 +21,22 @@ class ResearchGH(FakeGH):
 
     stale_paths = None  # The diff from the pull request's recorded, possibly old, base.
     behind, merge_base = 0, None
+    branch_tip = None    # What the qualified branch ref returns; defaults to main_sha.
+    later_paths = None   # The diff from a default-branch tip the branch ref did not show.
 
     def call(self, path, method='GET', data=None):
+        if path == '/git/ref/heads/main':
+            return {'ref': 'refs/heads/main', 'object': {'type': 'commit', 'sha': self.branch_tip or self.main_sha}}
         if path.startswith('/compare/') and path.endswith('...'+HEAD):
             self.compare_requests.append(path)
             base = path.removeprefix('/compare/').split('...')[0]
             commits = [{'author': {'login': a} if a else None, 'committer': {'login': c} if c else None}
                        for a, c in self.committers]
             # Only a comparison from the default branch's tip shows the true change.
-            paths = self.paths if base == self.main_sha else (self.stale_paths or self.paths)
+            tip = self.branch_tip or self.main_sha
+            paths = (self.paths if base == tip else
+                     self.later_paths if self.later_paths and base == self.main_sha else
+                     (self.stale_paths or self.paths))
             return {'behind_by': self.behind, 'merge_base_commit': {'sha': self.merge_base or base},
                     'total_commits': len(commits), 'commits': commits, 'files': [changed(p) for p in paths]}
         return super().call(path, method, data)
@@ -39,6 +46,8 @@ class ResearchGH(FakeGH):
             return 'alpha  ' if ref == BASE else 'alpha'
         return super().text(path, ref)
 
+
+ORIGINAL_CALL = ResearchGH.call
 
 def scope_pair(**review):
     review = {'decision': 'changes_requested', 'scope_complete': False, 'not_reviewed': UNREAD, **review}
@@ -81,6 +90,7 @@ class CollaboratorScopeDecisions(unittest.TestCase):
                 overrides = gate.history(gh, gh.pr, known, eligible)[2]
                 self.assertEqual(overrides['scope-1-1-astra']['authority'], 'scope-collaborator')
                 self.assertEqual(overrides['scope-1-1-astra']['collaborator'], 'collaborator')
+                self.assertEqual(overrides['scope-1-1-astra']['default_tip'], BASE)
                 gh, app, errors, state = self.decide(gh, app, event)
                 self.assertEqual(errors, [])
                 self.assertEqual(app.final['conclusion'], 'success')
@@ -152,7 +162,7 @@ class CollaboratorScopeDecisions(unittest.TestCase):
         good = gh.call(f'/compare/{BASE}...{HEAD}')
         renamed = {**good, 'files': [changed(NOTE, previous_filename='docs/x.md')]}
         with patch.object(ResearchGH, 'call', lambda self, path, method='GET', data=None:
-                          renamed if path.startswith('/compare/') else FakeGH.call(self, path, method, data)):
+                          renamed if path.startswith('/compare/') else ORIGINAL_CALL(self, path, method, data)):
             self.assertFalse(gate.history(gh, gh.pr, known, eligible)[2])
 
     def test_incomplete_or_ambiguous_comparison_needs_an_admin(self):
@@ -160,6 +170,9 @@ class CollaboratorScopeDecisions(unittest.TestCase):
         gh, app, event, known, eligible = self.case()
         self.assertTrue(gate.scope_decider(gh, gh.pr, user))
         gh, *_ = self.case(paths=(NOTE, NOTE))
+        self.assertFalse(gate.scope_decider(gh, gh.pr, user))
+        gh, *_ = self.case()
+        gh.pr['changed_files'] = 2
         self.assertFalse(gate.scope_decider(gh, gh.pr, user))
         gh, *_ = self.case(paths=tuple('research/contributions/x/f%d.json' % i for i in range(300)))
         self.assertFalse(gate.scope_decider(gh, gh.pr, user))
@@ -171,7 +184,7 @@ class CollaboratorScopeDecisions(unittest.TestCase):
             gh, *_ = self.case()
             good = gh.call(f'/compare/{BASE}...{HEAD}')
             with patch.object(ResearchGH, 'call', lambda self, path, method='GET', data=None, good=good, broken=broken:
-                              {**good, **broken} if path.startswith('/compare/') else FakeGH.call(self, path, method, data)):
+                              {**good, **broken} if path.startswith('/compare/') else ORIGINAL_CALL(self, path, method, data)):
                 self.assertFalse(gate.scope_decider(gh, gh.pr, user), broken)
         gh, *_ = self.case()
         self.assertFalse(gate.scope_decider(gh, {**gh.pr, 'head': {'sha': 'not-a-sha'}}, user))
@@ -204,6 +217,43 @@ class CollaboratorScopeDecisions(unittest.TestCase):
         gh.main_sha = 'd' * 40
         gh.stale_paths = (NOTE, 'scripts/changed_on_main.py')
         self.assertTrue(gate.scope_decider(gh, gh.pr, user))
+
+    def test_default_branch_moving_after_the_decision_voids_it(self):
+        # Round 4, Astra F1: both eligibility reads see tip B0; every later read sees B1,
+        # already an ancestor of the head, against which the head restores a protected file.
+        gh, app, event, known, eligible = self.case()
+        gh.branch_tip = BASE
+        overrides = gate.history(gh, gh.pr, known, eligible)[2]
+        self.assertEqual(overrides['scope-1-1-astra']['default_tip'], BASE)
+        gh.main_sha = 'd' * 40
+        gh.later_paths = (NOTE, 'quartics/protected.json')
+        gh, app, errors, state = self.decide(gh, app, event)
+        self.assertNotEqual((app.final or {}).get('conclusion'), 'success')
+        self.assertEqual(gh.merge_requests, [])
+        self.assertIn('default branch moved', str(app.final)+str(errors))
+
+    def test_stored_tip_is_checked_at_every_later_step(self):
+        state = {'overrides': {'scope-1-1-astra': {'collaborator': 'jo', 'authority': 'scope-collaborator',
+                                                   'default_tip': BASE}}}
+        self.assertTrue(gate.scope_decision_tip_current(state, BASE))
+        self.assertFalse(gate.scope_decision_tip_current(state, 'd' * 40))
+        del state['overrides']['scope-1-1-astra']['default_tip']
+        self.assertFalse(gate.scope_decision_tip_current(state, BASE))
+        # Admin decisions and runs without overrides are not bound to a tip.
+        self.assertTrue(gate.scope_decision_tip_current({'overrides': {'x': {'collaborator': 'owner'}}}, 'd' * 40))
+        self.assertTrue(gate.scope_decision_tip_current({}, 'd' * 40))
+        text = (gate.ROOT if hasattr(gate, 'ROOT') else __import__('test_gate').ROOT).joinpath(
+            '.github/workflows/protocol-b.yml').read_text(encoding='utf-8')
+        self.assertEqual(text.count('if not scope_decision_tip_current(state, latest_ref)'), 3)
+
+    def test_tip_is_read_from_the_qualified_branch_ref(self):
+        gh, *_ = self.case()
+        self.assertEqual(gate.default_branch_tip(gh, 'main'), BASE)
+        for bad in ({'ref': 'refs/tags/main', 'object': {'sha': BASE}}, {'ref': 'refs/heads/main', 'object': {}},
+                    {'ref': 'refs/heads/main', 'object': {'sha': 'short'}}):
+            with patch.object(ResearchGH, 'call', lambda self, path, method='GET', data=None, bad=bad: bad):
+                with self.assertRaises(ValueError):
+                    gate.default_branch_tip(gh, 'main')
 
     def test_branch_behind_or_not_based_on_the_default_tip_needs_an_admin(self):
         user = {'login': 'collaborator', 'type': 'User'}

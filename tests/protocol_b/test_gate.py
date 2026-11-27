@@ -138,6 +138,8 @@ class FakeGH:
             return {'type': 'file', 'sha': 'c' * 40}
         if path.startswith('/commits/'):
             return {'sha': self.main_sha}
+        if path == '/git/ref/heads/main':
+            return {'ref': 'refs/heads/main', 'object': {'type': 'commit', 'sha': self.main_sha}}
         if path == '/pulls/1':
             self.pr_calls += 1
             value = copy.deepcopy(self.pr)

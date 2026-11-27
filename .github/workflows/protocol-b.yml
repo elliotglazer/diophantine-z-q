@@ -1392,10 +1392,10 @@ jobs:
                   # later merge command cannot silently extend it to new discussion.
                   digest = passage_digest(sorted(history_coverage(discussion)))
                   if digest != state.get('override_history_digest'):
-                      raise ValueError('Review history changed after admin acceptance; no merge')
+                      raise ValueError('Review history changed after the recorded acceptance; no merge')
                   applied = overridden_decision(reports, overrides, pr['head']['sha'])
                   if applied != state['overrides']:
-                      raise ValueError('Admin override authorization changed; no merge')
+                      raise ValueError('Override authorization changed; no merge')
               elif not combined_decision(reports, prior, discussion)[0]:
                   raise ValueError('Review history has changed or is unresolved; no merge')
 
@@ -2965,9 +2965,28 @@ jobs:
                       or name in {'lakefile.toml', 'lakefile.lean', 'lake-manifest.json', 'lean-toolchain'})
 
 
+          def default_branch_tip(gh, default):
+              """The branch's commit, by fully qualified ref, so a same-named tag cannot answer."""
+              ref = gh.call('/git/ref/heads/'+urllib.parse.quote(default, safe='/'))
+              sha = (ref.get('object') or {}).get('sha')
+              if ref.get('ref') != 'refs/heads/'+default or not isinstance(sha, str) or not re.fullmatch('[0-9a-f]{40}', sha):
+                  raise ValueError('Cannot read the default branch tip')
+              return sha
+
+
+          def scope_decision_tip_current(state, latest_ref):
+              """A collaborator's scope decision holds only against the default-branch tip it was measured from."""
+              return all(item.get('default_tip') == latest_ref for item in (state.get('overrides') or {}).values()
+                         if isinstance(item, dict) and item.get('authority') == 'scope-collaborator')
+
+
           def scope_decider(gh, pr, user):
               """A current collaborator who neither opened nor committed to the pull request,
               on a change confined to contribution notes.
+
+              Returns the default-branch tip SHA the change was measured from, or None.
+              The caller stores that SHA with the decision; publication and merge are
+              refused once the default branch is no longer at it.
 
               Paths and commit authors come from a comparison of two commit SHAs: the
               default branch's current tip and this snapshot's head. The head must
@@ -2985,13 +3004,14 @@ jobs:
               if (pr.get('base') or {}).get('ref') != default:
                   return False
               head = (pr.get('head') or {}).get('sha')
-              base = gh.call('/commits/'+urllib.parse.quote(default, safe='')).get('sha')
-              if not all(isinstance(sha, str) and re.fullmatch('[0-9a-f]{40}', sha) for sha in (head, base)):
+              base = default_branch_tip(gh, default)
+              if not isinstance(head, str) or not re.fullmatch('[0-9a-f]{40}', head):
                   return False
               comparison = gh.call(f'/compare/{base}...{head}')
               files, commits = comparison.get('files'), comparison.get('commits')
               if (comparison.get('behind_by') != 0 or (comparison.get('merge_base_commit') or {}).get('sha') != base
                       or not isinstance(files, list) or not files or len(files) >= 300
+                      or len(files) != pr.get('changed_files')
                       or not isinstance(commits, list) or not commits or len(commits) >= 250
                       or comparison.get('total_commits') != len(commits)):
                   return False
@@ -3002,7 +3022,7 @@ jobs:
                   for role in ('author', 'committer'):
                       if str((commit.get(role) or {}).get('login') or '').casefold() == login:
                           return False
-              return not any(scope_decision_protected(path) for path in outside_paths(files))
+              return None if any(scope_decision_protected(path) for path in outside_paths(files)) else base
 
 
           def collaborator_scope_ids(envelopes):
@@ -3101,6 +3121,7 @@ jobs:
                               overrides[ident] = {"collaborator": login, "reason": reason, "url": comment["html_url"]}
                               if authority != 'admin':
                                   overrides[ident]["authority"] = authority
+                                  overrides[ident]["default_tip"] = decider[login]
               return discussion, prior, overrides, latest
 
 
@@ -4487,6 +4508,9 @@ jobs:
                   latest_ref = gh.call('/commits/' + default)['sha']
                   if current['head']['sha'] != pr['head']['sha'] or not same_policy(gh, state['policy_ref'], latest_ref):
                       raise ValueError('PR head or trusted review policy changed during review; this run cannot approve')
+                  if not scope_decision_tip_current(state, latest_ref):
+                      raise ValueError('The default branch moved after a collaborator\'s scope decision was measured; '
+                                       'the decision no longer applies. Update the branch and decide again, or ask an admin.')
               except Exception as error:
                   conclusion, summary = "failure", str(error)
                   record("failure.json", {"message": str(error)})
@@ -4583,6 +4607,8 @@ jobs:
               latest_ref = gh.call('/commits/' + state['default'])['sha']
               if not same_policy(gh, state['policy_ref'], latest_ref):
                   raise RuntimeError('Review policy changed before requesting merge')
+              if not scope_decision_tip_current(state, latest_ref):
+                  raise RuntimeError('The default branch moved after a collaborator\'s scope decision was measured; no merge')
               if state.get('merge_command_check'):
                   outside_merge_review_current(gh, current, state)
               permission = outside_merge_permission(gh, state, current, int(os.environ['APP_ID']))
@@ -4927,6 +4953,9 @@ jobs:
                   raise ValueError('Finalization identity mismatch')
               if current['head']['sha'] != state['head'] or not same_policy(gh, state['policy_ref'], latest_ref):
                   state.update(conclusion='failure', summary='Head or review policy changed; no acceptance.')
+              elif not scope_decision_tip_current(state, latest_ref):
+                  state.update(conclusion='failure', summary='The default branch moved after a collaborator\'s scope '
+                               'decision was measured; no acceptance.')
               outside_finish(gh, app, state)
               # Keep authoritative, compact decisions on the App check. GitHub Actions
               # comments can be forged by another workflow and cannot authorize overrides.

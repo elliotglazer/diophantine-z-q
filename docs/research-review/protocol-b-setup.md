@@ -883,7 +883,13 @@ record, is not eligible, or discussion is uncovered.
   the pull request's file listing or its recorded base, which GitHub does not
   keep current. The head must contain the default branch's tip, so the compared
   change is exactly what merging would do; a branch that is behind needs
-  updating first. A comparison with 300 or more files or 250 or more commits
+  updating first. The tip is read by its full branch ref and stored with the
+  decision. The gate rechecks it before it records success, when it publishes
+  the check, and before it requests a merge; if the default branch is no longer
+  at that commit the decision no longer applies. The merge request itself names
+  only the head, so a default-branch push in the instant between that last
+  check and the merge is not excluded. A comparison with 300 or more files or
+  250 or more commits, or whose file count differs from the pull request's,
   needs an admin. Everything else needs an admin: files the current-record
   checks execute, `research/versionNN/`, other research folders, Lean,
   manuscripts, releases, documentation, workflows, scripts and tests. Inside
