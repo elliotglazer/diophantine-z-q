@@ -11,11 +11,22 @@ UNREAD = ['The application of Theorem 3 on p. 14 was not reviewed.']
 
 class ResearchGH(FakeGH):
     paths = (NOTE,)
+    committers = (('author', 'web-flow'),)
+    listed = None  # What the mutable pull-request file listing shows, if different.
 
     def pages(self, path):
         if path.endswith('/files'):
-            return [changed(p) for p in self.paths]
+            return [changed(p) for p in (self.listed or self.paths)]
         return super().pages(path)
+
+    def call(self, path, method='GET', data=None):
+        if path == f'/compare/{BASE}...{HEAD}':
+            self.compare_requests.append(path)
+            commits = [{'author': {'login': a} if a else None, 'committer': {'login': c} if c else None}
+                       for a, c in self.committers]
+            return {'behind_by': 0, 'merge_base_commit': {'sha': BASE}, 'total_commits': len(commits),
+                    'commits': commits, 'files': [changed(p) for p in self.paths]}
+        return super().call(path, method, data)
 
     def text(self, path, ref):
         if path in self.paths:
@@ -132,19 +143,93 @@ class CollaboratorScopeDecisions(unittest.TestCase):
 
     def test_renamed_from_a_protected_path_needs_an_admin(self):
         gh, app, event, known, eligible = self.case()
-        with patch.object(ResearchGH, 'pages', lambda self, path: [changed(NOTE, previous_filename='docs/x.md')]
-                          if path.endswith('/files') else FakeGH.pages(self, path)):
+        good = gh.call(f'/compare/{BASE}...{HEAD}')
+        renamed = {**good, 'files': [changed(NOTE, previous_filename='docs/x.md')]}
+        with patch.object(ResearchGH, 'call', lambda self, path, method='GET', data=None:
+                          renamed if path.startswith('/compare/') else FakeGH.call(self, path, method, data)):
             self.assertFalse(gate.history(gh, gh.pr, known, eligible)[2])
 
-    def test_incomplete_or_ambiguous_file_list_needs_an_admin(self):
+    def test_incomplete_or_ambiguous_comparison_needs_an_admin(self):
         user = {'login': 'collaborator', 'type': 'User'}
         gh, app, event, known, eligible = self.case()
         self.assertTrue(gate.scope_decider(gh, gh.pr, user))
-        gh.pr['changed_files'] = 2
-        self.assertFalse(gate.history(gh, gh.pr, known, eligible)[2])
-        self.assertFalse(gate.scope_decider(gh, gh.pr, user))
         gh, *_ = self.case(paths=(NOTE, NOTE))
         self.assertFalse(gate.scope_decider(gh, gh.pr, user))
+        gh, *_ = self.case(paths=tuple('research/contributions/x/f%d.json' % i for i in range(300)))
+        self.assertFalse(gate.scope_decider(gh, gh.pr, user))
+        gh, *_ = self.case()
+        gh.committers = (('author', 'web-flow'),) * 250
+        self.assertFalse(gate.scope_decider(gh, gh.pr, user))
+        for broken in ({'files': None}, {'files': []}, {'commits': []}, {'total_commits': 2},
+                       {'merge_base_commit': None}):
+            gh, *_ = self.case()
+            good = gh.call(f'/compare/{BASE}...{HEAD}')
+            with patch.object(ResearchGH, 'call', lambda self, path, method='GET', data=None, good=good, broken=broken:
+                              {**good, **broken} if path.startswith('/compare/') else FakeGH.call(self, path, method, data)):
+                self.assertFalse(gate.scope_decider(gh, gh.pr, user), broken)
+        gh, *_ = self.case()
+        for change in ({'head': {'sha': 'not-a-sha'}}, {'base': {'sha': None}}):
+            self.assertFalse(gate.scope_decider(gh, {**gh.pr, **change}, user))
+
+    def test_paths_come_from_the_reviewed_commits_not_the_mutable_listing(self):
+        # Round 2, Astra F1: the pull request shows a contribution-only head with the same
+        # file count while its file listing is read, then returns to the protected head.
+        gh, app, event, known, eligible = self.case(paths=('scripts/check.py',))
+        gh.listed = (NOTE,)
+        self.assertFalse(gate.scope_decider(gh, gh.pr, {'login': 'collaborator', 'type': 'User'}))
+        self.assertFalse(gate.history(gh, gh.pr, known, eligible)[2])
+        gh, app, errors, state = self.decide(gh, app, event)
+        self.assertIsNone(state)
+        self.assertEqual(app.created, [])
+
+    def test_command_for_another_head_is_refused_before_any_check(self):
+        gh, app, event, known, eligible = self.case()
+        event['comment']['body'] = event['comment']['body'].replace(HEAD, BASE)
+        gh.comments[-1] = event['comment']
+        gh, app, errors, state = self.decide(gh, app, event)
+        self.assertIsNone(state)
+        self.assertEqual(app.created, [])
+        self.assertTrue(any('Only a repository admin' in p['body'] for p in gh.posts))
+
+    def test_someone_who_committed_to_the_branch_cannot_decide(self):
+        user = {'login': 'collaborator', 'type': 'User'}
+        for committers in ((('author', 'web-flow'), ('Collaborator', 'web-flow')),
+                           (('author', 'collaborator'),)):
+            gh, app, event, known, eligible = self.case()
+            gh.committers = committers
+            self.assertFalse(gate.scope_decider(gh, gh.pr, user))
+            self.assertFalse(gate.history(gh, gh.pr, known, eligible)[2])
+        gh, *_ = self.case()
+        gh.committers = ((None, None), ('author', 'web-flow'))
+        self.assertTrue(gate.scope_decider(gh, gh.pr, user))
+
+    def test_uncovered_discussion_is_not_set_aside_by_a_collaborator(self):
+        # Round 2, Fable F1, case 1: a person objects after the reviews; no review covered it.
+        gh, app, event, known, eligible = self.case()
+        objection = comment('The table in section 3 contradicts Version 21.', 'reader')
+        objection['id'] = 77
+        gh.comments.insert(-1, objection)
+        gh, app, errors, state = self.decide(gh, app, event)
+        self.assertNotEqual((app.final or {}).get('conclusion'), 'success')
+        self.assertEqual(gh.merge_requests, [])
+        self.assertTrue(any(p['body'].startswith('This scope decision was not applied.') for p in gh.posts))
+        # The gate's own reply is not itself new discussion.
+        reply = {'id': 78, 'author': 'github-actions[bot]', 'body': 'This scope decision was not applied. x'}
+        self.assertEqual(gate.history_coverage([reply]), set())
+
+    def test_admin_can_still_decide_with_uncovered_discussion(self):
+        gh, app, event, known, eligible = self.case('admin')
+        objection = comment('The table in section 3 contradicts Version 21.', 'reader')
+        objection['id'] = 77
+        gh.comments.insert(-1, objection)
+        gh, app, errors, state = self.decide(gh, app, event)
+        self.assertEqual(app.final['conclusion'], 'success')
+
+    def test_report_without_the_history_read_is_not_eligible(self):
+        # Round 2, Fable F1, case 2.
+        pair = scope_pair()
+        pair['astra']['read_prerequisites_complete'] = False
+        self.assertEqual(gate.collaborator_scope_ids(pair), set())
 
     def test_a_finding_is_never_a_collaborator_decision(self):
         pair = scope_pair(findings=[{'id': 'F1', 'location': 'p:1', 'objection': 'A counterexample'}])

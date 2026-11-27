@@ -2966,15 +2966,35 @@ jobs:
 
 
           def scope_decider(gh, pr, user):
-              """A current collaborator other than the author, on a change confined to contribution notes."""
-              if (not collaborator(gh, user) or not (pr.get('user') or {}).get('login')
-                      or user['login'].casefold() == pr['user']['login'].casefold()):
+              """A current collaborator who neither opened nor committed to the pull request,
+              on a change confined to contribution notes.
+
+              Paths and commit authors come from a comparison of the two commit SHAs in
+              this pull-request snapshot. That comparison is immutable, so moving the
+              pull request to another head while it is read cannot change the answer.
+              An incomplete or oversized comparison needs an admin.
+              """
+              login = str(user.get('login') or '').casefold()
+              if (not login or not collaborator(gh, user) or not (pr.get('user') or {}).get('login')
+                      or login == pr['user']['login'].casefold()):
                   return False
-              files = gh.pages(f"/pulls/{pr['number']}/files")
+              head, base = (pr.get('head') or {}).get('sha'), (pr.get('base') or {}).get('sha')
+              if not all(isinstance(sha, str) and re.fullmatch('[0-9a-f]{40}', sha) for sha in (head, base)):
+                  return False
+              comparison = gh.call(f'/compare/{base}...{head}')
+              files, commits = comparison.get('files'), comparison.get('commits')
+              if (not isinstance(files, list) or not files or len(files) >= 300
+                      or not isinstance(commits, list) or not commits or len(commits) >= 250
+                      or comparison.get('total_commits') != len(commits)
+                      or not (comparison.get('merge_base_commit') or {}).get('sha')):
+                  return False
               names = [file.get('filename') for file in files]
-              if (not files or len(files) != pr.get('changed_files') or len(set(names)) != len(names)
-                      or any(not isinstance(name, str) or not name for name in names)):
+              if len(set(names)) != len(names) or any(not isinstance(name, str) or not name for name in names):
                   return False
+              for commit in commits:
+                  for role in ('author', 'committer'):
+                      if str((commit.get(role) or {}).get('login') or '').casefold() == login:
+                          return False
               return not any(scope_decision_protected(path) for path in outside_paths(files))
 
 
@@ -2992,6 +3012,7 @@ jobs:
                   unread = review.get('not_reviewed')
                   if (scope and family in MODELS and envelope.get('reviewer') == family
                           and envelope.get('model') == MODELS[family] and envelope.get('complete') is True
+                          and envelope.get('read_prerequisites_complete') is not False
                           and not envelope.get('identity_error') and not envelope.get('post_review_error')
                           and not scope.get('coverage_omitted') and review.get('scope_complete') is False
                           and isinstance(unread, list) and unread and all(isinstance(u, str) and u.strip() for u in unread)):
@@ -3811,7 +3832,7 @@ jobs:
                       continue  # Authorization commands are revalidated separately.
                   if item.get('author') == 'github-actions[bot]' and body.startswith((ROUND_MARKER, SUMMARY_MARKER,
                           'Accepted by collaborator override, not by unanimous model acceptance.',
-                          'This override was ignored.')):
+                          'This override was ignored.', 'This scope decision was not applied.')):
                       continue
                   if 'incomplete_review' in item:
                       value = item['incomplete_review']
@@ -4109,8 +4130,10 @@ jobs:
                   scope_decision = False
                   if override_command and not administrator(gh, event['comment']['user']):
                       parsed = parse_override_command(command)
-                      scope_decision = bool(parsed and all(re.fullmatch(SCOPE_ID, ident) for ident in parsed[1])
-                                            and scope_decider(gh, gh.call(f'/pulls/{number}'), event['comment']['user']))
+                      snapshot = gh.call(f'/pulls/{number}')
+                      scope_decision = bool(parsed and parsed[0] == snapshot['head']['sha']
+                                            and all(re.fullmatch(SCOPE_ID, ident) for ident in parsed[1])
+                                            and scope_decider(gh, snapshot, event['comment']['user']))
                       if not scope_decision:
                           gh.call(f'/issues/{number}/comments', 'POST', {'body':
                               'This override was ignored. Only a repository admin may override a review item. '
@@ -4270,6 +4293,15 @@ jobs:
                       limits = qualified_access_findings(envelopes, include_overridden=True)
                       state['source_access_limitations'] = limits
                       applied = overridden_decision(envelopes, overrides, pr['head']['sha'])
+                      if (any(item.get('authority') == 'scope-collaborator' for item in applied.values())
+                              and uncovered_history(envelopes, discussion)):
+                          # Accepting a reviewer's listed omissions is not authority to set aside
+                          # discussion that no completed review has examined.
+                          message = ('This scope decision was not applied. The pull request has discussion that no '
+                                     'completed review has covered, and a collaborator\'s scope decision cannot set it aside. '
+                                     'Request a review that covers it, or ask an admin to decide.')
+                          gh.call(f'/issues/{number}/comments', 'POST', {'body': message})
+                          raise ValueError(message)
                       conclusion = 'success'
                       summary = 'Accepted by collaborator override, not by unanimous model acceptance. Affected claims are NOT outside reviewed.\n' + json.dumps(applied, indent=2)
                       if limits:

@@ -848,25 +848,38 @@ ordinary protected merge access.
 
 A collaborator with current write or maintain access may accept incomplete-scope
 items with the same exact-head command when all of the following hold. Otherwise
-the comment has no effect and the item needs an admin.
+no item is accepted and the item needs an admin. A command that fails the first
+two conditions, or names another head, is ignored with a short reply. One that
+passes them but fails a later condition starts a check that ends unsuccessful,
+with a reply saying why.
 
-- The commenter is not the pull request's author. The gate compares GitHub
-  logins with the account that opened the pull request. It cannot tell who
-  operates an agent or who pushed commits to someone else's branch, so a
-  collaborator should not decide a pull request that their own agent wrote or
-  that they pushed to.
+- The commenter did not open the pull request and is not the GitHub author or
+  committer of any of its commits. The gate cannot tell who operates an agent,
+  and a commit made under another account's name is not attributed to its
+  pusher, so a collaborator should not decide a pull request that their own
+  agent wrote.
 - Every ID in the comment is a `scope-RUN-ATTEMPT-REVIEWER` item in the current
   App record. A comment that also names a finding is refused as a whole.
 - The App's own record for this head holds a completed report from that
   reviewer which lists what it did not read. Eligibility is computed from the
   App record alone; a report comment never establishes it. A review that did
   not start or was interrupted (the gate writes its own "Review interrupted"
-  entry for those), a report whose metadata failed, an identity problem, a
-  rejection without a finding, or a list too long for the App record stays an
-  admin decision.
+  entry for those), a report delivered without the required history read, a
+  report whose metadata failed, an identity problem, a rejection that reports
+  complete scope and no finding (so there is no list to accept), or a list too
+  long for the App record stays an admin decision. The ordinary eligible case is
+  a completed report that requests changes only because it lists unread work.
+- No discussion on the pull request is left uncovered. If a comment, review
+  comment or interrupted-review observation exists that no completed review has
+  covered, the decision is not applied: accepting a reviewer's listed omissions
+  is not authority to set aside an objection nobody examined. An admin's
+  override is unchanged in this respect.
 - Every changed path, both names of a rename included, lies under
   `research/contributions/` and is not a Lean source or a Lake configuration or
-  toolchain file. Everything else needs an admin: files the current-record
+  toolchain file. The paths and the commit authors are read from a comparison
+  of the exact base and head commits, not from the pull request's current file
+  listing, so moving the pull request to another head cannot change the answer.
+  A comparison with 300 or more files or 250 or more commits needs an admin. Everything else needs an admin: files the current-record
   checks execute, `research/versionNN/`, other research folders, Lean,
   manuscripts, releases, documentation, workflows, scripts and tests. Inside
   `research/contributions/` the outside lane's name-based rule for words such
@@ -881,8 +894,9 @@ The App record names the collaborator and marks the decision
 `scope-collaborator`. The check summary and the round summary posted on the
 pull request each say, item by item, whether an admin or a collaborator who is
 not the author accepted the incomplete scope. A collaborator's decision is
-applied only in the run its comment starts and on the merge recheck; it is not
-passed to a later review as an authenticated override. Findings stay
+applied in override-command runs on that head (its own, and any later one, where
+it is revalidated) and on the merge recheck. It is never passed to a review as
+an authenticated override. Findings stay
 blocking until an admin decides them, so this never accepts a pull request on
 which a reviewer raised an unresolved objection.
 
