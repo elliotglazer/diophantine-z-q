@@ -1,0 +1,21 @@
+{
+  "upstream": "JoseBrox/diophantine-z-q_improvements@6864691d536057574be873667936610da6a4ea99",
+  "accepted_note_merge": "dda0439aa44a63a05d4ef7c58230caed6df8e628",
+  "files": [
+    {
+      "path": "research/version22/construction/inputs/certificate.json",
+      "sha256": "0ebeb9397ed151fa19a3361d98ade21d5d0593fc6d0c670d93a9a729b5e1b05f",
+      "bytes": 682
+    },
+    {
+      "path": "research/version22/construction/inputs/expanded175.txt",
+      "sha256": "efc0be237413e25f1308d0a2e8fa1750c5de526a83046cc3aac5123ea12d4292",
+      "bytes": 73080
+    },
+    {
+      "path": "research/version22/construction/inputs/quadrics.json",
+      "sha256": "e4ae76cf168cf634e9aa099d08cf1d9847e93dd165c26f8f07f09593cb551ff4",
+      "bytes": 148730
+    }
+  ]
+}

@@ -1,0 +1,146 @@
+{
+  "version": 22,
+  "status": "candidate",
+  "files": [
+    {
+      "path": "manuscripts/quartic_v22.pdf",
+      "sha256": "11b5217654f5f1f9476b19fcb387fc90498509ca62ad637a1b8bdf85274ef264",
+      "bytes": 5542466
+    },
+    {
+      "path": "manuscripts/quartic_v22.tex",
+      "sha256": "15576881d6ff053ebac0a064820486d3878b67a809837defe18e85dcbc3d7193",
+      "bytes": 2882833
+    },
+    {
+      "path": "research/version22/ARITHMETIC-AUDIT.md",
+      "sha256": "97ff8d0e9d113fda2eeddfc1a6c490b1a9eda1d72e565c344513b28b460f9c27",
+      "bytes": 2890
+    },
+    {
+      "path": "research/version22/BUILD.json",
+      "sha256": "81a083f2602ed227427cf913bd7317849eb4d784a820e2e97989f795046fdf05",
+      "bytes": 226068
+    },
+    {
+      "path": "research/version22/CORRECTIONS-SOURCES.json",
+      "sha256": "c599087a175ff7cdfe7583be702106a50b1ebe477808d30fce031e143d7043c4",
+      "bytes": 8735
+    },
+    {
+      "path": "research/version22/CORRECTIONS.md",
+      "sha256": "6dd6bef6c7b8575e2d52b7a39791e2a11f85aa856ddad2a99762cfc216109a0a",
+      "bytes": 3547
+    },
+    {
+      "path": "research/version22/CREDIT-CONFIRMATION.json",
+      "sha256": "82e7b2dc1e7fe5b2c7c39d82dde763d25103e4f999d457ad7b93c036bc34f58f",
+      "bytes": 487
+    },
+    {
+      "path": "research/version22/DEPENDENCIES.md",
+      "sha256": "6fe39235897c4855986fc59a7cad1bc3f64e5b4d5fb3dd7830b334c11c028a94",
+      "bytes": 4651
+    },
+    {
+      "path": "research/version22/FABLE-REPAIR-RECORD.md",
+      "sha256": "988389b5f9cfe0dca1f21aeace7c244b21eb02cf1e23cf354fd13b397eac5849",
+      "bytes": 1868
+    },
+    {
+      "path": "research/version22/HANDOFF.md",
+      "sha256": "aff14d079c8484e33491b656cefcb064e3d821f4289a3b02b401cf43c2339744",
+      "bytes": 1107
+    },
+    {
+      "path": "research/version22/README.md",
+      "sha256": "260e2f45e799c7c6ca78a6926bc0238107d9fa26f89ae611b4c2a5364e96d70e",
+      "bytes": 2827
+    },
+    {
+      "path": "research/version22/RELEASE-MANIFEST.json",
+      "sha256": "e718177622243982dee35f14832cd6a16dc49bd48ffe15af5f11c94f2008b187",
+      "bytes": 4403
+    },
+    {
+      "path": "research/version22/RELEASE-NOTES.md",
+      "sha256": "73aba1262f71c3838b1d6a1c268a03d671e0c7161b3a859fe4152b12b66abf78",
+      "bytes": 1387
+    },
+    {
+      "path": "research/version22/RETAINED-EDITS.json",
+      "sha256": "8338cd46f5299fda165b59b59d0f7d088962bcf8c4dde2fc7f83824877b62eba",
+      "bytes": 837
+    },
+    {
+      "path": "research/version22/construction/DIRECT-AUDIT.json",
+      "sha256": "5ae0025484037e7c1806992c8c56a0b8edf74ea544cc2f21f184591117f6deb9",
+      "bytes": 152
+    },
+    {
+      "path": "research/version22/construction/FINITE-AUDIT.json",
+      "sha256": "b3e61c7b8ebbe3660b517eca6a9690058bdb3e4202b502fb24b2a18dbd791502",
+      "bytes": 1678
+    },
+    {
+      "path": "research/version22/construction/INPUTS.json",
+      "sha256": "3cbd5bef9c1313c2e3ee995cde9a571334411acf418fc5e1bf55344884fce086",
+      "bytes": 753
+    },
+    {
+      "path": "research/version22/construction/check.py",
+      "sha256": "11b53bfbc7679a99480805758892127a2342e98bf4aa21b387dea2d85b7ab31d",
+      "bytes": 2994
+    },
+    {
+      "path": "research/version22/construction/inputs/certificate.json",
+      "sha256": "0ebeb9397ed151fa19a3361d98ade21d5d0593fc6d0c670d93a9a729b5e1b05f",
+      "bytes": 682
+    },
+    {
+      "path": "research/version22/construction/inputs/expanded175.txt",
+      "sha256": "efc0be237413e25f1308d0a2e8fa1750c5de526a83046cc3aac5123ea12d4292",
+      "bytes": 73080
+    },
+    {
+      "path": "research/version22/construction/inputs/quadrics.json",
+      "sha256": "e4ae76cf168cf634e9aa099d08cf1d9847e93dd165c26f8f07f09593cb551ff4",
+      "bytes": 148730
+    },
+    {
+      "path": "research/version22/construction/verify175.py",
+      "sha256": "18b8382000e9b955a8253aa3b2889dfcb4235b1536c0173b4ad69fb5e6440409",
+      "bytes": 5025
+    },
+    {
+      "path": "research/version22/construction/verify_interpretation.py",
+      "sha256": "fbae92c484677399c76a4dacb0a14b0005d7cad3bd9f902447124bee50e5a1bf",
+      "bytes": 12267
+    },
+    {
+      "path": "research/version22/reviews/fable-pr175-lineage.md",
+      "sha256": "b9024fd52cec275ffb693379459d605a4d41512b8197ce0e61336996394a144e",
+      "bytes": 12795
+    },
+    {
+      "path": "research/version22/reviews/fable-v22-builder-review.json",
+      "sha256": "f7902ba81a3d3f41ddd2615562840c98a40a17aec0451192c6de35492cc370ae",
+      "bytes": 12348
+    },
+    {
+      "path": "research/version22/reviews/fable-v22-contacts-a735f6b.md",
+      "sha256": "1d9ddfa1235a3f2e01733ecb753405d978900a3516e94b69d07b7dfe2be84169",
+      "bytes": 17015
+    },
+    {
+      "path": "research/version22/reviews/fable-v22-finite-a735f6b.md",
+      "sha256": "2b2487b32d96c5c656779c7ecd2aa94d44320d268315befa821dff8138233ec6",
+      "bytes": 17039
+    },
+    {
+      "path": "research/version22/reviews/fable-v22-pole-a735f6b.md",
+      "sha256": "2202ea68a8cbcdc438bfa1f379f476e50deddb146f3fb6a9d6fcc00d290995f3",
+      "bytes": 18217
+    }
+  ]
+}

@@ -1,17 +1,20 @@
 # Manuscripts
 
-Version 21 adds José Brox's explicit 229-variable result, with
-its complete proof and the unchanged 195-variable Busy Beaver polynomial:
+Version 22 is a draft adopting Jose Brox's explicit 175-variable quartic.
+Its new pole and contact arithmetic and review scope are described in the
+[Version 22 guide](../research/version22/README.md).
 
-- [Candidate PDF](quartic_v21.pdf), [TeX](quartic_v21.tex)
-- [Preparation, finite checks and review limits](../research/version21/README.md)
+- [Draft Version 22 PDF](quartic_v22.pdf), [TeX](quartic_v22.tex)
+- [Draft PR178](https://github.com/elliotglazer/diophantine-z-q/pull/178)
 
-The current published manuscript is **Version 20**, dated November 17, 2026:
+Version 21 remains the published release, with Jose Brox's explicit
+229-variable quartic and the retained 195-variable Busy Beaver polynomial.
 
-- [PDF: quartic_v20.pdf](quartic_v20.pdf)
-- [TeX: quartic_v20.tex](quartic_v20.tex)
-- [Source inventory and review scope](../research/version20/README.md)
-- [Cumulative research handoff](../research/version20/CUMULATIVE-HANDOFF.md)
+- [Version 21 PDF](quartic_v21.pdf), [TeX](quartic_v21.tex)
+- [Version 21 guide](../research/version21/README.md)
+
+Version 20 is preserved as an earlier release:
+[PDF](quartic_v20.pdf), [TeX](quartic_v20.tex).
 
 The [Version 19 PDF](quartic_v19.pdf), [TeX](quartic_v19.tex) and
 [research guide](../research/version19/README.md) remain unchanged.

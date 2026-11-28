@@ -1,0 +1,14 @@
+{
+  "base": "manuscripts/quartic_v21.tex",
+  "base_sha256": "c98a66a0c50b9c186cb1efccd2be82c2e3bbb337b0511481fe69b64bc9d901e9",
+  "edits": [
+    "Version title, PDF title and date",
+    "Replace abstract quartic headline by explicit 175 result; retain historical 195 BB theorem in the body",
+    "Insert new Version22 part",
+    "Use owner-requested spelling Jose Brox in current-edition prose; frozen originals untouched",
+    "Correct 28 text-mode range separators in the copied V21 normalization table",
+    "Add current-part clarifications for retained generator, duplication, 229 point scales and old pole inputs",
+    "Fable review repairs in the new part, including dependency wording and expanded extraction/completeness proof",
+    "Remaining split-line Jose spelling and GPT-6 attribution corrected in the retained copy"
+  ]
+}
