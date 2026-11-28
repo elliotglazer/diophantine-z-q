@@ -5,6 +5,9 @@ import json
 import os
 from pathlib import Path
 import re
+import shutil
+import subprocess
+import sys
 import tempfile
 import unittest
 from unittest.mock import patch
@@ -15,6 +18,17 @@ from test_gate import gate, FakeGH, HEAD, BASE, ROOT, changed
 PACKAGE = 'example_20261127'
 ENTRY = 'research/contributions/'+PACKAGE+'/check_all.py'
 WORKFLOW_TEXT = (ROOT / '.github/workflows/contribution-checks.yml').read_text(encoding='utf-8')
+
+
+def staging_program():
+    """The staging program exactly as the workflow writes it to disk."""
+    body = WORKFLOW_TEXT.split("<<'STAGE_PY'\n", 1)[1].split('\n          STAGE_PY\n', 1)[0]
+    return '\n'.join(line[10:] if line.startswith(' ' * 10) else line for line in body.split('\n')) + '\n'
+
+
+def git(repo, *args):
+    return subprocess.run(['git', '-C', str(repo), '-c', 'user.name=t', '-c', 'user.email=t@example.invalid',
+                           '-c', 'core.autocrlf=false', *args], check=True, capture_output=True).stdout
 
 
 class ChecksGH(FakeGH):
@@ -128,6 +142,61 @@ class ContributionChecks(unittest.TestCase):
         self.assertNotIn('scripts/', WORKFLOW_TEXT)
         # The pull-request trigger exists only to test the sandbox on a fixture.
         self.assertIn("paths:\n      - '.github/workflows/contribution-checks.yml'", WORKFLOW_TEXT)
+
+    def test_staging_never_applies_the_commits_own_attributes(self):
+        # Round 1, Astra C1 and Fable F1: export-subst and export-ignore in a package's
+        # .gitattributes changed what git archive produced. The staging program must
+        # write the committed blobs byte for byte whatever attributes the commit sets.
+        self.assertNotIn('git archive', WORKFLOW_TEXT)
+        self.assertNotIn('archive --format', WORKFLOW_TEXT)
+        self.assertNotIn('tar -x', WORKFLOW_TEXT)
+        self.assertIn('python3 -I -B "$RUNNER_TEMP/stage.py" "$source" "$root"', WORKFLOW_TEXT)
+        if shutil.which('git') is None:
+            self.skipTest('git is not available')
+        work = Path(self.tmp.name)
+        repo, staged, program = work/'repo', work/'staged', work/'stage.py'
+        package = repo/'research/contributions/pkg'
+        package.mkdir(parents=True)
+        program.write_text(staging_program(), encoding='utf-8')
+        compile(program.read_text(encoding='utf-8'), str(program), 'exec')
+        committed = {
+            'research/contributions/pkg/.gitattributes':
+                b'check_all.py export-subst\ndata.txt export-subst ident text eol=crlf\nomitted.txt export-ignore\n',
+            'research/contributions/pkg/check_all.py': b'assert "$Format:%H$" == "$" + "Format:%H$"\n',
+            'research/contributions/pkg/data.txt': b'hash $Format:%H$ id $Id$\nsecond line\n',
+            'research/contributions/pkg/omitted.txt': b'present\n',
+            'research/contributions/pkg/sub/binary.bin': bytes(range(256)),
+            'top.txt': b'top\n',
+        }
+        git(work, 'init', '-q', str(repo))
+        for name, data in committed.items():
+            (repo/name).parent.mkdir(parents=True, exist_ok=True)
+            (repo/name).write_bytes(data)
+        git(repo, 'add', '-A')
+        git(repo, 'commit', '-q', '-m', 'fixture $Format:%H$')
+        # Control: the archive route really does change these bytes, so the test bites.
+        archive = git(repo, 'archive', '--format=tar', 'HEAD')
+        self.assertNotIn(b'present' + bytes([10]), archive)
+        self.assertNotIn(b'hash $Format:%H$', archive)
+        staged.mkdir()
+        result = subprocess.run([sys.executable, '-I', '-B', str(program), str(repo), str(staged)],
+                                capture_output=True, text=True)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertIn('Staged 6 files', result.stdout)
+        found = {str(f.relative_to(staged)).replace(os.sep, '/'): f.read_bytes()
+                 for f in staged.rglob('*') if f.is_file()}
+        self.assertEqual(found, committed)
+        self.assertFalse((staged/'.git').exists())
+        # Staging into a folder that already holds a file of the same name fails, never overwrites.
+        again = subprocess.run([sys.executable, '-I', '-B', str(program), str(repo), str(staged)],
+                               capture_output=True, text=True)
+        self.assertNotEqual(again.returncode, 0)
+
+    def test_self_test_fixture_sets_the_attribute_traps(self):
+        for needle in ('check_all.py export-subst', 'data.txt export-subst ident text eol=crlf',
+                       'omitted.txt export-ignore', "'export-subst rewrote the checker'",
+                       "'export-ignore dropped a file'", "'data rewritten'"):
+            self.assertIn(needle, WORKFLOW_TEXT)
 
     def test_fork_head_gets_one_dispatch_on_a_reserved_ref_and_waits(self):
         gh = ChecksGH()

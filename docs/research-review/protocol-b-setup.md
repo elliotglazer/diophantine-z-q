@@ -1109,8 +1109,9 @@ A package under `research/contributions/<name>/` may carry its own entry point,
 evidence for the exact head, so reviewers previously had nothing they could
 cite for such a package's tables.
 
-The preparation job, which holds no App or provider secret, now handles this
-before the reviewers start:
+The preparation job, which holds no App or provider secret, now tries to supply
+that execution before the reviewers start. It is best effort: any step below
+can leave no completed run, and the review proceeds regardless.
 
 1. It lists the packages the pull request touches, both names of a rename
    included, that have `check_all.py` at the head. More than three is refused
@@ -1123,17 +1124,27 @@ before the reviewers start:
    that points anywhere else is never used or moved.
 4. It waits up to 80 minutes for the runs and records their outcome. Nothing in
    this step can fail the job or stop the review: a missing, failed or late run
-   is recorded, and the reviewers see whatever exists.
+   is recorded, and the reviewers see whatever exists. A run that already
+   exists for the package at that head, including a failed or cancelled one,
+   is never dispatched again; after an infrastructure failure a maintainer
+   re-runs that run by hand.
 
-The workflow has read-only permissions and uses no secret, environment or
-repository script. It checks out the dispatched commit without credentials, stages its committed
-files (not the repository metadata) in a separate folder, and
-runs `python3 -B check_all.py` from the package folder inside `bwrap`: no
-network, an empty environment, an unprivileged user, the commit mounted
-read-only at `/repo`, and a private `/tmp`. The limit is 60 minutes. Python 3
-and Node from the runner image are available; nothing can be installed. A
-checker must therefore read only committed files, write only under `/tmp`, and
-need no network.
+The workflow has read-only permissions and uses no secret, deployment
+environment or repository script. It fetches the dispatched commit without
+credentials and stages it in a separate folder by writing each blob of the
+commit's tree byte for byte, verifying each against its Git name. It does not
+use the checkout or `git archive` for this: both apply attributes from the
+commit under test (`export-ignore`, `export-subst`, `ident`, `eol`, filters), so
+a package's own `.gitattributes` could otherwise make the checker run on bytes
+other than the ones reviewers read. Symbolic links are staged as links and
+submodule entries are skipped. It then runs `python3 -B check_all.py` from the
+package folder inside `bwrap`: no network, the inherited environment cleared
+(only `PATH`, `LC_ALL`, `HOME` and `PYTHONDONTWRITEBYTECODE` are set), an
+unprivileged user, the staged commit mounted read-only at `/repo`, and a
+private `/tmp`. The limit is 60 minutes. The runner image's `/usr` tree is
+visible, which includes Python 3 and Node; nothing can be installed. A checker
+must therefore read only committed files, write only under `/tmp`, and need no
+network.
 
 Because these are `workflow_dispatch` runs on the exact head in this repository,
 `read_ci_job` accepts them. A passing run shows only that `check_all.py` exited
@@ -1145,8 +1156,13 @@ existing size and quota limits bound how often it can be triggered. The
 scheduled cleanup deletes a reserved branch once its pull request is closed and
 its runs have finished.
 
-A change to the workflow runs its sandbox self-test on the pull request and
-needs the pin in the gate updated in the same change.
+A change to the workflow runs its self-test on the pull request and needs the
+pin in the gate updated in the same change. The self-test builds a fixture
+commit whose `.gitattributes` sets `export-subst`, `export-ignore`, `ident` and
+`eol=crlf`, stages it with the same staging program, and runs a checker that
+fails unless every staged byte equals the committed byte, the tree is
+read-only, the network is unreachable and no runner variable is visible. It
+does not exercise the dispatch branch's package-name validation.
 
 ## Light profile
 

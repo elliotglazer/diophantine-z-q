@@ -1907,11 +1907,13 @@ jobs:
 
           # A contribution package may carry its own checker, check_all.py. No workflow on
           # a pull request runs it, and a fork's runs are not evidence for the exact head.
-          # The approved workflow below runs it in a sandbox: no network, no environment,
+          # The approved workflow below stages the commit's raw blobs, never an archive or
+          # checkout that would apply the commit's own attributes, and runs the checker
+          # in a sandbox: no network, a cleared environment,
           # no credentials, a read-only tree. It uses no repository script, so pinning its
           # bytes fixes what executes around the package. A change requires a pin update.
           CHECKS_WORKFLOW = '.github/workflows/contribution-checks.yml'
-          CHECKS_WORKFLOW_SHA256 = 'fd9bcfc5e49f355b4543b9d51485004fe2e983f38f8be1d49e5b6540a4db9d48'
+          CHECKS_WORKFLOW_SHA256 = '2b092988c2a4a9b875ddf3a7de43f0eb6bd6b5b41680fc686199074b57f5bcb9'
           CHECKS_REF_PREFIX = 'refs/heads/codex/protocol-b-checks/'
           CHECKS_LIMIT = 3
           CHECKS_PACKAGE = r'[A-Za-z0-9][A-Za-z0-9_.-]{0,99}'

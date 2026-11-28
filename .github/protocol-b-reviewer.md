@@ -85,13 +85,17 @@ theorems. A model review is not formal verification or a guarantee of correctnes
    that they did not skip or narrow the claimed check. If the inputs cannot be
    verified, do not claim that coverage. Fork runs and PR test-merge runs cannot
    supply this tool's coverage; neither can a branch with no eligible direct run.
-   A package under `research/contributions/<name>/` that has a `check_all.py`
-   is run before your review: the gate dispatches the `Contribution checks`
-   workflow on this exact head, and its job `Contribution package checker`
-   executes that one file in a sandbox with a read-only tree, no network and no
-   environment. `list_ci_checks` shows the job; `read_ci_job` returns
-   `run_title`, which names the package that was run. The workflow runs only
-   `check_all.py`. What that file executes, which data it reads and what it
+   For a package under `research/contributions/<name>/` that has a
+   `check_all.py`, the gate tries to run it before your review: it dispatches
+   the `Contribution checks` workflow on this exact head, and the job
+   `Contribution package checker` stages the commit's raw blobs byte for byte
+   and executes that one file in a sandbox with a read-only tree, no network
+   and a cleared environment. This is best effort; a missing or changed
+   workflow at the head, the package limit, an API error or a timeout can leave
+   no completed run. `list_ci_checks` shows the job when it exists;
+   `read_ci_job` returns `run_title`, which names the package only when the
+   workflow at the head is the pinned one, so read the workflow at the head as
+   for any CI evidence. The workflow runs only `check_all.py`. What that file executes, which data it reads and what it
    compares are yours to establish from its source, as for any checker. If the
    job is absent, the branch may predate the workflow; say so, not that the
    checker failed.

@@ -45,12 +45,76 @@ jobs:
           root=/opt/contribution-commit
           sudo -n mkdir -m 0755 "$root"
           sudo -n chown "$(id -u):$(id -g)" "$root"
+          # Staging writes each committed blob byte for byte. It never uses a
+          # checkout or an archive: those apply attributes from the commit under
+          # test (export-ignore, export-subst, ident, eol, filters), which would
+          # let a package run on bytes other than the ones reviewers read.
+          cat > "$RUNNER_TEMP/stage.py" <<'STAGE_PY'
+          import hashlib
+          import os
+          import subprocess
+          import sys
+
+          repo, dest = sys.argv[1], sys.argv[2]
+          listing = subprocess.run(['git', '-C', repo, 'ls-tree', '-r', '-z', '--full-tree', 'HEAD'],
+                                   check=True, capture_output=True).stdout
+          reader = subprocess.Popen(['git', '-C', repo, 'cat-file', '--batch'],
+                                    stdin=subprocess.PIPE, stdout=subprocess.PIPE)
+          files = links = skipped = 0
+          for item in listing.split(b'\0'):
+              if not item:
+                  continue
+              meta, raw_path = item.split(b'\t', 1)
+              mode, kind, sha = meta.decode('ascii').split(' ')
+              path = os.fsdecode(raw_path)
+              parts = path.split('/')
+              if path.startswith('/') or any(part in ('', '.', '..') for part in parts):
+                  raise SystemExit('Unsafe path in the commit: %r' % path)
+              target = os.path.join(dest, *parts)
+              if kind != 'blob':
+                  skipped += 1  # A submodule entry has no bytes in this repository.
+                  continue
+              reader.stdin.write(sha.encode('ascii') + b'\n')
+              reader.stdin.flush()
+              header = reader.stdout.readline().split()
+              if len(header) != 3 or header[0].decode('ascii') != sha or header[1] != b'blob':
+                  raise SystemExit('Cannot read blob %s for %r' % (sha, path))
+              size = int(header[2])
+              data = reader.stdout.read(size)
+              if len(data) != size or reader.stdout.read(1) != b'\n':
+                  raise SystemExit('Short read of blob %s' % sha)
+              if hashlib.sha1(b'blob %d\0' % size + data).hexdigest() != sha:
+                  raise SystemExit('Blob %s does not match its name' % sha)
+              os.makedirs(os.path.dirname(target), exist_ok=True)
+              if mode == '120000':
+                  os.symlink(os.fsdecode(data), target)
+                  links += 1
+                  continue
+              with open(target, 'xb') as handle:
+                  handle.write(data)
+              os.chmod(target, 0o755 if mode == '100755' else 0o644)
+              files += 1
+          reader.stdin.close()
+          if reader.wait() != 0:
+              raise SystemExit('git cat-file failed')
+          print('Staged %d files and %d symbolic links byte for byte; %d submodule entries skipped' % (files, links, skipped))
+          STAGE_PY
           if [ "$EVENT" = pull_request ]; then
-            # A change to this workflow tests the sandbox itself on a fixture.
-            # It never runs a pull request's package.
+            # A change to this workflow tests the staging and the sandbox on a
+            # fixture commit with attribute traps. It never runs a pull
+            # request's package.
             name=selftest
-            mkdir -p "$root/research/contributions/$name"
-            cat > "$root/research/contributions/$name/check_all.py" <<'PY'
+            source="$RUNNER_TEMP/selftest-repo"
+            mkdir -p "$source/research/contributions/$name"
+            git -C "$source" init -q
+            cat > "$source/research/contributions/$name/.gitattributes" <<'ATTRIBUTES'
+          check_all.py export-subst
+          data.txt export-subst ident text eol=crlf
+          omitted.txt export-ignore
+          ATTRIBUTES
+            printf 'hash $Format:%%H$ id $Id$\nsecond line\n' > "$source/research/contributions/$name/data.txt"
+            printf 'present\n' > "$source/research/contributions/$name/omitted.txt"
+            cat > "$source/research/contributions/$name/check_all.py" <<'PY'
           import os
           import pathlib
           import socket
@@ -58,6 +122,10 @@ jobs:
 
           here = pathlib.Path(__file__).resolve().parent
           assert str(here) == '/repo/research/contributions/selftest', here
+          # Attribute traps: the staged bytes must be the committed bytes.
+          assert "$Format:%H$" == "$" + "Format:%H$", 'export-subst rewrote the checker'
+          assert (here / 'data.txt').read_bytes() == b'hash $' + b'Format:%H$ id $' + b'Id$\nsecond line\n', 'data rewritten'
+          assert (here / 'omitted.txt').read_bytes() == b'present\n', 'export-ignore dropped a file'
           assert os.getuid() == 65534, os.getuid()
           leaked = sorted(k for k in os.environ if k.startswith(('GITHUB_', 'ACTIONS_', 'RUNNER_', 'INPUT_')))
           assert not leaked, leaked
@@ -76,25 +144,28 @@ jobs:
               raise SystemExit('FAIL: the network is reachable')
           for program in (['node', '--version'], ['python3', '--version']):
               print(subprocess.run(program, check=True, capture_output=True, text=True).stdout.strip())
-          print('PASS: sandbox self-test')
+          print('PASS: staging and sandbox self-test')
           PY
+            git -C "$source" add -A
+            git -C "$source" -c user.name=selftest -c user.email=selftest@example.invalid commit -q -m 'fixture $Format:%H$'
           else
             name="$PACKAGE"
             if ! [[ "$name" =~ ^[A-Za-z0-9][A-Za-z0-9_.-]{0,99}$ ]]; then
               echo "Invalid package name"; exit 2
             fi
-            echo "Commit under test: $(git -C "$GITHUB_WORKSPACE" rev-parse HEAD)"
-            # Exactly the committed files, without the repository metadata.
-            git -C "$GITHUB_WORKSPACE" archive --format=tar HEAD | tar -x -C "$root"
+            source="$GITHUB_WORKSPACE"
           fi
+          echo "Commit under test: $(git -C "$source" rev-parse HEAD)"
+          python3 -I -B "$RUNNER_TEMP/stage.py" "$source" "$root"
           chmod -R a+rX,go-w "$root"
           package="$root/research/contributions/$name"
           if [ "$(realpath -e "$package")" != "$(realpath -e "$root")/research/contributions/$name" ] \
               || [ ! -f "$package/check_all.py" ] || [ -L "$package/check_all.py" ]; then
             echo "research/contributions/$name/check_all.py is not a regular file in a regular folder"; exit 2
           fi
-          # Only system programs, a read-only copy of the commit and a private
-          # /tmp are visible. No host home, environment, credentials or network.
+          # Only system programs under /usr, a read-only copy of the commit and a
+          # private /tmp are visible. The inherited environment is cleared; four
+          # fixed variables are set. No host home, credentials or network.
           sudo -n /usr/bin/timeout --signal=KILL 3600 \
             /usr/bin/bwrap --unshare-all --die-with-parent --new-session \
             --uid 65534 --gid 65534 --cap-drop ALL --clearenv \
