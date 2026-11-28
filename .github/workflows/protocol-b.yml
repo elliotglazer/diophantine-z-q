@@ -1913,7 +1913,7 @@ jobs:
           # no credentials, a read-only tree. It uses no repository script, so pinning its
           # bytes fixes what executes around the package. A change requires a pin update.
           CHECKS_WORKFLOW = '.github/workflows/contribution-checks.yml'
-          CHECKS_WORKFLOW_SHA256 = '9750f84e94b1260ce7d269b316ef89a0c6ab2a4e45ddb8506e4b57c31699f769'
+          CHECKS_WORKFLOW_SHA256 = 'cfcbffe811c9f5019324cb4e2c3dc2ba467cc326c57445ae710f1deed626417f'
           CHECKS_REF_PREFIX = 'refs/heads/codex/protocol-b-checks/'
           CHECKS_LIMIT = 3
           CHECKS_PACKAGE = r'[A-Za-z0-9][A-Za-z0-9_.-]{0,99}'
@@ -4366,7 +4366,7 @@ jobs:
                           gh.call(f'/issues/{number}/comments', 'POST', {'body':
                               'This override was ignored. Only a repository admin may override a review item. '
                               'The one exception: a collaborator who is not the author may accept itemized '
-                              'incomplete-scope items, and nothing else, on a pull request confined to research/contributions/.'})
+                              'incomplete-scope items, and nothing else, on a collaborator\'s pull request confined to research/contributions/.'})
                           return
                   if override_command and not unedited_override_comment(gh, event['comment']):
                       gh.call(f'/issues/{number}/comments', 'POST', {'body':
@@ -4902,12 +4902,36 @@ jobs:
           def withdraw_collaborator_acceptance(app, state, text, reason):
               """A collaborator's decision is valid only for an immediate merge. If that merge was not
               made, replace the successful check so nothing can merge on it later without a new decision."""
-              summary = ('Withdrawn: a collaborator\'s scope decision was accepted, but '+reason+
-                         '. The decision is bound to the default branch as it was and does not stand. '
-                         'Decide again, or ask an admin.\n'+state['summary'])
+              notice = ('Withdrawn: a collaborator\'s scope decision was accepted, but '+reason+
+                        '. The pull request was not merged at this head when this was written. The decision '
+                        'is bound to the default branch as it was and does not stand. Decide again, or ask an admin.')
+              summary = notice+'\n'+state['summary']
+              if len(summary.encode()) > 60_000:
+                  # Never cut the earlier summary short; the decisions stay in the text below.
+                  summary = notice+'\nThe earlier summary did not fit beside this notice. The decisions are in the text below.'
               app.call(f"/check-runs/{state['check']}", 'PATCH', {'status': 'completed', 'conclusion': 'failure',
-                       'output': {'title': state['name'], 'summary': summary[:60000], 'text': text}})
+                       'output': {'title': state['name'], 'summary': summary, 'text': text}})
               record('collaborator-acceptance-withdrawn.json', {'check': state['check'], 'head': state['head'], 'reason': reason})
+
+
+          def settle_collaborator_acceptance(gh, app, state, text, reason):
+              """After a merge attempt that did not return a confirmed merge. The successful check is the
+              record of an accepted review, so it stays whenever GitHub reports the pull request merged at
+              the reviewed head, whatever failed afterwards. Otherwise it is withdrawn. Returns True if kept."""
+              try:
+                  pr = gh.call(f"/pulls/{state['number']}")
+                  merged = pr.get('merged') is True and (pr.get('head') or {}).get('sha') == state['head']
+              except Exception as error:
+                  # Unknown is treated as not merged: a wrong record can be corrected, a wrong merge cannot.
+                  merged = False
+                  reason += '; the pull request could not be read again ('+str(error)+')'
+              if merged:
+                  record('collaborator-acceptance-kept.json', {'check': state['check'], 'head': state['head'],
+                         'merge_commit_sha': pr.get('merge_commit_sha'), 'after': reason})
+                  log('The pull request is merged at the reviewed head; the accepted check stands. Afterwards: '+reason)
+                  return True
+              withdraw_collaborator_acceptance(app, state, text, reason)
+              return False
 
 
           def merge_and_dispatch(gh, state):
@@ -5061,7 +5085,7 @@ jobs:
               scope_ids = sorted(item['id'] for e in reports.values()
                                  if (item := review_scope_item(e)) and item['id'] in blocking)
               if scope_ids:
-                  rows.append('Current incomplete-scope items: '+', '.join('`'+ident+'`' for ident in scope_ids)+'. An admin decision must name these current IDs and this head; an older round has different IDs. Where a completed reviewer report itemized what it did not read and the pull request is confined to research/contributions/, a collaborator other than the author may accept these items with the same command; findings always need an admin.')
+                  rows.append('Current incomplete-scope items: '+', '.join('`'+ident+'`' for ident in scope_ids)+'. An admin decision must name these current IDs and this head; an older round has different IDs. Where a completed reviewer report itemized what it did not read and the pull request was opened by a collaborator and is confined to research/contributions/, a different collaborator may accept these items with the same command; findings always need an admin.')
               rows += ['', '[Full App check and retained review records]('+check_url+').', '']
               runs = sorted({str(e['run']) for e in reports.values() if e.get('run')})
               if runs:
@@ -5231,11 +5255,13 @@ jobs:
                   except Exception as error:
                       merged = None
                       if collaborator_decided(state):
-                          withdraw_collaborator_acceptance(app, state, text, str(error))
+                          # Some failures follow a merge that was made: a post-merge dispatch, or
+                          # auto-merge a person had enabled acting on the published check.
+                          settle_collaborator_acceptance(gh, app, state, text, str(error))
                       raise
                   if merged is None and collaborator_decided(state):
                       # Held or deferred: a tip-bound decision must not leave a standing green check.
-                      withdraw_collaborator_acceptance(app, state, text, 'the merge was not made at once')
+                      settle_collaborator_acceptance(gh, app, state, text, 'the merge was not made at once')
               else:
                   log("Test accepted. Auto-merge is disabled in test mode.")
 

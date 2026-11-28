@@ -301,8 +301,8 @@ does not authorize overriding a finding. One narrow exception exists and is
 applied by the gate in code, not by you: a collaborator who is not the author
 may accept a scope item when the App record holds your completed report
 itemizing what you did not read, every comment on the pull request has been
-covered by a completed review, and the pull request is confined to
-`research/contributions/`. Your `not_reviewed` list is therefore what that
+covered by a completed review, and the pull request was opened by a
+collaborator and is confined to `research/contributions/`. Your `not_reviewed` list is therefore what that
 person relies on; make it specific and complete.
 
 

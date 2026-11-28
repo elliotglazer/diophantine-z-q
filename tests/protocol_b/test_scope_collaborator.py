@@ -275,55 +275,104 @@ class CollaboratorScopeDecisions(unittest.TestCase):
         self.assertEqual(app.final['conclusion'], 'failure')
         self.assertTrue(app.final['output']['summary'].startswith('Withdrawn: '))
         self.assertEqual(app.final['output']['text'], '{"reports": {}}')
-        # publish withdraws on an exception and on a held or deferred merge, for collaborator decisions only.
-        text = __import__('test_gate').ROOT.joinpath('.github/workflows/protocol-b.yml').read_text(encoding='utf-8')
-        body = text.split("    if state['mode'] == 'live':", 1)[1].split('    else:', 1)[0]
-        self.assertEqual(body.count('withdraw_collaborator_acceptance(app, state, text'), 2)
-        self.assertEqual(body.count('if collaborator_decided(state)') + body.count('and collaborator_decided(state)'), 2)
 
-    def test_decision_waits_for_the_other_required_checks(self):
-        # Round 5, Astra's unread item: a decision must not sit behind deferred auto-merge.
-        for change in ({'status': 'in_progress', 'conclusion': None}, {'conclusion': 'failure'}):
-            gh, app, event, known, eligible = self.case()
-            gh.check_runs[0].update(change)
-            self.assertFalse(gate.other_required_checks_passed(gh, HEAD, 'main'))
-            gh, app, errors, state = self.decide(gh, app, event)
-            self.assertNotEqual((app.final or {}).get('conclusion'), 'success')
-            self.assertEqual(gh.merge_requests, [])
-            self.assertTrue(any('every other required check has already passed' in p['body'] for p in gh.posts))
-            self.assertFalse(any(p['body'].startswith('Accepted by collaborator override') for p in gh.posts))
+    def live(self, gh, app, event):
+        app.checks[5]['name'] = gate.CHECK  # The earlier record is a live one.
+        # What GitHub shows the merge-readiness read once the gate has published its own check.
+        gh.check_runs.append({'id': 900, 'name': gate.CHECK, 'head_sha': HEAD, 'status': 'completed',
+                              'conclusion': 'success', 'app': {'id': APP_ID}})
+        with patch.object(gate, 'model_turn', side_effect=AssertionError('No model call')):
+            return run_pipeline(gh, app, mode='live', event=event,
+                                provider=lambda _: (_ for _ in ()).throw(AssertionError('No review')))
+
+    def test_live_merge_keeps_the_accepted_check(self):
         gh, app, event, known, eligible = self.case()
-        gh.check_runs = []
-        self.assertFalse(gate.other_required_checks_passed(gh, HEAD, 'main'))
-        # An admin's decision is not subject to this condition.
-        gh, app, event, known, eligible = self.case('admin')
-        gh.check_runs[0].update(status='in_progress', conclusion=None)
-        gh, app, errors, state = self.decide(gh, app, event)
+        gh, app, errors, state = self.live(gh, app, event)
+        self.assertEqual(errors, [])
+        self.assertEqual(gh.merge_requests, [{'sha': HEAD, 'merge_method': 'merge'}])
         self.assertEqual(app.final['conclusion'], 'success')
 
-    def test_collaborator_decision_is_never_left_to_deferred_auto_merge(self):
-        state = {'overrides': {'scope-1-1-astra': {'collaborator': 'jo', 'authority': 'scope-collaborator',
-                                                   'default_tip': BASE}}}
-        self.assertTrue(gate.collaborator_decided(state))
-        self.assertFalse(gate.collaborator_decided({'overrides': {'x': {'collaborator': 'owner'}}}))
-        self.assertFalse(gate.collaborator_decided({}))
-        gh = ResearchGH()
-        with patch.object(gate, 'merge_readiness', return_value=(False, {'auto_merge': None, 'node_id': 'PR_1'}, BASE)), \
-             patch.object(gate, 'direct_merge', side_effect=AssertionError('no merge')), \
-             patch.object(gh, 'api', side_effect=AssertionError('auto-merge must not be enabled')):
-            with self.assertRaisesRegex(RuntimeError, 'not left to deferred auto-merge'):
-                gate.merge_and_dispatch(gh, state)
-
-    def test_acceptance_comment_is_not_posted_when_the_tip_has_moved(self):
-        # Round 5, Fable N1: the tip is checked before the acceptance comment is posted.
+    def test_failure_after_the_merge_was_made_keeps_the_accepted_check(self):
+        # Round 1 of the hardening change, Fable F1: the check records an accepted review of a
+        # merged pull request, and must not be rewritten because a later step failed.
         gh, app, event, known, eligible = self.case()
-        reads = iter([BASE, BASE])
-        original = gate.default_branch_tip
-        with patch.object(gate, 'default_branch_tip', lambda g, default: next(reads, 'd' * 40)):
-            gh, app, errors, state = self.decide(gh, app, event)
-        self.assertNotEqual((app.final or {}).get('conclusion'), 'success')
-        self.assertFalse(any(p['body'].startswith('Accepted by collaborator override') for p in gh.posts))
-        self.assertTrue(any('default branch moved' in p['body'] for p in gh.posts))
+
+        def refuse(workflow, ref):
+            raise RuntimeError('dispatch refused')
+        gh.dispatch_workflow = refuse
+        gh, app, errors, state = self.live(gh, app, event)
+        self.assertTrue(gh.pr['merged'])
+        self.assertIn('Post-merge dispatch needs reconciliation', str(errors))
+        self.assertEqual(app.final['conclusion'], 'success')
+        self.assertNotIn('Withdrawn', app.final['output']['summary'])
+
+    def test_merge_by_someone_else_at_the_head_keeps_the_accepted_check(self):
+        # Auto-merge a person had enabled can act on the published check before the gate's own call.
+        gh, app, event, known, eligible = self.case()
+
+        def merged_elsewhere(g, state, *names):
+            g.complete_merge()
+            raise RuntimeError('PR is no longer open and ready for the protected default branch')
+        with patch.object(gate, 'merge_readiness', merged_elsewhere):
+            gh, app, errors, state = self.live(gh, app, event)
+        self.assertEqual(gh.merge_requests, [])
+        self.assertEqual(app.final['conclusion'], 'success')
+
+    def test_failed_merge_withdraws_the_accepted_check(self):
+        gh, app, event, known, eligible = self.case()
+        gh.merge_result = {'merged': False, 'message': 'refused'}
+        gh, app, errors, state = self.live(gh, app, event)
+        self.assertFalse(gh.pr['merged'])
+        self.assertIn('Direct merge was not confirmed', str(errors))
+        self.assertEqual(app.final['conclusion'], 'failure')
+        self.assertTrue(app.final['output']['summary'].startswith('Withdrawn: '))
+        self.assertIn('scope-1-1-astra', app.final['output']['text'])
+
+    def test_held_or_deferred_merge_withdraws_the_accepted_check(self):
+        gh, app, event, known, eligible = self.case()
+        with patch.object(gate, 'merge_and_dispatch', lambda g, state: None):
+            gh, app, errors, state = self.live(gh, app, event)
+        self.assertEqual(app.final['conclusion'], 'failure')
+        self.assertIn('the merge was not made at once', app.final['output']['summary'])
+
+    def test_unreadable_pull_request_counts_as_not_merged(self):
+        gh, app, event, known, eligible = self.case()
+        state = {'check': 20, 'name': gate.CHECK, 'head': HEAD, 'number': 1, 'summary': 'Accepted'}
+        app.checks[20] = {'id': 20, 'head_sha': HEAD, 'conclusion': 'success'}
+
+        class Unreadable:
+            def call(self, path, method='GET', data=None):
+                raise RuntimeError('timeout')
+        import tempfile
+        from pathlib import Path
+        with tempfile.TemporaryDirectory() as tmp, patch.object(gate, 'OUT', Path(tmp)):
+            self.assertFalse(gate.settle_collaborator_acceptance(Unreadable(), app, state, '{}', 'boom'))
+            self.assertEqual(app.final['conclusion'], 'failure')
+            self.assertIn('could not be read again', app.final['output']['summary'])
+            # Merged at another head is not this decision's merge.
+            gh.pr.update(merged=True, head={'sha': 'f' * 40})
+            self.assertFalse(gate.settle_collaborator_acceptance(gh, app, state, '{}', 'boom'))
+            gh.pr.update(head={'sha': HEAD})
+            self.assertTrue(gate.settle_collaborator_acceptance(gh, app, state, '{}', 'boom'))
+
+    def test_admin_decision_is_never_withdrawn(self):
+        gh, app, event, known, eligible = self.case('admin')
+        gh.merge_result = {'merged': False, 'message': 'refused'}
+        gh, app, errors, state = self.live(gh, app, event)
+        self.assertEqual(app.final['conclusion'], 'success')
+
+    def test_withdrawal_never_cuts_a_long_summary(self):
+        state = {'check': 20, 'name': gate.CHECK, 'head': HEAD, 'summary': 'x' * 59_990}
+        app = FakeApp()
+        app.checks[20] = {'id': 20, 'head_sha': HEAD, 'conclusion': 'success'}
+        import tempfile
+        from pathlib import Path
+        with tempfile.TemporaryDirectory() as tmp, patch.object(gate, 'OUT', Path(tmp)):
+            gate.withdraw_collaborator_acceptance(app, state, '{}', 'boom')
+        summary = app.final['output']['summary']
+        self.assertLessEqual(len(summary.encode()), 60_000)
+        self.assertNotIn('xxx', summary)
+        self.assertIn('did not fit', summary)
 
     def test_stored_tip_must_equal_the_current_tip(self):
         state = {'overrides': {'scope-1-1-astra': {'collaborator': 'jo', 'authority': 'scope-collaborator',
@@ -513,7 +562,7 @@ class CollaboratorScopeDecisions(unittest.TestCase):
     def test_summary_tells_collaborators_what_they_may_decide(self):
         text = gate.round_summary_body({'head': HEAD, 'check': 1, 'conclusion': 'failure',
                                         'reports': scope_pair()}, 'x/y', 'https://example.invalid/check')
-        self.assertIn('a collaborator other than the author may accept these items', text)
+        self.assertIn('was opened by a collaborator and is confined to research/contributions/, a different collaborator may accept these items', text)
         self.assertIn('findings always need an admin', text)
 
 

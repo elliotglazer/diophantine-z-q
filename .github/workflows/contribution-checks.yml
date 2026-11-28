@@ -54,6 +54,7 @@ jobs:
           cat > "$RUNNER_TEMP/stage.py" <<'STAGE_PY'
           import hashlib
           import os
+          import stat
           import subprocess
           import sys
 
@@ -73,7 +74,6 @@ jobs:
               parts = path.split('/')
               if path.startswith('/') or any(part in ('', '.', '..') for part in parts):
                   raise SystemExit('Unsafe path in the commit: %r' % path)
-              target = os.path.join(dest, *parts)
               if kind != 'blob':
                   skipped += 1  # A submodule entry has no bytes in this repository.
                   continue
@@ -88,12 +88,20 @@ jobs:
                   raise SystemExit('Short read of blob %s' % sha)
               if hashlib.sha1(b'blob %d\0' % size + data).hexdigest() != sha:
                   raise SystemExit('Blob %s does not match its name' % sha)
-              parent = os.path.dirname(target)
-              os.makedirs(parent, exist_ok=True)
-              # Never write through a link staged earlier: the parent must still be
-              # the plain folder under the staging root that the path names.
-              if os.path.realpath(parent) != os.path.join(real_dest, *parts[:-1]):
-                  raise SystemExit('Path passes through a symbolic link: %r' % path)
+              # Never create or write through a link staged earlier. Each folder on
+              # the way is examined without following links before anything is made
+              # inside it, and must be a plain folder under the staging root.
+              parent = real_dest
+              for part in parts[:-1]:
+                  parent = os.path.join(parent, part)
+                  try:
+                      found = os.lstat(parent)
+                  except FileNotFoundError:
+                      os.mkdir(parent)
+                      continue
+                  if not stat.S_ISDIR(found.st_mode):
+                      raise SystemExit('Path passes through a symbolic link or a file: %r' % path)
+              target = os.path.join(parent, parts[-1])
               if mode == '120000':
                   os.symlink(os.fsdecode(data), target)
                   links += 1

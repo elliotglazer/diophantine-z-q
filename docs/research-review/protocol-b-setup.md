@@ -892,13 +892,21 @@ record, is not eligible, or discussion is uncovered.
   at that commit the decision no longer applies. For the same reason a
   collaborator's decision is accepted only when every other required check has
   already passed on the head, so the gate merges at once; it is never left to
-  deferred auto-merge. If the direct merge is not made, whether it fails, is
-  held for an outside author's merge approval, or would have to be deferred,
-  the gate replaces the successful check with a failed one, so nothing can
-  merge on it later, by hand or by auto-merge a person had enabled, without a
-  new decision. All four tip checks read the fully qualified branch ref. One
-  thing is not excluded: a default-branch push in the instant between the last
-  check and the merge call, which names only the head. A comparison with 300 or more files or
+  deferred auto-merge. If the merge attempt ends without a confirmed merge,
+  whether it fails, is held for an outside author's merge approval, or would
+  have to be deferred, the gate reads the pull request again. If GitHub does
+  not report it merged at the reviewed head, the gate replaces the successful
+  check with a failed one, so that a later merge, by hand or by auto-merge a
+  person had enabled, needs a new decision. If it is merged at that head, the
+  successful check stays as the record and the later failure is reported by
+  the job. All four tip checks read the fully qualified branch ref. This
+  withdrawal is a best effort, not a guarantee. The successful check is
+  published before the merge is attempted, so it stands if the runner is lost
+  in between or the withdrawing request fails; the round summary and the
+  acceptance comment on the pull request are not rewritten; and a held merge
+  ends the job successfully although the check is now failed. Also not
+  excluded: a default-branch push in the instant between the last check and
+  the merge call, which names only the head. A comparison with 300 or more files or
   250 or more commits, or whose file count differs from the pull request's,
   needs an admin. Everything else needs an admin: files the current-record
   checks execute, `research/versionNN/`, other research folders, Lean,
