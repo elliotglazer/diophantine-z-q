@@ -1,7 +1,7 @@
 # Version 21
 
 The manuscript is [Version 21](manuscripts/quartic_v21.pdf), with its
-[TeX source](manuscripts/quartic_v21.tex). It adopts José Brox's explicit
+[TeX source](manuscripts/quartic_v21.tex). It adopts Jose Brox's explicit
 229-variable quartic while preserving the 195-variable polynomial with
 Busy Beaver coefficients. It retains the 247 and 250 as intermediate results.
 
