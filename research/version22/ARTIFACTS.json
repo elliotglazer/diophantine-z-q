@@ -9,8 +9,8 @@
     },
     {
       "path": "research/version22/BUILD.json",
-      "sha256": "142c6f3257ae320e849bd19c944c60de6fd738d8c0ccb40ad2033fa43c559d11",
-      "bytes": 224678
+      "sha256": "81a083f2602ed227427cf913bd7317849eb4d784a820e2e97989f795046fdf05",
+      "bytes": 226068
     },
     {
       "path": "research/version22/construction/check.py",
@@ -74,8 +74,13 @@
     },
     {
       "path": "research/version22/DEPENDENCIES.md",
-      "sha256": "ece8c1592e5e69590c2ec47c438138bdfef1522074933d5d4c173a76f60c2ba1",
-      "bytes": 4610
+      "sha256": "6fe39235897c4855986fc59a7cad1bc3f64e5b4d5fb3dd7830b334c11c028a94",
+      "bytes": 4651
+    },
+    {
+      "path": "research/version22/FABLE-REPAIR-RECORD.md",
+      "sha256": "988389b5f9cfe0dca1f21aeace7c244b21eb02cf1e23cf354fd13b397eac5849",
+      "bytes": 1868
     },
     {
       "path": "research/version22/HANDOFF.md",
@@ -84,13 +89,13 @@
     },
     {
       "path": "research/version22/README.md",
-      "sha256": "a4aaae5f435f1b10968b8b7bff629dc9d408a2834a5eb856d3595efe237a3503",
-      "bytes": 2296
+      "sha256": "260e2f45e799c7c6ca78a6926bc0238107d9fa26f89ae611b4c2a5364e96d70e",
+      "bytes": 2827
     },
     {
       "path": "research/version22/RELEASE-MANIFEST.json",
-      "sha256": "847083dd6445a27f8ef24c7757e797925c49028a661143e98722cb8a8a9a89e8",
-      "bytes": 3455
+      "sha256": "08bd2fce132b82d405dccdfed5cb06d7ebd9cb0f1b5e308a67bbaa378c677c9e",
+      "bytes": 4237
     },
     {
       "path": "research/version22/RELEASE-NOTES.md",
@@ -99,8 +104,8 @@
     },
     {
       "path": "research/version22/RETAINED-EDITS.json",
-      "sha256": "27265eb5deaedd675d93579be7862fc6364d309a612668d1b4592d7eb199be0d",
-      "bytes": 625
+      "sha256": "8338cd46f5299fda165b59b59d0f7d088962bcf8c4dde2fc7f83824877b62eba",
+      "bytes": 837
     },
     {
       "path": "research/version22/reviews/fable-pr175-lineage.md",
@@ -108,14 +113,29 @@
       "bytes": 12795
     },
     {
+      "path": "research/version22/reviews/fable-v22-contacts-a735f6b.md",
+      "sha256": "1d9ddfa1235a3f2e01733ecb753405d978900a3516e94b69d07b7dfe2be84169",
+      "bytes": 17015
+    },
+    {
+      "path": "research/version22/reviews/fable-v22-finite-a735f6b.md",
+      "sha256": "2b2487b32d96c5c656779c7ecd2aa94d44320d268315befa821dff8138233ec6",
+      "bytes": 17039
+    },
+    {
+      "path": "research/version22/reviews/fable-v22-pole-a735f6b.md",
+      "sha256": "2202ea68a8cbcdc438bfa1f379f476e50deddb146f3fb6a9d6fcc00d290995f3",
+      "bytes": 18217
+    },
+    {
       "path": "manuscripts/quartic_v22.tex",
-      "sha256": "89484c10127136d407f7761fef1bdfd9313a98d47696a3d7bc6ff2d1896a1c48",
-      "bytes": 2877455
+      "sha256": "15576881d6ff053ebac0a064820486d3878b67a809837defe18e85dcbc3d7193",
+      "bytes": 2882833
     },
     {
       "path": "manuscripts/quartic_v22.pdf",
-      "sha256": "db40813bb1656e3462d1a3a8673e0c2ea2dffdd2262662f3cf26fbbcf3fc52ac",
-      "bytes": 5530230
+      "sha256": "11b5217654f5f1f9476b19fcb387fc90498509ca62ad637a1b8bdf85274ef264",
+      "bytes": 5542466
     }
   ]
 }
