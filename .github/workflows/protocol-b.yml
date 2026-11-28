@@ -4902,8 +4902,10 @@ jobs:
           def withdraw_collaborator_acceptance(app, state, text, reason):
               """A collaborator's decision is valid only for an immediate merge. If that merge was not
               made, replace the successful check so nothing can merge on it later without a new decision."""
+              if len(reason) > 2000:
+                  reason = reason[:2000]+' [shortened; the job log has the rest]'
               notice = ('Withdrawn: a collaborator\'s scope decision was accepted, but '+reason+
-                        '. The pull request was not merged at this head when this was written. The decision '
+                        '. A merge at this head was not confirmed when this was written. The decision '
                         'is bound to the default branch as it was and does not stand. Decide again, or ask an admin.')
               summary = notice+'\n'+state['summary']
               if len(summary.encode()) > 60_000:
@@ -5260,7 +5262,8 @@ jobs:
                           settle_collaborator_acceptance(gh, app, state, text, str(error))
                       raise
                   if merged is None and collaborator_decided(state):
-                      # Held or deferred: a tip-bound decision must not leave a standing green check.
+                      # Held for an outside author's merge approval (a deferred merge raises
+                      # above): a tip-bound decision must not leave a standing green check.
                       settle_collaborator_acceptance(gh, app, state, text, 'the merge was not made at once')
               else:
                   log("Test accepted. Auto-merge is disabled in test mode.")
