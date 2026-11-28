@@ -6,19 +6,19 @@
   },
   "profile": {
     "path": "docs/current-manuscript.json",
-    "sha256": "b3f8f4fd7ac7f44ce41caaa2369d0905e7d4b56ae373761199e40b214bd5763f"
+    "sha256": "f02699858435925ffdb3fb0cc8cb36020156d43d4a3c633ee1f7724fa3104887"
   },
   "historical_review": {
     "path": "docs/audit-history/current.json",
     "sha256": "2b0dd7653076633f53c1e32b43dd4c11a664b5ace5b5685ff6afc30ed4b82ca4"
   },
   "selected_manuscript": {
-    "path": "manuscripts/quartic_v21.tex",
-    "sha256": "c98a66a0c50b9c186cb1efccd2be82c2e3bbb337b0511481fe69b64bc9d901e9"
+    "path": "manuscripts/quartic_v22.tex",
+    "sha256": "15576881d6ff053ebac0a064820486d3878b67a809837defe18e85dcbc3d7193"
   },
   "review": {
-    "path": "research/version21/reviews/fable-v21-builder-review-corrected.json",
-    "sha256": "695f18ad31454d3563cd2033022752c58e54a0b86b4cc4b1dcb491f28aa69ea4"
+    "path": "research/version22/reviews/fable-v22-builder-review.json",
+    "sha256": "f7902ba81a3d3f41ddd2615562840c98a40a17aec0451192c6de35492cc370ae"
   },
-  "scope": "The unchanged author-corrected local Fable record binds the exact builder, Version 21 selector, source, PDF and recorded build, and checks preservation of released Version 16 through 20 files. Its earlier-draft table checks are explicitly carried forward after comparison of the prose-only revision. This is build correspondence and stated finite checks only, not protected App or release acceptance. Earlier original reports remain unchanged. The original timestamp-only superseded record and Fable's correction remain preserved."
+  "scope": "Claude Fable 5.2 independently rebuilt the exact Version 22 PDF byte-identically, checked source/build correspondence and the eighteen repairs at 7521f41d, within the scope and exclusions of the unchanged reviewer-authored record. This is not whole-proof, protected gate or release acceptance."
 }

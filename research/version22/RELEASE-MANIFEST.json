@@ -1,0 +1,84 @@
+{
+  "schema": "version22-release-preparation/v1",
+  "version": 22,
+  "status": "Draft candidate with non-author source/PDF binding; designated gate acceptance and exact-head release approval pending. Version 21 remains the published record.",
+  "preparation_base_commit": "dda0439aa44a63a05d4ef7c58230caed6df8e628",
+  "source": {
+    "path": "manuscripts/quartic_v22.tex",
+    "sha256": "15576881d6ff053ebac0a064820486d3878b67a809837defe18e85dcbc3d7193",
+    "bytes": 2882833
+  },
+  "pdf": {
+    "path": "manuscripts/quartic_v22.pdf",
+    "sha256": "11b5217654f5f1f9476b19fcb387fc90498509ca62ad637a1b8bdf85274ef264",
+    "bytes": 5542466
+  },
+  "build_record": {
+    "path": "research/version22/BUILD.json",
+    "sha256": "81a083f2602ed227427cf913bd7317849eb4d784a820e2e97989f795046fdf05",
+    "bytes": 226068
+  },
+  "required_tex_inputs": [],
+  "claims": {
+    "scope": "Finite identities and bounds only, not an independent arithmetic acceptance.",
+    "base": "dda0439aa44a63a05d4ef7c58230caed6df8e628",
+    "variables": 175,
+    "quadrics": 147,
+    "monomials": 3196,
+    "coefficient_bits": 802,
+    "largest_absolute_coefficient": "22666702618137718096290059557074087834954306818699071227692301260102451961485531472453904409770491528137229463682457888956698376800126860959280482821926070222028985439076816412060761395146574123162323880370059551886093579006449010343936000001",
+    "plain_bytes": 73080,
+    "plain_sha256": "efc0be237413e25f1308d0a2e8fa1750c5de526a83046cc3aac5123ea12d4292",
+    "quadrics_sha256": "e4ae76cf168cf634e9aa099d08cf1d9847e93dd165c26f8f07f09593cb551ff4",
+    "contact_constant": "904218803263904349431820554677526045508641026696724976815308800000000000000",
+    "contact_bound_margin_fraction": "10517960863133578242709388636642452489305453241/23384026197294446691258957323460528314494920687616",
+    "small_prime_euler_product": "4541601642738116263723395890684921946975497008670264853998795007683637558895258673183249883174987560000373199705642929418211441968107069380130747827044332082953796696780503632827782684896848525613085659622598449914031760472315326141732635661534850741981289745750842691605999973407129600000000000000000000000000000000000000000000/2384559916150450578146409085543901425662733829942089594867417538843494519970162135707156093083325487925286916695210026361398655945563857867427698796924422999530637129483799186196591081432234405337902942436295849786713132145903805212709272247290219791876839395692486675697295610168262654341664557535748084382082893847017076991477",
+    "anchor_residues_checked": 331
+  },
+  "dependency_map": {
+    "path": "research/version22/DEPENDENCIES.md",
+    "sha256": "6fe39235897c4855986fc59a7cad1bc3f64e5b4d5fb3dd7830b334c11c028a94",
+    "bytes": 4651
+  },
+  "corrections": {
+    "path": "research/version22/CORRECTIONS.md",
+    "sha256": "6dd6bef6c7b8575e2d52b7a39791e2a11f85aa856ddad2a99762cfc216109a0a",
+    "bytes": 3547
+  },
+  "construction_inputs": {
+    "path": "research/version22/construction/INPUTS.json",
+    "sha256": "3cbd5bef9c1313c2e3ee995cde9a571334411acf418fc5e1bf55344884fce086",
+    "bytes": 753
+  },
+  "independent_review": {
+    "finite_lineage": {
+      "path": "research/version22/reviews/fable-pr175-lineage.md",
+      "sha256": "b9024fd52cec275ffb693379459d605a4d41512b8197ce0e61336996394a144e",
+      "bytes": 12795
+    },
+    "new_arithmetic": "Fable reports no blocking error within the stated scopes at a735f6b; repairs and final-head review remain pending.",
+    "source_pdf_correspondence": {
+      "path": "research/version22/reviews/fable-v22-builder-review.json",
+      "sha256": "f7902ba81a3d3f41ddd2615562840c98a40a17aec0451192c6de35492cc370ae"
+    },
+    "prior_head_reports": [
+      {
+        "path": "research/version22/reviews/fable-v22-contacts-a735f6b.md",
+        "sha256": "1d9ddfa1235a3f2e01733ecb753405d978900a3516e94b69d07b7dfe2be84169",
+        "bytes": 17015
+      },
+      {
+        "path": "research/version22/reviews/fable-v22-finite-a735f6b.md",
+        "sha256": "2b2487b32d96c5c656779c7ecd2aa94d44320d268315befa821dff8138233ec6",
+        "bytes": 17039
+      },
+      {
+        "path": "research/version22/reviews/fable-v22-pole-a735f6b.md",
+        "sha256": "2202ea68a8cbcdc438bfa1f379f476e50deddb146f3fb6a9d6fcc00d290995f3",
+        "bytes": 18217
+      }
+    ]
+  },
+  "publication": "not authorized by this record",
+  "integration_base_commit": "e09b578f"
+}
