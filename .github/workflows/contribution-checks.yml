@@ -1,0 +1,178 @@
+# Runs one contribution package's own checker on the exact commit that was
+# dispatched, with no network, no credentials and no write access to the tree.
+# Protocol B pins this file by hash and dispatches it on a reserved branch that
+# holds a pull request's head. It uses no repository script, so the commit under
+# test cannot change what this workflow does. A change here needs a pin update.
+name: Contribution checks
+run-name: "Contribution checks: ${{ inputs.package || 'sandbox self-test' }}"
+
+on:
+  workflow_dispatch:
+    inputs:
+      package:
+        description: Folder name under research/contributions/ whose check_all.py to run
+        required: true
+        type: string
+  pull_request:
+    paths:
+      - '.github/workflows/contribution-checks.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  package:
+    name: Contribution package checker
+    runs-on: ubuntu-24.04
+    timeout-minutes: 75
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Install the sandbox
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends bubblewrap
+          dpkg-query -W bubblewrap coreutils
+      - name: Run check_all.py without network, credentials or write access
+        env:
+          PACKAGE: ${{ inputs.package }}
+          EVENT: ${{ github.event_name }}
+        run: |
+          set -euo pipefail
+          # The sandbox user cannot enter the runner's home directory, so the
+          # tree it sees is staged in a world-readable folder outside it.
+          root=/opt/contribution-commit
+          sudo -n mkdir -m 0755 "$root"
+          sudo -n chown "$(id -u):$(id -g)" "$root"
+          # Staging writes each committed blob byte for byte. It never uses a
+          # checkout or an archive: those apply attributes from the commit under
+          # test (export-ignore, export-subst, ident, eol, filters), which would
+          # let a package run on bytes other than the ones reviewers read.
+          cat > "$RUNNER_TEMP/stage.py" <<'STAGE_PY'
+          import hashlib
+          import os
+          import subprocess
+          import sys
+
+          repo, dest = sys.argv[1], sys.argv[2]
+          listing = subprocess.run(['git', '-C', repo, 'ls-tree', '-r', '-z', '--full-tree', 'HEAD'],
+                                   check=True, capture_output=True).stdout
+          reader = subprocess.Popen(['git', '-C', repo, 'cat-file', '--batch'],
+                                    stdin=subprocess.PIPE, stdout=subprocess.PIPE)
+          files = links = skipped = 0
+          for item in listing.split(b'\0'):
+              if not item:
+                  continue
+              meta, raw_path = item.split(b'\t', 1)
+              mode, kind, sha = meta.decode('ascii').split(' ')
+              path = os.fsdecode(raw_path)
+              parts = path.split('/')
+              if path.startswith('/') or any(part in ('', '.', '..') for part in parts):
+                  raise SystemExit('Unsafe path in the commit: %r' % path)
+              target = os.path.join(dest, *parts)
+              if kind != 'blob':
+                  skipped += 1  # A submodule entry has no bytes in this repository.
+                  continue
+              reader.stdin.write(sha.encode('ascii') + b'\n')
+              reader.stdin.flush()
+              header = reader.stdout.readline().split()
+              if len(header) != 3 or header[0].decode('ascii') != sha or header[1] != b'blob':
+                  raise SystemExit('Cannot read blob %s for %r' % (sha, path))
+              size = int(header[2])
+              data = reader.stdout.read(size)
+              if len(data) != size or reader.stdout.read(1) != b'\n':
+                  raise SystemExit('Short read of blob %s' % sha)
+              if hashlib.sha1(b'blob %d\0' % size + data).hexdigest() != sha:
+                  raise SystemExit('Blob %s does not match its name' % sha)
+              os.makedirs(os.path.dirname(target), exist_ok=True)
+              if mode == '120000':
+                  os.symlink(os.fsdecode(data), target)
+                  links += 1
+                  continue
+              with open(target, 'xb') as handle:
+                  handle.write(data)
+              os.chmod(target, 0o755 if mode == '100755' else 0o644)
+              files += 1
+          reader.stdin.close()
+          if reader.wait() != 0:
+              raise SystemExit('git cat-file failed')
+          print('Staged %d files and %d symbolic links byte for byte; %d submodule entries skipped' % (files, links, skipped))
+          STAGE_PY
+          if [ "$EVENT" = pull_request ]; then
+            # A change to this workflow tests the staging and the sandbox on a
+            # fixture commit with attribute traps. It never runs a pull
+            # request's package.
+            name=selftest
+            source="$RUNNER_TEMP/selftest-repo"
+            mkdir -p "$source/research/contributions/$name"
+            git -C "$source" init -q
+            cat > "$source/research/contributions/$name/.gitattributes" <<'ATTRIBUTES'
+          check_all.py export-subst
+          data.txt export-subst ident text eol=crlf
+          omitted.txt export-ignore
+          ATTRIBUTES
+            printf 'hash $Format:%%H$ id $Id$\nsecond line\n' > "$source/research/contributions/$name/data.txt"
+            printf 'present\n' > "$source/research/contributions/$name/omitted.txt"
+            cat > "$source/research/contributions/$name/check_all.py" <<'PY'
+          import os
+          import pathlib
+          import socket
+          import subprocess
+
+          here = pathlib.Path(__file__).resolve().parent
+          assert str(here) == '/repo/research/contributions/selftest', here
+          # Attribute traps: the staged bytes must be the committed bytes.
+          assert "$Format:%H$" == "$" + "Format:%H$", 'export-subst rewrote the checker'
+          assert (here / 'data.txt').read_bytes() == b'hash $' + b'Format:%H$ id $' + b'Id$\nsecond line\n', 'data rewritten'
+          assert (here / 'omitted.txt').read_bytes() == b'present\n', 'export-ignore dropped a file'
+          assert os.getuid() == 65534, os.getuid()
+          leaked = sorted(k for k in os.environ if k.startswith(('GITHUB_', 'ACTIONS_', 'RUNNER_', 'INPUT_')))
+          assert not leaked, leaked
+          try:
+              (here / 'written').write_text('x')
+          except OSError:
+              pass
+          else:
+              raise SystemExit('FAIL: the package directory is writable')
+          pathlib.Path('/tmp/scratch').write_text('ok')
+          try:
+              socket.create_connection(('1.1.1.1', 443), timeout=5)
+          except OSError:
+              pass
+          else:
+              raise SystemExit('FAIL: the network is reachable')
+          for program in (['node', '--version'], ['python3', '--version']):
+              print(subprocess.run(program, check=True, capture_output=True, text=True).stdout.strip())
+          print('PASS: staging and sandbox self-test')
+          PY
+            git -C "$source" add -A
+            git -C "$source" -c user.name=selftest -c user.email=selftest@example.invalid commit -q -m 'fixture $Format:%H$'
+          else
+            name="$PACKAGE"
+            if ! [[ "$name" =~ ^[A-Za-z0-9][A-Za-z0-9_.-]{0,99}$ ]]; then
+              echo "Invalid package name"; exit 2
+            fi
+            source="$GITHUB_WORKSPACE"
+          fi
+          echo "Commit under test: $(git -C "$source" rev-parse HEAD)"
+          python3 -I -B "$RUNNER_TEMP/stage.py" "$source" "$root"
+          chmod -R a+rX,go-w "$root"
+          package="$root/research/contributions/$name"
+          if [ "$(realpath -e "$package")" != "$(realpath -e "$root")/research/contributions/$name" ] \
+              || [ ! -f "$package/check_all.py" ] || [ -L "$package/check_all.py" ]; then
+            echo "research/contributions/$name/check_all.py is not a regular file in a regular folder"; exit 2
+          fi
+          # Only system programs under /usr, a read-only copy of the commit and a
+          # private /tmp are visible. The inherited environment is cleared; four
+          # fixed variables are set. No host home, credentials or network.
+          sudo -n /usr/bin/timeout --signal=KILL 3600 \
+            /usr/bin/bwrap --unshare-all --die-with-parent --new-session \
+            --uid 65534 --gid 65534 --cap-drop ALL --clearenv \
+            --setenv PATH /usr/local/bin:/usr/bin --setenv LC_ALL C.UTF-8 \
+            --setenv HOME /tmp --setenv PYTHONDONTWRITEBYTECODE 1 \
+            --ro-bind /usr /usr --ro-bind /lib /lib --ro-bind /lib64 /lib64 \
+            --symlink usr/bin /bin --proc /proc --dev /dev --tmpfs /tmp \
+            --ro-bind "$root" /repo --chdir "/repo/research/contributions/$name" \
+            /usr/bin/python3 -B check_all.py
+          echo "check_all.py for $name exited 0"

@@ -25,7 +25,9 @@ Both approved reviewers assess an admitted PR; triage is not acceptance.
 After the first round, a write collaborator must request another with
 `/protocol-b review`. A changed head still requires its own valid acceptance.
 The light profile also limits qualifying small documentation changes to one
-paid round. Only an admin may override an item.
+paid round. Only an admin may override a finding; a collaborator who is not
+the author may accept itemized incomplete-scope items on a pull request confined
+to `research/contributions/`, as the setup guide describes.
 
 Modifications to `docs/building.md` and newly added note/data files under
 `research/contributions/` may merge automatically after acceptance. Deletions,
@@ -47,7 +49,8 @@ uses keys from the `protocol-b` Environment, whose `main`-only deployment rule
 was present in the dated operator readback. That snapshot does not prove key
 rotation, absence of copies elsewhere, or a live branch/tag access-denial test.
 The App is used by this repository's workflow; there is no separate controller.
-An unfinished review blocks unless an admin explicitly accepts its recorded scope item.
+An unfinished review blocks unless an admin explicitly accepts its recorded scope item,
+or a collaborator who is not the author does so under the setup guide's narrow rule.
 The record still identifies the incomplete scope and does not claim model acceptance.
 A finding that only reports inability to open
 a source is a recorded, nonblocking limitation if the other approved reviewer

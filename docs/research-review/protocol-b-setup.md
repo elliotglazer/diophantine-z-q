@@ -838,10 +838,88 @@ The Lean profile below uses the same one-round rule with a narrower model-review
 
 ### Admin decisions on incomplete review
 
-Only a current repository admin can override an item, both when the command is
+Only a current repository admin can override a finding, both when the command is
 received and when stored override comments are read back. A non-admin override
-has no effect and receives a short explanation. Write-access collaborators keep
-automatic reviews, `/protocol-b review`, and ordinary protected merge access.
+has no effect and receives a short explanation, with the one exception below.
+Write-access collaborators keep automatic reviews, `/protocol-b review`, and
+ordinary protected merge access.
+
+#### Scope decisions by a collaborator who is not the author
+
+A collaborator with current write or maintain access may accept incomplete-scope
+items with the same exact-head command when all of the following hold. Otherwise
+no item is accepted and the item needs an admin. The gate screens a command
+first: it must name the current head and only scope-shaped IDs, and the
+commenter and the changed paths must qualify. A command that fails this screen
+is ignored with a short reply and no check is created. A command that passes it
+starts a check, which ends unsuccessful with a reply if an ID is not in the App
+record, is not eligible, or discussion is uncovered.
+
+- The commenter did not open the pull request and is not the GitHub author or
+  committer of any of its commits. The gate cannot tell who operates an agent,
+  and a commit made under another account's name is not attributed to its
+  pusher, so a collaborator should not decide a pull request that their own
+  agent wrote.
+- Every ID in the comment is a `scope-RUN-ATTEMPT-REVIEWER` item in the current
+  App record. A comment that also names a finding is refused as a whole.
+- The App's own record for this head holds a completed report from that
+  reviewer which lists what it did not read. Eligibility is computed from the
+  App record alone; a report comment never establishes it. A review that did
+  not start or was interrupted (the gate writes its own "Review interrupted"
+  entry for those), a report delivered without the required history read, a
+  report whose metadata failed, an identity problem, a rejection that reports
+  complete scope and no finding (so there is no list to accept), or a list too
+  long for the App record stays an admin decision. The ordinary eligible case is
+  a completed report that requests changes only because it lists unread work.
+- No discussion on the pull request is left uncovered. If a comment, review
+  comment or interrupted-review observation exists that no completed review has
+  covered, the decision is not applied: accepting a reviewer's listed omissions
+  is not authority to set aside an objection nobody examined. An admin's
+  override is unchanged in this respect.
+- Every changed path, both names of a rename included, lies under
+  `research/contributions/` and is not a Lean source or a Lake configuration or
+  toolchain file. The paths and the commit authors are read from a comparison
+  of two exact commits, the default branch's current tip and the head, not from
+  the pull request's file listing or its recorded base, which GitHub does not
+  keep current. The head must contain the default branch's tip, so the compared
+  change is exactly what merging would do; a branch that is behind needs
+  updating first. The tip is read by its full branch ref and stored with the
+  decision. The gate rechecks it before it records success, when it publishes
+  the check, and before it requests a merge; if the default branch is no longer
+  at that commit the decision no longer applies. For the same reason a
+  collaborator's decision is accepted only when every other required check has
+  already passed on the head, so the gate merges at once; it is never left to
+  deferred auto-merge, and if the direct merge cannot be made the gate stops
+  with an error. Two things are not excluded: a default-branch push in the
+  instant between the last check and the merge call, which names only the head;
+  and, if that direct merge fails after the check was published, a later manual
+  merge by someone with write access while the successful check still stands. A comparison with 300 or more files or
+  250 or more commits, or whose file count differs from the pull request's,
+  needs an admin. Everything else needs an admin: files the current-record
+  checks execute, `research/versionNN/`, other research folders, Lean,
+  manuscripts, releases, documentation, workflows, scripts and tests. Inside
+  `research/contributions/` the outside lane's name-based rule for words such
+  as "review" or "audit" is deliberately not applied: a note there does not
+  change what the manuscript claims, and adopting it takes a manuscript
+  version with its own review.
+- An admin's decision on an item is never replaced by a collaborator's.
+- The comment is new and unedited, and the commenter still has access when the
+  stored comment is read back.
+
+The App record names the collaborator and marks the decision
+`scope-collaborator`. The check summary and the round summary posted on the
+pull request each say, item by item, whether an admin or a collaborator who is
+not the author accepted the incomplete scope. A collaborator's decision is
+applied in override-command runs on that head (its own, and any later one, where
+it is revalidated) and on the merge recheck. It is never passed to a review as
+an authenticated override. If an admin later overrides a finding on a head that
+has a stored collaborator decision and uncovered discussion, the admin's
+comment should name the scope items too; otherwise the collaborator's stored
+decision is refused for the uncovered discussion and the run fails closed. A
+scope item from an earlier round that a later review left unresolved is never
+eligible for a collaborator. Findings stay
+blocking until an admin decides them, so this never accepts a pull request on
+which a reviewer raised an unresolved objection.
 
 Incomplete review is always presented as an explicit administrative item with
 ID `scope-RUN-ATTEMPT-REVIEWER`. This covers unfinished scope, missing required
@@ -895,13 +973,14 @@ App record. A scope-shaped ID in a report comment alone is never sufficient.
 
 Only repository admins may override reviewer findings. The gate checks current
 admin permission when receiving a command and again when reading stored override
-comments. Edited comments are not accepted, including edits made by an admin;
+comments. The scope decisions described above are the only non-admin use of the
+command. Edited comments are not accepted, including edits made by an admin;
 post a new comment instead. Both timestamps and GitHub's `lastEditedAt`/`editor`
 metadata must establish an unedited comment with the matching body and author.
-Missing metadata fails closed. A non-admin collaborator's override has no effect
-and receives a short reply. The gate's ignored-override replies do not alter the
+Missing metadata fails closed. Apart from the scope decisions above, a non-admin
+collaborator's override has no effect and receives a short reply. The gate's ignored-override replies do not alter the
 reviewed discussion digest or trigger paid supplements. Write-access collaborators retain automatic review, `/protocol-b review`,
-and ordinary protected merge access. This change does not alter any review,
+and ordinary protected merge access. The admin-only rule for findings does not alter any review,
 computation, head-binding or merge requirement.
 
 
@@ -1022,6 +1101,68 @@ merge until each original report has arrived. Malformed final-output containers
 are treated as diagnostic data; failure processing is isolated per worker so
 it cannot interrupt collection of the peer reviewer's verdict.
 
+
+## Contribution package checkers
+
+A package under `research/contributions/<name>/` may carry its own entry point,
+`check_all.py`. No pull-request workflow runs it, and a fork's own runs are not
+evidence for the exact head, so reviewers previously had nothing they could
+cite for such a package's tables.
+
+The preparation job, which holds no App or provider secret, now tries to supply
+that execution before the reviewers start. It is best effort: any step below
+can leave no completed run, and the review proceeds regardless.
+
+1. It lists the packages the pull request touches, both names of a rename
+   included, that have `check_all.py` at the head. More than three is refused
+   and none is run.
+2. It requires `.github/workflows/contribution-checks.yml` at the head to match
+   the hash pinned in the gate. A branch that predates the workflow, or changes
+   it, runs nothing; update the branch from `main`.
+3. It creates the branch `codex/protocol-b-checks/<PR>/<head SHA>` at the head,
+   unless it exists, and dispatches the workflow there once per package. A ref
+   that points anywhere else is never used or moved.
+4. It waits up to 80 minutes for the runs and records their outcome. Nothing in
+   this step can fail the job or stop the review: a missing, failed or late run
+   is recorded, and the reviewers see whatever exists. A run that already
+   exists for the package at that head, including a failed or cancelled one,
+   is never dispatched again; after an infrastructure failure a maintainer
+   re-runs that run by hand.
+
+The workflow has read-only permissions and uses no secret, deployment
+environment or repository script. It fetches the dispatched commit without
+credentials and stages it in a separate folder by writing each blob of the
+commit's tree byte for byte, verifying each against its Git name. It does not
+use the checkout or `git archive` for this: both apply attributes from the
+commit under test (`export-ignore`, `export-subst`, `ident`, `eol`, filters), so
+a package's own `.gitattributes` could otherwise make the checker run on bytes
+other than the ones reviewers read. Symbolic links are staged as links and
+submodule entries are skipped. It then runs `python3 -B check_all.py` from the
+package folder inside `bwrap`: no network, the inherited environment cleared
+(only `PATH`, `LC_ALL`, `HOME` and `PYTHONDONTWRITEBYTECODE` are set), an
+unprivileged user, the staged commit mounted read-only at `/repo`, and a
+private `/tmp`. The limit is 60 minutes. The runner image's `/usr` tree is
+visible, which includes Python 3 and Node; nothing can be installed. A checker
+must therefore read only committed files, write only under `/tmp`, and need no
+network.
+
+Because these are `workflow_dispatch` runs on the exact head in this repository,
+`read_ci_job` accepts them. A passing run shows only that `check_all.py` exited
+zero on that commit. The reviewer still reads the checker to establish what it
+verifies before recording table coverage.
+
+For an outside author this step runs only after that run's admission, so the
+existing size and quota limits bound how often it can be triggered. The
+scheduled cleanup deletes a reserved branch once its pull request is closed and
+its runs have finished.
+
+A change to the workflow runs its self-test on the pull request and needs the
+pin in the gate updated in the same change. The self-test builds a fixture
+commit whose `.gitattributes` sets `export-subst`, `export-ignore`, `ident` and
+`eol=crlf`, stages it with the same staging program, and runs a checker that
+fails unless every staged byte equals the committed byte, the tree is
+read-only, the network is unreachable and no runner variable is visible. It
+does not exercise the dispatch branch's package-name validation.
 
 ## Light profile
 
