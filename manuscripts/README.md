@@ -1,13 +1,15 @@
 # Manuscripts
 
-Version 22 is a draft adopting Jose Brox's explicit 175-variable quartic.
-Its new pole and contact arithmetic and review scope are described in the
-[Version 22 guide](../research/version22/README.md).
+Version 22 is the published release, adopting Jose Brox's explicit
+175-variable quartic. Its new pole and contact arithmetic are described in the
+[Version 22 guide](../research/version22/README.md), written before
+publication; the [release page](https://github.com/elliotglazer/diophantine-z-q/releases/tag/quartic-175-version-22)
+states what each review covered.
 
-- [Draft Version 22 PDF](quartic_v22.pdf), [TeX](quartic_v22.tex)
-- [Draft PR178](https://github.com/elliotglazer/diophantine-z-q/pull/178)
+- [Version 22 PDF](quartic_v22.pdf), [TeX](quartic_v22.tex)
+- [PR178](https://github.com/elliotglazer/diophantine-z-q/pull/178)
 
-Version 21 remains the published release, with Jose Brox's explicit
+Version 21 is preserved as the previous release, with Jose Brox's explicit
 229-variable quartic and the retained 195-variable Busy Beaver polynomial.
 
 - [Version 21 PDF](quartic_v21.pdf), [TeX](quartic_v21.tex)
