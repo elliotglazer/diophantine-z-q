@@ -192,6 +192,59 @@ class ContributionChecks(unittest.TestCase):
                                capture_output=True, text=True)
         self.assertNotEqual(again.returncode, 0)
 
+    def link_case(self, committed, sub='case'):
+        if shutil.which('git') is None:
+            self.skipTest('git is not available')
+        work = Path(self.tmp.name)/sub
+        work.mkdir()
+        repo, staged, outside, program = work/'repo', work/'staged', work/'outside', work/'stage.py'
+        (repo/committed).parent.mkdir(parents=True)
+        (repo/committed).write_bytes(b'x')
+        program.write_text(staging_program(), encoding='utf-8')
+        git(work, 'init', '-q', str(repo))
+        git(repo, 'add', '-A')
+        git(repo, 'commit', '-q', '-m', 'fixture')
+        staged.mkdir()
+        outside.mkdir()
+        return repo, staged, outside, program
+
+    def stage(self, program, repo, staged):
+        return subprocess.run([sys.executable, '-I', '-B', str(program), str(repo), str(staged)],
+                              capture_output=True, text=True)
+
+    def test_staging_refuses_to_write_through_a_symbolic_link(self):
+        # Round 2 of the checker change, Fable N1: safety must not rest on the host refusing
+        # malformed trees. Round 1 of the hardening change, Astra F1: nor may a folder be
+        # created through the link before the path is refused.
+        for index, committed in enumerate(('research/file.txt', 'research/newdir/file.txt',
+                                           'research/a/b/c/file.txt')):
+            with self.subTest(committed=committed):
+                repo, staged, outside, program = self.link_case(committed, 'case%d' % index)
+                try:
+                    os.symlink(outside, staged/'research', target_is_directory=True)
+                except (OSError, NotImplementedError):
+                    self.skipTest('symbolic links are not available here')
+                result = self.stage(program, repo, staged)
+                self.assertNotEqual(result.returncode, 0)
+                self.assertIn('passes through a symbolic link', result.stderr + result.stdout)
+                self.assertEqual(list(outside.iterdir()), [])
+
+    def test_staging_refuses_a_file_where_a_folder_is_needed(self):
+        # Runs everywhere, links or not: the same walk that refuses a link refuses a file.
+        repo, staged, outside, program = self.link_case('research/newdir/file.txt')
+        (staged/'research').write_bytes(b'')
+        result = self.stage(program, repo, staged)
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn('passes through a symbolic link or a file', result.stderr + result.stdout)
+        self.assertEqual(list(staged.iterdir()), [staged/'research'])
+
+    def test_staging_creates_nested_folders_under_the_root_only(self):
+        repo, staged, outside, program = self.link_case('research/a/b/file.txt')
+        result = self.stage(program, repo, staged)
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertEqual((staged/'research/a/b/file.txt').read_bytes(), b'x')
+        self.assertEqual(list(outside.iterdir()), [])
+
     def test_self_test_fixture_sets_the_attribute_traps(self):
         for needle in ('check_all.py export-subst', 'data.txt export-subst ident text eol=crlf',
                        'omitted.txt export-ignore', "'export-subst rewrote the checker'",
