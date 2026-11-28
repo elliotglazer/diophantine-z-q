@@ -1,5 +1,7 @@
 # Research credits
 
+Version 22's explicit 175-variable construction is due to Jose Brox, building on the retained Conant and Brox constructions. OpenAI Codex's 6 Astra wrote the integrated presentation and independent finite checkers. Fable's supplied finite lineage check is preserved with its original scope; it is not described as arithmetic acceptance.
+
 The project uses the collective agentic notes from Stefan Baranczuk, Jose Brox, Gabe Conant, Sohail Farhangi, James Freitag, Elliot Glazer, and Caroline Terry.
 
 This credit identifies contributors to the shared research notes. Supplied manuscripts and articles retain their separate printed authorship, dates and provenance. Historical archives remain unchanged; this is the current project credit.

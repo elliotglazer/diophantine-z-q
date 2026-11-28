@@ -1,0 +1,63 @@
+{
+  "schema": "version22-release-preparation/v1",
+  "version": 22,
+  "status": "Draft candidate; independent arithmetic acceptance, builder binding and exact-head release approval pending. Version 21 remains the published record.",
+  "preparation_base_commit": "dda0439aa44a63a05d4ef7c58230caed6df8e628",
+  "source": {
+    "path": "manuscripts/quartic_v22.tex",
+    "sha256": "89484c10127136d407f7761fef1bdfd9313a98d47696a3d7bc6ff2d1896a1c48",
+    "bytes": 2877455
+  },
+  "pdf": {
+    "path": "manuscripts/quartic_v22.pdf",
+    "sha256": "db40813bb1656e3462d1a3a8673e0c2ea2dffdd2262662f3cf26fbbcf3fc52ac",
+    "bytes": 5530230
+  },
+  "build_record": {
+    "path": "research/version22/BUILD.json",
+    "sha256": "142c6f3257ae320e849bd19c944c60de6fd738d8c0ccb40ad2033fa43c559d11",
+    "bytes": 224678
+  },
+  "required_tex_inputs": [],
+  "claims": {
+    "scope": "Finite identities and bounds only, not an independent arithmetic acceptance.",
+    "base": "dda0439aa44a63a05d4ef7c58230caed6df8e628",
+    "variables": 175,
+    "quadrics": 147,
+    "monomials": 3196,
+    "coefficient_bits": 802,
+    "largest_absolute_coefficient": "22666702618137718096290059557074087834954306818699071227692301260102451961485531472453904409770491528137229463682457888956698376800126860959280482821926070222028985439076816412060761395146574123162323880370059551886093579006449010343936000001",
+    "plain_bytes": 73080,
+    "plain_sha256": "efc0be237413e25f1308d0a2e8fa1750c5de526a83046cc3aac5123ea12d4292",
+    "quadrics_sha256": "e4ae76cf168cf634e9aa099d08cf1d9847e93dd165c26f8f07f09593cb551ff4",
+    "contact_constant": "904218803263904349431820554677526045508641026696724976815308800000000000000",
+    "contact_bound_margin_fraction": "10517960863133578242709388636642452489305453241/23384026197294446691258957323460528314494920687616",
+    "small_prime_euler_product": "4541601642738116263723395890684921946975497008670264853998795007683637558895258673183249883174987560000373199705642929418211441968107069380130747827044332082953796696780503632827782684896848525613085659622598449914031760472315326141732635661534850741981289745750842691605999973407129600000000000000000000000000000000000000000000/2384559916150450578146409085543901425662733829942089594867417538843494519970162135707156093083325487925286916695210026361398655945563857867427698796924422999530637129483799186196591081432234405337902942436295849786713132145903805212709272247290219791876839395692486675697295610168262654341664557535748084382082893847017076991477",
+    "anchor_residues_checked": 331
+  },
+  "dependency_map": {
+    "path": "research/version22/DEPENDENCIES.md",
+    "sha256": "ece8c1592e5e69590c2ec47c438138bdfef1522074933d5d4c173a76f60c2ba1",
+    "bytes": 4610
+  },
+  "corrections": {
+    "path": "research/version22/CORRECTIONS.md",
+    "sha256": "56596001378d46f51e72ffef1bb8e36d35b849c1a98dd8d9520481903ef9a6cc",
+    "bytes": 3115
+  },
+  "construction_inputs": {
+    "path": "research/version22/construction/INPUTS.json",
+    "sha256": "3cbd5bef9c1313c2e3ee995cde9a571334411acf418fc5e1bf55344884fce086",
+    "bytes": 753
+  },
+  "independent_review": {
+    "finite_lineage": {
+      "path": "research/version22/reviews/fable-pr175-lineage.md",
+      "sha256": "b9024fd52cec275ffb693379459d605a4d41512b8197ce0e61336996394a144e",
+      "bytes": 12795
+    },
+    "new_arithmetic": "pending",
+    "source_pdf_correspondence": "pending"
+  },
+  "publication": "not authorized by this record"
+}

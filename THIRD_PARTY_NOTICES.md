@@ -1,5 +1,9 @@
 # Third-party sources and dependencies
 
+## Version 22 construction inputs
+
+Jose Brox's 175-variable data are copied unchanged from the contribution note accepted in PR175 at `dda0439aa44a63a05d4ef7c58230caed6df8e628`, itself pinned to `JoseBrox/diophantine-z-q_improvements@6864691d536057574be873667936610da6a4ea99`. The contribution's source and licence notices remain authoritative. The [selected input hashes](research/version22/construction/INPUTS.json) and the [unchanged Fable lineage report](research/version22/reviews/fable-pr175-lineage.md) preserve provenance. No third-party program is executed by the new independent checker. The external mathematical input is cited by its exact arXiv v2 edition; no paper scan is redistributed.
+
 Project licensing applies only to original project material. It does not relicense the upstream software, papers, source excerpts, or theory files referenced or preserved by this project. Keep any notices supplied with those materials.
 
 ## Mathematical sources

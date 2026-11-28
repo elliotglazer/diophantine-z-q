@@ -10,6 +10,10 @@ See also [Jose Brox's repository](https://github.com/JoseBrox/diophantine-z-q_im
 
 Cite this work as "ℤℚ Diophantine Project contributors. ℤ _is Diophantine in_ ℚ. 2026. https://github.com/elliotglazer/diophantine-z-q"  
 
+## Version 22 preparation
+
+[Version 22 draft PDF](manuscripts/quartic_v22.pdf) and [source](manuscripts/quartic_v22.tex) integrate Jose Brox's explicit 175-variable quartic: 3,196 monomials, coefficients below `2^802`, and [73,080 bytes of decimal text](research/version22/construction/inputs/expanded175.txt). The new pole and contact arithmetic is included in the manuscript. [Review scope and reproduction](research/version22/README.md) distinguish author checks from independent acceptance. **Version 21 remains the published release until Version 22 completes the release policy.**
+
 ## Version 21
 
 [Read the manuscript](manuscripts/quartic_v21.pdf) or [open the TeX source](manuscripts/quartic_v21.tex).

@@ -1,0 +1,121 @@
+{
+  "version": 22,
+  "status": "candidate",
+  "files": [
+    {
+      "path": "research/version22/ARITHMETIC-AUDIT.md",
+      "sha256": "97ff8d0e9d113fda2eeddfc1a6c490b1a9eda1d72e565c344513b28b460f9c27",
+      "bytes": 2890
+    },
+    {
+      "path": "research/version22/BUILD.json",
+      "sha256": "142c6f3257ae320e849bd19c944c60de6fd738d8c0ccb40ad2033fa43c559d11",
+      "bytes": 224678
+    },
+    {
+      "path": "research/version22/construction/check.py",
+      "sha256": "11b53bfbc7679a99480805758892127a2342e98bf4aa21b387dea2d85b7ab31d",
+      "bytes": 2994
+    },
+    {
+      "path": "research/version22/construction/DIRECT-AUDIT.json",
+      "sha256": "5ae0025484037e7c1806992c8c56a0b8edf74ea544cc2f21f184591117f6deb9",
+      "bytes": 152
+    },
+    {
+      "path": "research/version22/construction/FINITE-AUDIT.json",
+      "sha256": "b3e61c7b8ebbe3660b517eca6a9690058bdb3e4202b502fb24b2a18dbd791502",
+      "bytes": 1678
+    },
+    {
+      "path": "research/version22/construction/inputs/certificate.json",
+      "sha256": "0ebeb9397ed151fa19a3361d98ade21d5d0593fc6d0c670d93a9a729b5e1b05f",
+      "bytes": 682
+    },
+    {
+      "path": "research/version22/construction/inputs/expanded175.txt",
+      "sha256": "efc0be237413e25f1308d0a2e8fa1750c5de526a83046cc3aac5123ea12d4292",
+      "bytes": 73080
+    },
+    {
+      "path": "research/version22/construction/inputs/quadrics.json",
+      "sha256": "e4ae76cf168cf634e9aa099d08cf1d9847e93dd165c26f8f07f09593cb551ff4",
+      "bytes": 148730
+    },
+    {
+      "path": "research/version22/construction/INPUTS.json",
+      "sha256": "3cbd5bef9c1313c2e3ee995cde9a571334411acf418fc5e1bf55344884fce086",
+      "bytes": 753
+    },
+    {
+      "path": "research/version22/construction/verify175.py",
+      "sha256": "18b8382000e9b955a8253aa3b2889dfcb4235b1536c0173b4ad69fb5e6440409",
+      "bytes": 5025
+    },
+    {
+      "path": "research/version22/construction/verify_interpretation.py",
+      "sha256": "fbae92c484677399c76a4dacb0a14b0005d7cad3bd9f902447124bee50e5a1bf",
+      "bytes": 12267
+    },
+    {
+      "path": "research/version22/CORRECTIONS-SOURCES.json",
+      "sha256": "c599087a175ff7cdfe7583be702106a50b1ebe477808d30fce031e143d7043c4",
+      "bytes": 8735
+    },
+    {
+      "path": "research/version22/CORRECTIONS.md",
+      "sha256": "56596001378d46f51e72ffef1bb8e36d35b849c1a98dd8d9520481903ef9a6cc",
+      "bytes": 3115
+    },
+    {
+      "path": "research/version22/CREDIT-CONFIRMATION.json",
+      "sha256": "82e7b2dc1e7fe5b2c7c39d82dde763d25103e4f999d457ad7b93c036bc34f58f",
+      "bytes": 487
+    },
+    {
+      "path": "research/version22/DEPENDENCIES.md",
+      "sha256": "ece8c1592e5e69590c2ec47c438138bdfef1522074933d5d4c173a76f60c2ba1",
+      "bytes": 4610
+    },
+    {
+      "path": "research/version22/HANDOFF.md",
+      "sha256": "aff14d079c8484e33491b656cefcb064e3d821f4289a3b02b401cf43c2339744",
+      "bytes": 1107
+    },
+    {
+      "path": "research/version22/README.md",
+      "sha256": "a4aaae5f435f1b10968b8b7bff629dc9d408a2834a5eb856d3595efe237a3503",
+      "bytes": 2296
+    },
+    {
+      "path": "research/version22/RELEASE-MANIFEST.json",
+      "sha256": "847083dd6445a27f8ef24c7757e797925c49028a661143e98722cb8a8a9a89e8",
+      "bytes": 3455
+    },
+    {
+      "path": "research/version22/RELEASE-NOTES.md",
+      "sha256": "73aba1262f71c3838b1d6a1c268a03d671e0c7161b3a859fe4152b12b66abf78",
+      "bytes": 1387
+    },
+    {
+      "path": "research/version22/RETAINED-EDITS.json",
+      "sha256": "27265eb5deaedd675d93579be7862fc6364d309a612668d1b4592d7eb199be0d",
+      "bytes": 625
+    },
+    {
+      "path": "research/version22/reviews/fable-pr175-lineage.md",
+      "sha256": "b9024fd52cec275ffb693379459d605a4d41512b8197ce0e61336996394a144e",
+      "bytes": 12795
+    },
+    {
+      "path": "manuscripts/quartic_v22.tex",
+      "sha256": "89484c10127136d407f7761fef1bdfd9313a98d47696a3d7bc6ff2d1896a1c48",
+      "bytes": 2877455
+    },
+    {
+      "path": "manuscripts/quartic_v22.pdf",
+      "sha256": "db40813bb1656e3462d1a3a8673e0c2ea2dffdd2262662f3cf26fbbcf3fc52ac",
+      "bytes": 5530230
+    }
+  ]
+}
