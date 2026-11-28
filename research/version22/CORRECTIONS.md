@@ -18,3 +18,7 @@ Read issue129 and its comments on 27 November 2026. The original selected bodies
 | 45915251550-1-fable-N4-inventory-integration | New applications recorded in DEPENDENCIES.md and docs/theorem-application-audit/version22.md. PROJECT.md update deferred because that file belongs to Fable's PR176 and Elliot prohibited editing those files. |
 
 These dispositions do not close another reviewer's findings on their behalf. The contribution's owner override remains part of its history.
+
+## Version 22 class C item carried to the next edition
+
+Fable final-head review, 28 November 2026: in the proof of v22:weighted, the final inequality uses M where the preceding lines renamed the label maximum M_lab. This is a notation inconsistency, not a mathematical change. Deferred to the next edition to preserve the independently rebuilt source/PDF pair. The original observation is in reviews/fable-v22-builder-review.json.

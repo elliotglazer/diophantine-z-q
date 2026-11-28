@@ -1,7 +1,7 @@
 {
   "schema": "version22-release-preparation/v1",
   "version": 22,
-  "status": "Draft candidate; independent arithmetic acceptance, builder binding and exact-head release approval pending. Version 21 remains the published record.",
+  "status": "Draft candidate with non-author source/PDF binding; designated gate acceptance and exact-head release approval pending. Version 21 remains the published record.",
   "preparation_base_commit": "dda0439aa44a63a05d4ef7c58230caed6df8e628",
   "source": {
     "path": "manuscripts/quartic_v22.tex",
@@ -42,8 +42,8 @@
   },
   "corrections": {
     "path": "research/version22/CORRECTIONS.md",
-    "sha256": "56596001378d46f51e72ffef1bb8e36d35b849c1a98dd8d9520481903ef9a6cc",
-    "bytes": 3115
+    "sha256": "6dd6bef6c7b8575e2d52b7a39791e2a11f85aa856ddad2a99762cfc216109a0a",
+    "bytes": 3547
   },
   "construction_inputs": {
     "path": "research/version22/construction/INPUTS.json",
@@ -57,7 +57,10 @@
       "bytes": 12795
     },
     "new_arithmetic": "Fable reports no blocking error within the stated scopes at a735f6b; repairs and final-head review remain pending.",
-    "source_pdf_correspondence": "pending",
+    "source_pdf_correspondence": {
+      "path": "research/version22/reviews/fable-v22-builder-review.json",
+      "sha256": "f7902ba81a3d3f41ddd2615562840c98a40a17aec0451192c6de35492cc370ae"
+    },
     "prior_head_reports": [
       {
         "path": "research/version22/reviews/fable-v22-contacts-a735f6b.md",

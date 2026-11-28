@@ -1,0 +1,142 @@
+{
+  "schema": "record-manuscript-policy-review/v1",
+  "decision": "accepted_within_scope",
+  "reviewer": "Claude Fable 5.2, in Elliot Glazer's Claude Code session (local review, not the Protocol B gate reviewer)",
+  "author_of_policy_or_implementation": false,
+  "reviewed_at": "2026-11-28T09:18:00+00:00",
+  "reviewed_commit": "7521f41d56bedf68b7d37501c13af81c36d4b094",
+  "reviewed_root": "C:\\Users\\glaze\\Documents\\upstream-138\\v22final (a detached checkout of the pushed commit above; hashes were taken from the Git blobs of that commit)",
+  "request": "relay/diophantine/to-fable/20261128-0412-from-astra-pr178-repairs.md",
+  "files": [
+    {
+      "path": "scripts/build_paper.py",
+      "sha256": "f62e565f8543b7ff44a66d3cac6aa47189d1f8d7802e169ed4f9f3864bf4f86f",
+      "bytes": 9646
+    },
+    {
+      "path": "scripts/check_current_manuscript.py",
+      "sha256": "da533c8d5a480f152b9879bde10d944b035580d77d648e80afc4329c48099154",
+      "bytes": 5527
+    },
+    {
+      "path": "docs/current-manuscript.json",
+      "sha256": "f02699858435925ffdb3fb0cc8cb36020156d43d4a3c633ee1f7724fa3104887",
+      "bytes": 534
+    },
+    {
+      "path": "docs/audit-history/current.json",
+      "sha256": "2b0dd7653076633f53c1e32b43dd4c11a664b5ace5b5685ff6afc30ed4b82ca4",
+      "bytes": 372544
+    },
+    {
+      "path": "manuscripts/quartic_v22.tex",
+      "sha256": "15576881d6ff053ebac0a064820486d3878b67a809837defe18e85dcbc3d7193",
+      "bytes": 2882833
+    },
+    {
+      "path": "manuscripts/quartic_v22.pdf",
+      "sha256": "11b5217654f5f1f9476b19fcb387fc90498509ca62ad637a1b8bdf85274ef264",
+      "bytes": 5542466
+    },
+    {
+      "path": "research/version22/BUILD.json",
+      "sha256": "81a083f2602ed227427cf913bd7317849eb4d784a820e2e97989f795046fdf05",
+      "bytes": 226068
+    },
+    {
+      "path": "research/version18/build_pdf.py",
+      "sha256": "5afbf7050dd8b5ea45546560fc5e4f20b415c5c66c580e128fa93f8a349edf41",
+      "bytes": 17800
+    },
+    {
+      "path": "manuscripts/quartic_v16.tex",
+      "sha256": "aeb2b6a42a03943d7f8c46682389c8da693d2903ba92ccc164bbbd236451de74",
+      "bytes": 1926498
+    },
+    {
+      "path": "manuscripts/quartic_v16.pdf",
+      "sha256": "5634295d85bdfd2aef476ad49827b160f119e94996e1f644c3b05a96eabf6315",
+      "bytes": 2732163
+    },
+    {
+      "path": "manuscripts/quartic_v17.tex",
+      "sha256": "f6bf186008d33270dadbba6bd490f22116c66168975c3f84ad5bc6f281726e12",
+      "bytes": 2338864
+    },
+    {
+      "path": "manuscripts/quartic_v17.pdf",
+      "sha256": "20ee7ebabdbba1e15406af72d31854206beaaa257e1c52fca2abd113243ea7ea",
+      "bytes": 3916929
+    },
+    {
+      "path": "manuscripts/quartic_v18.tex",
+      "sha256": "0cb9c70baed00d736c88636243c4da96c38ce4f96090d029d0020ce459435a29",
+      "bytes": 2324626
+    },
+    {
+      "path": "manuscripts/quartic_v18.pdf",
+      "sha256": "e6fb5b6a7c5d3340db2c3b1f14e78fbb9c357f11544584c6a96ae2abc2c0579d",
+      "bytes": 4849204
+    },
+    {
+      "path": "manuscripts/quartic_v19.tex",
+      "sha256": "1f0e4db9e978115bb7f605f4bfcd84426a715b8cb6adaee3566107b33d61ad03",
+      "bytes": 2535915
+    },
+    {
+      "path": "manuscripts/quartic_v19.pdf",
+      "sha256": "cc1adfb0107661e001593cbfeae57e0221d6cfb8bc8f48a5e0be213144844172",
+      "bytes": 5088828
+    },
+    {
+      "path": "manuscripts/quartic_v20.tex",
+      "sha256": "95044840af8c3872c6298ea7c5eb4055fbbcd9d91be338ee33b97ba20c503c32",
+      "bytes": 2673450
+    },
+    {
+      "path": "manuscripts/quartic_v20.pdf",
+      "sha256": "061c435337b27e280535544b2d50caef920d8d2d4b33051f575d967b748e59fe",
+      "bytes": 5171261
+    },
+    {
+      "path": "manuscripts/quartic_v21.tex",
+      "sha256": "c98a66a0c50b9c186cb1efccd2be82c2e3bbb337b0511481fe69b64bc9d901e9",
+      "bytes": 2862949
+    },
+    {
+      "path": "manuscripts/quartic_v21.pdf",
+      "sha256": "61410502c6d71bcbd7f699a697c8ea2e7a7d9ea294c61b31225f1e37754e9d47",
+      "bytes": 5403293
+    }
+  ],
+  "scope": "Build selection and recorded source/PDF/build correspondence for this exact Version 22 candidate; byte preservation of the twelve released Version 16 to 21 manuscript files; and whether the eighteen repairs I requested on head a735f6b1 were made correctly. My three reports on a735f6b1 (finite and source/PDF, the pole step, and the contact, anchor, comparison and completeness arithmetic) found no blocking error within their stated scopes; this record extends them to the repaired text only for the passages that changed. It is not whole-proof acceptance, not protected gate acceptance and not release approval.",
+  "checks": [
+    "Hashed the twenty files listed, from the Git blobs of commit 7521f41d: the TeX, PDF, BUILD.json and docs/current-manuscript.json hashes equal the four values in the request. Working-tree files in my checkout hash to the same values.",
+    "Independent rebuild. I copied manuscripts/quartic_v22.tex alone into an empty folder and ran the command recorded in BUILD.json (pdflatex with -disable-write18 -disable-installer -dont-parse-first-line -job-time -halt-on-error -recorder, three serial passes, SOURCE_DATE_EPOCH=1795802400, FORCE_SOURCE_DATE=1, TZ=UTC) on this machine's MiKTeX pdfTeX. Each pass exited 0. The resulting PDF is 5,542,466 bytes with SHA-256 11b5217654f5f1f9476b19fcb387fc90498509ca62ad637a1b8bdf85274ef264: byte-identical to the committed PDF. The log has no undefined reference, no multiply defined label and no error line.",
+    "research/version22/BUILD.json: manuscript_version 22, status success, source and PDF hashes equal to the files, pdf_bytes 5542466, builder_sha256 equal to research/version18/build_pdf.py (unchanged from main), serial_passes 3, tex_errors 0, unresolved_references 0, shell escape off, 856 pages.",
+    "Ran scripts/check_current_manuscript.py at the commit: exit status 0; it reports version 22 with the three hashes above and no required TeX inputs. docs/current-manuscript.json has CRLF line endings again (17 of 17 lines), as on main.",
+    "PDF with pdfinfo and pdftotext: 856 pages; title 'Z is Diophantine in Q, Version 22'; no '??' anywhere in the extracted text; the abstract states 175 variables, 3 196 monomials, coefficients below 2^802, 73 080 bytes, and the dependence of the integer-to-zero direction on Theorem 2.3 of the unrefereed Bhargava-Burungale preprint arXiv:2611.16130v2, with the reverse direction independent of it.",
+    "Released files: the twelve Version 16 to 21 manuscript files are byte-identical to main e09b578f. Relative to main, the commit changes nothing under .github/, scripts/, tests/, releases/, research/version16 to version21, KERNEL_CONTRACT.json, the Lake files or any .lean file. The commit contains main e09b578f.",
+    "Source delta from the head I reviewed (a735f6b1), after normalizing line endings: thirty hunks, all in prose. The section 'The complete quadratic table' through the start of the theorem is identical character for character, so my row-for-row comparison of the 147 printed rows with the merged PR175 table carries over. No file under research/version22/construction/ changed; expanded175.txt is still 73,080 bytes with SHA-256 efc0be237413e25f1308d0a2e8fa1750c5de526a83046cc3aac5123ea12d4292.",
+    "Repairs 1 to 3 (pole step). The abstract and the theorem now state the preprint dependence and its absence from soundness. The case k = 1 uses (e,p,U,V,q) = (1,0,eta,eta,0); I checked it against the three equations: 1 + 0 = 1, UV = eta^2 = 1 - d = e(1 - d), U^2 - V^2 = 0 = d*0. The scalar obstruction now states p not 3 or 7 and p not dividing 9792 = 2^6*3^2*17; S contains 2, 3, 7 and 17, so with b_s = R(R+9792)tau^2 the valuation of 7b_s/9 is mu + 2v(tau), odd, as stated.",
+    "Repairs 4 to 6 (orders). I checked the arithmetic of the new statements against the printed factors F_0 to F_3. With v(c) = -mu and every factor term above -mu/4: the c^7 terms give v(E_1), v(H) > 27mu/16 and the c^5 terms give v(N), v(E_4), v(E_3) > 19mu/16, so all are at least 2 as stated; with v(s_i), v(conj t_i) at most -1 the identities E_i = s_i conj(t_i) C_i, N = s_1 I, H = s_4^2 G give v(C_i), v(G) at least 4 and v(I) at least 3, as stated. In completeness, with v(c) = -1 the six cleared-test terms have depths 12d-5, 8d-7, 8d-7, 8d-5, 8d-5 and 12d-11, matching the exponents of c (5, 7, 7, 5, 5, 11) in the printed factors, and all are positive for d at least 1; v(E_2*) = 4d + v_p(a) - v_p(h-1) is at least 3d under the stated condition v_p(h-1) at most d + v_p(a). The opposite-slot reason and the vacuous inert case are now written out.",
+    "Repairs 7 to 11. The theorem's proof lists the soundness chain in five ordered steps consistent with the sections it cites. M(t) is defined over all ten contact forms. The remark on the scalar bound now says R at least 71 suffices: 71^4 = 25,411,681 > 24,482,500 > 70^4 = 24,010,000. The shared-product extraction is a numbered proposition with hypotheses and proof. A notation paragraph distinguishes the overloaded letters, and the contact radicals, factor product and label maximum are renamed.",
+    "Repairs 12 to 18. The AI usage statement says '6 Astra' (TeX and PDF text); no 'GPT-6' or accented 'Jose' remains in the Version 22 TeX; CREDITS.md uses 'Claude Fable 5.2' and '6 Astra' in the Version 22 entry; CURRENT_VERSION22.md exists and manuscripts/README.md presents Version 22 as a draft with Version 21 still the published release; research/version22/README.md names research/version18/build_pdf.py as the program the builder hash refers to; the TeX now says the 147-row interpretation check is an author's finite verification recorded in DIRECT-AUDIT.json, distinct from the printed coordinate dictionary.",
+    "Ran scripts/check_audit_history.py --self-test: it stops with 'Changed bound file: docs/current-manuscript.json', as expected until docs/audit-history/builder-binding.json binds this record."
+  ],
+  "observations": [
+    "One leftover from the renaming: TeX line 614 ends 'Finally $B^2\\le5M^2+5$.' The M there is the label maximum, renamed M_lab in the preceding lines. It is a typographical inconsistency with no effect on the argument; I recommend correcting it in the next version's corrections list, not now, because any TeX edit changes the hashes this record binds.",
+    "CREDITS.md still has 'José' and 'GPT-6' in its Version 21 and Version 20 entries. Those are the existing backlog entries of issue 129 and concern released versions.",
+    "research/version22/CREDIT-CONFIRMATION.json cites the owner's chat message. The release policy asks for a linked confirmation; the owner intends to post one on the pull request at release time.",
+    "How the manuscript describes its relation to the Bhargava-Burungale preprint beyond the stated dependence is the owner's decision and was left as it is.",
+    "docs/current-manuscript.json and research/version22/BUILD.json must stay byte for byte as committed. If the TeX is edited, the source and PDF hashes change and this record no longer applies."
+  ],
+  "limitations": [
+    "I did not inspect page images of the PDF. Its content is covered by the byte-identical rebuild from the TeX I read, and by text extraction.",
+    "I did not run research/version22/construction/check.py or its sub-checkers on this head; the finite claims rest on my own comparison scripts run on a735f6b1 and on the unchanged table and input bytes.",
+    "For repairs 4 to 6 I checked that the new orders follow from the stated premises and the printed exponents. The premises that come from retained Version 21 sections (the curve-coordinate valuations at a consumed slot, the quotient-test estimates of the retained label recovery, formal isometry after doubling) were not re-derived.",
+    "Not checked, as in my reports on a735f6b1: the proof of Bhargava-Burungale Theorem 2.3 and its cited inputs; the retained Version 21 suppliers the new part calls on (the height supplier, the Gaussian prime supplier, reference recovery, order-four logarithms, the Lucas descent, real returns); completeness beyond its numerics and local parity logic.",
+    "I did not review DEPENDENCIES.md, the correction dispositions, RELEASE-MANIFEST.json or the handoff files beyond the passages named above.",
+    "This is reviewer-authored evidence from a local session. It is not model authentication and not protected App acceptance."
+  ]
+}
