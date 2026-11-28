@@ -286,18 +286,25 @@ when the complete GitHub diff changes a path under `manuscripts/`, `research/`
 or `data/`, or `docs/current-manuscript.json`. Both sides of renames and deleted
 paths count. Research paths are selected conservatively because they hold the
 manuscript's tables, certificates and verifiers. Since 28 November 2026 the
-same 900,000 applies when the diff changes the gate's own files: anything
-under `.github/workflows/` or `tests/protocol_b/`, or the reviewer
-instructions. A review of such a change has to read the whole gate program,
+same 900,000 applies when the diff changes the gate program, another
+workflow, the gate's tests or the reviewer instructions: anything under
+`.github/workflows/` or `tests/protocol_b/`, or
+`.github/protocol-b-reviewer.md`. Other paths under `.github/` are not
+selected. A review of such a change has to read the whole gate program,
 and reviews of the three gate changes of 27 and 28 November repeatedly ended
 at the smaller limit with an incomplete-scope item and no finding. Other PRs
-receive 400,000. The budget is a ceiling, not a target, but a larger ceiling
-permits a more expensive round: up to about 2.25 times the former maximum for
-a gate change. It cannot usefully go higher, because the reviewers' published
-context windows are 1,050,000 and 1,000,000 tokens. A manuscript version
-therefore gains nothing from this change; its finite claims are better covered
-by checks that run in CI and that reviewers cite. A review stops without a
-verdict after 100 model requests (50 before that date).
+receive 400,000. The budget is a ceiling on one request, not a target and
+not a billing cap. For a gate change that ceiling is now 2.25 times what it
+was. Each request sends the accumulated conversation again, so what a round
+can cost also grows with the number of requests, and this guide gives no
+bound in money. The budget cannot usefully go higher, because the reviewers'
+published context windows are 1,050,000 and 1,000,000 tokens. A manuscript
+version therefore gains no context budget from this change; its finite claims
+are better covered by checks that run in CI and that reviewers cite. A review
+stops without a verdict after 100 model requests (50 before that date), in
+every profile. The reviewing job's 120-minute limit is unchanged and is shared
+by both reviewers, so it can end a long review before the hundredth request;
+that also leaves the pull request without acceptance.
 This selection is automatic; the former `PROTOCOL_B_MANUSCRIPT_PROFILE` variable
 is no longer read. It changes no authorization to start a paid review, spending
 guard, or acceptance rule. The expanded profile fits the published
@@ -308,7 +315,7 @@ including a 64,000-token output allowance and an 8,192-token formatting reserve.
 The estimate includes instructions, tools and the full conversation. Ordinary
 text uses UTF-8 bytes as a conservative token estimate. Successful Anthropic
 web-result payloads instead use bounded accounting estimates: at most 20,000
-for the standard profile or 50,000 for the expanded manuscript profile
+for the standard profile or 50,000 for either expanded profile
 for fetched text, 16,000 for a search result block, and 128,000 for a binary
 fetch result. These estimates do not change the actual conversation sent to
 the provider. Unknown block types and repository text receive no discount.
