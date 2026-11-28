@@ -10,9 +10,9 @@ See also [Jose Brox's repository](https://github.com/JoseBrox/diophantine-z-q_im
 
 Cite this work as "ℤℚ Diophantine Project contributors. ℤ _is Diophantine in_ ℚ. 2026. https://github.com/elliotglazer/diophantine-z-q"  
 
-## Version 22 preparation
+## Version 22
 
-[Version 22 draft PDF](manuscripts/quartic_v22.pdf) and [source](manuscripts/quartic_v22.tex) integrate Jose Brox's explicit 175-variable quartic: 3,196 monomials, coefficients below `2^802`, and [73,080 bytes of decimal text](research/version22/construction/inputs/expanded175.txt). The new pole and contact arithmetic is included in the manuscript. [Review scope and reproduction](research/version22/README.md) distinguish author checks from independent acceptance. **Version 21 remains the published release until Version 22 completes the release policy.**
+[Read the manuscript](manuscripts/quartic_v22.pdf) or [open the TeX source](manuscripts/quartic_v22.tex). Version 22 is the published release ([release page](https://github.com/elliotglazer/diophantine-z-q/releases/tag/quartic-175-version-22), 28 November 2026). It adopts Jose Brox's explicit 175-variable quartic: 3,196 monomials, coefficients below `2^802`, and [73,080 bytes of decimal text](research/version22/construction/inputs/expanded175.txt). The new pole and contact arithmetic is included in the manuscript. For this polynomial, the implication from an integer input to a rational zero uses Theorem 2.3 of the unrefereed Bhargava–Burungale preprint arXiv:2611.16130v2; the reverse implication does not. The release page states what each review covered and did not cover. [Review scope and reproduction](research/version22/README.md) is the preparation record written before publication, and distinguishes author checks from independent acceptance.
 
 ## Version 21
 
@@ -127,7 +127,8 @@ $$
 
 | Construction | Total variables, including input | Degree | Nonzero monomials | Coefficient magnitude |
 | --- | ---: | ---: | ---: | --- |
-| Version 21 candidate, explicit decimal polynomial | 229 | 4 | 3,312 | `149^30 < 2^217` |
+| Version 22, explicit decimal polynomial | 175 | 4 | 3,196 | Less than `2^802` |
+| Version 21, explicit decimal polynomial | 229 | 4 | 3,312 | `149^30 < 2^217` |
 | Version 20, explicit decimal polynomial | 247 | 4 | 3,385 | Less than `2^73780` |
 | Version 19, fixed Busy Beaver specification | 195 | 4 | 2,956 | `149^(2*BB(2^1000)+2) < BB(2^2000)` |
 | Version 19, explicit decimal polynomial | 250 | 4 | 3,362 | Less than `2^6483` |
