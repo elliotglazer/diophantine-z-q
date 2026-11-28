@@ -51,3 +51,11 @@ The default is two concurrent single-threaded compilers. `--jobs 1` through `--j
 ## Validation scope
 
 The release preparation checks are recorded in the [validation report](VALIDATION.json) and the [704-declaration axiom ledger](AXIOMS.json). They distinguish a fresh build of the project modules from a rebuild of upstream dependencies. Published dependency caches are trusted inputs; this procedure does not independently rebuild Lean or Mathlib, and an axiom audit does not replace review of a theorem's statement or its relation to the 11/5 manuscript.
+
+## Compact-group recurrence contribution
+
+The simultaneous-return application now uses the root `z_in_q_kernel` package:
+[`ZInQKernel.Contrib.CompactRecurrence`](../ZInQKernel/Contrib/CompactRecurrence.lean).
+Its [source-to-consumer note](../docs/research/compact-recurrence.md) states the
+full contract, reproduction commands, and unproved interfaces to historical
+`CondZQ.HypCC`. It is separate from this accepted 48-module helper snapshot.
