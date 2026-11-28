@@ -56,8 +56,32 @@ class ManuscriptBudget(unittest.TestCase):
         for file in [changed('old/q.txt', previous_filename='research/version20/q.txt', status='renamed'),
                      changed('manuscripts/q.tex', status='removed')]:
             self.assertEqual(gate.configure_budget([file])['context_token_budget'], 900000)
-        for path in ['README.md', 'docs/readme.md', '.github/workflows/protocol-b.yml', 'ZInQKernel.lean']:
-            self.assertEqual(gate.configure_budget([changed(path)])['context_token_budget'], 400000)
+        for path in ['README.md', 'docs/readme.md', '.github/CODEOWNERS', 'tests/other/test_x.py', 'ZInQKernel.lean']:
+            profile = gate.configure_budget([changed(path)])
+            self.assertEqual(profile['context_token_budget'], 400000)
+            self.assertEqual((profile['profile'], profile['gate_changed']), ('standard', False))
+
+    def test_gate_files_select_the_expanded_budget(self):
+        for file in [changed('.github/workflows/protocol-b.yml'), changed('.github/workflows/kernel-lean.yml'),
+                     changed('.github/protocol-b-reviewer.md'), changed('tests/protocol_b/test_gate.py'),
+                     changed('old/x.py', previous_filename='tests/protocol_b/x.py', status='renamed'),
+                     changed('.github/workflows/gone.yml', status='removed')]:
+            profile = gate.configure_budget([file])
+            self.assertEqual(profile['context_token_budget'], 900000)
+            self.assertEqual(profile['tool_character_budget'], 2700000)
+            self.assertEqual((profile['profile'], profile['gate_changed'], profile['manuscript_changed']),
+                             ('gate-expanded', True, False))
+        # A manuscript change keeps its own profile name when gate files change too.
+        both = gate.configure_budget([changed('manuscripts/q.tex'), changed('.github/workflows/protocol-b.yml')])
+        self.assertEqual((both['profile'], both['gate_changed'], both['manuscript_changed']),
+                         ('manuscript-expanded', True, True))
+        gate.configure_budget([changed('README.md')])
+
+    def test_turn_limit_is_one_hundred(self):
+        self.assertEqual(gate.MODEL_TURN_LIMIT, 100)
+        text = __import__('test_gate').ROOT.joinpath('.github/workflows/protocol-b.yml').read_text(encoding='utf-8')
+        self.assertIn('for turn in range(MODEL_TURN_LIMIT):', text)
+        self.assertNotIn('range(50)', text)
 
 
 class PDFReads(unittest.TestCase):

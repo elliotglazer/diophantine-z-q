@@ -285,7 +285,19 @@ Both reviewers receive a preflight context budget of 900,000 estimated tokens
 when the complete GitHub diff changes a path under `manuscripts/`, `research/`
 or `data/`, or `docs/current-manuscript.json`. Both sides of renames and deleted
 paths count. Research paths are selected conservatively because they hold the
-manuscript's tables, certificates and verifiers. Other PRs receive 400,000.
+manuscript's tables, certificates and verifiers. Since 28 November 2026 the
+same 900,000 applies when the diff changes the gate's own files: anything
+under `.github/workflows/` or `tests/protocol_b/`, or the reviewer
+instructions. A review of such a change has to read the whole gate program,
+and reviews of the three gate changes of 27 and 28 November repeatedly ended
+at the smaller limit with an incomplete-scope item and no finding. Other PRs
+receive 400,000. The budget is a ceiling, not a target, but a larger ceiling
+permits a more expensive round: up to about 2.25 times the former maximum for
+a gate change. It cannot usefully go higher, because the reviewers' published
+context windows are 1,050,000 and 1,000,000 tokens. A manuscript version
+therefore gains nothing from this change; its finite claims are better covered
+by checks that run in CI and that reviewers cite. A review stops without a
+verdict after 100 model requests (50 before that date).
 This selection is automatic; the former `PROTOCOL_B_MANUSCRIPT_PROFILE` variable
 is no longer read. It changes no authorization to start a paid review, spending
 guard, or acceptance rule. The expanded profile fits the published
