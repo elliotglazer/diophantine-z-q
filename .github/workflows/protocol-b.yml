@@ -112,6 +112,8 @@ jobs:
           # PDFs. These are accounting reserves, not provider-enforced limits.
           WEB_SEARCH_RESULT_RESERVE = 16_000
           WEB_BINARY_RESULT_RESERVE = 128_000
+          # A review that reaches this many model requests stops without a verdict.
+          MODEL_TURN_LIMIT = 100
 
 
           def manuscript_path(path):
@@ -120,6 +122,12 @@ jobs:
               return (path.startswith(('manuscripts/', 'research/', 'data/')) or
                       path == 'docs/current-manuscript.json')
 
+          def gate_path(path):
+              # The gate's program, its reviewer instructions, the other workflows and
+              # the gate's tests. Reviewing a change here means reading the whole program,
+              # which the standard budget does not hold; this grants no review access.
+              return path == INSTRUCTIONS or path.startswith(('.github/workflows/', 'tests/protocol_b/'))
+
           def configure_budget(files):
               """Choose one profile from the complete GitHub diff, before reviewers start.
 
@@ -127,15 +135,18 @@ jobs:
               Both profiles include the output and formatting reserves within the cap.
               """
               global CONTEXT_TOKEN_BUDGET, TOOL_CHARACTER_BUDGET, WEB_MAX_USES, WEB_FETCH_MAX_CONTENT_TOKENS
-              manuscript = any(manuscript_path(path) for file in files
-                               for path in (file['filename'], file.get('previous_filename', '')))
-              expanded = manuscript
+              paths = [path for file in files for path in (file['filename'], file.get('previous_filename', ''))]
+              manuscript = any(manuscript_path(path) for path in paths)
+              gate_changed = any(gate_path(path) for path in paths)
+              expanded = manuscript or gate_changed
               CONTEXT_TOKEN_BUDGET = 900_000 if expanded else 400_000
               TOOL_CHARACTER_BUDGET = 1_200_000 * CONTEXT_TOKEN_BUDGET // 400_000
               WEB_MAX_USES = {'web_search': 10, 'web_fetch': 20} if expanded else {'web_search': 3, 'web_fetch': 5}
               WEB_FETCH_MAX_CONTENT_TOKENS = 50_000 if expanded else 20_000
-              return {'profile': 'manuscript-expanded' if expanded else 'standard',
+              return {'profile': ('manuscript-expanded' if manuscript else 'gate-expanded' if gate_changed
+                                  else 'standard'),
                       'selection': 'automatic changed paths', 'manuscript_changed': manuscript,
+                      'gate_changed': gate_changed,
                       'tool_character_budget': TOOL_CHARACTER_BUDGET,
                       'context_token_budget': CONTEXT_TOKEN_BUDGET,
                       'output_token_budget': OUTPUT_TOKEN_BUDGET,
@@ -2899,7 +2910,7 @@ jobs:
                           raise RuntimeError('fix failing checks first: ' + ', '.join(failed) + '; no further model call')
                   finish_instruction = FINISH_NOW_INSTRUCTION + '\nPrior finding IDs: ' + json.dumps(sorted(self.prior)) + \
                       '. If you could not review an earlier finding, disposition it as unresolved and explain that limitation.'
-                  for turn in range(50):
+                  for turn in range(MODEL_TURN_LIMIT):
                       log(f"{self.family}: model turn {turn+1}; {len(self.reads)} repository source reads")
                       projected = context_estimate(self.family, instructions, conversation, previous)
                       if (CONTEXT_TOKEN_BUDGET - RECOVERY_TOKEN_RESERVE - projected['estimated_total']
@@ -3099,7 +3110,7 @@ jobs:
                           record(self.family + f"-tool-{turn}-{call_index}.json", {"name": call["name"], "arguments": args, "result": value})
                       if calls:
                           conversation = next_conversation(values)
-                  raise RuntimeError("50 model turns exhausted; no acceptance")
+                  raise RuntimeError(f"{MODEL_TURN_LIMIT} model turns exhausted; no acceptance")
 
 
           def finding_id(report, local_id):
