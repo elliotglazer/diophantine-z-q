@@ -855,6 +855,9 @@ is ignored with a short reply and no check is created. A command that passes it
 starts a check, which ends unsuccessful with a reply if an ID is not in the App
 record, is not eligible, or discussion is uncovered.
 
+- The pull request's author is a current collaborator. An outside author's
+  accepted pull request waits for a separate `/protocol-b merge`, and a decision
+  bound to the default branch's tip cannot wait, so those stay with an admin.
 - The commenter did not open the pull request and is not the GitHub author or
   committer of any of its commits. The gate cannot tell who operates an agent,
   and a commit made under another account's name is not attributed to its
@@ -889,11 +892,13 @@ record, is not eligible, or discussion is uncovered.
   at that commit the decision no longer applies. For the same reason a
   collaborator's decision is accepted only when every other required check has
   already passed on the head, so the gate merges at once; it is never left to
-  deferred auto-merge, and if the direct merge cannot be made the gate stops
-  with an error. Two things are not excluded: a default-branch push in the
-  instant between the last check and the merge call, which names only the head;
-  and, if that direct merge fails after the check was published, a later manual
-  merge by someone with write access while the successful check still stands. A comparison with 300 or more files or
+  deferred auto-merge. If the direct merge is not made, whether it fails, is
+  held for an outside author's merge approval, or would have to be deferred,
+  the gate replaces the successful check with a failed one, so nothing can
+  merge on it later, by hand or by auto-merge a person had enabled, without a
+  new decision. All four tip checks read the fully qualified branch ref. One
+  thing is not excluded: a default-branch push in the instant between the last
+  check and the merge call, which names only the head. A comparison with 300 or more files or
   250 or more commits, or whose file count differs from the pull request's,
   needs an admin. Everything else needs an admin: files the current-record
   checks execute, `research/versionNN/`, other research folders, Lean,
@@ -913,9 +918,10 @@ not the author accepted the incomplete scope. A collaborator's decision is
 applied in override-command runs on that head (its own, and any later one, where
 it is revalidated) and on the merge recheck. It is never passed to a review as
 an authenticated override. If an admin later overrides a finding on a head that
-has a stored collaborator decision and uncovered discussion, the admin's
-comment should name the scope items too; otherwise the collaborator's stored
-decision is refused for the uncovered discussion and the run fails closed. A
+has a stored collaborator decision, the admin's comment should name the scope
+items too. Otherwise the stored collaborator decision is part of what is
+applied, and the run fails closed if discussion is uncovered, the default
+branch has moved, or another required check has not passed. A
 scope item from an earlier round that a later review left unresolved is never
 eligible for a collaborator. Findings stay
 blocking until an admin decides them, so this never accepts a pull request on
@@ -1122,22 +1128,28 @@ can leave no completed run, and the review proceeds regardless.
 3. It creates the branch `codex/protocol-b-checks/<PR>/<head SHA>` at the head,
    unless it exists, and dispatches the workflow there once per package. A ref
    that points anywhere else is never used or moved.
-4. It waits up to 80 minutes for the runs and records their outcome. Nothing in
-   this step can fail the job or stop the review: a missing, failed or late run
-   is recorded, and the reviewers see whatever exists. A run that already
+4. It waits up to 80 minutes for the runs and records their outcome. No error
+   in this step can fail the job or stop the review: a missing, failed or late
+   run is recorded, and the reviewers see whatever exists. The job's own
+   360-minute limit still applies: a pull request that first waits most of that
+   time for kernel evidence and then waits for a checker can exceed it, in which
+   case no review starts. Two gate runs that overlap can each dispatch the same
+   package; the newest run is the one used. A run that already
    exists for the package at that head, including a failed or cancelled one,
    is never dispatched again; after an infrastructure failure a maintainer
    re-runs that run by hand.
 
 The workflow has read-only permissions and uses no secret, deployment
-environment or repository script. It fetches the dispatched commit without
-credentials and stages it in a separate folder by writing each blob of the
+environment or repository script. It fetches the dispatched commit with the
+job's read-only token, which is not left in the repository configuration and is
+never visible to the checker, and stages it in a separate folder by writing each blob of the
 commit's tree byte for byte, verifying each against its Git name. It does not
 use the checkout or `git archive` for this: both apply attributes from the
 commit under test (`export-ignore`, `export-subst`, `ident`, `eol`, filters), so
 a package's own `.gitattributes` could otherwise make the checker run on bytes
-other than the ones reviewers read. Symbolic links are staged as links and
-submodule entries are skipped. It then runs `python3 -B check_all.py` from the
+other than the ones reviewers read. Symbolic links are staged as links, a path
+that would pass through a staged link is refused, and submodule entries are
+skipped. It then runs `python3 -B check_all.py` from the
 package folder inside `bwrap`: no network, the inherited environment cleared
 (only `PATH`, `LC_ALL`, `HOME` and `PYTHONDONTWRITEBYTECODE` are set), an
 unprivileged user, the staged commit mounted read-only at `/repo`, and a

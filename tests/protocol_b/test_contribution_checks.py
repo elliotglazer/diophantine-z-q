@@ -192,6 +192,30 @@ class ContributionChecks(unittest.TestCase):
                                capture_output=True, text=True)
         self.assertNotEqual(again.returncode, 0)
 
+    def test_staging_refuses_to_write_through_a_symbolic_link(self):
+        # Round 2, Fable N1: safety must not rest on the host refusing malformed trees.
+        if shutil.which('git') is None:
+            self.skipTest('git is not available')
+        work = Path(self.tmp.name)
+        repo, staged, outside, program = work/'repo', work/'staged', work/'outside', work/'stage.py'
+        (repo/'research').mkdir(parents=True)
+        (repo/'research/file.txt').write_bytes(b'x')
+        program.write_text(staging_program(), encoding='utf-8')
+        git(work, 'init', '-q', str(repo))
+        git(repo, 'add', '-A')
+        git(repo, 'commit', '-q', '-m', 'fixture')
+        staged.mkdir()
+        outside.mkdir()
+        try:
+            os.symlink(outside, staged/'research', target_is_directory=True)
+        except (OSError, NotImplementedError):
+            self.skipTest('symbolic links are not available here')
+        result = subprocess.run([sys.executable, '-I', '-B', str(program), str(repo), str(staged)],
+                                capture_output=True, text=True)
+        self.assertNotEqual(result.returncode, 0)
+        self.assertIn('passes through a symbolic link', result.stderr + result.stdout)
+        self.assertEqual(list(outside.iterdir()), [])
+
     def test_self_test_fixture_sets_the_attribute_traps(self):
         for needle in ('check_all.py export-subst', 'data.txt export-subst ident text eol=crlf',
                        'omitted.txt export-ignore', "'export-subst rewrote the checker'",

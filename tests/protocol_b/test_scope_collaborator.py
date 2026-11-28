@@ -144,6 +144,15 @@ class CollaboratorScopeDecisions(unittest.TestCase):
             gh = self.refused(login=login)
             self.assertTrue(any('Only a repository admin' in p['body'] for p in gh.posts))
 
+    def test_outside_authors_pull_request_needs_an_admin(self):
+        # Round 6 of the first change, Astra's unread item: no decision may sit behind a merge approval.
+        gh, app, event, known, eligible = self.case()
+        gh.pr['user'] = {'login': 'outsider', 'type': 'User'}
+        original = gate.collaborator
+        with patch.object(gate, 'collaborator', lambda g, user: user.get('login') != 'outsider' and original(g, user)):
+            self.assertFalse(gate.scope_decider(gh, gh.pr, {'login': 'collaborator', 'type': 'User'}))
+            self.assertFalse(gate.history(gh, gh.pr, known, eligible)[2])
+
     def test_reader_has_no_effect(self):
         self.refused(permission='read')
 
@@ -227,18 +236,50 @@ class CollaboratorScopeDecisions(unittest.TestCase):
         self.assertTrue(gate.scope_decider(gh, gh.pr, user))
 
     def test_default_branch_moving_after_the_decision_voids_it(self):
-        # Round 4, Astra F1: both eligibility reads see tip B0; every later read sees B1,
-        # already an ancestor of the head, against which the head restores a protected file.
+        # Round 4, Astra F1: the eligibility reads and the pre-acceptance read see tip B0;
+        # every later read sees B1. The run must not record success or request a merge.
         gh, app, event, known, eligible = self.case()
-        gh.branch_tip = BASE
-        overrides = gate.history(gh, gh.pr, known, eligible)[2]
-        self.assertEqual(overrides['scope-1-1-astra']['default_tip'], BASE)
-        gh.main_sha = 'd' * 40
-        gh.later_paths = (NOTE, 'quartics/protected.json')
-        gh, app, errors, state = self.decide(gh, app, event)
+        self.assertEqual(gate.history(gh, gh.pr, known, eligible)[2]['scope-1-1-astra']['default_tip'], BASE)
+        reads = iter([BASE, BASE, BASE])
+        with patch.object(gate, 'default_branch_tip', lambda g, default: next(reads, 'd' * 40)):
+            gh, app, errors, state = self.decide(gh, app, event)
         self.assertNotEqual((app.final or {}).get('conclusion'), 'success')
         self.assertEqual(gh.merge_requests, [])
         self.assertIn('default branch moved', str(app.final)+str(errors))
+
+    def test_every_tip_check_reads_the_qualified_branch_ref(self):
+        collaborator = {'overrides': {'scope-1-1-astra': {'collaborator': 'jo', 'authority': 'scope-collaborator',
+                                                          'default_tip': BASE}}}
+        gh, *_ = self.case()
+        gh.branch_tip = 'e' * 40
+        # A collaborator decision is compared with the qualified ref, whatever the bare read returned.
+        self.assertEqual(gate.decision_tip(gh, collaborator, 'main', 'f' * 40), 'e' * 40)
+        # Other runs keep the value they already read and make no extra request.
+        with patch.object(gate, 'default_branch_tip', side_effect=AssertionError('no extra read')):
+            self.assertEqual(gate.decision_tip(gh, {'overrides': {'x': {'collaborator': 'owner'}}}, 'main', 'f' * 40), 'f' * 40)
+            self.assertEqual(gate.decision_tip(gh, {}, 'main', 'f' * 40), 'f' * 40)
+        text = __import__('test_gate').ROOT.joinpath('.github/workflows/protocol-b.yml').read_text(encoding='utf-8')
+        self.assertEqual(text.count('scope_decision_tip_current(state, decision_tip(gh, state, '), 3)
+        self.assertNotIn('not scope_decision_tip_current(state, latest_ref)', text)
+
+    def test_acceptance_is_withdrawn_when_the_merge_is_not_made_at_once(self):
+        state = {'check': 20, 'name': gate.CHECK, 'head': HEAD, 'summary': 'Accepted by collaborator override',
+                 'overrides': {'scope-1-1-astra': {'collaborator': 'jo', 'authority': 'scope-collaborator',
+                                                   'default_tip': BASE}}}
+        app = FakeApp()
+        app.checks[20] = {'id': 20, 'head_sha': HEAD, 'conclusion': 'success'}
+        import tempfile
+        from pathlib import Path
+        with tempfile.TemporaryDirectory() as tmp, patch.object(gate, 'OUT', Path(tmp)):
+            gate.withdraw_collaborator_acceptance(app, state, '{"reports": {}}', 'the merge was not made at once')
+        self.assertEqual(app.final['conclusion'], 'failure')
+        self.assertTrue(app.final['output']['summary'].startswith('Withdrawn: '))
+        self.assertEqual(app.final['output']['text'], '{"reports": {}}')
+        # publish withdraws on an exception and on a held or deferred merge, for collaborator decisions only.
+        text = __import__('test_gate').ROOT.joinpath('.github/workflows/protocol-b.yml').read_text(encoding='utf-8')
+        body = text.split("    if state['mode'] == 'live':", 1)[1].split('    else:', 1)[0]
+        self.assertEqual(body.count('withdraw_collaborator_acceptance(app, state, text'), 2)
+        self.assertEqual(body.count('if collaborator_decided(state)') + body.count('and collaborator_decided(state)'), 2)
 
     def test_decision_waits_for_the_other_required_checks(self):
         # Round 5, Astra's unread item: a decision must not sit behind deferred auto-merge.
@@ -284,7 +325,7 @@ class CollaboratorScopeDecisions(unittest.TestCase):
         self.assertFalse(any(p['body'].startswith('Accepted by collaborator override') for p in gh.posts))
         self.assertTrue(any('default branch moved' in p['body'] for p in gh.posts))
 
-    def test_stored_tip_is_checked_at_every_later_step(self):
+    def test_stored_tip_must_equal_the_current_tip(self):
         state = {'overrides': {'scope-1-1-astra': {'collaborator': 'jo', 'authority': 'scope-collaborator',
                                                    'default_tip': BASE}}}
         self.assertTrue(gate.scope_decision_tip_current(state, BASE))
@@ -294,9 +335,6 @@ class CollaboratorScopeDecisions(unittest.TestCase):
         # Admin decisions and runs without overrides are not bound to a tip.
         self.assertTrue(gate.scope_decision_tip_current({'overrides': {'x': {'collaborator': 'owner'}}}, 'd' * 40))
         self.assertTrue(gate.scope_decision_tip_current({}, 'd' * 40))
-        text = (gate.ROOT if hasattr(gate, 'ROOT') else __import__('test_gate').ROOT).joinpath(
-            '.github/workflows/protocol-b.yml').read_text(encoding='utf-8')
-        self.assertEqual(text.count('if not scope_decision_tip_current(state, latest_ref)'), 3)
 
     def test_tip_is_read_from_the_qualified_branch_ref(self):
         gh, *_ = self.case()

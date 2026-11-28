@@ -26,6 +26,8 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 75
     steps:
+      # The fetch uses the job's read-only token; it is not left in the
+      # repository configuration and is never visible to the checker.
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         with:
           persist-credentials: false
@@ -61,6 +63,7 @@ jobs:
           reader = subprocess.Popen(['git', '-C', repo, 'cat-file', '--batch'],
                                     stdin=subprocess.PIPE, stdout=subprocess.PIPE)
           files = links = skipped = 0
+          real_dest = os.path.realpath(dest)
           for item in listing.split(b'\0'):
               if not item:
                   continue
@@ -85,7 +88,12 @@ jobs:
                   raise SystemExit('Short read of blob %s' % sha)
               if hashlib.sha1(b'blob %d\0' % size + data).hexdigest() != sha:
                   raise SystemExit('Blob %s does not match its name' % sha)
-              os.makedirs(os.path.dirname(target), exist_ok=True)
+              parent = os.path.dirname(target)
+              os.makedirs(parent, exist_ok=True)
+              # Never write through a link staged earlier: the parent must still be
+              # the plain folder under the staging root that the path names.
+              if os.path.realpath(parent) != os.path.join(real_dest, *parts[:-1]):
+                  raise SystemExit('Path passes through a symbolic link: %r' % path)
               if mode == '120000':
                   os.symlink(os.fsdecode(data), target)
                   links += 1

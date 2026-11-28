@@ -1913,7 +1913,7 @@ jobs:
           # no credentials, a read-only tree. It uses no repository script, so pinning its
           # bytes fixes what executes around the package. A change requires a pin update.
           CHECKS_WORKFLOW = '.github/workflows/contribution-checks.yml'
-          CHECKS_WORKFLOW_SHA256 = '2b092988c2a4a9b875ddf3a7de43f0eb6bd6b5b41680fc686199074b57f5bcb9'
+          CHECKS_WORKFLOW_SHA256 = '9750f84e94b1260ce7d269b316ef89a0c6ab2a4e45ddb8506e4b57c31699f769'
           CHECKS_REF_PREFIX = 'refs/heads/codex/protocol-b-checks/'
           CHECKS_LIMIT = 3
           CHECKS_PACKAGE = r'[A-Za-z0-9][A-Za-z0-9_.-]{0,99}'
@@ -3152,6 +3152,11 @@ jobs:
               return sha
 
 
+          def decision_tip(gh, state, default, latest_ref):
+              """The tip to compare a stored collaborator decision with: always the qualified branch ref."""
+              return default_branch_tip(gh, default) if collaborator_decided(state) else latest_ref
+
+
           def scope_decision_tip_current(state, latest_ref):
               """A collaborator's scope decision holds only against the default-branch tip it was measured from."""
               return all(item.get('default_tip') == latest_ref for item in (state.get('overrides') or {}).values()
@@ -3190,6 +3195,10 @@ jobs:
               login = str(user.get('login') or '').casefold()
               if (not login or not collaborator(gh, user) or not (pr.get('user') or {}).get('login')
                       or login == pr['user']['login'].casefold()):
+                  return False
+              # An outside author's accepted pull request waits for a separate merge approval.
+              # A tip-bound decision cannot wait, so those pull requests stay with the admin.
+              if not collaborator(gh, pr['user']):
                   return False
               default = gh.call('')['default_branch']
               if (pr.get('base') or {}).get('ref') != default:
@@ -4714,7 +4723,7 @@ jobs:
                   latest_ref = gh.call('/commits/' + default)['sha']
                   if current['head']['sha'] != pr['head']['sha'] or not same_policy(gh, state['policy_ref'], latest_ref):
                       raise ValueError('PR head or trusted review policy changed during review; this run cannot approve')
-                  if not scope_decision_tip_current(state, latest_ref):
+                  if not scope_decision_tip_current(state, decision_tip(gh, state, default, latest_ref)):
                       raise ValueError('The default branch moved after a collaborator\'s scope decision was measured; '
                                        'the decision no longer applies. Update the branch and decide again, or ask an admin.')
               except Exception as error:
@@ -4813,7 +4822,7 @@ jobs:
               latest_ref = gh.call('/commits/' + state['default'])['sha']
               if not same_policy(gh, state['policy_ref'], latest_ref):
                   raise RuntimeError('Review policy changed before requesting merge')
-              if not scope_decision_tip_current(state, latest_ref):
+              if not scope_decision_tip_current(state, decision_tip(gh, state, state['default'], latest_ref)):
                   raise RuntimeError('The default branch moved after a collaborator\'s scope decision was measured; no merge')
               if state.get('merge_command_check'):
                   outside_merge_review_current(gh, current, state)
@@ -4888,6 +4897,17 @@ jobs:
                   raise RuntimeError('Post-merge dispatch needs reconciliation: ' + '; '.join(failures))
               log('Confirmed direct merge ' + merge + '; dispatched both workflows on main. See receipts for their actual head SHAs.')
               return merge
+
+
+          def withdraw_collaborator_acceptance(app, state, text, reason):
+              """A collaborator's decision is valid only for an immediate merge. If that merge was not
+              made, replace the successful check so nothing can merge on it later without a new decision."""
+              summary = ('Withdrawn: a collaborator\'s scope decision was accepted, but '+reason+
+                         '. The decision is bound to the default branch as it was and does not stand. '
+                         'Decide again, or ask an admin.\n'+state['summary'])
+              app.call(f"/check-runs/{state['check']}", 'PATCH', {'status': 'completed', 'conclusion': 'failure',
+                       'output': {'title': state['name'], 'summary': summary[:60000], 'text': text}})
+              record('collaborator-acceptance-withdrawn.json', {'check': state['check'], 'head': state['head'], 'reason': reason})
 
 
           def merge_and_dispatch(gh, state):
@@ -5163,7 +5183,7 @@ jobs:
                   raise ValueError('Finalization identity mismatch')
               if current['head']['sha'] != state['head'] or not same_policy(gh, state['policy_ref'], latest_ref):
                   state.update(conclusion='failure', summary='Head or review policy changed; no acceptance.')
-              elif not scope_decision_tip_current(state, latest_ref):
+              elif not scope_decision_tip_current(state, decision_tip(gh, state, state['default'], latest_ref)):
                   state.update(conclusion='failure', summary='The default branch moved after a collaborator\'s scope '
                                'decision was measured; no acceptance.')
               outside_finish(gh, app, state)
@@ -5206,7 +5226,16 @@ jobs:
               if state['conclusion'] != 'success':
                   raise RuntimeError('Protocol B review is blocked')
               if state['mode'] == 'live':
-                  merge_and_dispatch(gh, state)
+                  try:
+                      merged = merge_and_dispatch(gh, state)
+                  except Exception as error:
+                      merged = None
+                      if collaborator_decided(state):
+                          withdraw_collaborator_acceptance(app, state, text, str(error))
+                      raise
+                  if merged is None and collaborator_decided(state):
+                      # Held or deferred: a tip-bound decision must not leave a standing green check.
+                      withdraw_collaborator_acceptance(app, state, text, 'the merge was not made at once')
               else:
                   log("Test accepted. Auto-merge is disabled in test mode.")
 
