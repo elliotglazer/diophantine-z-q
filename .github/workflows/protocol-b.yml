@@ -243,12 +243,12 @@ jobs:
               def call(self, path, method="GET", data=None):
                   return self.api("/repos/" + self.repo + path, method, data)
 
-              def dispatch_workflow(self, workflow, ref):
+              def dispatch_workflow(self, workflow, ref, inputs=None):
                   # This API version returns the exact new run ID, avoiding list-run races.
                   return request('https://api.github.com/repos/' + self.repo +
                                  '/actions/workflows/' + workflow + '/dispatches',
                                  {**self.headers, 'X-GitHub-Api-Version': '2026-03-10'},
-                                 'POST', {'ref': ref})
+                                 'POST', {'ref': ref, **({'inputs': inputs} if inputs else {})})
 
               def pages(self, path):
                   result = []
@@ -375,7 +375,7 @@ jobs:
               return {'job_id': job_id, 'job_url': job['html_url'], 'job_name': job['name'],
                       'run_id': run['id'], 'run_attempt': job['run_attempt'],
                       'executed_sha': sha, 'reviewed_head': pr['head']['sha'], 'event': run['event'],
-                      'workflow': workflow, 'steps': job.get('steps', []),
+                      'workflow': workflow, 'run_title': run.get('display_title'), 'steps': job.get('steps', []),
                       'notice': 'Success alone is not table coverage. Read the workflow and checker, then record the exact claim with record_table_coverage.'}
 
 
@@ -1899,7 +1899,185 @@ jobs:
               default = gh.call('')['default_branch']
               if os.environ.get('GITHUB_REF') != 'refs/heads/'+default:
                   raise ValueError('Kernel cleanup must use the default-branch workflow')
-              cleanup_kernel_refs(gh)
+              try:
+                  cleanup_kernel_refs(gh)
+              finally:
+                  cleanup_check_refs(gh)
+
+
+          # A contribution package may carry its own checker, check_all.py. No workflow on
+          # a pull request runs it, and a fork's runs are not evidence for the exact head.
+          # The approved workflow below stages the commit's raw blobs, never an archive or
+          # checkout that would apply the commit's own attributes, and runs the checker
+          # in a sandbox: no network, a cleared environment,
+          # no credentials, a read-only tree. It uses no repository script, so pinning its
+          # bytes fixes what executes around the package. A change requires a pin update.
+          CHECKS_WORKFLOW = '.github/workflows/contribution-checks.yml'
+          CHECKS_WORKFLOW_SHA256 = '2b092988c2a4a9b875ddf3a7de43f0eb6bd6b5b41680fc686199074b57f5bcb9'
+          CHECKS_REF_PREFIX = 'refs/heads/codex/protocol-b-checks/'
+          CHECKS_LIMIT = 3
+          CHECKS_PACKAGE = r'[A-Za-z0-9][A-Za-z0-9_.-]{0,99}'
+
+
+          def contribution_check_title(package):
+              return 'Contribution checks: '+package
+
+
+          def contribution_packages(gh, pr, files):
+              """Packages this pull request touches that have a checker at its head."""
+              names = sorted({match[1] for path in outside_paths(files)
+                              if (match := re.match('research/contributions/('+CHECKS_PACKAGE+')/', path))})
+              found = []
+              for name in names:
+                  try:
+                      gh.blob('research/contributions/'+name+'/check_all.py', pr['head']['sha'])
+                  except ValueError:
+                      continue
+                  found.append(name)
+              return found
+
+
+          def direct_check_run(gh, head, run):
+              # Only a dispatch of the approved workflow on this exact commit in this repository.
+              return (run.get('event') == 'workflow_dispatch' and run.get('head_sha') == head
+                      and run.get('path', '').split('@')[0] == CHECKS_WORKFLOW
+                      and (run.get('repository') or {}).get('full_name', '').lower() == gh.repo.lower()
+                      and (run.get('head_repository') or {}).get('full_name', '').lower() == gh.repo.lower())
+
+
+          def contribution_check_runs(gh, head):
+              runs = action_pages(gh, '/actions/workflows/contribution-checks.yml/runs?head_sha='+head, 'workflow_runs')
+              latest = {}
+              for run in runs:
+                  title = run.get('display_title')
+                  if direct_check_run(gh, head, run) and (title not in latest or run['id'] > latest[title]['id']):
+                      latest[title] = run
+              return latest
+
+
+          def ensure_contribution_checks(gh, pr, packages):
+              """Dispatch each package's checker once on a reserved ref holding the exact head."""
+              head, number = pr['head']['sha'], pr['number']
+              if (type(number) is not int or number < 1 or not isinstance(head, str)
+                      or not re.fullmatch('[0-9a-f]{40}', head)):
+                  raise ValueError('Invalid contribution-check identity')
+              if hashlib.sha256(gh.text(CHECKS_WORKFLOW, head).encode()).hexdigest() != CHECKS_WORKFLOW_SHA256:
+                  raise ValueError('The contribution-checks workflow at this head is not the approved one; update the branch from main')
+              ref = CHECKS_REF_PREFIX+f'{number}/{head}'
+              existing = contribution_check_runs(gh, head)
+              wanted = [p for p in packages if contribution_check_title(p) not in existing]
+              if not wanted:
+                  return {'ref': ref, 'dispatched': []}
+              endpoint = '/git/ref/'+ref.removeprefix('refs/')
+              try:
+                  claim = gh.call(endpoint)
+              except RequestError as error:
+                  if error.status != 404:
+                      raise
+                  if not same_open_revision(gh.call('/pulls/'+str(number)), pr):
+                      raise ValueError('PR changed before the contribution-check ref was created')
+                  claim = gh.call('/git/refs', 'POST', {'ref': ref, 'sha': head})
+              if claim.get('ref') != ref or (claim.get('object') or {}).get('sha') != head:
+                  raise ValueError('Reserved contribution-check ref has unexpected contents; never move it')
+              dispatched = []
+              for package in wanted:
+                  result = gh.dispatch_workflow('contribution-checks.yml', ref.removeprefix('refs/heads/'),
+                                                {'package': package})
+                  dispatched.append({'package': package, 'run': (result or {}).get('workflow_run_id')})
+                  record('contribution-checks-dispatch.json', {'ref': ref, 'head': head, 'dispatched': dispatched})
+              return {'ref': ref, 'dispatched': dispatched}
+
+
+          def cleanup_check_refs(gh):
+              """Delete only reserved, unmoved refs after PR closure and terminal runs."""
+              rows = gh.call('/git/matching-refs/heads/codex/protocol-b-checks/')
+              if not isinstance(rows, list):
+                  raise ValueError('Unexpected reserved-ref listing')
+              outcomes = []
+              pattern = re.compile(re.escape(CHECKS_REF_PREFIX)+r'([1-9][0-9]*)/([0-9a-f]{40})')
+              for row in rows:
+                  ref = row.get('ref', '')
+                  match = pattern.fullmatch(ref)
+                  if not match or (row.get('object') or {}).get('sha') != match[2]:
+                      continue
+                  item = {'ref': ref, 'pr': int(match[1]), 'head': match[2]}
+                  try:
+                      if gh.call('/pulls/'+match[1]).get('state') != 'closed':
+                          continue
+                      branch = ref.removeprefix('refs/heads/')
+                      runs = action_pages(gh, '/actions/workflows/contribution-checks.yml/runs?branch='+
+                                          urllib.parse.quote(branch, safe=''), 'workflow_runs')
+                      if any(r.get('status') != 'completed' for r in runs):
+                          outcomes.append({**item, 'retained': 'A run is active'})
+                          continue
+                      current = gh.call('/git/ref/'+ref.removeprefix('refs/'))
+                      if current.get('ref') != ref or (current.get('object') or {}).get('sha') != match[2]:
+                          outcomes.append({**item, 'retained': 'Ref changed; never delete another revision'})
+                          continue
+                      gh.call('/git/refs/'+ref.removeprefix('refs/'), 'DELETE')
+                      outcomes.append({**item, 'deleted': True})
+                  except Exception as error:
+                      outcomes.append({**item, 'retained_or_uncertain': str(error)})
+              record('contribution-checks-cleanup.json', outcomes)
+              return outcomes
+
+
+          def prepare_checks():
+              """Run in the preparation job, without App or provider secrets. Never blocks the review."""
+              state = {'packages': [], 'runs': {}}
+              try:
+                  mode = os.environ.get('MODE', 'off')
+                  if mode not in {'live', 'test'}:
+                      return
+                  gh = GitHub(os.environ['GITHUB_REPOSITORY'], os.environ['GH_TOKEN'])
+                  default = gh.call('')['default_branch']
+                  if os.environ.get('GITHUB_REF') != 'refs/heads/'+default:
+                      raise ValueError('Contribution checks must be prepared from the default branch')
+                  event = json.loads(pathlib.Path(os.environ['GITHUB_EVENT_PATH']).read_text())
+                  number = ((event.get('pull_request') or {}).get('number')
+                            or (event.get('issue') or {}).get('number')
+                            or (event.get('inputs') or {}).get('pull_request') or os.environ.get('ROUTED_PR'))
+                  if not number:
+                      return
+                  if mode == 'test' and int(number) != int(os.environ.get('TEST_PR', '0')):
+                      return
+                  pr = gh.call('/pulls/'+str(int(number)))
+                  if pr.get('state') != 'open' or pr.get('draft'):
+                      return
+                  body = (event.get('comment') or {}).get('body', '').strip()
+                  if 'comment' in event and (body != '/protocol-b review' or
+                          not collaborator(gh, event['comment']['user']) or
+                          event.get('sender', {}).get('login') != event['comment']['user']['login']):
+                      return
+                  command = body == '/protocol-b review'
+                  if not command and not collaborator(gh, pr['user']):
+                      outside_receipt(gh, pr)
+                  files = gh.pages(f'/pulls/{pr["number"]}/files')
+                  if len(files) != pr['changed_files']:
+                      raise ValueError('Incomplete changed-file list')
+                  packages = contribution_packages(gh, pr, files)
+                  if not packages:
+                      return
+                  state.update(head=pr['head']['sha'], packages=packages)
+                  if len(packages) > CHECKS_LIMIT:
+                      raise ValueError('More than '+str(CHECKS_LIMIT)+' contribution packages with a checker; none was run')
+                  state['dispatch'] = ensure_contribution_checks(gh, pr, packages)
+                  deadline = time.monotonic() + 80 * 60
+                  while True:
+                      latest = contribution_check_runs(gh, pr['head']['sha'])
+                      state['runs'] = {package: {k: run.get(k) for k in ('id', 'run_attempt', 'status', 'conclusion', 'html_url')}
+                                       for package in packages
+                                       if (run := latest.get(contribution_check_title(package)))}
+                      if all(state['runs'].get(package, {}).get('status') == 'completed' for package in packages):
+                          return
+                      if time.monotonic() >= deadline:
+                          raise ValueError('Contribution checks did not finish within 80 minutes; the review proceeds without them')
+                      log('Contribution checks: waiting for the dispatched runs; no model call')
+                      time.sleep(30)
+              except Exception as error:
+                  state['error'] = str(error)
+              finally:
+                  record('contribution-checks.json', state)
 
 
           def wait_lean():
@@ -5039,6 +5217,7 @@ jobs:
                admit_outside() if len(sys.argv) > 1 and sys.argv[1] == 'admit-outside' else
                cleanup_lean() if len(sys.argv) > 1 and sys.argv[1] == 'cleanup-lean' else
                wait_lean() if len(sys.argv) > 1 and sys.argv[1] == 'wait-lean' else
+               prepare_checks() if len(sys.argv) > 1 and sys.argv[1] == 'prepare-checks' else
                publish() if len(sys.argv) > 1 and sys.argv[1] == 'publish' else main())
           PROTOCOL_B_PYTHON
           python3 "$RUNNER_TEMP/protocol-b.py" "$PROGRAM_ACTION"
@@ -5133,6 +5312,14 @@ jobs:
           TEST_PR: ${{ vars.PROTOCOL_B_TEST_PR }}
           APP_ID: ${{ needs.outside_admission.outputs.app_id }}
         run: python3 "$RUNNER_TEMP/protocol-b.py" wait-lean
+      - name: Run contribution package checkers on the exact head
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          MODE: ${{ vars.PROTOCOL_B_MODE }}
+          TEST_PR: ${{ vars.PROTOCOL_B_TEST_PR }}
+          APP_ID: ${{ needs.outside_admission.outputs.app_id }}
+        run: python3 "$RUNNER_TEMP/protocol-b.py" prepare-checks
       - name: Preserve kernel preparation
         if: always()
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02
